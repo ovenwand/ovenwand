@@ -16,15 +16,20 @@ import Col from '../components/Col';
 })
 export default class Page extends Vue
 {
+  static DEFAULT_CONFIG = {
+    avatar: false,
+    back: false,
+    background: null,
+    darkText:false,
+    title: null,
+  };
+
   @Inject('page') page;
 
   created() {
-    this.page.reset();
-
-    this.page.name = this.$options.name;
-
     if (this.$options.page) {
-      Object.assign(this.page, this.$options.page);
+      this.$options.page.name = this.$options.page.name || this.$options.name;
+      Object.assign(this.page, Page.DEFAULT_CONFIG, this.$options.page);
     }
   }
 }
