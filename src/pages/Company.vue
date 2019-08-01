@@ -34,7 +34,7 @@
                     <a href="https://www.linkedin.com/in/sibbe-heijne/" title="LinkedIn">
                         LinkedIn
                     </a><br/>
-                    <a href="https://github.com/sheijne" title="Github">
+                    <a href="https://github.com/ovenwand" title="Github">
                         Github
                     </a>
                 </div>
@@ -51,6 +51,7 @@ import Page from '../mixins/Page';
 @Component({
   components: { Address },
   page: {
+    name: 'company',
     title: 'Company',
     background: '/images/background.png',
   },

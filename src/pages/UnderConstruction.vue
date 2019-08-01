@@ -1,8 +1,8 @@
 <template>
     <Container id="content">
-        <div class="under-construction">
+        <Row class="under-construction">
             Under construction
-        </div>
+        </Row>
     </Container>
 </template>
 

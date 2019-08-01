@@ -30,6 +30,7 @@ import Page from '../mixins/Page';
 @Component({
   components: { Teaser },
   page: {
+    name: 'portfolio',
     title: 'Portfolio',
   },
 })

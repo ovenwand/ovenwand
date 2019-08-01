@@ -103,6 +103,7 @@ import Page from '../mixins/Page';
 @Component({
   components: { Address },
   page: {
+    name: 'profile',
     title: 'Profile',
     background: '/images/background.png',
     avatar: true,
