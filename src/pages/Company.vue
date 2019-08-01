@@ -1,53 +1,45 @@
 <template>
-    <div class="company clearfix" :class="pageClasses" :style="pageStyles">
-        <Container id="header">
-            <Row>
-                <Col>
-                    <Header/>
-                </Col>
-            </Row>
-        </Container>
-
-        <Container id="content">
-            <Row id="intro">
-                <Col sm="6">
-                    <span class="heading-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit nec velit mattis dictum vitae ut tellus. Maecenas dignissim sed lectus vitae auctor. Morbi laoreet posuere erat, nec finibus dolor tincidunt eget.</span>
-                </Col>
-                <Col sm="2"></Col>
-                <Col sm="4" class="aside">
-                    <section>
-                        <b><span>&mdash;</span> <span>Development</span></b><br/>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit nec velit mattis dictum vitae ut tellus. Maecenas dignissim sed lectus vitae auctor. Morbi laoreet posuere erat, nec finibus dolor tincidunt eget.</span>
-                    </section>
-                    <section>
-                        <b><span>&mdash;</span> <span>Design</span></b><br/>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit nec velit mattis dictum vitae ut tellus. Maecenas dignissim sed lectus vitae auctor. Morbi laoreet posuere erat, nec finibus dolor tincidunt eget.</span>
-                    </section>
-                    <section>
-                        <b><span>&mdash;</span> <span>Consultancy</span></b><br/>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit nec velit mattis dictum vitae ut tellus. Maecenas dignissim sed lectus vitae auctor. Morbi laoreet posuere erat, nec finibus dolor tincidunt eget.</span>
-                    </section>
-                </Col>
-            </Row>
-            <Row id="contact">
-                <Col sm="6">
-                    <Address/>
+    <Container id="content" class="company clearfix">
+        <Row id="intro" padding-xs>
+            <Col sm="6" padding-xs>
+                <span class="heading-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit nec velit mattis dictum vitae ut tellus. Maecenas dignissim sed lectus vitae auctor. Morbi laoreet posuere erat, nec finibus dolor tincidunt eget.</span>
+            </Col>
+            <Col sm="3" padding-xs></Col>
+            <Col sm="3" class="aside" padding-xs>
+                <section>
+                    <b><span>Development</span> <span>&mdash;</span></b><br/>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit nec velit mattis dictum vitae ut tellus. Maecenas dignissim sed lectus vitae auctor. Morbi laoreet posuere erat, nec finibus dolor tincidunt eget.</span>
+                </section>
+                <section>
+                    <b><span>Design</span> <span>&mdash;</span></b><br/>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit nec velit mattis dictum vitae ut tellus. Maecenas dignissim sed lectus vitae auctor. Morbi laoreet posuere erat, nec finibus dolor tincidunt eget.</span>
+                </section>
+                <section>
+                    <b><span>Consultancy</span> <span>&mdash;</span></b><br/>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit nec velit mattis dictum vitae ut tellus. Maecenas dignissim sed lectus vitae auctor. Morbi laoreet posuere erat, nec finibus dolor tincidunt eget.</span>
+                </section>
+            </Col>
+        </Row>
+        <Row id="contact" padding-xs>
+            <Col sm="6" padding-xs>
+                <Address/>
+                <br/>
+                <div>
+                    <a href="mailto:info@ovenwand.com">info@ovenwand.com</a><br/>
                     <br/>
-                    Phone: <a href="tel:+31624217363">+31624217363</a>
-                    Email: <a href="mailto:info@ovenwand.com">info@ovenwand.com</a>
+                    KvK: 75344890<br/>
+                    BTW: NL219654797B01<br/>
                     <br/>
                     <a href="https://www.linkedin.com/in/sibbe-heijne/" title="LinkedIn">
                         LinkedIn
-                    </a>
+                    </a><br/>
                     <a href="https://github.com/sheijne" title="Github">
                         Github
                     </a>
-                </Col>
-            </Row>
-        </Container>
-
-        <Footer/>
-    </div>
+                </div>
+            </Col>
+        </Row>
+    </Container>
 </template>
 
 <script>
@@ -57,29 +49,52 @@ import Page from '../mixins/Page';
 
 @Component({
   components: { Address },
+  page: {
+    title: 'Company',
+    background: '/images/background.png',
+  },
 })
 export default class Company extends Mixins(Page)
 {
-  title = 'Company';
-  background = '/images/background.png';
 }
 </script>
 
 <style lang="scss">
+    @import "../scss/mixins";
+
     .page-company {
         #content {
-            margin-bottom: 120px;
-            margin-top: 140px;
+            margin-bottom: 80px;
+            margin-top: 92px;
+
+            @include screen-sm-and-up {
+                margin-bottom: 120px;
+                margin-top: 140px;
+            }
 
             > .row#intro {
-                margin-bottom: 120px;
+                @include screen-sm-and-up {
+                    margin-bottom: 120px;
+                }
+            }
+
+            > .row:not(:last-child) {
+                @include screen-xs {
+                    margin-bottom: 64px;
+                }
             }
 
             .aside {
+                margin-top: 80px;
+                margin-bottom: 28px;
                 text-align: right;
 
                 section:not(:last-child) {
                     margin-bottom: 52px;
+                }
+
+                @include screen-md-and-up {
+                    margin-top: 0;
                 }
             }
         }

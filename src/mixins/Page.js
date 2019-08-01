@@ -1,4 +1,4 @@
-import { Component, Vue, Watch } from 'vue-property-decorator';
+import { Component, Inject, Vue } from 'vue-property-decorator';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Container from '../components/Container';
@@ -16,45 +16,15 @@ import Col from '../components/Col';
 })
 export default class Page extends Vue
 {
-  title = null;
-  background = null;
-  _titleElement = null;
+  @Inject('page') page;
 
-  get pageClasses() {
-    const pageClasses = ['page'];
+  created() {
+    this.page.reset();
 
-    if (this.title) {
-      pageClasses.push(`page-${this.title.toLowerCase()}`);
-    }
+    this.page.name = this.$options.name;
 
-    return pageClasses;
-  }
-
-  get pageStyles() {
-    const pageStyles = {};
-
-    if (this.background) {
-      pageStyles.backgroundImage = `url(${this.background})`;
-      pageStyles.backgroundPosition = 'center';
-      pageStyles.backgroundSize = 'cover';
-      pageStyles.backgroundRepeat = 'no-repeat';
-    }
-
-    return pageStyles;
-  }
-
-  @Watch('title', { immediate: true })
-  onTitleChange(title) {
-    this.setTitle(title);
-  }
-
-    beforeCreate() {
-    this._titleElement = document.head.querySelector('title');
-  }
-
-  setTitle(title) {
-    if (this._titleElement) {
-      this._titleElement.textContent = title;
+    if (this.$options.page) {
+      Object.assign(this.page, this.$options.page);
     }
   }
 }

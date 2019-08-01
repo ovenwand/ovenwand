@@ -1,0 +1,13 @@
+@import "variables";
+
+.clearfix:after {
+  clear: both;
+  content: '';
+  display: table-cell;
+}
+.primary {
+  color: $primary;
+}
+.dim {
+  color: rgba($white, .4);
+}

@@ -1,48 +1,40 @@
 <template>
-    <div class="portfolio" :class="pageClasses" :style="pageStyles">
-        <Container id="header">
-            <Row>
-                <Col>
-                    <Header/>
-                </Col>
-            </Row>
-        </Container>
-
-        <Container id="content" fluid>
-            <Row fill>
-                <Col sm="6">
-                    <Teaser
-                        color="#29ABE2"
-                        logo="/images/portfolio/TalentChannel_Logo.png"
-                        image="/images/portfolio/TalentChannel_Frontstage.png"
-                        size="250x281"
-                    />
-                </Col>
-                <Col sm="6">
-                    <Teaser
-                        color="#C7B299"
-                        logo="/images/portfolio/MediaLab_Logo.png"
-                        image="/images/portfolio/MediaLab_Website.png"
-                    />
-                </Col>
-            </Row>
-        </Container>
-
-        <Footer id="footer"/>
-    </div>
+    <Container id="content" class="portfolio clearfix" fluid>
+        <Row fill>
+            <Col sm="6">
+                <Teaser
+                    link="/portfolio/talentchannel"
+                    color="#29ABE2"
+                    logo="/images/portfolio/TalentChannel_Logo.png"
+                    image="/images/portfolio/TalentChannel_Frontstage.png"
+                    size="250x281"
+                />
+            </Col>
+            <Col sm="6">
+                <Teaser
+                    link="/portfolio/medialab"
+                    color="#C7B299"
+                    logo="/images/portfolio/MediaLab_Logo.png"
+                    image="/images/portfolio/MediaLab_Website.png"
+                />
+            </Col>
+        </Row>
+    </Container>
 </template>
 
 <script>
-import { Component, Mixins } from 'vue-property-decorator';
+import { Component, Inject, Mixins } from 'vue-property-decorator';
 import Teaser from '../components/Teaser';
 import Page from '../mixins/Page';
 
 @Component({
   components: { Teaser },
+  page: {
+    title: 'Portfolio',
+  },
 })
 export default class Portfolio extends Mixins(Page)
 {
-  title = 'Portfolio';
 }
 </script>
 
