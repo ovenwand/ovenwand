@@ -1,6 +1,7 @@
 <template>
     <Container id="content" class="company clearfix">
         <Row id="intro" padding-xs>
+            <div class="under-construction">Under construction</div>
             <Col sm="6" padding-xs>
                 <span class="heading-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit nec velit mattis dictum vitae ut tellus. Maecenas dignissim sed lectus vitae auctor. Morbi laoreet posuere erat, nec finibus dolor tincidunt eget.</span>
             </Col>
@@ -73,8 +74,26 @@ export default class Company extends Mixins(Page)
             }
 
             > .row#intro {
+                position: relative;
+
                 @include screen-sm-and-up {
                     margin-bottom: 120px;
+                }
+
+                .under-construction {
+                    position: absolute;
+                    top: -12px;
+                    left: -12px;
+                    right: -12px;
+                    bottom: -12px;
+                    z-index: 1;
+                    background-color: rgba(35, 35, 35, 0.9);
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 69px;
+                    color: #f4f4f4;
                 }
             }
 

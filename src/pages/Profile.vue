@@ -11,7 +11,7 @@
         <Row id="intro" padding-xs>
             <Col md="7" padding-xs>
                 <span class="heading-1">
-                    I'm a Frontend Engineer located in Amsterdam specializing in web and mobile design and development, a dumbass and such...
+                    I'm a Frontend Engineer located in Amsterdam specializing in web and mobile design and development...
                 </span>
             </Col>
             <Col md="2" padding-xs></Col>

@@ -14,11 +14,11 @@ export default [
       },
       {
         path: 'talentchannel',
-        component: () => import('./pages/TalentChannel'),
+        component: () => import('./pages/UnderConstruction'),
       },
       {
         path: 'medialab',
-        component: () => import('./pages/MediaLab'),
+        component: () => import('./pages/UnderConstruction'),
       }
     ],
   },
