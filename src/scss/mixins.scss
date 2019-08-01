@@ -29,3 +29,27 @@
 	@content;
   }
 }
+
+@mixin screen-sm-and-up {
+  @media (min-width: #{$breakpoint-xs}) {
+	@content;
+  }
+}
+
+@mixin screen-md-and-up {
+  @media (min-width: #{$breakpoint-sm}) {
+	@content;
+  }
+}
+
+@mixin screen-lg-and-up {
+  @media (min-width: #{$breakpoint-md}) {
+	@content;
+  }
+}
+
+@mixin screen-xl-and-up {
+  @media (min-width: #{$breakpoint-lg}) {
+	@content;
+  }
+}

@@ -17,13 +17,24 @@ export default class Col extends Vue
   @Prop([Number, String]) md;
   @Prop([Number, String]) lg;
   @Prop([Number, String]) xl;
+
   @Prop(Boolean) padding;
+  @Prop(Boolean) paddingXs;
+  @Prop(Boolean) paddingSm;
+  @Prop(Boolean) paddingMd;
+  @Prop(Boolean) paddingLg;
+  @Prop(Boolean) paddingXl;
 
   cols = Col.COLS;
 
   get colClasses() {
     return {
       'col-padding': this.padding,
+      'col-padding-xs': this.paddingXs,
+      'col-padding-sm': this.paddingSm,
+      'col-padding-md': this.paddingMd,
+      'col-padding-lg': this.paddingLg,
+      'col-padding-xl': this.paddingXl,
     };
   }
 
@@ -85,9 +96,44 @@ export default class Col extends Vue
             max-width: var(--col-xl);
         }
 
-        .col-padding {
+        &.col-padding {
             padding-left: $container-padding;
             padding-right: $container-padding;
+        }
+
+        @include screen-xs {
+            &.col-padding-xs {
+                padding-left: $container-padding;
+                padding-right: $container-padding;
+            }
+        }
+
+        @include screen-sm {
+            &.col-padding-sm {
+                padding-left: $container-padding;
+                padding-right: $container-padding;
+            }
+        }
+
+        @include screen-md {
+            &.col-padding-md {
+                padding-left: $container-padding;
+                padding-right: $container-padding;
+            }
+        }
+
+        @include screen-lg {
+            &.col-padding-lg {
+                padding-left: $container-padding;
+                padding-right: $container-padding;
+            }
+        }
+
+        @include screen-xl {
+            &.col-padding-xl {
+                padding-left: $container-padding;
+                padding-right: $container-padding;
+            }
         }
     }
 </style>
