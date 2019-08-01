@@ -1,11 +1,11 @@
 <template>
-    <a class="teaser" :style="teaserStyles">
+    <router-link :to="link" class="teaser">
         <div class="teaser-background" :style="teaserBackground"></div>
         <div class="teaser-color" :style="teaserColor"></div>
         <div class="teaser-logo">
             <img :src="logo"/>
         </div>
-    </a>
+    </router-link>
 </template>
 
 <script>
@@ -14,9 +14,10 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class Teaser extends Vue
 {
+  @Prop({ type: String, required: true }) link;
   @Prop({ type: String, required: true }) color;
   @Prop({ type: String, required: true }) logo;
-  @Prop({ type: String, required: true }) image;
+  @Prop({ type: String }) image;
 
   get teaserBackground()
   {
@@ -35,6 +36,7 @@ export default class Teaser extends Vue
 </script>
 
 <style lang="scss">
+    @import "../scss/mixins";
     @import "../scss/variables";
 
     .teaser {
@@ -63,6 +65,10 @@ export default class Teaser extends Vue
             top: -6px;
             transform-origin: center;
             transition: 1s ease-in-out;
+
+            @include screen-xs {
+                background-size: cover;
+            }
         }
 
         .teaser-color {
@@ -73,6 +79,15 @@ export default class Teaser extends Vue
             align-items: center;
             display: flex;
             justify-content: center;
+
+            @include screen-xs {
+                img {
+                    height: auto;
+                    max-height: 33%;
+                    width: auto;
+                    max-width: 50%;
+                }
+            }
         }
 
         &:hover {
