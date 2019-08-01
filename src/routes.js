@@ -1,12 +1,26 @@
 export default [
   {
     path: '',
-    redirect: '/profile',
+    redirect: '/portfolio',
   },
   {
-    name: 'portfolio',
     path: '/portfolio',
-    component: () => import('./pages/Portfolio'),
+    component: { template: '<router-view></router-view>' },
+    children: [
+      {
+        name: 'portfolio',
+        path: '',
+        component: () => import('./pages/Portfolio'),
+      },
+      {
+        path: 'talentchannel',
+        component: () => import('./pages/TalentChannel'),
+      },
+      {
+        path: 'medialab',
+        component: () => import('./pages/MediaLab'),
+      }
+    ],
   },
   {
     name: 'profile',
