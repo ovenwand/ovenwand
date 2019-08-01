@@ -29,6 +29,7 @@ export default class Footer extends Vue
 
         span {
             font-size: 20px;
+            transition: color .2s ease;
         }
     }
 </style>

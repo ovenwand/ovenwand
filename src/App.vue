@@ -2,7 +2,9 @@
     <div id="app" :class="pageClasses" :style="pageStyles">
         <Header :avatar="page.avatar" :back="page.back"/>
 
-        <router-view/>
+        <transition name="fade" mode="out-in">
+            <router-view/>
+        </transition>
 
         <Footer/>
     </div>
@@ -15,6 +17,7 @@ import Container from './components/Container';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Row from './components/Row';
+import Page from './mixins/Page';
 
 @Component({
   components: {
@@ -27,15 +30,7 @@ import Row from './components/Row';
 })
 export default class App extends Vue
 {
-  @Provide('page') page = {
-    avatar: false,
-    back: false,
-    background: null,
-    darkText:false,
-    name: 'default',
-    reset: () => this.resetPage(),
-    title: null,
-  };
+  @Provide('page') page = { name: 'default', ...Page.DEFAULT_CONFIG };
 
   _titleElement = null;
 
@@ -67,18 +62,9 @@ export default class App extends Vue
     this._titleElement = document.head.querySelector('title');
   }
 
-  resetPage() {
-    this.page.avatar = false;
-    this.page.back = false;
-    this.page.background = null;
-    this.page.darkText = false;
-    this.page.name = 'default';
-    this.page.title = null;
-  }
-
   setTitle(title) {
-    if (this._titleElement) {
-      this._titleElement.textContent = title;
+    if (this._titleElement && title) {
+      this._titleElement.textContent = 'Ovenwand - ' + title;
     }
   }
 }

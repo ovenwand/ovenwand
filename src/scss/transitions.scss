@@ -1,4 +1,15 @@
 /**
+ * Fade
+ */
+.fade-enter-active, .fade-leave-active {
+  transition: .2s ease;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+/**
  * Morph
  */
 $morph-duration: .2s;
@@ -11,7 +22,7 @@ $morph-opacity: .1;
 }
 
 .morph-enter-active {
-  transition-delay: $morph-duration / 2;
+  transition-delay: $morph-duration;
 }
 
 .morph-enter, .morph-leave-to {

@@ -6,9 +6,9 @@
                     <div class="header-action">
                         <transition name="morph">
                             <template v-if="avatar">
-                                <a class="header-avatar" href="/" key="avatar">
+                                <router-link class="header-avatar" to="/" key="avatar">
                                     <img src="/images/avatar.png"/>
-                                </a>
+                                </router-link>
                             </template>
 
                             <template v-else-if="back">
@@ -112,6 +112,7 @@ export default class Header extends Vue
 
     .header-action svg {
         fill: $white;
+        transition: fill .2s ease;
     }
 
     .header-avatar {
@@ -130,7 +131,8 @@ export default class Header extends Vue
         pointer-events: all;
 
         a {
-            transition: font-weight .2s ease;
+            transition: .2s ease;
+            transition-property: color, font-weight;
         }
 
         + .navigation-item {
