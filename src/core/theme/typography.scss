@@ -1,0 +1,67 @@
+@import "variables";
+
+:root {
+  --font-default: #{$font-default};
+  --font-header: #{$font-header};
+  --root-font-size: #{$root-font-size};
+  --font-size: #{$font-size};
+}
+
+:global(html) {
+  font-size: var(--root-font-size);
+}
+
+:global(body) {
+  font-family: var(--font-default);
+  font-size: var(--font-size);
+}
+
+:global(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-header);
+}
+
+/**
+ * Utility
+ */
+:global(.display-1) {
+  font-family: var(--font-header);
+  font-size: 4.7rem;
+}
+
+:global(.display-2) {
+  font-family: var(--font-header);
+  font-size: 3.5rem;
+}
+
+:global(.display-3) {
+  font-family: var(--font-header);
+  font-size: 2rem;
+}
+
+:global(.text-align-left) {
+  text-align: left;
+}
+
+:global(.text-align-center) {
+  text-align: center;
+}
+
+:global(.text-align-right) {
+  text-align: right;
+}
+
+:global(.text-align-justify) {
+  text-align: justify;
+}
+
+:global(.text-primary) {
+  color: var(--primary);
+}
+
+:global(.text-secondary) {
+  color: var(--secondary);
+}
+
+:global(.text-dim) {
+  color: rgba($white, .6);
+}

@@ -1,0 +1,36 @@
+@import "variables";
+@import "mixins";
+
+:root {
+  --white: #{$white};
+  --white-alt: #{$white-alt};
+
+  --black: #{$black};
+  --black-alt: #{$black-alt};
+
+  --primary: #{$primary};
+  --primary-light: #{$primary-light};
+  --primary-dark: #{$primary-dark};
+
+  --secondary: #{$secondary};
+  --secondary-light: #{$secondary-light};
+  --secondary-dark: #{$secondary-dark};
+}
+
+:global(#app) {
+  min-height: 100vh;
+  padding-bottom: 5.4rem;
+  position: relative;
+}
+
+:global(.container) {
+  @include clearfix;
+}
+
+:global(main .row:not(:last-child)) {
+  margin-bottom: 6.4rem;
+
+  @include screen-gt-xs {
+    margin-bottom: 12rem;
+  }
+}

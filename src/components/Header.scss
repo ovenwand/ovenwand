@@ -1,0 +1,26 @@
+#app-header {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  padding: 1.2rem;
+  pointer-events: none;
+}
+
+.app-header-action {
+  pointer-events: all;
+
+  a {
+    display: block;
+    overflow: hidden;
+  }
+
+  :global(img), :global(svg) {
+    height: 6.4rem;
+    width: auto;
+  }
+
+  .app-header-back :global(svg) {
+    height: 4.4rem;
+    margin: 1rem;
+  }
+}

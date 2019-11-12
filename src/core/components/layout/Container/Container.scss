@@ -1,0 +1,33 @@
+@import "../variables";
+@import "../mixins";
+@import "variables";
+
+.container {
+  --container-padding: #{$container-padding};
+  --container-xs: #{$container-xs};
+  --container-sm: #{$container-sm};
+  --container-md: #{$container-md};
+  --container-lg: #{$container-lg};
+  --container-xl: #{$container-xl};
+
+  display: block;
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  transition: width .2s ease;
+  width: var(--container-xs);
+
+  @each $screen in $screens {
+    @include screen($screen) {
+      width: var(--container-#{$screen});
+    }
+  }
+
+  &.relative {
+    position: relative;
+  }
+
+  &.fluid {
+    width: 100%;
+  }
+}

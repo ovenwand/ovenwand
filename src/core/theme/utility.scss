@@ -1,0 +1,9 @@
+@import "mixins";
+
+:global(.clearfix) {
+  @include clearfix;
+}
+
+:global(.o-hidden) {
+  overflow: hidden;
+}

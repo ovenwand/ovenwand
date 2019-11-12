@@ -1,45 +1,30 @@
 {
-  "name": "ovenwand.com",
-  "version": "1.0.1",
-  "main": "index.js",
-  "author": "Ovenwand",
-  "license": "WTFPL",
-  "private": true,
+  "name": "TODO",
+  "description": "TODO",
+  "version": "0.0.1",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "build": "cross-env NODE_ENV=production webpack",
-    "analyze": "yarn build --profile --analyze"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-proposal-decorators": "^7.4.4",
-    "@babel/plugin-proposal-private-methods": "^7.4.4",
-    "@babel/preset-env": "^7.5.5",
-    "babel-loader": "^8.0.6",
-    "cross-env": "^5.2.0",
-    "css-loader": "^3.1.0",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.8.0",
-    "node-sass": "^4.12.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "postcss-loader": "^3.0.0",
-    "postcss-preset-env": "^6.7.0",
-    "sass-loader": "^7.1.0",
-    "svg-inline-loader": "^0.8.0",
-    "terser-webpack-plugin": "^1.4.1",
-    "vue-loader": "^15.7.1",
-    "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.38.0",
-    "webpack-bundle-analyzer": "^3.4.1",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "dev": "sapper dev",
+    "build": "sapper build",
+    "export": "sapper export",
+    "start": "node __sapper__/build",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "test": "run-p --race dev cy:run"
   },
   "dependencies": {
-    "core-js": "^3.1.4",
-    "vue": "^2.6.10",
-    "vue-class-component": "^7.1.0",
-    "vue-property-decorator": "^8.2.1",
-    "vue-router": "^3.0.7"
+    "compression": "^1.7.1",
+    "lodash": "^4.17.15",
+    "polka": "next",
+    "sirv": "^0.4.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0",
+    "npm-run-all": "^4.1.5",
+    "sapper": "^0.27.0",
+    "svelte": "^3.0.0",
+    "svelte-loader": "^2.9.0",
+    "svelte-preprocess-sass": "^0.2.0",
+    "svg-inline-loader": "^0.8.0",
+    "webpack": "^4.7.0"
   }
 }

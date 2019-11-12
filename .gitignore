@@ -1,4 +1,12 @@
+# os files
+.DS_Store
+
+# editor files
 .idea/
 
-node_modules/
+# project files
+/node_modules/
+/src/node_modules/@sapper/
 yarn-error.log
+/cypress/screenshots/
+/__sapper__/

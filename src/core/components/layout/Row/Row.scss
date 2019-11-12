@@ -1,0 +1,39 @@
+@import "../mixins";
+@import "../variables";
+
+@mixin row-padding {
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &.relative {
+    position: relative;
+  }
+
+  &.padding {
+    @include row-padding;
+  }
+
+  &.fill {
+    min-height: 100%;
+  }
+
+  @each $screen in $screens {
+    @include screen($screen) {
+      &.padding-#{$screen} {
+        @include row-padding;
+      }
+    }
+  }
+}
+
+:global(.container) > .row {
+  margin-left: calc(-1 * var(--container-padding));
+  margin-right: calc(-1 * var(--container-padding));
+}

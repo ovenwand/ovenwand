@@ -1,0 +1,59 @@
+@import "../core/components/layout/mixins";
+
+.teaser {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  .teaser-background,
+  .teaser-color,
+  .teaser-logo {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .teaser-background {
+    bottom: -.6rem;
+    filter: blur(6px);
+    left: -.6rem;
+    opacity: .8;
+    right: -.6rem;
+    top: -.6rem;
+    transform-origin: center;
+    transition: 1s ease-in-out;
+
+    @include screen-xs {
+      background-size: cover;
+    }
+  }
+
+  .teaser-color {
+    opacity: .8;
+  }
+
+  .teaser-logo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    @include screen-xs {
+      img {
+        height: auto;
+        max-height: 33%;
+        width: auto;
+        max-width: 50%;
+      }
+    }
+  }
+
+  &:hover {
+    .teaser-background {
+      transform: scale(1.2);
+    }
+  }
+}

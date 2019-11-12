@@ -1,0 +1,86 @@
+@import "variables";
+
+/**
+ * Since it's not possible to use CSS variables in media queries we'll have to use SCSS variables instead.
+ * https://www.w3.org/TR/css-variables-1/#using-variables
+ */
+
+@mixin screen-xs {
+  @media (min-width: 1px) and (max-width: #{$breakpoint-xs - 1}) {
+	@content;
+  }
+}
+
+@mixin screen-sm {
+  @media (min-width: $breakpoint-xs) and (max-width: #{$breakpoint-sm - 1}) {
+	@content;
+  }
+}
+
+@mixin screen-md {
+  @media (min-width: $breakpoint-sm) and (max-width: #{$breakpoint-md - 1}) {
+	@content;
+  }
+}
+
+@mixin screen-lg {
+  @media (min-width: $breakpoint-md) and (max-width: #{$breakpoint-lg - 1}) {
+	@content;
+  }
+}
+
+@mixin screen-xl {
+  @media (min-width: $breakpoint-lg) {
+	@content;
+  }
+}
+
+@mixin screen-gt-xs {
+  @media (min-width: #{$breakpoint-xs}) {
+	@content;
+  }
+}
+
+@mixin screen-gt-sm {
+  @media (min-width: #{$breakpoint-sm}) {
+	@content;
+  }
+}
+
+@mixin screen-gt-md {
+  @media (min-width: #{$breakpoint-md}) {
+	@content;
+  }
+}
+
+@mixin screen-gt-lg {
+  @media (min-width: #{$breakpoint-lg}) {
+	@content;
+  }
+}
+
+/**
+ * Since it's not possible to call mixins with dynamic names I made this util mixin,
+ * https://github.com/sass/sass/issues/626
+ */
+@mixin screen($name: xs) {
+  @if ($name == xs) {
+	@include screen-xs { @content; }
+  }
+
+  @if ($name == sm) {
+	@include screen-sm { @content; }
+  }
+
+  @if ($name == md) {
+	@include screen-md { @content; }
+  }
+
+  @if ($name == lg) {
+	@include screen-lg { @content; }
+  }
+
+  @if ($name == xl) {
+	@include screen-xl { @content; }
+  }
+}

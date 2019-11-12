@@ -1,0 +1,16 @@
+:global(html),
+:global(body) {
+  margin: 0;
+  padding: 0;
+}
+
+:global(*),
+:global(*:before),
+:global(*:after) {
+  box-sizing: border-box;
+}
+
+:global(img),
+:global(svg) {
+  display: block;
+}

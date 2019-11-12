@@ -1,0 +1,64 @@
+@import "../mixins";
+
+@mixin column-align($screen: '') {
+  @if $screen {
+    align-items: var(--col-align-#{$screen});
+    justify-content: var(--col-justify-#{$screen});
+  } @else {
+    align-items: var(--col-align);
+    justify-content: var(--col-justify);
+  }
+}
+
+@mixin column-width($screen) {
+  $width: var(--col-#{$screen});
+  flex: 0 0 $width;
+  max-width: $width;
+}
+
+@mixin column-padding {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.col {
+  --col-xs: 100%;
+  --col-sm: var(--col-xs);
+  --col-md: var(--col-sm);
+  --col-lg: var(--col-md);
+  --col-xl: var(--col-lg);
+
+  --col-align-xs: var(--col-align);
+  --col-align-sm: var(--col-align-xs);
+  --col-align-md: var(--col-align-sm);
+  --col-align-lg: var(--col-align-md);
+  --col-align-xl: var(--col-align-lg);
+
+  --col-justify-xs: var(--col-justify);
+  --col-justify-sm: var(--col-justify-xs);
+  --col-justify-md: var(--col-justify-sm);
+  --col-justify-lg: var(--col-justify-md);
+  --col-justify-xl: var(--col-justify-lg);
+}
+
+.col {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+
+  @include column-align;
+  @include column-width(xs);
+
+  @each $screen in $screens {
+    @include screen($screen) {
+      @include column-align($screen);
+      @include column-width($screen);
+
+      &.padding-#{$screen} {
+        @include column-padding;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import "../core/components/layout/variables";
+@import "../core/components/layout/mixins";
+
+.navigation-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-item {
+  pointer-events: all;
+
+  a {
+    text-decoration: none;
+    transition: .2s ease;
+    transition-property: color, font-weight;
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+
+  + .navigation-item {
+    margin-left: 24px;
+
+    @include screen-sm {
+      margin-left: 52px;
+    }
+  }
+}
