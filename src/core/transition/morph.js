@@ -1,7 +1,7 @@
 import { quadOut } from 'svelte/easing';
 
 const morph = (node, { duration = 150, out = null } ) => ({
-    delay: !out ? duration * .666 : 0,
+    delay: !out ? duration * .25 : 0,
     duration,
     css: (t, u) => {
         const eased = quadOut(t);
