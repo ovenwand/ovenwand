@@ -64,5 +64,5 @@
             {@html icon}
         </button>
     </Container>
-    {/if}}
+    {/if}
 </div>

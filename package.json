@@ -1,7 +1,8 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "ovenwand.com",
+  "description": "Ovenwand corporate website",
   "version": "0.0.1",
+  "license": "WTFPL",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build",

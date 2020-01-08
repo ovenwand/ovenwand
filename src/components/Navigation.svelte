@@ -10,17 +10,17 @@
 
 <ul class="navigation-list">
     <li class="navigation-item">
-        <a class={activeClass('portfolio')} href="portfolio" title="Portfolio">
+        <a class={activeClass('portfolio')} rel="prefetch" href="portfolio" title="Portfolio">
             Portfolio
         </a>
     </li>
     <li class="navigation-item">
-        <a class={activeClass('profile')} href="profile" title="Profile">
+        <a class={activeClass('profile')} rel="prefetch" href="profile" title="Profile">
             Profile
         </a>
     </li>
     <li class="navigation-item">
-        <a class={activeClass('company')} href="company" title="Company">
+        <a class={activeClass('company')} rel="prefetch" href="company" title="Company">
             Company
         </a>
     </li>
