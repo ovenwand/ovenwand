@@ -17,12 +17,14 @@ const preprocess = { style: sass() };
 
 const rules = [
 	{
+		test: /\.md$/,
+		use: require.resolve('./loaders/markdownPostLoader'),
+	},
+	{
 		test: /\.svg$/,
 		use: 'svg-inline-loader',
 	},
 ];
-
-console.log()
 
 module.exports = {
 	client: {

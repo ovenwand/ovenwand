@@ -14,6 +14,12 @@
 </script>
 
 <script>
+	import { action, fluid, BACK } from '@/store/header';
+	import { Page } from '@/core/components';
+
+	fluid.set(false);
+	action.set(BACK);
+
 	export let post;
 </script>
 
@@ -53,12 +59,22 @@
 	}
 </style>
 
-<svelte:head>
-	<title>{post.title}</title>
-</svelte:head>
+<Page title={post.title}>
+	<div class="post">
+		<h1 class="post--title">
+			{post.title}
+		</h1>
 
-<h1>{post.title}</h1>
+		<span class="post--author">
+			{post.author}
+		</span>
 
-<div class='content'>
-	{@html post.html}
-</div>
+		<span class="post--date" title={`Created at: ${post.created_at}`}>
+			{post.updated_at}
+		</span>
+
+		<div class="post--content">
+			{@html post.content}
+		</div>
+	</div>
+</Page>

@@ -4,6 +4,7 @@
     export let id = null;
     export let fluid = false;
     export let relative = false;
+
     let className = '';
     export { className as class };
 
