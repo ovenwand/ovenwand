@@ -1,8 +1,8 @@
 import Address from './Address.svelte';
-import Footer from './Footer.svelte';
-import Header from './Header.svelte';
+import Footer from './Footer';
+import Header from './Header';
 import Navigation from './Navigation';
-import Teaser from './Teaser.svelte';
-import UnderConstruction from './UnderConstruction.svelte';
+import Teaser from './Teaser';
+import UnderConstruction from './UnderConstruction';
 
 export { Address, Footer, Header, Navigation, Teaser, UnderConstruction };

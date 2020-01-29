@@ -10,7 +10,7 @@
 </script>
 
 <style lang="scss">
-    @import "Teaser.scss";
+    @import "Teaser";
 </style>
 
 <a class="teaser" {href}>

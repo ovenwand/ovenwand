@@ -5,16 +5,7 @@
 </script>
 
 <style lang="scss">
-    footer {
-        padding: 1.2rem;
-        pointer-events: none;
-
-    span {
-            font-size: 2rem;
-            transition: color .2s ease;
-            pointer-events: all;
-        }
-    }
+    @import "Footer";
 </style>
 
 <footer id="app-footer" class="text-align-center">

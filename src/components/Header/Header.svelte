@@ -4,7 +4,7 @@
     import { morph } from '@/core/transition';
     import { logo } from '@/store/brand';
     import { action, AVATAR, BACK, BRAND } from '@/store/header';
-    import backIcon from '@/../static/images/back.svg';
+    import backIcon from '../../../static/images/back.svg';
 
     export let avatar = false;
     export let back = false;
@@ -18,7 +18,7 @@
 </script>
 
 <style lang="scss">
-    @import "Header.scss";
+    @import "Header";
 </style>
 
 <Row>
@@ -26,7 +26,7 @@
         <header id="app-header">
             <div class="app-header-action">
                 {#if $action === AVATAR}
-                    <a class="app-header-avatar" href="." in:morph out:morph={{ out: true }}>
+                    <a class="app-header-avatar" href=".." in:morph out:morph={{ out: true }}>
                         <img src="/images/avatar.png" alt="Sibbe Heijne"/>
                     </a>
                 {:else if $action === BACK}
@@ -34,7 +34,7 @@
                         {@html backIcon}
                     </a>
                 {:else if $action === BRAND}
-                    <a class="app-header-brand" href="." in:morph out:morph={{ out: true }}>
+                    <a class="app-header-brand" href=".." in:morph out:morph={{ out: true }}>
                         {@html $logo}
                     </a>
                 {/if}
