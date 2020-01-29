@@ -6,7 +6,14 @@
 		const data = await res.json();
 
 		if (res.status === 200) {
-			return { post: data };
+			if (typeof Image !== 'undefined') {
+				const img = new Image();
+				img.src = data.featured_image;
+			}
+
+			return {
+				post: data,
+			};
 		} else {
 			this.error(res.status, data.message);
 		}
@@ -14,8 +21,10 @@
 </script>
 
 <script>
+	import { fade } from 'svelte/transition';
 	import { action, fluid, BACK } from '@/store/header';
 	import { Page } from '@/core/components';
+	import { delay, duration, send, receive } from './crossfade';
 
 	fluid.set(false);
 	action.set(BACK);
@@ -24,56 +33,42 @@
 </script>
 
 <style>
-	/*
-		By default, CSS is locally scoped to the component,
-		and any unused styles are dead-code-eliminated.
-		In this page, Svelte can't know which elements are
-		going to appear inside the {{{post.html}}} block,
-		so we have to use the :global(...) modifier to target
-		all elements inside .content
-	*/
-	.content :global(h2) {
-		font-size: 1.4em;
-		font-weight: 500;
-	}
-
-	.content :global(pre) {
-		background-color: #f9f9f9;
-		box-shadow: inset 1px 1px 5px rgba(0,0,0,0.05);
-		padding: 0.5em;
-		border-radius: 2px;
-		overflow-x: auto;
-	}
-
-	.content :global(pre) :global(code) {
-		background-color: transparent;
-		padding: 0;
-	}
-
-	.content :global(ul) {
-		line-height: 1.5;
-	}
-
-	.content :global(li) {
-		margin: 0 0 0.5em 0;
+	img {
+		width: 100%;
 	}
 </style>
 
 <Page title={post.title}>
 	<div class="post">
-		<h1 class="post--title">
+        <div class="post__header">
+            <div class="o-ratio" style="--ratio-x: 16; --ratio-y: 9;">
+				<img
+					class="o-ratio__content"
+					src={post.featured_image}
+					alt={post.title}
+					in:receive={{ key: `post.image.${post.slug}`, delay }}
+					out:send={{ key: `post.image.${post.slug}`, delay }}
+				/>
+			</div>
+		</div>
+
+		<h1
+			class="post__title"
+			in:receive={{ key: `post.title.${post.slug}`, delay }}
+			out:send={{ key: `post.title.${post.slug}`, delay }}
+		>
 			{post.title}
 		</h1>
 
-		<span class="post--author">
+		<span class="post__author" in:fade={{ delay: duration, duration: delay }} out:fade={{ duration: delay }}>
 			{post.author}
 		</span>
 
-		<span class="post--date" title={`Created at: ${post.created_at}`}>
+		<span class="post__date" title={`Created at: ${post.created_at}`} in:fade={{ delay: duration, duration: delay }} out:fade={{ duration: delay }}>
 			{post.updated_at}
 		</span>
 
-		<div class="post--content">
+		<div class="post__content" in:fade={{ delay: duration, duration: delay }} out:fade={{ duration: delay }}>
 			{@html post.content}
 		</div>
 	</div>

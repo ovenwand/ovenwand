@@ -19,6 +19,7 @@
 
   @each $screen in $screens {
     @include screen($screen) {
+      --container: var(--container-#{$screen});
       width: var(--container-#{$screen});
     }
   }

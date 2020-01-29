@@ -1,4 +1,5 @@
 export * from './createClassName';
-export * from './createStyles';
-export * from './string';
+export * from './createStyle';
+export * from './is';
 export * from './object';
+export * from './string';

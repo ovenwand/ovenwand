@@ -42,7 +42,6 @@
 
         button {
             @include button-clean;
-            pointer-events: all;
         }
 
         :global(svg) {
@@ -60,7 +59,7 @@
 
     {#if scrollY > 250}
     <Container id="back-to-top">
-        <button on:click={onButtonClick}>
+        <button class="o-interactive" on:click={onButtonClick}>
             {@html icon}
         </button>
     </Container>

@@ -1,0 +1,24 @@
+:global(.o-ratio) {
+  position: relative;
+  width: 100%;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-top: calc(var(--ratio-y) / var(--ratio-x) * 100%);
+    width: 100%;
+  }
+}
+
+:global(.o-ratio__content) {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+:global(img.o-ratio__content) {
+  object-fit: cover;
+  object-position: center;
+}

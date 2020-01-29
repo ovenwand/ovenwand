@@ -7,9 +7,11 @@
 </script>
 
 <script>
+	import { fade } from 'svelte/transition';
     import { Col } from '@/core/components';
     import Page from '../../core/components/Page.svelte';
 	import { action, fluid, BRAND } from '../../store/header';
+	import { delay, duration, send, receive } from './crossfade';
 
 	fluid.set(false);
 	action.set(BRAND);
@@ -17,49 +19,56 @@
 	export let posts;
 </script>
 
-<style>
-	ul {
-		margin: 0 0 1em 0;
-		line-height: 1.5;
+<style lang="scss">
+    .post-list {
+        margin: 0;
+		padding: 0;
 	}
 
-	.post-list-item {
+	.post-list__item {
         display: flex;
-	}
 
-	.post-list-item__image {
-		height: 100%;
-		object-fit: cover;
-        width: 100%;
+		&:not(:last-child) {
+            margin-bottom: 3.2rem;
+		}
 	}
 </style>
 
 <Page title="Blog" background="/images/background.png" lightText>
-	<h1>Recent posts</h1>
+    <div style="overflow: hidden;">
+		<h1 in:fade={{ delay: duration, duration: delay }} out:fade={{ duration: delay }}>Recent posts</h1>
 
-	<ul>
-		{#each posts as post}
-		<!-- we're using the non-standard `rel=prefetch` attribute to
-			tell Sapper to load the data for the page as soon as
-			the user hovers over the link or taps it, instead of
-			waiting for the 'click' event -->
-			<li class="post-list-item">
-                <Col sm={6}>
-					<a rel='prefetch' href="blog/{post.slug}">
-						{post.title}
-					</a>
-					<span>
-						{post.summary}
-					</span>
-				</Col>
-                <Col sm={6}>
-					<img
-						src={post.featured_image}
-						alt={post.title}
-						class="post-list-item__image"
-					/>
-				</Col>
-			</li>
-		{/each}
-	</ul>
+		<ul class="post-list">
+			{#each posts as post}
+				<li class="post-list__item">
+					<Col sm={6}>
+						<a rel="prefetch" href="blog/{post.slug}" title="Click to read the post">
+							<h3
+								in:receive={{ key: `post.title.${post.slug}`, delay }}
+								out:send={{ key: `post.title.${post.slug}`, delay }}
+							>
+								{post.title}
+							</h3>
+						</a>
+						<span in:fade={{ delay: duration, duration: delay }} out:fade={{ duration: delay }}>
+							{post.summary}
+						</span>
+					</Col>
+					<Col sm={6}>
+						<a rel="prefetch" href="blog/{post.slug}" title="Click to read the post">
+							<div class="o-ratio" style="--ratio-x: 16; --ratio-y: 9;">
+								<img
+									class="o-ratio__content"
+									src={post.featured_image}
+									alt={post.title}
+									in:receive={{ key: `post.image.${post.slug}`, delay }}
+									out:send={{ key: `post.image.${post.slug}`, delay }}
+								/>
+							</div>
+						</a>
+					</Col>
+				</li>
+			{/each}
+		</ul>
+	</div>
 </Page>

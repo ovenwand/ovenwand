@@ -15,6 +15,10 @@
 		pointer-events: none;
 	}
 
+	:global(#content-container) {
+        position: relative;
+	}
+
     :global(#footer-container) {
 		bottom: 0;
 		left: 0;

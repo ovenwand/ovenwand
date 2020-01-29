@@ -21,9 +21,25 @@
     `;
 </script>
 
+<style lang="scss">
+    @import "./layout/Container/variables";
+
+    #page {
+        height: 100%;
+    }
+
+    #page + #page {
+        position: absolute;
+        top: 0;
+        width: calc(100% - #{$container-padding * 2});
+    }
+</style>
+
 <svelte:head>
     <title>{title}</title>
     {@html style}
 </svelte:head>
 
-<slot/>
+<div id="page">
+    <slot/>
+</div>
