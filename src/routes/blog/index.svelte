@@ -68,6 +68,8 @@
 						</a>
 					</Col>
 				</li>
+			{:else}
+                <h3>No blog posts yet.</h3>
 			{/each}
 		</ul>
 	</div>
