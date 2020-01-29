@@ -1,4 +1,5 @@
 ---
+private: true
 author: Sibbe Heijne
 featured_image: /images/blog/Placeholder.com.png
 ---
