@@ -25,14 +25,12 @@ for (const year of years) {
 			const files = fs.readdirSync(getPostPath(year, month, day));
 
 			for (const fileName of files) {
-				const post = require(`@/routes/blog/_posts/${year}/${month}/${day}/${fileName}`).default;
-
-				if (post && !post.private) {
-					posts.push(post);
-				}
+				posts.push(require(`@/routes/blog/_posts/${year}/${month}/${day}/${fileName}`).default);
 			}
 		}
 	}
 }
 
-export default posts.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+const byDate = (a, b) => new Date(b.created_at) - new Date(a.created_at);
+
+export default posts.sort(byDate);

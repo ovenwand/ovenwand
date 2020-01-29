@@ -1,6 +1,8 @@
 const marked = require('marked');
 const kebabCase = require('lodash/kebabCase');
 
+const isDev = process.env.NODE_ENV === 'development';
+
 const slug = (str) => encodeURIComponent(kebabCase(str));
 
 const defaults = (data, key, fallback) => {
@@ -71,10 +73,13 @@ module.exports = function markdownPostLoader(source) {
     if (headerPart && typeof contentPart !== 'undefined') {
         const [summary, content] = getPostContent(contentPart);
         const header = getPostHeader(headerPart, summary, file);
-        post = { ...header, content };
+
+        if (isDev || !header.private) {
+            post = { ...header, content };
+        }
     }
 
     this.addDependency(file.path);
 
-    return `export default ${JSON.stringify(post && post.private ? { private: true } : post)}`;
+    return `export default ${JSON.stringify(post)}`;
 };
