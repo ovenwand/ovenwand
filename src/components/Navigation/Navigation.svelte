@@ -23,7 +23,7 @@
     $: activeClass = (url) => ~url.indexOf(segment) ? 'active' : '';
 </script>
 
-<style lang="sass">
+<style lang="scss">
     @import "./Navigation.scss";
 </style>
 

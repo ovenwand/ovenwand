@@ -17,7 +17,7 @@
     }
 </script>
 
-<style lang="sass">
+<style lang="scss">
     @import "Header.scss";
 </style>
 

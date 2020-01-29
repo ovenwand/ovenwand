@@ -13,7 +13,7 @@ const alias = {
 };
 const extensions = ['.mjs', '.js', '.json', '.svelte', '.html'];
 const mainFields = ['svelte', 'module', 'browser', 'main'];
-const preprocess = { style: sass() };
+const preprocess = { style: sass({}, { name: 'scss' }) };
 
 const rules = [
 	{

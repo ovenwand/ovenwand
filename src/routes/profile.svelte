@@ -6,7 +6,7 @@
     action.set(AVATAR);
 </script>
 
-<style lang="sass">
+<style lang="scss">
     @import "../core/components/layout/mixins.scss";
 
     section {

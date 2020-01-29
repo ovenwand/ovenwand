@@ -7,7 +7,7 @@
     action.set(BRAND);
 </script>
 
-<style lang="sass">
+<style lang="scss">
     @import "../core/components/layout/mixins.scss";
 
     :global(.page-company) {

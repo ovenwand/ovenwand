@@ -4,7 +4,7 @@
     const currentYear = (new Date()).getFullYear();
 </script>
 
-<style lang="sass">
+<style lang="scss">
     footer {
         padding: 1.2rem;
         pointer-events: none;

@@ -28,7 +28,7 @@
     }
 </script>
 
-<style lang="sass">
+<style lang="scss">
     @import "../theme/mixins.scss";
 
     :global(#back-to-top) {

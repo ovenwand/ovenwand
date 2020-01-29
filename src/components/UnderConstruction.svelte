@@ -1,4 +1,4 @@
-<style lang="sass">
+<style lang="scss">
     @import "../core/theme/variables";
 
     .under-construction-container {

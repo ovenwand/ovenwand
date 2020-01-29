@@ -29,7 +29,7 @@
     });
 </script>
 
-<style lang="sass">
+<style lang="scss">
     @import "Row.scss";
 </style>
 

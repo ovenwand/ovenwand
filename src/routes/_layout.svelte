@@ -6,7 +6,7 @@
 	export let segment;
 </script>
 
-<style lang="sass">
+<style lang="scss">
 	@import "../core/components/layout/mixins.scss";
 	@import "../core/theme/index.scss";
 

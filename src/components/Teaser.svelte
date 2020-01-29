@@ -9,7 +9,7 @@
     $: teaserColor = `background-color: ${color};`;
 </script>
 
-<style lang="sass">
+<style lang="scss">
     @import "Teaser.scss";
 </style>
 

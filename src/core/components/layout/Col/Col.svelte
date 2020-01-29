@@ -73,7 +73,7 @@
     }
 </script>
 
-<style lang="sass">
+<style lang="scss">
     @import "Col.scss";
 </style>
 
