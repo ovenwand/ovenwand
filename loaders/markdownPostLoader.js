@@ -76,5 +76,5 @@ module.exports = function markdownPostLoader(source) {
 
     this.addDependency(file.path);
 
-    return `export default ${JSON.stringify(post)}`;
+    return `export default ${JSON.stringify(post && post.private ? { private: true } : post)}`;
 };
