@@ -6,8 +6,6 @@
     import { action, AVATAR, BACK, BRAND } from '@/store/header';
     import backIcon from '../../../static/images/back.svg';
 
-    export let avatar = false;
-    export let back = false;
     export let segment;
 
     const backUrl = (typeof document !== 'undefined' && document.referrer) || 'portfolio';
