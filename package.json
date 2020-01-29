@@ -16,7 +16,7 @@
     "compression": "^1.7.1",
     "lodash": "^4.17.15",
     "marked": "^0.8.0",
-    "polka": "next",
+    "polka": "^1.0.0-next.11",
     "sirv": "^0.4.0"
   },
   "devDependencies": {
