@@ -46,16 +46,16 @@
 					class="o-ratio__content"
 					src={post.featured_image}
 					alt={post.title}
-					in:receive={{ key: `post.image.${post.slug}`, delay }}
-					out:send={{ key: `post.image.${post.slug}`, delay }}
+					in:receive={{ key: `post.image.${post.slug}` }}
+					out:send={{ key: `post.image.${post.slug}` }}
 				/>
 			</div>
 		</div>
 
 		<h1
 			class="post__title"
-			in:receive={{ key: `post.title.${post.slug}`, delay }}
-			out:send={{ key: `post.title.${post.slug}`, delay }}
+			in:receive={{ key: `post.title.${post.slug}` }}
+			out:send={{ key: `post.title.${post.slug}` }}
 		>
 			{post.title}
 		</h1>
