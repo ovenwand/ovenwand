@@ -1,4 +1,5 @@
-import { crossfade, fade } from 'svelte/transition';
+import { fade } from 'svelte/transition';
+import { crossfade } from '@/core/transition';
 
 export const duration = 300;
 export const delay = 100;
