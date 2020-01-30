@@ -37,8 +37,8 @@ const getPostHeader = (headerText, summary, stats) => {
 
     const entries = headerText
         .split('\n')
-        .filter(Boolean)
-        .map((v) => v.split(': '));
+        .map((v) => v.split(/: (.+)/))
+        .filter(Boolean);
 
     for (const [key, value] of entries) {
         header[key] = value;

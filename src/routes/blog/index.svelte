@@ -27,9 +27,14 @@
 
 	.post-list__item {
         display: flex;
+		flex-wrap: wrap;
 
 		&:not(:last-child) {
             margin-bottom: 3.2rem;
+		}
+
+		a {
+			text-decoration: none;
 		}
 	}
 </style>
@@ -41,7 +46,7 @@
 		<ul class="post-list">
 			{#each posts as post}
 				<li class="post-list__item">
-					<Col sm={6}>
+					<Col padding sm={6}>
 						<a rel="prefetch" href="blog/{post.slug}" title="Click to read the post">
 							<h3
 								in:receive={{ key: `post.title.${post.slug}` }}
@@ -50,9 +55,9 @@
 								{post.title}
 							</h3>
 						</a>
-						<span in:fade={{ delay: duration, duration: delay }} out:fade={{ duration: delay }}>
+						<p in:fade={{ delay: duration, duration: delay }} out:fade={{ duration: delay }}>
 							{post.summary}
-						</span>
+						</p>
 					</Col>
 					<Col sm={6}>
 						<a rel="prefetch" href="blog/{post.slug}" title="Click to read the post">

@@ -51,6 +51,10 @@
   @include column-align;
   @include column-width(xs);
 
+  &.padding {
+    @include column-padding;
+  }
+
   @each $screen in $screens {
     @include screen($screen) {
       @include column-align($screen);
