@@ -12,7 +12,7 @@
         'container': true,
         'fluid': fluid,
         'relative': relative,
-        [className]: className,
+        [className]: !!className,
     });
 </script>
 

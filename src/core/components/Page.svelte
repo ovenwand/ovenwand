@@ -1,7 +1,10 @@
 <script>
+    import { Container } from './layout';
+
     export let title = '';
     export let background = null;
     export let lightText = false;
+    export let fluid = false;
 
     const style = `
         <style>
@@ -31,7 +34,7 @@
     #page + #page {
         position: absolute;
         top: 0;
-        width: calc(100% - #{$container-padding * 2});
+        width: 100%;
     }
 </style>
 
@@ -41,5 +44,7 @@
 </svelte:head>
 
 <div id="page">
-    <slot/>
+    <Container id="content-container" {fluid}>
+        <slot/>
+    </Container>
 </div>

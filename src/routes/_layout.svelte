@@ -35,6 +35,7 @@
 	:global(main) {
 		margin-bottom: 8rem;
 		margin-top: 9.2rem;
+		position: relative;
 
 		@include screen-gt-sm {
 			margin-bottom: 12rem;
@@ -42,16 +43,26 @@
 		}
 	}
 
-	:global(.page-portfolio #content-container) {
-		 bottom: 0;
-		 left: 0;
-		 margin-bottom: 0;
-		 margin-top: 0;
-		 position: absolute;
-		 right: 0;
-		 top: 0;
-		 width: auto;
-		 z-index: 0;
+	:global(.page-portfolio) {
+        :global(main) {
+            position: static;
+		}
+
+		:global(#page) {
+			bottom: 0;
+			left: 0;
+			margin-bottom: 0;
+			margin-top: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: auto;
+			z-index: 0;
+		}
+
+		:global(#content-container) {
+			height: 100%;
+		}
 	}
 </style>
 
@@ -61,9 +72,7 @@
 	</Container>
 
 	<main>
-		<Container id="content-container">
-			<slot/>
-		</Container>
+		<slot/>
 	</main>
 
 	<Container id="footer-container">

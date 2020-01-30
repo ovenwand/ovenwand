@@ -7,7 +7,7 @@
 	fluid.set(false);
 </script>
 
-<Page title="Portfolio" background="/images/background.png" lightText>
+<Page title="Portfolio" background="/images/background.png" lightText fluid>
 	<Row fill>
 		<Col class="o-hidden" sm={6}>
 			<Teaser

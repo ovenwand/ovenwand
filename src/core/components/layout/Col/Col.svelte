@@ -45,7 +45,7 @@
         'padding-md': paddingMd,
         'padding-lg': paddingLg,
         'padding-xl': paddingXl,
-        [className]: className,
+        [className]: !!className,
     });
 
     $: colStyles = createStyle({
