@@ -3,7 +3,7 @@ export const isObject = (obj) => {
 };
 
 export const isFunction = (fn) => {
-    return typeof obj === 'function';
+    return typeof fn === 'function';
 };
 
 export default {
