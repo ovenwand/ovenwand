@@ -33,4 +33,4 @@ for (const year of years) {
 
 const byDate = (a, b) => new Date(b.created_at) - new Date(a.created_at);
 
-export default posts.sort(byDate);
+export default posts.filter(Boolean).sort(byDate);
