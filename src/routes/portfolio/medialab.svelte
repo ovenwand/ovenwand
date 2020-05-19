@@ -1,9 +1,11 @@
 <script>
     import { Col, Page, Row } from '@/core/components';
     import { action, fluid, BACK } from '@/store/header';
+    import { background } from '@/store/page';
 
     action.set(BACK);
     fluid.set(false);
+    background.set(null);
 </script>
 
 <Page title="MediaLab">

@@ -22,12 +22,14 @@
 
 <script>
 	import { fade } from 'svelte/transition';
-	import { action, fluid, BACK } from '@/store/header';
 	import { Page } from '@/core/components';
+	import { action, fluid, BACK } from '@/store/header';
+	import { background } from '@/store/page';
 	import { delay, duration, send, receive } from './crossfade';
 
 	fluid.set(false);
 	action.set(BACK);
+	background.set(null);
 
 	export let post;
 </script>

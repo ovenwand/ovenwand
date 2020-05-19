@@ -1,9 +1,23 @@
 <script>
     import { Col, Page, Row } from '@/core/components';
     import { action, fluid, AVATAR } from '@/store/header';
+    import { background } from '@/store/page';
 
     fluid.set(false);
     action.set(AVATAR);
+
+    background.set({
+        primary: {
+            r: -9,
+            x: -20,
+            y: -87,
+        },
+        secondary: {
+            r: 1,
+            x: 33,
+            y: 0,
+        },
+    });
 </script>
 
 <style lang="scss">

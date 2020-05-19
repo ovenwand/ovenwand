@@ -2,9 +2,11 @@
     import { Teaser } from '@/components';
 	import { Col, Container, Page, Row } from '@/core/components';
 	import { action, fluid, BRAND } from '@/store/header';
+	import { background } from '@/store/page';
 
 	action.set(BRAND);
 	fluid.set(false);
+	background.set(null);
 </script>
 
 <Page title="Portfolio" background="/images/background.png" lightText fluid>
