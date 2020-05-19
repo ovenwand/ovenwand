@@ -4,6 +4,7 @@
     import { quadIn } from 'svelte/easing';
     import { Container } from './layout/Container';
     import icon from '@/../static/images/back.svg';
+    import AppBackground from './AppBackground.svelte';
 
     export let segment;
 
@@ -31,6 +32,10 @@
 <style lang="scss">
     @import "../theme/mixins.scss";
 
+    #app {
+        overflow: hidden;
+    }
+
     :global(#back-to-top) {
         background: none;
         bottom: 5.4rem;
@@ -55,6 +60,8 @@
 <svelte:window bind:scrollY={scrollY}/>
 
 <div id="app" class="page-{segment}">
+    <AppBackground/>
+
     <slot/>
 
     {#if scrollY > 250}

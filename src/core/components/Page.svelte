@@ -2,17 +2,11 @@
     import { Container } from './layout';
 
     export let title = '';
-    export let background = null;
     export let lightText = false;
     export let fluid = false;
 
     const style = `
         <style>
-            #app {
-                background-image: ${background ? `url(${background})` : 'none'};
-                background-attachment: fixed;
-            }
-
             #app,
             a {
                 color: var(--${lightText ? 'white' : 'black'});
