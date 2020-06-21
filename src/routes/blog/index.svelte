@@ -9,22 +9,22 @@
 <script>
 	import { fade } from 'svelte/transition';
     import { Col, Page } from '@/core/components';
-	import { action, fluid, BRAND } from '@/store/header';
+	import { brand, fluid, BRAND } from '@/store/header';
 	import { background } from '@/store/page';
 	import { delay, duration, send, receive } from './crossfade';
 
 	fluid.set(false);
-	action.set(BRAND);
+	brand.set(BRAND);
 	background.set({
 		primary: {
-		    r: 2,
-			x: -89,
-			y: -3,
+		    r: 1.5,
+			x: -9730,
+			y: -1000,
 		},
 		secondary: {
 			r: 5,
 			x: 0,
-			y: -88,
+			y: -9170,
 		},
 	});
 

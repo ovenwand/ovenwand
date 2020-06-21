@@ -11,8 +11,11 @@
             a {
                 color: var(--${lightText ? 'white' : 'black'});
             }
-            svg {
+            svg:not(.feather) {
                 fill: var(--${lightText ? 'white' : 'black'});
+            }
+            svg.feather {
+                stroke: var(--${lightText ? 'white' : 'black'});
             }
         </style>
     `;

@@ -1,6 +1,8 @@
 @mixin button-clean {
   background: none;
   border: 0;
+  cursor: pointer;
+  display: inline-block;
   margin: 0;
   padding: 0;
 }

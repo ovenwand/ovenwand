@@ -1,9 +1,9 @@
 <script>
     import { Col, Page, Row } from '@/core/components';
-    import { action, fluid, BACK } from '@/store/header';
+    import { brand, fluid, BRAND } from '@/store/header';
     import { background } from '@/store/page';
 
-    action.set(BACK);
+    brand.set(BRAND);
     fluid.set(false);
     background.set(null);
 </script>

@@ -38,8 +38,8 @@
 		position: relative;
 
 		@include screen-gt-sm {
-			margin-bottom: 12rem;
-			margin-top: 14rem;
+			margin-bottom: 10rem;
+			margin-top: 12rem;
 		}
 	}
 

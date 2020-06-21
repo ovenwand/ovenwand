@@ -1,21 +1,21 @@
 <script>
     import { Address, UnderConstruction } from '@/components';
     import { Col, Container, Page, Row } from '@/core/components';
-    import { action, fluid, BRAND } from '@/store/header';
+    import { brand, fluid, BRAND } from '@/store/header';
     import { background } from '@/store/page';
 
     fluid.set(false);
-    action.set(BRAND);
+    brand.set(BRAND);
 
     background.set({
         primary: {
             r: 10,
-            x: 0,
-            y: -78,
+            x: -480,
+            y: -972,
         },
         secondary: {
             r: 33,
-            x: 10,
+            x: -150,
             y: 12,
         },
     });

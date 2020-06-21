@@ -1,10 +1,10 @@
 <script>
     import { Teaser } from '@/components';
 	import { Col, Container, Page, Row } from '@/core/components';
-	import { action, fluid, BRAND } from '@/store/header';
+	import { brand, fluid, BRAND } from '@/store/header';
 	import { background } from '@/store/page';
 
-	action.set(BRAND);
+	brand.set(BRAND);
 	fluid.set(false);
 	background.set(null);
 </script>
