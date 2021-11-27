@@ -1,6 +1,6 @@
 {
-  "name": "svelte-kit",
-  "version": "0.0.1",
+  "name": "ovenwand.com",
+  "version": "0.2.0",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
