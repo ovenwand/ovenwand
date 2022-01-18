@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 
-	import Footer from '$lib/footer';
+	import Footer from '$lib/components/footer';
 </script>
 
 <style>
