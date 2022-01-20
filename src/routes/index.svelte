@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-	import Logo from '$lib/components/logo';
+	import Logo from '$modules/app/components/logo';
 </script>
 
 <style>

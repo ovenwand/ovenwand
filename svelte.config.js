@@ -18,6 +18,7 @@ const config = {
 			resolve: {
 				alias: {
 					'$lib': path.resolve('src/lib'),
+					'$modules': path.resolve('src/modules'),
 				}
 			}
 		}
