@@ -1,4 +1,5 @@
-import adapter from '@sveltejs/adapter-vercel';
+import path from 'path';
+import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -10,8 +11,16 @@ const config = {
 	kit: {
 		adapter: adapter(),
 
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#root'
+		// hydrate the <div id="root"> element in src/app.html
+		target: '#root',
+
+		vite: {
+			resolve: {
+				alias: {
+					'$lib': path.resolve('src/lib'),
+				}
+			}
+		}
 	}
 };
 
