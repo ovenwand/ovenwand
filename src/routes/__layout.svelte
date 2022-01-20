@@ -10,8 +10,8 @@
 			background-position: center;
       background-size: cover;
 			display: grid;
-			height: 100vh;
 			grid-template-rows: 1fr 5rem;
+      min-height: 100vh;
 	}
 </style>
 
