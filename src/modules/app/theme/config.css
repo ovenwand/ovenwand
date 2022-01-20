@@ -1,3 +1,4 @@
+/* Color palette */
 :root {
     --ow-primary: #29ABE2;
     --ow-primary-light: #6EDDFF;
@@ -5,12 +6,15 @@
     --ow-secondary: #C7B299;
     --ow-secondary-light: #FAE4CA;
     --ow-secondary-dark: #96836B;
-    --ow-text-dark: #232323;
-    --ow-text-light: #F4F4F4;
-    --ow-background-dark: #232323;
-    --ow-background-light: #FAFAFA;
 }
 
+/* Theme colors */
+:root {
+    --ow-text: #232323;
+    --ow-text-inverse: #F4F4F4;
+    --ow-background: #FAFAFA;
+    --ow-background-inverse: #232323;
+}
 
 /* TODO Does it need a dark theme? */
 @media (prefers-color-scheme: dark) {

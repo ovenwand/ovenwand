@@ -1,0 +1,15 @@
+.bg-color {
+    background-color: var(--ow-background);
+}
+
+.bg-color-inverse {
+    background-color: var(--ow-background-inverse);
+}
+
+.txt-color {
+    color: var(--ow-text);
+}
+
+.txt-color-inverse {
+    color: var(--ow-text-inverse);
+}

@@ -1,3 +1,4 @@
-@import "$lib/theme/reset.css";
-@import "$lib/theme/typography.css";
-@import "$lib/theme/config.css";
+@import "$modules/app/theme/config.css";
+@import "$modules/app/theme/base/reset.css";
+@import "$modules/app/theme/base/typography.css";
+@import "$modules/app/theme/utils.css";
