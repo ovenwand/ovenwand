@@ -8,6 +8,10 @@
             control: { type: 'boolean' },
 						defaultValue: false,
 				},
+        gap: {
+            control: { type: 'boolean' },
+            defaultValue: true,
+        },
 				gapOutside: {
             control: { type: 'boolean' },
 						defaultValue: true,

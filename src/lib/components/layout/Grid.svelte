@@ -7,10 +7,12 @@
 	export let style: Record<string, unknown> = null;
 
   export let relative = false;
+  export let gap = true;
   export let gapOutside = true;
 
 	$: gridClassName = createClassName({
 			'grid--relative': relative,
+			'grid--gap': gap,
 			'grid--gap-outside': gapOutside,
       [className]: className,
 	});
@@ -22,7 +24,7 @@
 		 /* Configuration */
 		 :global(:root) {
 				 --ow-grid: 100vw;
-         --ow-gap: 1rem;
+         --ow-gap: 0rem;
 				 --ow-gap-outside: 0rem;
 				 --ow-columns: 12;
 				 --ow-column-offset: auto;
@@ -49,6 +51,10 @@
     .grid--relative {
         --ow-grid: 100%;
     }
+
+		.grid--gap {
+				--ow-gap: 1rem;
+		}
 
 		.grid--gap-outside {
 				--ow-gap-outside: var(--ow-gap);
