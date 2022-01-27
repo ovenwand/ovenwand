@@ -6,7 +6,7 @@ const bank = writable(0);
 
 const total = writable(0);
 
-const level = derived([bank, total], ([$bank, $total]) => {
+const level = derived([bank, total], () => {
 	return .9;
 });
 
@@ -15,8 +15,6 @@ const perSecond = derived(objects, ($objects) => {
 		return chiPerSecond + get(object.chiPerSecond);
 	}, 0);
 });
-
-// objects.subscribe(() => console.log('foo'))
 
 const perClick = derived(objects, ($objects) => {
 	return $objects.reduce((chiPerClick, object) => {
@@ -44,7 +42,7 @@ export const chi = {
 
 	perClick,
 
-	load(data: Save['chi']) {
+	load(data: Save['chi']): void {
 		bank.set(data.bank);
 		total.set(data.total);
 	},
@@ -53,7 +51,6 @@ export const chi = {
 		return {
 			bank: get(bank),
 			total: get(total),
-			level: get(level),
 		};
 	},
 

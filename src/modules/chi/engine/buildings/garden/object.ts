@@ -9,8 +9,8 @@ export const garden = {
     name: 'Garden',
     description: 'Some fancy garden',
     icon: seedling,
-    price(amount: number): number {
-        return Math.max(config.price, amount * Math.pow(1.25, amount));
+    price(): number {
+        return config.price;
     },
     stock(amount: number): number {
         return Math.max(0, config.stock - amount);

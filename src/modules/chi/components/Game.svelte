@@ -1,15 +1,12 @@
 <script lang="ts">
-    // import { format } from '$modules/chi/util/formatter';
     import { onInitialize, onLoad, onTick, save, Save } from '$modules/chi/engine';
     import { lifecycle, player } from '$modules/chi/store';
     import { Sidebar } from '$modules/chi/components/sidebar';
     import { Viewport } from '$modules/chi/components/viewport';
-    // import { Lily } from '$modules/chi/components/objects';
     import Engine from './Engine.svelte';
     import Map from './Map.svelte';
 
     const { loading } = lifecycle;
-    const { chi, objects } = player;
 
     export let view: string | false = false;
 
@@ -18,11 +15,11 @@
     });
 
     onInitialize((delta) => {
-        player.generate(delta);
+        player.tick(delta);
     });
 
     onTick((delta) => {
-        player.generate(delta);
+        player.tick(delta);
         save.autosave(delta, player.save);
     });
 
@@ -49,17 +46,7 @@
 			{#if $loading}
 				Loading...
 			{:else}
-				<Map>
-					<!--{format($chi.bank)}-->
-					<!--{format($chi.perSecond)}-->
-					<!--<button on:click={player.collect}>Generate</button>-->
-
-					<!--{#each $objects as object}-->
-					<!--	{#if object.type.id === 'lily'}-->
-					<!--		<Lily store={object}/>-->
-					<!--	{/if}-->
-					<!--{/each}-->
-				</Map>
+				<Map/>
 			{/if}
 		</Viewport>
 
