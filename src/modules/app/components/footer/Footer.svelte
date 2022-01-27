@@ -1,18 +1,22 @@
 <script lang="ts">
+	import { fade, fly } from 'svelte/transition';
+
 	const name = 'Ovenwand';
-	const currentYear = (new Date()).getFullYear();
+	const currentYear = new Date().getFullYear();
+	$: copyright = `&copy; ${name} ${currentYear}`;
 </script>
+
+<footer in:fly={{ delay: 250, duration: 300, y: 8 }} out:fly={{ duration: 200 }}>
+	<slot {copyright}>
+		<span class="display-4 weight-normal">{@html copyright}</span>
+	</slot>
+</footer>
 
 <style>
 	footer {
-			align-items: center;
-			color: white;
-      display: flex;
-			font-size: 1.5rem;
-			justify-content: center;
+		align-items: center;
+		color: white;
+		display: flex;
+		justify-content: center;
 	}
 </style>
-
-<footer>
-	<span>&copy; {name} {currentYear}</span>
-</footer>

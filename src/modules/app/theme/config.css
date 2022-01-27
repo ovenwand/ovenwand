@@ -1,24 +1,23 @@
 /* Color palette */
 :root {
-    --ow-primary: #29ABE2;
-    --ow-primary-light: #6EDDFF;
-    --ow-primary-dark: #007CB0;
-    --ow-secondary: #C7B299;
-    --ow-secondary-light: #FAE4CA;
-    --ow-secondary-dark: #96836B;
+	--ow-primary: #29abe2;
+	--ow-primary-light: #6eddff;
+	--ow-primary-dark: #007cb0;
+	--ow-secondary: #c7b299;
+	--ow-secondary-light: #fae4ca;
+	--ow-secondary-dark: #96836b;
 }
 
 /* Theme colors */
 :root {
-    --ow-text: #232323;
-    --ow-text-inverse: #F4F4F4;
-    --ow-background: #FAFAFA;
-    --ow-background-inverse: #232323;
+	--ow-text: #232323;
+	--ow-text-inverse: #f4f4f4;
+	--ow-background: #fafafa;
+	--ow-background-inverse: #232323;
 }
 
 /* TODO Does it need a dark theme? */
 @media (prefers-color-scheme: dark) {
-    :root {
-
-    }
+	:root {
+	}
 }
