@@ -9,7 +9,7 @@ const storage = createStorage<Save>(namespace, {
 	timestamp: 0,
 	chi: {
 		bank: 0,
-		total: 0
+		total: 0,
 	},
 	objects: []
 });

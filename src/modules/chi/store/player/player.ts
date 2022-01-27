@@ -3,6 +3,9 @@ import type { Readable, Writable } from 'svelte/store';
 import type { Save, GameObject } from '$modules/chi/engine';
 import { chi } from './chi';
 import { objects } from './objects';
+import { buildings } from './buildings';
+import * as objectMap from '$modules/chi/engine/objects';
+import * as buildingMap from '$modules/chi/engine/buildings';
 
 export interface Player extends Readable<{ chi: number; objects: GameObject[] }> {
 	chi: Writable<number>;
@@ -15,10 +18,24 @@ export interface Player extends Readable<{ chi: number; objects: GameObject[] }>
 	receive(object: GameObject): boolean;
 }
 
-const store = derived([chi, objects], ([$chi, $objects]) => ({
+const store = derived([chi, objects, buildings], ([$chi, $objects, $buildings]) => ({
 	chi: $chi,
-	objects: $objects
+	objects: $objects,
+	buildings: $buildings,
 }));
+
+const inventory = derived([buildings, objects], ([$buildings, $objects]) => {
+	const $inventory = [...Object.keys(objectMap), ...Object.keys(buildingMap)].reduce((inventory, id) => {
+		inventory[id] = 0;
+		return inventory;
+	}, {});
+
+	for (const object of [...$buildings, ...$objects]) {
+		$inventory[object.type.id]++;
+	}
+
+	return $inventory;
+});
 
 const onCollectHandlers = [];
 const onBuyHandlers = [];
@@ -47,6 +64,8 @@ export const player = {
 
 	objects,
 
+	inventory,
+
 	load(data: Save): void {
 		objects.load(data.objects);
 		chi.load(data.chi);
@@ -60,7 +79,8 @@ export const player = {
 		};
 	},
 
-	generate(delta: number): void {
+	tick(delta: number): void {
+		objects.tick(delta);
 		earn(objects.generate(delta));
 	},
 
@@ -70,7 +90,7 @@ export const player = {
 	},
 
 	buy(object: GameObject): boolean {
-		const $inventory = get(objects.inventory);
+		const $inventory = get(inventory);
 		const price = object.price($inventory[object.id]);
 
 		if (spend(price)) {
@@ -83,7 +103,7 @@ export const player = {
 	},
 
 	sell(object: GameObject): boolean {
-		const $inventory = get(objects.inventory);
+		const $inventory = get(inventory);
 		const price = object.price($inventory[object.id] - 1);
 
 		if (give(object)) {

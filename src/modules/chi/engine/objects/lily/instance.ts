@@ -9,7 +9,7 @@ export function createInstance(type: GameObject<LilyState>, state: LilyState = {
 
     function grow(delta: number) {
         growthCache.update(($cache) => {
-            const $growthRate = get(growthRate) * (delta / SECOND);
+            const $growthRate = get(growthRate) * 5 * (delta / SECOND);
             const $growthLimit = get(growthLimit);
             return Math.min($cache + $growthRate, $growthLimit);
         });
@@ -34,8 +34,11 @@ export function createInstance(type: GameObject<LilyState>, state: LilyState = {
             };
         },
 
-        generate(delta: number) {
+        tick(delta: number): void {
             grow(delta);
+        },
+
+        generate(delta: number) {
             const $chiPerSecond = get(chiPerSecond);
             return $chiPerSecond * (delta / 1000);
         },

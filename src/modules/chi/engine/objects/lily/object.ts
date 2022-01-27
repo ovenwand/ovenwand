@@ -11,7 +11,7 @@ export const lily = {
     description: 'Some pretty lily',
     icon: lilypads,
     price(amount: number): number {
-        return Math.max(config.price, config.price + (amount * Math.pow(1.3, amount)));
+        return config.price * (amount + 1);
     },
     stock(): number {
         return config.stock;

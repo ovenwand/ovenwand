@@ -8,7 +8,6 @@ export interface Save<S=unknown> {
 	chi: {
 		bank: number;
 		total: number;
-		level: number;
 	};
 	objects: ObjectSave<S>[];
 }

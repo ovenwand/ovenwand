@@ -15,6 +15,7 @@ export interface GameObjectInstance<S = unknown> extends Readable<{ chiPerClick:
 	chiPerSecond: Readable<number>;
 	chiPerClick: Readable<number>;
 	save(): S;
+	tick?(delta: number): void;
 	generate(delta: number): number;
 	collect(): number;
 }

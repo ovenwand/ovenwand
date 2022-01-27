@@ -1,56 +1,39 @@
 import { browser } from '$app/env';
 import { ticker } from '$modules/chi/util';
 import { save } from '$modules/chi/engine';
-import type { Save } from '$modules/chi/engine';
 import type { Hook, Initializer, Loader, Tick } from './model';
 
-function executeHooks(hooks: Hook[], ...params: unknown[]): void {
-	hooks.forEach((hook) => hook(...params));
+const hooks = {
+	beforeLoad: [],
+	onLoad: [],
+	beforeInitialize: [],
+	onInitialize: [],
+	beforeTick: [],
+	onTick: [],
+};
+
+function createHook(event: 'beforeLoad' | 'beforeInitialize' | 'beforeTick'): (hook: Hook) => void;
+function createHook(event: 'onLoad'): (hook: Loader) => void;
+function createHook(event: 'onInitialize'): (hook: Initializer) => void;
+function createHook(event: 'onTick'): (hook: Tick) => void;
+function createHook(event: keyof typeof hooks): (hook: Hook | Initializer | Loader | Tick) => void {
+	return (hook) => {
+		if (!~hooks[event].indexOf(hook)) {
+			hooks[event].push(hook);
+		}
+	};
 }
 
-const beforeLoadHooks: Hook[] = [];
-export function beforeLoad(hook: Hook): void {
-	beforeLoadHooks.push(hook);
+function executeHooks(event: keyof typeof hooks, ...params: unknown[]): void {
+	hooks[event].forEach((hook) => hook(...params));
 }
 
-const onLoadHooks: Loader[] = [];
-export function onLoad(hook: Loader): void {
-	onLoadHooks.push(hook);
-}
-
-const beforeInitializeHooks: Hook[] = [];
-export function beforeInitialize(hook: Hook): void {
-	beforeInitializeHooks.push(hook);
-}
-
-const onInitializeHooks: Initializer[] = [];
-export function onInitialize(initialize: Initializer): void {
-	onInitializeHooks.push(initialize);
-}
-
-const beforeTickHooks: Hook[] = [];
-export function beforeTick(hook: Hook) {
-	beforeTickHooks.push(hook);
-}
-
-const onTickHooks: Tick[] = [];
-export function onTick(tick: Tick): void {
-	onTickHooks.push(tick);
-}
-
-function load(): Save {
-	const data = save.load();
-	return data;
-}
-
-function initialize(data: Save): number {
-	const delta = Date.now() - data.timestamp;
-	return delta;
-}
-
-function tick(handler: (delta: number) => unknown): () => void {
-	return ticker(handler);
-}
+export const beforeLoad = createHook('beforeLoad');
+export const onLoad = createHook('onLoad');
+export const beforeInitialize = createHook('beforeInitialize');
+export const onInitialize = createHook('onInitialize');
+export const beforeTick = createHook('beforeTick');
+export const onTick = createHook('onTick');
 
 export function start(): () => void {
 	if (!browser) {
@@ -58,16 +41,16 @@ export function start(): () => void {
 	}
 
 	// Load
-	executeHooks(beforeLoadHooks);
-	const data = load();
-	executeHooks(onLoadHooks, data);
+	executeHooks('beforeLoad');
+	const data = save.load();
+	executeHooks('onLoad', data);
 
 	// Initialize
-	executeHooks(beforeInitializeHooks);
-	const delta = initialize(data);
-	executeHooks(onInitializeHooks, delta);
+	executeHooks('beforeInitialize');
+	const delta = Date.now() - data.timestamp;
+	executeHooks('onInitialize', delta);
 
 	// Start ticker
-	executeHooks(beforeTickHooks);
-	return tick((delta) => executeHooks(onTickHooks, delta));
+	executeHooks('beforeTick');
+	return ticker((delta) => executeHooks('onTick', delta));
 }
