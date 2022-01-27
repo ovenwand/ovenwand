@@ -1,18 +1,18 @@
 <script lang="ts">
-    import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
-    import { Column, Grid } from '$lib/components/layout';
+	import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
+	import { Column, Grid } from '$lib/components/layout';
 
-    const argTypes = {
-        columns: {
-            control: { type: 'number' },
-				},
-        offset: {
-            control: { type: 'number' },
-				},
-    };
+	const argTypes = {
+		columns: {
+			control: { type: 'number' }
+		},
+		offset: {
+			control: { type: 'number' }
+		}
+	};
 </script>
 
-<Meta {argTypes} title="Library/Layout/Column" parameters={{ layout: 'fullscreen' }}/>
+<Meta {argTypes} title="Library/Layout/Column" parameters={{ layout: 'fullscreen' }} />
 
 <Template let:args>
 	<Grid class="bg-color-inverse" relative>
@@ -26,10 +26,10 @@
 	</Grid>
 </Template>
 
-<Story name="Default"/>
+<Story name="Default" />
 
-<Story name="Columns" args={{ columns: 6 }}/>
+<Story name="Columns" args={{ columns: 6 }} />
 
-<Story name="Offset" args={{ columns: 6, offset: 6 }}/>
+<Story name="Offset" args={{ columns: 6, offset: 6 }} />
 
-<Story name="Breakpoints" template="breakpoints" args={{ columns: { md: 6 } }}/>
+<Story name="Breakpoints" template="breakpoints" args={{ columns: { md: 6 } }} />

@@ -1,31 +1,31 @@
 <script lang="ts">
-		import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
-    import Grid from './Grid.svelte';
-    import Column from './Column.svelte';
+	import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
+	import Grid from './Grid.svelte';
+	import Column from './Column.svelte';
 
-    const argTypes = {
-        relative: {
-            control: { type: 'boolean' },
-						defaultValue: false,
-				},
-        gap: {
-            control: { type: 'boolean' },
-            defaultValue: true,
-        },
-				gapOutside: {
-            control: { type: 'boolean' },
-						defaultValue: true,
-				},
-				class: {
-            control: { type: 'text' },
-				},
-				style: {
-            control: { type: 'object' },
-				},
-		};
+	const argTypes = {
+		relative: {
+			control: { type: 'boolean' },
+			defaultValue: false
+		},
+		gap: {
+			control: { type: 'boolean' },
+			defaultValue: true
+		},
+		gapOutside: {
+			control: { type: 'boolean' },
+			defaultValue: true
+		},
+		class: {
+			control: { type: 'text' }
+		},
+		style: {
+			control: { type: 'object' }
+		}
+	};
 </script>
 
-<Meta title="Library/Layout/Grid" parameters={{ layout: 'fullscreen' }} {argTypes}/>
+<Meta title="Library/Layout/Grid" parameters={{ layout: 'fullscreen' }} {argTypes} />
 
 <Template let:args>
 	<Grid {...args} class="bg-color-inverse">
@@ -37,7 +37,7 @@
 	</Grid>
 </Template>
 
-<Story name="Default"/>
+<Story name="Default" />
 
 <Story name="Relative">
 	<Grid relative class="bg-color-inverse">
