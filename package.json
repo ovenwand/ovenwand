@@ -20,10 +20,13 @@
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
 		"storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 --no-open",
-		"storybook:build": "NODE_OPTIONS=--openssl-legacy-provider build-storybook"
+		"storybook:build": "NODE_OPTIONS=--openssl-legacy-provider build-storybook",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.17.0",
+		"@commitlint/cli": "^16.1.0",
+		"@commitlint/config-conventional": "^16.0.0",
 		"@ovenwand/svelte-sidebar": "^0.0.5",
 		"@storybook/addon-actions": "^6.5.0-alpha.36",
 		"@storybook/addon-essentials": "^6.5.0-alpha.36",
@@ -39,6 +42,8 @@
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-storybook": "^0.5.6",
 		"eslint-plugin-svelte3": "^3.4.0",
+		"husky": "^7.0.4",
+		"lint-staged": "^12.3.3",
 		"prettier": "^2.5.1",
 		"prettier-plugin-svelte": "^2.6.0",
 		"storybook-builder-vite": "^0.1.15",
@@ -48,5 +53,9 @@
 		"svelte-preprocess": "^4.10.2",
 		"tslib": "^2.3.1",
 		"typescript": "^4.5.5"
+	},
+	"lint-staged": {
+		"*.{ts,svelte}": "eslint --cache --fix",
+		"*.{ts,svelte,css,md}": "prettier --write"
 	}
 }
