@@ -1,6 +1,7 @@
 import { derived, writable } from 'svelte/store';
 import type { Readable, Writable } from 'svelte/store';
 import { config } from './config';
+import type { GardenState } from './model';
 
 export interface GardenStore {
     chiPerClick: Writable<number>;
@@ -8,7 +9,7 @@ export interface GardenStore {
     store: Readable<{ chiPerClick: number, chiPerSecond: number }>;
 }
 
-export function createStore(): GardenStore {
+export function createStore(state: GardenState): GardenStore {
     const chiPerSecond = writable(config.generationRate);
     const chiPerClick = writable(config.collectionRate);
 

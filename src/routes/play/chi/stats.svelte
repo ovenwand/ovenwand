@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Column, Grid } from '$lib/components/layout';
 	import { format } from '$modules/chi/util/formatter';
-	import { player } from '$modules/chi/store';
+	import { player } from '$modules/chi/engine/player';
 	const { chi } = player;
 </script>
 

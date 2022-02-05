@@ -1,49 +1,46 @@
 <script lang="ts">
-    import { onInitialize, onLoad, onTick, save, Save } from '$modules/chi/engine';
-    import { lifecycle, player } from '$modules/chi/store';
+    import { save, Save } from '$modules/chi/engine';
+    import { player } from '$modules/chi/engine/player';
+    import { lifecycle } from '$modules/chi/engine/lifecycle/store';
     import { Sidebar } from '$modules/chi/components/sidebar';
     import { Viewport } from '$modules/chi/components/viewport';
     import Engine from './Engine.svelte';
     import Map from './Map.svelte';
 
-    const { loading } = lifecycle;
-
     export let view: string | false = false;
 
-    onLoad((data) => {
+    function onLoad({ detail: { data, delta } }) {
         player.load(data);
-    });
-
-    onInitialize((delta) => {
         player.tick(delta);
-    });
 
-    onTick((delta) => {
-        player.tick(delta);
-        save.autosave(delta, player.save);
-    });
+        player.on('collect', () => {
+            console.log('onPlayerCollect');
+            save.persist(player.save());
+        });
 
-    player.onCollect(() => {
-        save.persist(player.save());
-    });
+        player.on('buy', () => {
+            save.persist(player.save());
+        });
 
-    player.onBuy(() => {
-        save.persist(player.save());
-    });
+        player.on('sell', () => {
+            save.persist(player.save());
+        });
 
-    player.onSell(() => {
-        save.persist(player.save());
-    });
+        save.onWipe((data: Save) => {
+            player.load(data);
+        });
+		}
 
-    save.onWipe((data: Save) => {
-        player.load(data);
-    });
+	 function onTick({ detail: { delta } }) {
+       player.tick(delta);
+       save.autosave(delta, player.save);
+   }
 </script>
 
-<Engine>
+<Engine on:load={onLoad} on:tick={onTick}>
 	<div class="game grid h-screen w-max-screen o-hidden">
 		<Viewport>
-			{#if $loading}
+			{#if ['idle', 'loading'].includes($lifecycle)}
 				Loading...
 			{:else}
 				<Map/>
@@ -54,7 +51,7 @@
 			<slot name="navigation"/>
 
 			<svelte:fragment slot="expand">
-				{#if $loading}
+				{#if ['idle', 'loading'].includes($lifecycle)}
 					Loading...
 				{:else}
 					<slot name="view"/>

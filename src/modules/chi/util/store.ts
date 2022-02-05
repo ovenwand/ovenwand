@@ -2,9 +2,9 @@ import type { Readable } from 'svelte/store';
 import { deep } from '$lib/util/svelte/store';
 import type { GameObject, GameObjectInstance } from '$modules/chi/engine';
 
-export interface ObjectStore<State, Type extends GameObject<State>, Store extends GameObjectInstance<State>> extends Readable<Store[]> {
+export interface ObjectStore<State, Type extends GameObject<State> = GameObject<State>, Store extends GameObjectInstance<State> = GameObjectInstance<State>> extends Readable<Store[]> {
     clear(): void;
-    add(object: Type, state?: State): boolean;
+    add(instance: Store): boolean;
     remove(object: Type): boolean;
     map<R>(callback: (object: Store) => R): R[];
     forEach(callback: (object: Store) => unknown): void;
@@ -18,8 +18,7 @@ export function createObjectStore<State, Type extends GameObject<State>>(objects
 
         clear: store.clear,
 
-        add(object, state?): boolean {
-            const instance = object.createInstance(state);
+        add(instance): boolean {
             store.add(instance);
             return true;
         },

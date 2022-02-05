@@ -1,10 +1,11 @@
 import { get } from 'svelte/store';
 import { SECOND } from '$modules/chi/util';
 import type { GameObject, GameObjectInstance } from '$modules/chi/engine';
+import type { Player } from '$modules/chi/engine/player';
 import type { LilyState } from './model';
 import { createStore } from './store';
 
-export function createInstance(type: GameObject<LilyState>, state: LilyState = { growthCache: 0 }): GameObjectInstance<LilyState> {
+export function createInstance(player: Player, type: GameObject<LilyState>, state: LilyState = { growthCache: 0 }): GameObjectInstance<LilyState> {
     const { chiPerClick, chiPerSecond, growthCache, growthRate, growthLimit, store } = createStore(state);
 
     function grow(delta: number) {
