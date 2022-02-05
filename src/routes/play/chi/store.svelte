@@ -2,9 +2,9 @@
     import { fade } from 'svelte/transition';
     import { Column, Grid } from '$lib/components/layout';
     import { Icon } from '$lib/components/icon';
-    import { player } from '$modules/chi/store';
     import { format } from '$modules/chi/util/formatter';
     import * as objectMap from '$modules/chi/engine/objects';
+    import { player } from '$modules/chi/engine/player';
 
     const { inventory } = player;
 
@@ -14,10 +14,10 @@
 <Grid in={[fade, { delay: 300 }]} out={[fade, { duration: 200 }]} relative>
 	{#each objects as object}
 		{@const inventoryCount = $inventory[object.id]}
-		{@const canBuy = object.stock(inventoryCount) <= 0}
-		{@const buyPrice = object.price(inventoryCount)}
+		{@const canBuy = object.stock(player, inventoryCount) <= 0}
+		{@const buyPrice = object.price(player, inventoryCount)}
 		{@const canSell = $inventory[object.id] <= 0}
-		{@const sellPrice = object.price(inventoryCount - 1) * 0.25}
+		{@const sellPrice = object.price(player, inventoryCount - 1) * 0.25}
 
 		<Column class="flex">
 			<Icon>{@html object.icon}</Icon>

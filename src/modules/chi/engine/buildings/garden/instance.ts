@@ -1,10 +1,11 @@
 import { get } from 'svelte/store';
 import { SECOND } from '$modules/chi/util';
 import type { GameObject, GameObjectInstance } from '$modules/chi/engine';
+import type { Player } from '$modules/chi/engine/player';
 import { createStore } from './store';
 import type { GardenState } from './model';
 
-export function createInstance(type: GameObject<GardenState>, state: GardenState = {}): GameObjectInstance<GardenState> {
+export function createInstance(player: Player, type: GameObject<GardenState>, state: GardenState = {}): GameObjectInstance<GardenState> {
     const { chiPerClick, chiPerSecond, store } = createStore(state);
 
     return {

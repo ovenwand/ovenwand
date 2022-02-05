@@ -1,28 +1,49 @@
-import { derived, get, writable } from 'svelte/store';
+import { derived, get, Readable, Writable, writable } from 'svelte/store';
 import type { Save } from '$modules/chi/engine';
-import { objects } from '$modules/chi/store/player/objects';
+import { objects } from './objects';
 
-const bank = writable(0);
+export interface ChiState {
+	bank: number;
+	total: number;
+	level: number;
+	perSecond: number;
+	perClick: number;
+}
 
-const total = writable(0);
+export interface ChiStore extends Readable<ChiState> {
+	bank: Writable<number>;
+	total: Writable<number>;
+	level: Readable<number>;
+	perSecond: Readable<number>;
+	perClick: Readable<number>;
 
-const level = derived([bank, total], () => {
+	load(data: Save['chi']): void;
+	save(): Save['chi'];
+	add(amount: number): boolean;
+	subtract(amount: number): boolean;
+}
+
+const bank: ChiStore['bank'] = writable(0);
+
+const total: ChiStore['total'] = writable(0);
+
+const level: ChiStore['level'] = derived([bank, total], () => {
 	return .9;
 });
 
-const perSecond = derived(objects, ($objects) => {
+const perSecond: ChiStore['perSecond'] = derived(objects, ($objects) => {
 	return $objects.reduce((chiPerSecond, object) => {
 		return chiPerSecond + get(object.chiPerSecond);
 	}, 0);
 });
 
-const perClick = derived(objects, ($objects) => {
+const perClick: ChiStore['perClick'] = derived(objects, ($objects) => {
 	return $objects.reduce((chiPerClick, object) => {
 		return chiPerClick + get(object.chiPerClick);
 	}, 1);
 });
 
-const chiStore = derived(
+const chiStore: Readable<ChiState> = derived(
 	[bank, total, level, perSecond, perClick],
 	([$bank, $total, $level, $perSecond, $perClick]) => ({
 		bank: $bank,
@@ -33,10 +54,14 @@ const chiStore = derived(
 	})
 );
 
-export const chi = {
+export const chi: ChiStore = {
 	subscribe: chiStore.subscribe,
 
+	bank,
+
 	total,
+
+	level,
 
 	perSecond,
 

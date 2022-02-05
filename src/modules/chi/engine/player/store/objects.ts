@@ -1,34 +1,35 @@
 import { createObjectStore } from '$modules/chi/util';
-import type { Save } from '$modules/chi/engine';
+import type { ObjectStore } from '$modules/chi/util';
+import type { GameObjectLifecycle, Save } from '$modules/chi/engine';
 import * as objectMap from '$modules/chi/engine/objects';
 
 const store = createObjectStore([]);
 
-export const objects = {
-    subscribe: store.subscribe,
-    add: store.add,
-    remove: store.remove,
+export const objects: GameObjectLifecycle<Save['objects']> & ObjectStore<unknown> = {
+    ...store,
 
-    load(data: Save['objects']): void {
+    load(player, data) {
         store.clear();
 
-        for (const object of data) {
-            store.add(objectMap[object.type], object.state);
+        for (const { type, state } of data) {
+            const object = objectMap[type];
+            const instance = object.createInstance(player, state);
+            store.add(instance);
         }
     },
 
-    save(): Save['objects'] {
+    save() {
         return store.map((object) => ({
             type: object.type.id,
             state: object.save(),
         }));
     },
 
-    tick(delta: number): void {
+    tick(delta) {
         store.forEach((instance) => instance.tick && instance.tick(delta));
     },
 
-    generate(delta: number): number {
+    generate(delta) {
         let generated = 0;
 
         store.forEach((instance) => {
@@ -38,7 +39,7 @@ export const objects = {
         return generated;
     },
 
-    collect(): number {
+    collect() {
         let collected = 0;
 
         store.forEach((instance) => {

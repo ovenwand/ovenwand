@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { player } from '$modules/chi/store';
+    import { player } from '$modules/chi/engine/player';
     import { format } from '$modules/chi/util';
     import { Lily } from '$modules/chi/components/objects';
     const { chi, objects } = player;
