@@ -29,7 +29,7 @@ const bank: ChiStore['bank'] = writable(0);
 const total: ChiStore['total'] = writable(0);
 
 const level: ChiStore['level'] = derived([bank, total], () => {
-	return .9;
+	return 0.9;
 });
 
 const perSecond: ChiStore['perSecond'] = derived(objects, ($objects) => {
@@ -76,7 +76,7 @@ export const chi: ChiStore = {
 	save(): Save['chi'] {
 		return {
 			bank: get(bank),
-			total: get(total),
+			total: get(total)
 		};
 	},
 

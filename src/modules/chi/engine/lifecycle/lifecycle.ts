@@ -7,7 +7,7 @@ const hooks = {
 	beforeLoad: [],
 	onLoad: [],
 	beforeTick: [],
-	onTick: [],
+	onTick: []
 };
 
 function createHook(event: 'beforeLoad' | 'beforeTick'): (hook: Hook) => void;

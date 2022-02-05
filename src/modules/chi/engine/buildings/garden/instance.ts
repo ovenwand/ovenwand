@@ -3,29 +3,32 @@ import { SECOND } from '$modules/chi/util';
 import type { GameObject, GameObjectInstance } from '$modules/chi/engine';
 import type { Player } from '$modules/chi/engine/player';
 import { createStore } from './store';
-import type { GardenState } from './model';
 
-export function createInstance(player: Player, type: GameObject<GardenState>, state: GardenState = {}): GameObjectInstance<GardenState> {
-    const { chiPerClick, chiPerSecond, store } = createStore(state);
+export function createInstance(
+	player: Player,
+	type: GameObject,
+	state: {} = {}
+): GameObjectInstance<{}> {
+	const { chiPerClick, chiPerSecond, store } = createStore(state);
 
-    return {
-        type,
+	return {
+		type,
 
-        subscribe: store.subscribe,
+		subscribe: store.subscribe,
 
-        chiPerClick,
-        chiPerSecond,
+		chiPerClick,
+		chiPerSecond,
 
-        save(): GardenState {
-            return {};
-        },
+		save(): {} {
+			return {};
+		},
 
-        generate(delta: number): number {
-            return get(chiPerSecond) * (delta / SECOND);
-        },
+		generate(delta: number): number {
+			return get(chiPerSecond) * (delta / SECOND);
+		},
 
-        collect(): number {
-            return get(chiPerClick);
-        },
-    };
+		collect(): number {
+			return get(chiPerClick);
+		}
+	};
 }

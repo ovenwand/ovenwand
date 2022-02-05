@@ -14,7 +14,7 @@
 	<Logo />
 </section>
 
-<style>
+<style lang="postcss">
 	section {
 		align-items: center;
 		display: flex;

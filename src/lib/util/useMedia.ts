@@ -1,4 +1,5 @@
 import { derived, writable } from 'svelte/store';
+import type { Readable, Writable } from 'svelte/store';
 import { onMount } from 'svelte';
 
 const breakpoints = {
@@ -8,13 +9,13 @@ const breakpoints = {
 	xl: 1920
 };
 
-const breakpoint = writable('xs');
-const orientation = writable('portrait');
-const xs = derived(breakpoint, matchBreakpoint('xs'));
-const sm = derived(breakpoint, matchBreakpoint('sm'));
-const md = derived(breakpoint, matchBreakpoint('md'));
-const lg = derived(breakpoint, matchBreakpoint('lg'));
-const xl = derived(breakpoint, matchBreakpoint('xl'));
+const breakpoint: UseMedia['breakpoint'] = writable('xs');
+const orientation: UseMedia['orientation'] = writable('portrait');
+const xs: UseMedia['xs'] = derived(breakpoint, matchBreakpoint('xs'));
+const sm: UseMedia['sm'] = derived(breakpoint, matchBreakpoint('sm'));
+const md: UseMedia['md'] = derived(breakpoint, matchBreakpoint('md'));
+const lg: UseMedia['lg'] = derived(breakpoint, matchBreakpoint('lg'));
+const xl: UseMedia['xl'] = derived(breakpoint, matchBreakpoint('xl'));
 
 function matchBreakpoint(name: string) {
 	return (breakpoint: string) => breakpoint === name;
@@ -45,7 +46,17 @@ function setOrientation() {
 	}
 }
 
-export function useMedia() {
+export interface UseMedia {
+	xs: Readable<boolean>;
+	sm: Readable<boolean>;
+	md: Readable<boolean>;
+	lg: Readable<boolean>;
+	xl: Readable<boolean>;
+	breakpoint: Writable<'xs' | 'sm' | 'md' | 'lg' | 'xl'>;
+	orientation: Writable<'landscape' | 'portrait'>;
+}
+
+export function useMedia(): UseMedia {
 	onMount(() => {
 		window.addEventListener('resize', setBreakpoint);
 

@@ -13,7 +13,7 @@
 	</g>
 </svg>
 
-<style>
+<style lang="postcss">
 	svg {
 		fill: white;
 		max-height: 66.667vh;

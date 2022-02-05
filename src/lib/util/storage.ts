@@ -23,8 +23,8 @@ export interface Storage<T extends {}> {
 }
 
 export function createStorage<T extends {}>(namespace: string, defaults: T): Storage<T> {
-	const getter = ((storage: string) => storage ? JSON.parse(decode(storage)) : defaults);
-	const setter = ((data: T) => encode(JSON.stringify(data)));
+	const getter = (storage: string) => (storage ? JSON.parse(decode(storage)) : defaults);
+	const setter = (data: T) => encode(JSON.stringify(data));
 
 	function read(): T {
 		return getStorage<T>(namespace, defaults, getter);

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { fade, fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 
 	const name = 'Ovenwand';
 	const currentYear = new Date().getFullYear();
@@ -12,7 +12,7 @@
 	</slot>
 </footer>
 
-<style>
+<style lang="postcss">
 	footer {
 		align-items: center;
 		color: white;

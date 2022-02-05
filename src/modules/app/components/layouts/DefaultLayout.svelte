@@ -11,7 +11,7 @@
 	<Footer />
 </div>
 
-<style>
+<style lang="postcss">
 	#app {
 		background-image: url(/background.png);
 		background-position: center;

@@ -5,14 +5,17 @@ import { buildings } from './buildings';
 import { objects } from './objects';
 
 export const inventory = derived([buildings, objects], ([$buildings, $objects]) => {
-    const $inventory = [...Object.keys(objectMap), ...Object.keys(buildingMap)].reduce((inventory, id) => {
-        inventory[id] = 0;
-        return inventory;
-    }, {});
+	const $inventory = [...Object.keys(objectMap), ...Object.keys(buildingMap)].reduce(
+		(inventory, id) => {
+			inventory[id] = 0;
+			return inventory;
+		},
+		{}
+	);
 
-    for (const object of [...$buildings, ...$objects]) {
-        $inventory[object.type.id]++;
-    }
+	for (const object of [...$buildings, ...$objects]) {
+		$inventory[object.type.id]++;
+	}
 
-    return $inventory;
+	return $inventory;
 });

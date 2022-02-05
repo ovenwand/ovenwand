@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { format } from '$modules/chi/util';
+	import { format } from '$modules/chi/util';
 	import type { GameObjectInstance } from '$modules/chi/engine';
-  import type { LilyState } from '$modules/chi/engine/objects/lily';
+	import type { LilyState } from '$modules/chi/engine/objects/lily';
 
-  export let store: GameObjectInstance<LilyState>;
+	export let store: GameObjectInstance<LilyState>;
 
-  $: size = $store.growthCache / 10 * 100;
+	$: size = ($store.growthCache / 10) * 100;
 </script>
 
 <div>

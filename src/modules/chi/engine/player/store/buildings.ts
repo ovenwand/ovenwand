@@ -5,5 +5,5 @@ import type { GameObjectLifecycle } from '$modules/chi/engine';
 const store = createObjectStore([]);
 
 export const buildings: GameObjectLifecycle & ObjectStore<unknown> = {
-    ...store,
+	...store
 };

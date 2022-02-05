@@ -1,12 +1,12 @@
 <script lang="ts">
-  import '../../../../app.css';
+	import '../../../../app.css';
 
-  let className: string;
-  export { className as class };
+	let className: string;
+	export { className as class };
 </script>
 
 <div id="app" class={className}>
 	<main>
-		<slot/>
+		<slot />
 	</main>
 </div>

@@ -1,3 +1,3 @@
 export interface MonkState {
-    collectionProgress: number;
+	collectionProgress: number;
 }

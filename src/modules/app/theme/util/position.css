@@ -1,15 +1,15 @@
 .relative {
-    position: relative;
+	position: relative;
 }
 
 .absolute {
-    position: absolute;
+	position: absolute;
 }
 
 .top {
-    top: 0;
+	top: 0;
 }
 
 .left {
-    left: 0;
+	left: 0;
 }
