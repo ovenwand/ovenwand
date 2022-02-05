@@ -11,9 +11,6 @@ const config = {
 	kit: {
 		adapter: adapter(),
 
-		// hydrate the <div id="root"> element in src/app.html
-		target: '#root',
-
 		vite: {
 			resolve: {
 				alias: {
