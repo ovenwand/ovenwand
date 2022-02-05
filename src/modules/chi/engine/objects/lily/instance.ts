@@ -5,49 +5,54 @@ import type { Player } from '$modules/chi/engine/player';
 import type { LilyState } from './model';
 import { createStore } from './store';
 
-export function createInstance(player: Player, type: GameObject<LilyState>, state: LilyState = { growthCache: 0 }): GameObjectInstance<LilyState> {
-    const { chiPerClick, chiPerSecond, growthCache, growthRate, growthLimit, store } = createStore(state);
+export function createInstance(
+	player: Player,
+	type: GameObject<LilyState>,
+	state: LilyState = { growthCache: 0 }
+): GameObjectInstance<LilyState> {
+	const { chiPerClick, chiPerSecond, growthCache, growthRate, growthLimit, store } =
+		createStore(state);
 
-    function grow(delta: number) {
-        growthCache.update(($cache) => {
-            const $growthRate = get(growthRate) * 5 * (delta / SECOND);
-            const $growthLimit = get(growthLimit);
-            return Math.min($cache + $growthRate, $growthLimit);
-        });
-    }
+	function grow(delta: number) {
+		growthCache.update(($cache) => {
+			const $growthRate = get(growthRate) * 5 * (delta / SECOND);
+			const $growthLimit = get(growthLimit);
+			return Math.min($cache + $growthRate, $growthLimit);
+		});
+	}
 
-    function pluck() {
-        growthCache.set(0);
-    }
+	function pluck() {
+		growthCache.set(0);
+	}
 
-    return {
-        type,
+	return {
+		type,
 
-        subscribe: store.subscribe,
+		subscribe: store.subscribe,
 
-        chiPerSecond,
+		chiPerSecond,
 
-        chiPerClick,
+		chiPerClick,
 
-        save() {
-            return {
-                growthCache: get(growthCache),
-            };
-        },
+		save() {
+			return {
+				growthCache: get(growthCache)
+			};
+		},
 
-        tick(delta: number): void {
-            grow(delta);
-        },
+		tick(delta: number): void {
+			grow(delta);
+		},
 
-        generate(delta: number) {
-            const $chiPerSecond = get(chiPerSecond);
-            return $chiPerSecond * (delta / 1000);
-        },
+		generate(delta: number) {
+			const $chiPerSecond = get(chiPerSecond);
+			return $chiPerSecond * (delta / 1000);
+		},
 
-        collect() {
-            const $chiPerClick = get(chiPerClick);
-            pluck();
-            return $chiPerClick;
-        },
-    };
+		collect() {
+			const $chiPerClick = get(chiPerClick);
+			pluck();
+			return $chiPerClick;
+		}
+	};
 }

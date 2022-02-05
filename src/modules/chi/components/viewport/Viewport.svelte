@@ -1,3 +1,3 @@
 <div class="h-min-full o-auto">
-	<slot/>
+	<slot />
 </div>

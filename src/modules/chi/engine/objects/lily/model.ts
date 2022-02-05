@@ -1,3 +1,3 @@
 export interface LilyState {
-    growthCache: number;
+	growthCache: number;
 }

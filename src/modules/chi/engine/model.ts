@@ -11,13 +11,18 @@ export interface GameObject<S = unknown, T extends GameObjectInstance<S> = GameO
 	createInstance(player: Player, state?: S): T;
 }
 
-export interface GameObjectInstance<S = unknown> extends Readable<{ chiPerClick: number, chiPerSecond: number }> {
+export interface GameObjectInstance<S = unknown>
+	extends Readable<{ chiPerClick: number; chiPerSecond: number }> {
 	type: GameObject<S>;
 	chiPerSecond: Readable<number>;
 	chiPerClick: Readable<number>;
+
 	save(): S;
+
 	tick?(delta: number): void;
+
 	generate(delta: number): number;
+
 	collect(): number;
 }
 

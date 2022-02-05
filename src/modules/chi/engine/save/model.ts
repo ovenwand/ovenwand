@@ -3,7 +3,7 @@ export interface ObjectSave<S> {
 	state: S;
 }
 
-export interface Save<S=unknown> {
+export interface Save<S = unknown> {
 	timestamp: number;
 	chi: {
 		bank: number;

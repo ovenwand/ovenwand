@@ -32,7 +32,7 @@
 	</svelte:fragment>
 </Sidebar>
 
-<style global>
+<style lang="postcss" global>
 	.ow-sidebar {
 		background-color: red;
 	}

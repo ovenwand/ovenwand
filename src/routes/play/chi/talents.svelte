@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Column, Grid } from '$lib/components/layout';
+	import { Column, Grid } from '$lib/components/layout';
 </script>
 
 <Grid relative>

@@ -1,13 +1,13 @@
 <script lang="ts">
-    import { fade } from 'svelte/transition';
-    import { Icon } from '$lib/components/icon';
-    import { Column, Grid } from '$lib/components/layout';
-    import { format } from '$modules/chi/util';
-    import { player } from '$modules/chi/engine/player';
-    import * as buildingMap from '$modules/chi/engine/buildings';
+	import { fade } from 'svelte/transition';
+	import { Icon } from '$lib/components/icon';
+	import { Column, Grid } from '$lib/components/layout';
+	import { format } from '$modules/chi/util';
+	import { player } from '$modules/chi/engine/player';
+	import * as buildingMap from '$modules/chi/engine/buildings';
 
-    const { inventory } = player;
-    const buildings = Object.values(buildingMap);
+	const { inventory } = player;
+	const buildings = Object.values(buildingMap);
 </script>
 
 <Grid in={[fade, { delay: 300 }]} out={[fade, { duration: 200 }]} relative>
@@ -19,7 +19,6 @@
 		{@const sellPrice = building.price(player, inventoryCount - 1) * 0.25}
 
 		<Column class="flex">
-
 			<Icon>{@html building.icon}</Icon>
 
 			<span class="flex-full">{building.name}</span>

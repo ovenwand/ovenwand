@@ -1,14 +1,14 @@
 <script lang="ts">
-    import { fade } from 'svelte/transition';
-    import { Column, Grid } from '$lib/components/layout';
-    import { Icon } from '$lib/components/icon';
-    import { format } from '$modules/chi/util/formatter';
-    import * as objectMap from '$modules/chi/engine/objects';
-    import { player } from '$modules/chi/engine/player';
+	import { fade } from 'svelte/transition';
+	import { Column, Grid } from '$lib/components/layout';
+	import { Icon } from '$lib/components/icon';
+	import { format } from '$modules/chi/util/formatter';
+	import * as objectMap from '$modules/chi/engine/objects';
+	import { player } from '$modules/chi/engine/player';
 
-    const { inventory } = player;
+	const { inventory } = player;
 
-    const objects = Object.values(objectMap);
+	const objects = Object.values(objectMap);
 </script>
 
 <Grid in={[fade, { delay: 300 }]} out={[fade, { duration: 200 }]} relative>

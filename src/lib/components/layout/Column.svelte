@@ -47,7 +47,7 @@
 	<slot />
 </div>
 
-<style>
+<style lang="postcss">
 	.column {
 		--ow-columns-xs: 12;
 		--ow-columns-sm: var(--ow-columns-xs);

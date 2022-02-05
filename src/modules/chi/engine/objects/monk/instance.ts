@@ -4,30 +4,34 @@ import type { Player } from '$modules/chi/engine/player';
 import type { MonkState } from './model';
 import { createStore } from './store';
 
-export function createInstance(player: Player, type: GameObject<MonkState>, state?: MonkState): GameObjectInstance<MonkState> {
-    const { chiPerClick, chiPerSecond, collectionRate, collectionProgress, store } = createStore(state);
+export function createInstance(
+	player: Player,
+	type: GameObject<MonkState>,
+	state?: MonkState
+): GameObjectInstance<MonkState> {
+	const { chiPerClick, chiPerSecond, collectionProgress, store } = createStore(state);
 
-    return {
-        type,
+	return {
+		type,
 
-        subscribe: store.subscribe,
+		subscribe: store.subscribe,
 
-        chiPerSecond,
+		chiPerSecond,
 
-        chiPerClick,
+		chiPerClick,
 
-        save() {
-            return {
-                collectionProgress: get(collectionProgress),
-            };
-        },
+		save() {
+			return {
+				collectionProgress: get(collectionProgress)
+			};
+		},
 
-        generate() {
-            return 0;
-        },
+		generate() {
+			return 0;
+		},
 
-        collect() {
-            return 0;
-        },
-    };
+		collect() {
+			return 0;
+		}
+	};
 }
