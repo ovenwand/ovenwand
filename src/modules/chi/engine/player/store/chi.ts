@@ -1,4 +1,5 @@
-import { derived, get, Readable, Writable, writable } from 'svelte/store';
+import { derived, get, writable } from 'svelte/store';
+import type { Readable, Writable } from 'svelte/store';
 import type { Save } from '$modules/chi/engine';
 import { objects } from './objects';
 
