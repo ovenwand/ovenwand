@@ -1,1 +1,0 @@
-export { garden } from './garden';
