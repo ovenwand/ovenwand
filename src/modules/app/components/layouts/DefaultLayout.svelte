@@ -1,9 +1,9 @@
 <script lang="ts">
 	import '../../../../app.css';
-	import Footer from '$modules/app/components/footer';
+	import { Footer } from '$modules/app/components';
 </script>
 
-<div id="app" class="h-min-screen">
+<div id="app" class="min-h-screen bg-center bg-cover grid">
 	<main>
 		<slot />
 	</main>
@@ -14,9 +14,6 @@
 <style lang="postcss">
 	#app {
 		background-image: url(/background.png);
-		background-position: center;
-		background-size: cover;
-		display: grid;
 		grid-template-rows: 1fr 5rem;
 	}
 </style>

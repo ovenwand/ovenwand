@@ -3,23 +3,21 @@
 </script>
 
 <script lang="ts">
-	import Logo from '$modules/app/components/logo';
+	import { Logo } from '$modules/app/components';
 </script>
 
 <svelte:head>
 	<title>Ovenwand</title>
 </svelte:head>
 
-<section>
+<section
+	class="
+		flex
+		items-center
+		justify-center
+		h-full
+		p-8
+	"
+>
 	<Logo />
 </section>
-
-<style lang="postcss">
-	section {
-		align-items: center;
-		display: flex;
-		justify-content: center;
-		height: 100%;
-		padding: 2rem;
-	}
-</style>
