@@ -5,3 +5,7 @@
 .weight-normal {
 	font-weight: normal;
 }
+
+.line-through {
+	text-decoration: line-through;
+}
