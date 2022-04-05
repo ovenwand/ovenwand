@@ -57,6 +57,7 @@
 		display: grid;
 		gap: var(--ow-gap);
 		grid-template-columns: repeat(var(--ow-columns), var(--ow-column-size));
+		grid-auto-rows: min-content 1fr;
 		padding: var(--ow-gap-outside);
 	}
 
