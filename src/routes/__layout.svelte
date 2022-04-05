@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DefaultLayout } from '$modules/app/components/layouts';
+	import { DefaultLayout } from '$modules/app/components';
 </script>
 
 <DefaultLayout>
