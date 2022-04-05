@@ -4,7 +4,7 @@
 
 	const argTypes = {
 		columns: {
-			control: { type: 'number' }
+			control: { type: 'object' }
 		},
 		offset: {
 			control: { type: 'number' }

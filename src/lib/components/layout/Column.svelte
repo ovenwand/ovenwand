@@ -1,12 +1,13 @@
 <script lang="ts">
-	import { createClassName } from '$lib/util/createClassName';
-	import { createStyle } from '$lib/util/createStyle';
+	import { setContext } from 'svelte';
+	import { createClassName } from '$lib/util';
+	import type { Breakpoint } from './util';
+	import { createColumnStyle } from './util';
 
 	let className: string = null;
 	export { className as class };
 	export let style: Record<string, unknown> = {};
 
-	type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 	export let columns: number | Record<Breakpoint, number> = null;
 	export let offset: number | Record<Breakpoint, number> = null;
 
@@ -16,31 +17,9 @@
 		[className]: className
 	});
 
-	$: {
-		const styleMap = {
-			...style
-		};
+	$: columnStyle = createColumnStyle(columns, offset, style);
 
-		// Update column span
-		if (typeof columns === 'number' || typeof columns === 'string') {
-			styleMap['--ow-columns-xs'] = columns;
-		} else if (columns != null) {
-			for (const breakpoint of Object.keys(columns)) {
-				styleMap[`--ow-columns-${breakpoint}`] = columns[breakpoint];
-			}
-		}
-
-		// Update column offset
-		if (typeof offset === 'number') {
-			styleMap['--ow-column-offset-xs'] = offset + 1;
-		} else if (offset != null) {
-			for (const breakpoint of Object.keys(offset)) {
-				styleMap[`--ow-column-offset-${breakpoint}`] = offset[breakpoint] + 1;
-			}
-		}
-
-		columnStyle = createStyle(styleMap);
-	}
+	$: setContext('columns', columns);
 </script>
 
 <div class="column {columnClassName}" style={columnStyle}>

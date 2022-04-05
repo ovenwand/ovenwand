@@ -7,5 +7,5 @@ export function createClassName(classList: Record<string, unknown>): string {
 		}
 	}
 
-	return className;
+	return className.trim();
 }
