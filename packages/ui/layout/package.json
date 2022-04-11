@@ -1,0 +1,26 @@
+{
+	"name": "@ovenwand/ui.layout",
+	"version": "0.0.0",
+	"description": "",
+	"type": "module",
+	"main": "src/index.ts",
+	"exports": {
+		".": "src/index.ts"
+	},
+	"scripts": {
+		"clean": "pnpx -y rimraf node_modules",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"peerDependencies": {
+		"svelte": "^3.47.0",
+		"tailwindcss": "^3.0.23"
+	},
+	"dependencies": {
+		"@ovenwand/config": "workspace:^0.0.0"
+	},
+	"devDependencies": {
+		"svelte": "^3.47.0"
+	},
+	"author": "Ovenwand <info@ovenwand.com>",
+	"license": "WTFPL"
+}

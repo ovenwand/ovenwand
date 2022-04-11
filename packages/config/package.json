@@ -1,0 +1,22 @@
+{
+	"name": "@ovenwand/config",
+	"version": "0.0.0",
+	"description": "",
+	"type": "module",
+	"exports": {
+		"./tsconfig": "./tsconfig.json",
+		"./tailwind": "./tailwind.config.cjs",
+		"./svelte": "./svelte.config.js"
+	},
+	"scripts": {
+		"clean": "pnpx -y rimraf node_modules",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"@tsconfig/svelte": "^3.0.0",
+		"@sveltejs/adapter-auto": "next",
+		"svelte-preprocess": "^4.10.5"
+	},
+	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
+	"license": "WTFPL"
+}

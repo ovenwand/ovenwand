@@ -1,0 +1,23 @@
+{
+	"name": "@ovenwand/ui",
+	"version": "0.0.0",
+	"description": "",
+	"main": "src/index.ts",
+	"scripts": {
+		"clean": "pnpx -y rimraf node_modules",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"@ovenwand/ui.grid": "workspace:^0.0.0",
+		"@ovenwand/ui.icon": "workspace:^0.0.0",
+		"@ovenwand/ui.layout": "workspace:^0.0.0",
+		"@ovenwand/ui.modal": "workspace:^0.0.0",
+		"@ovenwand/ui.sheet": "workspace:^0.0.0",
+		"@ovenwand/ui.sidebar": "workspace:^0.0.0"
+	},
+	"devDependencies": {
+		"@ovenwand/config": "workspace:^0.0.0"
+	},
+	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
+	"license": "WTFPL"
+}

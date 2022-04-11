@@ -1,20 +1,9 @@
+node_modules/
+
+.idea/
+*.iml
+
 .DS_Store
 ._*
-
-node_modules
-
-/build
-/.svelte-kit
-/package
-
-.vercel
-.vercel_build_output
-.output
-
-.env
-.env.*
-!.env.example
-
-.idea
 
 .eslintcache
