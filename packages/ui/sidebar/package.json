@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"@ovenwand/config": "workspace:^0.0.0",
-		"@ovenwand/util.dom": "workspace:^0.0.0"
+		"@ovenwand/util.browser": "workspace:^0.0.0"
 	},
 	"devDependencies": {
 		"@ovenwand/util.svelte": "workspace:^0.0.0",

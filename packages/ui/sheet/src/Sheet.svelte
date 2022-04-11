@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createClassName } from '@ovenwand/util.dom';
+	import { createClassName } from '@ovenwand/util.browser';
 
 	let className: string = null;
 	export { className as class };

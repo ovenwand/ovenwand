@@ -46,7 +46,8 @@ importers:
       '@ovenwand/ui.modal': workspace:^0.0.0
       '@ovenwand/ui.sheet': workspace:^0.0.0
       '@ovenwand/ui.sidebar': workspace:^0.0.0
-      '@ovenwand/util.dom': workspace:^0.0.0
+      '@ovenwand/util.browser': workspace:^0.0.0
+      '@ovenwand/util.fp': workspace:^0.0.0
       '@ovenwand/util.string': workspace:^0.0.0
       '@ovenwand/util.svelte': workspace:^0.0.0
       '@sveltejs/kit': next
@@ -65,7 +66,8 @@ importers:
       '@ovenwand/ui.modal': link:../../ui/modal
       '@ovenwand/ui.sheet': link:../../ui/sheet
       '@ovenwand/ui.sidebar': link:../../ui/sidebar
-      '@ovenwand/util.dom': link:../../util/dom
+      '@ovenwand/util.browser': link:../../util/browser
+      '@ovenwand/util.fp': link:../../util/fp
       '@ovenwand/util.string': link:../../util/string
       '@ovenwand/util.svelte': link:../../util/svelte
       '@sveltejs/kit': 1.0.0-next.310_svelte@3.47.0
@@ -109,10 +111,10 @@ importers:
   packages/ui/button:
     specifiers:
       '@ovenwand/config': workspace:^0.0.0
-      '@ovenwand/util.dom': workspace:^0.0.0
+      '@ovenwand/util.browser': workspace:^0.0.0
       svelte: ^3.47.0
     dependencies:
-      '@ovenwand/util.dom': link:../../util/dom
+      '@ovenwand/util.browser': link:../../util/browser
     devDependencies:
       '@ovenwand/config': link:../../config
       svelte: 3.47.0
@@ -120,11 +122,11 @@ importers:
   packages/ui/grid:
     specifiers:
       '@ovenwand/config': workspace:^0.0.0
-      '@ovenwand/util.dom': workspace:^0.0.0
+      '@ovenwand/util.browser': workspace:^0.0.0
       '@ovenwand/util.fp': workspace:^0.0.0
       svelte: ^3.47.0
     dependencies:
-      '@ovenwand/util.dom': link:../../util/dom
+      '@ovenwand/util.browser': link:../../util/browser
       '@ovenwand/util.fp': link:../../util/fp
     devDependencies:
       '@ovenwand/config': link:../../config
@@ -158,10 +160,10 @@ importers:
   packages/ui/sheet:
     specifiers:
       '@ovenwand/config': workspace:^0.0.0
-      '@ovenwand/util.dom': workspace:^0.0.0
+      '@ovenwand/util.browser': workspace:^0.0.0
       svelte: ^3.47.0
     dependencies:
-      '@ovenwand/util.dom': link:../../util/dom
+      '@ovenwand/util.browser': link:../../util/browser
     devDependencies:
       '@ovenwand/config': link:../../config
       svelte: 3.47.0
@@ -169,14 +171,14 @@ importers:
   packages/ui/sidebar:
     specifiers:
       '@ovenwand/config': workspace:^0.0.0
-      '@ovenwand/util.dom': workspace:^0.0.0
+      '@ovenwand/util.browser': workspace:^0.0.0
       '@ovenwand/util.svelte': workspace:^0.0.0
       '@types/chai': ^4.3.0
       '@types/mocha': ^9.1.0
       svelte: ^3.47.0
     dependencies:
       '@ovenwand/config': link:../../config
-      '@ovenwand/util.dom': link:../../util/dom
+      '@ovenwand/util.browser': link:../../util/browser
     devDependencies:
       '@ovenwand/util.svelte': link:../../util/svelte
       '@types/chai': 4.3.0
@@ -186,11 +188,11 @@ importers:
   packages/ui/widget:
     specifiers:
       '@ovenwand/config': workspace:^0.0.0
-      '@ovenwand/util.dom': workspace:^0.0.0
+      '@ovenwand/util.browser': workspace:^0.0.0
       '@ovenwand/util.svelte': workspace:^0.0.0
       svelte: ^3.47.0
     dependencies:
-      '@ovenwand/util.dom': link:../../util/dom
+      '@ovenwand/util.browser': link:../../util/browser
       '@ovenwand/util.svelte': link:../../util/svelte
     devDependencies:
       '@ovenwand/config': link:../../config
@@ -199,18 +201,18 @@ importers:
   packages/util:
     specifiers:
       '@ovenwand/config': workspace:^0.0.0
-      '@ovenwand/util.dom': workspace:^0.0.0
+      '@ovenwand/util.browser': workspace:^0.0.0
       '@ovenwand/util.fp': workspace:^0.0.0
       '@ovenwand/util.string': workspace:^0.0.0
       '@ovenwand/util.svelte': workspace:^0.0.0
     dependencies:
       '@ovenwand/config': link:../config
-      '@ovenwand/util.dom': link:dom
+      '@ovenwand/util.browser': link:browser
       '@ovenwand/util.fp': link:fp
       '@ovenwand/util.string': link:string
       '@ovenwand/util.svelte': link:svelte
 
-  packages/util/dom:
+  packages/util/browser:
     specifiers:
       '@ovenwand/config': workspace:^0.0.0
       chai: ^4.3.6
@@ -590,6 +592,20 @@ packages:
       - supports-color
     dev: true
 
+  /@testing-library/browser/8.13.0:
+    resolution: {integrity: sha512-9VHgfIatKNXQNaZTtLnalIy0jNZzY35a4S3oi08YAt9Hv1VsfZ/DfA45lM8D/UhtHBGJ4/lGwp0PZkVndRkoOQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@babel/code-frame': 7.16.7
+      '@babel/runtime': 7.17.9
+      '@types/aria-query': 4.2.2
+      aria-query: 5.0.0
+      chalk: 4.1.2
+      dom-accessibility-api: 0.5.13
+      lz-string: 1.4.4
+      pretty-format: 27.5.1
+    dev: false
+
   /@testing-library/dom/8.13.0:
     resolution: {integrity: sha512-9VHgfIatKNXQNaZTtLnalIy0jNZzY35a4S3oi08YAt9Hv1VsfZ/DfA45lM8D/UhtHBGJ4/lGwp0PZkVndRkoOQ==}
     engines: {node: '>=12'}
@@ -610,6 +626,7 @@ packages:
     peerDependencies:
       svelte: 3.x
     dependencies:
+      '@testing-library/browser': 8.13.0
       '@testing-library/dom': 8.13.0
       svelte: 3.47.0
     dev: false
@@ -717,13 +734,13 @@ packages:
       - typescript
     dev: true
 
-  /@typescript-eslint/experimental-utils/5.18.0_9de660f72d8abf45a36bcb592ffb02cc:
-    resolution: {integrity: sha512-hypiw5N0aM2aH91/uMmG7RpyUH3PN/iOhilMwkMFZIbm/Bn/G3ZnbaYdSoAN4PG/XHQjdhBYLi0ZoRZsRYT4hA==}
+  /@typescript-eslint/experimental-utils/5.19.0_9de660f72d8abf45a36bcb592ffb02cc:
+    resolution: {integrity: sha512-F+X/TTzmb2UXbghY1LrNLNDjMcGZMhKzXuzvu0xD+YEB77EamLM7zMOLuz2kP5807IJRDLBoAFFPYa7HT62sYg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      '@typescript-eslint/utils': 5.18.0_9de660f72d8abf45a36bcb592ffb02cc
+      '@typescript-eslint/utils': 5.19.0_9de660f72d8abf45a36bcb592ffb02cc
       eslint: 7.32.0
     transitivePeerDependencies:
       - supports-color
@@ -758,12 +775,12 @@ packages:
       '@typescript-eslint/visitor-keys': 4.33.0
     dev: true
 
-  /@typescript-eslint/scope-manager/5.18.0:
-    resolution: {integrity: sha512-C0CZML6NyRDj+ZbMqh9FnPscg2PrzSaVQg3IpTmpe0NURMVBXlghGZgMYqBw07YW73i0MCqSDqv2SbywnCS8jQ==}
+  /@typescript-eslint/scope-manager/5.19.0:
+    resolution: {integrity: sha512-Fz+VrjLmwq5fbQn5W7cIJZ066HxLMKvDEmf4eu1tZ8O956aoX45jAuBB76miAECMTODyUxH61AQM7q4/GOMQ5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      '@typescript-eslint/types': 5.18.0
-      '@typescript-eslint/visitor-keys': 5.18.0
+      '@typescript-eslint/types': 5.19.0
+      '@typescript-eslint/visitor-keys': 5.19.0
     dev: true
 
   /@typescript-eslint/types/4.33.0:
@@ -771,8 +788,8 @@ packages:
     engines: {node: ^8.10.0 || ^10.13.0 || >=11.10.1}
     dev: true
 
-  /@typescript-eslint/types/5.18.0:
-    resolution: {integrity: sha512-bhV1+XjM+9bHMTmXi46p1Led5NP6iqQcsOxgx7fvk6gGiV48c6IynY0apQb7693twJDsXiVzNXTflhplmaiJaw==}
+  /@typescript-eslint/types/5.19.0:
+    resolution: {integrity: sha512-zR1ithF4Iyq1wLwkDcT+qFnhs8L5VUtjgac212ftiOP/ZZUOCuuF2DeGiZZGQXGoHA50OreZqLH5NjDcDqn34w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
@@ -797,8 +814,8 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/typescript-estree/5.18.0_typescript@4.7.0-dev.20220408:
-    resolution: {integrity: sha512-wa+2VAhOPpZs1bVij9e5gyVu60ReMi/KuOx4LKjGx2Y3XTNUDJgQ+5f77D49pHtqef/klglf+mibuHs9TrPxdQ==}
+  /@typescript-eslint/typescript-estree/5.19.0_typescript@4.7.0-dev.20220408:
+    resolution: {integrity: sha512-dRPuD4ocXdaE1BM/dNR21elSEUPKaWgowCA0bqJ6YbYkvtrPVEvZ+zqcX5a8ECYn3q5iBSSUcBBD42ubaOp0Hw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
@@ -806,8 +823,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/types': 5.18.0
-      '@typescript-eslint/visitor-keys': 5.18.0
+      '@typescript-eslint/types': 5.19.0
+      '@typescript-eslint/visitor-keys': 5.19.0
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
@@ -818,16 +835,16 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/utils/5.18.0_9de660f72d8abf45a36bcb592ffb02cc:
-    resolution: {integrity: sha512-+hFGWUMMri7OFY26TsOlGa+zgjEy1ssEipxpLjtl4wSll8zy85x0GrUSju/FHdKfVorZPYJLkF3I4XPtnCTewA==}
+  /@typescript-eslint/utils/5.19.0_9de660f72d8abf45a36bcb592ffb02cc:
+    resolution: {integrity: sha512-ZuEckdupXpXamKvFz/Ql8YnePh2ZWcwz7APICzJL985Rp5C2AYcHO62oJzIqNhAMtMK6XvrlBTZeNG8n7gS3lQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
       '@types/json-schema': 7.0.11
-      '@typescript-eslint/scope-manager': 5.18.0
-      '@typescript-eslint/types': 5.18.0
-      '@typescript-eslint/typescript-estree': 5.18.0_typescript@4.7.0-dev.20220408
+      '@typescript-eslint/scope-manager': 5.19.0
+      '@typescript-eslint/types': 5.19.0
+      '@typescript-eslint/typescript-estree': 5.19.0_typescript@4.7.0-dev.20220408
       eslint: 7.32.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0_eslint@7.32.0
@@ -844,11 +861,11 @@ packages:
       eslint-visitor-keys: 2.1.0
     dev: true
 
-  /@typescript-eslint/visitor-keys/5.18.0:
-    resolution: {integrity: sha512-Hf+t+dJsjAKpKSkg3EHvbtEpFFb/1CiOHnvI8bjHgOD4/wAw3gKrA0i94LrbekypiZVanJu3McWJg7rWDMzRTg==}
+  /@typescript-eslint/visitor-keys/5.19.0:
+    resolution: {integrity: sha512-Ym7zZoMDZcAKWsULi2s7UMLREdVQdScPQ/fKWMYefarCztWlHPFVJo8racf8R0Gc8FAEJ2eD4of8As1oFtnQlQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      '@typescript-eslint/types': 5.18.0
+      '@typescript-eslint/types': 5.19.0
       eslint-visitor-keys: 3.3.0
     dev: true
 
@@ -1073,7 +1090,7 @@ packages:
       caniuse-lite: 1.0.30001327
       electron-to-chromium: 1.4.106
       escalade: 3.1.1
-      node-releases: 2.0.2
+      node-releases: 2.0.3
       picocolors: 1.0.0
     dev: true
 
@@ -1687,7 +1704,7 @@ packages:
       eslint: '>=6'
     dependencies:
       '@storybook/csf': 0.0.1
-      '@typescript-eslint/experimental-utils': 5.18.0_9de660f72d8abf45a36bcb592ffb02cc
+      '@typescript-eslint/experimental-utils': 5.19.0_9de660f72d8abf45a36bcb592ffb02cc
       eslint: 7.32.0
       requireindex: 1.2.0
     transitivePeerDependencies:
@@ -2576,8 +2593,8 @@ packages:
     resolution: {integrity: sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=}
     dev: true
 
-  /node-releases/2.0.2:
-    resolution: {integrity: sha512-XxYDdcQ6eKqp/YjI+tb2C5WM2LgjnZrfYg4vgQt49EK268b6gYCHsBLrK2qvJo4FmCtqmKezb0WZFK4fkrZNsg==}
+  /node-releases/2.0.3:
+    resolution: {integrity: sha512-maHFz6OLqYxz+VQyCAtA3PTX4UP/53pa05fyDNc9CwjvJ0yEh6+xBwKsgCxMNhS8taUKBFYxfuiaD9U/55iFaw==}
     dev: true
 
   /normalize-package-data/2.5.0:

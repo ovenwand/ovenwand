@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createClassName } from '@ovenwand/util.dom';
+	import { createClassName } from '@ovenwand/util.browser';
 	import { expand as expandTransition } from '@ovenwand/util.svelte';
 	import type { SidebarStore } from './store';
 	import { store, DEFAULT_ID } from './store';
