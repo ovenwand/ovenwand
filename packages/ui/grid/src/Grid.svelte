@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { TransitionConfig } from 'svelte/transition';
 	import { noop } from '@ovenwand/util.fp';
-	import { createClassName, createStyle } from '@ovenwand/util.dom';
+	import { createClassName, createStyle } from '@ovenwand/util.browser';
 
 	type TransitionFunction<T = unknown> = (options: T) => TransitionConfig;
 

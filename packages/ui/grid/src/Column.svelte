@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { setContext } from 'svelte';
-	import { createClassName } from '@ovenwand/util.dom';
+	import { createClassName } from '@ovenwand/util.browser';
 	import type { Breakpoint } from './util';
 	import { createColumnStyle } from './util';
 

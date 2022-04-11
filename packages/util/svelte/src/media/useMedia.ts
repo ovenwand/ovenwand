@@ -1,6 +1,6 @@
 import type { Readable, Writable } from 'svelte/store';
 import { derived, writable } from 'svelte/store';
-import { isClient } from '@ovenwand/util.dom';
+import { isClient } from '@ovenwand/util.browser';
 
 export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export type Orientation = 'portrait' | 'landscape';

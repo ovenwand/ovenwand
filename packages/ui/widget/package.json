@@ -8,7 +8,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@ovenwand/util.dom": "workspace:^0.0.0",
+		"@ovenwand/util.browser": "workspace:^0.0.0",
 		"@ovenwand/util.svelte": "workspace:^0.0.0"
 	},
 	"devDependencies": {

@@ -1,4 +1,4 @@
-import { createStyle } from '@ovenwand/util.dom';
+import { createStyle } from '@ovenwand/util.browser';
 
 export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
