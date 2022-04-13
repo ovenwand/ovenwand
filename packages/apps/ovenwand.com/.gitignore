@@ -1,0 +1,15 @@
+node_modules
+
+build/
+.svelte-kit
+package/
+
+.vercel
+.vercel_build_output
+.output
+
+.env
+.env.*
+!.env.example
+
+.eslintcache

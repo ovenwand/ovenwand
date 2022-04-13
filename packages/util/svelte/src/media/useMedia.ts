@@ -1,5 +1,6 @@
 import type { Readable, Writable } from 'svelte/store';
 import { derived, writable } from 'svelte/store';
+import { abs } from '@ovenwand/util.math';
 import { isClient } from '@ovenwand/util.browser';
 
 export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -56,7 +57,7 @@ function findOrientation(): Orientation {
 	let $orientation: ReturnType<typeof findOrientation> = 'portrait';
 
 	if ('orientation' in screen) {
-		const angle = Math.abs(screen.orientation.angle);
+		const angle = abs(screen.orientation.angle);
 		$orientation = angle === 90 ? 'landscape' : 'portrait';
 	} else {
 		$orientation = screen.width > screen.height ? 'landscape' : 'portrait';
