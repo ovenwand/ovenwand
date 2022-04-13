@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui.layout",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "",
 	"type": "module",
 	"main": "src/index.ts",
@@ -16,7 +16,7 @@
 		"tailwindcss": "^3.0.23"
 	},
 	"dependencies": {
-		"@ovenwand/config": "workspace:^0.0.0"
+		"@ovenwand/config": "workspace:^0.0.1"
 	},
 	"devDependencies": {
 		"svelte": "^3.47.0"
