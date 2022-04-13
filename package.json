@@ -7,6 +7,7 @@
 		"prepare": "husky install",
 		"clean": "pnpx -y rimraf node_modules && pnpm clean --filter @ovenwand/*",
 		"dev": "run(){ pnpm dev --filter @ovenwand/$1; }; run",
+		"build": "run(){ pnpm build --filter @ovenwand/$1; }; run",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint:eslint": "eslint",
 		"lint:prettier": "prettier --plugin-search-dir=.",

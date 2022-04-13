@@ -1,5 +1,5 @@
-import config from '@ovenwand/config/svelte';
 import path from 'path';
+import config from '@ovenwand/config/svelte';
 
 config.kit.vite.resolve.alias = {
 	$lib: path.resolve('src/lib'),

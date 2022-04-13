@@ -1,4 +1,3 @@
-// import path from 'path';
 import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 
@@ -14,8 +13,6 @@ const config = {
 		vite: {
 			resolve: {
 				alias: {
-					// $lib: path.resolve('src/lib'),
-					// $modules: path.resolve('src/modules')
 				}
 			}
 		}
