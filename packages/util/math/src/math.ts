@@ -1,2 +1,2 @@
-const { abs, cos, floor, PI, random, round, sin } = Math;
-export { abs, cos, floor, PI, random, round, sin };
+const { abs, ceil, cos, floor, max, min, PI, random, round, sin, sqrt } = Math;
+export { abs, ceil, cos, floor, max, min, PI, random, round, sin, sqrt };

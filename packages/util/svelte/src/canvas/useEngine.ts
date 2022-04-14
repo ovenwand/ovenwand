@@ -15,7 +15,7 @@ export function useEngine(getCanvas: () => HTMLCanvasElement): Engine {
 			_setup(setupFn);
 		});
 
-		onDestroy(_stop);
+		onDestroy(stop);
 	}
 
 	function draw(drawFn: (context: IDrawContext) => void) {

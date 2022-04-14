@@ -22,7 +22,7 @@
 		angle = PI / 4;
 	});
 
-	draw(({ background, circle, fill, line, stroke, translate }) => {
+	draw(({ background, circle, fill, line, stroke, strokeWeight, translate }) => {
 		background('black');
 
 		const force = gravity * sin(angle);
@@ -35,7 +35,8 @@
 
 		translate(width / 2, 0);
 
-		stroke('red', 5);
+		stroke('red');
+		strokeWeight(5);
 		line(0, 0, x, y);
 
 		fill('red');
