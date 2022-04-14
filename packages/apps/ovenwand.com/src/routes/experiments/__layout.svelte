@@ -16,6 +16,10 @@
 		{
 			title: 'Game of life',
 			href: '/experiments/game-of-life'
+		},
+		{
+			title: 'Marching squares',
+			href: '/experiments/marching-squares'
 		}
 	];
 
