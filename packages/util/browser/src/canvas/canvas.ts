@@ -1,11 +1,17 @@
 import { createTicker } from '@ovenwand/util.fp';
 import { color, PI } from '@ovenwand/util.math';
 
-export type Hook<T> = (hook: (context: T) => void) => void;
+export type Fn<T = undefined, R = void> = (arg?: T) => R;
+export type Hook<T = undefined> = Fn<Fn<T>>;
 export type FillStyle = string | CanvasGradient | CanvasPattern;
 export type StrokeStyle = string | CanvasGradient | CanvasPattern;
-export type Engine = [Hook<ISetupContext>, Hook<IDrawContext>, Fn, Fn];
-export type Fn<T = undefined, R = void> = (arg?: T) => R;
+export interface Engine {
+	setup: Hook<ISetupContext>;
+	update: Hook;
+	draw: Hook<IDrawContext>;
+	resume: Fn;
+	stop: Fn;
+}
 
 export interface ISetupContext {
 	onClick(handler: (x: number, y: number) => unknown): void;
@@ -33,7 +39,7 @@ export interface IDrawContext {
 
 export function createEngine(canvas: HTMLCanvasElement): Engine {
 	const context: CanvasRenderingContext2D = canvas.getContext('2d');
-	let _resume: () => void, _stop: () => void;
+	let _update: Hook, _resume: Fn, _stop: Fn;
 
 	function setup(setupFn: Fn<ISetupContext>) {
 		function onClick(handler: (x: number, y: number) => unknown) {
@@ -50,7 +56,11 @@ export function createEngine(canvas: HTMLCanvasElement): Engine {
 		});
 	}
 
-	function draw(drawFn: (context: IDrawContext) => void): void {
+	function update(updateFn: Fn): void {
+		_update = updateFn;
+	}
+
+	function draw(drawFn: Fn<IDrawContext>): void {
 		let mouseX = 0;
 		let mouseY = 0;
 
@@ -228,6 +238,10 @@ export function createEngine(canvas: HTMLCanvasElement): Engine {
 		canvas.addEventListener('mousemove', onMouseMove);
 
 		[_resume, _stop] = createTicker(() => {
+			if (_update) {
+				_update();
+			}
+
 			save();
 
 			drawFn({
@@ -264,5 +278,5 @@ export function createEngine(canvas: HTMLCanvasElement): Engine {
 		_resume();
 	}
 
-	return [setup, draw, stop, resume];
+	return { setup, update, draw, stop, resume };
 }

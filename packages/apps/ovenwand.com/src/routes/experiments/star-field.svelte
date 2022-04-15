@@ -3,7 +3,7 @@
 	import { useEngine } from '@ovenwand/util.svelte';
 	import { noop } from '@ovenwand/util.fp';
 
-	const [setup, draw] = useEngine(() => canvas);
+	const { setup, update, draw } = useEngine(() => canvas);
 
 	let canvas: HTMLCanvasElement;
 	const width = 640;
@@ -12,7 +12,7 @@
 
 	setup(noop);
 
-	draw(({ background, circle, fill, translate, mouseX, mouseY }) => {
+	update(() => {
 		for (let i = 0; i < 3; i++) {
 			stars.push({
 				x: random() * width * 2 - width,
@@ -20,7 +20,9 @@
 				z: width
 			});
 		}
+	});
 
+	draw(({ background, circle, fill, translate, mouseX, mouseY }) => {
 		background('black');
 		translate(mouseX || width / 2, mouseY || height / 2);
 

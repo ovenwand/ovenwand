@@ -23,7 +23,7 @@
 	const columnSize = width / columns;
 	const rowSize = height / rows;
 
-	const [setup, draw, stop, resume] = useEngine(() => canvas);
+	const { setup, update, draw, stop, resume } = useEngine(() => canvas);
 
 	function findNeighbors(grid, x, y): number {
 		const xn = x - 1 < 0 ? rows - 1 : x - 1;
@@ -57,8 +57,41 @@
 		}
 	}
 
-	function nextTick(grid: Grid): Grid {
-		const nextGrid = grid.map((row) => row.slice());
+	function togglePlay() {
+		if (isPlaying) {
+			stop();
+		} else {
+			resume();
+		}
+
+		isPlaying = !isPlaying;
+	}
+
+	function createGrid(columns: number, rows: number): Grid {
+		return [...Array(rows)].map(() => [...Array(columns)].map(() => 0));
+	}
+
+	function copyGrid(grid: Grid): Grid {
+		return grid.map((row) => row.slice());
+	}
+
+	setup(({ onClick }) => {
+		framerate = 30;
+		throttle = 0;
+		isPlaying = true;
+		grid = createGrid(columns, rows);
+
+		onClick((x, y) => {
+			const column = floor(x / columnSize);
+			const row = floor(y / rowSize);
+			grid[row][column] = !grid[row][column];
+		});
+
+		useSeed(grid, seed);
+	});
+
+	update(() => {
+		const nextGrid = copyGrid(grid);
 
 		for (let x = 0; x < grid.length; x++) {
 			for (let y = 0; y < grid[x].length; y++) {
@@ -74,32 +107,8 @@
 			}
 		}
 
-		return nextGrid;
-	}
-
-	function togglePlay() {
-		if (isPlaying) {
-			stop();
-		} else {
-			resume();
-		}
-
-		isPlaying = !isPlaying;
-	}
-
-	setup(({ onClick }) => {
-		framerate = 30;
-		throttle = 0;
-		isPlaying = true;
-		grid = [...Array(rows)].map(() => [...Array(columns)].map(() => 0));
-
-		onClick((x, y) => {
-			const column = floor(x / columnSize);
-			const row = floor(y / rowSize);
-			grid[row][column] = !grid[row][column];
-		});
-
-		useSeed(grid, seed);
+		// Sad.. We'll never see the first frame.
+		grid = nextGrid;
 	});
 
 	draw(({ background, fill, rect, restore, save }) => {
@@ -124,8 +133,6 @@
 				restore();
 			}
 		}
-
-		grid = nextTick(grid);
 	});
 </script>
 
