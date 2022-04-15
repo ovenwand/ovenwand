@@ -2,7 +2,7 @@
 	import { cos, PI, sin } from '@ovenwand/util.math';
 	import { useEngine } from '@ovenwand/util.svelte';
 
-	const [setup, draw] = useEngine(() => canvas);
+	const { setup, update, draw } = useEngine(() => canvas);
 
 	let canvas: HTMLCanvasElement;
 	const width = 640;
@@ -22,16 +22,18 @@
 		angle = PI / 4;
 	});
 
-	draw(({ background, circle, fill, line, stroke, strokeWeight, translate }) => {
-		background('black');
-
+	update(() => {
 		const force = gravity * sin(angle);
 		acceleration = (-1 * force) / length;
 		velocity += acceleration;
 		angle += velocity;
+	});
 
+	draw(({ background, circle, fill, line, stroke, strokeWeight, translate }) => {
 		const x = length * sin(angle);
 		const y = length * cos(angle);
+
+		background('black');
 
 		translate(width / 2, 0);
 

@@ -1,36 +1,46 @@
 import { onDestroy, onMount } from 'svelte';
 import type { Engine, Fn, Hook, IDrawContext, ISetupContext } from '@ovenwand/util.browser';
 import { createEngine } from '@ovenwand/util.browser';
-import { noop } from '@ovenwand/util.fp';
 
 export function useEngine(getCanvas: () => HTMLCanvasElement): Engine {
-	let _setup: Hook<ISetupContext> = noop;
-	let _draw: Hook<IDrawContext> = noop;
-	let _resume: Fn = noop;
-	let _stop: Fn = noop;
+	let engine: Engine;
 
 	function setup(setupFn: (context: ISetupContext) => void) {
 		onMount(() => {
-			[_setup, _draw, _stop, _resume] = createEngine(getCanvas());
-			_setup(setupFn);
+			engine = createEngine(getCanvas());
+			engine.setup(setupFn);
 		});
 
 		onDestroy(stop);
 	}
 
+	function update(updateFn: () => void) {
+		onMount(() => {
+			engine.update(updateFn);
+		});
+	}
+
 	function draw(drawFn: (context: IDrawContext) => void) {
 		onMount(() => {
-			_draw(drawFn);
+			engine.draw(drawFn);
 		});
 	}
 
 	function resume() {
-		_resume();
+		if (!engine) {
+			return;
+		}
+
+		engine.resume();
 	}
 
 	function stop() {
-		_stop();
+		if (!engine) {
+			return;
+		}
+
+		engine.stop();
 	}
 
-	return [setup, draw, stop, resume];
+	return { setup, update, draw, resume, stop };
 }
