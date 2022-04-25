@@ -1,4 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.88 129.89">
+<script lang="ts" context="module">
+	export const prerender = true;
+</script>
+
+<script lang="ts">
+	import { createClassName } from '@ovenwand/util.browser';
+
+	export let size = 'auto';
+
+	$: logoClassName = createClassName({
+		'fill-current': true,
+		'h-12': size === 'small'
+	});
+</script>
+
+<svg class={logoClassName} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.88 129.89">
 	<title>OvenwandLogo</title>
 	<g id="Outline" data-name="Outline">
 		<g id="Face">
@@ -12,10 +27,3 @@
 		/>
 	</g>
 </svg>
-
-<style lang="postcss">
-	svg {
-		fill: white;
-		max-height: 66.667vh;
-	}
-</style>
