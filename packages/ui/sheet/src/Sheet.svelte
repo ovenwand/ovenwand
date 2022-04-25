@@ -7,10 +7,12 @@
 	export let padding = false;
 	export let rounded = false;
 	export let shadow = false;
+	export let background = false;
 
 	$: sheetClassName = createClassName({
 		[className]: className,
 		'p-2': padding,
+		'bg-gray-100 dark:bg-gray-800': background,
 		rounded,
 		shadow
 	});
