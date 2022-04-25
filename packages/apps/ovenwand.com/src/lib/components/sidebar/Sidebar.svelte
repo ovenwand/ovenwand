@@ -1,14 +1,16 @@
 <script lang="ts">
-	import { expand } from '@ovenwand/util.svelte';
+	import { createClassName } from '@ovenwand/util.browser';
+	import { expand, useMedia } from '@ovenwand/util.svelte';
 	import Sidebar from '@ovenwand/ui.sidebar';
-	import { useMedia } from '@ovenwand/util.svelte';
+
+	export let id: string = undefined;
+	export let active = false;
+	export let absolute = true;
 
 	const { orientation } = useMedia();
 
 	const expandIn = expand;
 	const expandOut = expand;
-
-	export let active = false;
 
 	$: expandInOptions = {
 		duration: 400,
@@ -22,9 +24,21 @@
 		x: 'max-width',
 		y: 'max-height'
 	};
+
+	$: sidebarClassName = createClassName({
+		'absolute top-0 right-0': absolute
+	});
 </script>
 
-<Sidebar expand={active} {expandIn} {expandInOptions} {expandOut} {expandOutOptions}>
+<Sidebar
+	class={sidebarClassName}
+	bind:id
+	bind:expand={active}
+	{expandIn}
+	{expandInOptions}
+	{expandOut}
+	{expandOutOptions}
+>
 	<slot />
 
 	<svelte:fragment slot="expand">
@@ -33,28 +47,8 @@
 </Sidebar>
 
 <style lang="postcss" global>
-	/*
-	.ow-sidebar {
-		background-color: red;
-	}
-
 	.ow-sidebar__content a {
 		flex: 1 0 auto;
-	}
-
-	.ow-sidebar__expand {
-		flex: 1 1 999rem;
-		overflow: auto;
-	}
-
-	.ow-sidebar__expand > .grid {
-		position: relative;
-	}
-
-	.ow-sidebar__expand > .grid > .column > .grid + .grid {
-		left: var(--ow-gap);
-		position: absolute;
-		top: var(--ow-gap);
 	}
 
 	@media screen and (orientation: portrait) {
@@ -72,10 +66,5 @@
 		.ow-sidebar.ow-sidebar {
 			max-width: 50vw;
 		}
-
-		.ow-sidebar__expand.ow-sidebar__expand {
-			width: 50vw; /* Forces the element to respect the flex-basis in landscape */
-	/*}
 	}
-	*/
 </style>

@@ -8,7 +8,7 @@ export interface SidebarState {
 export interface SidebarActions<State extends SidebarState> {
 	add(id?: string, source?: State): SidebarStore<State>;
 	remove(id?: string): SidebarStoreManager<State>;
-	get(id: string): SidebarStore<State>;
+	get(id?: string): SidebarStore<State>;
 	expand(id?: string): SidebarStoreManager<State>;
 	contract(id?: string): SidebarStoreManager<State>;
 }
@@ -20,9 +20,9 @@ type Updater<T> = (value: T) => T;
 
 export type SidebarStoreManager<State extends SidebarState = SidebarState> = {
 	subscribe(
-		id: string,
 		subscriber: Subscriber<State>,
-		invalidate?: Invalidator<State>
+		invalidate?: Invalidator<State>,
+		id?: string
 	): Unsubscriber;
 	set(id: string, value: State): void;
 	update(id: string, updater: Updater<State>): void;
@@ -74,9 +74,9 @@ const _sidebars: Record<string, SidebarStore> = {};
 
 export const store: SidebarStoreManager = {
 	subscribe(
-		id: string,
 		subscriber: Subscriber<SidebarState>,
-		invalidate?: Invalidator<SidebarState>
+		invalidate?: Invalidator<SidebarState>,
+		id: string = DEFAULT_ID
 	): Unsubscriber {
 		const sidebar = store.get(id);
 		return sidebar.subscribe(subscriber, invalidate);
