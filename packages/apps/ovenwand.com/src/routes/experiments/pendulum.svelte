@@ -33,15 +33,15 @@
 		const x = length * sin(angle);
 		const y = length * cos(angle);
 
-		background('black');
+		background(0);
 
 		translate(width / 2, 0);
 
-		stroke('red');
+		stroke(255);
 		strokeWeight(5);
 		line(0, 0, x, y);
 
-		fill('red');
+		fill(255);
 		circle(x, y, 25);
 	});
 </script>

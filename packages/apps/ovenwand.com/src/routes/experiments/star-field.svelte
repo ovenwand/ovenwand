@@ -23,7 +23,7 @@
 	});
 
 	draw(({ background, circle, fill, translate, mouseX, mouseY }) => {
-		background('black');
+		background(0);
 		translate(mouseX || width / 2, mouseY || height / 2);
 
 		for (const star of stars) {
