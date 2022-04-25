@@ -1,21 +1,18 @@
 <script lang="ts">
+	import { Column, Grid } from '@ovenwand/ui.grid';
+	import { Overlay } from '@ovenwand/ui.overlay';
+	import { Sheet } from '@ovenwand/ui.sheet';
 	export let active = false;
 </script>
 
 {#if active}
-	<div
-		class="
-            fixed
-            flex
-            items-center
-            justify-center
-            inset-0
-            bg-gray-900/80
-        "
-		on:click|self={() => (active = false)}
-	>
-		<div class="p-4 bg-gray-300 dark:bg-gray-800">
-			<slot />
-		</div>
-	</div>
+	<Overlay class="flex items-center justify-center" on:click={() => (active = false)}>
+		<Grid gap-outside={false}>
+			<Column columns={8} offset={2}>
+				<Sheet padding background rounded>
+					<slot />
+				</Sheet>
+			</Column>
+		</Grid>
+	</Overlay>
 {/if}
