@@ -23,7 +23,7 @@
 
 <Modal bind:active>
 	<form on:submit|preventDefault={onSubmit}>
-		<Grid>
+		<Grid relative>
 			<Column>
 				<label for="task-title" class="block">Title</label>
 				<input

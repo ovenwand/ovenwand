@@ -11,7 +11,7 @@
 
 	$: sheetClassName = createClassName({
 		[className]: className,
-		'p-2': padding,
+		'p-4': padding,
 		'bg-gray-100 dark:bg-gray-800': background,
 		rounded,
 		shadow
