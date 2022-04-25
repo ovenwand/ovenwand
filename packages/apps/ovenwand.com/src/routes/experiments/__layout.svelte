@@ -34,31 +34,32 @@
 	}
 </script>
 
-<div class="flex min-h-full min-w-full">
-	<Sidebar active={true}>
-		<svelte:fragment slot="expand">
-			<Grid relative>
-				<Column>
-					<h1>Experiments</h1>
+<Grid relative class="flex-auto min-h-full">
+	<Column columns={3}>
+		<Sidebar id="experiments-navigation" active absolute={false}>
+			<svelte:fragment slot="expand">
+				<Grid relative>
+					<Column>
+						<h1>Experiments</h1>
 
-					{#each experiments as experiment}
-						<div>
-							<a href={experiment.href} class={anchorClass(experiment)}>
-								{experiment.title}
-							</a>
-						</div>
-					{/each}
-				</Column>
-			</Grid>
-		</svelte:fragment>
-	</Sidebar>
-	<Grid relative class="flex-auto min-h-full">
-		<Column>
-			<h2>{title}</h2>
-		</Column>
-		<Column class="flex flex-col items-center justify-center" columns={12}
-			><!-- columns required, to calculate pool column size in ./index.svelte -->
+						{#each experiments as experiment}
+							<div>
+								<a href={experiment.href} class={anchorClass(experiment)}>
+									{experiment.title}
+								</a>
+							</div>
+						{/each}
+					</Column>
+				</Grid>
+			</svelte:fragment>
+		</Sidebar>
+	</Column>
+
+	<Column columns={9}>
+		<h2>{title}</h2>
+
+		<div class="flex flex-col items-center justify-center">
 			<slot />
-		</Column>
-	</Grid>
-</div>
+		</div>
+	</Column>
+</Grid>
