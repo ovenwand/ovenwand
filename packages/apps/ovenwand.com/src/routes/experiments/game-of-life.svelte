@@ -119,7 +119,7 @@
 
 		throttle = 60 / framerate;
 
-		background('black');
+		background(0);
 
 		for (let x = 0; x < grid.length; x++) {
 			for (let y = 0; y < grid[x].length; y++) {
@@ -128,7 +128,7 @@
 				}
 
 				save();
-				fill('red');
+				fill(255);
 				rect(y * rowSize, x * columnSize, columnSize, rowSize);
 				restore();
 			}
