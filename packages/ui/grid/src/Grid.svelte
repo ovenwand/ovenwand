@@ -38,8 +38,7 @@
 </div>
 
 <style lang="postcss">
-	/* Configuration */
-	:global(:root) {
+	.grid {
 		--ow-grid: 100vw;
 		--ow-gap: 0rem;
 		--ow-gap-outside: 0rem;
@@ -48,8 +47,6 @@
 	}
 
 	.grid {
-		--ow-column-offset: auto; /* Reset the column offset for child columns */
-
 		--ow-gap-count: calc(var(--ow-columns) - 1);
 		--ow-gap-total: calc(var(--ow-gap) * var(--ow-gap-count));
 		--ow-grid-size: calc(var(--ow-grid) - var(--ow-gap-total));
@@ -58,11 +55,12 @@
 		display: grid;
 		gap: var(--ow-gap);
 		grid-template-columns: repeat(var(--ow-columns), var(--ow-column-size));
-		grid-auto-rows: min-content 1fr;
+		/*grid-auto-rows: min-content;*/
 		padding: var(--ow-gap-outside);
+		width: var(--ow-grid);
 	}
 
-	.grid :global(.grid) {
+	.grid :global(.grid.grid--relative) {
 		padding: 0;
 	}
 
