@@ -14,15 +14,13 @@
 	let taskClassName: string;
 
 	$: taskClassName = createClassName({
-		'bg-gray-100': true,
-		'dark:bg-gray-800': true,
 		'mb-2': true,
 		'line-through': done
 	});
 </script>
 
 <div id="task-{id}" class="contents" use:draggable on:dragstart on:dragend on:click>
-	<Sheet class={taskClassName} padding rounded shadow>
+	<Sheet class={taskClassName} background padding rounded shadow>
 		<input
 			type="checkbox"
 			bind:checked={done}
