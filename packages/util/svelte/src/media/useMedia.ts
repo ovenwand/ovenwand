@@ -32,7 +32,7 @@ function findBreakpoint(): Breakpoint {
 
 	// const viewportWidth = screen.availWidth;
 	const viewportWidth = document.documentElement.clientWidth;
-	let $breakpoint: ReturnType<typeof findBreakpoint> = 'xs';
+	let $breakpoint: Breakpoint = 'xs';
 
 	if (viewportWidth < breakpoints.sm) {
 		$breakpoint = 'xs';
@@ -57,8 +57,8 @@ function findOrientation(): Orientation {
 	let $orientation: ReturnType<typeof findOrientation> = 'portrait';
 
 	if ('orientation' in screen) {
-		const angle = abs(screen.orientation.angle);
-		$orientation = angle === 90 ? 'landscape' : 'portrait';
+		const type = screen.orientation.type;
+		$orientation = type.includes('landscape') ? 'landscape' : 'portrait';
 	} else {
 		$orientation = screen.width > screen.height ? 'landscape' : 'portrait';
 	}
