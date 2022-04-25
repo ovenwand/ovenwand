@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { setContext } from 'svelte';
 	import { createClassName } from '@ovenwand/util.browser';
 	import type { Breakpoint } from './util';
 	import { createColumnStyle } from './util';
@@ -18,8 +17,6 @@
 	});
 
 	$: columnStyle = createColumnStyle(columns, offset, style);
-
-	$: setContext('columns', columns);
 </script>
 
 <div class="column {columnClassName}" style={columnStyle}>

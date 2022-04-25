@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
 	import { isClient } from '@ovenwand/util.browser';
 	import { useMedia } from '@ovenwand/util.svelte';
 	import { Column, Grid } from '@ovenwand/ui.grid';
@@ -12,9 +11,6 @@
 	let loading = true;
 	let nextPool: string = null;
 	let currentTask: ITask = null;
-	let columnSize: number;
-
-	$: columnSize = getContext('columns');
 
 	if (isClient) {
 		loading = false;
@@ -32,13 +28,13 @@
 	}
 </script>
 
-<Grid relative class="min-h-full">
+<Grid relative class="min-h-full" style={{ 'grid-auto-rows': 'min-content 1fr' }}>
 	<Column>
 		<TaskModal active={!!currentTask} task={currentTask} />
 	</Column>
 
 	{#each lanes as label}
-		<Column class="min-h-full" columns={$xs || $sm ? columnSize : columnSize / lanes.length}>
+		<Column class="min-h-full" columns={$xs || $sm ? 12 : 3}>
 			<TaskPool
 				title={label}
 				tasks={$tasks.filter((t) => t.labels.includes(label))}
