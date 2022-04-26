@@ -41,7 +41,7 @@ importers:
     specifiers:
       '@ovenwand/config': workspace:^0.1.0
       '@ovenwand/ui.button': workspace:^0.0.1
-      '@ovenwand/ui.grid': workspace:^0.0.1
+      '@ovenwand/ui.grid': workspace:^0.0.2
       '@ovenwand/ui.layout': workspace:^0.0.2
       '@ovenwand/ui.modal': workspace:^0.2.4
       '@ovenwand/ui.overlay': workspace:^0.0.1
@@ -97,7 +97,7 @@ importers:
     specifiers:
       '@ovenwand/config': workspace:^0.1.0
       '@ovenwand/ui.button': workspace:^0.0.1
-      '@ovenwand/ui.grid': workspace:^0.0.1
+      '@ovenwand/ui.grid': workspace:^0.0.2
       '@ovenwand/ui.icon': workspace:^0.0.1
       '@ovenwand/ui.layout': workspace:^0.0.2
       '@ovenwand/ui.modal': workspace:^0.2.4
@@ -162,7 +162,7 @@ importers:
   packages/ui/modal:
     specifiers:
       '@ovenwand/config': workspace:^0.1.0
-      '@ovenwand/ui.grid': workspace:^0.0.1
+      '@ovenwand/ui.grid': workspace:^0.0.2
       '@ovenwand/ui.overlay': workspace:^0.0.1
       '@ovenwand/ui.sheet': workspace:^0.0.2
       '@ovenwand/util.svelte': workspace:^0.1.0
