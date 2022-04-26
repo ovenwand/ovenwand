@@ -23,7 +23,7 @@
 			<Grid relative>
 				<Column>
 					<h3>Applications</h3>
-					<hr />
+					<SidebarDivider />
 					<SideNavigation on:click={() => sidebar.contract()} />
 				</Column>
 			</Grid>
