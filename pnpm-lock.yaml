@@ -43,15 +43,15 @@ importers:
       '@ovenwand/ui.button': workspace:^0.0.1
       '@ovenwand/ui.grid': workspace:^0.0.1
       '@ovenwand/ui.layout': workspace:^0.0.2
-      '@ovenwand/ui.modal': workspace:^0.0.1
+      '@ovenwand/ui.modal': workspace:^0.2.2
       '@ovenwand/ui.overlay': workspace:^0.0.1
-      '@ovenwand/ui.sheet': workspace:^0.0.1
+      '@ovenwand/ui.sheet': workspace:^0.0.2
       '@ovenwand/ui.sidebar': workspace:^0.0.1
       '@ovenwand/util.browser': workspace:^0.0.1
       '@ovenwand/util.fp': workspace:^0.0.1
       '@ovenwand/util.math': workspace:^0.0.1
       '@ovenwand/util.string': workspace:^0.0.1
-      '@ovenwand/util.svelte': workspace:^0.0.1
+      '@ovenwand/util.svelte': workspace:^0.1.0
       '@sveltejs/kit': next
       autoprefixer: ^10.4.5
       postcss: ^8.4.12
@@ -99,8 +99,8 @@ importers:
       '@ovenwand/ui.grid': workspace:^0.0.1
       '@ovenwand/ui.icon': workspace:^0.0.1
       '@ovenwand/ui.layout': workspace:^0.0.2
-      '@ovenwand/ui.modal': workspace:^0.0.1
-      '@ovenwand/ui.sheet': workspace:^0.0.1
+      '@ovenwand/ui.modal': workspace:^0.2.2
+      '@ovenwand/ui.sheet': workspace:^0.0.2
       '@ovenwand/ui.sidebar': workspace:^0.0.1
     dependencies:
       '@ovenwand/ui.grid': link:grid
@@ -160,12 +160,14 @@ importers:
       '@ovenwand/config': workspace:^0.0.1
       '@ovenwand/ui.grid': workspace:^0.0.1
       '@ovenwand/ui.overlay': workspace:^0.0.1
-      '@ovenwand/ui.sheet': workspace:^0.0.1
+      '@ovenwand/ui.sheet': workspace:^0.0.2
+      '@ovenwand/util.svelte': workspace:^0.1.0
       svelte: ^3.47.0
     dependencies:
       '@ovenwand/ui.grid': link:../grid
       '@ovenwand/ui.overlay': link:../overlay
       '@ovenwand/ui.sheet': link:../sheet
+      '@ovenwand/util.svelte': link:../../util/svelte
     devDependencies:
       '@ovenwand/config': link:../../config
       svelte: 3.47.0
@@ -196,7 +198,7 @@ importers:
     specifiers:
       '@ovenwand/config': workspace:^0.0.1
       '@ovenwand/util.browser': workspace:^0.0.1
-      '@ovenwand/util.svelte': workspace:^0.0.1
+      '@ovenwand/util.svelte': workspace:^0.1.0
       '@types/chai': ^4.3.1
       '@types/mocha': ^9.1.1
       svelte: ^3.47.0
@@ -213,7 +215,7 @@ importers:
     specifiers:
       '@ovenwand/config': workspace:^0.0.1
       '@ovenwand/util.browser': workspace:^0.0.1
-      '@ovenwand/util.svelte': workspace:^0.0.1
+      '@ovenwand/util.svelte': workspace:^0.1.0
       svelte: ^3.47.0
     dependencies:
       '@ovenwand/util.browser': link:../../util/browser
@@ -228,7 +230,7 @@ importers:
       '@ovenwand/util.browser': workspace:^0.0.1
       '@ovenwand/util.fp': workspace:^0.0.1
       '@ovenwand/util.string': workspace:^0.0.1
-      '@ovenwand/util.svelte': workspace:^0.0.1
+      '@ovenwand/util.svelte': workspace:^0.1.0
     dependencies:
       '@ovenwand/config': link:../config
       '@ovenwand/util.browser': link:browser

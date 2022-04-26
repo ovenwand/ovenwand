@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui.modal",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"description": "",
 	"main": "src/index.ts",
 	"scripts": {
@@ -14,7 +14,7 @@
 	"dependencies": {
 		"@ovenwand/ui.grid": "workspace:^0.0.1",
 		"@ovenwand/ui.overlay": "workspace:^0.0.1",
-		"@ovenwand/ui.sheet": "workspace:^0.0.1",
+		"@ovenwand/ui.sheet": "workspace:^0.0.2",
 		"@ovenwand/util.svelte": "workspace:^0.1.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
