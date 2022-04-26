@@ -6,7 +6,7 @@
 	import { moveTask, saveTask, tasks } from './_lib/store';
 	import { Task, TaskModal, TaskPool } from './_lib/components';
 
-	const { xs, sm } = useMedia();
+	const { portrait } = useMedia();
 	const lanes = ['backlog', 'month', 'week', 'day'];
 	let loading = true;
 	let nextPool: string = null;
@@ -34,7 +34,7 @@
 	</Column>
 
 	{#each lanes as label}
-		<Column class="min-h-full" columns={$xs || $sm ? 12 : 3}>
+		<Column class="min-h-full" columns={$portrait ? 12 : 3}>
 			<TaskPool
 				title={label}
 				tasks={$tasks.filter((t) => t.labels.includes(label))}
