@@ -1,11 +1,12 @@
 {
 	"name": "@ovenwand/apps.ovenwand.com",
-	"version": "0.5.1",
+	"version": "0.5.2",
 	"type": "module",
 	"scripts": {
 		"clean": "pnpx -y rimraf node_modules",
 		"dev": "svelte-kit dev",
-		"build": "svelte-kit build &&  mv .vercel_build_output ../../..",
+		"build": "svelte-kit build && pnpm run deploy",
+		"deploy": "mv .vercel_build_output ../../..",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
