@@ -96,17 +96,21 @@ importers:
   packages/ui:
     specifiers:
       '@ovenwand/config': workspace:^0.0.1
+      '@ovenwand/ui.button': workspace:^0.0.1
       '@ovenwand/ui.grid': workspace:^0.0.1
       '@ovenwand/ui.icon': workspace:^0.0.1
       '@ovenwand/ui.layout': workspace:^0.0.2
       '@ovenwand/ui.modal': workspace:^0.2.2
+      '@ovenwand/ui.overlay': workspace:^0.0.1
       '@ovenwand/ui.sheet': workspace:^0.0.2
       '@ovenwand/ui.sidebar': workspace:^0.0.1
     dependencies:
+      '@ovenwand/ui.button': link:button
       '@ovenwand/ui.grid': link:grid
       '@ovenwand/ui.icon': link:icon
       '@ovenwand/ui.layout': link:layout
       '@ovenwand/ui.modal': link:modal
+      '@ovenwand/ui.overlay': link:overlay
       '@ovenwand/ui.sheet': link:sheet
       '@ovenwand/ui.sidebar': link:sidebar
     devDependencies:
