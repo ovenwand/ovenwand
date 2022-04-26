@@ -13,7 +13,7 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:^0.0.1",
+		"@ovenwand/config": "workspace:^0.1.0",
 		"@ovenwand/ui.button": "workspace:^0.0.1",
 		"@ovenwand/ui.grid": "workspace:^0.0.1",
 		"@ovenwand/ui.layout": "workspace:^0.0.2",

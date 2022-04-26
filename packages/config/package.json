@@ -1,10 +1,11 @@
 {
 	"name": "@ovenwand/config",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"description": "",
 	"type": "module",
 	"exports": {
 		"./tsconfig": "./tsconfig.json",
+		"./postcss": "./postcss.config.cjs",
 		"./tailwind": "./tailwind.config.cjs",
 		"./svelte": "./svelte.config.js"
 	},

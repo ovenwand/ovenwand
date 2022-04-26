@@ -18,7 +18,7 @@
 		"@ovenwand/ui.sidebar": "workspace:^0.0.1"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:^0.0.1"
+		"@ovenwand/config": "workspace:^0.1.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"

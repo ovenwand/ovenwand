@@ -8,7 +8,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@ovenwand/config": "workspace:^0.0.1",
+		"@ovenwand/config": "workspace:^0.1.0",
 		"@ovenwand/util.browser": "workspace:^0.0.1",
 		"@ovenwand/util.fp": "workspace:^0.0.1",
 		"@ovenwand/util.math": "workspace:^0.0.1",
