@@ -45,7 +45,7 @@
 	}
 
 	/* Breakpoint: SM */
-	@media screen and (min-width: 420px) {
+	@media screen(sm) {
 		.column {
 			--ow-columns: var(--ow-columns-sm);
 			--ow-column-offset: var(--ow-column-offset-sm);
@@ -53,7 +53,7 @@
 	}
 
 	/* Breakpoint: MD */
-	@media screen and (min-width: 1024px) {
+	@media screen(md) {
 		.column {
 			--ow-columns: var(--ow-columns-md);
 			--ow-column-offset: var(--ow-column-offset-md);
@@ -61,7 +61,7 @@
 	}
 
 	/* Breakpoint: LG */
-	@media screen and (min-width: 1440px) {
+	@media screen(lg) {
 		.column {
 			--ow-columns: var(--ow-columns-lg);
 			--ow-column-offset: var(--ow-column-offset-lg);
@@ -69,7 +69,7 @@
 	}
 
 	/* Breakpoint: XL */
-	@media screen and (min-width: 1920px) {
+	@media screen(xl) {
 		.column {
 			--ow-columns: var(--ow-columns-xl);
 			--ow-column-offset: var(--ow-column-offset-xl);
