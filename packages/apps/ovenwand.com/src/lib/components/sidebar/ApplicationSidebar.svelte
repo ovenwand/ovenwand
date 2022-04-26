@@ -4,9 +4,14 @@
 	import { Sheet } from '@ovenwand/ui.sheet';
 	import { Overlay } from '@ovenwand/ui.overlay';
 	import { store } from '@ovenwand/ui.sidebar';
-	import { Sidebar, SideNavigation } from '$lib/components';
+	import { useMedia } from '@ovenwand/util.svelte';
+	import { Sidebar, SidebarDivider, SideNavigation } from '$lib/components';
+
+	const { portrait } = useMedia();
 
 	let sidebar;
+
+	$: position = { top: !$portrait, left: $portrait, bottom: $portrait, right: true };
 
 	onMount(() => {
 		sidebar = store.get();
@@ -17,9 +22,9 @@
 	<Overlay on:click={() => sidebar.contract()} />
 {/if}
 
-<Sidebar>
+<Sidebar {...position}>
 	<svelte:fragment slot="expand">
-		<Sheet class="h-full" background>
+		<Sheet class="h-full min-w-[100vw] landscape:min-w-[25vw]" background shadow>
 			<Grid relative>
 				<Column>
 					<h3>Applications</h3>

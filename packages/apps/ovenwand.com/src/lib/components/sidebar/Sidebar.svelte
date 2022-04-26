@@ -6,6 +6,10 @@
 	export let id: string = undefined;
 	export let active = false;
 	export let absolute = true;
+	export let left = false;
+	export let right = false;
+	export let bottom = false;
+	export let top = false;
 
 	const { portrait } = useMedia();
 
@@ -26,12 +30,16 @@
 	};
 
 	$: sidebarClassName = createClassName({
-		'absolute top-0 right-0': absolute
+		absolute: absolute,
+		'top-0': top,
+		'right-0': right,
+		'bottom-0': bottom,
+		'left-0': left
 	});
 </script>
 
 <Sidebar
-	class={sidebarClassName}
+	class="h-auto landscape:h-full {sidebarClassName}"
 	bind:id
 	bind:expand={active}
 	{expandIn}
