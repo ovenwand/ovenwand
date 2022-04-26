@@ -1,16 +1,17 @@
+import { onDestroy } from 'svelte';
 import type { Readable, Writable } from 'svelte/store';
 import { derived, writable } from 'svelte/store';
-import { abs } from '@ovenwand/util.math';
 import { isClient } from '@ovenwand/util.browser';
 
-export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 export type Orientation = 'portrait' | 'landscape';
 
-export const breakpoints = {
-	sm: 420,
-	md: 1024,
-	lg: 1440,
-	xl: 1920
+const breakpoints = {
+	sm: 640,
+	md: 768,
+	lg: 1024,
+	xl: 1280,
+	xxl: 1536
 };
 
 const breakpoint: UseMedia['breakpoint'] = writable(findBreakpoint());
@@ -20,9 +21,25 @@ const sm: UseMedia['sm'] = derived(breakpoint, matchBreakpoint('sm'));
 const md: UseMedia['md'] = derived(breakpoint, matchBreakpoint('md'));
 const lg: UseMedia['lg'] = derived(breakpoint, matchBreakpoint('lg'));
 const xl: UseMedia['xl'] = derived(breakpoint, matchBreakpoint('xl'));
+const xxl: UseMedia['xxl'] = derived(breakpoint, matchBreakpoint('xxl'));
+const portrait: UseMedia['portrait'] = derived(orientation, matchOrientation('portrait'));
+const landscape: UseMedia['landscape'] = derived(orientation, matchOrientation('landscape'));
 
-function matchBreakpoint(name: string) {
-	return (breakpoint: string) => breakpoint === name;
+function matchBreakpoint(name: Breakpoint) {
+	const BREAKPOINTS: Record<Breakpoint, number> = {
+		xs: 0,
+		sm: 1,
+		md: 2,
+		lg: 3,
+		xl: 4,
+		xxl: 5
+	};
+
+	return (breakpoint: Breakpoint) => BREAKPOINTS[breakpoint] >= BREAKPOINTS[name];
+}
+
+function matchOrientation(name: Orientation) {
+	return (orientation: Orientation) => orientation === name;
 }
 
 function findBreakpoint(): Breakpoint {
@@ -30,20 +47,22 @@ function findBreakpoint(): Breakpoint {
 		return 'xs';
 	}
 
-	// const viewportWidth = screen.availWidth;
-	const viewportWidth = document.documentElement.clientWidth;
-	let $breakpoint: Breakpoint = 'xs';
+	const { clientWidth } = document.documentElement;
 
-	if (viewportWidth < breakpoints.sm) {
+	let $breakpoint: Breakpoint;
+
+	if (clientWidth < breakpoints.sm) {
 		$breakpoint = 'xs';
-	} else if (viewportWidth < breakpoints.md) {
+	} else if (clientWidth < breakpoints.md) {
 		$breakpoint = 'sm';
-	} else if (viewportWidth < breakpoints.lg) {
+	} else if (clientWidth < breakpoints.lg) {
 		$breakpoint = 'md';
-	} else if (viewportWidth < breakpoints.xl) {
+	} else if (clientWidth < breakpoints.xl) {
 		$breakpoint = 'lg';
-	} else {
+	} else if (clientWidth < breakpoints.xxl) {
 		$breakpoint = 'xl';
+	} else {
+		$breakpoint = 'xxl';
 	}
 
 	return $breakpoint;
@@ -54,16 +73,9 @@ function findOrientation(): Orientation {
 		return 'portrait';
 	}
 
-	let $orientation: ReturnType<typeof findOrientation> = 'portrait';
+	const { clientHeight, clientWidth } = document.documentElement;
 
-	if ('orientation' in screen) {
-		const type = screen.orientation.type;
-		$orientation = type.includes('landscape') ? 'landscape' : 'portrait';
-	} else {
-		$orientation = screen.width > screen.height ? 'landscape' : 'portrait';
-	}
-
-	return $orientation;
+	return clientWidth > clientHeight ? 'landscape' : 'portrait';
 }
 
 function setBreakpoint() {
@@ -80,19 +92,22 @@ export interface UseMedia {
 	md: Readable<boolean>;
 	lg: Readable<boolean>;
 	xl: Readable<boolean>;
+	xxl: Readable<boolean>;
 	breakpoint: Writable<Breakpoint>;
+	portrait: Readable<boolean>;
+	landscape: Readable<boolean>;
 	orientation: Writable<Orientation>;
 }
 
 export function useMedia(): UseMedia {
-	if (typeof window !== 'undefined') {
+	if (isClient) {
 		window.addEventListener('resize', setBreakpoint);
+		window.addEventListener('resize', setOrientation);
 
-		if ('orientation' in screen) {
-			screen.orientation.addEventListener('change', setOrientation);
-		} else {
-			window.addEventListener('orientationchange', setOrientation);
-		}
+		onDestroy(() => {
+			window.removeEventListener('resize', setBreakpoint);
+			window.removeEventListener('resize', setOrientation);
+		});
 
 		setBreakpoint();
 		setOrientation();
@@ -104,7 +119,10 @@ export function useMedia(): UseMedia {
 		md,
 		lg,
 		xl,
+		xxl,
 		breakpoint,
+		portrait,
+		landscape,
 		orientation
 	};
 }
