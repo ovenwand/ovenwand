@@ -13,9 +13,9 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@tsconfig/svelte": "^3.0.0",
 		"@sveltejs/adapter-auto": "next",
-		"svelte-preprocess": "^4.10.5"
+		"@tsconfig/svelte": "^3.0.0",
+		"svelte-preprocess": "^4.10.6"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"
