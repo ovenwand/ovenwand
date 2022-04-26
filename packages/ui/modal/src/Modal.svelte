@@ -9,7 +9,7 @@
 	<Overlay class="flex items-center justify-center" on:click={() => (active = false)}>
 		<Grid gap-outside={false}>
 			<Column columns={8} offset={2}>
-				<Sheet padding background rounded>
+				<Sheet padding background rounded shadow>
 					<slot />
 				</Sheet>
 			</Column>
