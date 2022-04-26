@@ -6,13 +6,17 @@
 
 	export let active = false;
 
-	const { portrait } = useMedia();
+	const { xs } = useMedia();
 </script>
 
 {#if active}
 	<Overlay class="flex items-center justify-center" on:click={() => (active = false)}>
-		<Grid class="pointer-events-none" gapOutside={false}>
-			<Column class="pointer-events-auto" columns={$portrait ? 10 : 8} offset={$portrait ? 1 : 2}>
+		<Grid class="pointer-events-none" gapOutside={$xs}>
+			<Column
+				class="pointer-events-auto"
+				columns={{ sm: 10, md: 8, lg: 6 }}
+				offset={{ sm: 1, md: 2, lg: 3 }}
+			>
 				<Sheet padding background rounded shadow>
 					<slot />
 				</Sheet>
