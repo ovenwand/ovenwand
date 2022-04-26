@@ -11,7 +11,7 @@
 
 {#if active}
 	<Overlay class="flex items-center justify-center" on:click={() => (active = false)}>
-		<Grid class="pointer-events-none" gap-outside={false}>
+		<Grid class="pointer-events-none" gapOutside={false}>
 			<Column class="pointer-events-auto" columns={$portrait ? 10 : 8} offset={$portrait ? 1 : 2}>
 				<Sheet padding background rounded shadow>
 					<slot />

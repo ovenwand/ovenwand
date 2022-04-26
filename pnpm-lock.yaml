@@ -43,7 +43,7 @@ importers:
       '@ovenwand/ui.button': workspace:^0.0.1
       '@ovenwand/ui.grid': workspace:^0.0.1
       '@ovenwand/ui.layout': workspace:^0.0.2
-      '@ovenwand/ui.modal': workspace:^0.2.2
+      '@ovenwand/ui.modal': workspace:^0.2.3
       '@ovenwand/ui.overlay': workspace:^0.0.1
       '@ovenwand/ui.sheet': workspace:^0.0.2
       '@ovenwand/ui.sidebar': workspace:^0.0.1
@@ -100,7 +100,7 @@ importers:
       '@ovenwand/ui.grid': workspace:^0.0.1
       '@ovenwand/ui.icon': workspace:^0.0.1
       '@ovenwand/ui.layout': workspace:^0.0.2
-      '@ovenwand/ui.modal': workspace:^0.2.2
+      '@ovenwand/ui.modal': workspace:^0.2.3
       '@ovenwand/ui.overlay': workspace:^0.0.1
       '@ovenwand/ui.sheet': workspace:^0.0.2
       '@ovenwand/ui.sidebar': workspace:^0.0.1
@@ -1063,7 +1063,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001332
-      electron-to-chromium: 1.4.121
+      electron-to-chromium: 1.4.122
       escalade: 3.1.1
       node-releases: 2.0.3
       picocolors: 1.0.0
@@ -1436,8 +1436,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium/1.4.121:
-    resolution: {integrity: sha512-N7OXhMr1p2oa9EkOhmHpmOm43DHzs55dep2FF6M7y6px5QJBheqEE3nwwZ+xJowlff+AEmMOdg3ARYGB+0kzbA==}
+  /electron-to-chromium/1.4.122:
+    resolution: {integrity: sha512-VuLNxTIt8sBWIT2sd186xPd18Y8KcK8myLd9nMdSJOYZwFUxxbLVmX/T1VX+qqaytRlrYYQv39myxJdXtu7Ysw==}
     dev: true
 
   /emoji-regex/8.0.0:
