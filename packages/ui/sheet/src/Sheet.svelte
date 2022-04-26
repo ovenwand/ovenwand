@@ -14,7 +14,7 @@
 		'p-4': padding,
 		'bg-gray-100 dark:bg-gray-800': background,
 		rounded,
-		shadow
+		'shadow shadow-black': shadow
 	});
 </script>
 
