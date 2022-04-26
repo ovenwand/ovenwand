@@ -60,7 +60,6 @@
 <style>
 	.ow-sidebar {
 		display: flex;
-		height: 100%;
 	}
 
 	.ow-sidebar__content {
