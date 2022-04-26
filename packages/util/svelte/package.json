@@ -17,7 +17,7 @@
 		"chai": "^4.3.6"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:^0.0.1",
+		"@ovenwand/config": "workspace:^0.1.0",
 		"svelte": "^3.47.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com>",
