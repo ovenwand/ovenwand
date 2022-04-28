@@ -1,4 +1,3 @@
-import { onDestroy } from 'svelte';
 import type { Readable, Writable } from 'svelte/store';
 import { derived, writable } from 'svelte/store';
 import { isClient } from '@ovenwand/util.browser';

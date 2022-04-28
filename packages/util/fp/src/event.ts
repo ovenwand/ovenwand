@@ -1,4 +1,4 @@
-export function preventDefault(event: Event) {
+export function preventDefault(event: Event): void {
 	if (event.cancelable) {
 		event.preventDefault();
 	}
