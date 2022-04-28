@@ -1,10 +1,23 @@
+import { preventDefault } from '@ovenwand/util.fp';
+
 const draggables: Map<string, HTMLElement[]> = new Map();
 const droppables: Map<string, HTMLElement[]> = new Map();
 
-function createDragEvent(type: string, mouseEvent: MouseEvent): DragEvent {
-	const eventInitDict: DragEventInit = new MouseEvent(mouseEvent.type, mouseEvent);
-	eventInitDict.dataTransfer = new DataTransfer();
+function createDragEvent(type: string, mouseOrTouchEvent: MouseEvent | TouchEvent): DragEvent {
+	const eventInitDict: DragEventInit =
+		mouseOrTouchEvent instanceof MouseEvent
+			? new MouseEvent(mouseOrTouchEvent.type, mouseOrTouchEvent)
+			: new TouchEvent(mouseOrTouchEvent.type, mouseOrTouchEvent as unknown as TouchEventInit);
+
+	if (mouseOrTouchEvent instanceof MouseEvent) {
+		eventInitDict.dataTransfer = new DataTransfer();
+	}
+
 	return new DragEvent(type, eventInitDict);
+}
+
+function dispatch(type: string, target: EventTarget, event: MouseEvent | TouchEvent) {
+	target.dispatchEvent(createDragEvent(type, event));
 }
 
 function createGhostElement(element) {
@@ -26,7 +39,9 @@ function findTargetElement(element) {
 	return display === 'contents' ? findTargetElement(element.firstChild) : element;
 }
 
-function findDropTarget(id: string, { clientX, clientY }: MouseEvent) {
+function findDropTarget(id: string, event: MouseEvent | TouchEvent) {
+	const { clientX, clientY } = findEventCoordinates(event);
+
 	for (const droppable of droppables.get(id)) {
 		const { x, y, width, height } = findTargetElement(droppable).getBoundingClientRect();
 		const isInHorizontalBounds = clientX >= x && clientX <= x + width;
@@ -36,6 +51,16 @@ function findDropTarget(id: string, { clientX, clientY }: MouseEvent) {
 			return droppable;
 		}
 	}
+}
+
+function findEventCoordinates(event: MouseEvent | TouchEvent) {
+	const result: MouseEvent | Touch = event instanceof MouseEvent ? event : event.touches.item(0);
+	return {
+		clientX: result.clientX,
+		clientY: result.clientY,
+		pageX: result.pageX,
+		pageY: result.pageY
+	};
 }
 
 export function draggable(
@@ -55,76 +80,109 @@ export function draggable(
 
 	draggables.get(id).push(node);
 
-	node.addEventListener('mousedown', onMouseDown);
+	bindStartEvents();
 
-	function onMouseDown(event: MouseEvent) {
-		event.preventDefault();
+	function onInteractionStart(event: MouseEvent | TouchEvent) {
+		const { clientX, clientY } = findEventCoordinates(event);
 
 		dragTarget = node;
-		ghostElement = createGhostElement(dragTarget);
 
-		window.addEventListener('mousemove', onMouseMove);
-		window.addEventListener('mouseup', onMouseUp);
+		bindDragEvents();
 
-		startX = event.clientX;
-		startY = event.clientY;
+		startX = clientX;
+		startY = clientY;
 	}
 
-	function onMouseUp(event: MouseEvent) {
+	function onInteractionMove(event: MouseEvent | TouchEvent) {
+		preventDefault(event);
+
+		const { pageX, pageY } = findEventCoordinates(event);
+
+		const previousDropTarget = dropTarget;
+
+		ghostElement = ghostElement || createGhostElement(dragTarget);
+
+		dragTarget.style.pointerEvents = 'none';
+		ghostElement.style.transform = `translate3d(${pageX - startX}px, ${pageY - startY}px, 0)`;
+
+		dropTarget = findDropTarget(id, event);
+
+		if (!dragging && dragTarget) {
+			dispatch('dragstart', dragTarget, event);
+			dragging = true;
+		}
+
+		if (!dropTarget && previousDropTarget) {
+			dispatch('dragleave', previousDropTarget, event);
+		} else if (dropTarget && dropTarget === previousDropTarget) {
+			dispatch('dragover', dropTarget, event);
+		} else {
+			if (previousDropTarget) {
+				dispatch('dragleave', previousDropTarget, event);
+			}
+
+			if (dropTarget) {
+				dispatch('dragenter', dropTarget, event);
+				dispatch('dragover', dropTarget, event);
+			}
+		}
+
+		return false;
+	}
+
+	function onInteractionEnd(event: MouseEvent | TouchEvent) {
 		dragging = false;
 
-		dragTarget.dispatchEvent(createDragEvent('dragend', event));
+		dragTarget.style.pointerEvents = '';
+
+		dispatch('dragend', dragTarget, event);
 		dragTarget = null;
 
 		if (dropTarget) {
-			dropTarget.dispatchEvent(createDragEvent('drop', event));
+			dispatch('drop', dropTarget, event);
 			dropTarget = null;
 		}
 
-		document.body.removeChild(ghostElement);
-		ghostElement = null;
+		if (ghostElement) {
+			document.body.removeChild(ghostElement);
+			ghostElement = null;
+		}
 
-		window.removeEventListener('mousemove', onMouseMove);
-		window.removeEventListener('mouseup', onMouseUp);
+		unbindDragEvents();
 
 		startX = 0;
 		startY = 0;
 	}
 
-	function onMouseMove(event: MouseEvent) {
-		const { clientX, clientY } = event;
-		const previousDropTarget = dropTarget;
+	function bindStartEvents() {
+		node.addEventListener('mousedown', onInteractionStart);
+		node.addEventListener('touchstart', onInteractionStart);
+	}
 
-		ghostElement.style.transform = `translate3d(${clientX - startX}px, ${clientY - startY}px, 0)`;
+	function unbindStartEvents() {
+		node.removeEventListener('mousedown', onInteractionStart);
+		node.removeEventListener('touchstart', onInteractionStart);
+	}
 
-		dropTarget = findDropTarget(id, event);
+	function bindDragEvents() {
+		window.addEventListener('mousemove', onInteractionMove, { passive: false });
+		window.addEventListener('mouseup', onInteractionEnd);
+		window.addEventListener('touchmove', onInteractionMove, { passive: false });
+		window.addEventListener('touchend', onInteractionEnd);
+	}
 
-		if (!dragging && dragTarget) {
-			dragTarget.dispatchEvent(createDragEvent('dragstart', event));
-			dragging = true;
-		}
-
-		if (!dropTarget && previousDropTarget) {
-			previousDropTarget.dispatchEvent(createDragEvent('dragleave', event));
-		} else if (dropTarget && dropTarget === previousDropTarget) {
-			dropTarget.dispatchEvent(createDragEvent('dragover', event));
-		} else {
-			if (previousDropTarget) {
-				previousDropTarget.dispatchEvent(createDragEvent('dragleave', event));
-			}
-
-			if (dropTarget) {
-				dropTarget.dispatchEvent(createDragEvent('dragenter', event));
-				dropTarget.dispatchEvent(createDragEvent('dragover', event));
-			}
-		}
+	function unbindDragEvents() {
+		window.removeEventListener('mousemove', onInteractionMove);
+		window.removeEventListener('mouseup', onInteractionEnd);
+		window.removeEventListener('touchmove', onInteractionMove);
+		window.removeEventListener('touchend', onInteractionEnd);
 	}
 
 	return {
 		destroy() {
 			draggables.get(id).splice(draggables.get(id).indexOf(node), 1);
-			window.removeEventListener('mousemove', onMouseMove);
-			window.removeEventListener('mouseup', onMouseUp);
+			unbindStartEvents();
+			unbindDragEvents();
 		}
 	};
 }
