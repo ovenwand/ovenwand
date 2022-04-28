@@ -17,7 +17,7 @@
 	}
 
 	function onTaskClick({ target }, task) {
-		if (!['A', 'INPUT'].includes(target.tagName)) {
+		if (!['A', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'INPUT'].includes(target.tagName)) {
 			currentTask = task;
 		}
 	}
