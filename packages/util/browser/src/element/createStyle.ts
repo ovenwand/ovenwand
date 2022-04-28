@@ -4,7 +4,7 @@ export function createStyle(styleMap: Record<string, unknown>): string {
 	for (const key of Object.keys(styleMap)) {
 		const value = styleMap[key];
 
-		if (value) {
+		if (value != null) {
 			style += `${key}: ${value};`;
 		}
 	}
