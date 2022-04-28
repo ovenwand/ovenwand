@@ -1,5 +1,5 @@
 import { onDestroy, onMount } from 'svelte';
-import type { Engine, Fn, Hook, IDrawContext, ISetupContext } from '@ovenwand/util.browser';
+import type { Engine, IDrawContext, ISetupContext } from '@ovenwand/util.browser';
 import { createEngine } from '@ovenwand/util.browser';
 
 export function useEngine(getCanvas: () => HTMLCanvasElement): Engine {
