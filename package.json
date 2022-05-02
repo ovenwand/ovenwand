@@ -16,7 +16,8 @@
 		"lint:eslint": "eslint",
 		"lint:prettier": "prettier --plugin-search-dir=.",
 		"lint": "pnpm lint:prettier -- --check . ; pnpm lint:eslint -- .",
-		"format": "pnpm lint:prettier -- --write . ; pnpm lint:eslint -- --fix ."
+		"format": "pnpm lint:prettier -- --write . ; pnpm lint:eslint -- --fix .",
+		"ci:test": "pnpm test:unit run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^16.2.4",
