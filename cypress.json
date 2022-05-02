@@ -1,5 +1,6 @@
 {
 	"projectId": "9xyzzj",
 	"componentFolder": "packages",
-	"testFiles": "**/*.spec.ts"
+	"testFiles": "**/*.spec.ts",
+	"video": false
 }
