@@ -1,40 +1,37 @@
-/// <reference types="mocha" />
-/// <reference types="svelte" />
+/// <reference types="cypress" />
 
-import { render as _render, testAttribute, testClassName } from '@ovenwand/util.svelte/test';
+import { testAttribute, testClassName } from '@ovenwand/test.cypress';
 import Sidebar from './Sidebar.svelte';
 import { DEFAULT_ID } from './store';
-
-function render(props: Record<string, unknown> = {}) {
-	return _render(Sidebar, {
-		props
-	});
-}
 
 describe('@ovenwand/svelte-sidebar', () => {
 	describe('Sidebar', () => {
 		it(
 			'has a default id',
 			testAttribute(() => ({
-				attributeName: 'id',
-				attributeValue: DEFAULT_ID,
-				wrapper: render()
+				wrapper: cy.render(Sidebar),
+				selector: '.ow-sidebar',
+				attribute: 'id',
+				value: DEFAULT_ID
 			}))
 		);
 
 		it(
 			'passes down id',
 			testAttribute(() => ({
-				attributeName: 'id',
-				attributeValue: 'id',
-				wrapper: render({ id: 'id' })
+				wrapper: cy.render(Sidebar, { id: 'id' }),
+				selector: '.ow-sidebar',
+				attribute: 'id',
+				value: 'id'
 			}))
 		);
 
 		it(
 			'passes down classNames',
 			testClassName(() => ({
-				wrapper: render()
+				wrapper: cy.render(Sidebar).as('sidebar'),
+				component: '@sidebar',
+				selector: '.ow-sidebar'
 			}))
 		);
 	});

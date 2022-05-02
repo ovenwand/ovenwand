@@ -1,4 +1,5 @@
-import { AsyncFunction, getElement, TestOptions } from './util';
+import type { AsyncFunction, TestOptions } from './util';
+import { getElement } from './util';
 import { assertAttributeValue } from './assertions';
 
 export function testAttribute(

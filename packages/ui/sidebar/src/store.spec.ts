@@ -1,15 +1,15 @@
-/// <reference types="mocha" />
+/// <reference types="cypress" />
 
-import { expect } from '@ovenwand/util.svelte/test';
-import { SidebarState, SidebarStore, store } from '../src';
+import type { SidebarState, SidebarStore } from './store';
+import { store } from './store';
 
-describe('@ovenwand/svelte-sidebar', () => {
+describe('@ovenwand/ui.sidebar', () => {
 	describe('store', () => {
 		const globalId = 'test-id';
 		let expanded = false;
 
 		const source: SidebarState = { expand: expanded };
-		const sidebar: SidebarStore<SidebarState> = store.add(globalId, source);
+		const sidebar: SidebarStore = store.add(globalId, source);
 
 		sidebar.subscribe((state) => {
 			expanded = state.expand;

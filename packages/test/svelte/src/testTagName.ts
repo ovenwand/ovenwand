@@ -1,4 +1,5 @@
-import { AsyncFunction, getElement, TestOptions } from './util';
+import type { AsyncFunction, TestOptions } from './util';
+import { getElement } from './util';
 import { assertTagName } from './assertions';
 
 export function testTagName(options: TestOptions<{ tagName: string }>): AsyncFunction {
