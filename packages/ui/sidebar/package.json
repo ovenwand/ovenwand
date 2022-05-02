@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui.sidebar",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "",
 	"type": "module",
 	"main": "src/index.ts",
@@ -14,13 +14,13 @@
 	},
 	"dependencies": {
 		"@ovenwand/config": "workspace:^0.1.0",
-		"@ovenwand/util.browser": "workspace:^0.0.2"
+		"@ovenwand/util.browser": "workspace:^0.0.2",
+		"@ovenwand/util.svelte": "workspace:^0.2.2"
 	},
 	"devDependencies": {
-		"@ovenwand/util.svelte": "workspace:^0.2.1",
-		"@types/chai": "^4.3.1",
-		"@types/mocha": "^9.1.1",
-		"svelte": "^3.47.0"
+		"@ovenwand/test.cypress": "workspace:^0.0.1",
+		"@ovenwand/test.svelte": "workspace:^0.0.1",
+		"svelte": "^3.48.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com>",
 	"license": "WTFPL"

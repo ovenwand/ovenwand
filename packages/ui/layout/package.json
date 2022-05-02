@@ -20,7 +20,7 @@
 		"@ovenwand/util.browser": "workspace:^0.0.2"
 	},
 	"devDependencies": {
-		"svelte": "^3.47.0"
+		"svelte": "^3.48.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com>",
 	"license": "WTFPL"
