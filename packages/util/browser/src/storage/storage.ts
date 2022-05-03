@@ -1,14 +1,12 @@
 import { decode, encode } from '@ovenwand/util.string';
 
-function getStorage<T>(namespace: string, defaults: T, getter: (storage: string) => T): T {
+function getStorage<T>(namespace: string, getter: (storage: string) => T): T {
 	const storage = localStorage[namespace];
 	return getter(storage);
-	// return json ? JSON.parse(decode(json)) : defaults;
 }
 
 function setStorage<T>(namespace: string, storage: T, setter: (storage: T) => string): void {
 	localStorage[namespace] = setter(storage);
-	// localStorage[namespace] = encode(JSON.stringify(storage));
 }
 
 function removeStorage(namespace: string): boolean {
@@ -27,7 +25,7 @@ export function createStorage<T extends {}>(namespace: string, defaults: T): Sto
 	const setter = (data: T) => encode(JSON.stringify(data));
 
 	function read(): T {
-		return getStorage<T>(namespace, defaults, getter);
+		return getStorage<T>(namespace, getter);
 	}
 
 	function set(storage: T) {
@@ -35,7 +33,7 @@ export function createStorage<T extends {}>(namespace: string, defaults: T): Sto
 	}
 
 	function update(storage: Partial<T>) {
-		const currentStorage = getStorage<T>(namespace, defaults, getter);
+		const currentStorage = getStorage<T>(namespace, getter);
 		return setStorage<T>(namespace, { ...currentStorage, ...storage }, setter);
 	}
 

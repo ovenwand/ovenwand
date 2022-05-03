@@ -12,15 +12,10 @@
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
-		"baseUrl": "..",
+		"baseUrl": ".",
 		"allowJs": true,
-		"checkJs": true,
-		"paths": {
-			"$lib": ["src/lib"],
-			"$lib/*": ["src/lib/*"]
-		},
-		"rootDirs": ["..", "./types"]
+		"checkJs": true
 	},
-	"include": ["../src/**/*.js", "../src/**/*.ts", "../src/**/*.svelte"],
-	"exclude": ["../node_modules/**", "./**"]
+	"include": ["./src/**/*.js", "./src/**/*.ts", "./src/**/*.svelte"],
+	"exclude": ["./node_modules/**", "./**"]
 }

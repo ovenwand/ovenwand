@@ -184,7 +184,7 @@ export function createEngine(canvas: HTMLCanvasElement): Engine {
 			}
 		}
 
-		function line(x1, y1, x2, y2) {
+		function line(x1: number, y1: number, x2: number, y2: number) {
 			_setStrokeStyle();
 			_setStrokeWeight();
 
@@ -228,7 +228,7 @@ export function createEngine(canvas: HTMLCanvasElement): Engine {
 			}
 		}
 
-		function onMouseMove(event) {
+		function onMouseMove(event: MouseEvent) {
 			const { clientX, clientY } = event;
 			const { x, y } = canvas.getBoundingClientRect();
 			mouseX = clientX - x;

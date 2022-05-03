@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
 
-	let className: string;
+	let className: string = null;
 	export { className as class };
 
-	const items = [
+	const items: { label: string; href?: string; action?: () => unknown }[] = [
 		{
 			label: 'Experiments',
 			href: '/experiments/pendulum'
@@ -29,7 +29,7 @@
 					<a href={item.href} on:click>
 						{item.label}
 					</a>
-				{:else}
+				{:else if item.action}
 					<button on:click={() => item.action()} on:click>
 						{item.label}
 					</button>

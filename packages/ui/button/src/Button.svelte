@@ -1,14 +1,11 @@
 <script lang="ts">
-	import { createClassName } from '@ovenwand/util.browser';
-
-	let className: string;
+	let className: string = null;
 	export { className as class };
-	export let style: string;
-	export let disabled: boolean;
-
-	$: buttonClassName = createClassName({});
+	export let type: string = null;
+	export let style: string = null;
+	export let disabled = false;
 </script>
 
-<button class={className} {style} {disabled} on:click>
+<button class={className} {type} {style} {disabled} on:click>
 	<slot />
 </button>

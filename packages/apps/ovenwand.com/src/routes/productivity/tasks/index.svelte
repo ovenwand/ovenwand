@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { isClient } from '@ovenwand/util.browser';
 	import { useMedia } from '@ovenwand/util.svelte';
 	import { Column, Grid } from '@ovenwand/ui.grid';
 	import type { ITask } from './_lib/store';
@@ -8,21 +7,18 @@
 
 	const { portrait } = useMedia();
 	const lanes = ['backlog', 'month', 'week', 'day'];
-	let loading = true;
 	let nextPool: string = null;
 	let currentTask: ITask = null;
 
-	if (isClient) {
-		loading = false;
-	}
-
-	function onTaskClick({ target }, task) {
-		if (!['A', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'INPUT'].includes(target.tagName)) {
+	function onTaskClick({ target }: MouseEvent, task: ITask) {
+		const excludedElements = ['A', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'INPUT'];
+		const { tagName } = <HTMLElement>target;
+		if (!excludedElements.includes(tagName)) {
 			currentTask = task;
 		}
 	}
 
-	function onTaskUpdate(task, done) {
+	function onTaskUpdate(task: ITask, done: boolean) {
 		task.done = done;
 		saveTask(task);
 	}

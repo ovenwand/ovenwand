@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
+	import type { ExpandParams } from '@ovenwand/util.svelte';
 	import { expand, useMedia } from '@ovenwand/util.svelte';
 	import Sidebar from '@ovenwand/ui.sidebar';
 
@@ -16,12 +17,17 @@
 	const expandIn = expand;
 	const expandOut = expand;
 
+	let expandInOptions: Partial<ExpandParams>;
+	let expandOutOptions: Partial<ExpandParams>;
+	let sidebarClassName: string;
+
 	$: expandInOptions = {
 		duration: 400,
 		axis: $portrait ? 'y' : 'x',
 		x: 'max-width',
 		y: 'max-height'
 	};
+
 	$: expandOutOptions = {
 		delay: 300,
 		axis: $portrait ? 'y' : 'x',

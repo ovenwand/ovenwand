@@ -1,27 +1,16 @@
 <script lang="ts">
-	import type { TransitionConfig } from 'svelte/transition';
-	import { noop } from '@ovenwand/util.fp';
 	import { createClassName, createStyle } from '@ovenwand/util.browser';
-
-	type TransitionFunction<T = unknown> = (options: T) => TransitionConfig;
 
 	let className: string = null;
 	export { className as class };
 	export let style: Record<string, unknown> = null;
 
-	let inTransition: TransitionFunction | [TransitionFunction, unknown] = noop({});
-	export { inTransition as in };
-	let outTransition: TransitionFunction | [TransitionFunction, unknown] = noop({});
-	export { outTransition as out };
-
 	export let relative = false;
 	export let gap = true;
 	export let gapOutside = true;
 
-	$: inFn = Array.isArray(inTransition) ? inTransition[0] : inTransition;
-	$: inOpt = Array.isArray(inTransition) ? inTransition[1] : {};
-	$: outFn = Array.isArray(outTransition) ? outTransition[0] : outTransition;
-	$: outOpt = Array.isArray(outTransition) ? outTransition[1] : {};
+	let gridClassName: string;
+	let gridStyle: string;
 
 	$: gridClassName = createClassName({
 		'grid--relative': relative,
@@ -33,7 +22,7 @@
 	$: gridStyle = style && createStyle(style);
 </script>
 
-<div class="grid {gridClassName}" style={gridStyle} in:inFn={inOpt} out:outFn={outOpt}>
+<div class="grid {gridClassName}" style={gridStyle}>
 	<slot />
 </div>
 

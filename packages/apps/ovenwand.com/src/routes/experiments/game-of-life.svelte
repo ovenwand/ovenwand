@@ -25,7 +25,7 @@
 
 	const { setup, update, draw, stop, resume } = useEngine(() => canvas);
 
-	function findNeighbors(grid, x, y): number {
+	function findNeighbors(grid: Grid, x: number, y: number): number {
 		const xn = x - 1 < 0 ? rows - 1 : x - 1;
 		const xp = x + 1 > rows - 1 ? 0 : x + 1;
 		const yn = y - 1 < 0 ? columns - 1 : y - 1;
@@ -84,7 +84,7 @@
 		onClick((x, y) => {
 			const column = floor(x / columnSize);
 			const row = floor(y / rowSize);
-			grid[row][column] = !grid[row][column];
+			grid[row][column] = grid[row][column] ? 0 : 1;
 		});
 
 		useSeed(grid, seed);
