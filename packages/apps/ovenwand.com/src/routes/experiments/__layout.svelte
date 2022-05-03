@@ -27,7 +27,7 @@
 
 	$: title = experiments.find((e) => e.href === $page.url.pathname)?.title;
 
-	function anchorClass(experiment) {
+	function anchorClass(experiment: { title: string; href: string }) {
 		return createClassName({
 			active: $page.url.pathname === experiment.href
 		});

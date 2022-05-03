@@ -13,7 +13,7 @@ declare global {
 	}
 }
 
-Cypress.Commands.add('render', (component, props) => {
+Cypress.Commands.add('render', (component: typeof SvelteComponent, props) => {
 	return cy.then(() => {
 		return cy.wrap(render(component, { props }));
 	});

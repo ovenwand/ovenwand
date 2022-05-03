@@ -20,7 +20,7 @@ function dispatch(type: string, target: EventTarget, event: MouseEvent | TouchEv
 	target.dispatchEvent(createDragEvent(type, event));
 }
 
-function createGhostElement(element) {
+function createGhostElement(element: Element) {
 	const target = findTargetElement(element);
 	const rect = target.getBoundingClientRect();
 	const ghost = target.cloneNode(true) as HTMLElement;
@@ -34,9 +34,9 @@ function createGhostElement(element) {
 	return ghost;
 }
 
-function findTargetElement(element) {
+function findTargetElement(element: Element) {
 	const { display } = getComputedStyle(element);
-	return display === 'contents' ? findTargetElement(element.firstChild) : element;
+	return display === 'contents' ? findTargetElement(element.firstChild as Element) : element;
 }
 
 function findDropTarget(id: string, event: MouseEvent | TouchEvent) {

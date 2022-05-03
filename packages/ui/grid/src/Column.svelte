@@ -7,8 +7,8 @@
 	export { className as class };
 	export let style: Record<string, unknown> = {};
 
-	export let columns: number | Record<Breakpoint, number> = null;
-	export let offset: number | Record<Breakpoint, number> = null;
+	export let columns: number | Partial<Record<Breakpoint, number>> = null;
+	export let offset: number | Partial<Record<Breakpoint, number>> = null;
 
 	let columnStyle: string;
 
@@ -44,7 +44,6 @@
 		grid-column: var(--ow-column-offset, auto) / span var(--ow-columns, 12);
 	}
 
-	/* Breakpoint: SM */
 	@media screen(sm) {
 		.column {
 			--ow-columns: var(--ow-columns-sm);
@@ -52,7 +51,6 @@
 		}
 	}
 
-	/* Breakpoint: MD */
 	@media screen(md) {
 		.column {
 			--ow-columns: var(--ow-columns-md);
@@ -60,7 +58,6 @@
 		}
 	}
 
-	/* Breakpoint: LG */
 	@media screen(lg) {
 		.column {
 			--ow-columns: var(--ow-columns-lg);
@@ -68,7 +65,6 @@
 		}
 	}
 
-	/* Breakpoint: XL */
 	@media screen(xl) {
 		.column {
 			--ow-columns: var(--ow-columns-xl);

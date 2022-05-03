@@ -17,6 +17,7 @@
 		"lint:prettier": "prettier --plugin-search-dir=.",
 		"lint": "pnpm lint:prettier -- --check . ; pnpm lint:eslint -- .",
 		"format": "pnpm lint:prettier -- --write . ; pnpm lint:eslint -- --fix .",
+		"check": "run() { pnpm check --filter @ovenwand/$1 -- ${@:2}; }; run",
 		"ci:test": "pnpm test:unit run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b"
 	},
 	"devDependencies": {

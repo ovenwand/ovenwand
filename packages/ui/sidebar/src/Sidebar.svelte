@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
+	import type { ExpandParams } from '@ovenwand/util.svelte';
 	import { expand as expandTransition } from '@ovenwand/util.svelte';
 	import type { SidebarStore } from './store';
 	import { store, DEFAULT_ID } from './store';
@@ -10,8 +11,8 @@
 	export let expand = false;
 	export let expandIn = expandTransition;
 	export let expandOut = expandTransition;
-	export let expandInOptions = { duration: 400 };
-	export let expandOutOptions = { delay: 150, duration: 400 };
+	export let expandInOptions: Partial<ExpandParams> = { duration: 400 };
+	export let expandOutOptions: Partial<ExpandParams> = { delay: 150, duration: 400 };
 	export let reverse = false;
 
 	const namespace = 'ow-sidebar';

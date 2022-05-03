@@ -1,7 +1,7 @@
 import { cubicOut } from 'svelte/easing';
 import type { EasingFunction, TransitionConfig } from 'svelte/transition';
 
-interface ExpandParams {
+export interface ExpandParams {
 	delay: number;
 	duration: number;
 	easing: EasingFunction;
@@ -11,7 +11,7 @@ interface ExpandParams {
 	size: number;
 }
 
-export function expand(node: Element, params: ExpandParams): TransitionConfig {
+export function expand(node: Element, params: Partial<ExpandParams>): TransitionConfig {
 	const {
 		delay = 0,
 		duration = 400,
@@ -29,7 +29,7 @@ export function expand(node: Element, params: ExpandParams): TransitionConfig {
 		delay,
 		duration,
 		easing,
-		css: (t: number, u: number) => `
+		css: (_: number, u: number) => `
           ${axis === 'x' ? x : y}: ${targetSize - delta * u}px;
         `
 	};

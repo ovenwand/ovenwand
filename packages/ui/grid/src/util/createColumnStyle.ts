@@ -3,8 +3,8 @@ import { createStyle } from '@ovenwand/util.browser';
 export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 export function createColumnStyle(
-	columns: number | Record<Breakpoint, number>,
-	offset: number | Record<Breakpoint, number>,
+	columns: number | Partial<Record<Breakpoint, number>>,
+	offset: number | Partial<Record<Breakpoint, number>>,
 	style: Record<string, unknown> = {}
 ): string {
 	const styleMap = {
