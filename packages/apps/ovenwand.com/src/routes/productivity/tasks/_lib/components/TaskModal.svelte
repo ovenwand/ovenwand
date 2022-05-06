@@ -77,7 +77,7 @@
 			</Column>
 
 			<Column>
-				<Button type="button" on:click={onDelete}>Delete</Button>
+				<Button on:click={onDelete}>Delete</Button>
 				<Button type="reset">Cancel</Button>
 				<Button type="submit">Save</Button>
 			</Column>
