@@ -2,11 +2,12 @@
 	import { Button } from '@ovenwand/ui.button';
 	import { Grid, Column } from '@ovenwand/ui.grid';
 	import { Modal } from '@ovenwand/ui.modal';
-	import type { ITask } from '../store';
-	import { saveTask, createTask } from '../store';
+	import { type ITask, useTasks } from '../store';
 
 	export let task: ITask = null;
 	export let active = false;
+
+	const { create: createTask, save: saveTask } = useTasks();
 
 	function onClick() {
 		task = createTask({ labels: ['backlog'] });

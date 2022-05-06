@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { useMedia } from '@ovenwand/util.svelte';
 	import { Column, Grid } from '@ovenwand/ui.grid';
-	import type { ITask } from './_lib/store';
-	import { moveTask, saveTask, tasks } from './_lib/store';
+	import { type ITask, useTasks } from './_lib/store';
 	import { Task, TaskModal, TaskPool } from './_lib/components';
 
+	const { move: moveTask, save: saveTask, tasks } = useTasks();
 	const { portrait } = useMedia();
 	const lanes = ['backlog', 'month', 'week', 'day'];
 	let nextPool: string = null;
 	let currentTask: ITask = null;
 
 	function onTaskClick({ target }: MouseEvent, task: ITask) {
-		const excludedElements = ['A', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'INPUT'];
+		const excludedElements = ['A', 'SPAN', 'INPUT'];
 		const { tagName } = <HTMLElement>target;
 		if (!excludedElements.includes(tagName)) {
 			currentTask = task;
