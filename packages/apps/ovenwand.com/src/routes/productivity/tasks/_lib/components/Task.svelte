@@ -14,7 +14,6 @@
 	let taskClassName: string;
 
 	$: taskClassName = createClassName({
-		'mb-2': true,
 		'line-through': done
 	});
 
@@ -25,9 +24,13 @@
 </script>
 
 <div id="task-{id}" class="contents" use:draggable on:dragstart on:dragend on:click>
-	<Sheet class={taskClassName} background padding rounded shadow>
-		<input type="checkbox" bind:checked={done} on:input={onInput} />
-		<h3>{title}</h3>
-		<p>{description}</p>
+	<Sheet class="flex mb-2 {taskClassName}" background padding rounded shadow>
+		<div class="flex pr-4 items-center jusify-center">
+			<input type="checkbox" bind:checked={done} on:input={onInput} />
+		</div>
+		<div class="flex flex-col flex-auto items-start">
+			<span>{title}</span>
+			<span>{description}</span>
+		</div>
 	</Sheet>
 </div>
