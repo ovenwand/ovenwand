@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/util.math",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "",
 	"main": "src/index.ts",
 	"scripts": {
@@ -9,6 +9,9 @@
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:^0.1.0"
+	},
+	"dependencies": {
+		"@ovenwand/util.fp": "workspace:^0.1.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"
