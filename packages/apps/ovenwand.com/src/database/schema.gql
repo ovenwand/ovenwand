@@ -1,0 +1,17 @@
+type Task {
+    title: String!
+    description: String
+    done: Boolean
+    labels: [Label] @relation
+}
+
+type Label {
+    name: String!
+    description: String
+    todos: [Task]
+}
+
+type Query {
+    tasks: [Task!]
+    labels: [Label!]
+}
