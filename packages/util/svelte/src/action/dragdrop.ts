@@ -1,3 +1,4 @@
+import { abs } from '@ovenwand/util.math';
 import { preventDefault } from '@ovenwand/util.fp';
 
 const draggables: Map<string, HTMLElement[]> = new Map();
@@ -97,6 +98,11 @@ export function draggable(
 		preventDefault(event);
 
 		const { pageX, pageY } = findEventCoordinates(event);
+
+		// Prevent triggering the drag event by accident by adding a threshold
+		if (abs(pageX - startX) + abs(pageY - startY) < 4) {
+			return false;
+		}
 
 		const previousDropTarget = dropTarget;
 

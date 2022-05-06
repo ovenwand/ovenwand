@@ -59,7 +59,7 @@ importers:
       '@ovenwand/util.fp': workspace:^0.1.0
       '@ovenwand/util.math': workspace:^0.0.1
       '@ovenwand/util.string': workspace:^0.0.1
-      '@ovenwand/util.svelte': workspace:^0.2.2
+      '@ovenwand/util.svelte': workspace:^0.2.3
       '@sveltejs/kit': next
       autoprefixer: ^10.4.7
       postcss: ^8.4.13
@@ -205,7 +205,7 @@ importers:
       '@ovenwand/ui.grid': workspace:^0.0.2
       '@ovenwand/ui.overlay': workspace:^0.0.1
       '@ovenwand/ui.sheet': workspace:^0.0.2
-      '@ovenwand/util.svelte': workspace:^0.2.2
+      '@ovenwand/util.svelte': workspace:^0.2.3
       svelte: ^3.48.0
     dependencies:
       '@ovenwand/ui.grid': link:../grid
@@ -244,7 +244,7 @@ importers:
       '@ovenwand/test.cypress': workspace:^0.0.1
       '@ovenwand/test.svelte': workspace:^0.0.1
       '@ovenwand/util.browser': workspace:^0.0.2
-      '@ovenwand/util.svelte': workspace:^0.2.2
+      '@ovenwand/util.svelte': workspace:^0.2.3
       svelte: ^3.48.0
     dependencies:
       '@ovenwand/config': link:../../config
@@ -262,7 +262,7 @@ importers:
       '@ovenwand/util.fp': workspace:^0.1.0
       '@ovenwand/util.math': workspace:^0.0.1
       '@ovenwand/util.string': workspace:^0.0.1
-      '@ovenwand/util.svelte': workspace:^0.2.2
+      '@ovenwand/util.svelte': workspace:^0.2.3
     dependencies:
       '@ovenwand/config': link:../config
       '@ovenwand/util.browser': link:browser

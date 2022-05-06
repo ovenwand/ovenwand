@@ -13,7 +13,7 @@
 		"@ovenwand/util.fp": "workspace:^0.1.0",
 		"@ovenwand/util.math": "workspace:^0.0.1",
 		"@ovenwand/util.string": "workspace:^0.0.1",
-		"@ovenwand/util.svelte": "workspace:^0.2.2"
+		"@ovenwand/util.svelte": "workspace:^0.2.3"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"
