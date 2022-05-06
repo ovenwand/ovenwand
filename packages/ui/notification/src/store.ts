@@ -25,15 +25,16 @@ function removeNotification({ id }: Identifiable): void {
 	update(($notifications) => $notifications.filter((n) => n.id !== id));
 }
 
-function updateNotification(id: string, notification: Partial<Notification>): void {
+function updateNotification(id: string, notification: Notification): void {
 	update(($notifications) => {
 		const n = $notifications.find((n) => n.id === id);
 
 		if (n) {
 			Object.assign(n, notification);
+			return [...$notifications];
 		}
 
-		return [...$notifications];
+		return [...$notifications, notification as Notification];
 	});
 }
 
@@ -59,7 +60,7 @@ function createNotifier(type: NotificationType): Notifier {
 }
 
 function createUpdater(id: string): Notifier {
-	return (notification, delay) => {
+	return (notification: Notification, delay) => {
 		updateNotification(id, notification);
 
 		if (delay) {
