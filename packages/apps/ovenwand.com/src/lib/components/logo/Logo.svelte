@@ -9,7 +9,8 @@
 
 	$: logoClassName = createClassName({
 		'fill-current': true,
-		'h-12': size === 'small'
+		'h-12': size === 'small',
+		'h-64': size === 'large'
 	});
 </script>
 
