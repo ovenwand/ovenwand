@@ -4,8 +4,8 @@
 		"paths": {
 			"$lib": ["src/lib"],
 			"$lib/*": ["src/lib/*"],
-			"$modules": ["src/modules"],
-			"$modules/*": ["src/modules/*"]
+			"$database": ["src/database"],
+			"$database/*": ["src/database/*"]
 		}
 	}
 }

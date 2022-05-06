@@ -2,12 +2,13 @@
 	import { Button } from '@ovenwand/ui.button';
 	import { Grid, Column } from '@ovenwand/ui.grid';
 	import { Modal } from '@ovenwand/ui.modal';
-	import { type ITask, useTasks } from '../store';
+	import { type ITask, useLabels, useTasks } from '../store';
 
 	export let task: ITask = null;
 	export let active = false;
 
-	const { create: createTask, save: saveTask } = useTasks();
+	const { labels } = useLabels();
+	const { create: createTask, save: saveTask, delete: deleteTask } = useTasks();
 
 	function onClick() {
 		task = createTask({ labels: ['backlog'] });
@@ -18,12 +19,21 @@
 		active = false;
 		saveTask(task);
 	}
+
+	function onReset() {
+		active = false;
+	}
+
+	function onDelete() {
+		active = false;
+		deleteTask(task);
+	}
 </script>
 
 <Button on:click={onClick}>Add task</Button>
 
 <Modal bind:active>
-	<form on:submit|preventDefault={onSubmit}>
+	<form on:submit|preventDefault={onSubmit} on:reset|preventDefault={onReset}>
 		<Grid relative>
 			<Column>
 				<label for="task-title" class="block">Title</label>
@@ -58,14 +68,17 @@
 					bind:value={task.labels}
 					multiple
 				>
-					<option value="backlog" selected={task.labels.includes('backlog')}>Backlog</option>
-					<option value="month" selected={task.labels.includes('month')}>Month</option>
-					<option value="week" selected={task.labels.includes('week')}>Week</option>
-					<option value="day" selected={task.labels.includes('day')}>Day</option>
+					{#each $labels as label (label._id)}
+						<option value={label._id} selected={task.labels.includes(label._id)}>
+							{label.name}
+						</option>
+					{/each}
 				</select>
 			</Column>
 
 			<Column>
+				<Button type="button" on:click={onDelete}>Delete</Button>
+				<Button type="reset">Cancel</Button>
 				<Button type="submit">Save</Button>
 			</Column>
 		</Grid>
