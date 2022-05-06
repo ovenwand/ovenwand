@@ -97,11 +97,11 @@ export interface UseMedia {
 
 export function useMedia(): UseMedia {
 	if (isClient && !created) {
-		window.addEventListener('resize', setBreakpoint);
-		window.addEventListener('resize', setOrientation);
-
 		setBreakpoint();
 		setOrientation();
+
+		window.addEventListener('resize', setBreakpoint);
+		window.addEventListener('resize', setOrientation);
 
 		created = true;
 	}

@@ -4,7 +4,7 @@
 	import { Sheet } from '@ovenwand/ui.sheet';
 	import { createEventDispatcher } from 'svelte';
 
-	export let id: string;
+	export let _id: string;
 	export let title: string;
 	export let description: string;
 	export let done: boolean;
@@ -23,7 +23,7 @@
 	}
 </script>
 
-<div id="task-{id}" class="contents" use:draggable on:dragstart on:dragend on:click>
+<div id="task-{_id}" class="contents" use:draggable on:dragstart on:dragend on:click>
 	<Sheet class="flex mb-2 {taskClassName}" background padding rounded shadow>
 		<div class="flex pr-4 items-center jusify-center">
 			<input type="checkbox" bind:checked={done} on:input={onInput} />

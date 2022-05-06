@@ -1,9 +1,8 @@
-import { uuid } from '@ovenwand/util.string';
 import type { ITask } from './state';
 
 export function createTask(task: Partial<ITask> = {}): ITask {
 	return {
-		id: uuid(),
+		_id: null,
 		title: 'Default title',
 		description: 'Default description',
 		done: false,

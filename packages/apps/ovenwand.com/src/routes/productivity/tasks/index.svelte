@@ -1,14 +1,20 @@
 <script lang="ts">
 	import { useMedia } from '@ovenwand/util.svelte';
 	import { Column, Grid } from '@ovenwand/ui.grid';
-	import { type ITask, useTasks } from './_lib/store';
+	import { type ILabel, type ITask, useLabels, useTasks } from './_lib/store';
 	import { Task, TaskModal, TaskPool } from './_lib/components';
 
-	const { move: moveTask, save: saveTask, tasks } = useTasks();
+	export let data: { labels: any[]; tasks: Partial<ITask>[] } = { labels: [], tasks: [] };
+
+	const { labels } = useLabels(data.labels);
+	const { move: moveTask, save: saveTask, tasks } = useTasks(data.tasks);
 	const { portrait } = useMedia();
-	const lanes = ['backlog', 'month', 'week', 'day'];
+
+	let archiveLabel: ILabel;
 	let nextPool: string = null;
 	let currentTask: ITask = null;
+
+	$: archiveLabel = $labels.find((l) => l.name === 'Archive');
 
 	function onTaskClick({ target }: MouseEvent, task: ITask) {
 		const excludedElements = ['A', 'SPAN', 'INPUT'];
@@ -29,19 +35,19 @@
 		<TaskModal active={!!currentTask} task={currentTask} />
 	</Column>
 
-	{#each lanes as label}
-		<Column class="min-h-full" columns={$portrait ? 12 : 3}>
+	{#each $labels.filter((l) => !['Archive', 'Done'].includes(l.name)) as label}
+		<Column columns={$portrait ? 12 : 3}>
 			<TaskPool
-				title={label}
-				tasks={$tasks.filter((t) => t.labels.includes(label))}
-				on:dragenter={() => (nextPool = label)}
+				title={label.name}
+				tasks={$tasks.filter((t) => t.labels.includes(label._id))}
+				on:dragenter={() => (nextPool = label._id)}
 				on:dragleave={() => (nextPool = null)}
 				on:drop={() => (nextPool = null)}
 				let:task
 			>
 				<Task
 					{...task}
-					on:dragend={() => moveTask(task, label, nextPool)}
+					on:dragend={() => moveTask(task, label._id, nextPool)}
 					on:click={(event) => onTaskClick(event, task)}
 					on:update={(event) => onTaskUpdate(task, event.detail.done)}
 				/>
@@ -51,17 +57,18 @@
 
 	<Column>
 		<TaskPool
-			title="archive"
-			tasks={$tasks.filter((t) => t.labels.includes('archive'))}
-			on:dragenter={() => (nextPool = 'archive')}
+			title={archiveLabel.name}
+			tasks={$tasks.filter((t) => t.labels.includes(archiveLabel._id))}
+			on:dragenter={() => (nextPool = archiveLabel._id)}
 			on:dragleave={() => (nextPool = null)}
 			on:drop={() => (nextPool = null)}
 			let:task
 		>
 			<Task
 				{...task}
-				on:dragend={() => moveTask(task, 'archive', nextPool)}
+				on:dragend={() => moveTask(task, archiveLabel._id, nextPool)}
 				on:click={(event) => onTaskClick(event, task)}
+				on:update={(event) => onTaskUpdate(task, event.detail.done)}
 			/>
 		</TaskPool>
 	</Column>
