@@ -1,0 +1,18 @@
+query FindAllTasksAndLabels {
+    tasks {
+        data {
+            _id
+            title
+            description
+            done
+            labels { _id }
+        }
+    }
+    labels {
+        data {
+            _id
+            name
+            description
+        }
+    }
+}
