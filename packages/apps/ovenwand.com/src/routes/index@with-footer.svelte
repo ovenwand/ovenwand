@@ -22,7 +22,7 @@
 				justify-center
 		 "
 	>
-		<Logo />
-		<Navigation class="py-12" />
+		<Logo size="large" />
+		<Navigation class="my-24" />
 	</Column>
 </Grid>
