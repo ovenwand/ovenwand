@@ -4,7 +4,7 @@
 	export let footer = false;
 
 	$: appClassName = createClassName({
-		'min-h-screen bg-center bg-cover grid': true,
+		'min-h-screen grid': true,
 		'has-header': header,
 		'has-footer': footer
 	});
@@ -27,10 +27,6 @@
 <slot name="outside" />
 
 <style lang="postcss">
-	#app {
-		background-image: url(/background.png);
-	}
-
 	#app.has-header {
 		grid-template-rows: min-content 1fr;
 	}
