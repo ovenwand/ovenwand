@@ -38,7 +38,7 @@
 		"prettier-plugin-svelte": "^2.7.0",
 		"svelte": "^3.48.0",
 		"typescript": "next",
-		"vite": "^2.9.7"
+		"vite": "^2.9.8"
 	},
 	"lint-staged": {
 		"*.{ts,svelte}": [
