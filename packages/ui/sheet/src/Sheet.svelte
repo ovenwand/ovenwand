@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
 
+	export let id: string = null;
+
 	let className: string = null;
 	export { className as class };
 
@@ -18,6 +20,6 @@
 	});
 </script>
 
-<div class={sheetClassName}>
+<div {id} class={sheetClassName}>
 	<slot />
 </div>

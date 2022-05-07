@@ -1,13 +1,19 @@
 import type { RequestHandler } from '@sveltejs/kit';
+import type { RequestEvent } from '@sveltejs/kit/types/private';
 import { gql } from '$database';
+import type { ILabel, ITask } from './_lib/store';
 import { CreateTask, DeleteTask, UpdateTask, FindAllTasks } from './_lib/store/tasks/queries';
 
-function mapLabelsToId(task) {
-	if (!task) {
-		return;
+function mapLabelsToId(obj: Omit<ITask, 'labels'> & { labels: ILabel[] }): ITask {
+	let task: ITask;
+
+	if (obj) {
+		task = {
+			...obj,
+			labels: obj.labels.map((l) => l._id)
+		};
 	}
 
-	task.labels = task.labels.map((l) => l._id);
 	return task;
 }
 
@@ -27,7 +33,7 @@ export async function get(): Promise<ReturnType<RequestHandler>> {
 }
 
 /** @type import('@sveltejs/kit').RequestHandler */
-export async function post({ request }): Promise<ReturnType<RequestHandler>> {
+export async function post({ request }: RequestEvent): Promise<ReturnType<RequestHandler>> {
 	const body = await request.json();
 
 	const { data, errors } = await gql(CreateTask, {
@@ -48,7 +54,7 @@ export async function post({ request }): Promise<ReturnType<RequestHandler>> {
 }
 
 /** @type import('@sveltejs/kit').RequestHandler */
-export async function patch({ request }): Promise<ReturnType<RequestHandler>> {
+export async function patch({ request }: RequestEvent): Promise<ReturnType<RequestHandler>> {
 	const body = await request.json();
 
 	const { data, errors } = await gql(UpdateTask, {
@@ -70,7 +76,7 @@ export async function patch({ request }): Promise<ReturnType<RequestHandler>> {
 }
 
 /** @type import('@sveltejs/kit').RequestHandler */
-export async function del({ request }): Promise<ReturnType<RequestHandler>> {
+export async function del({ request }: RequestEvent): Promise<ReturnType<RequestHandler>> {
 	const body = await request.json();
 
 	const { data, errors } = await gql(DeleteTask, {

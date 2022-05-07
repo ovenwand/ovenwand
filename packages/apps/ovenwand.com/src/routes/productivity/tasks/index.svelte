@@ -4,7 +4,7 @@
 	import { type ILabel, type ITask, useLabels, useTasks } from './_lib/store';
 	import { Task, TaskModal, TaskPool } from './_lib/components';
 
-	export let data: { labels: any[]; tasks: Partial<ITask>[] } = { labels: [], tasks: [] };
+	export let data: { labels: ILabel[]; tasks: ITask[] } = { labels: [], tasks: [] };
 
 	const { labels } = useLabels(data.labels);
 	const { move: moveTask, save: saveTask, tasks } = useTasks(data.tasks);

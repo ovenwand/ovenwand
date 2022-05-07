@@ -1,5 +1,4 @@
 import { writable, type Writable } from 'svelte/store';
-import { createStorage, isClient } from '@ovenwand/util.browser';
 import type { ILabel } from '../labels';
 
 export interface ITask {
@@ -9,8 +8,6 @@ export interface ITask {
 	done: boolean;
 	labels: ITask['_id'][];
 }
-
-const storage = createStorage<ITask[]>('tasks', []);
 
 export const tasks: Writable<ITask[]> = writable([]);
 
