@@ -1,5 +1,5 @@
 mutation DeleteTask($id: ID!) {
-    deleteTask(id: $id) {
-        _id
-    }
+	deleteTask(id: $id) {
+		_id
+	}
 }

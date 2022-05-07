@@ -1,7 +1,7 @@
 export async function gql(
 	query: string,
 	variables: Record<string, unknown> = {}
-): Promise<{ data: any; errors: any[] }> {
+): Promise<{ data: {}; errors: {}[] }> {
 	const response = await fetch(import.meta.env.VITE_FAUNA_URL, {
 		method: 'POST',
 		headers: {
