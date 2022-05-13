@@ -10,6 +10,7 @@
 	"dependencies": {
 		"@ovenwand/config": "workspace:^0.1.0",
 		"@ovenwand/util.browser": "workspace:^0.0.3",
+		"@ovenwand/util.date": "workspace:^0.0.1",
 		"@ovenwand/util.fp": "workspace:^0.1.0",
 		"@ovenwand/util.math": "workspace:^0.0.2",
 		"@ovenwand/util.string": "workspace:^0.0.1",
