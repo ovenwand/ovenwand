@@ -1,0 +1,19 @@
+{
+	"name": "@ovenwand/brand.logo",
+	"version": "0.0.1",
+	"description": "",
+	"main": "src/index.ts",
+	"scripts": {
+		"clean": "pnpx -y rimraf node_modules",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"@ovenwand/util.browser": "workspace:^0.0.3"
+	},
+	"devDependencies": {
+		"@ovenwand/config": "workspace:^0.1.0",
+		"svelte": "^3.48.0"
+	},
+	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
+	"license": "WTFPL"
+}
