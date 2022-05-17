@@ -1,5 +1,7 @@
 <script lang="ts">
+	import type { Action } from 'svelte/action';
 	import { createClassName, createStyle } from '@ovenwand/util.browser';
+	import { noop } from '@ovenwand/util.fp';
 
 	let className: string = null;
 	export { className as class };
@@ -8,9 +10,11 @@
 	export let relative = false;
 	export let gap = true;
 	export let gapOutside = true;
+	export let use = [noop];
 
 	let gridClassName: string;
 	let gridStyle: string;
+	let action: Action, payload: unknown;
 
 	$: gridClassName = createClassName({
 		'grid--relative': relative,
@@ -20,9 +24,10 @@
 	});
 
 	$: gridStyle = style && createStyle(style);
+	$: [action, payload] = use;
 </script>
 
-<div class="grid {gridClassName}" style={gridStyle}>
+<div class="grid {gridClassName}" style={gridStyle} use:action={payload}>
 	<slot />
 </div>
 
