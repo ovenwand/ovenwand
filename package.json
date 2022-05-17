@@ -41,11 +41,9 @@
 		"vite": "^2.9.8"
 	},
 	"lint-staged": {
-		"*.{ts,svelte}": [
-			"pnpm lint:eslint -- --cache --fix",
-			"pnpm test:unit run"
-		],
-		"*.{ts,svelte,css,md,json}": "pnpm lint:prettier -- --write"
+		"*.{ts,svelte}": "pnpm lint:eslint -- --cache --fix",
+		"*.{ts,svelte,css,md,json}": "pnpm lint:prettier -- --write",
+		"packages/**/*.{ts,svelte}": "pnpm test:unit run"
 	},
 	"author": "Ovenwand (info@ovenwand.com)",
 	"license": "WTFPL",
