@@ -1,6 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import type { RequestEvent } from '@sveltejs/kit/types/private';
-import { gql } from '$database';
+import { gql } from '@ovenwand/services.faunadb';
 import type { ILabel, ITask } from './_lib/store';
 import { CreateTask, DeleteTask, UpdateTask, FindAllTasks } from './_lib/store/tasks/queries';
 
