@@ -8,7 +8,7 @@
 {#if $notifications.length}
 	<Grid class="fixed bottom-0 right-0">
 		{#each $notifications as notification}
-			<Column columns={3} offset={9}>
+			<Column columns={{ sm: 3 }} offset={{ sm: 9 }}>
 				<slot {notification}>
 					<Notification {...notification} />
 				</slot>
