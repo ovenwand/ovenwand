@@ -8,8 +8,9 @@
 	export let content: unknown[];
 	export let external_url: { url: string };
 
-	$: action = use[0];
-	$: params = use[1];
+	let action: Action, params: unknown;
+
+	$: [action, params] = use;
 </script>
 
 <div use:action={params}>

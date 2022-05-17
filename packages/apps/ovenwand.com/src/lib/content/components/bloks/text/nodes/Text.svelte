@@ -7,7 +7,11 @@
 	}
 </script>
 
-{#if hasMark('code')}
+{#if hasMark('bold')}
+	<b>{text}</b>
+{:else if hasMark('italic')}
+	<i>{text}</i>
+{:else if hasMark('code')}
 	<code>{text}</code>
 {:else}
 	{text}
