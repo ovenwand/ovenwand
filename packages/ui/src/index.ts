@@ -2,6 +2,7 @@ export * from '@ovenwand/ui.button';
 export * from '@ovenwand/ui.grid';
 export * from '@ovenwand/ui.icon';
 export * from '@ovenwand/ui.layout';
+export * from '@ovenwand/ui.loader';
 export * from '@ovenwand/ui.modal';
 export * from '@ovenwand/ui.notification';
 export * from '@ovenwand/ui.overlay';
