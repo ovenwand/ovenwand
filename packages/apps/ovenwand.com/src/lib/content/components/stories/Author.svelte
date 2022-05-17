@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Author } from '$lib/components/page';
-	import { Editable } from './system';
+	import { Editable } from '../system';
+	import { Author } from '../bloks';
 	export let blok;
 </script>
 
