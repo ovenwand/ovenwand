@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
-	import { Column, Grid } from '@ovenwand/ui.grid';
+	import { Column, Grid } from '@ovenwand/ui';
 
 	const name = 'Ovenwand';
 	const currentYear = new Date().getFullYear();
+
 	$: copyright = `&copy; ${name} ${currentYear}`;
 </script>
 

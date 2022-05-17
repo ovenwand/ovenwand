@@ -1,4 +1,4 @@
-import { useNotifications } from '@ovenwand/ui.notification';
+import { useNotifications } from '@ovenwand/ui';
 import { addTask, removeTask, updateTask } from './mutations';
 import { tasks, type ITask } from './state';
 

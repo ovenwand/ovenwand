@@ -21,16 +21,16 @@
 		"ci:test": "pnpm test:unit run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^16.2.4",
-		"@commitlint/config-conventional": "^16.2.4",
-		"@cypress/vite-dev-server": "^2.2.2",
-		"@sveltejs/vite-plugin-svelte": "^1.0.0-next.42",
+		"@commitlint/cli": "^17.0.0",
+		"@commitlint/config-conventional": "^17.0.0",
+		"@cypress/vite-dev-server": "^2.2.3",
+		"@sveltejs/vite-plugin-svelte": "^1.0.0-next.44",
 		"@typescript-eslint/eslint-plugin": "^4.33.0",
 		"@typescript-eslint/parser": "^4.33.0",
-		"cypress": "^9.6.0",
+		"cypress": "^9.6.1",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-storybook": "^0.5.11",
+		"eslint-plugin-storybook": "^0.5.12",
 		"eslint-plugin-svelte3": "^3.4.1",
 		"husky": "^7.0.4",
 		"lint-staged": "^12.4.1",
@@ -38,7 +38,7 @@
 		"prettier-plugin-svelte": "^2.7.0",
 		"svelte": "^3.48.0",
 		"typescript": "next",
-		"vite": "^2.9.8"
+		"vite": "^2.9.9"
 	},
 	"lint-staged": {
 		"*.{ts,svelte}": "pnpm lint:eslint -- --cache --fix",

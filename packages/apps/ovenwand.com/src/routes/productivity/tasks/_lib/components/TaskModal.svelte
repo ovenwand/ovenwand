@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { Button } from '@ovenwand/ui.button';
-	import { Grid, Column } from '@ovenwand/ui.grid';
-	import { Modal } from '@ovenwand/ui.modal';
+	import { Button, Column, Grid, Modal } from '@ovenwand/ui';
 	import { type ITask, useLabels, useTasks } from '../store';
 
 	export let task: ITask = null;

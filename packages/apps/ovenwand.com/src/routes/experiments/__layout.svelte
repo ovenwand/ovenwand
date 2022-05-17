@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { createClassName } from '@ovenwand/util.browser';
-	import { Column, Grid } from '@ovenwand/ui.grid';
+	import { Column, Grid } from '@ovenwand/ui';
 	import { Sidebar } from '$lib/components/sidebar';
 
 	const experiments = [
