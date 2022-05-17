@@ -1,13 +1,14 @@
 /// <reference types="cypress" />
 
-import type { SidebarState, SidebarStore } from './store';
-import { store } from './store';
+import type { SidebarState, SidebarStore, SidebarStoreManager } from './store';
+import { useSidebar } from './store';
 
 describe('@ovenwand/ui.sidebar', () => {
 	describe('store', () => {
 		const globalId = 'test-id';
 		let expanded = false;
 
+		const store: SidebarStoreManager = useSidebar();
 		const source: SidebarState = { expand: expanded };
 		const sidebar: SidebarStore = store.add(globalId, source);
 

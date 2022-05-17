@@ -72,7 +72,7 @@ function _contractSidebar(state: SidebarState): SidebarState {
 
 const _sidebars: Record<string, SidebarStore> = {};
 
-export const store: SidebarStoreManager = {
+const store: SidebarStoreManager = {
 	subscribe(
 		subscriber: Subscriber<SidebarState>,
 		invalidate?: Invalidator<SidebarState>,
@@ -108,3 +108,13 @@ export const store: SidebarStoreManager = {
 		return store;
 	}
 };
+
+export function useSidebar(): SidebarStoreManager;
+export function useSidebar(id: string): SidebarStore;
+export function useSidebar(id?: string): SidebarStoreManager | SidebarStore {
+	if (id) {
+		return store.get(id);
+	}
+
+	return store;
+}

@@ -2,8 +2,8 @@
 	import { createClassName } from '@ovenwand/util.browser';
 	import type { ExpandParams } from '@ovenwand/util.svelte';
 	import { expand as expandTransition } from '@ovenwand/util.svelte';
-	import type { SidebarStore } from './store';
-	import { store, DEFAULT_ID } from './store';
+	import type { SidebarStore, SidebarStoreManager } from './store';
+	import { useSidebar, DEFAULT_ID } from './store';
 
 	export let id: string = DEFAULT_ID;
 	let className = '';
@@ -16,6 +16,7 @@
 	export let reverse = false;
 
 	const namespace = 'ow-sidebar';
+	const store: SidebarStoreManager = useSidebar();
 	const sidebar: SidebarStore = store.add(id, { expand });
 
 	$: containerClassName = createClassName({
