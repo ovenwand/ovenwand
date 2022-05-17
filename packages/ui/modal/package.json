@@ -13,7 +13,7 @@
 		"svelte": "^3.48.0"
 	},
 	"dependencies": {
-		"@ovenwand/ui.grid": "workspace:^0.0.2",
+		"@ovenwand/ui.grid": "workspace:^0.0.3",
 		"@ovenwand/ui.overlay": "workspace:^0.0.1",
 		"@ovenwand/ui.sheet": "workspace:^0.0.2",
 		"@ovenwand/util.svelte": "workspace:^0.2.3"
