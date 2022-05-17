@@ -3,6 +3,7 @@
 	"version": "0.2.3",
 	"description": "",
 	"main": "src/index.ts",
+	"type": "module",
 	"exports": {
 		".": "src/index.ts",
 		"./transition": "src/transition/index.ts"
