@@ -1,5 +1,5 @@
 <script context="module">
-	import { useContent, Blog, Author, Page, Text } from '../../content';
+	import { useContent, Blog, Author, Page, Text } from '$lib/content';
 
 	useContent({
 		blog: Blog,

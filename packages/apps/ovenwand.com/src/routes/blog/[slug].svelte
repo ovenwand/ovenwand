@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import type { LoadInput, LoadOutput } from '@sveltejs/kit';
-	import { preloadStory, useStory } from '../../content';
+	import { preloadStory, useStory } from '$lib/content';
 
 	const resolveRelations = ['blog.author'];
 
