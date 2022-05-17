@@ -1,6 +1,5 @@
 <script lang="ts" context="module">
-	/** @type {import('@sveltejs/kit').Load} */
-	import { LoadInput, LoadOutput } from '@sveltejs/kit';
+	import type { LoadInput, LoadOutput } from '@sveltejs/kit';
 
 	/** @type {import('@sveltejs/kit').Load} */
 	export function load({ error, status }: LoadInput): LoadOutput {

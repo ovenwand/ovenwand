@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	import { LoadOutput } from '@sveltejs/kit';
+	import type { LoadOutput } from '@sveltejs/kit';
 	import { preloadStory } from '../../content';
 
 	/** @type {import('@sveltejs/kit').Load} */
