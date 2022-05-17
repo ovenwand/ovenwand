@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { Column, Grid } from '@ovenwand/ui.grid';
-	import { Notifications } from '@ovenwand/ui.notification';
+	import { Column, Grid, Notifications } from '@ovenwand/ui';
 </script>
 
 <Grid class="flex-auto min-h-full" style={{ 'grid-auto-rows': 'min-content 1fr' }}>

@@ -3,8 +3,9 @@
 </script>
 
 <script lang="ts">
-	import { Column, Grid } from '@ovenwand/ui.grid';
-	import { Logo, Navigation } from '$lib/components';
+	import { Column, Grid } from '@ovenwand/ui';
+	import { Logo } from '@ovenwand/brand';
+	import { Navigation } from '$lib/components';
 </script>
 
 <svelte:head>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Loader } from '$lib/components';
+	import { Loader } from '@ovenwand/ui';
 	import type { ITask } from '../store';
 	import Pool from './Pool.svelte';
 

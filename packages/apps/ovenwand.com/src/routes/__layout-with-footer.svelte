@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import { DefaultLayout } from '@ovenwand/ui.layout';
+	import { DefaultLayout } from '@ovenwand/ui';
 	import { ApplicationSidebar, Footer } from '$lib/components';
 </script>
 

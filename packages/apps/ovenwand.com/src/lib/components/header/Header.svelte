@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Grid, Column } from '@ovenwand/ui.grid';
-	import { Logo } from '../logo';
+	import { Grid, Column } from '@ovenwand/ui';
+	import { Logo } from '@ovenwand/brand';
 	import { Navigation } from '../navigation';
 </script>
 

@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
-	import { store } from '@ovenwand/ui.sidebar';
+	import { useSidebar } from '@ovenwand/ui';
 
 	let className: string = null;
 	export { className as class };
+
+	const store = useSidebar();
 
 	const items = [
 		{

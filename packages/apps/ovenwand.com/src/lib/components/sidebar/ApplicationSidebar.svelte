@@ -1,14 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { Column, Grid } from '@ovenwand/ui.grid';
-	import { Sheet } from '@ovenwand/ui.sheet';
-	import { Overlay } from '@ovenwand/ui.overlay';
-	import type { SidebarStore } from '@ovenwand/ui.sidebar';
-	import { store } from '@ovenwand/ui.sidebar';
 	import { useMedia } from '@ovenwand/util.svelte';
+	import { Column, Grid, Sheet, Overlay, type SidebarStore, useSidebar } from '@ovenwand/ui';
 	import { Sidebar, SidebarDivider, SideNavigation } from '$lib/components';
 
 	const { portrait } = useMedia();
+	const store = useSidebar();
 
 	let sidebar: SidebarStore;
 

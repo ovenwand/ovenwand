@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { useMedia } from '@ovenwand/util.svelte';
-	import { Column, Grid } from '@ovenwand/ui.grid';
+	import { Column, Grid } from '@ovenwand/ui';
 	import { type ILabel, type ITask, useLabels, useTasks } from './_lib/store';
 	import { Task, TaskModal, TaskPool } from './_lib/components';
 

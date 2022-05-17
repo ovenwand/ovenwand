@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
 	import { droppable } from '@ovenwand/util.svelte';
-	import { Sheet } from '@ovenwand/ui.sheet';
+	import { Sheet } from '@ovenwand/ui';
 
 	export let title: string;
 
