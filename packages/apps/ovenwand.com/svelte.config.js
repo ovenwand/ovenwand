@@ -2,11 +2,11 @@ import path from 'path';
 import config from '@ovenwand/config/svelte';
 
 config.kit.vite.server = {
-	https: true,
+	https: true
 };
 
 config.kit.vite.optimizeDeps = {
-	include: ['axios'],
+	include: ['axios']
 };
 
 config.kit.vite.resolve.alias = {

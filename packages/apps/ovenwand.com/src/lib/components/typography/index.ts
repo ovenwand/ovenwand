@@ -1,3 +1,4 @@
+export * from './types';
 export { default as Heading } from './Heading.svelte';
 export { default as Paragraph } from './Paragraph.svelte';
 export { default as CodeBlock } from './CodeBlock.svelte';

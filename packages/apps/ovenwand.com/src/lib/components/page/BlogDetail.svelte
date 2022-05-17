@@ -8,8 +8,8 @@
 	export let title: string;
 	export let publishedAt: string;
 	export let tags: string[];
-	export let author: any[];
-	export let content: any[];
+	export let author: unknown[];
+	export let content: unknown[];
 
 	const columns = { xs: 12, sm: 8 };
 	const offset = { sm: 2 };

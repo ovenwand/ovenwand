@@ -4,11 +4,6 @@ import { gql } from '$database';
 import type { ILabel, ITask } from './_lib/store';
 import { CreateTask, DeleteTask, UpdateTask, FindAllTasks } from './_lib/store/tasks/queries';
 
-interface ITaskResponse extends ITask {
-	labels: ILabel[];
-}
-
-// type ITaskResponse = Omit<ITask, 'labels'> & { labels: ILabel[] };
 type Data<T> = { data: T };
 
 function mapLabelsToId(obj?: Omit<ITask, 'labels'> & { labels: ILabel[] }): ITask {
