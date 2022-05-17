@@ -4,7 +4,14 @@ import { gql } from '$database';
 import type { ILabel, ITask } from './_lib/store';
 import { CreateTask, DeleteTask, UpdateTask, FindAllTasks } from './_lib/store/tasks/queries';
 
-function mapLabelsToId(obj: Omit<ITask, 'labels'> & { labels: ILabel[] }): ITask {
+interface ITaskResponse extends ITask {
+	labels: ILabel[];
+}
+
+// type ITaskResponse = Omit<ITask, 'labels'> & { labels: ILabel[] };
+type Data<T> = { data: T };
+
+function mapLabelsToId(obj?: Omit<ITask, 'labels'> & { labels: ILabel[] }): ITask {
 	let task: ITask;
 
 	if (obj) {
@@ -17,9 +24,11 @@ function mapLabelsToId(obj: Omit<ITask, 'labels'> & { labels: ILabel[] }): ITask
 	return task;
 }
 
-/** @type import('@sveltejs/kit').RequestHandler */
+/** @type import('./index.ts').RequestHandler */
 export async function get(): Promise<ReturnType<RequestHandler>> {
-	const { errors, data } = await gql(FindAllTasks);
+	const { errors, data } = await gql<{ tasks: Data<ITask[]>; labels: Data<ILabel[]> }>(
+		FindAllTasks
+	);
 
 	return {
 		body: {
@@ -32,7 +41,7 @@ export async function get(): Promise<ReturnType<RequestHandler>> {
 	};
 }
 
-/** @type import('@sveltejs/kit').RequestHandler */
+/** @type import('./index.ts').RequestHandler */
 export async function post({ request }: RequestEvent): Promise<ReturnType<RequestHandler>> {
 	const body = await request.json();
 
@@ -53,7 +62,7 @@ export async function post({ request }: RequestEvent): Promise<ReturnType<Reques
 	};
 }
 
-/** @type import('@sveltejs/kit').RequestHandler */
+/** @type import('./index.ts').RequestHandler */
 export async function patch({ request }: RequestEvent): Promise<ReturnType<RequestHandler>> {
 	const body = await request.json();
 
@@ -75,7 +84,7 @@ export async function patch({ request }: RequestEvent): Promise<ReturnType<Reque
 	};
 }
 
-/** @type import('@sveltejs/kit').RequestHandler */
+/** @type import('./index.ts').RequestHandler */
 export async function del({ request }: RequestEvent): Promise<ReturnType<RequestHandler>> {
 	const body = await request.json();
 
