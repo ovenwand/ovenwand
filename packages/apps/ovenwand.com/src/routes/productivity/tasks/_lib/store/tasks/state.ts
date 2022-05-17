@@ -1,5 +1,5 @@
 import { writable, type Writable } from 'svelte/store';
-import type { Identifiable } from '$database';
+import type { Identifiable } from '@ovenwand/services.faunadb';
 import type { ILabel } from '../labels';
 
 export interface ITask extends Identifiable {
