@@ -1,0 +1,11 @@
+mutation CreateTask($data: TaskInput!) {
+	createTask(data: $data) {
+		_id
+		title
+		description
+		done
+		labels {
+			_id
+		}
+	}
+}
