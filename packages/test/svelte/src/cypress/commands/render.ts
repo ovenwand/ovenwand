@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { SvelteComponent } from 'svelte';
+import type { SvelteComponent } from 'svelte';
 import type { RenderResult } from '@testing-library/svelte';
 import { render } from '@testing-library/svelte';
 
