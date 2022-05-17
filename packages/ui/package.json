@@ -17,7 +17,7 @@
 		"@ovenwand/ui.notification": "workspace:^0.0.2",
 		"@ovenwand/ui.overlay": "workspace:^0.0.1",
 		"@ovenwand/ui.sheet": "workspace:^0.0.2",
-		"@ovenwand/ui.sidebar": "workspace:^0.0.2"
+		"@ovenwand/ui.sidebar": "workspace:^0.1.0"
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:^0.1.0"
