@@ -1,8 +1,5 @@
 import { writable, type Writable } from 'svelte/store';
-
-export interface Identifiable {
-	_id: string;
-}
+import type { Identifiable } from '$database';
 
 export interface ILabel extends Identifiable {
 	name: string;

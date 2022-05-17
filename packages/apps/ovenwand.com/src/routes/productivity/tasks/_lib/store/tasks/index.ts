@@ -1,5 +1,6 @@
 import type { Readable } from 'svelte/store';
-import { createStorage, isClient } from '@ovenwand/util.browser';
+import { isClient } from '@ovenwand/env';
+import { createStorage } from '@ovenwand/util.browser';
 import { createTask, copyTask } from './utils';
 import { type ITask, tasks } from './state';
 import { addOrUpdateTask } from './mutations';
