@@ -1,10 +1,11 @@
-import { writable } from 'svelte/store';
+import { writable, type Writable } from 'svelte/store';
+import type { SvelteComponent } from 'svelte';
 import { storyblokInit, apiPlugin, useStoryblokBridge } from '@storyblok/svelte';
 import { useStoryblokApi } from './client';
 
 const isBridgeEnabled = import.meta.env.DEV;
 
-export function useContent(components) {
+export function useContent(components: Record<string, SvelteComponent>): void {
 	return storyblokInit({
 		accessToken: import.meta.env.VITE_STORYBLOK_ACCESS_TOKEN,
 		bridge: isBridgeEnabled,
@@ -13,7 +14,10 @@ export function useContent(components) {
 	});
 }
 
-export async function preloadStory(path: string, params: Record<string, unknown> = {}) {
+export async function preloadStory(
+	path: string,
+	params: Record<string, unknown> = {}
+): Promise<unknown> {
 	const api = useStoryblokApi();
 
 	try {
@@ -30,7 +34,10 @@ export async function preloadStory(path: string, params: Record<string, unknown>
 	return {};
 }
 
-export function useStory<Data extends { id: number }>(data: Data, params: Record<string, unknown>) {
+export function useStory<Data extends { id: number }>(
+	data: Data,
+	params: Record<string, unknown>
+): { story: Writable<Data> } {
 	const story = writable(data);
 
 	if (isBridgeEnabled) {
@@ -43,7 +50,7 @@ export function useStory<Data extends { id: number }>(data: Data, params: Record
 export function useStories<Data extends { id: number }[]>(
 	data: Data,
 	params: Record<string, unknown>
-) {
+): { stories: Writable<Data> } {
 	const stories = writable(data);
 
 	if (isBridgeEnabled) {

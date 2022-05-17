@@ -7,8 +7,8 @@
 	export let title: string;
 	export let publishedAt: string;
 	export let tags: string[];
-	export let author: any[];
-	export let content: any[];
+	export let author: unknown[];
+	export let content: unknown[];
 	export let external_url: string;
 </script>
 

@@ -1,9 +1,11 @@
 <script lang="ts" context="module">
+	import type { LoadInput, LoadOutput } from '@sveltejs/kit';
 	import { preloadStory, useStory } from '../../content';
 
 	const resolveRelations = ['blog.author'];
 
-	export async function load({ params }) {
+	/** @type {import('@sveltejs/kit').Load} */
+	export async function load({ params }: LoadInput): Promise<LoadOutput> {
 		const { story } = await preloadStory(`blog/${params.slug}`, {
 			resolve_relations: String(resolveRelations)
 		});
