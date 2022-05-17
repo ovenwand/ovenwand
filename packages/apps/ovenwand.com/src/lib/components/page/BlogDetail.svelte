@@ -11,7 +11,7 @@
 	export let author: unknown[];
 	export let content: unknown[];
 
-	const columns = { xs: 12, sm: 8 };
+	const columns = { sm: 8 };
 	const offset = { sm: 2 };
 </script>
 
