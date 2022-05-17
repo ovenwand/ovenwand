@@ -1,6 +1,6 @@
 import type { Readable, Writable } from 'svelte/store';
 import { derived, writable } from 'svelte/store';
-import { isClient } from '@ovenwand/util.browser';
+import { isClient } from '@ovenwand/env';
 
 export type Breakpoint = number;
 export type BreakpointName = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
