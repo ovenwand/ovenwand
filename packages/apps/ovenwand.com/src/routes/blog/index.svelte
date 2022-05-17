@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
 	import type { LoadOutput } from '@sveltejs/kit';
-	import { preloadStory } from '../../content';
+	import { preloadStory } from '$lib/content';
 
 	/** @type {import('@sveltejs/kit').Load} */
 	export async function load(): Promise<LoadOutput> {
@@ -20,7 +20,7 @@
 
 <script lang="ts">
 	import { StoryblokComponent } from '@storyblok/svelte';
-	import { useStories } from '../../content';
+	import { useStories } from '$lib/content';
 
 	export let data;
 
