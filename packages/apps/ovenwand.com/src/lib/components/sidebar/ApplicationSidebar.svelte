@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { useMedia } from '@ovenwand/util.svelte';
+	import { useMedia } from '@ovenwand/util';
 	import { Column, Grid, Sheet, Overlay, type SidebarStore, useSidebar } from '@ovenwand/ui';
 	import { Sidebar, SidebarDivider, SideNavigation } from '$lib/components';
 

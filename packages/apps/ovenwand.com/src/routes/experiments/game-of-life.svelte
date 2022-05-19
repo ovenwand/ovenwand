@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { useEngine } from '@ovenwand/util';
 	import { floor } from '@ovenwand/util.math';
-	import { useEngine } from '@ovenwand/util.svelte';
 
 	type Dead = 0;
 	type Alive = 1;

@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { createClassName } from '@ovenwand/util.browser';
-	import type { ExpandParams } from '@ovenwand/util.svelte';
-	import { expand, useMedia } from '@ovenwand/util.svelte';
+	import { createClassName, expand, type ExpandParams, useMedia } from '@ovenwand/util';
 	import { Sidebar } from '@ovenwand/ui';
 
 	export let id: string = undefined;
