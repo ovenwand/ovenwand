@@ -2,7 +2,6 @@
 	import type { LoadOutput } from '@sveltejs/kit';
 	import { preloadStory } from '$lib/content';
 
-	/** @type {import('@sveltejs/kit').Load} */
 	export async function load(): Promise<LoadOutput> {
 		const { stories } = await preloadStory('', {
 			resolve_relations: String(['blog.author']),
