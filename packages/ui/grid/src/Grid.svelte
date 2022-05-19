@@ -3,14 +3,14 @@
 	import { createClassName, createStyle } from '@ovenwand/util.browser';
 	import { noop } from '@ovenwand/util.fp';
 
-	let className: string = null;
+	let className: string | null = null;
 	export { className as class };
-	export let style: Record<string, unknown> = null;
+	export let style: Record<string, unknown> | null = null;
 
 	export let relative = false;
 	export let gap = true;
 	export let gapOutside = true;
-	export let use = [noop];
+	export let use: [Action, unknown] = [noop(), undefined];
 
 	let gridClassName: string;
 	let gridStyle: string;
@@ -20,10 +20,10 @@
 		'grid--relative': relative,
 		'grid--gap': gap,
 		'grid--gap-outside': gapOutside,
-		[className]: className
+		[className as string]: className
 	});
 
-	$: gridStyle = style && createStyle(style);
+	$: gridStyle = style ? createStyle(style) : '';
 	$: [action, payload] = use;
 </script>
 

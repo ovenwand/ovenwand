@@ -17,11 +17,11 @@ function createDragEvent(type: string, mouseOrTouchEvent: MouseEvent | TouchEven
 	return new DragEvent(type, eventInitDict);
 }
 
-function dispatch(type: string, target: EventTarget, event: MouseEvent | TouchEvent) {
+function dispatch(type: string, target: EventTarget, event: MouseEvent | TouchEvent): void {
 	target.dispatchEvent(createDragEvent(type, event));
 }
 
-function createGhostElement(element: Element) {
+function createGhostElement(element: HTMLElement): HTMLElement {
 	const target = findTargetElement(element);
 	const rect = target.getBoundingClientRect();
 	const ghost = target.cloneNode(true) as HTMLElement;
@@ -35,15 +35,17 @@ function createGhostElement(element: Element) {
 	return ghost;
 }
 
-function findTargetElement(element: Element) {
+function findTargetElement(element: HTMLElement): HTMLElement {
 	const { display } = getComputedStyle(element);
-	return display === 'contents' ? findTargetElement(element.firstChild as Element) : element;
+	const target =
+		display === 'contents' ? findTargetElement(element.firstChild as HTMLElement) : element;
+	return target || element;
 }
 
-function findDropTarget(id: string, event: MouseEvent | TouchEvent) {
+function findDropTarget(id: string, event: MouseEvent | TouchEvent): HTMLElement | null {
 	const { clientX, clientY } = findEventCoordinates(event);
 
-	for (const droppable of droppables.get(id)) {
+	for (const droppable of droppables.get(id) || []) {
 		const { x, y, width, height } = findTargetElement(droppable).getBoundingClientRect();
 		const isInHorizontalBounds = clientX >= x && clientX <= x + width;
 		const isInVerticalBounds = clientY >= y && clientY <= y + height;
@@ -52,10 +54,19 @@ function findDropTarget(id: string, event: MouseEvent | TouchEvent) {
 			return droppable;
 		}
 	}
+
+	return null;
 }
 
-function findEventCoordinates(event: MouseEvent | TouchEvent) {
-	const result: MouseEvent | Touch = event instanceof MouseEvent ? event : event.touches.item(0);
+function findEventCoordinates(event: MouseEvent | TouchEvent): {
+	clientX: number;
+	clientY: number;
+	pageX: number;
+	pageY: number;
+} {
+	const result: MouseEvent | Touch =
+		event instanceof MouseEvent ? event : (event.touches.item(0) as Touch);
+
 	return {
 		clientX: result.clientX,
 		clientY: result.clientY,
@@ -68,9 +79,9 @@ export function draggable(
 	node: HTMLElement,
 	{ id = 'default' }: { id?: string } = {}
 ): { destroy: () => void } {
-	let dragTarget: HTMLElement = null;
-	let dropTarget: HTMLElement = null;
-	let ghostElement: HTMLElement = null;
+	let dragTarget: HTMLElement | null = null;
+	let dropTarget: HTMLElement | null = null;
+	let ghostElement: HTMLElement | null = null;
 	let startX = 0;
 	let startY = 0;
 	let dragging = false;
@@ -79,7 +90,7 @@ export function draggable(
 		draggables.set(id, []);
 	}
 
-	draggables.get(id).push(node);
+	draggables.get(id)?.push(node);
 
 	bindStartEvents();
 
@@ -101,6 +112,10 @@ export function draggable(
 
 		// Prevent triggering the drag event by accident by adding a threshold
 		if (abs(pageX - startX) + abs(pageY - startY) < 4) {
+			return false;
+		}
+
+		if (!dragTarget) {
 			return false;
 		}
 
@@ -138,6 +153,10 @@ export function draggable(
 
 	function onInteractionEnd(event: MouseEvent | TouchEvent) {
 		dragging = false;
+
+		if (!dragTarget) {
+			return;
+		}
 
 		dragTarget.style.pointerEvents = '';
 
@@ -186,7 +205,12 @@ export function draggable(
 
 	return {
 		destroy() {
-			draggables.get(id).splice(draggables.get(id).indexOf(node), 1);
+			const index = draggables.get(id)?.indexOf(node);
+
+			if (index && index >= 0) {
+				draggables.get(id)?.splice(index, 1);
+			}
+
 			unbindStartEvents();
 			unbindDragEvents();
 		}
@@ -201,11 +225,15 @@ export function droppable(
 		droppables.set(id, []);
 	}
 
-	droppables.get(id).push(node);
+	droppables.get(id)?.push(node);
 
 	return {
 		destroy() {
-			droppables.get(id).splice(droppables.get(id).indexOf(node), 1);
+			const index = droppables.get(id)?.indexOf(node);
+
+			if (index && index >= 0) {
+				droppables.get(id)?.splice(index, 1);
+			}
 		}
 	};
 }

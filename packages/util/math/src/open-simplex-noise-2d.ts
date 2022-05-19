@@ -33,13 +33,17 @@ export function makeNoise2D(clientSeed: number): Noise2D {
 		const baseSet = base2D[p2D[i]];
 		let previous: Contribution2D | null = null;
 		let current: Contribution2D | null = null;
+
 		for (let k = 0; k < baseSet.length; k += 3) {
 			current = contribution2D(baseSet[k], baseSet[k + 1], baseSet[k + 2]);
 			if (previous === null) contributions[i / 4] = current;
 			else previous.next = current;
 			previous = current;
 		}
-		current.next = contribution2D(p2D[i + 1], p2D[i + 2], p2D[i + 3]);
+
+		if (current) {
+			current.next = contribution2D(p2D[i + 1], p2D[i + 2], p2D[i + 3]);
+		}
 	}
 	const lookup: Contribution2D[] = [];
 	for (let i = 0; i < lookupPairs2D.length; i += 2) {

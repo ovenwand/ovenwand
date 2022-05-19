@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
 
-	export let id: string = null;
+	export let id: string | null = null;
 
-	let className: string = null;
+	let className: string | null = null;
 	export { className as class };
 
 	export let padding = false;
@@ -12,7 +12,7 @@
 	export let background = false;
 
 	$: sheetClassName = createClassName({
-		[className]: className,
+		[className as string]: className,
 		'p-4': padding,
 		'bg-gray-100 dark:bg-gray-800': background,
 		rounded,
