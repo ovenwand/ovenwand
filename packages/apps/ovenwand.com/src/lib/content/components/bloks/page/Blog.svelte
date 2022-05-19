@@ -9,10 +9,10 @@
 	export let tags: string[];
 	export let author: unknown[];
 	export let content: unknown[];
-	export let external_url: { id: string; url: string; type: string };
+	export let external_url: { id: string; url: string; type: string } = null;
 </script>
 
-{#if external_url.url}
+{#if external_url?.url}
 	<BlogTeaser {use} {title} {publishedAt} {tags} {author} {content} {external_url} />
 {:else}
 	<BlogDetail {use} {title} {publishedAt} {tags} {author} {content} />
