@@ -4,7 +4,6 @@
 
 	const resolveRelations = ['blog.author'];
 
-	/** @type {import('@sveltejs/kit').Load} */
 	export async function load({ params }: LoadInput): Promise<LoadOutput> {
 		const { story } = await preloadStory(`blog/${params.slug}`, {
 			resolve_relations: String(resolveRelations)
