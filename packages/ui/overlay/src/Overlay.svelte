@@ -2,11 +2,11 @@
 	import { fade } from 'svelte/transition';
 	import { createClassName } from '@ovenwand/util.browser';
 
-	let className: string = null;
+	let className: string | null = null;
 	export { className as class };
 
 	$: overlayClassName = createClassName({
-		[className]: className
+		[className as string]: className
 	});
 </script>
 

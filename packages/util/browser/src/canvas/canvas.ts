@@ -1,16 +1,14 @@
 import { createTicker } from '@ovenwand/util.fp';
 import { color, PI } from '@ovenwand/util.math';
 
-export type Fn<T = undefined, R = void> = (arg?: T) => R;
-export type Hook<T = undefined> = Fn<Fn<T>>;
 export type FillStyle = string | CanvasGradient | CanvasPattern;
 export type StrokeStyle = string | CanvasGradient | CanvasPattern;
 export interface Engine {
-	setup: Hook<ISetupContext>;
-	update: Hook;
-	draw: Hook<IDrawContext>;
-	resume: Fn;
-	stop: Fn;
+	setup: (fn: (arg: ISetupContext) => void) => void;
+	update: (fn: () => void) => void;
+	draw: (fn: (arg: IDrawContext) => void) => void;
+	resume: () => void;
+	stop: () => void;
 }
 
 export interface ISetupContext {
@@ -38,10 +36,10 @@ export interface IDrawContext {
 }
 
 export function createEngine(canvas: HTMLCanvasElement): Engine {
-	const context: CanvasRenderingContext2D = canvas.getContext('2d');
-	let _update: Hook, _resume: Fn, _stop: Fn;
+	const context: CanvasRenderingContext2D = canvas.getContext('2d') as CanvasRenderingContext2D;
+	let _update: () => void, _resume: () => void, _stop: () => void;
 
-	function setup(setupFn: Fn<ISetupContext>) {
+	function setup(setupFn: (context: ISetupContext) => void) {
 		function onClick(handler: (x: number, y: number) => unknown) {
 			canvas.addEventListener('click', (event) => {
 				const rect = canvas.getBoundingClientRect();
@@ -56,16 +54,16 @@ export function createEngine(canvas: HTMLCanvasElement): Engine {
 		});
 	}
 
-	function update(updateFn: Fn): void {
+	function update(updateFn: () => void): void {
 		_update = updateFn;
 	}
 
-	function draw(drawFn: Fn<IDrawContext>): void {
+	function draw(drawFn: (context: IDrawContext) => void): void {
 		let mouseX = 0;
 		let mouseY = 0;
 
-		let fillStyle: FillStyle, previousFillStyle: FillStyle;
-		let strokeStyle: StrokeStyle, previousStrokeStyle: StrokeStyle;
+		let fillStyle: FillStyle | null, previousFillStyle: FillStyle | null;
+		let strokeStyle: StrokeStyle | null, previousStrokeStyle: StrokeStyle | null;
 		let lineWidth: number, previousLineWidth: number;
 		let fontStyle: string, previousFontStyle: string;
 

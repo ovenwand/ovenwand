@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let href: string = null;
+	export let href: string | null = null;
 	export let type = 'button';
 </script>
 

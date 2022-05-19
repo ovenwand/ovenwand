@@ -5,7 +5,7 @@ export function createStyle(styleMap: Record<string, unknown>): string {
 		const value = styleMap[key];
 
 		if (value != null) {
-			style += `${key.trim()}: ${value.toString().trim()};`;
+			style += `${key.trim()}: ${String(value).trim()};`;
 		}
 	}
 

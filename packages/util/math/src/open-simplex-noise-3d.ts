@@ -35,16 +35,20 @@ export function makeNoise3D(clientSeed: number): Noise3D {
 	const contributions: Contribution3D[] = [];
 	for (let i = 0; i < p3D.length; i += 9) {
 		const baseSet = base3D[p3D[i]];
-		let previous: Contribution3D = null;
-		let current: Contribution3D = null;
+		let previous: Contribution3D | null = null;
+		let current: Contribution3D | null = null;
+
 		for (let k = 0; k < baseSet.length; k += 4) {
 			current = contribution3D(baseSet[k], baseSet[k + 1], baseSet[k + 2], baseSet[k + 3]);
 			if (previous === null) contributions[i / 9] = current;
 			else previous.next = current;
 			previous = current;
 		}
-		current.next = contribution3D(p3D[i + 1], p3D[i + 2], p3D[i + 3], p3D[i + 4]);
-		current.next.next = contribution3D(p3D[i + 5], p3D[i + 6], p3D[i + 7], p3D[i + 8]);
+
+		if (current) {
+			current.next = contribution3D(p3D[i + 1], p3D[i + 2], p3D[i + 3], p3D[i + 4]);
+			current.next.next = contribution3D(p3D[i + 5], p3D[i + 6], p3D[i + 7], p3D[i + 8]);
+		}
 	}
 	const lookup: Contribution3D[] = [];
 	for (let i = 0; i < lookupPairs3D.length; i += 2) {

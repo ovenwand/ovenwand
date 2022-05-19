@@ -43,7 +43,7 @@ importers:
       typescript: 4.8.0-dev.20220519
       vite: 2.9.9
 
-  packages/apps/ovenwand.com:
+  apps/ovenwand.com:
     specifiers:
       '@ovenwand/brand': workspace:^0.0.1
       '@ovenwand/config': workspace:^0.1.0
@@ -62,12 +62,12 @@ importers:
       tslib: ^2.4.0
       typescript: next
     devDependencies:
-      '@ovenwand/brand': link:../../brand
-      '@ovenwand/config': link:../../config
-      '@ovenwand/env': link:../../env
-      '@ovenwand/ui': link:../../ui
-      '@ovenwand/util': link:../../util
-      '@ovenwand/util.math': link:../../util/math
+      '@ovenwand/brand': link:../../packages/brand
+      '@ovenwand/config': link:../../packages/config
+      '@ovenwand/env': link:../../packages/env
+      '@ovenwand/ui': link:../../packages/ui
+      '@ovenwand/util': link:../../packages/util
+      '@ovenwand/util.math': link:../../packages/util/math
       '@storyblok/svelte': 2.0.4_axios@0.27.2
       '@sveltejs/kit': 1.0.0-next.335_svelte@3.48.0
       autoprefixer: 10.4.7_postcss@8.4.14
@@ -79,7 +79,7 @@ importers:
       tslib: 2.4.0
       typescript: 4.8.0-dev.20220519
 
-  packages/apps/tasks.ovenwand.com:
+  apps/tasks.ovenwand.com:
     specifiers:
       '@ovenwand/config': workspace:^0.1.0
       '@ovenwand/env': workspace:^0.0.1
@@ -97,12 +97,12 @@ importers:
       tslib: ^2.4.0
       typescript: next
     devDependencies:
-      '@ovenwand/config': link:../../config
-      '@ovenwand/env': link:../../env
-      '@ovenwand/services.faunadb': link:../../services/faunadb
-      '@ovenwand/ui': link:../../ui
-      '@ovenwand/util.browser': link:../../util/browser
-      '@ovenwand/util.svelte': link:../../util/svelte
+      '@ovenwand/config': link:../../packages/config
+      '@ovenwand/env': link:../../packages/env
+      '@ovenwand/services.faunadb': link:../../packages/services/faunadb
+      '@ovenwand/ui': link:../../packages/ui
+      '@ovenwand/util.browser': link:../../packages/util/browser
+      '@ovenwand/util.svelte': link:../../packages/util/svelte
       '@sveltejs/adapter-auto': 1.0.0-next.43
       '@sveltejs/kit': 1.0.0-next.335_svelte@3.48.0
       autoprefixer: 10.4.7_postcss@8.4.14
@@ -541,10 +541,10 @@ packages:
       '@commitlint/execute-rule': 17.0.0
       '@commitlint/resolve-extends': 17.0.0
       '@commitlint/types': 17.0.0
-      '@types/node': 17.0.34
+      '@types/node': 17.0.35
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 2.0.0_7e7aca55e858846b4e17e9dbf1ef28b1
+      cosmiconfig-typescript-loader: 2.0.0_1a6954e302974a6cd23608e56122f31f
       lodash: 4.17.21
       resolve-from: 5.0.0
       typescript: 4.8.0-dev.20220519
@@ -898,8 +898,8 @@ packages:
     resolution: {integrity: sha512-B9EoJFjhqcQ9OmQrNorItO+OwEOORNn3S31WuiHvZY/dm9ajkB7AKD/8toessEtHHNL+58jofbq7hMMY9v4yig==}
     dev: true
 
-  /@types/node/17.0.34:
-    resolution: {integrity: sha512-XImEz7XwTvDBtzlTnm8YvMqGW/ErMWBsKZ+hMTvnDIjGCKxwK5Xpc+c/oQjOauwq8M4OS11hEkpjX8rrI/eEgA==}
+  /@types/node/17.0.35:
+    resolution: {integrity: sha512-vu1SrqBjbbZ3J6vwY17jBs8Sr/BKA+/a/WtjRG+whKg1iuLFOosq872EXS0eXWILdO36DHQQeku/ZcL6hz2fpg==}
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -915,7 +915,7 @@ packages:
   /@types/sass/1.43.1:
     resolution: {integrity: sha512-BPdoIt1lfJ6B7rw35ncdwBZrAssjcwzI5LByIrYs+tpXlj/CAkuVdRsgZDdP4lq5EjyWzwxZCqAoFyHKFwp32g==}
     dependencies:
-      '@types/node': 17.0.34
+      '@types/node': 17.0.35
 
   /@types/sinonjs__fake-timers/8.1.1:
     resolution: {integrity: sha512-0kSuKjAS0TrGLJ0M/+8MaFkGsQhZpB6pxOmvS3K8FYI72K//YmdfoW9X2qPsAKh1mkwxGD5zib9s1FIFed6E8g==}
@@ -1584,16 +1584,16 @@ packages:
     resolution: {integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=}
     dev: true
 
-  /cosmiconfig-typescript-loader/2.0.0_7e7aca55e858846b4e17e9dbf1ef28b1:
+  /cosmiconfig-typescript-loader/2.0.0_1a6954e302974a6cd23608e56122f31f:
     resolution: {integrity: sha512-2NlGul/E3vTQEANqPziqkA01vfiuUU8vT0jZAuUIjEW8u3eCcnCQWLggapCjhbF76s7KQF0fM0kXSKmzaDaG1g==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@types/node': '*'
       typescript: '>=3'
     dependencies:
-      '@types/node': 17.0.34
+      '@types/node': 17.0.35
       cosmiconfig: 7.0.1
-      ts-node: 10.7.0_7e7aca55e858846b4e17e9dbf1ef28b1
+      ts-node: 10.7.0_1a6954e302974a6cd23608e56122f31f
       typescript: 4.8.0-dev.20220519
     transitivePeerDependencies:
       - '@swc/core'
@@ -4175,7 +4175,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-node/10.7.0_7e7aca55e858846b4e17e9dbf1ef28b1:
+  /ts-node/10.7.0_1a6954e302974a6cd23608e56122f31f:
     resolution: {integrity: sha512-TbIGS4xgJoX2i3do417KSaep1uRAW/Lu+WAL2doDHC0D6ummjirVOXU5/7aiZotbQ5p1Zp9tP7U6cYhA0O7M8A==}
     hasBin: true
     peerDependencies:
@@ -4194,7 +4194,7 @@ packages:
       '@tsconfig/node12': 1.0.9
       '@tsconfig/node14': 1.0.1
       '@tsconfig/node16': 1.0.2
-      '@types/node': 17.0.34
+      '@types/node': 17.0.35
       acorn: 8.7.1
       acorn-walk: 8.2.0
       arg: 4.1.3

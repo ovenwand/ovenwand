@@ -25,7 +25,7 @@ function removeNotification({ id }: Identifiable): void {
 	update(($notifications) => $notifications.filter((n) => n.id !== id));
 }
 
-function updateNotification(id: string, notification: Notification): void {
+function updateNotification(id: string, notification: Partial<Notification>): void {
 	update(($notifications) => {
 		const n = $notifications.find((n) => n.id === id);
 
@@ -49,7 +49,7 @@ function notify(notification: Omit<Notification, 'id'>, delay?: number): Notifie
 }
 
 function createNotifier(type: NotificationType): Notifier {
-	return ({ message }: Omit<Notification, 'type'>, delay?: number) =>
+	return ({ message }: Pick<Notification, 'message'>, delay?: number) =>
 		notify(
 			{
 				type,
@@ -60,7 +60,7 @@ function createNotifier(type: NotificationType): Notifier {
 }
 
 function createUpdater(id: string): Notifier {
-	return (notification: Notification, delay) => {
+	return (notification: Partial<Notification>, delay) => {
 		updateNotification(id, notification);
 
 		if (delay) {
@@ -73,7 +73,7 @@ function createUpdater(id: string): Notifier {
 
 export type Identifiable = { id: string };
 export type Typed = { type: NotificationType };
-export type Notifier = (notification: Partial<Notification>, delay?: number) => Notifier;
+export type Notifier = (notification: Pick<Notification, 'message'>, delay?: number) => Notifier;
 export type NotificationType = 'info' | 'success' | 'warn' | 'error' | 'loading';
 
 type Notification = { message: string } & Typed & Identifiable;

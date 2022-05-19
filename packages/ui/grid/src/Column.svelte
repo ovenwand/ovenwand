@@ -2,17 +2,18 @@
 	import { createClassName } from '@ovenwand/util.browser';
 	import { type Breakpoint, createColumnStyle } from './util';
 
-	let className: string = null;
+	let className: string | null = null;
 	export { className as class };
 	export let style: Record<string, unknown> = {};
 
-	export let columns: number | Partial<Record<Breakpoint, number>> = null;
-	export let offset: number | Partial<Record<Breakpoint, number>> = null;
+	export let columns: number | Partial<Record<Breakpoint, number>> | undefined = undefined;
+	export let offset: number | Partial<Record<Breakpoint, number>> | undefined = undefined;
 
 	let columnStyle: string;
+	let columnClassName: string;
 
 	$: columnClassName = createClassName({
-		[className]: className
+		[className as string]: className
 	});
 
 	$: columnStyle = createColumnStyle(columns, offset, style);
