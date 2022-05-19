@@ -1,15 +1,22 @@
 import { writable, type Writable } from 'svelte/store';
 import type { SvelteComponent } from 'svelte';
-import { storyblokInit, apiPlugin, useStoryblokBridge } from '@storyblok/svelte';
+import {
+	storyblokInit,
+	apiPlugin,
+	useStoryblokBridge,
+	storyblokEditable as _storyblokEditable
+} from '@storyblok/svelte';
 import { useStoryblokApi } from './client';
 
-const isBridgeEnabled = import.meta.env.DEV;
+let isBridgeEnabled = false;
 
-export function useContent(components: Record<string, SvelteComponent>): void {
+export function useContent(components: Record<string, SvelteComponent>, bridge = false): void {
+	isBridgeEnabled = bridge;
+
 	return storyblokInit({
 		accessToken: import.meta.env.VITE_STORYBLOK_ACCESS_TOKEN,
-		bridge: isBridgeEnabled,
 		use: [apiPlugin],
+		bridge,
 		components
 	});
 }
@@ -20,18 +27,12 @@ export async function preloadStory(
 ): Promise<unknown> {
 	const api = useStoryblokApi();
 
-	try {
-		const response = await api.get(`cdn/stories/${path}`, {
-			...params,
-			version: 'draft'
-		});
+	const response = await api.get(`cdn/stories/${path}`, {
+		version: isBridgeEnabled || import.meta.env.DEV ? 'draft' : 'published',
+		...params
+	});
 
-		return response.data;
-	} catch (e) {
-		console.error(e);
-	}
-
-	return {};
+	return response.data;
 }
 
 export function useStory<Data extends { id: number }>(
@@ -41,7 +42,7 @@ export function useStory<Data extends { id: number }>(
 	const story = writable(data);
 
 	if (isBridgeEnabled) {
-		useStoryblokBridge(data.id, (newStory) => story.set(newStory), params);
+		useStoryblokBridge(data.id, (newStory: Data) => story.set(newStory), params);
 	}
 
 	return { story };
@@ -73,4 +74,10 @@ export function useStories<Data extends { id: number }[]>(
 	}
 
 	return { stories };
+}
+
+export function storyblokEditable(node: HTMLElement, parameters: unknown) {
+	if (isBridgeEnabled) {
+		return _storyblokEditable(node, parameters);
+	}
 }

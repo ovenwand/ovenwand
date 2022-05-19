@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { storyblokEditable } from '@storyblok/svelte';
+	import { storyblokEditable } from '../../content';
 	export let blok;
 	export let component;
 	export let tag = 'div';
