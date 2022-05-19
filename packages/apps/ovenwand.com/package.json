@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ovenwand.com",
-	"version": "0.7.2",
+	"version": "0.8.0",
 	"type": "module",
 	"scripts": {
 		"clean": "pnpx -y rimraf node_modules",
