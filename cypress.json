@@ -2,5 +2,6 @@
 	"projectId": "9xyzzj",
 	"componentFolder": "packages",
 	"testFiles": "**/*.spec.ts",
+	"port": 9000,
 	"video": false
 }
