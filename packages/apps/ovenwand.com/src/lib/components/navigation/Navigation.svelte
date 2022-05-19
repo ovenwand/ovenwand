@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
-	import { useSidebar } from '@ovenwand/ui';
+	// import { useSidebar } from '@ovenwand/ui';
 
 	let className: string = null;
 	export { className as class };
 
-	const store = useSidebar();
+	// const store = useSidebar();
 
 	const items = [
 		{
@@ -19,11 +19,11 @@
 		{
 			label: 'Blog',
 			href: '/blog'
-		},
-		{
-			label: '::',
-			action: store.expand
 		}
+		// {
+		// 	label: '::',
+		// 	action: store.expand
+		// }
 	];
 
 	$: navClassName = createClassName({
