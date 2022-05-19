@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { createClassName } from '@ovenwand/util.browser';
+	import { createClassName } from '@ovenwand/util';
 	import { Column, Grid } from '@ovenwand/ui';
 	import { Sidebar } from '$lib/components/sidebar';
 

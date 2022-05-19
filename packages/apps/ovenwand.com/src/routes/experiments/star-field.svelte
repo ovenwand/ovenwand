@@ -1,7 +1,6 @@
 <script lang="ts">
+	import { noop, useEngine } from '@ovenwand/util';
 	import { map, random } from '@ovenwand/util.math';
-	import { useEngine } from '@ovenwand/util.svelte';
-	import { noop } from '@ovenwand/util.fp';
 
 	const { setup, update, draw } = useEngine(() => canvas);
 

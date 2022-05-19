@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { useEngine } from '@ovenwand/util';
 	import { cos, PI, sin } from '@ovenwand/util.math';
-	import { useEngine } from '@ovenwand/util.svelte';
 
 	const { setup, update, draw } = useEngine(() => canvas);
 

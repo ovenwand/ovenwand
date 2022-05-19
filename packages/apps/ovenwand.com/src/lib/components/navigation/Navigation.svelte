@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createClassName } from '@ovenwand/util.browser';
+	import { createClassName } from '@ovenwand/util';
 	// import { useSidebar } from '@ovenwand/ui';
 
 	let className: string = null;

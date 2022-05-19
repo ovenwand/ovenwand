@@ -1,7 +1,6 @@
 <script lang="ts">
-	import type { Noise3D } from '@ovenwand/util.math';
-	import { ceil, max, min, makeNoise3D } from '@ovenwand/util.math';
-	import { useEngine } from '@ovenwand/util.svelte';
+	import { useEngine } from '@ovenwand/util';
+	import { ceil, max, min, makeNoise3D, type Noise3D } from '@ovenwand/util.math';
 
 	let debug = false;
 	let canvas: HTMLCanvasElement;
