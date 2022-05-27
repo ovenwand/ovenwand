@@ -5,7 +5,7 @@ config.kit.vite.server = {
 };
 
 config.kit.vite.optimizeDeps = {
-	include: ['axios', 'date-fns'],
+	include: ['axios']
 };
 
 export default config;

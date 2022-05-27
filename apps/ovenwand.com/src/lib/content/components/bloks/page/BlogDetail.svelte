@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Action } from 'svelte/action';
 	import { StoryblokComponent } from '@storyblok/svelte';
-	import { format } from '@ovenwand/util';
+	import { format } from '@ovenwand/util.date';
 	import { Button, Column, Grid } from '@ovenwand/ui';
 	import type { Blok, Story } from '../../../types';
 	import type { IPerson } from '../../stories';
