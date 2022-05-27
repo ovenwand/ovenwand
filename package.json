@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/project",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Monolithic project containing all ovenwand related packages/projects",
 	"main": "index.js",
 	"scripts": {
@@ -12,7 +12,7 @@
 		"preview": "run(){ pnpm preview --filter @ovenwand/$1 -- ${@:2}; }; run",
 		"test": "run() { pnpm test:unit $1; pnpm test:e2e $1 -- ${@:2}; }; run",
 		"test:unit": "run() { cypress $1-ct ${@:2}; }; run",
-		"test:e2e": "run() { cypress $1 ${@:2}; }; run",
+		"test:e2e": "run() { exit_code=$?; cypress $1 ${@:2} || exit $exit_code; }; run",
 		"lint:eslint": "eslint",
 		"lint:prettier": "prettier --plugin-search-dir=.",
 		"lint": "pnpm lint:prettier -- --check . ; pnpm lint:eslint -- .",
@@ -42,7 +42,7 @@
 	"lint-staged": {
 		"*.{ts,svelte,css,md,json}": "pnpm lint:prettier -- --write",
 		"*.{ts,svelte}": "pnpm lint:eslint -- --cache --fix",
-		"packages/**/*.{ts,svelte}": "pnpm test:unit run"
+		"packages/**/*.{ts,svelte}": "pnpm test run"
 	},
 	"author": "Ovenwand (info@ovenwand.com)",
 	"license": "WTFPL",
