@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import { createClassName } from '@ovenwand/util.browser';
-	import { draggable } from '@ovenwand/util.svelte';
+	import { createClassName, draggable } from '@ovenwand/util';
 	import { Sheet } from '@ovenwand/ui';
 
 	export let _id: string;
