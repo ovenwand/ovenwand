@@ -6,6 +6,7 @@ export function useAnalytics(projectId) {
 	function trackPageView() {
 		fetch(`${import.meta.env.VITE_ANALYTICS_URL}/track`, {
 			method: 'POST',
+			credentials: 'omit',
 			body: JSON.stringify({
 				project: projectId,
 				type: 'page_view',
