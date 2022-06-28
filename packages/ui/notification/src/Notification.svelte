@@ -44,7 +44,13 @@
 	}
 </script>
 
-<Sheet id="notification-{id}" class="flex {notificationClassName}" padding shadow rounded>
+<Sheet
+	id="notification-{id}"
+	class="flex items-center justify-center {notificationClassName}"
+	padding
+	shadow
+	rounded
+>
 	<Icon>{icon}</Icon>
 	<span class="flex-grow px-2">{message}</span>
 	<Button on:click={onClose}>x</Button>

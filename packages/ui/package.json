@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "",
 	"main": "src/index.ts",
 	"type": "module",
@@ -15,7 +15,7 @@
 		"@ovenwand/ui.layout": "workspace:^0.1.2",
 		"@ovenwand/ui.loader": "workspace:^0.0.1",
 		"@ovenwand/ui.modal": "workspace:^0.2.4",
-		"@ovenwand/ui.notification": "workspace:^0.0.4",
+		"@ovenwand/ui.notification": "workspace:^0.0.5",
 		"@ovenwand/ui.overlay": "workspace:^0.0.1",
 		"@ovenwand/ui.sheet": "workspace:^0.0.2",
 		"@ovenwand/ui.sidebar": "workspace:^0.1.0"
