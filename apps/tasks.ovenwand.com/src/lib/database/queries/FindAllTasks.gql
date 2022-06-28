@@ -4,9 +4,15 @@ query FindAllTasksAndLabels {
 			_id
 			title
 			description
+			size
+			priority
+			businessValue
+			dueDate
 			done
 			labels {
-				_id
+				data {
+					_id
+				}
 			}
 		}
 	}

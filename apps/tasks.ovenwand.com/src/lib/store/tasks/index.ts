@@ -1,7 +1,7 @@
-import type { Readable } from 'svelte/store';
+import { derived, type Readable } from 'svelte/store';
 import { isClient } from '@ovenwand/env';
 import { createStorage } from '@ovenwand/util';
-import { createTask, copyTask } from './utils';
+import { createTask, copyTask, findTaskById } from './utils';
 import { type ITask, tasks } from './state';
 import { addOrUpdateTask } from './mutations';
 import { saveTask, moveTask, deleteTask } from './actions';
@@ -14,7 +14,7 @@ subscribe(($tasks) => isClient && storage.set($tasks));
 
 export { type ITask } from './state';
 
-export interface ITaskStore<State extends ITask[] = ITask[]> {
+export interface ITasksStore<State extends ITask[] = ITask[]> {
 	tasks: Readable<State>;
 	create: typeof createTask;
 	copy: typeof copyTask;
@@ -23,7 +23,12 @@ export interface ITaskStore<State extends ITask[] = ITask[]> {
 	delete: typeof deleteTask;
 }
 
-export function useTasks(data: Partial<ITask>[] = []): ITaskStore {
+export interface ITaskStore<State extends ITask = ITask> {
+	tasks: ITasksStore<State[]>;
+	task: Readable<State>;
+}
+
+export function useTasks(data: Partial<ITask>[] = []): ITasksStore {
 	for (const task of data) {
 		update(addOrUpdateTask(task));
 	}
@@ -35,5 +40,15 @@ export function useTasks(data: Partial<ITask>[] = []): ITaskStore {
 		save: saveTask,
 		move: moveTask,
 		delete: deleteTask
+	};
+}
+
+export function useTask(data: Partial<ITask>): ITaskStore {
+	const store = useTasks([data]);
+	const task = derived(store.tasks, ($tasks) => findTaskById($tasks, data.id), data as ITask);
+
+	return {
+		tasks: store,
+		task: { subscribe: task.subscribe }
 	};
 }

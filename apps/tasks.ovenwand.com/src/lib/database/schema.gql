@@ -1,0 +1,24 @@
+type Task {
+	title: String!
+	description: String
+
+	size: Int!
+	priority: Int!
+	businessValue: Int!
+	dueDate: Time!
+
+	done: Boolean
+	labels: [Label!] @relation
+}
+
+type Label {
+	name: String!
+	description: String
+	tasks: [Task!] @relation
+}
+
+type Query {
+	tasks: [Task!]
+	findTasksByLabel(labelID: ID!): [Task!] @resolver(name: "findTasksByLabel")
+	labels: [Label!]
+}

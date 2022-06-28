@@ -4,7 +4,7 @@ import { addOrUpdateLabel } from './mutations';
 
 const { subscribe, update } = labels;
 
-export type { ILabel } from './state';
+export type { ILabel, ILabelData } from './state';
 
 export interface ILabelStore<State extends ILabel[] = ILabel[]> {
 	labels: Readable<State>;

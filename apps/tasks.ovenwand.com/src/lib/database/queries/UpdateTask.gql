@@ -3,9 +3,15 @@ mutation UpdateTask($id: ID!, $data: TaskInput!) {
 		_id
 		title
 		description
+		size
+		priority
+		businessValue
+		dueDate
 		done
 		labels {
-			_id
+			data {
+				_id
+			}
 		}
 	}
 }

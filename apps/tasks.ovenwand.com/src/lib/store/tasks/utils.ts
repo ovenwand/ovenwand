@@ -1,10 +1,14 @@
-import type { ITask } from './state';
+import type { ITask, ITaskData } from './state';
 
 export function createTask(task: Partial<ITask> = {}): ITask {
 	return {
-		_id: null,
-		title: 'Default title',
-		description: 'Default description',
+		_id: '',
+		title: '',
+		description: '',
+		priority: 0,
+		businessValue: 0,
+		size: 0,
+		dueDate: '1970-01-01T00:00:00.000Z',
 		done: false,
 		labels: [],
 		...task
@@ -14,6 +18,23 @@ export function createTask(task: Partial<ITask> = {}): ITask {
 export function copyTask(task: Partial<ITask>): ITask {
 	return createTask({
 		...task,
-		labels: [...task.labels]
+		labels: task.labels ? [...task.labels] : []
 	});
+}
+
+export function findTaskById($tasks: ITask[], id: unknown): ITask {
+	const $task = $tasks.find(($task) => $task.id === id);
+
+	if (!$task) {
+		throw new Error(`Task with id "${id}" not found.`);
+	}
+
+	return $task;
+}
+
+export function mapDataToTask(data: ITaskData): ITask {
+	return {
+		...data,
+		labels: data.labels.data.map((label) => label._id)
+	};
 }

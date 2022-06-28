@@ -1,18 +1,19 @@
 <script lang="ts">
 	import '../app.css';
 	import { Column, DefaultLayout, Grid, Notifications } from '@ovenwand/ui';
+	import { Footer } from '$lib/components';
 </script>
 
-<DefaultLayout header footer>
-	<Grid class="flex-auto min-h-full" style={{ 'grid-auto-rows': 'min-content 1fr' }}>
-		<Column>
-			<h1>Task app</h1>
-		</Column>
+<DefaultLayout class="h-screen" footer>
+	<Notifications top />
 
-		<Column>
+	<Grid class="h-full">
+		<Column class="h-full">
 			<slot />
 		</Column>
 	</Grid>
 
-	<Notifications />
+	<svelte:fragment slot="after-content">
+		<Footer />
+	</svelte:fragment>
 </DefaultLayout>
