@@ -1,0 +1,17 @@
+type Project {
+	name: String!
+	events: [Event!] @relation
+}
+
+type Event {
+	type: String!
+	timestamp: Time!
+	uri: String!
+	details: String
+	project: Project! @relation
+}
+
+type Query {
+	allProjects: [Project!]
+	allEvents: [Event!]
+}

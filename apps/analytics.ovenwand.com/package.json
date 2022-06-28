@@ -1,0 +1,33 @@
+{
+	"name": "@ovenwand/analytics.ovenwand.com",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
+		"package": "svelte-kit package",
+		"preview": "svelte-kit preview",
+		"prepare": "svelte-kit sync",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"dependencies": {
+		"@ovenwand/analytics": "workspace:*",
+		"@ovenwand/services.faunadb": "workspace:*",
+		"@ovenwand/ui": "workspace:*",
+		"@ovenwand/util": "workspace:*",
+		"@ovenwand/util.date": "workspace:*",
+		"d3-scale": "^4.0.2"
+	},
+	"devDependencies": {
+		"@ovenwand/config": "workspace:*",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
+		"@types/d3-scale": "^4.0.2",
+		"svelte": "^3.48.0",
+		"svelte-check": "^2.7.2",
+		"svelte-preprocess": "^4.10.7",
+		"tslib": "^2.4.0",
+		"typescript": "next"
+	},
+	"type": "module"
+}
