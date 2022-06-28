@@ -19,7 +19,7 @@
 	$: columnStyle = createColumnStyle(columns, offset, style);
 </script>
 
-<div class="column {columnClassName}" style={columnStyle}>
+<div class="column min-h-0 {columnClassName}" style={columnStyle}>
 	<slot />
 </div>
 
