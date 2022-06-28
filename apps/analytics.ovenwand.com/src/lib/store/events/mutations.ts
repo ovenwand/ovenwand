@@ -14,3 +14,7 @@ export function updateEvent(event: Partial<IEvent>) {
 export function addOrUpdateEvent(event: Partial<IEvent>) {
 	return mutations.addOrUpdate(event);
 }
+
+export function setProjectId(projectId: string) {
+	return () => projectId;
+}

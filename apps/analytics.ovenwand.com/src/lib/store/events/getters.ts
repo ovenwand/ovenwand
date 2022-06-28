@@ -1,15 +1,19 @@
 import { derived } from 'svelte/store';
-import { events } from './state';
+import { events, projectId } from './state';
 import { isAfter, isToday, subMonths, subWeeks } from '@ovenwand/util.date';
 
-export const eventsToday = derived(events, ($events) =>
+export const eventsByProject = derived([events, projectId], ([$events, $projectId]) =>
+	$projectId ? $events.filter((event) => event.project._id === $projectId) : $events
+);
+
+export const eventsToday = derived(eventsByProject, ($events) =>
 	$events.filter((event) => isToday(new Date(event.timestamp)))
 );
 
-export const eventsInPastWeek = derived(events, ($events) =>
+export const eventsInPastWeek = derived(eventsByProject, ($events) =>
 	$events.filter((event) => isAfter(new Date(event.timestamp), subWeeks(new Date(), 1)))
 );
 
-export const eventsInPastMonth = derived(events, ($events) =>
+export const eventsInPastMonth = derived(eventsByProject, ($events) =>
 	$events.filter((event) => isAfter(new Date(event.timestamp), subMonths(new Date(), 1)))
 );

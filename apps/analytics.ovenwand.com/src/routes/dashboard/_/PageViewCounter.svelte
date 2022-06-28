@@ -1,12 +1,15 @@
 <script lang="ts">
-	import { useEvents } from '$lib/store';
+	import type { IEvent } from '$lib/store';
 
-	const { events, eventsInPastWeek, eventsInPastMonth, eventsToday } = useEvents();
+	export let events: IEvent[];
+	export let eventsToday: IEvent[];
+	export let eventsInPastWeek: IEvent[];
+	export let eventsInPastMonth: IEvent[];
 
-	$: todayCount = $eventsToday.reduce(toPageViewCount, 0);
-	$: pastWeekCount = $eventsInPastWeek.reduce(toPageViewCount, 0);
-	$: pastMonthCount = $eventsInPastMonth.reduce(toPageViewCount, 0);
-	$: allTimeCount = $events.reduce(toPageViewCount, 0);
+	$: todayCount = eventsToday.reduce(toPageViewCount, 0);
+	$: pastWeekCount = eventsInPastWeek.reduce(toPageViewCount, 0);
+	$: pastMonthCount = eventsInPastMonth.reduce(toPageViewCount, 0);
+	$: allTimeCount = events.reduce(toPageViewCount, 0);
 
 	function toPageViewCount(count, event) {
 		return event.type === 'page_view' ? ++count : count;

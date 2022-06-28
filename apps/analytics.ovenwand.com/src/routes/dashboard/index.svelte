@@ -11,13 +11,11 @@
 	export let data: { projects: IProject[]; events: IEvent[] } = { projects: [], events: [] };
 
 	const { projects } = useProjects(data.projects);
-	const { eventsInPastMonth } = useEvents(data.events);
+	const { events, eventsToday, eventsInPastWeek, eventsInPastMonth, setProject } = useEvents(
+		data.events
+	);
 
-	$: projectId = $page.url.searchParams.get('project');
-
-	$: eventsByProject = projectId
-		? $eventsInPastMonth.filter(({ project }) => project._id === projectId)
-		: $eventsInPastMonth;
+	$: setProject($page.url.searchParams.get('project'));
 </script>
 
 <Grid>
@@ -26,18 +24,23 @@
 	</Column>
 
 	<Column columns={{ md: 4 }}>
-		<PageViewCounter events={eventsByProject} />
+		<PageViewCounter
+			events={$events}
+			eventsToday={$eventsToday}
+			eventsInPastWeek={$eventsInPastWeek}
+			eventsInPastMonth={$eventsInPastMonth}
+		/>
 	</Column>
 
 	<Column columns={{ md: 4 }}>
-		<PageViewMonthChart events={eventsByProject} />
+		<PageViewMonthChart events={$eventsInPastMonth} />
 	</Column>
 
 	<Column columns={{ md: 4 }}>
-		<PageViewDaysOfTheWeekChart events={eventsByProject} />
+		<PageViewDaysOfTheWeekChart events={$events} />
 	</Column>
 
 	<Column>
-		<EventList events={eventsByProject} />
+		<EventList events={$eventsInPastMonth} />
 	</Column>
 </Grid>

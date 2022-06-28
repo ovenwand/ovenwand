@@ -2,6 +2,7 @@ import type { Readable } from 'svelte/store';
 import { type IEvent, events } from './state';
 import * as getters from './getters';
 import { addOrUpdateEvent } from './mutations';
+import * as actions from './actions';
 
 const { subscribe, update } = events;
 
@@ -18,6 +19,7 @@ export function useEvents(events: IEvent[] = []): IEventStore {
 
 	return {
 		events: { subscribe },
-		...getters
+		...getters,
+		...actions
 	};
 }
