@@ -19,6 +19,7 @@ export async function post({ request }: RequestEvent) {
 			data: {
 				type: body.type,
 				timestamp: body.timestamp,
+				page: body.page,
 				uri: body.uri,
 				details: body.details,
 				project: { connect: body.project }
