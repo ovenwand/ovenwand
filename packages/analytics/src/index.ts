@@ -1,10 +1,10 @@
 import { noop } from '@ovenwand/util.fp';
 
 export function useAnalytics(projectId) {
-	const isEnabled = import.meta.env.VITE_ANALYTICS === 'true';
+	const isEnabled = import.meta.env.VITE_ANALYTICS === '1';
 
 	function trackPageView() {
-		fetch(`/track`, {
+		fetch(`${import.meta.env.VITE_ANALYTICS_URL}/track`, {
 			method: 'POST',
 			body: JSON.stringify({
 				project: projectId,
