@@ -3,11 +3,16 @@ type Project {
 	events: [Event!] @relation
 }
 
+type EventDetails @embedded {
+	speed: String!
+}
+
 type Event {
 	type: String!
 	timestamp: Time!
 	uri: String!
-	details: String
+	page: String!
+	details: EventDetails!
 	project: Project! @relation
 }
 
