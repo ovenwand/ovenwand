@@ -18,8 +18,8 @@
 		"@ovenwand/util.svelte": "workspace:^0.2.4"
 	},
 	"devDependencies": {
-		"@ovenwand/test.cypress": "workspace:^0.0.1",
-		"@ovenwand/test.svelte": "workspace:^0.0.1",
+		"@ovenwand/test.cypress": "workspace:^0.0.2",
+		"@ovenwand/test.svelte": "workspace:^0.0.2",
 		"svelte": "^3.48.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com>",

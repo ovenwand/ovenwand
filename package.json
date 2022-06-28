@@ -5,20 +5,21 @@
 	"main": "index.js",
 	"scripts": {
 		"prepare": "husky install",
-		"clean": "pnpx -y rimraf node_modules && pnpm clean --filter @ovenwand/*",
-		"dev": "run(){ pnpm dev --filter @ovenwand/$1 ${@:2}; }; run",
-		"build": "run(){ pnpm build --filter @ovenwand/$1 -- ${@:2}; }; run",
-		"deploy": "run() { pnpm deploy --filter @ovenwand/$1 -- ${@:2}; }; run",
-		"preview": "run(){ pnpm preview --filter @ovenwand/$1 -- ${@:2}; }; run",
-		"test": "run() { pnpm test:unit $1; pnpm test:e2e $1 -- ${@:2}; }; run",
+		"clean": "pnpx -y rimraf node_modules && pnpm --filter @ovenwand/* clean",
+		"dev": "run(){ pnpm --filter @ovenwand/$1 dev ${@:2}; }; run",
+		"build": "run(){ pnpm --filter @ovenwand/$1 build ${@:2}; }; run",
+		"deploy": "run() { pnpm --filter @ovenwand/$1 deploy ${@:2}; }; run",
+		"preview": "run(){ pnpm --filter @ovenwand/$1 preview ${@:2}; }; run",
+		"test": "run() { pnpm test:unit $1; pnpm test:e2e \"$@\"; }; run",
 		"test:unit": "run() { cypress $1-ct ${@:2}; }; run",
 		"test:e2e": "run() { exit_code=$?; cypress $1 ${@:2} || exit $exit_code; }; run",
 		"lint:eslint": "eslint",
 		"lint:prettier": "prettier --plugin-search-dir=.",
-		"lint": "pnpm lint:prettier -- --check . ; pnpm lint:eslint -- .",
-		"format": "pnpm lint:prettier -- --write . ; pnpm lint:eslint -- --fix .",
-		"check": "run() { pnpm check --filter @ovenwand/$1 -- ${@:2}; }; run",
-		"ci:test": "pnpm test:unit run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b"
+		"lint": "run() { pnpm lint:prettier --check \"$@\" ; pnpm lint:eslint \"$@\" }",
+		"format": "run() { pnpm lint:prettier --write \"$@\" ; pnpm lint:eslint --fix \"$@\"; }; run",
+		"check": "run() { pnpm --filter @ovenwand/$1 check ${@:2}; }; run",
+		"ci:test": "pnpm test:unit run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b",
+		"release": "pnpm --filter @ovenwand/* release"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.0.0",
@@ -40,8 +41,8 @@
 		"vite": "^2.9.9"
 	},
 	"lint-staged": {
-		"*.{ts,svelte,css,md,json}": "pnpm lint:prettier -- --write",
-		"*.{ts,svelte}": "pnpm lint:eslint -- --cache --fix",
+		"*.{ts,svelte,css,md,json}": "pnpm lint:prettier --write",
+		"*.{ts,svelte}": "pnpm lint:eslint --cache --fix",
 		"packages/**/*.{ts,svelte}": "pnpm test run"
 	},
 	"author": "Ovenwand (info@ovenwand.com)",

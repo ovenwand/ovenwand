@@ -1,14 +1,16 @@
 {
 	"name": "@ovenwand/test.cypress",
 	"type": "module",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "",
 	"main": "src/index.ts",
 	"scripts": {
 		"clean": "pnpx -y rimraf node_modules",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"svelte": "^3.48.0"
+	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:^0.1.0",
 		"@testing-library/svelte": "^3.1.1",
