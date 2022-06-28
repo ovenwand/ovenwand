@@ -40,12 +40,17 @@ function updateNotification(id: string, notification: Partial<Notification>): vo
 
 function notify(notification: Omit<Notification, 'id'>, delay?: number): Notifier {
 	const id = addNotification(notification);
+	let cancelled = false;
 
 	if (delay) {
-		timeout(delay).then(() => removeNotification({ id }));
+		timeout(delay).then(() => !cancelled && removeNotification({ id }));
 	}
 
-	return createUpdater(id);
+	function cancel() {
+		cancelled = true;
+	}
+
+	return createUpdater(id, cancel);
 }
 
 function createNotifier(type: NotificationType): Notifier {
@@ -59,21 +64,32 @@ function createNotifier(type: NotificationType): Notifier {
 		);
 }
 
-function createUpdater(id: string): Notifier {
+function createUpdater(id: string, cancelPrevious: () => void): Notifier {
 	return (notification: Partial<Notification>, delay) => {
+		let cancelled = false;
+
+		cancelPrevious();
+
 		updateNotification(id, notification);
 
 		if (delay) {
-			timeout(delay).then(() => removeNotification({ id }));
+			timeout(delay).then(() => !cancelled && removeNotification({ id }));
 		}
 
-		return createUpdater(id);
+		function cancel() {
+			cancelled = true;
+		}
+
+		return createUpdater(id, cancel);
 	};
 }
 
 export type Identifiable = { id: string };
 export type Typed = { type: NotificationType };
-export type Notifier = (notification: Pick<Notification, 'message'>, delay?: number) => Notifier;
+export type Notifier = (
+	notification: Pick<Notification, 'message'> & Partial<Notification>,
+	delay?: number
+) => Notifier;
 export type NotificationType = 'info' | 'success' | 'warn' | 'error' | 'loading';
 
 type Notification = { message: string } & Typed & Identifiable;
