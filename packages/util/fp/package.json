@@ -9,7 +9,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:^0.1.0"
+		"@ovenwand/config": "workspace:*"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"

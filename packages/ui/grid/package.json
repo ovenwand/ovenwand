@@ -12,11 +12,11 @@
 		"svelte": "^3.47.0"
 	},
 	"dependencies": {
-		"@ovenwand/util.browser": "workspace:^0.0.3",
-		"@ovenwand/util.fp": "workspace:^0.1.1"
+		"@ovenwand/util.browser": "workspace:*",
+		"@ovenwand/util.fp": "workspace:*"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:^0.1.0",
+		"@ovenwand/config": "workspace:*",
 		"svelte": "^3.48.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",

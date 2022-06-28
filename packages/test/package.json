@@ -9,7 +9,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@ovenwand/test.svelte": "workspace:^0.0.2"
+		"@ovenwand/test.svelte": "workspace:*"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"

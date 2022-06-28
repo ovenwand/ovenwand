@@ -12,11 +12,11 @@
 		"typescript": "^4.6.3"
 	},
 	"dependencies": {
-		"@ovenwand/util.fp": "workspace:^0.1.1",
-		"@ovenwand/util.math": "workspace:^0.0.2"
+		"@ovenwand/util.fp": "workspace:*",
+		"@ovenwand/util.math": "workspace:*"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:^0.1.0"
+		"@ovenwand/config": "workspace:*"
 	},
 	"author": "Ovenwand <info@ovenwand.com>",
 	"license": "WTFPL"
