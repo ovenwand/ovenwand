@@ -1,18 +1,10 @@
-export async function gql<
-	Data extends Record<string, unknown> = {},
-	Errors extends { message: string }[] = []
->(query: string, variables?: Record<string, unknown>): Promise<{ data: Data; errors: Errors }> {
-	const response = await fetch(import.meta.env.VITE_FAUNA_URL, {
-		method: 'POST',
-		headers: {
-			Authorization: `Bearer ${import.meta.env.VITE_FAUNA_KEY}`,
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({
-			query,
-			variables
-		})
-	});
+import { fauna, type FaunaQueryBody, type FaunaResponseBody } from './request';
+
+export async function gql<Data extends Record<string, unknown> = {}, Errors extends Error[] = []>(
+	query: FaunaQueryBody['query'],
+	variables?: FaunaQueryBody['variables']
+): Promise<FaunaResponseBody<Data, Errors>> {
+	const response = await fauna('/graphql', { query, variables });
 
 	const body = await response.json();
 
