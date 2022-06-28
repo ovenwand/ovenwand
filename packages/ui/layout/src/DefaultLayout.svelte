@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
+	import Base from './BaseLayout.svelte';
 
 	let className: string | null = null;
 	export { className as class };
@@ -17,18 +18,20 @@
 	});
 </script>
 
-<div id="app" class="min-h-screen grid {appClassName}">
-	{#if header}
-		<slot name="before-content" />
-	{/if}
+<Base>
+	<div id="app" class="min-h-screen grid {appClassName}">
+		{#if header}
+			<slot name="before-content" />
+		{/if}
 
-	<main class="min-h-0 overflow-auto">
-		<slot />
-	</main>
+		<main class="min-h-0 overflow-auto">
+			<slot />
+		</main>
 
-	{#if footer}
-		<slot name="after-content" />
-	{/if}
-</div>
+		{#if footer}
+			<slot name="after-content" />
+		{/if}
+	</div>
 
-<slot name="outside" />
+	<slot name="outside" />
+</Base>

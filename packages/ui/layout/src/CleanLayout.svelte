@@ -1,12 +1,14 @@
 <script lang="ts">
-	// import '../../../../app.css';
+	import Base from './BaseLayout.svelte';
 
 	let className: string;
 	export { className as class };
 </script>
 
-<div id="app" class={className}>
-	<main>
-		<slot />
-	</main>
-</div>
+<Base>
+	<div id="app" class={className}>
+		<main>
+			<slot />
+		</main>
+	</div>
+</Base>
