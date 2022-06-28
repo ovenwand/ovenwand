@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"@ovenwand/util.browser": "workspace:^0.0.3",
-		"@ovenwand/util.fp": "workspace:^0.1.0"
+		"@ovenwand/util.fp": "workspace:^0.1.1"
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:^0.1.0",

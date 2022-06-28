@@ -12,7 +12,7 @@
 		"@ovenwand/config": "workspace:^0.1.0"
 	},
 	"dependencies": {
-		"@ovenwand/util.fp": "workspace:^0.1.0"
+		"@ovenwand/util.fp": "workspace:^0.1.1"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"
