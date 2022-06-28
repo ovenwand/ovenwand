@@ -1,21 +1,28 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
+
+	let className: string | null = null;
+	export { className as class };
+
 	export let header = false;
 	export let footer = false;
 
+	let appClassName: string;
+
 	$: appClassName = createClassName({
-		'min-h-screen grid': true,
-		'has-header': header,
-		'has-footer': footer
+		[className as string]: className,
+		'auto-rows-[min-content_1fr]': header && !footer,
+		'auto-rows-[1fr_min-content]': footer && !header,
+		'auto-rows-[min-content_1fr_min-content]': header && footer
 	});
 </script>
 
-<div id="app" class={appClassName}>
+<div id="app" class="min-h-screen grid {appClassName}">
 	{#if header}
 		<slot name="before-content" />
 	{/if}
 
-	<main>
+	<main class="min-h-0 overflow-auto">
 		<slot />
 	</main>
 
@@ -25,17 +32,3 @@
 </div>
 
 <slot name="outside" />
-
-<style lang="postcss">
-	#app.has-header {
-		grid-template-rows: min-content 1fr;
-	}
-
-	#app.has-footer {
-		grid-template-rows: 1fr min-content;
-	}
-
-	#app.has-header.has-footer {
-		grid-template-rows: min-content 1fr min-content;
-	}
-</style>
