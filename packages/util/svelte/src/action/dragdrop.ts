@@ -77,8 +77,12 @@ function findEventCoordinates(event: MouseEvent | TouchEvent): {
 
 export function draggable(
 	node: HTMLElement,
-	{ id = 'default' }: { id?: string } = {}
+	{ id = 'default', disabled = false }: { id?: string; disabled?: boolean } = {}
 ): { destroy: () => void } {
+	if (disabled) {
+		return;
+	}
+
 	let dragTarget: HTMLElement | null = null;
 	let dropTarget: HTMLElement | null = null;
 	let ghostElement: HTMLElement | null = null;
@@ -219,8 +223,12 @@ export function draggable(
 
 export function droppable(
 	node: HTMLElement,
-	{ id = 'default' }: { id?: string } = {}
+	{ id = 'default', disabled = false }: { id?: string; disabled?: boolean } = {}
 ): { destroy: () => void } {
+	if (disabled) {
+		return;
+	}
+
 	if (!droppables.has(id)) {
 		droppables.set(id, []);
 	}
