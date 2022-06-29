@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { getDay } from '@ovenwand/util.date';
 	import type { IEvent } from '$lib/store';
 	import { scaleLinear } from 'd3-scale';
 
@@ -23,7 +24,7 @@
 
 	$: points = xTicks.map((tick) => {
 		const y = events.reduce((y, event) => {
-			const day = new Date(event.timestamp).getDay();
+			const day = getDay(new Date(event.timestamp));
 
 			if (day === tick) {
 				y++;
@@ -47,7 +48,7 @@
 	$: barWidth = innerWidth / xTicks.length;
 </script>
 
-Page view by day of the week chart
+Page views by day of the week chart
 
 <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
 	<svg>

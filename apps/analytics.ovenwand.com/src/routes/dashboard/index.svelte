@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import { Column, Grid } from '@ovenwand/ui';
 	import { useEvents, useProjects, type IEvent, type IProject } from '$lib/store';
+
 	import PageViewCounter from './_/PageViewCounter.svelte';
 	import EventList from './_/EventList.svelte';
 	import ProjectList from './_/ProjectList.svelte';
@@ -11,9 +12,8 @@
 	export let data: { projects: IProject[]; events: IEvent[] } = { projects: [], events: [] };
 
 	const { projects } = useProjects(data.projects);
-	const { events, eventsToday, eventsInPastWeek, eventsInPastMonth, setProject } = useEvents(
-		data.events
-	);
+	const { events, eventsByProject, eventsToday, eventsInPastWeek, eventsInPastMonth, setProject } =
+		useEvents(data.events);
 
 	$: setProject($page.url.searchParams.get('project'));
 </script>
@@ -37,7 +37,7 @@
 	</Column>
 
 	<Column columns={{ md: 4 }}>
-		<PageViewDaysOfTheWeekChart events={$events} />
+		<PageViewDaysOfTheWeekChart events={$eventsByProject} />
 	</Column>
 
 	<Column>
