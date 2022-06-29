@@ -23,7 +23,7 @@ export function useAnalytics(projectId) {
 					speed: getConnectionSpeed()
 				}
 			})
-		});
+		}).catch(noop);
 	}
 
 	return {
