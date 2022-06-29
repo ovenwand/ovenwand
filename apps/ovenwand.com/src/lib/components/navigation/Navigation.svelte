@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util';
 	// import { useSidebar } from '@ovenwand/ui';
+	import { isFeatureEnabled } from '$lib/features';
 
 	let className: string | null = null;
 	export { className as class };
@@ -16,7 +17,7 @@
 			label: 'About',
 			href: '/about'
 		},
-		{
+		isFeatureEnabled('route.blog') && {
 			label: 'Blog',
 			href: '/blog'
 		}
@@ -24,7 +25,7 @@
 		// 	label: '::',
 		// 	action: store.expand
 		// }
-	];
+	].filter(Boolean);
 
 	$: navClassName = createClassName({
 		[className as string]: className
