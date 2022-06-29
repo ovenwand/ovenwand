@@ -12,10 +12,14 @@ const FindAllProjects = `
               _id
               type
               timestamp
+              page
               uri
+              details {
+              	agent
+              	speed
+              }
               project {
                 _id
-                name
               }
             }
           }
@@ -30,11 +34,12 @@ export async function get() {
 	});
 
 	return {
+		status: errors ? 500 : 200,
 		body: {
 			errors,
 			data: {
 				projects: data?.allProjects?.data.map(mapDataToProject),
-				events: data?.allProjects?.data?.reduce(getEventsFromProject, [] as IEventData[])
+				events: data?.allProjects?.data?.reduce<IEventData[]>(getEventsFromProject, [])
 			}
 		}
 	};

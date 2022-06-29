@@ -15,7 +15,8 @@ const config = {
 		vite: {
 			resolve: {
 				alias: {}
-			}
+			},
+			external: ['ua-parser-js']
 		}
 	}
 };

@@ -40,7 +40,7 @@
 		<PageViewDaysOfTheWeekChart events={$eventsByProject} />
 	</Column>
 
-	<Column>
+	<Column columns={{ md: 10 }} offset={{ md: 1 }}>
 		<EventList events={$eventsInPastMonth} />
 	</Column>
 </Grid>
