@@ -1,7 +1,8 @@
 <script lang="ts" context="module">
-	import type { LoadInput, LoadOutput } from '@sveltejs/kit';
+	import type { LoadEvent, LoadOutput } from '@sveltejs/kit';
+	import { Column, Grid } from '@ovenwand/ui';
 
-	export function load({ error, status }: LoadInput): LoadOutput {
+	export function load({ error, status }: LoadEvent): LoadOutput {
 		return {
 			props: {
 				status: status,
@@ -16,5 +17,9 @@
 	export let message: string;
 </script>
 
-<h1>{status}</h1>
-<h3>{message}</h3>
+<Grid>
+	<Column columns={{ md: 8 }} offset={{ md: 2 }}>
+		<h1>{status}</h1>
+		<h3>{message}</h3>
+	</Column>
+</Grid>
