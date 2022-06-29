@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/util.browser",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "",
 	"main": "src/index.ts",
 	"type": "module",
@@ -13,10 +13,12 @@
 	},
 	"dependencies": {
 		"@ovenwand/util.fp": "workspace:*",
-		"@ovenwand/util.math": "workspace:*"
+		"@ovenwand/util.math": "workspace:*",
+		"ua-parser-js": "^1.0.2"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:*"
+		"@ovenwand/config": "workspace:*",
+		"@types/ua-parser-js": "^0.7.36"
 	},
 	"author": "Ovenwand <info@ovenwand.com>",
 	"license": "WTFPL"
