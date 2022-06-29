@@ -5,6 +5,10 @@ import type { IEvent } from '$lib/store';
 export async function post({ request }: RequestEvent) {
 	const body = await request.json();
 
+	const details = {
+		agent: request.headers.get('User-Agent') || 'unknown'
+	};
+
 	const { data, errors } = await gql<{ createEvent: IEvent }>(
 		`
 		mutation CreateEvent($data: EventInput!) {
@@ -21,7 +25,7 @@ export async function post({ request }: RequestEvent) {
 				timestamp: body.timestamp,
 				page: body.page,
 				uri: body.uri,
-				details: body.details,
+				details: { ...body.details, ...details },
 				project: { connect: body.project }
 			}
 		}

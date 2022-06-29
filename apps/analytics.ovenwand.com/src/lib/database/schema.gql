@@ -4,6 +4,7 @@ type Project {
 }
 
 type EventDetails @embedded {
+	agent: String!
 	speed: String!
 }
 
