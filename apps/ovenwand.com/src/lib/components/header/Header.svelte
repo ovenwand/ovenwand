@@ -4,14 +4,16 @@
 	import { Navigation } from '../navigation';
 </script>
 
-<Grid>
-	<Column class="flex">
-		<a href="/">
-			<Logo size="small" />
-		</a>
+<header>
+	<Grid relative>
+		<Column class="flex">
+			<a href="/">
+				<Logo size="small" />
+			</a>
 
-		<div class="flex-grow" />
+			<div class="flex-grow" />
 
-		<Navigation />
-	</Column>
-</Grid>
+			<Navigation />
+		</Column>
+	</Grid>
+</header>
