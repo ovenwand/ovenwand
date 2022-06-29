@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/analytics.ovenwand.com",
-	"version": "0.0.4",
+	"version": "0.1.0",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"@ovenwand/analytics": "workspace:*",
+		"@ovenwand/app": "workspace:*",
 		"@ovenwand/services.faunadb": "workspace:*",
 		"@ovenwand/ui": "workspace:*",
 		"@ovenwand/util": "workspace:*",
