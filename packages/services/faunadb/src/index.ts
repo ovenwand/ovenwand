@@ -1,7 +1,7 @@
-import faunadb from 'faunadb';
+export { Client, Query, query as q } from 'faunadb';
+export type { Expr } from 'faunadb';
 
-export const { Client, Query, query: q } = faunadb;
-
+export * from './helpers';
 export * from './utils';
 export * from './model';
 export * from './request';

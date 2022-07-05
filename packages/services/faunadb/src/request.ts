@@ -2,7 +2,7 @@ export type FaunaQueryBody = { query: string; variables?: Record<string, unknown
 export type FaunaImportMode = 'merge' | 'replace' | 'override';
 export type FaunaImportBody = { mode: FaunaImportMode; schema: Buffer };
 export type FaunaRequestBody = FaunaQueryBody | FaunaImportBody;
-export type FaunaResponseBody<Data extends Record<string, unknown>, Errors extends Error[]> = {
+export type FaunaResponseBody<Data extends Record<string, unknown>, Errors extends unknown[]> = {
 	data: Data;
 	errors: Errors;
 };
@@ -29,11 +29,20 @@ function isImportRequest(path: string, data: FaunaRequestBody): data is FaunaImp
 	return path === '/import';
 }
 
-export async function fauna(path: '/graphql', data: FaunaQueryBody): Promise<Response>;
-export async function fauna(path: '/import', data: FaunaImportBody): Promise<Response>;
+export async function fauna(
+	path: '/graphql',
+	data: FaunaQueryBody,
+	token?: string
+): Promise<Response>;
+export async function fauna(
+	path: '/import',
+	data: FaunaImportBody,
+	token?: string
+): Promise<Response>;
 export async function fauna(
 	path: '/graphql' | '/import',
-	data: FaunaRequestBody
+	data: FaunaRequestBody,
+	token?: string
 ): Promise<Response> {
 	const url = getUrl(path, data);
 	const body = getBody(path, data);
@@ -41,7 +50,7 @@ export async function fauna(
 	const response = await fetch(url, {
 		method: 'POST',
 		headers: {
-			Authorization: `Bearer ${import.meta.env.VITE_FAUNA_KEY}`,
+			Authorization: `Bearer ${token ?? import.meta.env.VITE_FAUNA_KEY}`,
 			'Content-Type': 'application/json'
 		},
 		body: body instanceof Buffer ? body : JSON.stringify(body)
