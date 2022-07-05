@@ -11,7 +11,7 @@
 
 	export let data: { projects: IProject[]; events: IEvent[] } = { projects: [], events: [] };
 
-	const { projects } = useProjects(data.projects);
+	// const { projects } = useProjects(data.projects);
 	const { events, eventsByProject, eventsToday, eventsInPastWeek, eventsInPastMonth, setProject } =
 		useEvents(data.events);
 
@@ -19,9 +19,9 @@
 </script>
 
 <Grid>
-	<Column>
-		<ProjectList projects={$projects} />
-	</Column>
+	<!--	<Column>-->
+	<!--		<ProjectList projects={$projects} />-->
+	<!--	</Column>-->
 
 	<Column columns={{ md: 4 }}>
 		<PageViewCounter

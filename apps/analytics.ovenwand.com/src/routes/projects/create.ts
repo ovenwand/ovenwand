@@ -3,7 +3,7 @@ import { gql, type Data } from '@ovenwand/services.faunadb';
 import type { IProjectData } from '$lib/store';
 
 export async function post({ request }: RequestEvent) {
-	const body = await request.json();
+	const body = await request.formData();
 
 	const { data, errors } = await gql<{ createProject: Data<IProjectData> }>(
 		`
@@ -15,14 +15,24 @@ export async function post({ request }: RequestEvent) {
 		}`,
 		{
 			data: {
-				name: body.name
+				name: body.get('name')
 			}
 		}
 	);
 
+	if (errors) {
+		return {
+			status: 400,
+			body: { errors }
+		};
+	}
+
 	return {
+		status: 302,
+		headers: {
+			location: '/dashboard'
+		},
 		body: {
-			errors,
 			data: data?.createProject
 		}
 	};

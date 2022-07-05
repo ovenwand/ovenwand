@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/analytics.ovenwand.com",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -13,17 +13,22 @@
 	"dependencies": {
 		"@ovenwand/analytics": "workspace:*",
 		"@ovenwand/app": "workspace:*",
+		"@ovenwand/env": "workspace:*",
 		"@ovenwand/services.faunadb": "workspace:*",
 		"@ovenwand/ui": "workspace:*",
 		"@ovenwand/util": "workspace:*",
 		"@ovenwand/util.date": "workspace:*",
-		"d3-scale": "^4.0.2"
+		"cookie": "^0.5.0",
+		"d3-scale": "^4.0.2",
+		"jsonwebtoken": "^8.5.1"
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:*",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
+		"@types/cookie": "^0.5.1",
 		"@types/d3-scale": "^4.0.2",
+		"@types/jsonwebtoken": "^8.5.8",
 		"svelte": "^3.48.0",
 		"svelte-check": "^2.8.0",
 		"svelte-preprocess": "^4.10.7",
