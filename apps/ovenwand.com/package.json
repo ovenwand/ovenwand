@@ -22,7 +22,7 @@
 		"@ovenwand/util": "workspace:*",
 		"@ovenwand/util.date": "workspace:*",
 		"@ovenwand/util.math": "workspace:*",
-		"@storyblok/svelte": "^2.1.3",
+		"@storyblok/svelte": "^2.1.4",
 		"@sveltejs/kit": "next",
 		"autoprefixer": "^10.4.7",
 		"axios": "^0.27.2",
