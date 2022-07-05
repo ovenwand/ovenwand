@@ -1,25 +1,15 @@
-<script lang="ts" context="module">
-	import type { LoadEvent } from '@sveltejs/kit';
+<script lang="ts">
+	import { onMount } from 'svelte';
 
-	export async function load({ fetch, session }: LoadEvent) {
-		if (!session.id) {
-			return {
-				status: 302,
-				redirect: '/auth/login'
-			};
-		}
+	let form;
 
-		await fetch('/auth/logout', {
-			method: 'POST',
-			credentials: 'same-origin',
-			headers: {
-				Accept: 'application/json'
-			}
-		});
-
-		return {
-			status: 302,
-			redirect: '/'
-		};
-	}
+	onMount(() => {
+		form.submit();
+	});
 </script>
+
+<form bind:this={form} method="post">
+	<noscript>
+		<button type="submit">logout</button>
+	</noscript>
+</form>
