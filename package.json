@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"prepare": "husky install",
-		"clean": "pnpx -y rimraf node_modules && pnpm --filter @ovenwand/* clean",
+		"clean": "pnpm --silent dlx rimraf **/node_modules && pnpm --filter @ovenwand/* clean",
 		"dev": "run(){ pnpm --filter @ovenwand/$1 dev ${@:2}; }; run",
 		"build": "run(){ pnpm --filter @ovenwand/$1 build ${@:2}; }; run",
 		"deploy": "run() { pnpm --filter @ovenwand/$1 deploy ${@:2}; }; run",

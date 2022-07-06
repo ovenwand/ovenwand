@@ -2,7 +2,6 @@
 	"name": "@ovenwand/tasks.ovenwand.com",
 	"version": "0.0.4",
 	"scripts": {
-		"clean": "pnpx -y rimraf node_modules",
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"deploy": "mv .vercel_build_output ../../..",

@@ -3,7 +3,6 @@
 	"version": "0.10.3",
 	"type": "module",
 	"scripts": {
-		"clean": "pnpx -y rimraf node_modules",
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"prepare": "svelte-kit sync",

@@ -11,13 +11,7 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-
-		vite: {
-			resolve: {
-				alias: {}
-			},
-			external: ['ua-parser-js']
-		}
+		vite: {},
 	}
 };
 

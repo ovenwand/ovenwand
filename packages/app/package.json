@@ -5,7 +5,6 @@
 	"type": "module",
 	"main": "src/index.ts",
 	"scripts": {
-		"clean": "pnpx -y rimraf node_modules",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"peerDependencies": {
