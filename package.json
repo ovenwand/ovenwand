@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/project",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"description": "Monolithic project containing all ovenwand related packages/projects",
 	"main": "index.js",
 	"scripts": {
@@ -22,6 +22,7 @@
 		"release": "pnpm --filter @ovenwand/* release"
 	},
 	"devDependencies": {
+		"@changesets/cli": "^2.23.0",
 		"@commitlint/cli": "^17.0.3",
 		"@commitlint/config-conventional": "^17.0.3",
 		"@cypress/vite-dev-server": "^2.2.3",
