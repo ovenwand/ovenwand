@@ -1,5 +1,5 @@
 {
-	"name": "@ovenwand/analytics.ovenwand.com",
+	"name": "@ovenwand/monitor.ovenwand.com",
 	"version": "0.2.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
@@ -11,7 +11,7 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"dependencies": {
-		"@ovenwand/analytics": "workspace:*",
+		"@ovenwand/monitor": "workspace:*",
 		"@ovenwand/app": "workspace:*",
 		"@ovenwand/env": "workspace:*",
 		"@ovenwand/services.faunadb": "workspace:*",

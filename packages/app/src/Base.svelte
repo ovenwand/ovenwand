@@ -1,13 +1,13 @@
 <script lang="ts">
 	import type { Readable } from 'svelte/store';
-	import { useAnalytics } from '@ovenwand/analytics';
+	import { useMonitor } from '@ovenwand/monitor';
 	import Layout from './Layout.svelte';
 
 	export let title: string;
 	export let page: Readable<any>;
 	export let browser: boolean;
 
-	const { trackPageView } = useAnalytics(import.meta.env.VITE_ANALYTICS_PROJECT);
+	const { trackPageView } = useMonitor(import.meta.env.VITE_MONITOR_PROJECT);
 
 	$: if (browser) {
 		trackPageView({ path: $page.url.pathname, params: $page.params });

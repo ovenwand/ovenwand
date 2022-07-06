@@ -1,5 +1,5 @@
 {
-	"name": "@ovenwand/analytics",
+	"name": "@ovenwand/monitor",
 	"version": "0.0.5",
 	"description": "",
 	"main": "src/index.ts",

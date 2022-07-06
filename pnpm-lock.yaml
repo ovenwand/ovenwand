@@ -43,9 +43,9 @@ importers:
       typescript: 4.8.0-dev.20220705
       vite: 2.9.13
 
-  apps/analytics.ovenwand.com:
+  apps/monitor.ovenwand.com:
     specifiers:
-      '@ovenwand/analytics': workspace:*
+      '@ovenwand/monitor': workspace:*
       '@ovenwand/app': workspace:*
       '@ovenwand/config': workspace:*
       '@ovenwand/env': workspace:*
@@ -67,7 +67,7 @@ importers:
       tslib: ^2.4.0
       typescript: next
     dependencies:
-      '@ovenwand/analytics': link:../../packages/analytics
+      '@ovenwand/monitor': link:../../packages/monitor
       '@ovenwand/app': link:../../packages/app
       '@ovenwand/env': link:../../packages/env
       '@ovenwand/services.faunadb': link:../../packages/services/faunadb
@@ -92,7 +92,7 @@ importers:
 
   apps/ovenwand.com:
     specifiers:
-      '@ovenwand/analytics': workspace:*
+      '@ovenwand/monitor': workspace:*
       '@ovenwand/app': workspace:*
       '@ovenwand/brand': workspace:*
       '@ovenwand/config': workspace:*
@@ -112,7 +112,7 @@ importers:
       tslib: ^2.4.0
       typescript: next
     devDependencies:
-      '@ovenwand/analytics': link:../../packages/analytics
+      '@ovenwand/monitor': link:../../packages/monitor
       '@ovenwand/app': link:../../packages/app
       '@ovenwand/brand': link:../../packages/brand
       '@ovenwand/config': link:../../packages/config
@@ -168,7 +168,7 @@ importers:
       tslib: 2.4.0
       typescript: 4.8.0-dev.20220705
 
-  packages/analytics:
+  packages/monitor:
     specifiers:
       '@ovenwand/config': workspace:*
       '@ovenwand/util.fp': workspace:*
@@ -179,12 +179,12 @@ importers:
 
   packages/app:
     specifiers:
-      '@ovenwand/analytics': workspace:*
+      '@ovenwand/monitor': workspace:*
       '@ovenwand/config': workspace:*
       '@ovenwand/util.browser': workspace:*
       svelte: ^3.48.0
     dependencies:
-      '@ovenwand/analytics': link:../analytics
+      '@ovenwand/monitor': link:../monitor
       '@ovenwand/util.browser': link:../util/browser
     devDependencies:
       '@ovenwand/config': link:../config

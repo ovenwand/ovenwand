@@ -4,6 +4,6 @@
 	import { page } from '$app/stores';
 </script>
 
-<Base title="Ovenwand - Analytics" {page} {browser}>
+<Base title="Ovenwand - Monitor" {page} {browser}>
 	<slot />
 </Base>

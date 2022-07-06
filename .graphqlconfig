@@ -5,9 +5,9 @@
       "schemaPath": "./apps/tasks.ovenwand.com/src/lib/database/schema.gql",
       "includes": ["./apps/tasks.ovenwand.com/src/**/*.gql"]
     },
-    "analytics.ovenwand.com": {
-      "schemaPath": "./apps/analytics.ovenwand.com/src/lib/database/schema.gql",
-      "includes": ["./apps/analytics.ovenwand.com/src/**/*.gql"]
+    "monitor.ovenwand.com": {
+      "schemaPath": "./apps/monitor.ovenwand.com/src/lib/database/schema.gql",
+      "includes": ["./apps/monitor.ovenwand.com/src/**/*.gql"]
     }
   },
   "extensions": {

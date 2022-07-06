@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { useAnalytics } from '@ovenwand/analytics';
+	import { useMonitor } from '@ovenwand/monitor';
 	import { page } from '$app/stores';
 	import { browser } from '$app/env';
 
-	const { trackPageView } = useAnalytics(import.meta.env.VITE_ANALYTICS_PROJECT);
+	const { trackPageView } = useMonitor(import.meta.env.VITE_MONITOR_PROJECT);
 
 	$: if (browser) {
 		trackPageView({ path: $page.url.pathname, params: $page.params });

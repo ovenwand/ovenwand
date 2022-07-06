@@ -1,8 +1,8 @@
 import { noop } from '@ovenwand/util.fp';
 import { getConnectionSpeed } from './utils';
 
-export function useAnalytics(projectId) {
-	const isEnabled = import.meta.env.VITE_ANALYTICS === '1';
+export function useMonitor(projectId) {
+	const isEnabled = import.meta.env.VITE_MONITOR === '1';
 
 	function trackPageView({ path, params }) {
 		const page = Object.entries(params).reduce(
@@ -10,7 +10,7 @@ export function useAnalytics(projectId) {
 			path
 		);
 
-		fetch(`${import.meta.env.VITE_ANALYTICS_URL}/track`, {
+		fetch(`${import.meta.env.VITE_MONITOR_URL}/track`, {
 			method: 'POST',
 			credentials: 'omit',
 			body: JSON.stringify({
