@@ -1,9 +1,11 @@
 #!/bin/bash
 
-initial_commit_ref=$(git rev-list --max-parents=0 HEAD 2>/dev/null)
-previous_tag_ref=$(git describe --tags --abbrev=0 --match "$1" 2>/dev/null)
-previous_commit_ref='HEAD^'
+initial_commit_rev=$(git rev-list --max-parents=0 HEAD 2>/dev/null)
+current_tag_rev=$(git describe --tags --abbrev=0 --contains --match "$1" 2>/dev/null)
+previous_tag_rev=$(git describe --tags --abbrev=0 ${current_tag_rev:+"--exclude" "$current_tag_rev"} --match "$1" 2>/dev/null)
+previous_tag_child_rev=$(git rev-list --reverse --ancestry-path "$previous_tag_rev..HEAD" 2>/dev/null | head -n 1)
+previous_commit_rev='HEAD^'
 
-target_ref=${previous_tag_ref:-${initial_commit_ref:-$previous_commit_ref}}
+target_rev=${previous_tag_child_rev:-${initial_commit_rev:-$previous_commit_rev}}
 
-git diff HEAD "$target_ref" --quiet "$2"
+git diff --quiet HEAD "$target_rev" "$2"
