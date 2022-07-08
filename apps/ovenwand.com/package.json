@@ -12,11 +12,11 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@ovenwand/monitor": "workspace:*",
 		"@ovenwand/app": "workspace:*",
 		"@ovenwand/brand": "workspace:*",
 		"@ovenwand/config": "workspace:*",
 		"@ovenwand/env": "workspace:*",
+		"@ovenwand/monitor": "workspace:*",
 		"@ovenwand/ui": "workspace:*",
 		"@ovenwand/util": "workspace:*",
 		"@ovenwand/util.date": "workspace:*",
