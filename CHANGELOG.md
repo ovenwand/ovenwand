@@ -1,5 +1,12 @@
 # @ovenwand/project
 
+## 0.1.9
+
+### Patch Changes
+
+- Add js files to lint-staged commands
+- Add .vervcel_build_output to .prettierignore
+
 ## 0.1.8
 
 ### Patch Changes

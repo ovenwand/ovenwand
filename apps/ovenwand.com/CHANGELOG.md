@@ -1,5 +1,11 @@
 # @ovenwand/ovenwand.com
 
+## 0.11.0
+
+### Minor Changes
+
+- Add error logging / monitoring
+
 ## 0.10.4
 
 ### Patch Changes
