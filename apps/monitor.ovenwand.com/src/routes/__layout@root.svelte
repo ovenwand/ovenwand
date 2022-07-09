@@ -1,9 +1,10 @@
 <script lang="ts">
 	import '../app.css';
-	import { DefaultLayout, Notifications } from '@ovenwand/ui';
+	import { Notifications } from '@ovenwand/ui';
+	import { Layout } from '@ovenwand/app';
 </script>
 
-<DefaultLayout class="h-screen" footer>
+<Layout class="h-screen" footer>
 	<Notifications top />
 	<slot />
-</DefaultLayout>
+</Layout>
