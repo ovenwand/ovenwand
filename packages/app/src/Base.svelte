@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { Readable } from 'svelte/store';
 	import { useMonitor } from '@ovenwand/monitor';
-	import Layout from './Layout.svelte';
 
 	export let title: string;
 	export let page: Readable<any>;
@@ -19,9 +18,8 @@
 		<title>{title}</title>
 	{/if}
 
-	<meta name="build-id" content={import.meta.env.VITE_VERCEL_GIT_COMMIT_SHA} />
+	<meta name="version" content={import.meta.env.APP_VERSION} />
+	<meta name="version-id" content={import.meta.env.VITE_VERCEL_GIT_COMMIT_SHA} />
 </svelte:head>
 
-<Layout>
-	<slot />
-</Layout>
+<slot />
