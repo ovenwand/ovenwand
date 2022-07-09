@@ -1,5 +1,13 @@
 # @ovenwand/project
 
+## 0.2.0
+
+### Minor Changes
+
+- Add APP_VERSION environment variable to monitor.ovenwand.com and taks.ovenwand.com
+- Add default host ('\*.ovenwand.wtf') and port (80) to apps
+- Add scripts that pass the doppler environment to commands
+
 ## 0.1.10
 
 ### Patch Changes
