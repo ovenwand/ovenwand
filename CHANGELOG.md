@@ -1,5 +1,11 @@
 # @ovenwand/project
 
+## 0.1.10
+
+### Patch Changes
+
+- Add release script
+
 ## 0.1.9
 
 ### Patch Changes
