@@ -30,7 +30,7 @@ export async function post({ request }: RequestEvent) {
 	return {
 		status: 302,
 		headers: {
-			location: '/dashboard'
+			location: '/'
 		},
 		body: {
 			data: data?.createProject
