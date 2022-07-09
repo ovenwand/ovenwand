@@ -1,0 +1,54 @@
+#!/bin/bash
+
+has_changed_files=$(git diff --quiet && echo "0" || echo "1")
+untracked_files=$(git ls-files --other --directory --exclude-standard | wc -l | sed 's/ //g')
+aborted="0"
+
+# Prepare
+
+if [ "$has_changed_files" = "1" ] || [ "$untracked_files" != "0" ]; then
+  echo "WARN changed or untracked files detected, stashing.."
+  git stash --include-untracked
+fi
+
+# Create changesets
+
+changeset
+
+changeset status
+
+read -p "Please confirm your changes (Y/n): " continue
+
+# Update files
+
+if [ "$continue" != "n" ]; then
+  changeset version
+else
+  echo "INFO Aborting.."
+  aborted="1"
+fi
+
+# Commit and tag release
+
+has_new_changeset=$(git diff --quiet && echo "0" || echo "1")
+
+if [ "$aborted" = "0" ] && [ "$has_new_changeset" = "1" ]; then
+  echo "INFO Staging untracked files.."
+  git add --all
+
+  echo "INFO Committing staged files.."
+  git commit
+
+  echo "INFO Creating release tags.."
+  changeset tag
+elif [ "$aborted" = "0" ]; then
+  echo "WARN No new changeset found, aborting.."
+  aborted="1"
+fi
+
+# Cleanup
+
+if [ "$has_changed_files" = "1" ] || [ "$untracked_files" != "0" ]; then
+  echo "WARN Unstashing changed and untracked files.."
+  git stash pop
+fi
