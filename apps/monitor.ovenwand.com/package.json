@@ -3,9 +3,13 @@
 	"version": "0.3.4",
 	"scripts": {
 		"dev": "vite",
+		"dev:env": "doppler run -- pnpm dev",
 		"build": "vite build",
+		"build:env": "doppler run -- pnpm build",
 		"package": "svelte-kit package",
+		"package:env": "doppler run -- pnpm package",
 		"preview": "vite preview",
+		"preview:env": "doppler run -- pnpm preview",
 		"prepare": "svelte-kit sync",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
