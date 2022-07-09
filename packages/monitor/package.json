@@ -4,10 +4,9 @@
 	"description": "",
 	"type": "module",
 	"exports": {
-		".": {
-			"node": "./src/node/index.ts",
-			"default": "./src/index.ts"
-		}
+		".": "./src/index.ts",
+		"./browser": "./src/index,ts",
+		"./node": "./src/node/index.ts"
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"

@@ -14,7 +14,14 @@ import '@sentry/tracing';
 // import * as SentryTracing from "@sentry/tracing"
 // Unused named imports are not guaranteed to patch the global hub.
 
-export { addBreadcrumb, startTransaction, getCurrentHub, type Scope } from '@sentry/node';
+export {
+	addBreadcrumb,
+	addRequestDataToEvent,
+	startTransaction,
+	getCurrentHub,
+	type Scope
+} from '@sentry/node';
+export { extractTraceparentData } from '@sentry/tracing';
 
 export function captureException(error: Error, createEvent: (scope: Scope) => EventHint) {
 	withScope((scope) => {
