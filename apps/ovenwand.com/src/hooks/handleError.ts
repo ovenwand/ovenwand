@@ -1,13 +1,6 @@
-import type { GetSession, HandleError } from '@sveltejs/kit';
+import type { HandleError } from '@sveltejs/kit';
 import { parseUserAgent } from '@ovenwand/util';
-import { configureSentry, captureException } from '@ovenwand/monitor';
-
-configureSentry();
-
-export const getSession: GetSession = async ({ request }) => {
-	const referer = request.headers.get('referer');
-	return { referer };
-};
+import { addRequestDataToEvent, captureException } from '@ovenwand/monitor/node';
 
 export const handleError: HandleError = async ({ error, event }) => {
 	const { params, request, url } = event;
@@ -29,6 +22,10 @@ export const handleError: HandleError = async ({ error, event }) => {
 			scope.setContext('os', userAgent.os);
 			scope.setContext('browser', userAgent.browser);
 		}
+
+		// scope.addEventProcessor((event) => {
+		//   return addRequestDataToEvent(event, request);
+		// });
 
 		return {
 			data: {
