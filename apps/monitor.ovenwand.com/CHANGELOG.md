@@ -1,5 +1,15 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.3.5
+
+### Patch Changes
+
+- Replaced DefaultLayout from `@ovenwand/ui` with Layout `@ovenwand/app`
+- Fixed broken references to non-existent /dashboard
+- Add navigation and footer to default layout
+- Updated dependencies
+  - @ovenwand/app@0.1.5
+
 ## 0.3.4
 
 ### Patch Changes
