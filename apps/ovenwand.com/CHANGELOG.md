@@ -1,5 +1,11 @@
 # @ovenwand/ovenwand.com
 
+## 0.11.1
+
+### Patch Changes
+
+- Add performance tracing
+
 ## 0.11.0
 
 ### Minor Changes
