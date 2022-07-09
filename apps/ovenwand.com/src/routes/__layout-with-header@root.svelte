@@ -1,10 +1,10 @@
 <script lang="ts">
 	import '../app.css';
-	import { DefaultLayout } from '@ovenwand/ui';
+	import { Layout } from '@ovenwand/app';
 	import { ApplicationSidebar, Header } from '$lib/components';
 </script>
 
-<DefaultLayout header>
+<Layout header>
 	<svelte:fragment slot="before-content">
 		<Header />
 	</svelte:fragment>
@@ -14,4 +14,4 @@
 	<svelte:fragment slot="outside">
 		<ApplicationSidebar />
 	</svelte:fragment>
-</DefaultLayout>
+</Layout>
