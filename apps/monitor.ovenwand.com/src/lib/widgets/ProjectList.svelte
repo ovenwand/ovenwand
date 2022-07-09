@@ -21,7 +21,7 @@
 		{#each projects as project}
 			<tr>
 				<td>
-					<a href="/dashboard?project={project._id}">
+					<a href="/?project={project._id}">
 						{project.name}
 					</a>
 				</td>

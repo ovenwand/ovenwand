@@ -57,7 +57,7 @@ export async function post({ request }: RequestEvent) {
 	return {
 		status: 302,
 		headers: {
-			Location: '/dashboard',
+			Location: '/',
 			'Set-Cookie': createSessionCookie(instance, secret)
 		},
 		body: {
