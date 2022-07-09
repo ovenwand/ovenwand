@@ -11,7 +11,9 @@ export default defineConfig({
 	},
 
 	server: {
-		https: true
+		https: true,
+		host: 'ovenwand.wtf',
+		port: 80
 	},
 
 	optimizeDeps: {

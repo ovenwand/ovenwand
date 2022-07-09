@@ -9,6 +9,8 @@ export default defineConfig({
 	},
 
 	server: {
-		https: true
+		https: true,
+		host: 'tasks.ovenwand.wtf',
+		port: 80
 	}
 });
