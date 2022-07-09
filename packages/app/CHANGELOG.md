@@ -1,5 +1,13 @@
 # @ovenwand/app
 
+## 0.3.0
+
+### Minor Changes
+
+- Testerdetest
+
+  Edit: more testing :)
+
 ## 0.2.0
 
 ### Minor Changes
