@@ -1,0 +1,30 @@
+name: Changeset auto version
+on:
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize]
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 6
+      - name: Update versions and changelogs
+        id: changesets
+        run: |
+          pnpm dlx @changesets/cli version
+          echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
+      - name: Push changes
+        if: steps.changesets.outputs.modified == 'true'
+        run: |
+          git config --global user.name "Ovenwand"
+          git config --global user.email "info@ovenwnd.com"
+          git add --all
+          git commit -m "chore: release"
+          pnpm dlx @changesets/cli tag
+          git push --tags origin ${{ github.event.pull_request.head.ref }}

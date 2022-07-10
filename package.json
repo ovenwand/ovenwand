@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/project",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Monolithic project containing all ovenwand related packages/projects",
 	"main": "index.js",
 	"scripts": {
@@ -20,8 +20,7 @@
 		"lint": "run() { pnpm lint:prettier --check \"$@\" ; pnpm lint:eslint \"$@\" }",
 		"format": "run() { pnpm lint:prettier --write \"$@\" ; pnpm lint:eslint --fix \"$@\"; }; run",
 		"check": "run() { pnpm --filter @ovenwand/$1 check ${@:2}; }; run",
-		"ci:test": "pnpm test:unit run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b",
-		"release": "./scripts/release"
+		"ci:test": "pnpm test:unit run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.23.0",
