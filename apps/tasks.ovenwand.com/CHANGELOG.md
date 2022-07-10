@@ -1,5 +1,11 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.0.6
+
+### Patch Changes
+
+- 387c766: Mark package as private
+
 ## 0.0.5
 
 ### Patch Changes

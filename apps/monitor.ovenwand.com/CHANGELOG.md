@@ -1,5 +1,19 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.3.7
+
+### Patch Changes
+
+- 387c766: Mark package as private
+- Updated dependencies [387c766]
+  - @ovenwand/app@0.1.7
+  - @ovenwand/env@0.0.2
+  - @ovenwand/monitor@0.1.2
+  - @ovenwand/services.faunadb@0.1.1
+  - @ovenwand/ui@0.0.7
+  - @ovenwand/util.date@0.0.2
+  - @ovenwand/util@0.0.8
+
 ## 0.3.6
 
 ### Patch Changes
