@@ -1,5 +1,16 @@
 # @ovenwand/app
 
+## 0.1.7
+
+### Patch Changes
+
+- 387c766: Mark package as private
+- Updated dependencies [387c766]
+  - @ovenwand/brand@0.0.2
+  - @ovenwand/monitor@0.1.2
+  - @ovenwand/ui@0.0.7
+  - @ovenwand/util.browser@0.0.5
+
 ## 0.1.6
 
 ### Patch Changes

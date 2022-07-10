@@ -1,5 +1,11 @@
 # @ovenwand/ovenwand.com
 
+## 0.11.3
+
+### Patch Changes
+
+- 387c766: Mark package as private
+
 ## 0.11.2
 
 ### Patch Changes

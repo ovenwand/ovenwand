@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui.modal",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
