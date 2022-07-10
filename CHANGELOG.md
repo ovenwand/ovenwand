@@ -1,5 +1,12 @@
 # @ovenwand/project
 
+## 0.2.1
+
+### Patch Changes
+
+- Add github action for changeset management
+- Remove release command
+
 ## 0.2.0
 
 ### Minor Changes
