@@ -1,6 +1,7 @@
 {
 	"name": "@ovenwand/util",
 	"version": "0.0.7",
+	"private": true,
 	"description": "",
 	"main": "src/index.ts",
 	"type": "module",

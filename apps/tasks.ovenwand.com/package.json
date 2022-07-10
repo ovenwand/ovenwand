@@ -1,6 +1,7 @@
 {
 	"name": "@ovenwand/tasks.ovenwand.com",
 	"version": "0.0.5",
+	"private": true,
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",

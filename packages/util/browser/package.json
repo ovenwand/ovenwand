@@ -1,6 +1,7 @@
 {
 	"name": "@ovenwand/util.browser",
 	"version": "0.0.4",
+	"private": true,
 	"description": "",
 	"main": "src/index.ts",
 	"type": "module",

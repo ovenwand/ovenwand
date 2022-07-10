@@ -1,6 +1,7 @@
 {
 	"name": "@ovenwand/util.fp",
 	"version": "0.1.1",
+	"private": true,
 	"description": "",
 	"main": "src/index.ts",
 	"type": "module",

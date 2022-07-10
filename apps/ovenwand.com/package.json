@@ -2,6 +2,7 @@
 	"name": "@ovenwand/ovenwand.com",
 	"version": "0.11.2",
 	"type": "module",
+	"private": true,
 	"scripts": {
 		"prepare": "svelte-kit sync",
 		"dev": "vite",
