@@ -9,7 +9,6 @@ export default defineConfig({
 	},
 
 	server: {
-		host: 'monitor.ovenwand.wtf',
-		port: 80
+		host: 'monitor.ovenwand.wtf'
 	}
 });

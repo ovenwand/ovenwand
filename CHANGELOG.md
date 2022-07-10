@@ -1,5 +1,13 @@
 # @ovenwand/project
 
+## 0.3.0
+
+### Minor Changes
+
+- Add turborepo
+- Remove port from vite server configuration
+- Add build/dev/preview scripts as wrappers for turbo
+
 ## 0.2.1
 
 ### Patch Changes
