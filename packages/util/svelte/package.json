@@ -1,6 +1,7 @@
 {
 	"name": "@ovenwand/util.svelte",
 	"version": "0.2.6",
+	"private": true,
 	"description": "",
 	"main": "src/index.ts",
 	"type": "module",

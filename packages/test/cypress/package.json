@@ -1,7 +1,8 @@
 {
 	"name": "@ovenwand/test.cypress",
-	"type": "module",
 	"version": "0.0.2",
+	"private": true,
+	"type": "module",
 	"description": "",
 	"main": "src/index.ts",
 	"scripts": {

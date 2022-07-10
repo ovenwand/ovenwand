@@ -1,6 +1,7 @@
 {
 	"name": "@ovenwand/ui.grid",
 	"version": "0.0.4",
+	"private": true,
 	"description": "",
 	"main": "src/index.ts",
 	"type": "module",

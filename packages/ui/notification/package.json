@@ -1,6 +1,7 @@
 {
 	"name": "@ovenwand/ui.notification",
 	"version": "0.0.5",
+	"private": true,
 	"description": "",
 	"main": "src/index.ts",
 	"type": "module",
