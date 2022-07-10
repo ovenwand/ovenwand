@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util';
+	import { useFeatures } from '@ovenwand/app';
 	// import { useSidebar } from '@ovenwand/ui';
-	import { isFeatureEnabled } from '$lib/features';
+	// import { isFeatureEnabled } from '$lib/features';
+
+	const isFeatureEnabled = useFeatures();
 
 	let className: string | null = null;
 	export { className as class };
@@ -9,11 +12,11 @@
 	// const store = useSidebar();
 
 	const items = [
-		{
+		isFeatureEnabled('route.portfolio') && {
 			label: 'Portfolio',
 			href: '/portfolio'
 		},
-		{
+		isFeatureEnabled('route.about') && {
 			label: 'About',
 			href: '/about'
 		},
