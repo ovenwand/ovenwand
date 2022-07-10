@@ -1,5 +1,11 @@
 # @ovenwand/project
 
+## 0.3.2
+
+### Patch Changes
+
+- Fixed release tagging trying to checkout to merge branch instead of master
+
 ## 0.3.1
 
 ### Patch Changes
