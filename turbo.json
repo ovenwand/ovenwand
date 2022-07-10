@@ -1,0 +1,33 @@
+{
+	"$schema": "https://turborepo.org/schema.json",
+	"baseBranch": "origin/main",
+	"pipeline": {
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": [".svelte-kit", ".vercel_build_output"]
+		},
+
+		"build:env": {
+			"dependsOn": ["^build"],
+			"outputs": [".svelte-kit", ".vercel_build_output"]
+		},
+
+		"preview": {
+			"dependsOn": ["build"],
+			"outputs": []
+		},
+
+		"preview:env": {
+			"dependsOn": ["build:env"],
+			"outputs": []
+		},
+
+		"dev": {
+			"cache": false
+		},
+
+		"dev:env": {
+			"cache": false
+		}
+	}
+}
