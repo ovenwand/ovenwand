@@ -1,5 +1,11 @@
 # @ovenwand/project
 
+## 0.3.1
+
+### Patch Changes
+
+- Move release tagging to 'closed' action
+
 ## 0.3.0
 
 ### Minor Changes
