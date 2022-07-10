@@ -1,5 +1,11 @@
 # @ovenwand/ovenwand.com
 
+## 0.11.2
+
+### Patch Changes
+
+- ee2eed9: Implements new `useFeatures` and `isFeatureRunning` utilites.
+
 ## 0.11.1
 
 ### Patch Changes
