@@ -3,7 +3,7 @@ import type { FaunaImportMode } from '@ovenwand/services.faunadb';
 import { migrate } from '$lib/database';
 
 export async function get({ params, locals }: RequestEvent<{ mode?: FaunaImportMode }>) {
-	const result = await migrate(params.mode || 'merge', locals.token);
+	await migrate(params.mode || 'merge', locals.token);
 
 	return {
 		status: 200,
