@@ -1,5 +1,5 @@
 import type { RequestEvent } from '@sveltejs/kit';
-import { gql, type Data, type Identifiable } from '@ovenwand/services.faunadb';
+import { gql, type Identifiable } from '@ovenwand/services.faunadb';
 import { createSessionCookie } from '$lib/session';
 
 export interface IUserData extends Identifiable {

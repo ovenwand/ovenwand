@@ -5,8 +5,8 @@ import {
 	CreateOrUpdateFunction,
 	CreateOrUpdateRole,
 	importSchema,
-	q,
-	type FaunaImportMode
+	type FaunaImportMode,
+	type Definition
 } from '@ovenwand/services.faunadb';
 import * as resolverMap from './resolvers';
 import * as roleMap from './roles';
@@ -16,11 +16,11 @@ const schemaPath = join(resolve(), schemaUrl);
 const resolvers = Object.values(resolverMap);
 const roles = Object.values(roleMap);
 
-function migrateFunction(definition: { name: string }, secret: string) {
+function migrateFunction(definition: Definition, secret: string) {
 	return client.query(CreateOrUpdateFunction(definition), { secret });
 }
 
-function migrateRole(definition: any, secret: string) {
+function migrateRole(definition: Definition, secret: string) {
 	return client.query(CreateOrUpdateRole(definition), { secret });
 }
 

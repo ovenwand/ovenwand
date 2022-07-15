@@ -1,6 +1,6 @@
 import type { HandleError } from '@sveltejs/kit';
 import { parseUserAgent } from '@ovenwand/util';
-import { addRequestDataToEvent, captureException } from '@ovenwand/monitor/node';
+import { captureException } from '@ovenwand/monitor/node';
 
 export const handleError: HandleError = async ({ error, event }) => {
 	const { params, request, url } = event;

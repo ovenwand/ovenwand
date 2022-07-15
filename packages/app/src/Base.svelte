@@ -2,8 +2,13 @@
 	import type { Readable } from 'svelte/store';
 	import { useMonitor } from '@ovenwand/monitor';
 
+	export interface Page {
+		url: URL;
+		params: Record<string, string>;
+	}
+
 	export let title: string;
-	export let page: Readable<any>;
+	export let page: Readable<Page>;
 	export let browser: boolean;
 
 	const { trackPageView } = useMonitor(import.meta.env.VITE_MONITOR_PROJECT);
