@@ -1,9 +1,9 @@
-const features = JSON.parse(import.meta.env.VITE_FEATURE_FLAGS) || {};
+const features = JSON.parse(import.meta.env.VITE_FEATURE_FLAGS || '{}');
 
 type KeyOfMap<M extends Map<unknown, unknown>> = M extends Map<infer K, unknown> ? K : never;
 
 export function useFeatures<Features extends Map<string, boolean>>() {
-	const localFeatures: Features = new Map(Object.entries(features));
+	const localFeatures = new Map(Object.entries(features)) as Features;
 
 	return function isRunning(feature: KeyOfMap<Features>): boolean {
 		if (!localFeatures.has(feature)) {
