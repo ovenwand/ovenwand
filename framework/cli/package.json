@@ -1,0 +1,12 @@
+{
+	"name": "@ovenwand/cli",
+	"version": "0.0.1",
+	"type": "module",
+	"bin": {
+		"kit": "./src/kit.js"
+	},
+	"dependencies": {
+		"commander": "^9.4.0",
+		"turbo": "^1.3.1"
+	}
+}
