@@ -1,3 +1,7 @@
 {
-	"extends": "@ovenwand/config/tsconfig"
+	"extends": "@ovenwand/config/tsconfig",
+	"compilerOptions": {
+		"outDir": "./dist"
+	},
+	"include": ["./src/**/*"]
 }
