@@ -16,9 +16,9 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"dependencies": {
-		"@ovenwand/monitor": "workspace:*",
 		"@ovenwand/app": "workspace:*",
 		"@ovenwand/env": "workspace:*",
+		"@ovenwand/monitor": "workspace:*",
 		"@ovenwand/services.faunadb": "workspace:*",
 		"@ovenwand/ui": "workspace:*",
 		"@ovenwand/util": "workspace:*",

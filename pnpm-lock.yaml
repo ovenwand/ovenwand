@@ -2,6 +2,11 @@ lockfileVersion: 5.4
 
 overrides:
   typescript: next
+  svelte: 3.48.0
+  '@sveltejs/kit': 1.0.0-next.367
+  '@sveltejs/adapter-auto': 1.0.0-next.55
+  '@sveltejs/vite-plugin-svelte': 1.0.0-next.49
+  vite: 2.9.13
 
 importers:
 
@@ -11,7 +16,7 @@ importers:
       '@commitlint/cli': ^17.0.3
       '@commitlint/config-conventional': ^17.0.3
       '@cypress/vite-dev-server': ^2.2.3
-      '@sveltejs/vite-plugin-svelte': ^1.0.0-next.49
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.49
       '@typescript-eslint/eslint-plugin': ^5.30.5
       '@typescript-eslint/parser': ^5.30.5
       cypress: ^9.7.0
@@ -22,18 +27,18 @@ importers:
       lint-staged: ^12.5.0
       prettier: ^2.7.1
       prettier-plugin-svelte: ^2.7.0
-      svelte: ^3.48.0
+      svelte: 3.48.0
       turbo: ^1.3.1
       typescript: next
-      vite: ^2.9.13
+      vite: 2.9.13
     devDependencies:
       '@changesets/cli': 2.23.0
       '@commitlint/cli': 17.0.3
       '@commitlint/config-conventional': 17.0.3
       '@cypress/vite-dev-server': 2.2.3_vite@2.9.13
       '@sveltejs/vite-plugin-svelte': 1.0.0-next.49_svelte@3.48.0+vite@2.9.13
-      '@typescript-eslint/eslint-plugin': 5.30.5_z7e425q7qgrzfhk2l7ooq5o3oa
-      '@typescript-eslint/parser': 5.30.5_yos6womow22fcexp5e5buo7fqe
+      '@typescript-eslint/eslint-plugin': 5.30.5_gbua3jl3ggwo2u4iw44hn2h2xi
+      '@typescript-eslint/parser': 5.30.5_tpn6vbl64bcolwnbnw3gtfuvgy
       cypress: 9.7.0
       eslint: 8.19.0
       eslint-config-prettier: 8.5.0_eslint@8.19.0
@@ -44,7 +49,7 @@ importers:
       prettier-plugin-svelte: 2.7.0_nakrehnrzdf7fdea5k3a4dfy4m
       svelte: 3.48.0
       turbo: 1.3.1
-      typescript: 4.8.0-dev.20220709
+      typescript: 4.8.0-dev.20220716
       vite: 2.9.13
 
   apps/monitor.ovenwand.com:
@@ -57,20 +62,20 @@ importers:
       '@ovenwand/ui': workspace:*
       '@ovenwand/util': workspace:*
       '@ovenwand/util.date': workspace:*
-      '@sveltejs/adapter-auto': next
-      '@sveltejs/kit': next
+      '@sveltejs/adapter-auto': 1.0.0-next.55
+      '@sveltejs/kit': 1.0.0-next.367
       '@types/cookie': ^0.5.1
       '@types/d3-scale': ^4.0.2
       '@types/jsonwebtoken': ^8.5.8
       cookie: ^0.5.0
       d3-scale: ^4.0.2
       jsonwebtoken: ^8.5.1
-      svelte: ^3.48.0
+      svelte: 3.48.0
       svelte-check: ^2.8.0
       svelte-preprocess: ^4.10.7
       tslib: ^2.4.0
       typescript: next
-      vite: ^2.9.13
+      vite: 2.9.13
     dependencies:
       '@ovenwand/app': link:../../packages/app
       '@ovenwand/env': link:../../packages/env
@@ -91,9 +96,9 @@ importers:
       '@types/jsonwebtoken': 8.5.8
       svelte: 3.48.0
       svelte-check: 2.8.0_svelte@3.48.0
-      svelte-preprocess: 4.10.7_c6gnpr3s6wyzejsbr2y4es6ixe
+      svelte-preprocess: 4.10.7_xewzgr4kanwazokv3u77hrnnf4
       tslib: 2.4.0
-      typescript: 4.8.0-dev.20220709
+      typescript: 4.8.0-dev.20220716
       vite: 2.9.13
 
   apps/ovenwand.com:
@@ -108,16 +113,16 @@ importers:
       '@ovenwand/util.date': workspace:*
       '@ovenwand/util.math': workspace:*
       '@storyblok/svelte': ^2.1.4
-      '@sveltejs/kit': next
+      '@sveltejs/kit': 1.0.0-next.367
       autoprefixer: ^10.4.7
       axios: ^0.27.2
       postcss: ^8.4.14
-      svelte: ^3.48.0
+      svelte: 3.48.0
       svelte-check: ^2.8.0
       tailwindcss: ^3.1.4
       tslib: ^2.4.0
       typescript: next
-      vite: ^2.9.13
+      vite: 2.9.13
     devDependencies:
       '@ovenwand/app': link:../../packages/app
       '@ovenwand/brand': link:../../packages/brand
@@ -137,7 +142,7 @@ importers:
       svelte-check: 2.8.0_s3dopqgs4h45owyu2kxaf6kyfu
       tailwindcss: 3.1.4
       tslib: 2.4.0
-      typescript: 4.8.0-dev.20220709
+      typescript: 4.8.0-dev.20220716
       vite: 2.9.13
 
   apps/tasks.ovenwand.com:
@@ -149,16 +154,16 @@ importers:
       '@ovenwand/util': workspace:*
       '@ovenwand/util.date': workspace:*
       '@ovenwand/util.math': workspace:*
-      '@sveltejs/adapter-auto': next
-      '@sveltejs/kit': next
+      '@sveltejs/adapter-auto': 1.0.0-next.55
+      '@sveltejs/kit': 1.0.0-next.367
       autoprefixer: ^10.4.7
       postcss: ^8.4.14
-      svelte: ^3.48.0
+      svelte: 3.48.0
       svelte-check: ^2.8.0
       tailwindcss: ^3.1.4
       tslib: ^2.4.0
       typescript: next
-      vite: ^2.9.13
+      vite: 2.9.13
     devDependencies:
       '@ovenwand/config': link:../../packages/config
       '@ovenwand/env': link:../../packages/env
@@ -175,7 +180,7 @@ importers:
       svelte-check: 2.8.0_s3dopqgs4h45owyu2kxaf6kyfu
       tailwindcss: 3.1.4
       tslib: 2.4.0
-      typescript: 4.8.0-dev.20220709
+      typescript: 4.8.0-dev.20220716
       vite: 2.9.13
 
   packages/app:
@@ -185,7 +190,7 @@ importers:
       '@ovenwand/monitor': workspace:*
       '@ovenwand/ui': workspace:*
       '@ovenwand/util.browser': workspace:*
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       '@ovenwand/brand': link:../brand
       '@ovenwand/monitor': link:../monitor
@@ -199,7 +204,7 @@ importers:
     specifiers:
       '@ovenwand/brand.logo': workspace:*
       '@ovenwand/config': workspace:*
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       '@ovenwand/brand.logo': link:logo
     devDependencies:
@@ -210,7 +215,7 @@ importers:
     specifiers:
       '@ovenwand/config': workspace:*
       '@ovenwand/util.browser': workspace:*
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       '@ovenwand/util.browser': link:../../util/browser
     devDependencies:
@@ -219,9 +224,9 @@ importers:
 
   packages/config:
     specifiers:
-      '@sveltejs/adapter-auto': next
+      '@sveltejs/adapter-auto': 1.0.0-next.55
       '@tsconfig/svelte': ^3.0.0
-      svelte: ^3.48.0
+      svelte: 3.48.0
       svelte-preprocess: ^4.10.7
     dependencies:
       '@sveltejs/adapter-auto': 1.0.0-next.55
@@ -278,7 +283,7 @@ importers:
       '@testing-library/svelte': ^3.1.3
       chai: ^4.3.6
       mocha: ^9.2.2
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       svelte: 3.48.0
     devDependencies:
@@ -293,7 +298,7 @@ importers:
       '@testing-library/svelte': ^3.1.3
       chai: ^4.3.6
       mocha: ^9.2.2
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       svelte: 3.48.0
     devDependencies:
@@ -334,7 +339,7 @@ importers:
       '@ovenwand/config': workspace:*
       '@ovenwand/test.cypress': workspace:*
       '@ovenwand/util.browser': workspace:*
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       '@ovenwand/util.browser': link:../../util/browser
     devDependencies:
@@ -347,7 +352,7 @@ importers:
       '@ovenwand/config': workspace:*
       '@ovenwand/util.browser': workspace:*
       '@ovenwand/util.fp': workspace:*
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       '@ovenwand/util.browser': link:../../util/browser
       '@ovenwand/util.fp': link:../../util/fp
@@ -358,7 +363,7 @@ importers:
   packages/ui/icon:
     specifiers:
       '@ovenwand/config': workspace:*
-      svelte: ^3.48.0
+      svelte: 3.48.0
     devDependencies:
       '@ovenwand/config': link:../../config
       svelte: 3.48.0
@@ -367,7 +372,7 @@ importers:
     specifiers:
       '@ovenwand/config': workspace:*
       '@ovenwand/util.browser': workspace:*
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       '@ovenwand/config': link:../../config
       '@ovenwand/util.browser': link:../../util/browser
@@ -377,7 +382,7 @@ importers:
   packages/ui/loader:
     specifiers:
       '@ovenwand/config': workspace:*
-      svelte: ^3.48.0
+      svelte: 3.48.0
     devDependencies:
       '@ovenwand/config': link:../../config
       svelte: 3.48.0
@@ -389,7 +394,7 @@ importers:
       '@ovenwand/ui.overlay': workspace:*
       '@ovenwand/ui.sheet': workspace:*
       '@ovenwand/util.svelte': workspace:*
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       '@ovenwand/ui.grid': link:../grid
       '@ovenwand/ui.overlay': link:../overlay
@@ -406,7 +411,7 @@ importers:
       '@ovenwand/ui.sheet': workspace:*
       '@ovenwand/util.browser': workspace:*
       '@ovenwand/util.string': workspace:*
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       '@ovenwand/ui.icon': link:../icon
       '@ovenwand/ui.sheet': link:../sheet
@@ -420,7 +425,7 @@ importers:
     specifiers:
       '@ovenwand/config': workspace:*
       '@ovenwand/util.browser': workspace:*
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       '@ovenwand/util.browser': link:../../util/browser
     devDependencies:
@@ -431,7 +436,7 @@ importers:
     specifiers:
       '@ovenwand/config': workspace:*
       '@ovenwand/util.browser': workspace:*
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       '@ovenwand/util.browser': link:../../util/browser
     devDependencies:
@@ -445,7 +450,7 @@ importers:
       '@ovenwand/test.svelte': workspace:*
       '@ovenwand/util.browser': workspace:*
       '@ovenwand/util.svelte': workspace:*
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       '@ovenwand/config': link:../../config
       '@ovenwand/util.browser': link:../../util/browser
@@ -524,7 +529,7 @@ importers:
       '@ovenwand/env': workspace:*
       '@ovenwand/util.math': workspace:*
       chai: ^4.3.6
-      svelte: ^3.48.0
+      svelte: 3.48.0
     dependencies:
       '@ovenwand/env': link:../../env
       '@ovenwand/util.math': link:../math
@@ -838,10 +843,10 @@ packages:
       '@types/node': 18.0.1
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 2.0.2_6y6blzy2pid7llxr2dx4ay3q7i
+      cosmiconfig-typescript-loader: 2.0.2_r7hfcp3h2age5qkf7t5nhcjchq
       lodash: 4.17.21
       resolve-from: 5.0.0
-      typescript: 4.8.0-dev.20220709
+      typescript: 4.8.0-dev.20220716
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -1370,7 +1375,7 @@ packages:
     dev: true
     optional: true
 
-  /@typescript-eslint/eslint-plugin/5.30.5_z7e425q7qgrzfhk2l7ooq5o3oa:
+  /@typescript-eslint/eslint-plugin/5.30.5_gbua3jl3ggwo2u4iw44hn2h2xi:
     resolution: {integrity: sha512-lftkqRoBvc28VFXEoRgyZuztyVUQ04JvUnATSPtIRFAccbXTWL6DEtXGYMcbg998kXw1NLUJm7rTQ9eUt+q6Ig==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1381,23 +1386,23 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.30.5_yos6womow22fcexp5e5buo7fqe
+      '@typescript-eslint/parser': 5.30.5_tpn6vbl64bcolwnbnw3gtfuvgy
       '@typescript-eslint/scope-manager': 5.30.5
-      '@typescript-eslint/type-utils': 5.30.5_yos6womow22fcexp5e5buo7fqe
-      '@typescript-eslint/utils': 5.30.5_yos6womow22fcexp5e5buo7fqe
+      '@typescript-eslint/type-utils': 5.30.5_tpn6vbl64bcolwnbnw3gtfuvgy
+      '@typescript-eslint/utils': 5.30.5_tpn6vbl64bcolwnbnw3gtfuvgy
       debug: 4.3.4
       eslint: 8.19.0
       functional-red-black-tree: 1.0.1
       ignore: 5.2.0
       regexpp: 3.2.0
       semver: 7.3.7
-      tsutils: 3.21.0_76w5plo3wthyuh6kzlfwmhs7fi
-      typescript: 4.8.0-dev.20220709
+      tsutils: 3.21.0_6lgbslxgwgduyeodc4y5l6ztka
+      typescript: 4.8.0-dev.20220716
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@typescript-eslint/parser/5.30.5_yos6womow22fcexp5e5buo7fqe:
+  /@typescript-eslint/parser/5.30.5_tpn6vbl64bcolwnbnw3gtfuvgy:
     resolution: {integrity: sha512-zj251pcPXI8GO9NDKWWmygP6+UjwWmrdf9qMW/L/uQJBM/0XbU2inxe5io/234y/RCvwpKEYjZ6c1YrXERkK4Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1409,10 +1414,10 @@ packages:
     dependencies:
       '@typescript-eslint/scope-manager': 5.30.5
       '@typescript-eslint/types': 5.30.5
-      '@typescript-eslint/typescript-estree': 5.30.5_76w5plo3wthyuh6kzlfwmhs7fi
+      '@typescript-eslint/typescript-estree': 5.30.5_6lgbslxgwgduyeodc4y5l6ztka
       debug: 4.3.4
       eslint: 8.19.0
-      typescript: 4.8.0-dev.20220709
+      typescript: 4.8.0-dev.20220716
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1425,7 +1430,7 @@ packages:
       '@typescript-eslint/visitor-keys': 5.30.5
     dev: true
 
-  /@typescript-eslint/type-utils/5.30.5_yos6womow22fcexp5e5buo7fqe:
+  /@typescript-eslint/type-utils/5.30.5_tpn6vbl64bcolwnbnw3gtfuvgy:
     resolution: {integrity: sha512-k9+ejlv1GgwN1nN7XjVtyCgE0BTzhzT1YsQF0rv4Vfj2U9xnslBgMYYvcEYAFVdvhuEscELJsB7lDkN7WusErw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1435,11 +1440,11 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/utils': 5.30.5_yos6womow22fcexp5e5buo7fqe
+      '@typescript-eslint/utils': 5.30.5_tpn6vbl64bcolwnbnw3gtfuvgy
       debug: 4.3.4
       eslint: 8.19.0
-      tsutils: 3.21.0_76w5plo3wthyuh6kzlfwmhs7fi
-      typescript: 4.8.0-dev.20220709
+      tsutils: 3.21.0_6lgbslxgwgduyeodc4y5l6ztka
+      typescript: 4.8.0-dev.20220716
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1449,7 +1454,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@typescript-eslint/typescript-estree/5.30.5_76w5plo3wthyuh6kzlfwmhs7fi:
+  /@typescript-eslint/typescript-estree/5.30.5_6lgbslxgwgduyeodc4y5l6ztka:
     resolution: {integrity: sha512-qGTc7QZC801kbYjAr4AgdOfnokpwStqyhSbiQvqGBLixniAKyH+ib2qXIVo4P9NgGzwyfD9I0nlJN7D91E1VpQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1464,13 +1469,13 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.3.7
-      tsutils: 3.21.0_76w5plo3wthyuh6kzlfwmhs7fi
-      typescript: 4.8.0-dev.20220709
+      tsutils: 3.21.0_6lgbslxgwgduyeodc4y5l6ztka
+      typescript: 4.8.0-dev.20220716
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@typescript-eslint/utils/5.30.5_yos6womow22fcexp5e5buo7fqe:
+  /@typescript-eslint/utils/5.30.5_tpn6vbl64bcolwnbnw3gtfuvgy:
     resolution: {integrity: sha512-o4SSUH9IkuA7AYIfAvatldovurqTAHrfzPApOZvdUq01hHojZojCFXx06D/aFpKCgWbMPRdJBWAC3sWp3itwTA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1479,7 +1484,7 @@ packages:
       '@types/json-schema': 7.0.11
       '@typescript-eslint/scope-manager': 5.30.5
       '@typescript-eslint/types': 5.30.5
-      '@typescript-eslint/typescript-estree': 5.30.5_76w5plo3wthyuh6kzlfwmhs7fi
+      '@typescript-eslint/typescript-estree': 5.30.5_6lgbslxgwgduyeodc4y5l6ztka
       eslint: 8.19.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0_eslint@8.19.0
@@ -2171,7 +2176,7 @@ packages:
     resolution: {integrity: sha512-3lqz5YjWTYnW6dlDa5TLaTCcShfar1e40rmcJVwCBJC6mWlFuj0eCHIElmG1g5kyuJ/GD+8Wn4FFCcz4gJPfaQ==}
     dev: true
 
-  /cosmiconfig-typescript-loader/2.0.2_6y6blzy2pid7llxr2dx4ay3q7i:
+  /cosmiconfig-typescript-loader/2.0.2_r7hfcp3h2age5qkf7t5nhcjchq:
     resolution: {integrity: sha512-KmE+bMjWMXJbkWCeY4FJX/npHuZPNr9XF9q9CIQ/bpFwi1qHfCmSiKarrCcRa0LO4fWjk93pVoeRtJAkTGcYNw==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
@@ -2180,8 +2185,8 @@ packages:
     dependencies:
       '@types/node': 18.0.1
       cosmiconfig: 7.0.1
-      ts-node: 10.8.2_6y6blzy2pid7llxr2dx4ay3q7i
-      typescript: 4.8.0-dev.20220709
+      ts-node: 10.8.2_r7hfcp3h2age5qkf7t5nhcjchq
+      typescript: 4.8.0-dev.20220716
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
@@ -5330,8 +5335,8 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.48.0
-      svelte-preprocess: 4.10.7_yebmy5due64bkghc3at4pao6ki
-      typescript: 4.8.0-dev.20220709
+      svelte-preprocess: 4.10.7_zcapmrhsg4n2nc527pfzuz7mve
+      typescript: 4.8.0-dev.20220716
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -5358,8 +5363,8 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.48.0
-      svelte-preprocess: 4.10.7_c6gnpr3s6wyzejsbr2y4es6ixe
-      typescript: 4.8.0-dev.20220709
+      svelte-preprocess: 4.10.7_xewzgr4kanwazokv3u77hrnnf4
+      typescript: 4.8.0-dev.20220716
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -5380,57 +5385,6 @@ packages:
       svelte: '>=3.19.0'
     dependencies:
       svelte: 3.48.0
-    dev: true
-
-  /svelte-preprocess/4.10.7_c6gnpr3s6wyzejsbr2y4es6ixe:
-    resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
-    engines: {node: '>= 9.11.2'}
-    requiresBuild: true
-    peerDependencies:
-      '@babel/core': ^7.10.2
-      coffeescript: ^2.5.1
-      less: ^3.11.3 || ^4.0.0
-      node-sass: '*'
-      postcss: ^7 || ^8
-      postcss-load-config: ^2.1.0 || ^3.0.0 || ^4.0.0
-      pug: ^3.0.0
-      sass: ^1.26.8
-      stylus: ^0.55.0
-      sugarss: ^2.0.0
-      svelte: ^3.23.0
-      typescript: ^3.9.5 || ^4.0.0
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      coffeescript:
-        optional: true
-      less:
-        optional: true
-      node-sass:
-        optional: true
-      postcss:
-        optional: true
-      postcss-load-config:
-        optional: true
-      pug:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      typescript:
-        optional: true
-    dependencies:
-      '@types/pug': 2.0.6
-      '@types/sass': 1.43.1
-      detect-indent: 6.1.0
-      magic-string: 0.25.9
-      sorcery: 0.10.0
-      strip-indent: 3.0.0
-      svelte: 3.48.0
-      typescript: 4.8.0-dev.20220709
     dev: true
 
   /svelte-preprocess/4.10.7_svelte@3.48.0:
@@ -5483,7 +5437,58 @@ packages:
       svelte: 3.48.0
     dev: false
 
-  /svelte-preprocess/4.10.7_yebmy5due64bkghc3at4pao6ki:
+  /svelte-preprocess/4.10.7_xewzgr4kanwazokv3u77hrnnf4:
+    resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
+    engines: {node: '>= 9.11.2'}
+    requiresBuild: true
+    peerDependencies:
+      '@babel/core': ^7.10.2
+      coffeescript: ^2.5.1
+      less: ^3.11.3 || ^4.0.0
+      node-sass: '*'
+      postcss: ^7 || ^8
+      postcss-load-config: ^2.1.0 || ^3.0.0 || ^4.0.0
+      pug: ^3.0.0
+      sass: ^1.26.8
+      stylus: ^0.55.0
+      sugarss: ^2.0.0
+      svelte: ^3.23.0
+      typescript: ^3.9.5 || ^4.0.0
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      coffeescript:
+        optional: true
+      less:
+        optional: true
+      node-sass:
+        optional: true
+      postcss:
+        optional: true
+      postcss-load-config:
+        optional: true
+      pug:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@types/pug': 2.0.6
+      '@types/sass': 1.43.1
+      detect-indent: 6.1.0
+      magic-string: 0.25.9
+      sorcery: 0.10.0
+      strip-indent: 3.0.0
+      svelte: 3.48.0
+      typescript: 4.8.0-dev.20220716
+    dev: true
+
+  /svelte-preprocess/4.10.7_zcapmrhsg4n2nc527pfzuz7mve:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -5532,7 +5537,7 @@ packages:
       sorcery: 0.10.0
       strip-indent: 3.0.0
       svelte: 3.48.0
-      typescript: 4.8.0-dev.20220709
+      typescript: 4.8.0-dev.20220716
     dev: true
 
   /svelte/3.48.0:
@@ -5651,7 +5656,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-node/10.8.2_6y6blzy2pid7llxr2dx4ay3q7i:
+  /ts-node/10.8.2_r7hfcp3h2age5qkf7t5nhcjchq:
     resolution: {integrity: sha512-LYdGnoGddf1D6v8REPtIH+5iq/gTDuZqv2/UJUU7tKjuEU8xVZorBM+buCGNjj+pGEud+sOoM4CX3/YzINpENA==}
     hasBin: true
     peerDependencies:
@@ -5677,7 +5682,7 @@ packages:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 4.8.0-dev.20220709
+      typescript: 4.8.0-dev.20220716
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
@@ -5689,14 +5694,14 @@ packages:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
     dev: true
 
-  /tsutils/3.21.0_76w5plo3wthyuh6kzlfwmhs7fi:
+  /tsutils/3.21.0_6lgbslxgwgduyeodc4y5l6ztka:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
     engines: {node: '>= 6'}
     peerDependencies:
       typescript: '>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta'
     dependencies:
       tslib: 1.14.1
-      typescript: 4.8.0-dev.20220709
+      typescript: 4.8.0-dev.20220716
     dev: true
 
   /tty-table/4.1.6:
@@ -5896,8 +5901,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /typescript/4.8.0-dev.20220709:
-    resolution: {integrity: sha512-SCga3Bj+6fGfJ8LkUxXtM/NbvH8CU/Yhz125UOjS6nVVQm3MzkfgnaqcYl0bRQimg7YVb5vixqhkOOjH1p4vGQ==}
+  /typescript/4.8.0-dev.20220716:
+    resolution: {integrity: sha512-QveOpAVFRuMswqQcWa9dAboKXt6YW/Zg5NDOMrw3RoG/WvWlPZZaDEAT5tm/MDdbWJcYD8Hyf9yROjcE2o7OJw==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
