@@ -6,7 +6,7 @@ export async function createCommand(command) {
 
 	const paths = {
 		workspace,
-		framework: resolve(workspace, '.framework')
+		kit: resolve(workspace, '.kit')
 	};
 
 	return (...args) => command(...args, { paths });
