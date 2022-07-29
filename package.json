@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/project",
-	"version": "0.4.0",
+	"version": "0.4.1",
 	"description": "Monolithic project containing all ovenwand related packages/projects",
 	"main": "index.js",
 	"scripts": {
@@ -21,9 +21,6 @@
 		"ci:test": "pnpm test:unit run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b"
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.23.0",
-		"@commitlint/cli": "^17.0.3",
-		"@commitlint/config-conventional": "^17.0.3",
 		"@cypress/vite-dev-server": "^2.2.3",
 		"@ovenwand/cli": "workspace:0.0.1",
 		"@sveltejs/vite-plugin-svelte": "^1.0.0-next.49",
@@ -33,11 +30,9 @@
 		"eslint": "^8.19.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"lint-staged": "^12.5.0",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
 		"svelte": "^3.48.0",
-		"turbo": "^1.3.1",
 		"typescript": "next",
 		"vite": "^2.9.13"
 	},

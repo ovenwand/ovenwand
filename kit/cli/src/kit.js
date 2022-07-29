@@ -34,7 +34,11 @@ export async function createKitCLI() {
 		.option('-f, --force', 'ignore existing turbo cache')
 		.action(await preview);
 
-	program.command('commit').action(await commit);
+	program
+		.command('commit')
+		.option('-p, --prepare', 'prepare commit')
+		.option('-l, --lint <path>', 'lint commit message')
+		.action(await commit);
 
 	return (argv) => program.parse(argv);
 }

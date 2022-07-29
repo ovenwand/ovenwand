@@ -1,5 +1,11 @@
 # @ovenwand/project
 
+## 0.4.1
+
+### Patch changes
+
+- Removed dependencies to @changeset/cli, @commitlint/\*, lint-staged and turbo (have been moved to @ovenwand/cli)
+
 ## 0.4.0
 
 ### Minor Changes
