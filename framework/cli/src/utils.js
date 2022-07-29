@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import { promises as fsp } from 'fs';
 import { spawn } from 'child_process';
+import findWorkspaceDir from '@pnpm/find-workspace-dir';
 
 export async function exec(command, args, options) {
 	return new Promise((resolve, reject) => {
@@ -13,7 +14,8 @@ export async function exec(command, args, options) {
 
 export async function getApps() {
 	const apps = [];
-	const appsDir = resolve('apps'); // TODO
+	const workspace = await findWorkspaceDir.default(process.cwd()); // TODO support any kind of workspace: npm, yarn, etc
+	const appsDir = resolve(workspace, 'apps'); // TODO
 	const dirs = await fsp.readdir(appsDir);
 
 	for (const dir of dirs) {
