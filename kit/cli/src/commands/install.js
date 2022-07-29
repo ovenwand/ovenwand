@@ -2,6 +2,9 @@ import { resolve } from 'path';
 import { createCommand, exec } from '../utils/index.js';
 
 export const install = createCommand(async (options, command, { paths }) => {
+	const configDir = resolve(paths.kit, 'config');
+	await exec('mkdir', ['-p', configDir]);
+
 	const scriptsDir = resolve(paths.kit, 'scripts');
 	await exec('mkdir', ['-p', scriptsDir]);
 

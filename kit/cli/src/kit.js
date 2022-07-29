@@ -1,7 +1,17 @@
 import { program } from 'commander';
 import { createRequire } from 'module';
 import { getApps } from './utils/index.js';
-import { build, commit, dev, install, preview, run, setup } from './commands/index.js';
+import {
+	build,
+	commit,
+	dev,
+	env,
+	feature,
+	install,
+	preview,
+	run,
+	setup
+} from './commands/index.js';
 
 const require = createRequire(import.meta.url);
 const pkg = require('../package.json');
@@ -47,6 +57,9 @@ export async function createKitCLI() {
 		.option('-p, --prepare', 'prepare commit')
 		.option('-l, --lint <path>', 'lint commit message')
 		.action(await commit);
+
+	program.addCommand(await env());
+	program.addCommand(await feature());
 
 	return (argv) => program.parse(argv);
 }
