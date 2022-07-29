@@ -6,6 +6,45 @@ previous_tag_rev=$(git describe --tags --abbrev=0 ${current_tag_rev:+"--exclude"
 previous_tag_child_rev=$(git rev-list --reverse --ancestry-path "$previous_tag_rev..HEAD" 2>/dev/null | head -n 1)
 previous_commit_rev='HEAD^'
 
-target_rev=${previous_tag_child_rev:-${initial_commit_rev:-$previous_commit_rev}}
+target_rev=${VERCEL_GIT_PREVIOUS_SHA:-${previous_tag_child_rev:-${initial_commit_rev:-$previous_commit_rev}}}
 
-git diff --quiet HEAD "$target_rev" "$2"
+result=$(git diff --quiet HEAD "$target_rev" "$2" ; echo $?)
+
+if [ $DEBUG = "1" ]; then
+  echo "initial_commit_rev:"
+  echo "  command: git rev-list --max-parents=0 HEAD 2>/dev/null"
+  echo "  result: $initial_commit_rev"
+  echo ""
+
+  echo "current_tag_rev:"
+  echo "  command: git describe --tags --abbrev=0 --contains --match \"$1\" 2>/dev/null"
+  echo "  result: $current_tag_rev"
+  echo ""
+
+  echo "previous_tag_rev:"
+  echo "  command: git describe --tags --abbrev=0 ${current_tag_rev:+"--exclude" "$current_tag_rev"} --match \"$1\" 2>/dev/null"
+  echo "  result: $previous_tag_rev"
+  echo ""
+
+  echo "previous_tag_child_rev:"
+  echo "  command: git rev-list --reverse --ancestry-path \"$previous_tag_rev..HEAD\" 2>/dev/null | head -n 1"
+  echo "  result: $previous_tag_child_rev"
+  echo ""
+
+  echo "target_rev:"
+  echo "  command: \${previous_tag_child_rev:-\${initial_commit_rev:-\$previous_commit_rev}}"
+  echo "  result: $target_rev"
+  echo ""
+
+  echo "result:"
+  echo "  command: git diff --quiet HEAD \"$target_rev\" \"$2\" ; echo \$?"
+  echo "  result: $result"
+fi
+
+# The diff command fails when there are more than 10 commits since the previous release,
+# in that case we always trigger a deployment
+if [ "$result" = "0" ]; then
+  exit 0
+else
+  exit 1
+fi
