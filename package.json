@@ -1,10 +1,10 @@
 {
 	"name": "@ovenwand/project",
-	"version": "0.3.3",
+	"version": "0.4.0",
 	"description": "Monolithic project containing all ovenwand related packages/projects",
 	"main": "index.js",
 	"scripts": {
-		"prepare": "husky install",
+		"prepare": "kit install",
 		"setup": "kit setup",
 		"clean": "pnpm --silent dlx rimraf **/node_modules && pnpm --filter @ovenwand/* clean",
 		"dev": "kit dev",
@@ -33,7 +33,6 @@
 		"eslint": "^8.19.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"husky": "^8.0.1",
 		"lint-staged": "^12.5.0",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",

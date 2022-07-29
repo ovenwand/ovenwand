@@ -1,10 +1,13 @@
 # @ovenwand/project
 
-## 0.3.3
+## 0.4.0
 
-### Patch Changes
+### Minor Changes
 
 - Renamed framework to kit
+- Moved git-hooks and scripts to .kit
+- Removed husky
+- Temporarily disable `kit commit` in `pre-commit` hook
 
 ## 0.3.2
 
