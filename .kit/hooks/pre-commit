@@ -3,5 +3,4 @@
 
 [ -n "$CI" ] && exit 0
 
-#pnpm exec kit commit
-pnpm exec lint-staged
+pnpm exec kit commit --prepare
