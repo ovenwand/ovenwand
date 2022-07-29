@@ -1,9 +1,6 @@
-import { fileURLToPath } from 'url';
+import { createCommand, exec } from '../utils/index.js';
 
-export async function commit() {
-	// const turbo = fileURLToPath(await import.meta.resolve('@changeset/cli'));
-	//
-	// spawn(
-	//   ''
-	// )
-}
+export const commit = createCommand(async () => {
+	await exec('changeset', []);
+	await exec('git', ['add', './.changeset']);
+});
