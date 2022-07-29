@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DEBUG=${DEBUG:-0}
+
 initial_commit_rev=$(git rev-list --max-parents=0 HEAD 2>/dev/null)
 current_tag_rev=$(git describe --tags --abbrev=0 --contains --match "$1" 2>/dev/null)
 previous_tag_rev=$(git describe --tags --abbrev=0 ${current_tag_rev:+"--exclude" "$current_tag_rev"} --match "$1" 2>/dev/null)
