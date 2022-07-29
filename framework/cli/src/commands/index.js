@@ -1,3 +1,4 @@
+export * from './install.js';
 export * from './build.js';
 export * from './commit.js';
 export * from './dev.js';

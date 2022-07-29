@@ -1,6 +1,6 @@
-import { exec } from '../utils.js';
+import { createCommand, exec } from '../utils/index.js';
 
-export async function setup() {
+export const setup = createCommand(async () => {
 	await exec('doppler', ['login']);
 	await exec('doppler', ['setup']);
-}
+});
