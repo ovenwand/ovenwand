@@ -1,7 +1,7 @@
 import { program } from 'commander';
 import pkg from '../package.json' assert { type: 'json' };
 import { getApps } from './utils/index.js';
-import { build, commit, dev, install, preview, setup } from './commands/index.js';
+import { build, commit, dev, install, preview, run, setup } from './commands/index.js';
 
 export async function createKitCLI() {
 	const apps = await getApps();
@@ -33,6 +33,11 @@ export async function createKitCLI() {
 		.option('-e, --env', 'use doppler env')
 		.option('-f, --force', 'ignore existing turbo cache')
 		.action(await preview);
+
+	program
+		.command('run')
+		.argument('script', 'script to run')
+		.action(await run);
 
 	program
 		.command('commit')
