@@ -1,9 +1,6 @@
-import { spawn } from 'child_process';
+import { exec } from '../utils.js';
 
 export async function setup() {
-	const setupChild = spawn('doppler', ['login'], { stdio: 'inherit' });
-
-	setupChild.on('close', () => {
-		spawn('doppler', ['setup'], { stdio: 'inherit' });
-	});
+	await exec('doppler', ['login']);
+	await exec('doppler', ['setup']);
 }
