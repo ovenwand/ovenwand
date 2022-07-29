@@ -23,7 +23,7 @@ jobs:
       - name: Push release commit
         if: steps.changesets.outputs.modified == 'true'
         run: |
-          git config --global user.name "Ovenwand"
+          git config --global user.name "Ovenwand [bot]"
           git config --global user.email "info@ovenwand.com"
           git add --all
           git commit -m "chore: release"
