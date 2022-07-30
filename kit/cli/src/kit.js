@@ -1,7 +1,10 @@
 import { program } from 'commander';
-import pkg from '../package.json' assert { type: 'json' };
+import { createRequire } from 'module';
 import { getApps } from './utils/index.js';
 import { build, commit, dev, install, preview, run, setup } from './commands/index.js';
+
+const require = createRequire(import.meta.url);
+const pkg = require('../package.json');
 
 export async function createKitCLI() {
 	const apps = await getApps();
