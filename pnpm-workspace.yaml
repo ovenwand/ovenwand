@@ -2,6 +2,5 @@ packages:
   # all packages in subdirs of packages/ and components/
   - 'apps/**'
   - 'packages/**'
-  - 'kit/**'
   # exclude packages that are inside test directories
   # - '!**/test/**'
