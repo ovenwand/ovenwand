@@ -6,16 +6,29 @@ export async function doppler(args, options, execOptions) {
 
 	const params = {
 		config: resolve(paths.kit, 'config', '.doppler.yaml'),
-		scope: project && resolve(paths.workspace, 'apps', project),
-		project,
+		scope: resolve(paths.workspace, 'apps', project),
+		project: project.replace(/\./g, '-'),
 		env
 	};
 
-	return await exec(
+	const result = await exec(
 		'doppler',
 		[...getDopplerArgs(params), ...args, ...getCommandArgs(params)],
 		execOptions
 	);
+
+	if (!result.ok) {
+		const { error } = JSON.parse(result.output);
+		throw new Error(error);
+	}
+
+	try {
+		result.data = JSON.parse(result.output);
+	} catch (e) {
+		// Fail silently when the output is not json
+	}
+
+	return result;
 }
 
 export function getDopplerArgs({ config, scope }) {
@@ -36,7 +49,7 @@ export function getCommandArgs({ project, env }) {
 	const args = [];
 
 	if (project) {
-		args.push('--project', project.replace(/\./g, '-'));
+		args.push('--project', project);
 	}
 
 	if (env) {

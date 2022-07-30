@@ -129,8 +129,7 @@ value: ${values[0]}
 	);
 }
 
-async function parseResult(result) {
-	const data = JSON.parse(result.output);
+function parseResult({ data }) {
 	const values = [];
 
 	for (const value of Object.values(data)) {

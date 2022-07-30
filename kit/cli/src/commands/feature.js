@@ -160,7 +160,6 @@ async function setFeatures(params, features) {
 	return parseResult(result);
 }
 
-async function parseResult(result) {
-	const data = JSON.parse(result.output);
+async function parseResult({ data }) {
 	return JSON.parse(data[ENV_FEATURE_KEY].computed);
 }
