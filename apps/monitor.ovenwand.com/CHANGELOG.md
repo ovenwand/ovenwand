@@ -1,5 +1,11 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.4.0
+
+### Minor Changes
+
+- d0c301d: Update Vite to 3.x
+
 ## 0.3.7
 
 ### Patch Changes
