@@ -1,6 +1,6 @@
 import { migrate } from '$lib/database';
 
-export async function get() {
+export async function GET() {
 	await migrate();
 
 	return {

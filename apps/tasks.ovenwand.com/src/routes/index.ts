@@ -1,3 +1,3 @@
-import { get } from './tasks';
+import { GET } from './tasks';
 
-export { get };
+export { GET };

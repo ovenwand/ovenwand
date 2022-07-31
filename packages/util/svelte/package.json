@@ -19,7 +19,7 @@
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:*",
-		"svelte": "^3.48.0"
+		"svelte": "^3.49.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com>",
 	"license": "WTFPL"

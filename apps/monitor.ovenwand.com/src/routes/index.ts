@@ -29,7 +29,7 @@ const FindAllProjects = `
     }
 `;
 
-export async function get({ locals }: RequestEvent) {
+export async function GET({ locals }: RequestEvent) {
 	const { errors, data } = await gql<{ allProjects: Data<IProjectData[]> }>(
 		FindAllProjects,
 		{

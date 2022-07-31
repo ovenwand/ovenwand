@@ -16,7 +16,7 @@ export interface FaunaError {
 	extensions: { code: string };
 }
 
-export async function post({ request }: RequestEvent) {
+export async function POST({ request }: RequestEvent) {
 	const body = await request.formData();
 
 	const { data, errors } = await gql<{ login: ILoginData }, FaunaError[]>(

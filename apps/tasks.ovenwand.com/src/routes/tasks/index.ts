@@ -8,7 +8,7 @@ export interface GetResponseBody {
 	tasks: ITask[];
 	labels: ILabel[];
 }
-export async function get(): Promise<RequestHandlerOutput<Errors & Data<GetResponseBody>>> {
+export async function GET(): Promise<RequestHandlerOutput<Errors & Data<GetResponseBody>>> {
 	const { errors, data } = await gql<{ tasks: Data<ITaskData[]>; labels: Data<ILabelData[]> }>(
 		FindAllTasks
 	);
@@ -24,7 +24,7 @@ export async function get(): Promise<RequestHandlerOutput<Errors & Data<GetRespo
 	};
 }
 
-export async function post({
+export async function POST({
 	request
 }: RequestEvent): Promise<RequestHandlerOutput<Errors & Data<ITask>>> {
 	const body = await request.json();
@@ -46,7 +46,7 @@ export async function post({
 	};
 }
 
-export async function patch({
+export async function PATCH({
 	request
 }: RequestEvent): Promise<RequestHandlerOutput<Errors & Data<ITask>>> {
 	const body = await request.json();
@@ -69,7 +69,7 @@ export async function patch({
 	};
 }
 
-export async function del({
+export async function DELETE({
 	request
 }: RequestEvent): Promise<RequestHandlerOutput<Errors & Data<ITask>>> {
 	const body = await request.json();

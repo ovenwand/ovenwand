@@ -7,7 +7,7 @@ import { mapDataToTask } from '$lib/store/tasks/utils';
 export interface GetTaskResponseBody {
 	task: ITask;
 }
-export async function get({
+export async function GET({
 	params
 }: RequestEvent<{ id: string }>): Promise<
 	RequestHandlerOutput<Errors & Data<GetTaskResponseBody>>

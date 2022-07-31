@@ -4,7 +4,7 @@ User-agent: *
 Disallow: ${disallow}
 `.trim();
 
-export async function get() {
+export async function GET() {
 	const body = robotsTxt(import.meta.env.VITE_VERCEL_ENV === 'production' ? '' : '/');
 
 	return {

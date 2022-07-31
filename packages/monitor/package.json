@@ -14,8 +14,8 @@
 	},
 	"dependencies": {
 		"@ovenwand/util.fp": "workspace:*",
-		"@sentry/node": "^7.5.1",
-		"@sentry/tracing": "^7.5.1"
+		"@sentry/node": "^7.8.0",
+		"@sentry/tracing": "^7.8.0"
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:*"
