@@ -34,12 +34,13 @@
 		"@types/cookie": "^0.5.1",
 		"@types/d3-scale": "^4.0.2",
 		"@types/jsonwebtoken": "^8.5.8",
+		"@vitejs/plugin-basic-ssl": "^0.1.1",
 		"svelte": "^3.48.0",
 		"svelte-check": "^2.8.0",
 		"svelte-preprocess": "^4.10.7",
 		"tslib": "^2.4.0",
 		"typescript": "next",
-		"vite": "^2.9.13"
+		"vite": "^3.0.4"
 	},
 	"type": "module"
 }

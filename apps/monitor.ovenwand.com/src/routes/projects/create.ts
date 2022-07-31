@@ -2,7 +2,7 @@ import type { RequestEvent } from '@sveltejs/kit';
 import { gql, type Data } from '@ovenwand/services.faunadb';
 import type { IProjectData } from '$lib/store';
 
-export async function post({ request }: RequestEvent) {
+export async function POST({ request }: RequestEvent) {
 	const body = await request.formData();
 
 	const { data, errors } = await gql<{ createProject: Data<IProjectData> }>(

@@ -1,7 +1,7 @@
 import { gql } from '@ovenwand/services.faunadb';
 import { deleteSessionCookie } from '$lib/session';
 
-export async function post() {
+export async function POST() {
 	const { errors } = await gql<{ errors?: unknown[] }>(
 		`mutation Logout {
       logout(all: false)

@@ -12,7 +12,7 @@
 		"@ovenwand/config": "workspace:*"
 	},
 	"dependencies": {
-		"date-fns": "^2.28.0"
+		"date-fns": "^2.29.1"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"

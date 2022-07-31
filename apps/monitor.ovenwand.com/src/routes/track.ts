@@ -2,7 +2,7 @@ import type { RequestEvent } from '@sveltejs/kit';
 import { gql } from '@ovenwand/services.faunadb';
 import type { IEvent } from '$lib/store';
 
-export async function post({ request }: RequestEvent) {
+export async function POST({ request }: RequestEvent) {
 	const body = await request.json();
 
 	const details = {
