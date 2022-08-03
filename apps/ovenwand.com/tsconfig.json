@@ -8,6 +8,10 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true
-	}
+		"strict": true,
+		// For react
+		"noEmit": true, // ?
+		"jsx": "react-jsx"
+	},
+	"references": [{ "path": "./tsconfig.node.json" }]
 }
