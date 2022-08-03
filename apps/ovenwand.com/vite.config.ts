@@ -1,14 +1,19 @@
 import { defineConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import basicSsl from '@vitejs/plugin-basic-ssl';
-
+// import react from '@vitejs/plugin-react';
 
 export default defineConfig({
 	legacy: { buildSsrCjsExternalHeuristics: true }, // TODO Hopefully remove one day
 
 	plugins: [
 		basicSsl(),
-		sveltekit(),
+		sveltekit()
+		// @vitejs/plugin-react throws with error about preamble, it seems to think
+		// vite is not handling the index.html
+		// react({
+		// 	include: '**/*.tsx'
+		// }),
 	],
 
 	envPrefix: ['VITE_', 'SENTRY_'], // TODO remove SENTRY_ from prefixes
@@ -23,7 +28,7 @@ export default defineConfig({
 	},
 
 	ssr: {
-		noExternal: ['@ovenwand/**'], // TODO hopefully remove one day?
+		noExternal: ['@ovenwand/**'] // TODO hopefully remove one day?
 	},
 
 	optimizeDeps: {
@@ -34,7 +39,15 @@ export default defineConfig({
 			// SSR seems to trip when it tries to load 'cookie', which is a
 			// dependency of @sentry/node. However '@sentry/node > cookie' does
 			// not seem to do the trick
-			'@sentry/node',
-		],
+			'@sentry/node'
+		]
 	},
+
+	resolve: {
+		dedupe: ['react', 'react-dom']
+	},
+
+	esbuild: {
+		jsxInject: `import React from 'react'`
+	}
 });
