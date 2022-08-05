@@ -1,13 +1,18 @@
 {
 	"name": "@ovenwand/tasks.ovenwand.com",
 	"version": "0.1.0",
+	"type": "module",
 	"private": true,
 	"scripts": {
+		"prepare": "svelte-kit sync",
 		"dev": "vite",
 		"build": "vite build",
-		"prepare": "svelte-kit sync",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
+		"dev:env": "kit env run vite",
+		"build:env": "kit env run vite build",
+		"package:env": "kit env run svelte-kit package",
+		"preview:env": "kit env run vite preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
@@ -30,6 +35,5 @@
 		"tslib": "^2.4.0",
 		"typescript": "next",
 		"vite": "^3.0.4"
-	},
-	"type": "module"
+	}
 }
