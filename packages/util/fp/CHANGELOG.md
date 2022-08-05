@@ -1,5 +1,11 @@
 # @ovenwand/util.fp
 
+## 0.1.3
+
+### Patch Changes
+
+- 013cd48: Add isString utility
+
 ## 0.1.2
 
 ### Patch Changes

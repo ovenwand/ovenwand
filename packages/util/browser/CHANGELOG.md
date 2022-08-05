@@ -1,5 +1,16 @@
 # @ovenwand/util.browser
 
+## 0.0.7
+
+### Patch Changes
+
+- 661fbae: - Pass mouseX and mouseY to update function
+  - Move mousemove listener to setup
+- Updated dependencies [013cd48]
+- Updated dependencies [70dcc1f]
+  - @ovenwand/util.fp@0.1.3
+  - @ovenwand/util.math@0.0.4
+
 ## 0.0.6
 
 ### Patch Changes
