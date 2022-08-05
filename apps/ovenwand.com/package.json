@@ -4,7 +4,6 @@
 	"type": "module",
 	"private": true,
 	"scripts": {
-		"prepare": "svelte-kit sync",
 		"dev": "vite",
 		"build": "vite build",
 		"package": "svelte-kit package",

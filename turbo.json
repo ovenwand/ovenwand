@@ -4,12 +4,12 @@
 	"pipeline": {
 		"build": {
 			"dependsOn": ["^build"],
-			"outputs": [".svelte-kit", ".vercel_build_output"]
+			"outputs": [".svelte-kit", ".vercel"]
 		},
 
 		"build:env": {
 			"dependsOn": ["^build"],
-			"outputs": [".svelte-kit", ".vercel_build_output"]
+			"outputs": [".svelte-kit", ".vercel"]
 		},
 
 		"preview": {
