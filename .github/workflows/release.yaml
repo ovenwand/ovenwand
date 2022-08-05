@@ -44,4 +44,4 @@ jobs:
           pnpm dlx @changesets/cli tag
       - name: Push release tags
         run: |
-          git push --tags origin
+          git push --tags
