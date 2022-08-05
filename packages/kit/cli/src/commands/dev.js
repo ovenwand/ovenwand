@@ -1,8 +1,12 @@
 import { createCommand } from '../utils/index.js';
+import { turbo } from '../utils/turbo.js';
 
-export const dev = createCommand(async (app, options) => {
+export const dev = createCommand(async (app, options, { paths }) => {
 	const command = options.env ? 'dev:env' : 'dev';
-	const filterArg = app ? ['--filter', `@ovenwand/${app}`] : [];
-	const forceArg = options.force ? ['--force'] : [];
-	await exec('turbo', ['run', command, ...filterArg, ...forceArg], { stdio: 'inherit' });
+
+	await turbo(['run', command], {
+		filter: app ? `@ovenwand/${app}` : false,
+		force: options.force,
+		paths
+	});
 });
