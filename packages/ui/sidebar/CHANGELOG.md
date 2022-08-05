@@ -1,5 +1,13 @@
 # @ovenwand/ui.sidebar
 
+## 0.1.3
+
+### Patch Changes
+
+- 6cbf783: Update sveltekit and typescript
+- Updated dependencies [6cbf783]
+  - @ovenwand/util.browser@0.0.6
+
 ## 0.1.2
 
 ### Patch Changes

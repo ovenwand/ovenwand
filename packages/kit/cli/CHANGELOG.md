@@ -1,5 +1,11 @@
 # @ovenwand/cli
 
+## 0.2.2
+
+### Patch Changes
+
+- 03a3006: Rename @ovenwand/cli to @ovenwand/kit.cli
+
 ## 0.2.1
 
 ### Patch Changes
