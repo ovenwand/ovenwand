@@ -59,17 +59,11 @@ export async function feature() {
 }
 
 const createFeatureCommand = (action) =>
-	createCommand(async (feature, status, options, command, context) => {
-		if (!context) {
-			context = command;
-			command = options;
-			options = status;
-		}
+	createCommand(async (commandArgs) => {
+		const context = commandArgs.pop();
+		let options = commandArgs.pop();
 
-		// TODO don't depend on _optionValues
-		options = { ...command.parent._optionValues, ...options };
-
-		const { args } = command;
+		const { args } = context.command;
 		const { paths } = context;
 
 		const params = {

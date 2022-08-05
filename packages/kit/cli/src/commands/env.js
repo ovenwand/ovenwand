@@ -23,17 +23,11 @@ export async function env() {
 }
 
 const createEnvCommand = (action) =>
-	createCommand(async (key, value, options, command, context) => {
-		if (!context) {
-			context = command;
-			command = options;
-			options = value;
-		}
+	createCommand(async (...commandArgs) => {
+		const context = commandArgs.pop();
+		let options = commandArgs.pop();
 
-		// TODO don't depend on _optionValues
-		options = { ...command.parent._optionValues, ...options };
-
-		const { args } = command;
+		const { args } = context.command;
 		const { paths } = context;
 
 		const params = {

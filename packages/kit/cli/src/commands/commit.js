@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import { createCommand, exec } from '../utils/index.js';
 
-export const commit = createCommand(async (options, command, { paths }) => {
+export const commit = createCommand(async (options, { paths }) => {
 	if (options.prepare) {
 		await exec('changeset', []);
 		await exec('git', ['add', resolve(paths.workspace, '.changeset')]);
