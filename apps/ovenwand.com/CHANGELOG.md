@@ -1,5 +1,13 @@
 # @ovenwand/ovenwand.com
 
+## 0.12.2
+
+### Patch Changes
+
+- 0283f56: Add experiments and sidebar links to navigation, guarded by features
+- c6c8d5f: Update lingering server routes to latest version of svelte-kit: replace old server routes called get instead of GET
+- acb8915: Add vue experiment
+
 ## 0.12.1
 
 ### Patch Changes
