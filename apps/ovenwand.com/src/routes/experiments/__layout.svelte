@@ -20,12 +20,20 @@
 		{
 			title: 'Marching squares',
 			href: '/experiments/marching-squares'
+		},
+		{
+			title: 'React',
+			href: '/experiments/react'
+		},
+		{
+			title: 'Vue',
+			href: '/experiments/vue'
 		}
 	];
 
 	let title: string | undefined;
 
-	$: title = experiments.find((e) => e.href === $page.url.pathname)?.title;
+	$: title = experiments.find((e) => $page.url.pathname.startsWith(e.href))?.title;
 
 	function anchorClass(experiment: { title: string; href: string }) {
 		return createClassName({
