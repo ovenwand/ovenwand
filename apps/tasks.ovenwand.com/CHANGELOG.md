@@ -1,5 +1,11 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.1.2
+
+### Patch Changes
+
+- 1cb6276: Update sveltekit and typescript
+
 ## 0.1.1
 
 ### Patch Changes

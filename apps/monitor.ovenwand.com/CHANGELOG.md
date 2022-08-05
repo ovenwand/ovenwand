@@ -1,5 +1,14 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.4.2
+
+### Patch Changes
+
+- 1cb6276: Update sveltekit and typescript
+  - @ovenwand/ui@0.0.8
+  - @ovenwand/app@0.1.8
+  - @ovenwand/util@0.0.9
+
 ## 0.4.1
 
 ### Patch Changes

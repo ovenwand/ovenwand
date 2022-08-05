@@ -1,5 +1,11 @@
 # @ovenwand/util.browser
 
+## 0.0.6
+
+### Patch Changes
+
+- 1cb6276: Update sveltekit and typescript
+
 ## 0.0.5
 
 ### Patch Changes
