@@ -1,4 +1,4 @@
-import { createTicker } from '@ovenwand/util.fp';
+import { createTicker, isNumber } from '@ovenwand/util.fp';
 import { color, PI } from '@ovenwand/util.math';
 
 export type FillStyle = string | CanvasGradient | CanvasPattern;
@@ -13,6 +13,12 @@ export interface Engine {
 
 export interface ISetupContext {
 	onClick(handler: (x: number, y: number) => unknown): void;
+	onMouseMove(handler: (x: number, y: number) => unknown): void;
+}
+
+export interface IUpdateContext {
+	mouseX: number;
+	mouseY: number;
 }
 
 export interface IDrawContext {
@@ -39,29 +45,54 @@ export function createEngine(canvas: HTMLCanvasElement): Engine {
 	const context: CanvasRenderingContext2D = canvas.getContext('2d') as CanvasRenderingContext2D;
 	let _update: () => void, _resume: () => void, _stop: () => void;
 
+	let mouseX = 0,
+		mouseY = 0;
+
 	function setup(setupFn: (context: ISetupContext) => void) {
-		function onClick(handler: (x: number, y: number) => unknown) {
-			canvas.addEventListener('click', (event) => {
-				const rect = canvas.getBoundingClientRect();
-				const x = event.clientX - rect.x;
-				const y = event.clientY - rect.y;
-				handler(x, y);
+		const listenerToMethodMap = {
+			click: 'onClick',
+			mousemove: 'onMouseMove'
+		};
+
+		const listeners: Record<string, ((x: number, y: number) => unknown)[]> = {};
+		const context: Partial<ISetupContext> = {};
+
+		for (const type of Object.keys(listenerToMethodMap)) {
+			canvas.addEventListener(type, (event: MouseEvent) => {
+				const { x, y } = canvas.getBoundingClientRect();
+				mouseX = event.clientX - x;
+				mouseY = event.clientY - y;
+
+				if (!listeners[type]) {
+					return;
+				}
+
+				for (const listener of listeners[type]) {
+					listener(mouseX, mouseY);
+				}
 			});
+
+			context[listenerToMethodMap[type]] = (listener) => {
+				if (!listeners[type]) {
+					listeners[type] = [];
+				}
+
+				listeners[type].push(listener);
+			};
 		}
 
-		setupFn({
-			onClick
-		});
+		setupFn(context as ISetupContext);
 	}
 
-	function update(updateFn: () => void): void {
-		_update = updateFn;
+	function update(updateFn: (context: IUpdateContext) => void): void {
+		_update = () =>
+			updateFn({
+				mouseX,
+				mouseY
+			});
 	}
 
 	function draw(drawFn: (context: IDrawContext) => void): void {
-		let mouseX = 0;
-		let mouseY = 0;
-
 		let fillStyle: FillStyle | null, previousFillStyle: FillStyle | null;
 		let strokeStyle: StrokeStyle | null, previousStrokeStyle: StrokeStyle | null;
 		let lineWidth: number, previousLineWidth: number;
@@ -120,7 +151,7 @@ export function createEngine(canvas: HTMLCanvasElement): Engine {
 		}
 
 		function fill(style: FillStyle | number, g?: number, b?: number, a?: number) {
-			fillStyle = typeof style === 'number' ? color(style, g, b, a) : style;
+			fillStyle = isNumber(style) ? color(style, g, b, a) : style;
 		}
 
 		function noFill() {
@@ -129,7 +160,7 @@ export function createEngine(canvas: HTMLCanvasElement): Engine {
 		}
 
 		function stroke(style: StrokeStyle | number, g?: number, b?: number, a?: number) {
-			strokeStyle = typeof style === 'number' ? color(style, g, b, a) : style;
+			strokeStyle = isNumber(style) ? color(style, g, b, a) : style;
 		}
 
 		function noStroke() {
@@ -225,15 +256,6 @@ export function createEngine(canvas: HTMLCanvasElement): Engine {
 				context.strokeText(text, x - width / 2, y - height / 2, maxWidth);
 			}
 		}
-
-		function onMouseMove(event: MouseEvent) {
-			const { clientX, clientY } = event;
-			const { x, y } = canvas.getBoundingClientRect();
-			mouseX = clientX - x;
-			mouseY = clientY - y;
-		}
-
-		canvas.addEventListener('mousemove', onMouseMove);
 
 		[_resume, _stop] = createTicker(() => {
 			if (_update) {
