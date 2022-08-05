@@ -1,5 +1,11 @@
 # @ovenwand/project
 
+## 0.4.2
+
+### Patch changes
+
+- check both previous release SHA and previous release tag SHA in ignore-build-step (allows redeploying releases)
+
 ## 0.4.1
 
 ### Patch changes
