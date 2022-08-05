@@ -1,4 +1,4 @@
-import { createCommand, exec } from '../utils/index.js';
+import { createCommand } from '../utils/index.js';
 
 export const dev = createCommand(async (app, options) => {
 	const command = options.env ? 'dev:env' : 'dev';
