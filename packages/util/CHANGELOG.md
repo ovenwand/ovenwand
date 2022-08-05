@@ -1,5 +1,12 @@
 # @ovenwand/util
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies [6cbf783]
+  - @ovenwand/util.browser@0.0.6
+
 ## 0.0.8
 
 ### Patch Changes

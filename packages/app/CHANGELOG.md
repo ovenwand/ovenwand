@@ -1,5 +1,14 @@
 # @ovenwand/app
 
+## 0.1.8
+
+### Patch Changes
+
+- Updated dependencies [6cbf783]
+  - @ovenwand/util.browser@0.0.6
+  - @ovenwand/ui@0.0.8
+  - @ovenwand/brand@0.0.3
+
 ## 0.1.7
 
 ### Patch Changes
