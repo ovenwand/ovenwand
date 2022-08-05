@@ -238,7 +238,7 @@ const seed = [
 	[40, 45]
 ];
 
-export function get(): ReturnType<RequestHandler> {
+export function GET(): ReturnType<RequestHandler> {
 	return {
 		body: { seed }
 	};

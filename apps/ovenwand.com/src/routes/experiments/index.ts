@@ -1,6 +1,6 @@
 import type { RequestHandlerOutput } from '@sveltejs/kit';
 
-export function get(): RequestHandlerOutput {
+export function GET(): RequestHandlerOutput {
 	return {
 		status: 301,
 
