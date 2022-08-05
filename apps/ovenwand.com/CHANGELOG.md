@@ -1,5 +1,11 @@
 # @ovenwand/ovenwand.com
 
+## 0.12.4
+
+### Patch Changes
+
+- 1cb6276: Update sveltekit and typescript
+
 ## 0.12.3
 
 ### Patch Changes
