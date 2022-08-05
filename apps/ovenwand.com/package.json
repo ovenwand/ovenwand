@@ -6,13 +6,13 @@
 	"scripts": {
 		"prepare": "svelte-kit sync",
 		"dev": "vite",
-		"dev:env": "doppler run -- vite",
 		"build": "vite build",
-		"build:env": "doppler run -- vite build",
 		"package": "svelte-kit package",
-		"package:env": "doppler run -- svelte-kit package",
 		"preview": "vite preview",
-		"preview:env": "doppler run -- vite preview",
+		"dev:env": "kit env run vite",
+		"build:env": "kit env run vite build",
+		"package:env": "kit env run svelte-kit package",
+		"preview:env": "kit env run vite preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},

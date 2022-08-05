@@ -4,13 +4,14 @@ import { createCommand, doppler } from '../utils/index.js';
 
 export async function env() {
 	const program = new Command('env')
-		.requiredOption('-p, --project <project>', '') // TODO allow omitting project param when running from project dir
+		.option('-p, --project <project>', 'only required executed outside a project dir') // TODO allow omitting project param when running from project dir
 		.option('-e, --env <environment>', '', process.env.NODE_ENV || 'development');
 
 	program
 		.addCommand(new Command('login').action(await createEnvCommand(login)))
 		.addCommand(new Command('logout').action(await createEnvCommand(logout)))
 		.addCommand(new Command('setup').action(await createEnvCommand(setup)))
+		.addCommand(new Command('run').action(await createEnvCommand(run)))
 		.addCommand(new Command('get').argument('<key>').action(await createEnvCommand(get)))
 		.addCommand(
 			new Command('set')
@@ -70,6 +71,16 @@ async function setup(params) {
 	});
 }
 
+async function run(params) {
+	const { args, options, paths } = params;
+
+	await doppler(['run', '--', ...args], {
+		project: options.project,
+		paths,
+		env: options.env
+	});
+}
+
 async function get(params) {
 	const { paths, options, args } = params;
 
@@ -117,6 +128,7 @@ async function set(params) {
 	console.log(
 		`
 project: ${options.project}
+env: ${options.env}
 name: ${args[0]}
 value: ${values[0]}
 `.trim()
