@@ -1,5 +1,27 @@
 # @ovenwand/cli
 
+## 0.2.1
+
+### Patch Changes
+
+- 58fb285: Add turbo utility and refactor dev, build and preview commands
+- 85aec87: Make createCommand more user-friendly
+
+  - Moves command object to context
+  - Automatically determines project from path
+  - Adds project to context
+  - Properly resolve env/feature command arguments
+
+- bb6d97e: Replace doppler with kit cli
+
+  - Adds `kit env run` command
+  - Replaces `doppler run` with `kit env run`
+  - Fixes pnpm \*:env commands not resolving correct doppler config
+
+  TODO prevent packages and apps from depending on kit cli
+
+- 2ac8d16: Prevent passing unused project and env to doppler run
+
 ## 0.2.0
 
 ### Minor Changes

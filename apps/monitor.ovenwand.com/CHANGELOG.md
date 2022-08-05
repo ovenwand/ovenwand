@@ -1,5 +1,17 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.4.1
+
+### Patch Changes
+
+- bb6d97e: Replace doppler with kit cli
+
+  - Adds `kit env run` command
+  - Replaces `doppler run` with `kit env run`
+  - Fixes pnpm \*:env commands not resolving correct doppler config
+
+  TODO prevent packages and apps from depending on kit cli
+
 ## 0.4.0
 
 ### Minor Changes
