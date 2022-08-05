@@ -1,5 +1,13 @@
 # @ovenwand/util.math
 
+## 0.0.4
+
+### Patch Changes
+
+- 70dcc1f: Fix alpha always being 0
+- Updated dependencies [013cd48]
+  - @ovenwand/util.fp@0.1.3
+
 ## 0.0.3
 
 ### Patch Changes

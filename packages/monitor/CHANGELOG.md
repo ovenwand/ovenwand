@@ -1,5 +1,12 @@
 # @ovenwand/monitor
 
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies [013cd48]
+  - @ovenwand/util.fp@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ovenwand/ui.grid
 
+## 0.0.7
+
+### Patch Changes
+
+- Updated dependencies [013cd48]
+- Updated dependencies [661fbae]
+  - @ovenwand/util.fp@0.1.3
+  - @ovenwand/util.browser@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

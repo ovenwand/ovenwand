@@ -1,5 +1,13 @@
 # @ovenwand/ui.notification
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [661fbae]
+  - @ovenwand/util.browser@0.0.7
+  - @ovenwand/ui.sheet@0.0.5
+
 ## 0.0.7
 
 ### Patch Changes
