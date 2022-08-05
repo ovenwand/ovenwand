@@ -1,15 +1,14 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util';
 	import { useFeatures } from '@ovenwand/app';
-	// import { useSidebar } from '@ovenwand/ui';
-	// import { isFeatureEnabled } from '$lib/features';
+	import { useSidebar } from '@ovenwand/ui';
 
 	const isFeatureEnabled = useFeatures();
 
 	let className: string | null = null;
 	export { className as class };
 
-	// const store = useSidebar();
+	const store = useSidebar();
 
 	const items = [
 		isFeatureEnabled('route.portfolio') && {
@@ -23,11 +22,15 @@
 		isFeatureEnabled('route.blog') && {
 			label: 'Blog',
 			href: '/blog'
+		},
+		isFeatureEnabled('route.experiments') && {
+			label: 'Experiments',
+			href: '/experiments'
+		},
+		isFeatureEnabled('ui.sidenav') && {
+			label: '::',
+			action: store.expand
 		}
-		// {
-		// 	label: '::',
-		// 	action: store.expand
-		// }
 	].filter(Boolean);
 
 	$: navClassName = createClassName({
@@ -43,10 +46,10 @@
 					<a href={item.href}>
 						{item.label}
 					</a>
-					<!--{:else}-->
-					<!--	<button on:click={() => item.action()}>-->
-					<!--		{item.label}-->
-					<!--	</button>-->
+				{:else}
+					<button on:click={() => item.action()}>
+						{item.label}
+					</button>
 				{/if}
 			</li>
 		{/each}
