@@ -9,7 +9,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"peerDependencies": {
-		"typescript": "^4.6.3"
+		"typescript": "next"
 	},
 	"dependencies": {
 		"@ovenwand/util.fp": "workspace:*",
