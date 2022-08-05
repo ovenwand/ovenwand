@@ -1,5 +1,5 @@
 {
-	"name": "@ovenwand/cli",
+	"name": "@ovenwand/kit.cli",
 	"version": "0.2.1",
 	"type": "module",
 	"bin": {
