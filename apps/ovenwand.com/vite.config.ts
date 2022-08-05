@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import basicSsl from '@vitejs/plugin-basic-ssl';
+import vue from '@vitejs/plugin-vue';
 // import react from '@vitejs/plugin-react';
 
 export default defineConfig({
@@ -8,6 +9,10 @@ export default defineConfig({
 
 	plugins: [
 		basicSsl(),
+		vue({
+			include: /^(.*)\.vue$/,
+			reactivityTransform: true
+		}),
 		sveltekit()
 		// @vitejs/plugin-react throws with error about preamble, it seems to think
 		// vite is not handling the index.html
