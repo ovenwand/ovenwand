@@ -1,5 +1,12 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.4.4
+
+### Patch Changes
+
+- Updated dependencies [d1f4ddd]
+  - @ovenwand/app@0.1.10
+
 ## 0.4.3
 
 ### Patch Changes
