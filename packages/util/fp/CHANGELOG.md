@@ -1,5 +1,11 @@
 # @ovenwand/util.fp
 
+## 0.1.4
+
+### Patch Changes
+
+- ddc991c: Add isBoolean utility
+
 ## 0.1.3
 
 ### Patch Changes

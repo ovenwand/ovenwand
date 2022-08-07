@@ -1,5 +1,12 @@
 # @ovenwand/ui.sidebar
 
+## 0.1.5
+
+### Patch Changes
+
+- @ovenwand/util.browser@0.0.8
+- @ovenwand/util.svelte@0.2.9
+
 ## 0.1.4
 
 ### Patch Changes

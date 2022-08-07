@@ -1,5 +1,12 @@
 # @ovenwand/util.math
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [ddc991c]
+  - @ovenwand/util.fp@0.1.4
+
 ## 0.0.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ovenwand/ui.grid
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [ddc991c]
+  - @ovenwand/util.fp@0.1.4
+  - @ovenwand/util.browser@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes

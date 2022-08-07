@@ -1,5 +1,15 @@
 # @ovenwand/util
 
+## 0.0.11
+
+### Patch Changes
+
+- Updated dependencies [ddc991c]
+  - @ovenwand/util.fp@0.1.4
+  - @ovenwand/util.browser@0.0.8
+  - @ovenwand/util.math@0.0.5
+  - @ovenwand/util.svelte@0.2.9
+
 ## 0.0.10
 
 ### Patch Changes

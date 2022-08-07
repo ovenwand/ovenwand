@@ -1,5 +1,11 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.1.3
+
+### Patch Changes
+
+- 3b08e6d: Lazy fetch task data
+
 ## 0.1.2
 
 ### Patch Changes
