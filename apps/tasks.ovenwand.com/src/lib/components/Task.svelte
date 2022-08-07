@@ -7,6 +7,7 @@
 	export let title: string;
 	export let description: string;
 	export let done: boolean;
+	export let placeholder = false;
 
 	const dispatch = createEventDispatcher();
 
@@ -14,6 +15,14 @@
 
 	$: taskClassName = createClassName({
 		'line-through': done
+	});
+
+	$: titleClassName = createClassName({
+		'w-44 bg-white leading-none my-1': placeholder
+	});
+
+	$: descriptionClassName = createClassName({
+		'w-60 bg-white leading-none my-1': placeholder
 	});
 
 	function onInput(event: Event) {
@@ -24,12 +33,12 @@
 
 <div id="task-{_id}" class="contents" use:draggable on:dragstart on:dragend on:click>
 	<Sheet class="flex mb-2 {taskClassName}" background padding rounded shadow>
-		<div class="flex pr-4 items-center jusify-center">
+		<div class="flex pr-4 items-center justify-center">
 			<input type="checkbox" bind:checked={done} on:input={onInput} />
 		</div>
 		<div class="flex flex-col flex-auto items-start">
-			<span>{title}</span>
-			<span>{description}</span>
+			<span class={titleClassName}>{title}</span>
+			<span class={descriptionClassName}>{description}</span>
 		</div>
 	</Sheet>
 </div>

@@ -1,11 +1,10 @@
 <script lang="ts">
 	import { Column, Grid } from '@ovenwand/ui';
-	import { type ILabel, type ITask, useTasks } from '$lib/store';
-	import { Task, TaskPool } from '$lib/components';
+	import { type ITask, useTasks } from '$lib/store';
+	import { ApplicationState, Task, TaskPool } from '$lib/components';
 
-	export let data: { labels: ILabel[]; tasks: ITask[] } = { labels: [], tasks: [] };
-
-	const { tasks } = useTasks(data.tasks);
+	const { all: getAllTasks } = useTasks();
+	const { tasks, loading, cache } = getAllTasks();
 
 	let query = '';
 
@@ -16,11 +15,12 @@
 	}
 </script>
 
+<ApplicationState busy={$loading} />
+
 <Grid relative class="h-full">
 	<Column>
 		<TaskPool class="h-full" title="Tasks" tasks={filteredTasks} let:task>
-			<Task interactive={false} {...task} />
-
+			<Task placeholder={$loading && !$cache.length} interactive={false} {...task} />
 			<svelte:fragment slot="footer">
 				<label class="flex">
 					<span class="mr-2">Search</span>

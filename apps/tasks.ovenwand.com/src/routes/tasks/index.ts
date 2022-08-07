@@ -41,7 +41,7 @@ export async function POST({
 	return {
 		body: {
 			errors,
-			data: data?.createTask?.data
+			data: mapDataToTask(data?.createTask?.data)
 		}
 	};
 }
@@ -64,7 +64,7 @@ export async function PATCH({
 	return {
 		body: {
 			errors,
-			data: data?.updateTask?.data
+			data: mapDataToTask(data?.updateTask?.data)
 		}
 	};
 }
@@ -81,7 +81,7 @@ export async function DELETE({
 	return {
 		body: {
 			errors,
-			data: data?.deleteTask?.data
+			data: mapDataToTask(data?.deleteTask?.data)
 		}
 	};
 }

@@ -1,9 +1,21 @@
+import { derived, writable } from 'svelte/store';
+import { isBoolean, noop } from '@ovenwand/util';
 import { useNotifications } from '@ovenwand/ui';
-import { addTask, removeTask, updateTask } from './mutations';
+import { browser } from '$app/env';
+import { addOrUpdateTask, addTask, removeTask, type TaskMutation, updateTask } from './mutations';
 import { tasks, type ITask } from './state';
 
 const { loading } = useNotifications();
-const { update } = tasks;
+const { update: _update } = tasks;
+
+let hasCache = false;
+
+const update = (mutation: TaskMutation) => {
+	return _update(($tasks) => {
+		hasCache = !!$tasks.length;
+		return mutation($tasks);
+	});
+};
 
 export async function saveTask(task: Partial<ITask>): Promise<void> {
 	const updateNotification = loading({ message: 'Saving task..' }, 3000);
@@ -118,4 +130,45 @@ export async function deleteTask(task: ITask): Promise<void> {
 	} else {
 		updateNotification({ type: 'error', message: 'Failed to delete task' }, 3000);
 	}
+}
+
+export function getTasks(shouldFetch?: boolean) {
+	const cache = { subscribe: tasks.subscribe };
+	const loading = writable(true);
+
+	shouldFetch = isBoolean(shouldFetch) ? shouldFetch : browser;
+
+	const tasksOrPlaceholders = derived([loading, cache], ([$loading, $cache]) => {
+		if ($loading && !hasCache) {
+			return [{}, {}, {}];
+		}
+
+		return $cache;
+	});
+
+	let response: Response;
+
+	const request =
+		browser || shouldFetch
+			? fetch('/tasks', { headers: { accept: 'application/json' } })
+					.then((res) => (response = res))
+					.then((res) => res.json())
+					.then((data) => data.data.tasks)
+					.then(($tasks) => {
+						loading.set(false);
+
+						for (const task of $tasks) {
+							update(addOrUpdateTask(task));
+						}
+
+						return response;
+					})
+			: new Promise(noop);
+
+	return {
+		loading: { subscribe: loading.subscribe },
+		tasks: { subscribe: tasksOrPlaceholders.subscribe },
+		request,
+		cache
+	};
 }

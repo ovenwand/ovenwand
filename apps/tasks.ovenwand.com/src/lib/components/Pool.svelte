@@ -2,11 +2,15 @@
 	import { createClassName, droppable } from '@ovenwand/util';
 	import { Sheet } from '@ovenwand/ui';
 
+	let className = '';
+	export { className as class };
+
 	export let title: string;
 
 	let highlight = false;
 
 	$: sheetClassName = createClassName({
+		[className]: className,
 		'bg-gray-300 dark:bg-gray-900': !highlight,
 		'bg-gray-400 dark:bg-gray-800': highlight,
 		'min-h-full p-2': true
@@ -30,5 +34,7 @@
 		{/if}
 
 		<slot />
+
+		<slot name="footer" />
 	</Sheet>
 </div>
