@@ -2,6 +2,8 @@
 
 DEBUG=${DEBUG:-0}
 
+commit_message="$VERCEL_GIT_COMMIT_MESSAGE"
+branch="$VERCEL_GIT_COMMIT_REF"
 previous_release_rev="$VERCEL_GIT_PREVIOUS_SHA"
 current_tag_rev=$(git describe --tags --abbrev=0 --contains --match "$1" 2>/dev/null)
 previous_tag_rev=$(git describe --tags --abbrev=0 ${current_tag_rev:+"--exclude" "$current_tag_rev"} --match "$1" 2>/dev/null)
@@ -38,12 +40,24 @@ if [ $DEBUG = "1" ]; then
   echo ""
 fi
 
-# The diff command fails when there are more than 10 commits since the previous release,
-# in that case we always trigger a deployment
-if [ "$since_previous_commit" = "0" ] && [ "$since_previous_release" = "0" ] && [ "$since_previous_tag" = "0" ]; then
+proceed() {
+    echo "✅ - Build can proceed"
+    exit 1
+}
+
+cancel() {
   echo "🛑 - Build cancelled"
   exit 0
-else
-  echo "✅ - Build can proceed"
-  exit 1
+}
+
+if \
+  # For master we only deploy releases
+  [[ "$branch" = "master" && "$commit_message" != "ci: release" ]] || \
+  # The diff command fails when there are more than 10 commits since the previous release,
+  # in that case we always trigger a deployment
+  [[ "$since_previous_commit" = "0" && "$since_previous_release" = "0" && "$since_previous_tag" = "0" ]];
+then
+  cancel
 fi
+
+proceed
