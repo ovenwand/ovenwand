@@ -1,5 +1,12 @@
 # @ovenwand/monitor
 
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies [ddc991c]
+  - @ovenwand/util.fp@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes

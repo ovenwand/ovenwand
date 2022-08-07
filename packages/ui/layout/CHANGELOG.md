@@ -1,5 +1,11 @@
 # @ovenwand/ui.layout
 
+## 0.2.5
+
+### Patch Changes
+
+- @ovenwand/util.browser@0.0.8
+
 ## 0.2.4
 
 ### Patch Changes

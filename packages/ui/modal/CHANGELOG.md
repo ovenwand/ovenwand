@@ -1,5 +1,14 @@
 # @ovenwand/ui.modal
 
+## 0.2.8
+
+### Patch Changes
+
+- @ovenwand/ui.grid@0.0.8
+- @ovenwand/ui.overlay@0.0.5
+- @ovenwand/ui.sheet@0.0.6
+- @ovenwand/util.svelte@0.2.9
+
 ## 0.2.7
 
 ### Patch Changes
