@@ -1,5 +1,11 @@
 # @ovenwand/cli
 
+## 0.2.2
+
+### Patch Changes
+
+- 51b2e61: Cleanup code smells
+
 ## 0.2.1
 
 ### Patch Changes

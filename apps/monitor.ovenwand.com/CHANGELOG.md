@@ -1,5 +1,11 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.4.5
+
+### Patch Changes
+
+- f80b525: Add loading state to charts
+
 ## 0.4.4
 
 ### Patch Changes
