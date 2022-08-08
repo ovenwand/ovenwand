@@ -5,7 +5,7 @@ export function GET(): RequestHandlerOutput {
 		status: 301,
 
 		headers: {
-			location: '/experiments/canvas'
+			location: '/experiments/canvas/game-of-life'
 		}
 	};
 }
