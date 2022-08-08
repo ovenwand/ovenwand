@@ -8,8 +8,8 @@
 	const yTicks = [0, 10, 20, 30, 40, 50];
 	const padding = { top: 20, right: 15, bottom: 20, left: 25 };
 
-	let width = 300;
-	let height = 200;
+	let width = 0;
+	let height = 250;
 
 	$: points = xTicks.map((tick) => {
 		const y = events.reduce((count, event) => {
@@ -43,29 +43,42 @@
 
 Page view monthly chart
 
-<div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
-	<svg>
-		<g class="axis y-axis" transform="translate(0, {padding.top})">
-			{#each yTicks as tick}
-				<g class="tick tick-{tick}" transform="translate(0, {yScale(tick) - padding.bottom})">
-					<line x2="100%" />
-					<text y="-4">{tick}</text>
-				</g>
-			{/each}
-		</g>
+<div class="chart" bind:clientWidth={width}>
+	{#if width && height}
+		<svg class="h-[{height}px]">
+			<g class="axis y-axis" transform="translate(0, {padding.top})">
+				{#each yTicks as tick}
+					<g class="tick tick-{tick}" transform="translate(0, {yScale(tick) - padding.bottom})">
+						<line x2="100%" />
+						<text y="-4">{tick}</text>
+					</g>
+				{/each}
+			</g>
 
-		<g class="axis x-axis">
-			{#each xTicks as tick}
-				<g class="tick tick-{tick}" transform="translate({xScale(tick)},{height})">
-					<line y1="-{height}" y2="-{padding.bottom}" x1="0" x2="0" />
-					<text y="-2">{tick}</text>
-				</g>
-			{/each}
-		</g>
+			<g class="axis x-axis">
+				{#each xTicks as tick}
+					<g class="tick tick-{tick}" transform="translate({xScale(tick)},{height})">
+						<line y1="-{height}" y2="-{padding.bottom}" x1="0" x2="0" />
+						<text y="-2">{tick}</text>
+					</g>
+				{/each}
+			</g>
 
-		<path class="path-area" d={area} />
-		<path class="path-line" d={path} />
-	</svg>
+			<path class="path-area" d={area} />
+			<path class="path-line" d={path} />
+		</svg>
+	{:else}
+		<div
+			class="
+				 flex
+				 items-center
+				 justify-center
+				 h-[{height}px]
+			"
+		>
+			Loading...
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -79,7 +92,6 @@ Page view monthly chart
 	svg {
 		position: relative;
 		width: 100%;
-		height: 200px;
 		overflow: visible;
 	}
 

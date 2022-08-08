@@ -19,8 +19,8 @@
 		6: 'Saturday'
 	};
 
-	let width = 300;
-	let height = 200;
+	let width = 0;
+	let height = 250;
 
 	$: points = xTicks.map((tick) => {
 		const y = events.reduce((y, event) => {
@@ -50,38 +50,51 @@
 
 Page views by day of the week chart
 
-<div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
-	<svg>
-		<!-- y axis -->
-		<g class="axis y-axis">
-			{#each yTicks as tick}
-				<g class="tick tick-{tick}" transform="translate(0, {yScale(tick)})">
-					<line x2="100%" />
-					<text y="-4">{tick}</text>
-				</g>
-			{/each}
-		</g>
+<div class="chart" bind:clientWidth={width}>
+	{#if width}
+		<svg class="h-[{height}px]">
+			<!-- y axis -->
+			<g class="axis y-axis">
+				{#each yTicks as tick}
+					<g class="tick tick-{tick}" transform="translate(0, {yScale(tick)})">
+						<line x2="100%" />
+						<text y="-4">{tick}</text>
+					</g>
+				{/each}
+			</g>
 
-		<!-- x axis -->
-		<g class="axis x-axis">
-			{#each points as point, i}
-				<g class="tick" transform="translate({xScale(i)},{height})">
-					<text x={barWidth / 2} y="-4">{labels[point.x]}</text>
-				</g>
-			{/each}
-		</g>
+			<!-- x axis -->
+			<g class="axis x-axis">
+				{#each points as point, i}
+					<g class="tick" transform="translate({xScale(i)},{height})">
+						<text x={barWidth / 2} y="-4">{labels[point.x]}</text>
+					</g>
+				{/each}
+			</g>
 
-		<g class="bars">
-			{#each points as point, i}
-				<rect
-					x={xScale(i) + 2}
-					y={yScale(point.y)}
-					width={barWidth - 4}
-					height={yScale(0) - yScale(point.y)}
-				/>
-			{/each}
-		</g>
-	</svg>
+			<g class="bars">
+				{#each points as point, i}
+					<rect
+						x={xScale(i) + 2}
+						y={yScale(point.y)}
+						width={barWidth - 4}
+						height={yScale(0) - yScale(point.y)}
+					/>
+				{/each}
+			</g>
+		</svg>
+	{:else}
+		<div
+			class="
+				 flex
+				 items-center
+				 justify-center
+				 h-[{height}px]
+			"
+		>
+			Loading...
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -94,7 +107,6 @@ Page views by day of the week chart
 	svg {
 		position: relative;
 		width: 100%;
-		height: 200px;
 	}
 
 	.tick {
