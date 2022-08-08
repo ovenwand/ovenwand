@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import { createCommand, exec } from '../utils/index.js';
 
-export const install = createCommand(async (options, { paths }) => {
+export const install = createCommand(async (_options, { paths }) => {
 	const configDir = resolve(paths.kit, 'config');
 	await exec('mkdir', ['-p', configDir]);
 

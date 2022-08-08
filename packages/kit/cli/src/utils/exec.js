@@ -5,16 +5,16 @@ export async function exec(command, args, options = {}) {
 		let output = '';
 		let error = '';
 
-		const result = (code, output, error) => ({
+		const result = (code) => ({
 			ok: code === 0,
 			code,
 			output,
 			error
 		});
 
-		const next = (resolve, reject) => {
-			child.on('error', reject);
-			child.on('close', (code) => resolve(result(code, output, error)));
+		const next = (resolveNext, rejectNext) => {
+			child.on('error', rejectNext);
+			child.on('close', (code) => resolveNext(result(code, output, error)));
 		};
 
 		const child = spawn(command, args, { stdio: 'inherit', ...options });
