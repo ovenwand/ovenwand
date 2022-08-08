@@ -1,5 +1,11 @@
 # @ovenwand/ovenwand.com
 
+## 0.12.5
+
+### Patch Changes
+
+- d7785ff: Add Vue reactivity experiment
+
 ## 0.12.4
 
 ### Patch Changes
