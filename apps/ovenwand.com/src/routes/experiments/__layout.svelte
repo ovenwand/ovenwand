@@ -6,20 +6,24 @@
 
 	const experiments = [
 		{
+			title: 'Canvas',
+			href: '/experiments/canvas'
+		},
+		{
 			title: 'Pendulum',
-			href: '/experiments/pendulum'
+			href: '/experiments/canvas/pendulum'
 		},
 		{
 			title: 'Star field',
-			href: '/experiments/star-field'
+			href: '/experiments/canvas/star-field'
 		},
 		{
 			title: 'Game of life',
-			href: '/experiments/game-of-life'
+			href: '/experiments/canvas/game-of-life'
 		},
 		{
 			title: 'Marching squares',
-			href: '/experiments/marching-squares'
+			href: '/experiments/canvas/marching-squares'
 		},
 		{
 			title: 'React',
@@ -28,6 +32,10 @@
 		{
 			title: 'Vue',
 			href: '/experiments/vue'
+		},
+		{
+			title: 'Vue reactivity',
+			href: '/experiments/vue/reactivity'
 		}
 	];
 
