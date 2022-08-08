@@ -14,7 +14,7 @@ export async function exec(command, args, options = {}) {
 
 		const next = (resolveNext, rejectNext) => {
 			child.on('error', rejectNext);
-			child.on('close', (code) => resolveNext(result(code, output, error)));
+			child.on('close', (code) => resolveNext(result(code)));
 		};
 
 		const child = spawn(command, args, { stdio: 'inherit', ...options });
