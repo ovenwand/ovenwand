@@ -1,5 +1,14 @@
 # @ovenwand/cli
 
+## 0.2.3
+
+### Patch Changes
+
+- 6f082b0: Allow passing args to turbo commands
+
+      - Pass args from dev/build/preview commands to turbo
+      - Split up turbo args and command args
+
 ## 0.2.2
 
 ### Patch Changes
