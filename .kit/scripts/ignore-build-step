@@ -6,7 +6,7 @@ path="$(readlink -f $1)"
 
 commit_message="${VERCEL_GIT_COMMIT_MESSAGE:-"$(git --no-pager show -s --format='%s' HEAD)"}"
 branch="${VERCEL_GIT_COMMIT_REF:-"$(git branch --show-current)"}"
-previous_release_revs=$(git rev-list -2 --grep="$RELEASE_COMMIT_MESSAGE" HEAD 2>/dev/null)
+previous_release_revs=$(git rev-list -2 --grep="$RELEASE_COMMIT_MESSAGE" HEAD^ 2>/dev/null)
 previous_release_rev=$(echo "$previous_release_revs" | head -n 1)
 previous_release_rev_2=$(echo "$previous_release_revs" | tail -n 1)
 previous_commit_rev='HEAD^'
