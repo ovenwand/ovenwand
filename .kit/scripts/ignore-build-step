@@ -16,11 +16,11 @@ current_release_history=$(git --no-pager log --color=always -s --oneline "$previ
 previous_release_history=$(git --no-pager log --color=always -s --oneline "$previous_release_rev_2"..."$previous_release_rev")
 
 echo ""
-echo "Trying to deploy:"
+echo "Trying to deploy \"$branch\":"
 echo "$current_release_history" | sed 's/^/  /'
 echo ""
 
-echo "Previous release was:"
+echo "Previous release:"
 echo "$previous_release_history" | sed 's/^/  /'
 echo ""
 
@@ -49,21 +49,27 @@ else
   echo "$diff_since_previous_release" | sed 's/^/  /'
 fi
 
-if \
-  # For master we only deploy releases
-  [[ "$branch" != "master" ]] || \
-  [[ "$branch" = "master" && "$commit_message" != "$RELEASE_COMMIT_MESSAGE" ]] && \
-  # The diff command fails when there are more than 10 commits since the previous release,
-  # in that case we always trigger a deployment
-  [[ "$since_previous_commit" = "0" && "$since_previous_release" = "0" ]];
-then
+proceed=1
+
+# For master we only deploy releases
+if [[ "$branch" = "master" && "$commit_message" != "$RELEASE_COMMIT_MESSAGE" ]]; then
+  proceed=0
+fi
+
+# The diff command fails when there are more than 10 commits since the previous release,
+# in that case we always trigger a deployment
+if [[ "$since_previous_commit" = "0" && "$since_previous_release" = "0" ]]; then
+  proceed=0
+fi
+
+if [[ "$proceed" = "0" ]]; then
   echo ""
   echo "🛑 - Build cancelled"
   echo ""
   exit 0
+else
+  echo ""
+  echo "✅ - Build can proceed"
+  echo ""
+  exit 1
 fi
-
-echo ""
-echo "✅ - Build can proceed"
-echo ""
-exit 1
