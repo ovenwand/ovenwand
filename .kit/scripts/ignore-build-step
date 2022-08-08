@@ -15,11 +15,6 @@ previous_commit_sha="$(git rev-parse HEAD^)"
 current_release_history=$(git --no-pager log --color=always -s --oneline "$previous_release_rev"...HEAD)
 previous_release_history=$(git --no-pager log --color=always -s --oneline "$previous_release_rev_2"..."$previous_release_rev")
 
-diff_since_previous_commit=$(git --no-pager diff --color=always --name-status HEAD "$previous_commit_rev" "$1")
-since_previous_commit=$?
-diff_since_previous_release=$(git --no-pager diff --color=always --name-status HEAD "$previous_commit_rev" "$1")
-since_previous_release=$?
-
 echo ""
 echo "Trying to deploy:"
 echo "$current_release_history" | sed 's/^/  /'
@@ -31,6 +26,9 @@ echo ""
 
 echo "Checking diffs for \"$path\"..."
 
+diff_since_previous_commit=$(git --no-pager diff --color=always --name-status HEAD "$previous_commit_rev" "$1")
+since_previous_commit=$(git diff --quiet HEAD "$previous_commit_rev" "$1" 2>/dev/null ; echo "$?")
+
 if [[ -z "$diff_since_previous_commit" ]]; then
   echo "No diff since previous commit ($previous_commit_sha)."
 else
@@ -39,6 +37,9 @@ else
   echo "$diff_since_previous_commit" | sed 's/^/  /'
   echo ""
 fi
+
+diff_since_previous_release=$(git --no-pager diff --color=always --name-status HEAD "$previous_commit_rev" "$1")
+since_previous_release=$(git diff --quiet HEAD "$previous_commit_rev" "$1" 2>/dev/null ; echo "$?")
 
 if [[ -z "$diff_since_previous_release" ]]; then
   echo "No diff found since previous release ($previous_release_rev)."
