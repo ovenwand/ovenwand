@@ -1,55 +1,67 @@
 #!/bin/bash
 
-DEBUG=${DEBUG:-0}
+RELEASE_COMMIT_MESSAGE=${RELEASE_COMMIT_MESSAGE:-"ci: release"}
 
-commit_message="$VERCEL_GIT_COMMIT_MESSAGE"
-branch="$VERCEL_GIT_COMMIT_REF"
-previous_release_rev="$VERCEL_GIT_PREVIOUS_SHA"
-current_tag_rev=$(git describe --tags --abbrev=0 --contains --match "$1" 2>/dev/null)
-previous_tag_rev=$(git describe --tags --abbrev=0 ${current_tag_rev:+"--exclude" "$current_tag_rev"} --match "$1" 2>/dev/null)
-previous_tag_child_rev=$(git rev-list --reverse --ancestry-path "$previous_tag_rev..HEAD" 2>/dev/null | head -n 1)
+path="$1"
+
+commit_message="${VERCEL_GIT_COMMIT_MESSAGE:-"$(git --no-pager show -s --format='%s' HEAD)"}"
+branch="${VERCEL_GIT_COMMIT_REF:-"$(git branch --show-current)"}"
+previous_release_revs=$(git rev-list -2 --grep="$RELEASE_COMMIT_MESSAGE" HEAD 2>/dev/null)
+previous_release_rev=$(echo "$previous_release_revs" | head -n 1)
+previous_release_rev_2=$(echo "$previous_release_revs" | tail -n 1)
 previous_commit_rev='HEAD^'
+previous_commit_sha="$(git rev-parse HEAD^)"
 
-since_previous_commit=$(git diff --quiet HEAD "$previous_commit_rev" "$2" 2>/dev/null ; echo $?)
-since_previous_release=$(git diff --quiet HEAD "$previous_release_rev^" "$2" 2>/dev/null ; echo $?)
-since_previous_tag=$(git diff --quiet HEAD "$previous_tag_child_rev" "$2" 2>/dev/null ; echo $?)
+current_release_history=$(git --no-pager log --color=always -s --oneline "$previous_release_rev"...HEAD)
+previous_release_history=$(git --no-pager log --color=always -s --oneline "$previous_release_rev_2"..."$previous_release_rev")
 
-if [ $DEBUG = "1" ]; then
-  echo "current_tag_rev:"
-  echo "  command: git describe --tags --abbrev=0 --contains --match \"$1\" 2>/dev/null"
-  echo "  result: $current_tag_rev"
+diff_since_previous_commit=$(git --no-pager diff --color=always --name-status HEAD "$previous_commit_rev" "$1")
+since_previous_commit=$?
+diff_since_previous_release=$(git --no-pager diff --color=always --name-status HEAD "$previous_commit_rev" "$1")
+since_previous_release=$?
+
+echo ""
+echo "Trying to deploy:"
+echo "$current_release_history" | sed 's/^/  /'
+echo ""
+
+echo "Previous release was:"
+echo "$previous_release_history" | sed 's/^/  /'
+echo ""
+
+echo "Checking diffs for \"$path\"..."
+
+if [[ -z "$diff_since_previous_commit" ]]; then
+  echo "No diff since previous commit ($previous_commit_sha)."
+else
   echo ""
-
-  echo "previous_tag_rev:"
-  echo "  command: git describe --tags --abbrev=0 ${current_tag_rev:+"--exclude" "$current_tag_rev"} --match \"$1\" 2>/dev/null"
-  echo "  result: $previous_tag_rev"
+  echo "Since previous commit ($previous_commit_sha):"
+  echo "$diff_since_previous_commit" | sed 's/^/  /'
   echo ""
+fi
 
-  echo "previous_tag_child_rev:"
-  echo "  command: git rev-list --reverse --ancestry-path \"$previous_tag_rev..HEAD\" 2>/dev/null | head -n 1"
-  echo "  result: $previous_tag_child_rev"
+if [[ -z "$diff_since_previous_release" ]]; then
+  echo "No diff found since previous release ($previous_release_rev)."
+else
   echo ""
-
-  echo "result:"
-  echo "  command: git diff --quiet HEAD \"$previous_commit_rev\" \"$2\" 2>/dev/null ; echo \$?"
-  echo "  since_previous_commit: $since_previous_commit"
-  echo "  command: git diff --quiet HEAD \"$previous_release_rev^\" \"$2\" 2>/dev/null ; echo \$?"
-  echo "  since_previous_release: $since_previous_release"
-  echo "  command: git diff --quiet HEAD \"$previous_tag_child_rev\" \"$2\" 2>/dev/null ; echo \$?"
-  echo "  since_previous_tag: $since_previous_tag"
-  echo ""
+  echo "Since previous release ($previous_release_rev):"
+  echo "$diff_since_previous_release" | sed 's/^/  /'
 fi
 
 if \
   # For master we only deploy releases
-  [[ "$branch" = "master" && "$commit_message" != "ci: release" ]] || \
+  [[ "$branch" = "master" && "$commit_message" != "$RELEASE_COMMIT_MESSAGE" ]] || \
   # The diff command fails when there are more than 10 commits since the previous release,
   # in that case we always trigger a deployment
-  [[ "$since_previous_commit" = "0" && "$since_previous_release" = "0" && "$since_previous_tag" = "0" ]];
+  [[ "$since_previous_commit" = "0" && "$since_previous_release" = "0" ]];
 then
+  echo ""
   echo "🛑 - Build cancelled"
+  echo ""
   exit 0
 fi
 
+echo ""
 echo "✅ - Build can proceed"
+echo ""
 exit 1
