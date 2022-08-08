@@ -50,7 +50,8 @@ fi
 
 if \
   # For master we only deploy releases
-  [[ "$branch" = "master" && "$commit_message" != "$RELEASE_COMMIT_MESSAGE" ]] || \
+  [[ "$branch" != "master" ]] || \
+  [[ "$branch" = "master" && "$commit_message" != "$RELEASE_COMMIT_MESSAGE" ]] && \
   # The diff command fails when there are more than 10 commits since the previous release,
   # in that case we always trigger a deployment
   [[ "$since_previous_commit" = "0" && "$since_previous_release" = "0" ]];
