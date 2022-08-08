@@ -1,5 +1,11 @@
 # @ovenwand/ovenwand.com
 
+## 0.12.6
+
+### Patch Changes
+
+- 1d769ff: Move canvas experiments to /experiments/canvas
+
 ## 0.12.5
 
 ### Patch Changes
