@@ -1,5 +1,5 @@
 import { derived, writable } from 'svelte/store';
-import { isBoolean, noop } from '@ovenwand/util';
+import { isBoolean, isNull, noop } from '@ovenwand/util';
 import { useNotifications } from '@ovenwand/ui';
 import { browser } from '$app/env';
 import { addOrUpdateTask, addTask, removeTask, type TaskMutation, updateTask } from './mutations';
@@ -61,7 +61,7 @@ export async function saveTask(task: Partial<ITask>): Promise<void> {
 }
 
 export async function moveTask(task: ITask, fromLabel: string, toLabel: string): Promise<void> {
-	if (fromLabel === toLabel || toLabel === null) {
+	if (fromLabel === toLabel || isNull(toLabel)) {
 		return;
 	}
 
