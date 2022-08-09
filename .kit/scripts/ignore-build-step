@@ -38,8 +38,8 @@ else
   echo ""
 fi
 
-diff_since_previous_release=$(git --no-pager diff --color=always --name-status HEAD "$previous_commit_rev" "$1")
-since_previous_release=$(git diff --quiet HEAD "$previous_commit_rev" "$1" 2>/dev/null ; echo "$?")
+diff_since_previous_release=$(git --no-pager diff --color=always --name-status HEAD "$previous_release_rev" "$1")
+since_previous_release=$(git diff --quiet HEAD "$previous_release_rev" "$1" 2>/dev/null ; echo "$?")
 
 if [[ -z "$diff_since_previous_release" ]]; then
   echo "No diff found since previous release ($previous_release_rev)."
