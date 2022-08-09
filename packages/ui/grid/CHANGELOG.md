@@ -1,5 +1,15 @@
 # @ovenwand/ui.grid
 
+## 0.0.9
+
+### Patch Changes
+
+- 48f81a1: Replace equality checks with utils
+- Updated dependencies [b78e216]
+- Updated dependencies [14fa7a7]
+  - @ovenwand/util.browser@0.0.9
+  - @ovenwand/util.fp@0.1.5
+
 ## 0.0.8
 
 ### Patch Changes

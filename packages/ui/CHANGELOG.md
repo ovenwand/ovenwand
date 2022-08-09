@@ -1,5 +1,19 @@
 # @ovenwand/ui
 
+## 0.0.11
+
+### Patch Changes
+
+- Updated dependencies [48f81a1]
+  - @ovenwand/ui.grid@0.0.9
+  - @ovenwand/ui.button@0.3.5
+  - @ovenwand/ui.layout@0.2.6
+  - @ovenwand/ui.notification@0.0.10
+  - @ovenwand/ui.overlay@0.0.6
+  - @ovenwand/ui.sheet@0.0.7
+  - @ovenwand/ui.sidebar@0.1.6
+  - @ovenwand/ui.modal@0.2.9
+
 ## 0.0.10
 
 ### Patch Changes

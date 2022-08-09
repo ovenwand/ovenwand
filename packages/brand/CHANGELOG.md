@@ -1,5 +1,11 @@
 # @ovenwand/brand
 
+## 0.0.6
+
+### Patch Changes
+
+- @ovenwand/brand.logo@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes
