@@ -1,4 +1,5 @@
 import { createStyle } from '@ovenwand/util.browser';
+import { isNumber, isNullish, isString, isUndefined } from '@ovenwand/util.fp';
 
 export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
@@ -12,22 +13,23 @@ export function createColumnStyle(
 	};
 
 	// Update column span
-	if (typeof columns === 'number' || typeof columns === 'string') {
+	if (isNumber(columns) || isString(columns)) {
 		styleMap['--ow-columns-xs'] = columns;
-	} else if (columns != null) {
+	} else if (!isNullish(columns)) {
 		for (const breakpoint of Object.keys(columns) as Breakpoint[]) {
 			styleMap[`--ow-columns-${breakpoint}`] = columns[breakpoint];
 		}
 	}
 
 	// Update column offset
-	if (typeof offset === 'number') {
+	if (isNumber(offset)) {
 		styleMap['--ow-column-offset-xs'] = offset + 1;
-	} else if (offset != null) {
+	} else if (!isNullish(offset)) {
 		for (const breakpoint of Object.keys(offset) as Breakpoint[]) {
 			const currentBreakpoint = offset[breakpoint];
-			styleMap[`--ow-column-offset-${breakpoint}`] =
-				typeof currentBreakpoint !== 'undefined' ? currentBreakpoint + 1 : undefined;
+			styleMap[`--ow-column-offset-${breakpoint}`] = !isUndefined(currentBreakpoint)
+				? currentBreakpoint + 1
+				: undefined;
 		}
 	}
 
