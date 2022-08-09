@@ -1,5 +1,14 @@
 # @ovenwand/util.browser
 
+## 0.0.9
+
+### Patch Changes
+
+- b78e216: Replace nullish check with util
+- Updated dependencies [14fa7a7]
+  - @ovenwand/util.fp@0.1.5
+  - @ovenwand/util.math@0.0.6
+
 ## 0.0.8
 
 ### Patch Changes

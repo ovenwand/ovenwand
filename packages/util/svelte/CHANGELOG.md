@@ -1,5 +1,11 @@
 # @ovenwand/util.svelte
 
+## 0.2.10
+
+### Patch Changes
+
+- @ovenwand/util.math@0.0.6
+
 ## 0.2.9
 
 ### Patch Changes

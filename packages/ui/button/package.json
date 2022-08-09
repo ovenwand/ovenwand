@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui.button",
-	"version": "0.3.4",
+	"version": "0.3.5",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",

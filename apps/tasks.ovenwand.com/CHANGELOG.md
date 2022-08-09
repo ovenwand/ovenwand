@@ -1,5 +1,11 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.1.4
+
+### Patch Changes
+
+- b8842e9: Replace null check with util
+
 ## 0.1.3
 
 ### Patch Changes

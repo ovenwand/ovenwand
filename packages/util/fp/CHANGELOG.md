@@ -1,5 +1,15 @@
 # @ovenwand/util.fp
 
+## 0.1.5
+
+### Patch Changes
+
+- 14fa7a7: Add new equality utils
+
+      - isUndefined
+      - isNull
+      - isNullish
+
 ## 0.1.4
 
 ### Patch Changes
