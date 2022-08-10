@@ -9,6 +9,7 @@ import {
 	feature,
 	install,
 	preview,
+	release,
 	run,
 	setup
 } from './commands/index.js';
@@ -55,9 +56,12 @@ export async function createKitCLI() {
 	program
 		.command('commit')
 		.argument('<action>', '')
-		// .option('-p, --prepare', 'prepare commit')
-		// .option('-l, --lint <path>', 'lint commit message')
 		.action(await commit);
+
+	program
+		.command('release')
+		.argument('<action>', '')
+		.action(await release);
 
 	program.addCommand(await env());
 	program.addCommand(await feature());
