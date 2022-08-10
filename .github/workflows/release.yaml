@@ -30,6 +30,6 @@ jobs:
         with:
           commit: 'ci: release'
           title: 'Release'
-          publish: 'changeset tag'
+          publish: 'pnpm exec kit release tag'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
