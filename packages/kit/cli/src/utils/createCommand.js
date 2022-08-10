@@ -1,4 +1,4 @@
-import { relative, resolve } from "path";
+import { relative, resolve } from 'path';
 import findWorkspaceDir from '@pnpm/find-workspace-dir';
 
 export async function createCommand(command) {
@@ -39,5 +39,5 @@ export async function createCommand(command) {
 		}
 
 		return command(...args, options, context);
-	}
+	};
 }

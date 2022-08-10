@@ -11,7 +11,8 @@ export function color(...args: [number | string, number?, number?, number?]): st
 	args = args.filter(isNumber) as typeof args;
 
 	const numArgs = args.length;
-	let [r, g, b, a = 1] = args as number[];
+	const r = args.unshift();
+	let [g, b, a = 1] = args;
 
 	if (numArgs === 1 || numArgs === 2) {
 		// 'Grayscale' mode.

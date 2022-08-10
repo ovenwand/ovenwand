@@ -4,9 +4,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 export default defineConfig({
 	legacy: { buildSsrCjsExternalHeuristics: true }, // TODO Hopefully remove one day
 
-	plugins: [
-		sveltekit()
-	],
+	plugins: [sveltekit()],
 
 	define: {
 		'import.meta.env.APP_VERSION': JSON.stringify(process.env.npm_package_version)
@@ -17,6 +15,6 @@ export default defineConfig({
 	},
 
 	ssr: {
-		noExternal: ['@ovenwand/**'], // TODO hopefully remove one day?
-	},
+		noExternal: ['@ovenwand/**'] // TODO hopefully remove one day?
+	}
 });

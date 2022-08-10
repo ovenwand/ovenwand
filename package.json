@@ -15,7 +15,7 @@
 		"test:e2e": "run() { exit_code=$?; cypress $1 ${@:2} || exit $exit_code; }; run",
 		"lint:eslint": "eslint",
 		"lint:prettier": "prettier --plugin-search-dir=.",
-		"lint": "run() { pnpm lint:prettier --check \"$@\" ; pnpm lint:eslint \"$@\" }",
+		"lint": "run() { pnpm lint:prettier --check \"$@\" ; pnpm lint:eslint \"$@\" }; run",
 		"format": "run() { pnpm lint:prettier --write \"$@\" ; pnpm lint:eslint --fix \"$@\"; }; run",
 		"check": "run() { pnpm --filter @ovenwand/$1 check ${@:2}; }; run",
 		"ci:test": "pnpm test:unit run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b"
@@ -29,7 +29,9 @@
 		"cypress": "^9.7.0",
 		"eslint": "^8.20.0",
 		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-react": "^7.30.1",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"eslint-plugin-vue": "^9.3.0",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
 		"svelte": "^3.49.0",
@@ -37,8 +39,10 @@
 		"vite": "^3.0.4"
 	},
 	"lint-staged": {
-		"*.{js,ts,svelte,css,md,json}": "pnpm lint:prettier --write",
-		"*.{js,ts,svelte}": "pnpm lint:eslint --cache --fix"
+		"*.{js,ts,svelte,vue,svelte,css,md,json}": "pnpm lint:prettier --write",
+		"*.{js,ts,svelte}": "pnpm lint:eslint --cache --fix",
+		"*.{vue}": "pnpm lint:eslint --config .eslint.vue.cjs --cache --fix",
+		"*.{jsx,tsx}": "pnpm lint:eslint --config .eslint.react.cjs --cache --fix"
 	},
 	"author": "Ovenwand (info@ovenwand.com)",
 	"license": "WTFPL",

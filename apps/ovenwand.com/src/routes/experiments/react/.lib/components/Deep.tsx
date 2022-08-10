@@ -1,9 +1,7 @@
 import { useId } from 'react';
 
 export function Deep({ state }) {
-  console.log('render Deep', useId());
+	console.log('render Deep', useId());
 
-  return (
-    <h2 onClick={() => state.deep++}>Deep: {state.deep}</h2>
-  );
+	return <h2 onClick={() => state.deep++}>Deep: {state.deep}</h2>;
 }
