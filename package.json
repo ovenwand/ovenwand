@@ -38,8 +38,7 @@
 	},
 	"lint-staged": {
 		"*.{js,ts,svelte,css,md,json}": "pnpm lint:prettier --write",
-		"*.{js,ts,svelte}": "pnpm lint:eslint --cache --fix",
-		"packages/**/*.{js,ts,svelte}": "pnpm test run"
+		"*.{js,ts,svelte}": "pnpm lint:eslint --cache --fix"
 	},
 	"author": "Ovenwand (info@ovenwand.com)",
 	"license": "WTFPL",
