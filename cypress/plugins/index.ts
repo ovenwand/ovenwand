@@ -16,9 +16,6 @@ import { startDevServer } from '@cypress/vite-dev-server';
 
 const viteConfig = {
 	configFile: path.resolve('vite.config.ts'),
-	server: {
-		port: 3001
-	}
 };
 
 /**
