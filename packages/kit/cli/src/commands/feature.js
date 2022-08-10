@@ -59,7 +59,7 @@ export async function feature() {
 }
 
 const createFeatureCommand = (action) =>
-	createCommand(async (commandArgs) => {
+	createCommand(async (...commandArgs) => {
 		const context = commandArgs.pop();
 		let options = commandArgs.pop();
 
