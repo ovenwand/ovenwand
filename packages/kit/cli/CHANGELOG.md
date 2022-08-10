@@ -1,5 +1,13 @@
 # @ovenwand/cli
 
+## 0.2.5
+
+### Patch Changes
+
+- 7d22dcb: Remove commitlint from commit command
+- 506603d: Add release command
+- f6ee86d: Replace commit command options with an argument
+
 ## 0.2.4
 
 ### Patch Changes
