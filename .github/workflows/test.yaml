@@ -48,7 +48,6 @@ jobs:
         with:
           install: false
           command: pnpm exec cypress run-ct
-
 #      - name: Run end-to-end tests
 #        uses: cypress-io/github-action@v4
 #        with:
