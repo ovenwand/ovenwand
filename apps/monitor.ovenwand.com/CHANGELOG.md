@@ -1,5 +1,11 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.4.7
+
+### Patch Changes
+
+- 3306d86: Hardcode chart height
+
 ## 0.4.6
 
 ### Patch Changes

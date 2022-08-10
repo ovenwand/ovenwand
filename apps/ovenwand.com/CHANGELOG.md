@@ -1,5 +1,12 @@
 # @ovenwand/ovenwand.com
 
+## 0.12.7
+
+### Patch Changes
+
+- dc39ed8: Improve readability of vue experiment context
+- 090ba55: Add syntax highlighting to blog
+
 ## 0.12.6
 
 ### Patch Changes
