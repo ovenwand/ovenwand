@@ -54,8 +54,9 @@ export async function createKitCLI() {
 
 	program
 		.command('commit')
-		.option('-p, --prepare', 'prepare commit')
-		.option('-l, --lint <path>', 'lint commit message')
+		.argument('<action>', '')
+		// .option('-p, --prepare', 'prepare commit')
+		// .option('-l, --lint <path>', 'lint commit message')
 		.action(await commit);
 
 	program.addCommand(await env());
