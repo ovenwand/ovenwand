@@ -1,22 +1,22 @@
 import { reactive } from 'vue';
 
-const context: Record<string, Record<string, unknown>> = {};
+const contextCache: Record<string, Record<string, unknown>> = {};
 
 function setContext(key: string, data: Record<string, unknown>) {
-	const cache = context[key];
-	const ref = cache ?? reactive(data);
+	const cache = contextCache[key];
+	const context = cache ?? reactive(data);
 
 	if (cache) {
 		for (const key of Object.keys(data)) {
-			ref[key] = data[key];
+			context[key] = data[key];
 		}
 	} else {
-		context[key] = ref;
+		contextCache[key] = context;
 	}
 
-	return ref;
+	return context;
 }
 
-export function useContext(): [typeof setContext, typeof context] {
-	return [setContext, context];
+export function useContext(): [typeof setContext, typeof contextCache] {
+	return [setContext, contextCache];
 }
