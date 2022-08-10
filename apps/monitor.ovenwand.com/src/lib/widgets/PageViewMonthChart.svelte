@@ -45,7 +45,7 @@ Page view monthly chart
 
 <div class="chart" bind:clientWidth={width}>
 	{#if width && height}
-		<svg class="h-[{height}px]">
+		<svg class="h-[250px]">
 			<g class="axis y-axis" transform="translate(0, {padding.top})">
 				{#each yTicks as tick}
 					<g class="tick tick-{tick}" transform="translate(0, {yScale(tick) - padding.bottom})">
@@ -73,7 +73,7 @@ Page view monthly chart
 				 flex
 				 items-center
 				 justify-center
-				 h-[{height}px]
+				 h-[250px]
 			"
 		>
 			Loading...
