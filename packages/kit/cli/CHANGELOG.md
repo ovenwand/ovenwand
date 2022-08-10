@@ -1,5 +1,11 @@
 # @ovenwand/cli
 
+## 0.2.4
+
+### Patch Changes
+
+- 8003d66: Fix missing spread operator in createFeatureCommand
+
 ## 0.2.3
 
 ### Patch Changes
