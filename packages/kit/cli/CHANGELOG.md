@@ -1,5 +1,11 @@
 # @ovenwand/cli
 
+## 0.2.6
+
+### Patch Changes
+
+- 54e1e0d: Fix dev, build, preview command not passing arguments when no app is passed
+
 ## 0.2.5
 
 ### Patch Changes
