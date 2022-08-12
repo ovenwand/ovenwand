@@ -1,6 +1,5 @@
 {
 	"name": "@ovenwand/project",
-	"version": "0.4.2",
 	"description": "Monolithic project containing all ovenwand related packages/projects",
 	"main": "index.js",
 	"type": "module",
