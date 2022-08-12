@@ -1,9 +1,9 @@
 {
 	"compilerOptions": {
-		"moduleResolution": "nodenext",
-		"module": "es2020",
-		"lib": ["es2020", "DOM"],
-		"target": "es2020",
+		"moduleResolution": "NodeNext",
+		"module": "ESNext",
+		"lib": ["ESNext", "DOM"],
+		"target": "ESNext",
 		"importsNotUsedAsValues": "error",
 		"preserveValueImports": true,
 		"isolatedModules": true,
