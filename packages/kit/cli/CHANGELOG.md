@@ -1,5 +1,13 @@
 # @ovenwand/cli
 
+## 0.3.1
+
+### Patch Changes
+
+- 494f870: Add lint command
+- Updated dependencies [494f870]
+  - @ovenwand/kit.lint@0.0.1
+
 ## 0.3.0
 
 ### Minor Changes
