@@ -1,5 +1,11 @@
 # @ovenwand/config
 
+## 0.1.7
+
+### Patch Changes
+
+- 2ec0e1b: Fix casing in tsconfig.json
+
 ## 0.1.6
 
 ### Patch Changes
