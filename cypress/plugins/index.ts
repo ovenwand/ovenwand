@@ -15,7 +15,7 @@ import * as path from 'path';
 import { startDevServer } from '@cypress/vite-dev-server';
 
 const viteConfig = {
-	configFile: path.resolve('vite.config.ts'),
+	configFile: path.resolve('vite.config.ts')
 };
 
 /**
