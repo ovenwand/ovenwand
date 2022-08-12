@@ -1,4 +1,4 @@
-import { relative, resolve } from 'path';
+import { relative, resolve } from 'node:path';
 import findWorkspaceDir from '@pnpm/find-workspace-dir';
 
 export async function createCommand(command) {

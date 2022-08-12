@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import { createCommand, exec } from '../utils/index.js';
 
 export const commit = createCommand(async (action, _options, { paths }) => {

@@ -1,0 +1,17 @@
+{
+	"name": "@ovenwand/kit.scaffold",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"main": "./src/index.js",
+	"exports": {
+		".": "./src/index.js",
+		"./plopfile.js": "./src/plopfile.js"
+	},
+	"devDependencies": {
+		"@ovenwand/config": "workspace:*"
+	},
+	"dependencies": {
+		"plop": "^3.1.1"
+	}
+}

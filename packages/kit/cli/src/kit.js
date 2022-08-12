@@ -1,5 +1,5 @@
+import { createRequire } from 'node:module';
 import { program } from 'commander';
-import { createRequire } from 'module';
 import { getApps } from './utils/index.js';
 import {
 	build,
@@ -11,6 +11,7 @@ import {
 	preview,
 	release,
 	run,
+	scaffold,
 	setup
 } from './commands/index.js';
 
@@ -65,6 +66,7 @@ export async function createKitCLI() {
 
 	program.addCommand(await env());
 	program.addCommand(await feature());
+	program.addCommand(await scaffold());
 
 	return (argv) => program.parse(argv);
 }
