@@ -6,7 +6,7 @@
 	"scripts": {
 		"prepare": "kit install",
 		"setup": "kit setup",
-		"clean": "pnpm --silent dlx rimraf **/node_modules && pnpm --filter @ovenwand/* clean",
+		"clean": "pnpm --silent dlx rimraf **/node_modules",
 		"dev": "kit dev",
 		"build": "kit build",
 		"preview": "kit preview",

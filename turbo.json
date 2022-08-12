@@ -28,6 +28,11 @@
 
 		"dev:env": {
 			"cache": false
+		},
+
+		"clean": {
+			"dependsOn": ["//#clean"],
+			"cache": false
 		}
 	}
 }
