@@ -1,5 +1,5 @@
 import { resolve } from 'node:path';
-import { createCommand, exec } from '../utils/index.js';
+import { createCommand, exec } from '../utils';
 
 export const install = createCommand(async (_options, { paths }) => {
 	const configDir = resolve(paths.kit, 'config');

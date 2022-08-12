@@ -2,7 +2,7 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Command } from 'commander';
 import { plop } from '@ovenwand/kit.scaffold';
-import { createCommand, exec, fileExists } from '../utils/index.js';
+import { createCommand, exec, fileExists } from '../utils';
 
 export async function scaffold() {
 	const program = new Command('scaffold')

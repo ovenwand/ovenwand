@@ -1,9 +1,9 @@
 import { spawn } from 'child_process';
 
-export async function exec(command, args, options = {}) {
+export async function exec(command, args = [], options = {}) {
 	return new Promise((resolve, reject) => {
 		let output = '';
-		let error = '';
+		const error = '';
 
 		const result = (code) => ({
 			ok: code === 0,

@@ -3,7 +3,7 @@
 	"version": "0.2.6",
 	"type": "module",
 	"bin": {
-		"kit": "./src/index.js",
+		"kit": "./bin/kit.js",
 		"changeset": "./node_modules/@changesets/cli/bin.js",
 		"turbo": "./node_modules/turbo/bin/turbo",
 		"commitlint": "./node_modules/@commitlint/cli/cli.js",
@@ -13,6 +13,8 @@
 		"@changesets/cli": "^2.24.1",
 		"@commitlint/cli": "^17.0.3",
 		"@commitlint/config-conventional": "^17.0.3",
+		"@esbuild-kit/esm-loader": "^2.4.2",
+		"@ovenwand/config": "workspace:*",
 		"@ovenwand/kit.scaffold": "workspace:*",
 		"@pnpm/find-workspace-dir": "^4.0.2",
 		"commander": "^9.4.0",

@@ -1,5 +1,5 @@
-import { createCommand } from '../utils/index.js';
-import { turbo } from '../utils/turbo.js';
+import { createCommand } from '../utils';
+import { turbo } from '../utils/turbo';
 
 export const dev = createCommand(async (app, options, { command, paths }) => {
 	const arg = options.env ? 'dev:env' : 'dev';
