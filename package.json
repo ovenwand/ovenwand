@@ -43,7 +43,7 @@
 	"lint-staged": {
 		"*.{js,ts,svelte,vue,svelte,css,md,json}": "pnpm lint:prettier --write",
 		"*.{js,ts,svelte}": "pnpm lint:eslint --cache --fix",
-		"*.{vue}": "pnpm lint:eslint --config .eslint.vue.cjs --cache --fix",
+		"*.vue": "pnpm lint:eslint --config .eslint.vue.cjs --cache --fix",
 		"*.{jsx,tsx}": "pnpm lint:eslint --config .eslint.react.cjs --cache --fix"
 	},
 	"author": "Ovenwand (info@ovenwand.com)",
