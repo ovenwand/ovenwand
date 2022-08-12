@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import { createCommand, exec } from '../utils/index.js';
 
 export const run = createCommand(async (script, _options, { command, paths }) => {

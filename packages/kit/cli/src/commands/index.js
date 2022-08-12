@@ -8,3 +8,4 @@ export * from './release.js';
 export * from './run.js';
 export * from './env.js';
 export * from './feature.js';
+export * from './scaffold.js';
