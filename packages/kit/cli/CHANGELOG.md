@@ -1,5 +1,18 @@
 # @ovenwand/cli
 
+## 0.5.0
+
+### Minor Changes
+
+- b445af2: Migrate from js to ts
+
+### Patch Changes
+
+- Updated dependencies [1b3535e]
+- Updated dependencies [2ec0e1b]
+  - @ovenwand/kit.scaffold@0.3.0
+  - @ovenwand/config@0.1.7
+
 ## 0.4.0
 
 ### Minor Changes

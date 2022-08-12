@@ -1,5 +1,11 @@
 # @ovenwand/kit.scaffold
 
+## 0.3.0
+
+### Minor Changes
+
+- 1b3535e: Migrate from js to ts
+
 ## 0.2.0
 
 ### Minor Changes
