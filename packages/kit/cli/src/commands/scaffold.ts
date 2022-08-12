@@ -29,7 +29,7 @@ const createScaffold = () =>
 
 		const plopfile = fileURLToPath(await import.meta.resolve('@ovenwand/kit.scaffold/plopfile.js'));
 
-		if (options.updatePlopfile || !(await fileExists(plopfile))) {
+		if (options.updatePlopfile || !(await fileExists(params.config))) {
 			await exec('cp', [plopfile, params.config]);
 		}
 

@@ -1,14 +1,5 @@
-{
-  "name": "{{ namespace }}/{{ name }}",
-  "version": "0.0.1",
-  "private": true,
-  "type": "module",
-  "main": "./{{ src }}/index.{{ language }}",
-  "exports": {
-    ".": "./{{ src }}/index.{{ language }}"
-  },
-  "devDependencies": {
-    "@ovenwand/config": "workspace:*"{{#equals language 'ts'}},
-    "typescript": "next"{{/equals}}
-  }
-}
+{ "name": "{{namespace}}/{{name}}", "version": "0.0.1", "private": true, "type": "module", "main":
+"./{{src}}/index.{{language}}", "exports": { ".": "./{{src}}/index.{{language}}" },
+"devDependencies": { "@ovenwand/config": "workspace:*"{{#equals language 'ts'}}, "typescript":
+	"next"{{/equals}}
+} }

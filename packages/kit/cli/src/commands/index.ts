@@ -9,3 +9,4 @@ export * from './run';
 export * from './env';
 export * from './feature';
 export * from './scaffold';
+export * from './lint';

@@ -8,6 +8,7 @@ import {
 	env,
 	feature,
 	install,
+	lint,
 	preview,
 	release,
 	run,
@@ -67,6 +68,7 @@ export async function createKitCLI() {
 	program.addCommand(await env());
 	program.addCommand(await feature());
 	program.addCommand(await scaffold());
+	program.addCommand(await lint());
 
 	return (argv) => program.parse(argv);
 }
