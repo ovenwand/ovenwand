@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
 import { Command } from 'commander';
-import { createCommand, doppler } from '../utils/index.js';
+import { createCommand, doppler } from '../utils';
 
 export async function env() {
 	const program = new Command('env')
@@ -26,7 +26,7 @@ export async function env() {
 const createEnvCommand = (action) =>
 	createCommand(async (...commandArgs) => {
 		const context = commandArgs.pop();
-		let options = commandArgs.pop();
+		const options = commandArgs.pop();
 
 		const { args } = context.command;
 		const { paths } = context;

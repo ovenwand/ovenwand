@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
 import { Command } from 'commander';
-import { createCommand, doppler } from '../utils/index.js';
+import { createCommand, doppler } from '../utils';
 
 const ENV_FEATURE_KEY = 'VITE_FEATURE_FLAGS';
 
@@ -61,7 +61,7 @@ export async function feature() {
 const createFeatureCommand = (action) =>
 	createCommand(async (...commandArgs) => {
 		const context = commandArgs.pop();
-		let options = commandArgs.pop();
+		const options = commandArgs.pop();
 
 		const { args } = context.command;
 		const { paths } = context;

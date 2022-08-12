@@ -1,6 +1,6 @@
 import { createRequire } from 'node:module';
 import { program } from 'commander';
-import { getApps } from './utils/index.js';
+import { getApps } from './utils';
 import {
 	build,
 	commit,
@@ -13,7 +13,7 @@ import {
 	run,
 	scaffold,
 	setup
-} from './commands/index.js';
+} from './commands';
 
 const require = createRequire(import.meta.url);
 const pkg = require('../package.json');

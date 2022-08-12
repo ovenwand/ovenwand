@@ -1,4 +1,4 @@
-import { createCommand, exec } from '../utils/index.js';
+import { createCommand, exec } from '../utils';
 
 export const release = createCommand(async (action) => {
 	if (action === 'tag') {
