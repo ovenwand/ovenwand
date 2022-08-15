@@ -1,5 +1,11 @@
 # @ovenwand/util.math
 
+## 0.0.7
+
+### Patch Changes
+
+- 6e2a471: Replace unshift with shift
+
 ## 0.0.6
 
 ### Patch Changes

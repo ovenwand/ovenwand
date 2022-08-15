@@ -1,5 +1,12 @@
 # @ovenwand/ui.notification
 
+## 0.0.11
+
+### Patch Changes
+
+- @ovenwand/util.browser@0.0.10
+- @ovenwand/ui.sheet@0.0.8
+
 ## 0.0.10
 
 ### Patch Changes

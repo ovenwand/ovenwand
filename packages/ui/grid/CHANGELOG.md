@@ -1,5 +1,11 @@
 # @ovenwand/ui.grid
 
+## 0.0.10
+
+### Patch Changes
+
+- @ovenwand/util.browser@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes
