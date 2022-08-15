@@ -55,47 +55,52 @@ const createLint = () =>
 async function prepareConfigurations(params) {
 	const { options } = params;
 
-	const eslintConfig = fileURLToPath(await import.meta.resolve('@ovenwand/kit.lint/.eslintrc.cjs'));
-	const eslintReactConfig = fileURLToPath(
-		await import.meta.resolve('@ovenwand/kit.lint/.eslintrc.react.cjs')
-	);
-	const eslintSvelteConfig = fileURLToPath(
-		await import.meta.resolve('@ovenwand/kit.lint/.eslintrc.svelte.cjs')
-	);
-	const eslintVueConfig = fileURLToPath(
-		await import.meta.resolve('@ovenwand/kit.lint/.eslintrc.vue.cjs')
-	);
-	const eslintIgnore = fileURLToPath(await import.meta.resolve('@ovenwand/kit.lint/.eslintignore'));
-	const prettierConfig = fileURLToPath(await import.meta.resolve('@ovenwand/kit.lint/.prettierrc'));
-	const prettierIgnore = fileURLToPath(
-		await import.meta.resolve('@ovenwand/kit.lint/.prettierignore')
-	);
-
 	if (options.updateConfig || !(await fileExists(params.eslintConfig))) {
+		const eslintConfig = fileURLToPath(
+			await import.meta.resolve('@ovenwand/kit.lint/.eslintrc.cjs')
+		);
 		await exec('cp', [eslintConfig, params.eslintConfig]);
 	}
 
 	if (options.updateConfig || !(await fileExists(params.eslintReactConfig))) {
+		const eslintReactConfig = fileURLToPath(
+			await import.meta.resolve('@ovenwand/kit.lint/.eslintrc.react.cjs')
+		);
 		await exec('cp', [eslintReactConfig, params.eslintReactConfig]);
 	}
 
 	if (options.updateConfig || !(await fileExists(params.eslintSvelteConfig))) {
+		const eslintSvelteConfig = fileURLToPath(
+			await import.meta.resolve('@ovenwand/kit.lint/.eslintrc.svelte.cjs')
+		);
 		await exec('cp', [eslintSvelteConfig, params.eslintSvelteConfig]);
 	}
 
 	if (options.updateConfig || !(await fileExists(params.eslintVueConfig))) {
+		const eslintVueConfig = fileURLToPath(
+			await import.meta.resolve('@ovenwand/kit.lint/.eslintrc.vue.cjs')
+		);
 		await exec('cp', [eslintVueConfig, params.eslintVueConfig]);
 	}
 
 	if (options.updateConfig || !(await fileExists(params.eslintIgnore))) {
+		const eslintIgnore = fileURLToPath(
+			await import.meta.resolve('@ovenwand/kit.lint/.eslintignore')
+		);
 		await exec('cp', [eslintIgnore, params.eslintIgnore]);
 	}
 
 	if (options.updateConfig || !(await fileExists(params.prettierConfig))) {
+		const prettierConfig = fileURLToPath(
+			await import.meta.resolve('@ovenwand/kit.lint/.prettierrc')
+		);
 		await exec('cp', [prettierConfig, params.prettierConfig]);
 	}
 
 	if (options.updateConfig || !(await fileExists(params.prettierIgnore))) {
+		const prettierIgnore = fileURLToPath(
+			await import.meta.resolve('@ovenwand/kit.lint/.prettierignore')
+		);
 		await exec('cp', [prettierIgnore, params.prettierIgnore]);
 	}
 }

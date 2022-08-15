@@ -27,9 +27,10 @@ const createScaffold = () =>
 			paths
 		};
 
-		const plopfile = fileURLToPath(await import.meta.resolve('@ovenwand/kit.scaffold/plopfile.ts'));
-
 		if (options.updatePlopfile || !(await fileExists(params.config))) {
+			const plopfile = fileURLToPath(
+				await import.meta.resolve('@ovenwand/kit.scaffold/plopfile.ts')
+			);
 			await exec('cp', [plopfile, params.config]);
 		}
 
