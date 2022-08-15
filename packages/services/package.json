@@ -12,7 +12,8 @@
 		"@ovenwand/config": "workspace:*"
 	},
 	"dependencies": {
-		"@ovenwand/services.faunadb": "workspace:*"
+		"@ovenwand/services.faunadb": "workspace:*",
+		"@ovenwand/services.sentry": "workspace:*"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"

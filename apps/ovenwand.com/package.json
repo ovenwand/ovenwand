@@ -21,6 +21,7 @@
 		"@ovenwand/config": "workspace:*",
 		"@ovenwand/env": "workspace:*",
 		"@ovenwand/monitor": "workspace:*",
+		"@ovenwand/services.sentry": "workspace:*",
 		"@ovenwand/ui": "workspace:*",
 		"@ovenwand/util": "workspace:*",
 		"@ovenwand/util.date": "workspace:*",
