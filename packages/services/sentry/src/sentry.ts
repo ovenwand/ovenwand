@@ -34,15 +34,8 @@ export function captureException(error: Error, createEvent: (scope: Scope) => Ev
 
 export function configureSentry(options: NodeOptions = {}) {
 	init({
-		enabled: Boolean(Number(import.meta.env.SENTRY_ENABLED)),
-		dsn: import.meta.env.SENTRY_DSN,
-		environment: import.meta.env.VITE_VERCEL_ENV || 'development',
-		release: import.meta.env.VITE_VERCEL_GIT_COMMIT_SHA || 'local',
-
-		// integrations: [
-		// enable HTTP calls tracing
-		// new Sentry.Integrations.Http({ breadcrumbs:true, tracing: true }),
-		// ],
+		environment: options.environment || 'development',
+		release: options.release || 'local',
 
 		// We recommend adjusting this value in production, or using tracesSampler
 		// for finer control
