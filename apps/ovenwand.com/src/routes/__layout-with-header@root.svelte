@@ -1,12 +1,14 @@
 <script lang="ts">
 	import '../app.css';
-	import { Layout } from '@ovenwand/app';
-	import { ApplicationSidebar, Header } from '$lib/components';
+	import { Header, Layout } from '@ovenwand/app';
+	import { ApplicationSidebar, Navigation } from '$lib/components';
 </script>
 
 <Layout header>
 	<svelte:fragment slot="before-content">
-		<Header />
+		<Header>
+			<Navigation/>
+		</Header>
 	</svelte:fragment>
 
 	<slot />
