@@ -1,5 +1,15 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.4.9
+
+### Patch Changes
+
+- Updated dependencies [d183b23]
+  - @ovenwand/monitor@0.2.0
+  - @ovenwand/util@0.0.14
+  - @ovenwand/app@0.1.13
+  - @ovenwand/ui@0.0.13
+
 ## 0.4.8
 
 ### Patch Changes

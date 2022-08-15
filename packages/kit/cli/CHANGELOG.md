@@ -1,5 +1,16 @@
 # @ovenwand/cli
 
+## 0.3.2
+
+### Patch Changes
+
+- 7ce49ae: Optimise file commands
+- Updated dependencies [c9e8781]
+- Updated dependencies [d5b9126]
+- Updated dependencies [594ba62]
+- Updated dependencies [28e2765]
+  - @ovenwand/kit.scaffold@0.1.1
+
 ## 0.3.1
 
 ### Patch Changes

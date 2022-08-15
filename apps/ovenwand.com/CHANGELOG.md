@@ -1,5 +1,11 @@
 # @ovenwand/ovenwand.com
 
+## 0.12.8
+
+### Patch Changes
+
+- bed6dda: Replace base/footer/header with components from @ovenwand/app
+
 ## 0.12.7
 
 ### Patch Changes
