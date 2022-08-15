@@ -8,10 +8,10 @@ export function color(...args: [number | string, number?, number?, number?]): st
 		return args[0];
 	}
 
-	args = args.filter(isNumber) as typeof args;
+	args = args.filter(isNumber) as number[];
 
 	const numArgs = args.length;
-	const r = args.unshift();
+	const r = args.shift();
 	let [g, b, a = 1] = args;
 
 	if (numArgs === 1 || numArgs === 2) {
