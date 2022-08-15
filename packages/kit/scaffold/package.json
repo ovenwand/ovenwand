@@ -6,7 +6,7 @@
 	"main": "./src/index.ts",
 	"exports": {
 		".": "./src/index.ts",
-		"./plopfile.js": "./src/plopfile.ts"
+		"./plopfile.ts": "./src/plopfile.ts"
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:*"

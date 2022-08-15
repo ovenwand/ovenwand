@@ -21,13 +21,13 @@ const createScaffold = () =>
 		const { paths } = context;
 
 		const params = {
-			config: resolve(paths.kit, 'config', 'plopfile.js'),
+			config: resolve(paths.kit, 'config', 'plopfile.ts'),
 			args,
 			options,
 			paths
 		};
 
-		const plopfile = fileURLToPath(await import.meta.resolve('@ovenwand/kit.scaffold/plopfile.js'));
+		const plopfile = fileURLToPath(await import.meta.resolve('@ovenwand/kit.scaffold/plopfile.ts'));
 
 		if (options.updatePlopfile || !(await fileExists(params.config))) {
 			await exec('cp', [plopfile, params.config]);
