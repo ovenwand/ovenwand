@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
-	import { Layout } from '@ovenwand/app';
-	import { ApplicationSidebar, Footer } from '$lib/components';
+	import { Footer, Layout } from '@ovenwand/app';
+	import { ApplicationSidebar } from '$lib/components';
 </script>
 
 <Layout footer>
