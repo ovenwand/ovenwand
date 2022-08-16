@@ -1,6 +1,7 @@
 import type { RequestEvent, RequestHandlerOutput } from '@sveltejs/kit';
-import { gql, type Data, type Errors } from '@ovenwand/services.faunadb';
+import type { Data, Errors } from '@ovenwand/services.faunadb';
 import type { ILabel, ILabelData, ITask, ITaskData } from '$lib/store';
+import { gql } from '$lib/database';
 import { CreateTask, DeleteTask, UpdateTask, FindAllTasks } from '$lib/database/queries';
 import { mapDataToTask } from '$lib/store/tasks/utils';
 
