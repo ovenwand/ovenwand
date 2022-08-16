@@ -1,9 +1,9 @@
 import { promises as fsp } from 'node:fs';
-import { fauna, type FaunaImportMode } from './request';
+import { request, type FaunaImportMode } from './gql';
 
 export async function importSchema(schemaPath: string, mode: FaunaImportMode = 'merge') {
 	const schema = await fsp.readFile(schemaPath);
-	const response = await fauna(`/import`, { mode, schema });
+	const response = await request(`/import`, { mode, schema });
 	const result = await response.text();
 
 	if (!response.ok) {
