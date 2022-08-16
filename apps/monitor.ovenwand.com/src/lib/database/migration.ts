@@ -1,13 +1,13 @@
 import { join, resolve } from 'node:path';
 import { useQueue } from '@ovenwand/util';
 import {
-	client,
 	CreateOrUpdateFunction,
 	CreateOrUpdateRole,
 	importSchema,
 	type FaunaImportMode,
 	type Definition
 } from '@ovenwand/services.faunadb';
+import { client } from '$lib/database';
 import * as resolverMap from './resolvers';
 import * as roleMap from './roles';
 import schemaUrl from './schema.gql?url';

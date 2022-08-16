@@ -1,4 +1,4 @@
-import { gql } from '@ovenwand/services.faunadb';
+import { gql } from '$lib/database';
 import { deleteSessionCookie } from '$lib/session';
 
 export async function POST() {
