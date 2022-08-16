@@ -1,5 +1,6 @@
 import { join, resolve } from 'path';
-import { client, importSchema, q, type Expr } from '@ovenwand/services.faunadb';
+import { importSchema, q, type Definition } from '@ovenwand/services.faunadb';
+import { client } from '$lib/database';
 import * as resolverMap from './resolvers';
 import schemaUrl from './schema.gql?url';
 
@@ -7,7 +8,7 @@ const schemaPath = join(resolve(), schemaUrl);
 const queue: Promise<unknown>[] = [];
 const resolvers = Object.values(resolverMap);
 
-function updateFunction(definition: { name: string; body: Expr }) {
+function updateFunction(definition: Definition) {
 	const { name } = definition;
 	return client.query(
 		q.If(
