@@ -1,11 +1,5 @@
-import faunadb from 'faunadb';
+import { Client, type ClientConfig } from 'faunadb';
 
-const { Client } = faunadb;
-
-function createClient() {
-	return new Client({
-		secret: import.meta.env.VITE_FAUNA_KEY
-	});
+export function createClient(options: ClientConfig) {
+	return new Client(options);
 }
-
-export const client = createClient();
