@@ -1,5 +1,5 @@
 import type { RequestEvent } from '@sveltejs/kit';
-import { gql } from '@ovenwand/services.faunadb';
+import { gql } from '$lib/database';
 import type { IEvent } from '$lib/store';
 
 export async function POST({ request }: RequestEvent) {

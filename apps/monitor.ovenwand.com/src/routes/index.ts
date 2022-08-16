@@ -1,5 +1,6 @@
 import type { RequestEvent } from '@sveltejs/kit';
-import { gql, type Data } from '@ovenwand/services.faunadb';
+import type { Data } from '@ovenwand/services.faunadb';
+import { gql } from '$lib/database';
 import type { IEventData, IProject, IProjectData } from '$lib/store';
 
 const FindAllProjects = `
@@ -35,7 +36,9 @@ export async function GET({ locals }: RequestEvent) {
 		{
 			size: 20
 		},
-		locals.token
+		{
+			secret: locals.token
+		}
 	);
 
 	// if (errors?.length) {
