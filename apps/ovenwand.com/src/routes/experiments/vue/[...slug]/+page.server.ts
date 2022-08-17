@@ -1,10 +1,10 @@
 import type { RequestEvent } from '@sveltejs/kit';
 import { renderToString } from 'vue/server-renderer';
-import { createServerApp } from './.lib/app';
-import App from './.lib/App.vue';
+import { createServerApp } from '../.lib/app';
+import App from '../.lib/App.vue';
 
 // TODO optimize to skip rendering of the app html when we're just fetching data
-export async function GET(event: RequestEvent) {
+export async function load(event: RequestEvent) {
 	const page = {
 		routeId: event.routeId,
 		status: 200, // TODO
@@ -22,9 +22,7 @@ export async function GET(event: RequestEvent) {
 	const html = await renderToString(app);
 
 	return {
-		body: {
-			data,
-			html
-		}
+		data,
+		html
 	};
 }

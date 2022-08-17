@@ -1,5 +1,3 @@
-import type { RequestHandler } from '@sveltejs/kit';
-
 const seed = [
 	[3, 27],
 	[4, 27],
@@ -238,8 +236,6 @@ const seed = [
 	[40, 45]
 ];
 
-export function GET(): ReturnType<RequestHandler> {
-	return {
-		body: { seed }
-	};
+export function load() {
+	return { seed };
 }
