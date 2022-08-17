@@ -7,7 +7,7 @@
 	type Grid = (Dead | Alive)[][];
 	type Seed = [number, number][];
 
-	export let seed: [number, number][];
+	export let data: { seed: [number, number][] };
 
 	const width = 640;
 	const height = 640;
@@ -87,7 +87,7 @@
 			grid[row][column] = grid[row][column] ? 0 : 1;
 		});
 
-		useSeed(grid, seed);
+		useSeed(grid, data.seed);
 	});
 
 	update(() => {

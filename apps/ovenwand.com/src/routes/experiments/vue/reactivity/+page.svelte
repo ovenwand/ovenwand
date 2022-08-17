@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ref, snapshot } from './.lib/reactivity';
+	import { ref, snapshot } from '../.lib/reactivity';
 
 	let fromSvelte = 0;
 

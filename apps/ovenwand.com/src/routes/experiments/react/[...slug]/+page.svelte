@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { hydrateRoot } from 'react-dom/client';
-	import { App } from './.lib/app';
+	import { App } from '../.lib/app';
 
 	// Scope the react
 	const react = {
@@ -17,16 +17,15 @@
 		}
 	};
 
-	export let html: string;
-	export let props = {};
+	export let data: import('./$types').LoadData;
 
 	let element: HTMLDivElement;
 
 	$: if (element) {
-		react.render(element, App(props));
+		react.render(element, App(data.props));
 	}
 </script>
 
 <div bind:this={element} id="react-app">
-	{@html html}
+	{@html data.html}
 </div>
