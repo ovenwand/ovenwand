@@ -9,14 +9,14 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:*",
+		"@ovenwand/config": "workspace:0.1.5",
 		"svelte": "^3.49.0"
 	},
 	"dependencies": {
-		"@ovenwand/ui.grid": "workspace:*",
-		"@ovenwand/ui.overlay": "workspace:*",
-		"@ovenwand/ui.sheet": "workspace:*",
-		"@ovenwand/util.svelte": "workspace:*"
+		"@ovenwand/ui.grid": "workspace:0.0.10",
+		"@ovenwand/ui.overlay": "workspace:0.0.7",
+		"@ovenwand/ui.sheet": "workspace:0.0.8",
+		"@ovenwand/util.svelte": "workspace:0.2.11"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"

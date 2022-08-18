@@ -9,6 +9,19 @@ export type FaunaResponseBody<Data extends Record<string, unknown>, Errors exten
 	errors: Errors;
 };
 
+export interface GqlClient {
+	gql<
+		Data extends Record<string, unknown> = Record<string, unknown>,
+		Errors extends unknown[] = unknown[]
+	>(
+		query: FaunaQueryBody['query'],
+		variables?: FaunaQueryBody['variables'],
+		options?: Partial<ClientConfig>
+	): Promise<FaunaResponseBody<Data, Errors>>;
+
+	request(path: string, data: FaunaRequestBody, options?: Partial<ClientConfig>): Promise<Response>;
+}
+
 function getUrl(path: string, data: FaunaRequestBody, options: ClientConfig) {
 	const url = new URL(`${options.scheme}://graphql.${options.domain}${path}`);
 
@@ -31,7 +44,7 @@ function isImportRequest(path: string, data: FaunaRequestBody): data is FaunaImp
 	return path === '/import';
 }
 
-export function createGql(config: ClientConfig) {
+export function createGql(config: ClientConfig): GqlClient {
 	const clientOptions: ClientConfig = {
 		scheme: 'https',
 		...config
@@ -41,7 +54,7 @@ export function createGql(config: ClientConfig) {
 		path: string,
 		data: FaunaRequestBody,
 		options: Partial<ClientConfig> = {}
-	) {
+	): Promise<Response> {
 		const { scheme, domain, secret }: ClientConfig = {
 			...clientOptions,
 			secret: options.secret ?? clientOptions.secret

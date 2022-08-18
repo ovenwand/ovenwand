@@ -31,10 +31,10 @@ export async function POST({ request }: RequestEvent) {
 		}
 	);
 
-	return {
-		body: {
+	return new Response(
+		JSON.stringify({
 			errors,
 			data: data?.createEvent
-		}
-	};
+		})
+	);
 }

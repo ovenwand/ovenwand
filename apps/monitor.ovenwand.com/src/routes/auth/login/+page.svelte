@@ -1,18 +1,3 @@
-<script lang="ts" context="module">
-	import type { LoadEvent } from '@sveltejs/kit';
-
-	export async function load({ session }: LoadEvent) {
-		if (session.id) {
-			return {
-				status: 302,
-				redirect: '/'
-			};
-		}
-
-		return {};
-	}
-</script>
-
 <script lang="ts">
 	import { Button, Column, Grid } from '@ovenwand/ui';
 	export let errors: { form?: string } | undefined;

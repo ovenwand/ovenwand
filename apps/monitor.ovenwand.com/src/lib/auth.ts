@@ -1,18 +1,18 @@
-import type { Load, LoadEvent, LoadOutput } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 
-export function useAuth(forbiddenRoutes?: string[], resolve?: Load): Load {
+type LayoutLoad = import('./$types').LayoutLoad;
+type LoadEvent = import('./$types').LoadEvent;
+
+export function useAuth(forbiddenRoutes?: string[], resolve?: LayoutLoad): LayoutLoad {
 	function forbidden(pathname: string) {
 		return forbiddenRoutes ? forbiddenRoutes.find((f) => pathname.startsWith(f)) : true;
 	}
 
-	return async (event: LoadEvent): Promise<LoadOutput> => {
-		const { session, url } = event;
+	return async ({ url, parent }: LoadEvent): Promise<unknown> => {
+		const { session } = await parent();
 
 		if (!session.id && forbidden(url.pathname)) {
-			return {
-				status: 302,
-				redirect: '/auth/login'
-			};
+			throw redirect(307, '/auth/login');
 		}
 
 		return resolve ? resolve(event) : {};

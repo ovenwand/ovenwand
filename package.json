@@ -20,13 +20,13 @@
 	},
 	"devDependencies": {
 		"@cypress/vite-dev-server": "^2.2.3",
-		"@ovenwand/kit.cli": "workspace:*",
-		"@ovenwand/kit.scaffold": "workspace:*",
+		"@ovenwand/kit.cli": "workspace:0.3.2",
+		"@ovenwand/kit.scaffold": "workspace:0.1.1",
 		"@sveltejs/vite-plugin-svelte": "^1.0.1",
 		"cypress": "^9.7.0",
 		"svelte": "^3.49.0",
 		"typescript": "next",
-		"vite": "^3.0.4"
+		"vite": "^3.0.8"
 	},
 	"lint-staged": {
 		"*.{js,ts,svelte,vue,svelte,css,md,json}": "kit lint --format --prettier",

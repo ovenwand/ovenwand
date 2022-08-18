@@ -10,16 +10,16 @@
 		"lint-staged": "./node_modules/lint-staged/bin/lint-staged.js"
 	},
 	"dependencies": {
-		"@changesets/cli": "^2.24.1",
+		"@changesets/cli": "^2.24.3",
 		"@commitlint/cli": "^17.0.3",
 		"@commitlint/config-conventional": "^17.0.3",
 		"@esbuild-kit/esm-loader": "^2.4.2",
-		"@ovenwand/config": "workspace:*",
-		"@ovenwand/kit.lint": "workspace:*",
-		"@ovenwand/kit.scaffold": "workspace:*",
+		"@ovenwand/config": "workspace:0.1.5",
+		"@ovenwand/kit.lint": "workspace:0.0.1",
+		"@ovenwand/kit.scaffold": "workspace:0.1.1",
 		"@pnpm/find-workspace-dir": "^4.0.2",
 		"commander": "^9.4.0",
 		"lint-staged": "^12.5.0",
-		"turbo": "^1.4.0"
+		"turbo": "^1.4.3"
 	}
 }

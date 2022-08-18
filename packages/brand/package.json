@@ -9,10 +9,10 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@ovenwand/brand.logo": "workspace:*"
+		"@ovenwand/brand.logo": "workspace:0.0.7"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:*",
+		"@ovenwand/config": "workspace:0.1.5",
 		"svelte": "^3.49.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",

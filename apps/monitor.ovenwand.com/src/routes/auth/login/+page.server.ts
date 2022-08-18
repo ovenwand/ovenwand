@@ -17,7 +17,7 @@ export interface FaunaError {
 	extensions: { code: string };
 }
 
-export async function POST({ request }: RequestEvent) {
+export async function POST({ request, setHeaders }: RequestEvent) {
 	const body = await request.formData();
 
 	const { data, errors } = await gql<{ login: ILoginData }, FaunaError[]>(
@@ -41,28 +41,23 @@ export async function POST({ request }: RequestEvent) {
 	if (errors) {
 		return {
 			status: 401,
-			body: {
-				errors: errors.reduce(
-					(errors, error) => {
-						errors.form += error.message;
-						return errors;
-					},
-					{ form: '' }
-				)
-			}
+			errors: errors.reduce(
+				(errors, error) => {
+					errors.form += error.message;
+					return errors;
+				},
+				{ form: '' }
+			)
 		};
 	}
 
 	const { instance, secret } = data.login;
 
+	setHeaders({
+		'Set-Cookie': createSessionCookie(instance, secret)
+	});
+
 	return {
-		status: 302,
-		headers: {
-			Location: '/',
-			'Set-Cookie': createSessionCookie(instance, secret)
-		},
-		body: {
-			data: data?.login
-		}
+		location: '/'
 	};
 }

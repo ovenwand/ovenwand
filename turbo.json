@@ -3,12 +3,12 @@
 	"baseBranch": "origin/master",
 	"pipeline": {
 		"build": {
-			"dependsOn": ["^build"],
+			"dependsOn": ["sync", "^build"],
 			"outputs": [".svelte-kit", ".vercel"]
 		},
 
 		"build:env": {
-			"dependsOn": ["^build"],
+			"dependsOn": ["sync", "^build"],
 			"outputs": [".svelte-kit", ".vercel"]
 		},
 
@@ -23,16 +23,22 @@
 		},
 
 		"dev": {
+			"dependsOn": ["sync"],
 			"cache": false
 		},
 
 		"dev:env": {
+			"dependsOn": ["sync"],
 			"cache": false
 		},
 
 		"clean": {
 			"dependsOn": ["//#clean"],
 			"cache": false
+		},
+
+		"sync": {
+			"outputs": [".svelte-kit"]
 		}
 	}
 }

@@ -7,7 +7,7 @@ import {
 	type FaunaImportMode,
 	type Definition
 } from '@ovenwand/services.faunadb';
-import { client } from '$lib/database';
+import { client, gql, request } from '$lib/database';
 import * as resolverMap from './resolvers';
 import * as roleMap from './roles';
 import schemaUrl from './schema.gql?url';
@@ -25,7 +25,7 @@ function migrateRole(definition: Definition, secret: string) {
 }
 
 export async function migrate(mode: FaunaImportMode, token: string) {
-	const { add, settle } = useQueue();
+	const { add, settle } = useQueue({ request, gql });
 
 	for (const definition of resolvers) {
 		add(migrateFunction(definition, token));

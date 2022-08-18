@@ -8,11 +8,11 @@
 		".": "./src/index.ts"
 	},
 	"dependencies": {
-		"@sentry/node": "^7.10.0",
-		"@sentry/tracing": "^7.10.0"
+		"@sentry/node": "^7.11.1",
+		"@sentry/tracing": "^7.11.1"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:*",
+		"@ovenwand/config": "workspace:0.1.5",
 		"typescript": "next"
 	}
 }

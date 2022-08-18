@@ -9,13 +9,13 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@ovenwand/config": "workspace:*",
-		"@ovenwand/util.browser": "workspace:*",
-		"@ovenwand/util.date": "workspace:*",
-		"@ovenwand/util.fp": "workspace:*",
-		"@ovenwand/util.math": "workspace:*",
-		"@ovenwand/util.string": "workspace:*",
-		"@ovenwand/util.svelte": "workspace:*"
+		"@ovenwand/config": "workspace:0.1.5",
+		"@ovenwand/util.browser": "workspace:0.0.10",
+		"@ovenwand/util.date": "workspace:0.0.2",
+		"@ovenwand/util.fp": "workspace:0.1.5",
+		"@ovenwand/util.math": "workspace:0.0.7",
+		"@ovenwand/util.string": "workspace:0.0.2",
+		"@ovenwand/util.svelte": "workspace:0.2.11"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"
