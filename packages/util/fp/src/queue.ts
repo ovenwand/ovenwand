@@ -1,7 +1,15 @@
-export function useQueue() {
+import { isFunction } from './is';
+
+export function useQueue<Context>(context: Context) {
 	const queue: Promise<unknown>[] = [];
 
-	function add(promise: Promise<unknown>) {
+	function add(
+		promise: Promise<unknown> | (() => Promise<unknown>) | ((context: Context) => Promise<unknown>)
+	) {
+		if (isFunction(promise)) {
+			promise = promise(context);
+		}
+
 		queue.push(promise);
 	}
 

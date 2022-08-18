@@ -1,4 +1,4 @@
-import type { RequestEvent } from '@sveltejs/kit';
+import { error, type RequestEvent } from '@sveltejs/kit';
 import type { Data } from '@ovenwand/services.faunadb';
 import { gql } from '$lib/database';
 import type { IEventData, IProject, IProjectData } from '$lib/store';
@@ -30,8 +30,8 @@ const FindAllProjects = `
     }
 `;
 
-export async function GET({ locals }: RequestEvent) {
-	const { errors, data } = await gql<{ allProjects: Data<IProjectData[]> }>(
+export async function load({ locals }: RequestEvent) {
+	const { errors, data } = await gql<{ allProjects: Data<IProjectData[]> }, Error[]>(
 		FindAllProjects,
 		{
 			size: 20
@@ -41,19 +41,13 @@ export async function GET({ locals }: RequestEvent) {
 		}
 	);
 
-	// if (errors?.length) {
-	// 	throw new Error(errors[0].message);
-	// }
+	if (errors?.length) {
+		throw error(500, errors[0].message);
+	}
 
 	return {
-		status: errors ? 500 : 200,
-		body: {
-			errors,
-			data: {
-				projects: data?.allProjects?.data.map(mapDataToProject),
-				events: data?.allProjects?.data?.reduce<IEventData[]>(getEventsFromProject, [])
-			}
-		}
+		projects: data?.allProjects?.data.map(mapDataToProject),
+		events: data?.allProjects?.data?.reduce<IEventData[]>(getEventsFromProject, [])
 	};
 }
 

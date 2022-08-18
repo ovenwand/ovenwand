@@ -15,10 +15,10 @@
 		"./.prettierignore": "./src/.prettierignore"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:*",
-		"@typescript-eslint/eslint-plugin": "^5.31.0",
-		"@typescript-eslint/parser": "^5.31.0",
-		"eslint": "^8.20.0",
+		"@ovenwand/config": "workspace:0.1.5",
+		"@typescript-eslint/eslint-plugin": "^5.33.1",
+		"@typescript-eslint/parser": "^5.33.1",
+		"eslint": "^8.22.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-react": "^7.30.1",
 		"eslint-plugin-svelte3": "^4.0.0",

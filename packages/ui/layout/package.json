@@ -13,8 +13,8 @@
 		"tailwindcss": "^3.0.24"
 	},
 	"dependencies": {
-		"@ovenwand/config": "workspace:*",
-		"@ovenwand/util.browser": "workspace:*"
+		"@ovenwand/config": "workspace:0.1.5",
+		"@ovenwand/util.browser": "workspace:0.0.10"
 	},
 	"devDependencies": {
 		"svelte": "^3.49.0"

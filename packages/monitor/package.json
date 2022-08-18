@@ -11,10 +11,10 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@ovenwand/util.fp": "workspace:*"
+		"@ovenwand/util.fp": "workspace:0.1.5"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:*"
+		"@ovenwand/config": "workspace:0.1.5"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"

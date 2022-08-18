@@ -9,13 +9,13 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@ovenwand/ui.icon": "workspace:*",
-		"@ovenwand/ui.sheet": "workspace:*",
-		"@ovenwand/util.browser": "workspace:*",
-		"@ovenwand/util.string": "workspace:*"
+		"@ovenwand/ui.icon": "workspace:0.0.2",
+		"@ovenwand/ui.sheet": "workspace:0.0.8",
+		"@ovenwand/util.browser": "workspace:0.0.10",
+		"@ovenwand/util.string": "workspace:0.0.2"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:*",
+		"@ovenwand/config": "workspace:0.1.5",
 		"svelte": "^3.49.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",

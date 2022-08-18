@@ -13,13 +13,13 @@
 		"tailwindcss": "^3.0.24"
 	},
 	"dependencies": {
-		"@ovenwand/brand": "workspace:*",
-		"@ovenwand/monitor": "workspace:*",
-		"@ovenwand/ui": "workspace:*",
-		"@ovenwand/util.browser": "workspace:*"
+		"@ovenwand/brand": "workspace:0.0.7",
+		"@ovenwand/monitor": "workspace:0.2.0",
+		"@ovenwand/ui": "workspace:0.0.13",
+		"@ovenwand/util.browser": "workspace:0.0.10"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:*",
+		"@ovenwand/config": "workspace:0.1.5",
 		"svelte": "^3.49.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com>",

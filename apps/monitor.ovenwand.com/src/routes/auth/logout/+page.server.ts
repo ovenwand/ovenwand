@@ -1,7 +1,8 @@
+import type { RequestEvent } from '@sveltejs/kit';
 import { gql } from '$lib/database';
 import { deleteSessionCookie } from '$lib/session';
 
-export async function POST() {
+export async function POST({ setHeaders }: RequestEvent) {
 	const { errors } = await gql<{ errors?: unknown[] }>(
 		`mutation Logout {
       logout(all: false)
@@ -11,15 +12,15 @@ export async function POST() {
 	if (errors) {
 		return {
 			status: 400,
-			body: { errors }
+			errors
 		};
 	}
 
+	setHeaders({
+		'Set-Cookie': deleteSessionCookie()
+	});
+
 	return {
-		status: 302,
-		headers: {
-			Location: '/',
-			'Set-Cookie': deleteSessionCookie()
-		}
+		location: '/'
 	};
 }

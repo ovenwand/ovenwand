@@ -1,5 +1,5 @@
-import UAParser from 'ua-parser-js';
+import { parse } from './ua-parser.js';
 
 export function parseUserAgent(userAgentString: string) {
-	return UAParser(userAgentString);
+	return parse(userAgentString);
 }

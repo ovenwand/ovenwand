@@ -3,6 +3,7 @@
 	"version": "0.4.9",
 	"private": true,
 	"scripts": {
+		"sync": "svelte-kit sync",
 		"dev": "vite",
 		"build": "vite build",
 		"package": "svelte-kit package",
@@ -15,31 +16,31 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"dependencies": {
-		"@ovenwand/app": "workspace:*",
-		"@ovenwand/env": "workspace:*",
-		"@ovenwand/monitor": "workspace:*",
-		"@ovenwand/services.faunadb": "workspace:*",
-		"@ovenwand/ui": "workspace:*",
-		"@ovenwand/util": "workspace:*",
-		"@ovenwand/util.date": "workspace:*",
+		"@ovenwand/app": "workspace:0.1.13",
+		"@ovenwand/env": "workspace:0.0.2",
+		"@ovenwand/monitor": "workspace:0.2.0",
+		"@ovenwand/services.faunadb": "workspace:0.1.1",
+		"@ovenwand/ui": "workspace:0.0.13",
+		"@ovenwand/util": "workspace:0.0.14",
+		"@ovenwand/util.date": "workspace:0.0.2",
 		"cookie": "^0.5.0",
 		"d3-scale": "^4.0.2",
 		"jsonwebtoken": "^8.5.1"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:*",
+		"@ovenwand/config": "workspace:0.1.5",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@types/cookie": "^0.5.1",
 		"@types/d3-scale": "^4.0.2",
 		"@types/jsonwebtoken": "^8.5.8",
-		"@vitejs/plugin-basic-ssl": "^0.1.1",
-		"svelte": "^3.48.0",
-		"svelte-check": "^2.8.0",
+		"@vitejs/plugin-basic-ssl": "^0.1.2",
+		"svelte": "^3.49.0",
+		"svelte-check": "^2.8.1",
 		"svelte-preprocess": "^4.10.7",
 		"tslib": "^2.4.0",
 		"typescript": "next",
-		"vite": "^3.0.4"
+		"vite": "^3.0.8"
 	},
 	"type": "module"
 }

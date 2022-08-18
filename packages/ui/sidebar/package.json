@@ -13,13 +13,13 @@
 		"typescript": "next"
 	},
 	"dependencies": {
-		"@ovenwand/config": "workspace:*",
-		"@ovenwand/util.browser": "workspace:*",
-		"@ovenwand/util.svelte": "workspace:*"
+		"@ovenwand/config": "workspace:0.1.5",
+		"@ovenwand/util.browser": "workspace:0.0.10",
+		"@ovenwand/util.svelte": "workspace:0.2.11"
 	},
 	"devDependencies": {
-		"@ovenwand/test.cypress": "workspace:*",
-		"@ovenwand/test.svelte": "workspace:*",
+		"@ovenwand/test.cypress": "workspace:0.0.3",
+		"@ovenwand/test.svelte": "workspace:0.0.3",
 		"svelte": "^3.49.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com>",

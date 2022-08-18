@@ -12,12 +12,12 @@
 		"typescript": "next"
 	},
 	"dependencies": {
-		"@ovenwand/util.fp": "workspace:*",
-		"@ovenwand/util.math": "workspace:*",
+		"@ovenwand/util.fp": "workspace:0.1.5",
+		"@ovenwand/util.math": "workspace:0.0.7",
 		"ua-parser-js": "^1.0.2"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:*",
+		"@ovenwand/config": "workspace:0.1.5",
 		"@types/ua-parser-js": "^0.7.36"
 	},
 	"author": "Ovenwand <info@ovenwand.com>",

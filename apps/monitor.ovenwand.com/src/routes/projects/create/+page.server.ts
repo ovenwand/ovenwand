@@ -6,7 +6,7 @@ import type { IProjectData } from '$lib/store';
 export async function POST({ request }: RequestEvent) {
 	const body = await request.formData();
 
-	const { data, errors } = await gql<{ createProject: Data<IProjectData> }>(
+	const { errors } = await gql<{ createProject: Data<IProjectData> }>(
 		`
 		mutation CreateProject($data: ProjectInput!) {
 			createProject(data: $data) {
@@ -24,17 +24,11 @@ export async function POST({ request }: RequestEvent) {
 	if (errors) {
 		return {
 			status: 400,
-			body: { errors }
+			errors
 		};
 	}
 
 	return {
-		status: 302,
-		headers: {
-			location: '/'
-		},
-		body: {
-			data: data?.createProject
-		}
+		location: '/'
 	};
 }
