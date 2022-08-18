@@ -1,4 +1,6 @@
-import { query as q } from 'faunadb';
+import faunadb from 'faunadb';
+
+const q = faunadb.query;
 
 export interface Definition {
 	name: string;
