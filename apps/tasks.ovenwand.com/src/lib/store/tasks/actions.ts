@@ -33,7 +33,7 @@ export async function saveTask(task: Partial<ITask>): Promise<void> {
 	let success = true;
 
 	try {
-		const response = await fetch('/', {
+		const response = await fetch('/api/tasks', {
 			method,
 			headers: {
 				Accept: 'application/json'
@@ -78,7 +78,7 @@ export async function moveTask(task: ITask, fromLabel: string, toLabel: string):
 	let success = true;
 
 	try {
-		const response = await fetch('/', {
+		const response = await fetch('/api/tasks', {
 			method: 'PATCH',
 			headers: {
 				Accept: 'application/json'
@@ -109,7 +109,7 @@ export async function deleteTask(task: ITask): Promise<void> {
 	let success = true;
 
 	try {
-		const response = await fetch('/', {
+		const response = await fetch('/api/tasks', {
 			method: 'DELETE',
 			headers: {
 				Accept: 'application/json'
@@ -150,7 +150,7 @@ export function getTasks(shouldFetch?: boolean) {
 
 	const request =
 		browser || shouldFetch
-			? fetch('/tasks', { headers: { accept: 'application/json' } })
+			? fetch('/api/tasks', { headers: { accept: 'application/json' } })
 					.then((res) => (response = res))
 					.then((res) => res.json())
 					.then((data) => data.data.tasks)

@@ -1,33 +1,27 @@
-import type { RequestEvent, RequestHandlerOutput } from '@sveltejs/kit';
-import type { Data, Errors } from '@ovenwand/services.faunadb';
-import type { ILabel, ILabelData, ITask, ITaskData } from '$lib/store';
+import type { RequestEvent } from '@sveltejs/kit';
+import type { Data } from '@ovenwand/services.faunadb';
+import type { ILabelData, ITaskData } from '$lib/store';
 import { gql } from '$lib/database';
 import { CreateTask, DeleteTask, UpdateTask, FindAllTasks } from '$lib/database/queries';
 import { mapDataToTask } from '$lib/store/tasks/utils';
 
-export interface GetResponseBody {
-	tasks: ITask[];
-	labels: ILabel[];
-}
-export async function GET(): Promise<RequestHandlerOutput<Errors & Data<GetResponseBody>>> {
+export async function GET() {
 	const { errors, data } = await gql<{ tasks: Data<ITaskData[]>; labels: Data<ILabelData[]> }>(
 		FindAllTasks
 	);
 
-	return {
-		body: {
+	return new Response(
+		JSON.stringify({
 			errors,
 			data: {
 				tasks: data?.tasks?.data.map(mapDataToTask),
 				labels: data?.labels?.data
 			}
-		}
-	};
+		})
+	);
 }
 
-export async function POST({
-	request
-}: RequestEvent): Promise<RequestHandlerOutput<Errors & Data<ITask>>> {
+export async function POST({ request }: RequestEvent) {
 	const body = await request.json();
 
 	const { data, errors } = await gql<{ createTask: Data<ITaskData> }>(CreateTask, {
@@ -39,17 +33,15 @@ export async function POST({
 		}
 	});
 
-	return {
-		body: {
+	return new Response(
+		JSON.stringify({
 			errors,
 			data: mapDataToTask(data?.createTask?.data)
-		}
-	};
+		})
+	);
 }
 
-export async function PATCH({
-	request
-}: RequestEvent): Promise<RequestHandlerOutput<Errors & Data<ITask>>> {
+export async function PATCH({ request }: RequestEvent) {
 	const body = await request.json();
 
 	const { data, errors } = await gql<{ updateTask: Data<ITaskData> }>(UpdateTask, {
@@ -62,27 +54,25 @@ export async function PATCH({
 		}
 	});
 
-	return {
-		body: {
+	return new Response(
+		JSON.stringify({
 			errors,
 			data: mapDataToTask(data?.updateTask?.data)
-		}
-	};
+		})
+	);
 }
 
-export async function DELETE({
-	request
-}: RequestEvent): Promise<RequestHandlerOutput<Errors & Data<ITask>>> {
+export async function DELETE({ request }: RequestEvent) {
 	const body = await request.json();
 
 	const { data, errors } = await gql<{ deleteTask: Data<ITaskData> }>(DeleteTask, {
 		id: body.id
 	});
 
-	return {
-		body: {
+	return new Response(
+		JSON.stringify({
 			errors,
 			data: mapDataToTask(data?.deleteTask?.data)
-		}
-	};
+		})
+	);
 }

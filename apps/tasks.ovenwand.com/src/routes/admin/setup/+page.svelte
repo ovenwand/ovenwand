@@ -2,7 +2,7 @@
 	import { Button } from '@ovenwand/ui';
 
 	function onButtonClick() {
-		fetch('/system/database/migrate');
+		fetch('/api/system/database/migrate');
 	}
 </script>
 
