@@ -4,6 +4,7 @@
 	"type": "module",
 	"private": true,
 	"scripts": {
+		"clean": "pnpm --silent dlx rimraf .svelte-kit .vercel",
 		"sync": "svelte-kit sync",
 		"dev": "vite",
 		"build": "vite build",
