@@ -1,6 +1,6 @@
 import { exec } from './exec.js';
 
-export async function turbo(args, options, execOptions) {
+export async function turbo(args, options, execOptions = {}) {
 	const { paths } = options;
 
 	const command = args.shift();

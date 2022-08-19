@@ -4,9 +4,9 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
+		"clean": "pnpm --silent dlx rimraf **/node_modules",
 		"prepare": "kit install",
 		"setup": "kit setup",
-		"clean": "pnpm --silent dlx rimraf **/node_modules",
 		"dev": "kit dev",
 		"build": "kit build",
 		"preview": "kit preview",

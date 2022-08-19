@@ -33,12 +33,16 @@
 		},
 
 		"clean": {
-			"dependsOn": ["//#clean"],
-			"cache": false
+			"outputs": []
+		},
+
+		"//#clean": {
+			"dependsOn": [],
+			"outputs": []
 		},
 
 		"sync": {
-			"outputs": [".svelte-kit"]
+			"outputs": [".svelte-kit/types"]
 		}
 	}
 }
