@@ -1,5 +1,12 @@
 # @ovenwand/ui.overlay
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [450f243]
+  - @ovenwand/util.browser@0.0.11
+
 ## 0.0.7
 
 ### Patch Changes

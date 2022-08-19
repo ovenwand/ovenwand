@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ovenwand.com",
-	"version": "0.12.8",
+	"version": "0.13.0",
 	"type": "module",
 	"private": true,
 	"scripts": {
@@ -17,14 +17,14 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@ovenwand/app": "workspace:0.1.13",
-		"@ovenwand/brand": "workspace:0.0.7",
+		"@ovenwand/app": "workspace:0.1.14",
+		"@ovenwand/brand": "workspace:0.0.8",
 		"@ovenwand/config": "workspace:0.1.5",
 		"@ovenwand/env": "workspace:0.0.2",
 		"@ovenwand/monitor": "workspace:0.2.0",
 		"@ovenwand/services.sentry": "workspace:0.0.1",
-		"@ovenwand/ui": "workspace:0.0.13",
-		"@ovenwand/util": "workspace:0.0.14",
+		"@ovenwand/ui": "workspace:0.0.14",
+		"@ovenwand/util": "workspace:0.0.15",
 		"@ovenwand/util.date": "workspace:0.0.2",
 		"@ovenwand/util.math": "workspace:0.0.7",
 		"@storyblok/svelte": "^2.2.0",

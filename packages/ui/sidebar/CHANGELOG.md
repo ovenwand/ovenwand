@@ -1,5 +1,12 @@
 # @ovenwand/ui.sidebar
 
+## 0.1.9
+
+### Patch Changes
+
+- Updated dependencies [450f243]
+  - @ovenwand/util.browser@0.0.11
+
 ## 0.1.8
 
 ### Patch Changes

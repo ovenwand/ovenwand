@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/tasks.ovenwand.com",
-	"version": "0.1.4",
+	"version": "0.2.0",
 	"type": "module",
 	"private": true,
 	"scripts": {
@@ -19,9 +19,9 @@
 	"devDependencies": {
 		"@ovenwand/config": "workspace:0.1.5",
 		"@ovenwand/env": "workspace:0.0.2",
-		"@ovenwand/services.faunadb": "workspace:0.1.1",
-		"@ovenwand/ui": "workspace:0.0.13",
-		"@ovenwand/util": "workspace:0.0.14",
+		"@ovenwand/services.faunadb": "workspace:0.2.0",
+		"@ovenwand/ui": "workspace:0.0.14",
+		"@ovenwand/util": "workspace:0.0.15",
 		"@ovenwand/util.date": "workspace:0.0.2",
 		"@ovenwand/util.math": "workspace:0.0.7",
 		"@sveltejs/adapter-auto": "next",

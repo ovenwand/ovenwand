@@ -1,5 +1,15 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.2.0
+
+### Minor Changes
+
+- 45dff04: Update to latest version of SvelteKit
+
+### Patch Changes
+
+- 6189099: add faunadb client configuration
+
 ## 0.1.4
 
 ### Patch Changes
