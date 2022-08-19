@@ -1,5 +1,15 @@
 # @ovenwand/ovenwand.com
 
+## 0.13.0
+
+### Minor Changes
+
+- f9fda07: Update to latest version of sveltekit
+
+### Patch Changes
+
+- aa907a9: Disable sentry due to bug
+
 ## 0.12.8
 
 ### Patch Changes

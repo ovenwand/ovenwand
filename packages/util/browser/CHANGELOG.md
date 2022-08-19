@@ -1,5 +1,11 @@
 # @ovenwand/util.browser
 
+## 0.0.11
+
+### Patch Changes
+
+- 450f243: Remove unused window utils
+
 ## 0.0.10
 
 ### Patch Changes

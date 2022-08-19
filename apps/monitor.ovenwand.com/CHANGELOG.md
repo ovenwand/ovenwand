@@ -1,5 +1,21 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.5.0
+
+### Minor Changes
+
+- c62f556: Update to latest version of SvelteKit
+
+### Patch Changes
+
+- d9fc2e9: add faunadb client configuration
+- Updated dependencies [accf097]
+- Updated dependencies [567d152]
+  - @ovenwand/services.faunadb@0.2.0
+  - @ovenwand/app@0.1.14
+  - @ovenwand/util@0.0.15
+  - @ovenwand/ui@0.0.14
+
 ## 0.4.9
 
 ### Patch Changes
