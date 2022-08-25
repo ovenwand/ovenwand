@@ -1,12 +1,22 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
+
+	let className = '';
+	export { className as class };
 	export let href: string | null = null;
 	export let type = 'button';
+	export let size: 'default' | 'large' = 'default';
 
-	const buttonClassName = createClassName({
+	$: isDefaultSize = size === 'default';
+	$: isLargeSize = size === 'large';
+
+	$: buttonClassName = createClassName({
+		[className]: className,
 		block: true,
-		'px-2': true,
-		'py-2': true,
+		'px-2': isDefaultSize,
+		'py-3': isDefaultSize,
+		'px-4': isLargeSize,
+		'py-6': isLargeSize,
 		'leading-none': true,
 		'text-center': true
 	});
