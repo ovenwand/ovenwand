@@ -7,14 +7,21 @@
 	export let title: string;
 	export let description: string;
 	export let done: boolean;
+
 	export let placeholder = false;
+	export let interactive = true;
+	export let highlight = false;
 
 	const dispatch = createEventDispatcher();
 
+	let isMouseDown = false;
 	let taskClassName: string;
 
 	$: taskClassName = createClassName({
-		'line-through': done
+		'line-through': done,
+		'bg-gray-200 dark:bg-gray-800': highlight,
+		'cursor-grab': interactive && !isMouseDown,
+		'cursor-grabbing': interactive && isMouseDown,
 	});
 
 	$: titleClassName = createClassName({
@@ -31,13 +38,22 @@
 	}
 </script>
 
-<div id="task-{_id}" class="contents" use:draggable on:dragstart on:dragend on:click>
-	<Sheet class="flex mb-2 {taskClassName}" background padding rounded shadow>
+<div
+	id="task-{_id}"
+	class="contents"
+	use:draggable={{ disabled: !interactive }}
+	on:mousedown={() => isMouseDown = true}
+	on:mouseup={() => isMouseDown = false}
+	on:dragstart
+	on:dragend
+	on:click
+>
+	<Sheet class="flex mb-2 {taskClassName}" background={!highlight} padding rounded shadow>
 		<div class="flex pr-4 items-center justify-center">
-			<input type="checkbox" bind:checked={done} on:input={onInput} />
+			<input id="task-input-{_id}" type="checkbox" bind:checked={done} on:input={onInput} />
 		</div>
 		<div class="flex flex-col flex-auto items-start">
-			<span class={titleClassName}>{title}</span>
+			<label for="task-input-{_id}" class={titleClassName}>{title}</label>
 			<span class={descriptionClassName}>{description}</span>
 		</div>
 	</Sheet>
