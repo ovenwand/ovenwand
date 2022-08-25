@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui",
-	"version": "0.0.14",
+	"version": "0.0.15",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -9,17 +9,17 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@ovenwand/ui.button": "workspace:0.3.7",
-		"@ovenwand/ui.calendar": "workspace:0.0.0",
-		"@ovenwand/ui.grid": "workspace:0.0.11",
+		"@ovenwand/ui.button": "workspace:0.3.8",
+		"@ovenwand/ui.calendar": "workspace:0.0.1",
+		"@ovenwand/ui.grid": "workspace:0.0.12",
 		"@ovenwand/ui.icon": "workspace:0.0.2",
-		"@ovenwand/ui.layout": "workspace:0.2.9",
+		"@ovenwand/ui.layout": "workspace:0.2.10",
 		"@ovenwand/ui.loader": "workspace:0.0.2",
-		"@ovenwand/ui.modal": "workspace:0.2.11",
-		"@ovenwand/ui.notification": "workspace:0.0.12",
-		"@ovenwand/ui.overlay": "workspace:0.0.8",
-		"@ovenwand/ui.sheet": "workspace:0.0.9",
-		"@ovenwand/ui.sidebar": "workspace:0.1.9"
+		"@ovenwand/ui.modal": "workspace:0.2.12",
+		"@ovenwand/ui.notification": "workspace:0.0.13",
+		"@ovenwand/ui.overlay": "workspace:0.0.9",
+		"@ovenwand/ui.sheet": "workspace:0.0.10",
+		"@ovenwand/ui.sidebar": "workspace:0.1.10"
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:0.1.5"

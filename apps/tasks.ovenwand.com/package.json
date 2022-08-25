@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/tasks.ovenwand.com",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"type": "module",
 	"private": true,
 	"scripts": {
@@ -20,12 +20,12 @@
 	"devDependencies": {
 		"@ovenwand/config": "workspace:0.1.5",
 		"@ovenwand/env": "workspace:0.0.2",
-		"@ovenwand/gql": "workspace:^0.0.0",
-		"@ovenwand/services.faunadb": "workspace:0.2.0",
-		"@ovenwand/ui": "workspace:0.0.14",
-		"@ovenwand/util": "workspace:0.0.15",
-		"@ovenwand/util.date": "workspace:0.0.2",
-		"@ovenwand/util.math": "workspace:0.0.7",
+		"@ovenwand/gql": "workspace:^0.0.1",
+		"@ovenwand/services.faunadb": "workspace:0.2.1",
+		"@ovenwand/ui": "workspace:0.0.15",
+		"@ovenwand/util": "workspace:0.0.16",
+		"@ovenwand/util.date": "workspace:0.0.3",
+		"@ovenwand/util.math": "workspace:0.0.8",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@vitejs/plugin-basic-ssl": "^0.1.2",

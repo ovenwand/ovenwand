@@ -1,5 +1,17 @@
 # @ovenwand/ui.notification
 
+## 0.0.13
+
+### Patch Changes
+
+- 38b0dbe: Move timeout to @ovenwand/util.fp
+- fd0e8db: Update no longer existent positioning classes
+- Updated dependencies [05a43a1]
+- Updated dependencies [5b259d5]
+  - @ovenwand/util.fp@0.1.6
+  - @ovenwand/ui.sheet@0.0.10
+  - @ovenwand/util.browser@0.0.12
+
 ## 0.0.12
 
 ### Patch Changes

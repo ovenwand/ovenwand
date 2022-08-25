@@ -1,5 +1,56 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.3.0
+
+### Minor Changes
+
+- 3f03c47: Replace calendar with schedule
+- 3c9de73: Redesign home dashboard to focus point
+- 106e2aa: Replace tasks with explorer
+- 0272aed: Replace custom graphql client with apollo
+
+### Patch Changes
+
+- 8471e17: Add Panel component
+- 261c01d: Task component improvements
+
+      - Adds a label for the exisiting input
+      - Sets mouseover and mousedown cursors
+      - Adds interactive prop to disable draggable action
+      - Adds highlight state
+
+- 497c033: Graphql schema fixes and improvements
+
+      - Adds new fields and resolvers to schema.gql
+      - Adds full generated schema from faunadb to fauna.gql
+      - Sets fauna.gql as base schema in .graphqlconfig
+
+- 02659b5: Update SvelteKit
+- 3e70184: Add new indexes and resolvers
+
+      - resolvers: findCurrentTask, findTasksByDueDate
+      - indexes: tasks_by_schedule, tasks_by_due_date
+      - Also improves migration page and api endpoint
+
+- 6f8ad11: improve page readability
+
+      - Changes default background and text color
+
+- 634078b: Footer improvements
+
+      - Add background and shadow
+      - Relabeled navigation items
+      - Increased navigation item siz
+
+- c113f60: add getCurrentTask action
+- 025a8f1: use empty task instead of empty object as placeholder
+- bc1764e: Base layout improvements
+
+      - Add default page title
+      - Move notifications to body root
+
+- 37f80c4: Extend Pool component from Panel instead of Sheet
+
 ## 0.2.0
 
 ### Minor Changes

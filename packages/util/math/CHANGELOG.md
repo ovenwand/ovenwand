@@ -1,5 +1,12 @@
 # @ovenwand/util.math
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [05a43a1]
+  - @ovenwand/util.fp@0.1.6
+
 ## 0.0.7
 
 ### Patch Changes

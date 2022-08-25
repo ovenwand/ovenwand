@@ -1,5 +1,12 @@
 # @ovenwand/services
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [0740de2]
+  - @ovenwand/services.faunadb@0.2.1
+
 ## 0.0.4
 
 ### Patch Changes

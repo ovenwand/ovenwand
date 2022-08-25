@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/brand",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -9,7 +9,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@ovenwand/brand.logo": "workspace:0.0.8"
+		"@ovenwand/brand.logo": "workspace:0.0.9"
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:0.1.5",

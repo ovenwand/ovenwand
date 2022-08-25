@@ -1,5 +1,11 @@
 # @ovenwand/services.faunadb
 
+## 0.2.1
+
+### Patch Changes
+
+- 0740de2: Add migration utilities for indices and functions
+
 ## 0.2.0
 
 ### Minor Changes

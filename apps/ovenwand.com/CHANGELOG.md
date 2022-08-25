@@ -1,5 +1,11 @@
 # @ovenwand/ovenwand.com
 
+## 0.13.1
+
+### Patch Changes
+
+- 02659b5: Update SvelteKit
+
 ## 0.13.0
 
 ### Minor Changes
