@@ -7,7 +7,8 @@ type Task {
 	businessValue: Int!
 	dueDate: Time!
 
-	done: Boolean
+	schedule: String!
+	done: Boolean!
 	labels: [Label!] @relation
 }
 
@@ -19,6 +20,9 @@ type Label {
 
 type Query {
 	tasks: [Task!]
+	findCurrentTask: Task @resolver(name: "findCurrentTask")
+	findTasksByDueDate(fromDate: Time!, toDate: Time!): [Task] @resolver(name: "findTasksByDueDate")
 	findTasksByLabel(labelID: ID!): [Task!] @resolver(name: "findTasksByLabel")
+
 	labels: [Label!]
 }
