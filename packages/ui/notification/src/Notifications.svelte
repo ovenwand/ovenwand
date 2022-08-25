@@ -12,10 +12,10 @@
 	const { notifications } = useNotifications();
 
 	const notificationsClassName = createClassName({
-		top,
-		right,
-		bottom,
-		left
+		'top-0': top,
+		'right-0': right,
+		'bottom-0': bottom,
+		'left-0': left
 	});
 </script>
 
