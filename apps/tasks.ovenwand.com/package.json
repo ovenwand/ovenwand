@@ -20,6 +20,7 @@
 	"devDependencies": {
 		"@ovenwand/config": "workspace:0.1.5",
 		"@ovenwand/env": "workspace:0.0.2",
+		"@ovenwand/gql": "workspace:^0.0.0",
 		"@ovenwand/services.faunadb": "workspace:0.2.0",
 		"@ovenwand/ui": "workspace:0.0.14",
 		"@ovenwand/util": "workspace:0.0.15",
