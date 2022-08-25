@@ -4,16 +4,22 @@
 	import { Footer } from '$lib/components';
 </script>
 
-<DefaultLayout class="h-screen" footer>
-	<Notifications top />
+<svelte:head>
+	<title>Tasks - Ovenwand</title>
+</svelte:head>
 
-	<Grid class="h-full">
-		<Column class="h-full">
+<DefaultLayout class="h-screen" footer>
+	<Grid class="min-h-full">
+		<Column class="min-h-full">
 			<slot />
 		</Column>
 	</Grid>
 
 	<svelte:fragment slot="after-content">
 		<Footer />
+	</svelte:fragment>
+
+	<svelte:fragment slot="outside">
+		<Notifications top />
 	</svelte:fragment>
 </DefaultLayout>
