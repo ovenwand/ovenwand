@@ -1,5 +1,4 @@
 import { useCallback, useSyncExternalStore } from 'react';
-import { isObject } from '@ovenwand/util';
 
 const proxyCache = new WeakMap();
 

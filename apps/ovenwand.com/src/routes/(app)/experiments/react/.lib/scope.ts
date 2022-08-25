@@ -1,4 +1,4 @@
-import { useCallback, useId, useState } from 'react';
+import { useId, useState } from 'react';
 
 export function createScope() {
 	return {

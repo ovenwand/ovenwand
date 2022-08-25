@@ -48,8 +48,8 @@ export function ReactApp(props: { count?: number }) {
 			<h1>Test</h1>
 
 			<div>
-				<a href="/experiments/react/home">Home</a>
-				<a href="/experiments/react/not-home">Not home</a>
+				<a href="/(app)/experiments/react/home">Home</a>
+				<a href="/(app)/experiments/react/not-home">Not home</a>
 			</div>
 
 			<button onClick={onClick}>Click me</button>
