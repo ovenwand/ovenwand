@@ -14,9 +14,10 @@
 	$: sheetClassName = createClassName({
 		[className as string]: className,
 		'p-4': padding,
+		'overflow-hidden': rounded,
 		'bg-gray-100 dark:bg-gray-800': background,
 		rounded,
-		'shadow shadow-black': shadow
+		'drop-shadow-md': shadow,
 	});
 </script>
 
