@@ -1,4 +1,5 @@
 export * from '@ovenwand/ui.button';
+export * from '@ovenwand/ui.calendar';
 export * from '@ovenwand/ui.grid';
 export * from '@ovenwand/ui.icon';
 export * from '@ovenwand/ui.layout';
