@@ -2,7 +2,7 @@
   "name": "Ovenwand",
   "projects": {
     "tasks.ovenwand.com": {
-      "schemaPath": "./apps/tasks.ovenwand.com/src/lib/database/schema.gql",
+      "schemaPath": "./apps/tasks.ovenwand.com/src/lib/database/fauna.gql",
       "includes": ["./apps/tasks.ovenwand.com/src/**/*.gql"]
     },
     "monitor.ovenwand.com": {

@@ -4,13 +4,239 @@ directive @collection(name: String!) on OBJECT
 
 directive @index(name: String!) on FIELD_DEFINITION
 
-directive @resolver(name: String, paginated: Boolean! = false) on FIELD_DEFINITION
+directive @resolver(
+    name: String
+    paginated: Boolean! = false
+) on FIELD_DEFINITION
 
 directive @relation(name: String) on FIELD_DEFINITION
 
 directive @unique(index: String) on FIELD_DEFINITION
 
 scalar Date
+
+# 'Label' input values
+input LabelInput {
+    name: String!
+    description: String
+    tasks: LabelTasksRelation
+}
+
+# Allow manipulating the relationship between the types 'Label' and 'Task'.
+input LabelTasksRelation {
+    # Create one or more documents of type 'Task' and associate them with the current document.
+    create: [TaskInput]
+
+    # Connect one or more documents of type 'Task' with the current document using their IDs.
+    connect: [ID]
+
+    # Disconnect the given documents of type 'Task' from the current document using their IDs.
+    disconnect: [ID]
+}
+
+type Mutation {
+    # Update an existing document in the collection of 'Task'
+    updateTask(
+        # The 'Task' document's ID
+        id: ID!
+
+        # 'Task' input values
+        data: TaskInput!
+    ): Task
+
+    # Partially updates an existing document in the collection of 'Label'. It only modifies the values that are specified in the arguments. During execution, it verifies that required fields are not set to 'null'.
+    partialUpdateLabel(
+        # The 'Label' document's ID
+        id: ID!
+
+        # 'Label' input values
+        data: PartialUpdateLabelInput!
+    ): Label
+
+    # Partially updates an existing document in the collection of 'Task'. It only modifies the values that are specified in the arguments. During execution, it verifies that required fields are not set to 'null'.
+    partialUpdateTask(
+        # The 'Task' document's ID
+        id: ID!
+
+        # 'Task' input values
+        data: PartialUpdateTaskInput!
+    ): Task
+
+    # Create a new document in the collection of 'Label'
+    createLabel(
+        # 'Label' input values
+        data: LabelInput!
+    ): Label!
+
+    # Delete an existing document in the collection of 'Label'
+    deleteLabel(
+        # The 'Label' document's ID
+        id: ID!
+    ): Label
+
+    # Create a new document in the collection of 'Task'
+    createTask(
+        # 'Task' input values
+        data: TaskInput!
+    ): Task!
+
+    # Delete an existing document in the collection of 'Task'
+    deleteTask(
+        # The 'Task' document's ID
+        id: ID!
+    ): Task
+
+    # Update an existing document in the collection of 'Label'
+    updateLabel(
+        # The 'Label' document's ID
+        id: ID!
+
+        # 'Label' input values
+        data: LabelInput!
+    ): Label
+}
+
+# 'Label' input values
+input PartialUpdateLabelInput {
+    name: String
+    description: String
+    tasks: LabelTasksRelation
+}
+
+# 'Task' input values
+input PartialUpdateTaskInput {
+    title: String
+    description: String
+    size: Int
+    priority: Int
+    businessValue: Int
+    dueDate: Time
+    schedule: String
+    done: Boolean
+    labels: TaskLabelsRelation
+}
+
+# 'Task' input values
+input TaskInput {
+    title: String!
+    description: String
+    size: Int!
+    priority: Int!
+    businessValue: Int!
+    dueDate: Time!
+    schedule: String!
+    done: Boolean
+    labels: TaskLabelsRelation
+}
+
+# Allow manipulating the relationship between the types 'Task' and 'Label'.
+input TaskLabelsRelation {
+    # Create one or more documents of type 'Label' and associate them with the current document.
+    create: [LabelInput]
+
+    # Connect one or more documents of type 'Label' with the current document using their IDs.
+    connect: [ID]
+
+    # Disconnect the given documents of type 'Label' from the current document using their IDs.
+    disconnect: [ID]
+}
+
+type Label {
+    name: String!
+    description: String
+
+    # The document's ID.
+    _id: ID!
+    tasks(
+        # The number of items to return per page.
+        _size: Int
+
+        # The pagination cursor.
+        _cursor: String
+    ): TaskPage!
+
+    # The document's timestamp.
+    _ts: Long!
+}
+
+# The pagination object for elements of type 'Label'.
+type LabelPage {
+    # The elements of type 'Label' in this page.
+    data: [Label]!
+
+    # A cursor for elements coming after the current page.
+    after: String
+
+    # A cursor for elements coming before the current page.
+    before: String
+}
+
+type Query {
+    # Find a document from the collection of 'Label' by its id.
+    findLabelByID(
+        # The 'Label' document's ID
+        id: ID!
+    ): Label
+
+    # Find a document from the collection of 'Task' by its id.
+    findTaskByID(
+        # The 'Task' document's ID
+        id: ID!
+    ): Task
+    tasks(
+        # The number of items to return per page.
+        _size: Int
+
+        # The pagination cursor.
+        _cursor: String
+    ): TaskPage!
+    labels(
+        # The number of items to return per page.
+        _size: Int
+
+        # The pagination cursor.
+        _cursor: String
+    ): LabelPage!
+    findTasksByDueDate(fromDate: Time!, toDate: Time!): [Task]
+    findTasksByLabel(labelID: ID!): [Task!]
+    findCurrentTask: Task
+}
+
+type Task {
+    priority: Int!
+    size: Int!
+    description: String
+
+    # The document's ID.
+    _id: ID!
+    businessValue: Int!
+    labels(
+        # The number of items to return per page.
+        _size: Int
+
+        # The pagination cursor.
+        _cursor: String
+    ): LabelPage!
+    schedule: String!
+    dueDate: Time!
+    done: Boolean
+    title: String!
+
+    # The document's timestamp.
+    _ts: Long!
+}
+
+# The pagination object for elements of type 'Task'.
+type TaskPage {
+    # The elements of type 'Task' in this page.
+    data: [Task]!
+
+    # A cursor for elements coming after the current page.
+    after: String
+
+    # A cursor for elements coming before the current page.
+    before: String
+}
 
 scalar Time
 
