@@ -2,14 +2,14 @@
 	import { Button, Column, Grid } from '@ovenwand/ui';
 </script>
 
-<Grid gap={false} gapOutside={false}>
+<Grid class="bg-gray-300 dark:bg-gray-900 drop-shadow" gap={false} gapOutside={false}>
 	<Column columns={4}>
-		<Button href="/">Schedule</Button>
+		<Button size="large" href="/schedule">Schedule</Button>
 	</Column>
 	<Column columns={4}>
-		<Button href="/calendar">Calendar</Button>
+		<Button size="large" href="/">Focus</Button>
 	</Column>
 	<Column columns={4}>
-		<Button href="/tasks">Tasks</Button>
+		<Button size="large" href="/explorer">Explorer</Button>
 	</Column>
 </Grid>
