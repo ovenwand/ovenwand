@@ -6,11 +6,18 @@ export interface Definition {
 	name: string;
 }
 
+export const CreateOrUpdateIndex = ({ name, ...definition }: Definition) =>
+	q.If(
+		q.Exists(q.Index(name)),
+		q.Update(q.Index(name), definition),
+		q.CreateIndex({ name, ...definition })
+	);
+
 export const CreateOrUpdateFunction = ({ name, ...definition }: Definition) =>
 	q.If(
 		q.Exists(q.Function(name)),
 		q.Update(q.Function(name), definition),
-		q.CreateFunction(definition)
+		q.CreateFunction({ name, ...definition })
 	);
 
 export const CreateOrUpdateRole = ({ name, ...definition }: Definition) =>

@@ -1,37 +1,29 @@
 import { join, resolve } from 'path';
-import { importSchema, q, type Definition } from '@ovenwand/services.faunadb';
-import { client } from '$lib/database';
+import { useQueue } from '@ovenwand/util';
+import {
+	importSchema,
+	migrateIndex,
+	migrateFunction,
+	type FaunaImportMode
+} from '@ovenwand/services.faunadb';
+import { client, request } from '$lib/database';
+import * as indexMap from './indexes';
 import * as resolverMap from './resolvers';
 import schemaUrl from './schema.gql?url';
 
 const schemaPath = join(resolve(), schemaUrl);
-const queue: Promise<unknown>[] = [];
 const resolvers = Object.values(resolverMap);
+const indices = Object.values(indexMap);
 
-function updateFunction(definition: Definition) {
-	const { name } = definition;
-	return client.query(
-		q.If(
-			q.Exists(q.Function(name)),
-			q.Update(q.Function(name), definition),
-			q.CreateFunction(definition)
-		)
-	);
-}
+export async function migrate(mode: FaunaImportMode, token: string) {
+	const { add, settle } = useQueue({ client, request });
 
-function add(promise: Promise<unknown>) {
-	queue.push(promise);
-}
+	for (const definition of indices) {
+		add(migrateIndex(definition, token));
+	}
 
-function settle() {
-	const result = Promise.all(queue);
-	queue.length = 0;
-	return result;
-}
-
-export async function migrate() {
 	for (const definition of resolvers) {
-		add(updateFunction(definition));
+		add(migrateFunction(definition, token));
 	}
 
 	add(importSchema(schemaPath));

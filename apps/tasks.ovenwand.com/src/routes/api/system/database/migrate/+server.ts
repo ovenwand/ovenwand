@@ -1,12 +1,10 @@
+import { json } from '@sveltejs/kit';
 import { migrate } from '$lib/database';
 
-export async function GET() {
-	await migrate();
+export async function GET({ params, locals }: import('./$types').RequestEvent) {
+	const result = await migrate(params.mode || 'merge', locals.token);
 
-	return {
-		status: 200,
-		body: {
-			data: 'ok'
-		}
-	};
+	console.log(result);
+
+	return json({ data: 'ok' });
 }
