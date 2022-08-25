@@ -1,5 +1,20 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.5.1
+
+### Patch Changes
+
+- 02659b5: Update SvelteKit
+- Updated dependencies [5ac4651]
+- Updated dependencies [0740de2]
+- Updated dependencies [70158fe]
+  - @ovenwand/util.date@0.0.3
+  - @ovenwand/services.faunadb@0.2.1
+  - @ovenwand/util@0.0.16
+  - @ovenwand/ui@0.0.15
+  - @ovenwand/monitor@0.2.1
+  - @ovenwand/app@0.1.15
+
 ## 0.5.0
 
 ### Minor Changes

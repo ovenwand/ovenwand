@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/kit.cli",
-	"version": "0.3.2",
+	"version": "0.3.3",
 	"type": "module",
 	"bin": {
 		"kit": "./bin/kit.js",
@@ -16,7 +16,7 @@
 		"@esbuild-kit/esm-loader": "^2.4.2",
 		"@ovenwand/config": "workspace:0.1.5",
 		"@ovenwand/kit.lint": "workspace:0.0.1",
-		"@ovenwand/kit.scaffold": "workspace:0.1.1",
+		"@ovenwand/kit.scaffold": "workspace:0.1.2",
 		"@pnpm/find-workspace-dir": "^4.0.2",
 		"commander": "^9.4.0",
 		"lint-staged": "^12.5.0",

@@ -1,5 +1,11 @@
 # @ovenwand/kit.scaffold
 
+## 0.1.2
+
+### Patch Changes
+
+- 92dfc52: Silence compile time warning about global this
+
 ## 0.1.1
 
 ### Patch Changes

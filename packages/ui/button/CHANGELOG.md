@@ -1,5 +1,12 @@
 # @ovenwand/ui.button
 
+## 0.3.8
+
+### Patch Changes
+
+- ba8282d: Add size variations
+  - @ovenwand/util.browser@0.0.12
+
 ## 0.3.7
 
 ### Patch Changes

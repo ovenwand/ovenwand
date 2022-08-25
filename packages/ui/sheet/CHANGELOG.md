@@ -1,5 +1,16 @@
 # @ovenwand/ui.sheet
 
+## 0.0.10
+
+### Patch Changes
+
+- 5b259d5: Minor fixes
+
+      - Set overflow to hidden when rounded is true
+      - Make shadow more subtle
+
+  - @ovenwand/util.browser@0.0.12
+
 ## 0.0.9
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/util.svelte",
-	"version": "0.2.11",
+	"version": "0.2.12",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"@ovenwand/env": "workspace:0.0.2",
-		"@ovenwand/util.math": "workspace:0.0.7",
+		"@ovenwand/util.math": "workspace:0.0.8",
 		"chai": "^4.3.6"
 	},
 	"devDependencies": {

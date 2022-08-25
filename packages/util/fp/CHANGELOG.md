@@ -1,5 +1,11 @@
 # @ovenwand/util.fp
 
+## 0.1.6
+
+### Patch Changes
+
+- 05a43a1: Add timeout utility
+
 ## 0.1.5
 
 ### Patch Changes
