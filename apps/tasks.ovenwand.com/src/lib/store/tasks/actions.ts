@@ -4,6 +4,7 @@ import { useNotifications } from '@ovenwand/ui';
 import { browser } from '$app/env';
 import { addOrUpdateTask, addTask, removeTask, type TaskMutation, updateTask } from './mutations';
 import { tasks, type ITask } from './state';
+import { createTask } from './utils';
 
 const { loading } = useNotifications();
 const { update: _update } = tasks;
@@ -140,7 +141,7 @@ export function getTasks(shouldFetch?: boolean) {
 
 	const tasksOrPlaceholders = derived([loading, cache], ([$loading, $cache]) => {
 		if ($loading && !hasCache) {
-			return [{}, {}, {}];
+			return [createTask(), createTask(), createTask()];
 		}
 
 		return $cache;
