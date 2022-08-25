@@ -1,12 +1,7 @@
 import type { Readable } from 'svelte/store';
 import { writable } from 'svelte/store';
 import { uuid } from '@ovenwand/util.string';
-
-function timeout(timeout: number): Promise<void> {
-	return new Promise((resolve) => {
-		setTimeout(resolve, timeout);
-	});
-}
+import { timeout } from '@ovenwand/util.fp';
 
 const { subscribe, update } = writable<Notification[]>([]);
 
