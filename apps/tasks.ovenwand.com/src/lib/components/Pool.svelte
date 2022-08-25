@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { createClassName, droppable } from '@ovenwand/util';
-	import { Sheet } from '@ovenwand/ui';
+	import { droppable } from '@ovenwand/util';
+	import Panel from "./Panel.svelte";
 
 	let className = '';
 	export { className as class };
@@ -8,13 +8,6 @@
 	export let title: string;
 
 	let highlight = false;
-
-	$: sheetClassName = createClassName({
-		[className]: className,
-		'bg-gray-300 dark:bg-gray-900': !highlight,
-		'bg-gray-400 dark:bg-gray-800': highlight,
-		'min-h-full p-2': true
-	});
 </script>
 
 <div
@@ -28,13 +21,11 @@
 	on:drop
 	on:drop={() => (highlight = false)}
 >
-	<Sheet class={sheetClassName} rounded>
-		{#if title}
-			<h2 class="text-lg font-bold pb-2">{title}</h2>
-		{/if}
-
+	<Panel class={className} {highlight} {title}>
 		<slot />
 
-		<slot name="footer" />
-	</Sheet>
+		<svelte:fragment slot="footer">
+			<slot name="footer" />
+		</svelte:fragment>
+	</Panel>
 </div>
