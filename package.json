@@ -20,8 +20,8 @@
 	},
 	"devDependencies": {
 		"@cypress/vite-dev-server": "^2.2.3",
-		"@ovenwand/kit.cli": "workspace:0.3.2",
-		"@ovenwand/kit.scaffold": "workspace:0.1.1",
+		"@ovenwand/kit.cli": "workspace:0.3.3",
+		"@ovenwand/kit.scaffold": "workspace:0.1.2",
 		"@sveltejs/vite-plugin-svelte": "^1.0.1",
 		"cypress": "^9.7.0",
 		"svelte": "^3.49.0",
