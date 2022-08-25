@@ -173,3 +173,41 @@ export function getTasks(shouldFetch?: boolean) {
 		cache
 	};
 }
+
+export function getCurrentTask(shouldFetch?: boolean) {
+	const cache = derived([tasks], ([$tasks]) => $tasks.find((task) => task.schedule === 'current'));
+	const loading = writable(true);
+	const currentTask = derived([loading, cache], ([$loading, $cache]) => {
+		if ($loading && !$cache) {
+			return createTask();
+		}
+
+		return $cache;
+	});
+
+	shouldFetch = isBoolean(shouldFetch) ? shouldFetch : browser;
+
+	let response: Response;
+
+	const request =
+		browser || shouldFetch
+			? fetch('/api/focus/current')
+					.then((res) => (response = res))
+					.then((res) => res.json())
+					.then((data) => data.data)
+					.then(($task) => {
+						loading.set(false);
+
+						update(addOrUpdateTask($task));
+
+						return response;
+					})
+			: new Promise(noop);
+
+	return {
+		loading: { subscribe: loading.subscribe },
+		currentTask: { subscribe: currentTask.subscribe },
+		request,
+		cache
+	};
+}
