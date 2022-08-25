@@ -1,18 +1,47 @@
 <script lang="ts">
-	import { Column, Grid } from '@ovenwand/ui';
+	import { Button, Column, Grid } from '@ovenwand/ui';
 	import { useTasks } from '$lib/store';
-	import { ApplicationState, Task, TaskPool } from '$lib/components';
+	import { ApplicationState, Panel ,Task } from '$lib/components';
 
-	const { all: getAllTasks } = useTasks();
+	export let data: import('./$types').LoadData;
+
+	const { all: getAllTasks, current: getCurrentTask } = useTasks(data.tasks);
 	const { tasks, loading, cache } = getAllTasks();
+	const { currentTask } = getCurrentTask(false);
+
+	$: todaysTasks = $tasks;
 </script>
 
 <ApplicationState busy={$loading} />
 
-<Grid relative class="h-full">
+<Grid relative class="min-h-full auto-rows-[50%_50%_100%] md:auto-rows-fr">
+	<Column columns={{ md: 6 }}>
+		<Panel title="Welcome">
+			Daily info?<br/>
+			- Work or life day?<br/>
+			- Travel schedule?<br/>
+			- Weather?<br/>
+		</Panel>
+	</Column>
+
+	<Column columns={{ md: 6 }}>
+		<Panel title="Focus">
+			<svelte:fragment slot="header">
+				<Button>
+					Refresh
+				</Button>
+			</svelte:fragment>
+
+			<h3>{$currentTask.title}</h3>
+			<p>{$currentTask.description}</p>
+		</Panel>
+	</Column>
+
 	<Column>
-		<TaskPool class="h-full" title="Tasks" tasks={$tasks} let:task>
-			<Task placeholder={$loading && !$cache.length} interactive={false} {...task} />
-		</TaskPool>
+		<Panel title="Daily focus">
+			{#each todaysTasks as task}
+				<Task placeholder={$loading && !$cache.length} interactive={false} {...task} />
+			{/each}
+		</Panel>
 	</Column>
 </Grid>
