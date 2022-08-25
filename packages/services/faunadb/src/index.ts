@@ -9,3 +9,4 @@ export * from './model';
 export * from './schema';
 export * from './client';
 export * from './gql';
+export * from './migrate';
