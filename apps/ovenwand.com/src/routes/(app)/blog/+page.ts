@@ -1,6 +1,8 @@
 import { preloadStory } from '$lib/content';
 
-export async function load() {
+export async function load({ parent }: import('./$types').PageLoadEvent) {
+	await parent(); // Make sure the layout loads storyblok before called preloadStory
+
 	const { stories } = await preloadStory('', {
 		resolve_relations: String(['blog.author']),
 		page: 1,
