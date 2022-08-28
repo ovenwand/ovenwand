@@ -1,5 +1,11 @@
 # @ovenwand/ovenwand.com
 
+## 0.13.2
+
+### Patch Changes
+
+- 4b96232: guarantee calling layout before page to make sure storyblok is setup
+
 ## 0.13.1
 
 ### Patch Changes
