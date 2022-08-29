@@ -8,7 +8,7 @@
 			/* sad little hack, don't like it, but it'll do. */
 			html,
 			body {
-				cursor: wait;
+				cursor: wait !important;
 			}
 		</style>
 	{/if}
