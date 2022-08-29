@@ -10,6 +10,7 @@ export function createTask(task: Partial<ITask> = {}): ITask {
 		size: 0,
 		dueDate: '1970-01-01T00:00:00.000Z',
 		done: false,
+		schedule: 'unscheduled',
 		labels: [],
 		...task
 	};
