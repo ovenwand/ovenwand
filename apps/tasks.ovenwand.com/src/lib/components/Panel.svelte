@@ -25,7 +25,7 @@
   });
 </script>
 
-<Sheet class={sheetClassName} rounded>
+<Sheet class={sheetClassName} rounded shadow>
   {#if header}
     <div class="flex items-center justify-center p-2">
       {#if title}
