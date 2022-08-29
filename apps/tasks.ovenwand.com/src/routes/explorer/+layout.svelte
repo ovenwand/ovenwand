@@ -1,0 +1,43 @@
+<script lang="ts">
+  import { Column, Grid } from '@ovenwand/ui';
+  import { ApplicationState, Panel, Task, TaskPool } from '$lib/components';
+  import { type ITask, useTasks } from "$lib/store";
+
+  const { all: getAllTasks, get: getTaskById } = useTasks();
+  const { tasks, loading, cache } = getAllTasks();
+
+  let query = '';
+
+  $: filteredTasks = $tasks.filter(byContent(query));
+
+  function byContent(query) {
+    return ({ title, description }: ITask) =>
+      JSON.stringify({ title, description })
+        .toLowerCase()
+        .includes(query.toLowerCase());
+  }
+
+</script>
+
+<ApplicationState busy={$loading} />
+
+<Grid relative class="min-h-full">
+  <Column columns={{ md: 4 }}>
+    <TaskPool class="h-full" title="Explore" tasks={filteredTasks} let:task>
+      <Task
+        placeholder={$loading && !$cache.length}
+        href={`/explorer/${task._id}`}
+        {...task}
+      />
+      <svelte:fragment slot="footer">
+        <label class="flex">
+          <span class="mr-2">Search</span>
+          <input type="text" class="flex-grow" bind:value={query} />
+        </label>
+      </svelte:fragment>
+    </TaskPool>
+  </Column>
+  <Column columns={{ md: 8 }}>
+    <slot />
+  </Column>
+</Grid>
