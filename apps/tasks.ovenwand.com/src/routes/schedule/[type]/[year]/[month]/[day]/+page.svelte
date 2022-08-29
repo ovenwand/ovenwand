@@ -16,7 +16,7 @@
 
 <Grid relative class="min-h-full">
   <Column>
-    <Sheet rounded>
+    <Sheet rounded shadow>
       <Calendar
         display={type}
         date={selectedDate}
