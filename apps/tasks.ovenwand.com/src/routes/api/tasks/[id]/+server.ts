@@ -1,4 +1,4 @@
-import type { RequestEvent } from '@sveltejs/kit';
+import { json, type RequestEvent } from '@sveltejs/kit';
 import { query } from '$lib/database';
 import { FindTaskById } from '$lib/database/queries';
 import { mapDataToTask } from '$lib/store/tasks/utils';
@@ -9,12 +9,8 @@ export async function GET({ params }: RequestEvent<{ id: string }>) {
 		variables: { id: params.id }
 	});
 
-	return new Response(
-		JSON.stringify({
-			errors,
-			data: {
-				task: mapDataToTask(data?.findTaskByID)
-			}
-		})
-	);
+	return json({
+		errors,
+		data: mapDataToTask(data?.findTaskByID)
+	});
 }
