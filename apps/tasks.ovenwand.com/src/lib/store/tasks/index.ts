@@ -26,12 +26,30 @@ export interface ITasksStore {
 	current: typeof getCurrentTask;
 }
 
-export interface ITaskStore<State extends ITask = ITask> {
-	tasks: ITasksStore<State[]>;
-	task: Readable<State>;
+export interface ITasksStoreOptions {
+	sort?: (a: ITask, b: ITask) => number;
 }
 
-export function useTasks(data: Partial<ITask>[] = []): ITasksStore {
+export function useTasks(
+	data: Partial<ITask>[] = [],
+	options: ITasksStoreOptions = {}
+): ITasksStore {
+	const tasks = derived([{ subscribe }], ([$tasks]) => {
+		return $tasks.sort(
+			options.sort ||
+				((a, b) => {
+					if (a.dueDate === b.dueDate) {
+						return 0;
+					}
+					if (a.dueDate < b.dueDate) {
+						return -1;
+					}
+
+					return 1;
+				})
+		);
+	});
+
 	for (const task of data) {
 		update(addOrUpdateTask(task));
 	}
@@ -46,15 +64,5 @@ export function useTasks(data: Partial<ITask>[] = []): ITasksStore {
 		get: getTask,
 		all: getTasks,
 		current: getCurrentTask
-	};
-}
-
-export function useTask(data: Partial<ITask>): ITaskStore {
-	const store = useTasks([data]);
-	const task = derived(store.tasks, ($tasks) => findTaskById($tasks, data.id), data as ITask);
-
-	return {
-		tasks: store,
-		task: { subscribe: task.subscribe }
 	};
 }
