@@ -8,7 +8,12 @@ export function addTask(task: Partial<ITask>): TaskMutation {
 }
 
 export function updateTask(task: Partial<ITask>): TaskMutation {
-	return ($tasks) => [...$tasks.filter((t) => t._id !== task._id), copyTask(task)];
+	return ($tasks) => {
+		const taskIndex = $tasks.findIndex((t) => t._id === task._id);
+		const newTasks = [...$tasks];
+		newTasks.splice(taskIndex, 1, copyTask(task));
+		return newTasks;
+	};
 }
 
 export function addOrUpdateTask(task: Partial<ITask>): TaskMutation {
