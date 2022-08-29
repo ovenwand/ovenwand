@@ -1,10 +1,17 @@
 import { derived, writable } from 'svelte/store';
 import { isBoolean, isNull, noop } from '@ovenwand/util';
 import { useNotifications } from '@ovenwand/ui';
-import { browser } from '$app/env';
+import { browser } from '$app/environment';
 import { addOrUpdateTask, addTask, removeTask, type TaskMutation, updateTask } from './mutations';
 import { tasks, type ITask } from './state';
 import { createTask } from './utils';
+
+type Fetch = (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>;
+
+interface ActionContext {
+	shouldFetch?: boolean;
+	fetch: Fetch;
+}
 
 const { loading } = useNotifications();
 const { update: _update } = tasks;
@@ -131,6 +138,46 @@ export async function deleteTask(task: ITask): Promise<void> {
 	} else {
 		updateNotification({ type: 'error', message: 'Failed to delete task' }, 3000);
 	}
+}
+
+export function getTask(
+	id: string,
+	{ shouldFetch, fetch }: { shouldFetch?: boolean; fetch: Fetch }
+) {
+	const cache = derived([tasks], ([$tasks]) => $tasks.find((task) => task._id === id));
+	const loading = writable(false);
+	const task = derived([loading, cache], ([$loading, $cache]) => {
+		if ($loading && !$cache) {
+			return createTask();
+		}
+
+		return $cache;
+	});
+
+	shouldFetch = isBoolean(shouldFetch) ? shouldFetch : browser;
+
+	let response: Response;
+
+	const request = shouldFetch
+		? fetch(`/api/tasks/${id}`)
+				.then((res) => (response = res))
+				.then((res) => res.json())
+				.then((data) => data.data)
+				.then(($task) => {
+					loading.set(false);
+
+					update(addOrUpdateTask($task));
+
+					return response;
+				})
+		: new Promise(noop);
+
+	return {
+		loading: { subscribe: loading.subscribe },
+		task: { subscribe: task.subscribe },
+		request,
+		cache
+	};
 }
 
 export function getTasks(shouldFetch?: boolean) {
