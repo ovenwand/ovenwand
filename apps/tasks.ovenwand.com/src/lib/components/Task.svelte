@@ -8,6 +8,7 @@
 	export let description: string;
 	export let done: boolean;
 
+	export let href: string | null = null;
 	export let placeholder = false;
 	export let interactive = true;
 	export let highlight = false;
@@ -16,6 +17,8 @@
 
 	let isMouseDown = false;
 	let taskClassName: string;
+
+	$: taskTagName = href ? 'a' : 'div';
 
 	$: taskClassName = createClassName({
 		'line-through': done,
@@ -38,9 +41,11 @@
 	}
 </script>
 
-<div
+<svelte:element
+	this={taskTagName}
 	id="task-{_id}"
 	class="contents"
+	{href}
 	use:draggable={{ disabled: !interactive }}
 	on:mousedown={() => isMouseDown = true}
 	on:mouseup={() => isMouseDown = false}
@@ -57,4 +62,4 @@
 			<span class={descriptionClassName}>{description}</span>
 		</div>
 	</Sheet>
-</div>
+</svelte:element>
