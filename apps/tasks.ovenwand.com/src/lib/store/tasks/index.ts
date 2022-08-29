@@ -4,7 +4,7 @@ import { createStorage } from '@ovenwand/util';
 import { createTask, copyTask, findTaskById } from './utils';
 import { type ITask, tasks } from './state';
 import { addOrUpdateTask } from './mutations';
-import { saveTask, moveTask, deleteTask, getTasks, getCurrentTask } from './actions';
+import { saveTask, moveTask, deleteTask, getTask, getTasks, getCurrentTask } from './actions';
 
 const storage = createStorage<ITask[]>('tasks', []);
 
@@ -14,13 +14,14 @@ subscribe(($tasks) => isClient && storage.set($tasks));
 
 export { type ITask, type ITaskData } from './state';
 
-export interface ITasksStore<State extends ITask[] = ITask[]> {
-	tasks: Readable<State>;
+export interface ITasksStore {
+	tasks: Readable<ITask[]>;
 	create: typeof createTask;
 	copy: typeof copyTask;
 	save: typeof saveTask;
 	move: typeof moveTask;
 	delete: typeof deleteTask;
+	get: typeof getTask;
 	all: typeof getTasks;
 	current: typeof getCurrentTask;
 }
@@ -36,12 +37,13 @@ export function useTasks(data: Partial<ITask>[] = []): ITasksStore {
 	}
 
 	return {
-		tasks: { subscribe },
+		tasks,
 		create: createTask,
 		copy: copyTask,
 		save: saveTask,
 		move: moveTask,
 		delete: deleteTask,
+		get: getTask,
 		all: getTasks,
 		current: getCurrentTask
 	};
