@@ -1,5 +1,11 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.5.2
+
+### Patch Changes
+
+- 7189a3e: Rename $app/env to $app/environment in svelte apps
+
 ## 0.5.1
 
 ### Patch Changes

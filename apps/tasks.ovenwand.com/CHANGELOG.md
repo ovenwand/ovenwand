@@ -1,5 +1,21 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.3.1
+
+### Patch Changes
+
+- dd8a801: Add ability to link Task to href
+- 1fa8112: Add shadow to schedule calendar sheet
+- ba37cfa: Add routing to explorer
+- c930642: Prevent changing order when updating tasks
+- f6d31b8: Set default value for task.schedule
+- 1937f42: Apply sorting to useTasks result
+- d84c3bb: Add shadow to Panel component
+- 443f50b: Replace new Response call with wrapper from @sveltejs/kit
+- b5e9d79: Remove @vitejs/plugin-basic-ssl
+- 55aaede: Add getTask action
+- fc5c7c2: Force loading cursor in ApplicationState
+
 ## 0.3.0
 
 ### Minor Changes
