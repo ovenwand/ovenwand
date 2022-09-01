@@ -257,7 +257,7 @@ importers:
       '@commitlint/config-conventional': ^17.0.3
       '@esbuild-kit/esm-loader': ^2.4.2
       '@ovenwand/config': workspace:0.1.5
-      '@ovenwand/kit.lint': workspace:0.0.1
+      '@ovenwand/kit.lint': workspace:0.0.2
       '@ovenwand/kit.scaffold': workspace:0.1.2
       '@pnpm/find-workspace-dir': ^4.0.2
       commander: ^9.4.0
