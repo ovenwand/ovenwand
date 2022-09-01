@@ -55,10 +55,7 @@ export async function createKitCLI() {
 		.argument('script', 'script to run')
 		.action(await run);
 
-	program
-		.command('commit')
-		.argument('<action>', '')
-		.action(await commit);
+	program.addCommand(await commit());
 
 	program
 		.command('release')
