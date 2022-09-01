@@ -12,7 +12,8 @@
 		"./.eslintrc.vue.cjs": "./src/.eslintrc.vue.cjs",
 		"./.eslintignore": "./src/.eslintignore",
 		"./.prettierrc": "./src/.prettierrc",
-		"./.prettierignore": "./src/.prettierignore"
+		"./.prettierignore": "./src/.prettierignore",
+		"./commitlint.config.cjs": "./src/commitlint.config.cjs"
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:0.1.5",
