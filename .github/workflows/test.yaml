@@ -47,4 +47,4 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           install: false
-          command: pnpm exec cypress run-ct
+          command: pnpm exec cypress run-ct --config-file .kit/config/cypress.json

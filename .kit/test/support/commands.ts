@@ -24,4 +24,4 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-import '../../packages/test/svelte/src/cypress/commands';
+import '../../../packages/test/svelte/src/cypress/commands';
