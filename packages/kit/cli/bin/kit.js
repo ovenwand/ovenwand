@@ -7,7 +7,7 @@ const require = createRequire(import.meta.url);
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const esmLoader = require.resolve('@esbuild-kit/esm-loader');
 
-spawn(
+const child = spawn(
 	'node',
 	[
 		'--loader',
@@ -20,3 +20,5 @@ spawn(
 		stdio: 'inherit'
 	}
 );
+
+child.on('close', process.exit);
