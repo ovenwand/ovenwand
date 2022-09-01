@@ -1,5 +1,11 @@
 # @ovenwand/ovenwand.com
 
+## 0.13.4
+
+### Patch Changes
+
+- 4333b86: Update sveltekit and vite
+
 ## 0.13.3
 
 ### Patch Changes

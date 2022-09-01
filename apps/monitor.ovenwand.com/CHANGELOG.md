@@ -1,5 +1,11 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.5.3
+
+### Patch Changes
+
+- 4333b86: Update sveltekit and vite
+
 ## 0.5.2
 
 ### Patch Changes

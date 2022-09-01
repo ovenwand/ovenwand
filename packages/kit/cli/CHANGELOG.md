@@ -1,5 +1,20 @@
 # @ovenwand/cli
 
+## 0.3.4
+
+### Patch Changes
+
+- 524beb9: Pass exit code to parent node process
+- 839e139: Add commitlint util
+- 9b60b81: move commitlint config
+
+      - replace arg with params
+      - automatically copy default config
+
+- 836b514: Add test dir to install command
+- Updated dependencies [829efb2]
+  - @ovenwand/kit.lint@0.0.2
+
 ## 0.3.3
 
 ### Patch Changes
