@@ -3,4 +3,4 @@
 
 [ -n "$CI" ] && exit 0
 
-pnpm exec kit commit lint
+pnpm exec kit commit --stage
