@@ -1,0 +1,13 @@
+{
+	"projectId": "9xyzzj",
+	"componentFolder": "packages",
+	"testFiles": "**/*.spec.ts",
+	"pluginsFile": ".kit/test/plugins/index.ts",
+	"supportFile": ".kit/test/support/index.ts",
+	"downloadsFolder": ".kit/test/downloads",
+	"screenshotsFolder": ".kit/test/screenshots",
+	"videosFolder": ".kit/test/videos",
+	"fixturesFolder": ".kit/test/fixtures",
+	"integrationFolder": ".kit/test/integration",
+	"video": false
+}
