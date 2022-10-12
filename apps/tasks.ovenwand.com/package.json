@@ -22,6 +22,7 @@
 		"@ovenwand/env": "workspace:0.0.2",
 		"@ovenwand/gql": "workspace:^0.0.1",
 		"@ovenwand/services.faunadb": "workspace:0.2.1",
+		"@ovenwand/services.pusher": "workspace:^0.0.0",
 		"@ovenwand/ui": "workspace:0.0.15",
 		"@ovenwand/util": "workspace:0.0.16",
 		"@ovenwand/util.date": "workspace:0.0.3",
