@@ -5,7 +5,7 @@ type Task {
 	size: Int!
 	priority: Int!
 	businessValue: Int!
-	dueDate: Time!
+	dueDate: Time
 
 	schedule: String!
 	done: Boolean!
