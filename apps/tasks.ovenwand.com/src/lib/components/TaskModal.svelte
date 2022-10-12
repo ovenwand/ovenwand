@@ -1,38 +1,53 @@
 <script lang="ts">
 	import { Button, Column, Grid, Modal } from '@ovenwand/ui';
+	import { goto } from '$app/navigation';
 	import { type ITask, useLabels, useTasks } from '../store';
 
 	export let task: ITask = null;
-	export let active = false;
+	export let back = null;
+	export let active = !!back;
 
 	const { labels } = useLabels();
 	const { create: createTask, save: saveTask, delete: deleteTask } = useTasks();
 
+	function goBack() {
+		if (back) {
+			goto(back);
+		} else {
+			active = false;
+		}
+	}
+
 	function onClick() {
-		task = createTask({ labels: ['backlog'] });
+		task = createTask();
 		active = true;
 	}
 
 	function onSubmit() {
-		active = false;
+		goBack();
 		saveTask(task);
 	}
 
 	function onReset() {
-		active = false;
+		goBack();
 	}
 
 	function onDelete() {
-		active = false;
+		goBack();
 		deleteTask(task);
 	}
 </script>
 
 <Button on:click={onClick}>Add task</Button>
 
-<Modal bind:active>
+<Modal bind:active {back}>
 	<form on:submit|preventDefault={onSubmit} on:reset|preventDefault={onReset}>
 		<Grid relative>
+			<Column class="flex">
+				<div class="flex-grow"/>
+				<Button href={back} title="close">Close</Button>
+			</Column>
+
 			<Column>
 				<label for="task-title" class="block">Title</label>
 				<input
@@ -57,22 +72,22 @@
 				/>
 			</Column>
 
-			<Column>
-				<label for="task-labels" class="block">Lane</label>
-				<select
-					class="w-full text-gray-900"
-					id="task-labels"
-					name="task.labels"
-					bind:value={task.labels}
-					multiple
-				>
-					{#each $labels as label (label._id)}
-						<option value={label._id} selected={task.labels.includes(label._id)}>
-							{label.name}
-						</option>
-					{/each}
-				</select>
-			</Column>
+<!--			<Column>-->
+<!--				<label for="task-labels" class="block">Lane</label>-->
+<!--				<select-->
+<!--					class="w-full text-gray-900"-->
+<!--					id="task-labels"-->
+<!--					name="task.labels"-->
+<!--					bind:value={task.labels}-->
+<!--					multiple-->
+<!--				>-->
+<!--					{#each $labels as label (label._id)}-->
+<!--						<option value={label._id} selected={task.labels.includes(label._id)}>-->
+<!--							{label.name}-->
+<!--						</option>-->
+<!--					{/each}-->
+<!--				</select>-->
+<!--			</Column>-->
 
 			<Column>
 				<Button on:click={onDelete}>Delete</Button>
