@@ -1,17 +1,10 @@
 import { gql } from '@ovenwand/gql';
+import TaskFields from './fields/Task.gql?raw';
 
 export const FindTaskById = gql`
 	query FindTaskByID($id: ID!) {
 		findTaskByID(id: $id) {
-			_id
-			title
-			description
-			priority
-			businessValue
-			size
-			dueDate
-			done
-			schedule
+			${TaskFields}
 			labels {
 				data {
 					_id

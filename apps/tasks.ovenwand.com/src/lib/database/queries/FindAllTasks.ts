@@ -1,18 +1,12 @@
 import { gql, type DocumentNode } from '@ovenwand/gql';
+import TaskFields from './fields/Task.gql?raw';
+import LabelFields from './fields/Label.gql?raw';
 
 export const FindAllTasks: DocumentNode = gql`
 	query FindAllTasksAndLabels {
 		tasks {
 			data {
-				_id
-				title
-				description
-				size
-				priority
-				businessValue
-				dueDate
-				done
-				schedule
+				${TaskFields}
 				labels {
 					data {
 						_id
@@ -22,9 +16,7 @@ export const FindAllTasks: DocumentNode = gql`
 		}
 		labels {
 			data {
-				_id
-				name
-				description
+				${LabelFields}
 			}
 		}
 	}
