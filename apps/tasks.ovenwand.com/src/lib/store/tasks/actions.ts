@@ -2,16 +2,11 @@ import { derived, writable } from 'svelte/store';
 import { isBoolean, isNull, noop } from '@ovenwand/util';
 import { useNotifications } from '@ovenwand/ui';
 import { browser } from '$app/environment';
-import { addOrUpdateTask, addTask, removeTask, type TaskMutation, updateTask } from './mutations';
+import { addOrUpdateTask, type TaskMutation } from './mutations';
 import { tasks, type ITask } from './state';
 import { createTask } from './utils';
 
 type Fetch = (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>;
-
-interface ActionContext {
-	shouldFetch?: boolean;
-	fetch: Fetch;
-}
 
 const { loading } = useNotifications();
 const { update: _update } = tasks;
@@ -28,34 +23,20 @@ const update = (mutation: TaskMutation) => {
 export async function saveTask(task: Partial<ITask>): Promise<void> {
 	const updateNotification = loading({ message: 'Saving task..' }, 3000);
 
-	const body = JSON.stringify({
-		_id: task._id,
-		title: task.title,
-		description: task.description,
-		done: task.done,
-		labels: task.labels
-	});
+	const body = JSON.stringify(task);
 
 	const method = task._id ? 'PATCH' : 'POST';
 
 	let success = true;
 
 	try {
-		const response = await fetch('/api/tasks', {
+		await fetch('/api/tasks', {
 			method,
 			headers: {
 				Accept: 'application/json'
 			},
 			body
 		});
-
-		const { data } = await response.json();
-
-		if (task._id) {
-			update(updateTask(data));
-		} else {
-			update(addTask(data));
-		}
 	} catch (e) {
 		console.error(e);
 		success = false;
@@ -86,17 +67,13 @@ export async function moveTask(task: ITask, fromLabel: string, toLabel: string):
 	let success = true;
 
 	try {
-		const response = await fetch('/api/tasks', {
+		await fetch('/api/tasks', {
 			method: 'PATCH',
 			headers: {
 				Accept: 'application/json'
 			},
 			body
 		});
-
-		const { data } = await response.json();
-
-		update(updateTask(data));
 	} catch (e) {
 		console.error(e);
 		success = false;
@@ -117,17 +94,13 @@ export async function deleteTask(task: ITask): Promise<void> {
 	let success = true;
 
 	try {
-		const response = await fetch('/api/tasks', {
+		await fetch('/api/tasks', {
 			method: 'DELETE',
 			headers: {
 				Accept: 'application/json'
 			},
 			body
 		});
-
-		const { data } = await response.json();
-
-		update(removeTask(data));
 	} catch (e) {
 		console.error(e);
 		success = false;

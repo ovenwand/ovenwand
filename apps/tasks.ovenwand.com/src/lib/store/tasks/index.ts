@@ -1,18 +1,29 @@
 import { derived, type Readable } from 'svelte/store';
-import { isClient } from '@ovenwand/env';
+import { browser } from '$app/environment';
 import { createStorage } from '@ovenwand/util';
-import { createTask, copyTask, findTaskById } from './utils';
+import { createTask, copyTask } from './utils';
 import { type ITask, tasks } from './state';
-import { addOrUpdateTask } from './mutations';
+import { addOrUpdateTask, addTask, removeTask, updateTask } from './mutations';
 import { saveTask, moveTask, deleteTask, getTask, getTasks, getCurrentTask } from './actions';
 
 const storage = createStorage<ITask[]>('tasks', []);
 
 const { subscribe, update } = tasks;
 
-subscribe(($tasks) => isClient && storage.set($tasks));
+subscribe(($tasks) => browser && storage.set($tasks));
+
+if (browser) {
+	import('$lib/utils/socket').then(({ useTasksChannel }) => {
+		const channel = useTasksChannel();
+		channel.on('add', (data) => update(addTask(data)));
+		channel.on('update', (data) => update(updateTask(data)));
+		channel.on('delete', (data) => update(removeTask(data)));
+	});
+}
 
 export { type ITask, type ITaskData } from './state';
+
+export * from './utils';
 
 export interface ITasksStore {
 	tasks: Readable<ITask[]>;
