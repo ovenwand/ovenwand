@@ -5,12 +5,13 @@
 	import { useMedia } from '@ovenwand/util.svelte';
 
 	export let active = false;
+	export let back = null;
 
 	const { xs } = useMedia();
 </script>
 
 {#if active}
-	<Overlay class="flex items-center justify-center" on:click={() => (active = false)}>
+	<Overlay class="flex items-center justify-center" {back} on:click={back || (() => active = false)}>
 		<Grid class="pointer-events-none" gapOutside={$xs}>
 			<Column
 				class="pointer-events-auto"
