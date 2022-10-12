@@ -1,13 +1,7 @@
 <script lang="ts">
   import {
     addDays,
-    daysOfTheWeek,
-    format,
     getDay,
-    getDaysInMonth,
-    getDate,
-    isFirstDayOfMonth,
-    isSameMonth,
     startOfMonth,
   } from '@ovenwand/util.date';
   import Toolbar from './Toolbar.svelte';
