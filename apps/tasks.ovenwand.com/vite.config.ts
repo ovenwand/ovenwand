@@ -1,10 +1,9 @@
 import { defineConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
+import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
 
 export default defineConfig({
-	legacy: { buildSsrCjsExternalHeuristics: true }, // TODO Hopefully remove one day
-
-	plugins: [sveltekit()],
+	plugins: [viteCommonjs(), sveltekit()],
 
 	define: {
 		'import.meta.env.APP_VERSION': JSON.stringify(process.env.npm_package_version)
