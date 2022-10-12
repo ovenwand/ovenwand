@@ -6,6 +6,7 @@
 	export let href: string | null = null;
 	export let type = 'button';
 	export let size: 'default' | 'large' = 'default';
+	export let full = false;
 
 	$: isDefaultSize = size === 'default';
 	$: isLargeSize = size === 'large';
@@ -17,13 +18,15 @@
 		'py-3': isDefaultSize,
 		'px-4': isLargeSize,
 		'py-6': isLargeSize,
+		'w-fit': !full,
+		'max-w-full': !full,
 		'leading-none': true,
 		'text-center': true
 	});
 </script>
 
 {#if href}
-	<a class={buttonClassName} {href} sveltekit:prefetch on:click {...$$restProps}>
+	<a class={buttonClassName} {href} data-sveltekit-prefetch on:click {...$$restProps}>
 		<slot />
 	</a>
 {:else}
