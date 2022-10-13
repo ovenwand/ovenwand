@@ -13,6 +13,8 @@
 	},
 	"dependencies": {
 		"@ovenwand/services.faunadb": "workspace:0.2.1",
+		"@ovenwand/services.monitor": "workspace:0.2.2",
+		"@ovenwand/services.pusher": "workspace:0.0.0",
 		"@ovenwand/services.sentry": "workspace:0.0.1"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
