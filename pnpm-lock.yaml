@@ -143,6 +143,7 @@ importers:
   apps/tasks.ovenwand.com:
     specifiers:
       '@originjs/vite-plugin-commonjs': ^1.0.3
+      '@ovenwand/app': workspace:^0.1.16
       '@ovenwand/config': workspace:0.1.5
       '@ovenwand/env': workspace:0.0.2
       '@ovenwand/gql': workspace:^0.0.2
@@ -165,6 +166,7 @@ importers:
       vite: ^3.1.0-beta.1
     devDependencies:
       '@originjs/vite-plugin-commonjs': 1.0.3
+      '@ovenwand/app': link:../../packages/app
       '@ovenwand/config': link:../../packages/config
       '@ovenwand/env': link:../../packages/env
       '@ovenwand/gql': link:../../packages/gql
