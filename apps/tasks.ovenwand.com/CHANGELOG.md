@@ -1,5 +1,23 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.4.0
+
+### Minor Changes
+
+- df3e439: Connect router to TaskModal on calendar page
+
+  - TaskModal now accessible through url
+
+- 12639e9: Implement websocket for realtime task updates
+
+### Patch Changes
+
+- 6e4639b: Add websocket utilities
+- fb89c85: Normalize environment variables and usages
+- b44728d: Fix footer buttons to use full width prop
+- 36e304a: Add re-usable query fields
+- fae62f5: Fix build: - add optional dependency "encoding" - add @originjs/vite-plugin-commonjs
+
 ## 0.3.2
 
 ### Patch Changes

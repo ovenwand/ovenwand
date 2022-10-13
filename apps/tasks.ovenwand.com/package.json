@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/tasks.ovenwand.com",
-	"version": "0.3.2",
+	"version": "0.4.0",
 	"type": "module",
 	"private": true,
 	"scripts": {
@@ -21,10 +21,10 @@
 		"@originjs/vite-plugin-commonjs": "^1.0.3",
 		"@ovenwand/config": "workspace:0.1.5",
 		"@ovenwand/env": "workspace:0.0.2",
-		"@ovenwand/gql": "workspace:^0.0.1",
+		"@ovenwand/gql": "workspace:^0.0.2",
 		"@ovenwand/services.faunadb": "workspace:0.2.1",
 		"@ovenwand/services.pusher": "workspace:^0.0.0",
-		"@ovenwand/ui": "workspace:0.0.15",
+		"@ovenwand/ui": "workspace:0.0.16",
 		"@ovenwand/util": "workspace:0.0.16",
 		"@ovenwand/util.date": "workspace:0.0.3",
 		"@ovenwand/util.math": "workspace:0.0.8",

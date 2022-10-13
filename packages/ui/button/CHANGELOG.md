@@ -1,5 +1,11 @@
 # @ovenwand/ui.button
 
+## 0.3.9
+
+### Patch Changes
+
+- 455e91d: Added ability to toggle buttons between fit content and full width
+
 ## 0.3.8
 
 ### Patch Changes

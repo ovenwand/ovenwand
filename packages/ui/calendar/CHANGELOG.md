@@ -1,5 +1,12 @@
 # @ovenwand/ui.calendar
 
+## 0.0.2
+
+### Patch Changes
+
+- 77f8c3c: Make cell height dynamic based on container size
+- dd3b2ac: Remove unused date utils
+
 ## 0.0.1
 
 ### Patch Changes

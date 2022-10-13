@@ -1,5 +1,11 @@
 # @ovenwand/monitor
 
+## 0.2.2
+
+### Patch Changes
+
+- fb89c85: Normalize environment variables and usages
+
 ## 0.2.1
 
 ### Patch Changes
