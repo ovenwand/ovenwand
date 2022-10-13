@@ -1,5 +1,13 @@
 # @ovenwand/config
 
+## 0.1.6
+
+### Patch Changes
+
+- 538e7fa: Allow serving svelte apps from the edge
+
+      - Replaces @sveltejs/adapter-auto with @sveltejs/adapter-vercel
+
 ## 0.1.5
 
 ### Patch Changes

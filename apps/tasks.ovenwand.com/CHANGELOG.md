@@ -1,5 +1,11 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.4.1
+
+### Patch Changes
+
+- e0498f2: Implement Base component from @ovenwand/app
+
 ## 0.4.0
 
 ### Minor Changes

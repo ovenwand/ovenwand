@@ -17,7 +17,7 @@
 		"ua-parser-js": "^1.0.2"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.5",
+		"@ovenwand/config": "workspace:0.1.6",
 		"@types/ua-parser-js": "^0.7.36"
 	},
 	"author": "Ovenwand <info@ovenwand.com>",

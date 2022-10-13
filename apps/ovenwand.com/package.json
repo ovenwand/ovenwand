@@ -18,14 +18,14 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@ovenwand/app": "workspace:0.1.16",
+		"@ovenwand/app": "workspace:0.1.17",
 		"@ovenwand/brand": "workspace:0.0.9",
-		"@ovenwand/config": "workspace:0.1.5",
+		"@ovenwand/config": "workspace:0.1.6",
 		"@ovenwand/env": "workspace:0.0.2",
 		"@ovenwand/monitor": "workspace:0.2.2",
 		"@ovenwand/services.sentry": "workspace:0.0.1",
-		"@ovenwand/ui": "workspace:0.0.16",
-		"@ovenwand/util": "workspace:0.0.16",
+		"@ovenwand/ui": "workspace:0.0.17",
+		"@ovenwand/util": "workspace:0.0.17",
 		"@ovenwand/util.date": "workspace:0.0.3",
 		"@ovenwand/util.math": "workspace:0.0.8",
 		"@storyblok/svelte": "^2.2.1",
