@@ -1,5 +1,12 @@
 # @ovenwand/app
 
+## 0.1.18
+
+### Patch Changes
+
+- Updated dependencies [1cf0761]
+  - @ovenwand/services.monitor@0.2.3
+
 ## 0.1.17
 
 ### Patch Changes
