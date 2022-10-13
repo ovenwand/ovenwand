@@ -6,7 +6,7 @@ type LoadEvent = import('./$types').LoadEvent;
 export async function load(event: LoadEvent) {
 	const session = readSessionCookie(event) ?? {
 		id: null,
-		token: env.VITE_FAUNA_ANONYMOUS_KEY
+		token: env.PUBLIC_FAUNA_ANONYMOUS_KEY
 	};
 
 	return {

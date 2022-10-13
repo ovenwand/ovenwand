@@ -1,13 +1,14 @@
 // import { configureSentry } from '@ovenwand/services.sentry';
 // import { useFeatures } from '@ovenwand/app';
+// import { SENTRY_DSN, VERCEL_ENV, VERCEL_GIT_COMMIT_SHA } from '$env/static/public';
 //
 // const isFeatureEnabled = useFeatures();
 //
 // configureSentry({
 // 	enabled: isFeatureEnabled('services.sentry'),
-// 	dsn: import.meta.env.SENTRY_DSN,
-// 	environment: import.meta.env.VITE_VERCEL_ENV || 'development',
-// 	release: import.meta.env.VITE_VERCEL_GIT_COMMIT_SHA || 'local'
+// 	dsn: SENTRY_DSN,
+// 	environment: VERCEL_ENV || 'development',
+// 	release: VERCEL_GIT_COMMIT_SHA || 'local'
 // });
 
 // export { getSession } from './getSession';
