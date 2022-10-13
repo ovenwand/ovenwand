@@ -25,7 +25,7 @@
   );
 </script>
 
-<div class="bg-gray-300 dark:bg-gray-800">
+<div class="bg-gray-300 dark:bg-gray-800 h-full flex flex-col">
   <Toolbar {date} {today} {previous} {next} />
 
   <Header/>
