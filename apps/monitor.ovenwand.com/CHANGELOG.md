@@ -1,5 +1,17 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.5.5
+
+### Patch Changes
+
+- @ovenwand/ui@0.0.17
+- @ovenwand/app@0.1.17
+- @ovenwand/env@0.0.2
+- @ovenwand/monitor@0.2.2
+- @ovenwand/services.faunadb@0.2.1
+- @ovenwand/util@0.0.17
+- @ovenwand/util.date@0.0.3
+
 ## 0.5.4
 
 ### Patch Changes

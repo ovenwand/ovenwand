@@ -1,5 +1,13 @@
 # @ovenwand/ui.calendar
 
+## 0.0.3
+
+### Patch Changes
+
+- 1efae05: Prevent calendar rows from growing in height, force equal height
+  - @ovenwand/util.browser@0.0.12
+  - @ovenwand/util.date@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

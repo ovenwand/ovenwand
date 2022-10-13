@@ -1,5 +1,14 @@
 # @ovenwand/cli
 
+## 0.3.6
+
+### Patch Changes
+
+- Updated dependencies [538e7fa]
+  - @ovenwand/config@0.1.6
+  - @ovenwand/kit.lint@0.0.2
+  - @ovenwand/kit.scaffold@0.1.2
+
 ## 0.3.5
 
 ### Patch Changes

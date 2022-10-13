@@ -1,5 +1,11 @@
 # @ovenwand/gql
 
+## 0.0.3
+
+### Patch Changes
+
+- 36d4519: Fixed runtime server, replaces path import with file import
+
 ## 0.0.2
 
 ### Patch Changes

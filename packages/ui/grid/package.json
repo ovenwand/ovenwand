@@ -16,7 +16,7 @@
 		"@ovenwand/util.fp": "workspace:0.1.6"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.5",
+		"@ovenwand/config": "workspace:0.1.6",
 		"svelte": "^3.49.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
