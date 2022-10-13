@@ -1,12 +1,10 @@
-import { env } from '$env/dynamic/private';
-import { readSessionCookie } from '../lib/session';
+import { readSessionToken } from '@ovenwand/auth';
+import { PUBLIC_FAUNA_ANONYMOUS_KEY } from '$env/static/public';
 
-type LoadEvent = import('./$types').LoadEvent;
-
-export async function load(event: LoadEvent) {
-	const session = readSessionCookie(event) ?? {
+export async function load({ cookies }: import('./$types').LayoutServerLoadEvent) {
+	const session = readSessionToken(cookies.get('session_id')) ?? {
 		id: null,
-		token: env.PUBLIC_FAUNA_ANONYMOUS_KEY
+		token: PUBLIC_FAUNA_ANONYMOUS_KEY
 	};
 
 	return {
