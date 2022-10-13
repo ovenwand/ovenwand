@@ -1,5 +1,11 @@
 # @ovenwand/services.monitor
 
+## 0.2.3
+
+### Patch Changes
+
+- 1cf0761: Move package to services and rename to @ovenwand/services.monitor
+
 ## 0.2.2
 
 ### Patch Changes

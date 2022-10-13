@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/monitor.ovenwand.com",
-	"version": "0.5.5",
+	"version": "0.5.6",
 	"private": true,
 	"scripts": {
 		"clean": "pnpm --silent dlx rimraf .svelte-kit .vercel",
@@ -17,11 +17,11 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"dependencies": {
-		"@ovenwand/app": "workspace:0.1.17",
+		"@ovenwand/app": "workspace:0.1.18",
 		"@ovenwand/auth": "workspace:^0.0.0",
 		"@ovenwand/env": "workspace:0.0.2",
 		"@ovenwand/services.faunadb": "workspace:0.2.1",
-		"@ovenwand/services.monitor": "workspace:0.2.2",
+		"@ovenwand/services.monitor": "workspace:0.2.3",
 		"@ovenwand/ui": "workspace:0.0.17",
 		"@ovenwand/util": "workspace:0.0.17",
 		"@ovenwand/util.date": "workspace:0.0.3",

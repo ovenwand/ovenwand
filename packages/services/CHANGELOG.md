@@ -1,5 +1,12 @@
 # @ovenwand/services
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies [1cf0761]
+  - @ovenwand/services.monitor@0.2.3
+
 ## 0.0.5
 
 ### Patch Changes

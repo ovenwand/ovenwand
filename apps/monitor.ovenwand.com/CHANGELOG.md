@@ -1,5 +1,19 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.5.6
+
+### Patch Changes
+
+- 9a47930: Implement @ovenwand/auth
+
+  - Replace local auth/session utils with @ovenwand/auth
+  - Implement sveltekit form actions
+  - Add progressive enhancement
+
+- Updated dependencies [1cf0761]
+  - @ovenwand/services.monitor@0.2.3
+  - @ovenwand/app@0.1.18
+
 ## 0.5.5
 
 ### Patch Changes
