@@ -11,7 +11,7 @@
   export let date: Date;
 </script>
 
-<div class="grid grid-cols-7">
+<div class="grid grid-cols-7 flex-auto">
   {#each cells as cellDate, index}
     <Cell dim={!isSameMonth(cellDate, date)}>
       <div>

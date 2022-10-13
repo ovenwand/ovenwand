@@ -20,7 +20,7 @@
 
 <Grid relative class="min-h-full">
   <Column>
-    <Sheet rounded shadow>
+    <Sheet class="h-full" rounded shadow>
       <Calendar
         display={type}
         date={selectedDate}
