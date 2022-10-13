@@ -1,4 +1,4 @@
-import { readSessionToken } from '@ovenwand/auth';
+import { readSessionToken } from '@ovenwand/auth/node';
 import { PUBLIC_FAUNA_ANONYMOUS_KEY } from '$env/static/public';
 
 export async function load({ cookies }: import('./$types').LayoutServerLoadEvent) {

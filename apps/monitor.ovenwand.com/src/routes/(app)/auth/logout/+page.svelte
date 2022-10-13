@@ -1,15 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
-	let form;
-
-	onMount(() => {
-		form.submit();
-	});
+	import { Logout } from '@ovenwand/auth';
+	import { enhance } from '$app/forms';
 </script>
 
-<form bind:this={form} method="post">
-	<noscript>
-		<button type="submit">Click here to logout</button>
-	</noscript>
-</form>
+<Logout {enhance} />

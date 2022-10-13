@@ -1,6 +1,6 @@
 import { invalid, redirect, type RequestEvent } from '@sveltejs/kit';
 import type { Identifiable } from '@ovenwand/services.faunadb';
-import { createSessionToken } from '@ovenwand/auth';
+import { createSessionToken } from '@ovenwand/auth/node';
 import { env } from '$env/dynamic/private';
 import { gql } from '$lib/database';
 

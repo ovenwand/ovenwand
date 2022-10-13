@@ -1,20 +1,18 @@
 <script lang="ts">
-	import { Button, Column, Grid } from '@ovenwand/ui';
+	import { Column, Grid } from '@ovenwand/ui';
+	import { Login } from '@ovenwand/auth';
 	import { enhance } from '$app/forms';
-	export let errors: { form?: string } | undefined;
+	export let form;
 </script>
 
 <Grid>
 	<Column>
-		<form method="POST" use:enhance>
-			{#if errors?.form}
-				<p>{errors.form}</p>
-			{/if}
-
-			<input type="email" name="email" />
-			<input type="password" name="password" />
-
-			<Button type="submit">Login</Button>
-		</form>
+		<Login {enhance}>
+			<svelte:fragment slot="errors">
+				{#if form?.form}
+					<p>{form.form}</p>
+				{/if}
+			</svelte:fragment>
+		</Login>
 	</Column>
 </Grid>
