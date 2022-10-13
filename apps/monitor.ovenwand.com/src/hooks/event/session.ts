@@ -1,5 +1,5 @@
 import type { RequestEvent } from '@sveltejs/kit';
-import { readSessionToken } from '@ovenwand/auth';
+import { readSessionToken } from '@ovenwand/auth/node';
 import { PUBLIC_FAUNA_ANONYMOUS_KEY } from '$env/static/public';
 
 export function useSession(event: RequestEvent) {
