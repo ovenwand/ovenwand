@@ -3,7 +3,7 @@ import {
 	InMemoryCache,
 	type ApolloClientOptions,
 	ApolloCache
-} from '@apollo/client/core';
+} from '@apollo/client/core/index.js';
 
 export type GqlClientOptions<CacheShape> = Omit<ApolloClientOptions<CacheShape>, 'cache'> & {
 	cache?: ApolloCache<CacheShape>;
