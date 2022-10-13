@@ -2,7 +2,7 @@ import { resolve } from 'node:path';
 import { Command } from 'commander';
 import { createCommand, doppler } from '../utils';
 
-const ENV_FEATURE_KEY = 'VITE_FEATURE_FLAGS';
+const ENV_FEATURE_KEY = 'PUBLIC_FEATURE_FLAGS';
 
 const StatusType = {
 	[0]: 'disabled',

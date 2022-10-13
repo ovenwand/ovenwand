@@ -5,6 +5,13 @@ import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
 export default defineConfig({
 	plugins: [viteCommonjs(), sveltekit()],
 
+	envPrefix: [
+		'VITE_',
+		'PUBLIC_',
+		'VERCEL_',
+		'SENTRY_' // TODO remove SENTRY_ from prefixes
+	],
+
 	define: {
 		'import.meta.env.APP_VERSION': JSON.stringify(process.env.npm_package_version)
 	},

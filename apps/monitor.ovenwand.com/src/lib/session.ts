@@ -1,13 +1,14 @@
 import { parse, serialize } from 'cookie';
 import jwt from 'jsonwebtoken';
 import type { RequestEvent } from '@sveltejs/kit';
-import type { IUserData } from '../routes/auth/login';
+import { env } from '$env/dynamic/private';
+import type { IUserData } from '../routes/(app)/auth/login/+page.server';
 
-const isProduction = import.meta.env.VITE_VERCEL_ENV === 'production';
+const isProduction = env.VERCEL_ENV === 'production';
 
 export function createSessionCookie(user: IUserData, token: string): string {
 	const session = { id: user._id, token: token };
-	const sessionId = jwt.sign(session, import.meta.env.VITE_SECRET);
+	const sessionId = jwt.sign(session, env.SECRET);
 	return serialize('session_id', sessionId, {
 		path: '/',
 		httpOnly: true,

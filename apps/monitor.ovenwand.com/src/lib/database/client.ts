@@ -1,10 +1,11 @@
 import { createClient, createGql } from '@ovenwand/services.faunadb';
+import { env } from '$env/dynamic/private';
 
 export const { gql, request } = createGql({
-	domain: import.meta.env.VITE_FAUNA_DOMAIN,
-	secret: import.meta.env.VITE_FAUNA_KEY
+	domain: env.FAUNA_DOMAIN,
+	secret: env.FAUNA_KEY
 });
 
 export const client = createClient({
-	secret: import.meta.env.VITE_FAUNA_KEY
+	secret: env.FAUNA_KEY
 });

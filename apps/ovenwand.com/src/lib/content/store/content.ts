@@ -1,5 +1,7 @@
 import type { SvelteComponent } from 'svelte';
 import { storyblokInit, apiPlugin } from '@storyblok/svelte';
+import { dev } from '$app/environment';
+import { PUBLIC_STORYBLOK_ACCESS_TOKEN } from '$env/static/public';
 import type { Story } from '../types';
 import { useStoryblokApi } from '../client';
 
@@ -12,7 +14,7 @@ export function useContent(
 	isBridgeEnabled = bridge;
 
 	return storyblokInit({
-		accessToken: import.meta.env.VITE_STORYBLOK_ACCESS_TOKEN,
+		accessToken: PUBLIC_STORYBLOK_ACCESS_TOKEN,
 		use: [apiPlugin],
 		bridge,
 		components
@@ -26,7 +28,7 @@ export async function preloadStory(
 	const api = useStoryblokApi();
 
 	const response = await api.get<{ story: Story; stories: Story[] }>(`cdn/stories/${path}`, {
-		version: isBridgeEnabled || import.meta.env.DEV ? 'draft' : 'published',
+		version: isBridgeEnabled || dev ? 'draft' : 'published',
 		...params
 	});
 

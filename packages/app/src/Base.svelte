@@ -1,6 +1,9 @@
 <script lang="ts">
 	import type { Readable } from 'svelte/store';
 	import { useMonitor } from '@ovenwand/monitor';
+	import { useFeatures } from "./features";
+
+	const isFeatureEnabled = useFeatures();
 
 	export interface Page {
 		url: URL;
@@ -11,7 +14,18 @@
 	export let page: Readable<Page>;
 	export let browser: boolean;
 
-	const { trackPageView } = useMonitor(import.meta.env.VITE_MONITOR_PROJECT);
+	export let env = {
+		APP_VERSION: import.meta.env.APP_VERSION,
+		PUBLIC_MONITOR_PROJECT: import.meta.env.PUBLIC_MONITOR_PROJECT,
+		PUBLIC_MONITOR_URL: import.meta.env.PUBLIC_MONITOR_URL,
+		VERCEL_GIT_COMMIT_SHA: import.meta.env.VERCEL_GIT_COMMIT_SHA,
+	};
+
+	const { trackPageView } = useMonitor({
+		enabled: isFeatureEnabled('services.monitor'),
+		project: env.PUBLIC_MONITOR_PROJECT,
+		url: env.PUBLIC_MONITOR_URL,
+	});
 
 	$: if (browser) {
 		trackPageView({ path: $page.url.pathname, params: $page.params });
@@ -23,8 +37,8 @@
 		<title>{title}</title>
 	{/if}
 
-	<meta name="version" content={import.meta.env.APP_VERSION} />
-	<meta name="version-id" content={import.meta.env.VITE_VERCEL_GIT_COMMIT_SHA} />
+	<meta name="version" content={env.APP_VERSION} />
+	<meta name="version-id" content={env.VERCEL_GIT_COMMIT_SHA} />
 </svelte:head>
 
 <slot />

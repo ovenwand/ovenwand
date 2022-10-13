@@ -1,8 +1,23 @@
 import { noop } from '@ovenwand/util.fp';
 import { getConnectionSpeed } from './utils';
 
-export function useMonitor(projectId: string) {
-	const isEnabled = import.meta.env.VITE_MONITOR === '1';
+function withDefaultOptions(options: Partial<MonitorOptions>): MonitorOptions {
+	return {
+		enabled: import.meta.env.PUBLIC_MONITOR === '1',
+		project: import.meta.env.PUBLIC_MONITOR_PROJECT,
+		url: import.meta.env.PUBLIC_MONITOR_URL,
+		...options
+	};
+}
+
+export interface MonitorOptions {
+	enabled: boolean;
+	project: string;
+	url: string;
+}
+
+export function useMonitor(options: Partial<MonitorOptions> = {}) {
+	const { enabled, project, url } = withDefaultOptions(options);
 
 	function trackPageView({ path, params }: { path: string; params: Record<string, string> }) {
 		const page = Object.entries(params).reduce(
@@ -10,11 +25,11 @@ export function useMonitor(projectId: string) {
 			path
 		);
 
-		fetch(`${import.meta.env.VITE_MONITOR_URL}/track`, {
+		fetch(`${url}/track`, {
 			method: 'POST',
 			credentials: 'omit',
 			body: JSON.stringify({
-				project: projectId,
+				project,
 				type: 'page_view',
 				timestamp: new Date().toISOString(),
 				uri: location.href,
@@ -27,6 +42,6 @@ export function useMonitor(projectId: string) {
 	}
 
 	return {
-		trackPageView: isEnabled ? trackPageView : noop
+		trackPageView: enabled ? trackPageView : noop
 	};
 }

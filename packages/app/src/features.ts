@@ -1,4 +1,4 @@
-const features = JSON.parse(import.meta.env.VITE_FEATURE_FLAGS || '{}');
+const features = JSON.parse(import.meta.env.PUBLIC_FEATURE_FLAGS || '{}');
 
 type KeyOfMap<M extends Map<unknown, unknown>> = M extends Map<infer K, unknown> ? K : never;
 
