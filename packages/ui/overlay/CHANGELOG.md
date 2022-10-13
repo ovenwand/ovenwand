@@ -1,5 +1,11 @@
 # @ovenwand/ui.overlay
 
+## 0.0.10
+
+### Patch Changes
+
+- c3f21c6: Add ability to link overlay to another back using the `back` prop
+
 ## 0.0.9
 
 ### Patch Changes

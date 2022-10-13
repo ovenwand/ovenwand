@@ -1,5 +1,13 @@
 # @ovenwand/ui.modal
 
+## 0.2.13
+
+### Patch Changes
+
+- 097eb1d: Add ability to pass back link to overlay
+- Updated dependencies [c3f21c6]
+  - @ovenwand/ui.overlay@0.0.10
+
 ## 0.2.12
 
 ### Patch Changes

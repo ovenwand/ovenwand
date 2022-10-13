@@ -1,5 +1,14 @@
 # @ovenwand/app
 
+## 0.1.16
+
+### Patch Changes
+
+- fb89c85: Normalize environment variables and usages
+- Updated dependencies [fb89c85]
+  - @ovenwand/monitor@0.2.2
+  - @ovenwand/ui@0.0.16
+
 ## 0.1.15
 
 ### Patch Changes

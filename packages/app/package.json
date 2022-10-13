@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/app",
-	"version": "0.1.15",
+	"version": "0.1.16",
 	"private": true,
 	"description": "",
 	"type": "module",
@@ -14,8 +14,8 @@
 	},
 	"dependencies": {
 		"@ovenwand/brand": "workspace:0.0.9",
-		"@ovenwand/monitor": "workspace:0.2.1",
-		"@ovenwand/ui": "workspace:0.0.15",
+		"@ovenwand/monitor": "workspace:0.2.2",
+		"@ovenwand/ui": "workspace:0.0.16",
 		"@ovenwand/util.browser": "workspace:0.0.12"
 	},
 	"devDependencies": {

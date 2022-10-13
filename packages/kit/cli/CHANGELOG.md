@@ -1,5 +1,11 @@
 # @ovenwand/cli
 
+## 0.3.5
+
+### Patch Changes
+
+- fb89c85: Normalize environment variables and usages
+
 ## 0.3.4
 
 ### Patch Changes

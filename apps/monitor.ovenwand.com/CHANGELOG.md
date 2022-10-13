@@ -1,5 +1,16 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.5.4
+
+### Patch Changes
+
+- fb89c85: Normalize environment variables and usages
+- 1f97e06: Update sveltekit
+- Updated dependencies [fb89c85]
+  - @ovenwand/app@0.1.16
+  - @ovenwand/monitor@0.2.2
+  - @ovenwand/ui@0.0.16
+
 ## 0.5.3
 
 ### Patch Changes
