@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Readable } from 'svelte/store';
-	import { useMonitor } from '@ovenwand/monitor';
+	import { useMonitor } from '@ovenwand/services.monitor';
 	import { useFeatures } from "./features";
 
 	const isFeatureEnabled = useFeatures();

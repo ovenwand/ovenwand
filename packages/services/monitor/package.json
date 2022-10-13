@@ -1,5 +1,5 @@
 {
-	"name": "@ovenwand/monitor",
+	"name": "@ovenwand/services.monitor",
 	"version": "0.2.2",
 	"private": true,
 	"description": "",

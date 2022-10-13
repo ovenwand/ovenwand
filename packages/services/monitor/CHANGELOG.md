@@ -1,4 +1,4 @@
-# @ovenwand/monitor
+# @ovenwand/services.monitor
 
 ## 0.2.2
 

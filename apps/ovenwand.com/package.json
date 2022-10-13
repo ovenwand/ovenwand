@@ -22,7 +22,7 @@
 		"@ovenwand/brand": "workspace:0.0.9",
 		"@ovenwand/config": "workspace:0.1.6",
 		"@ovenwand/env": "workspace:0.0.2",
-		"@ovenwand/monitor": "workspace:0.2.2",
+		"@ovenwand/services.monitor": "workspace:0.2.2",
 		"@ovenwand/services.sentry": "workspace:0.0.1",
 		"@ovenwand/ui": "workspace:0.0.17",
 		"@ovenwand/util": "workspace:0.0.17",
