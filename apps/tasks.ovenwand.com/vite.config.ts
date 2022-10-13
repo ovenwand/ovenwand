@@ -3,6 +3,8 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
 
 export default defineConfig({
+	legacy: { buildSsrCjsExternalHeuristics: true }, // TODO Hopefully remove one day
+
 	plugins: [viteCommonjs(), sveltekit()],
 
 	envPrefix: [
@@ -18,5 +20,9 @@ export default defineConfig({
 
 	server: {
 		host: 'tasks.ovenwand.wtf'
+	},
+
+	ssr: {
+		noExternal: ['@ovenwand/**'] // TODO hopefully remove one day?
 	}
 });
