@@ -27,12 +27,12 @@ importers:
 
   apps/monitor.ovenwand.com:
     specifiers:
-      '@ovenwand/app': workspace:0.1.17
+      '@ovenwand/app': workspace:0.1.18
       '@ovenwand/auth': workspace:^0.0.0
       '@ovenwand/config': workspace:0.1.6
       '@ovenwand/env': workspace:0.0.2
       '@ovenwand/services.faunadb': workspace:0.2.1
-      '@ovenwand/services.monitor': workspace:0.2.2
+      '@ovenwand/services.monitor': workspace:0.2.3
       '@ovenwand/ui': workspace:0.0.17
       '@ovenwand/util': workspace:0.0.17
       '@ovenwand/util.date': workspace:0.0.3
@@ -66,7 +66,7 @@ importers:
     devDependencies:
       '@ovenwand/config': link:../../packages/config
       '@sveltejs/adapter-auto': 1.0.0-next.83
-      '@sveltejs/kit': 1.0.0-next.515_fhgkwirxvgjw2igda6zmhiisma
+      '@sveltejs/kit': 1.0.0-next.516_fhgkwirxvgjw2igda6zmhiisma
       '@types/cookie': 0.5.1
       '@types/d3-scale': 4.0.2
       '@types/jsonwebtoken': 8.5.8
@@ -80,11 +80,11 @@ importers:
 
   apps/ovenwand.com:
     specifiers:
-      '@ovenwand/app': workspace:0.1.17
+      '@ovenwand/app': workspace:0.1.18
       '@ovenwand/brand': workspace:0.0.9
       '@ovenwand/config': workspace:0.1.6
       '@ovenwand/env': workspace:0.0.2
-      '@ovenwand/services.monitor': workspace:0.2.2
+      '@ovenwand/services.monitor': workspace:0.2.3
       '@ovenwand/services.sentry': workspace:0.0.1
       '@ovenwand/ui': workspace:0.0.17
       '@ovenwand/util': workspace:0.0.17
@@ -122,7 +122,7 @@ importers:
       '@ovenwand/util.date': link:../../packages/util/date
       '@ovenwand/util.math': link:../../packages/util/math
       '@storyblok/svelte': 2.2.1_axios@0.27.2
-      '@sveltejs/kit': 1.0.0-next.515_fhgkwirxvgjw2igda6zmhiisma
+      '@sveltejs/kit': 1.0.0-next.516_fhgkwirxvgjw2igda6zmhiisma
       '@types/react': 18.0.17
       '@types/react-dom': 18.0.6
       '@vitejs/plugin-basic-ssl': 0.1.2_vite@3.1.0-beta.1
@@ -179,7 +179,7 @@ importers:
       '@ovenwand/util.date': link:../../packages/util/date
       '@ovenwand/util.math': link:../../packages/util/math
       '@sveltejs/adapter-auto': 1.0.0-next.83_encoding@0.1.13
-      '@sveltejs/kit': 1.0.0-next.515_fhgkwirxvgjw2igda6zmhiisma
+      '@sveltejs/kit': 1.0.0-next.516_fhgkwirxvgjw2igda6zmhiisma
       autoprefixer: 10.4.8_postcss@8.4.16
       encoding: 0.1.13
       postcss: 8.4.16
@@ -194,7 +194,7 @@ importers:
     specifiers:
       '@ovenwand/brand': workspace:0.0.9
       '@ovenwand/config': workspace:0.1.6
-      '@ovenwand/services.monitor': workspace:0.2.2
+      '@ovenwand/services.monitor': workspace:0.2.3
       '@ovenwand/ui': workspace:0.0.17
       '@ovenwand/util.browser': workspace:0.0.12
       svelte: ^3.49.0
@@ -210,9 +210,11 @@ importers:
   packages/auth:
     specifiers:
       '@ovenwand/config': workspace:0.1.6
+      '@ovenwand/ui.button': workspace:^0.3.9
       jsonwebtoken: ^8.5.1
       typescript: next
     dependencies:
+      '@ovenwand/ui.button': link:../ui/button
       jsonwebtoken: 8.5.1
     devDependencies:
       '@ovenwand/config': link:../config
@@ -338,7 +340,7 @@ importers:
     specifiers:
       '@ovenwand/config': workspace:0.1.6
       '@ovenwand/services.faunadb': workspace:0.2.1
-      '@ovenwand/services.monitor': workspace:0.2.2
+      '@ovenwand/services.monitor': workspace:0.2.3
       '@ovenwand/services.pusher': workspace:0.0.0
       '@ovenwand/services.sentry': workspace:0.0.1
     dependencies:
@@ -1766,8 +1768,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.515_fhgkwirxvgjw2igda6zmhiisma:
-    resolution: {integrity: sha512-Ck+T16bci7VWc4CNP61xvfMrbDHX1Q8aPZWgthnrSH8hsdx9w1MP80D9V4A98WX0cyhCQ02JzlTmxgf2UpYRbQ==}
+  /@sveltejs/kit/1.0.0-next.516_fhgkwirxvgjw2igda6zmhiisma:
+    resolution: {integrity: sha512-n0oGcv7xpgJ81ld1oER5HVREP4TdeDUJ8S64XNDcl3Y2xfQLKk8C4SLYQw2D6V+DxUm8V3aRrj7N7/tm4CQm6A==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
