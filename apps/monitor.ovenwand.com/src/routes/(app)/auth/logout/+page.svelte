@@ -10,6 +10,6 @@
 
 <form bind:this={form} method="post">
 	<noscript>
-		<button type="submit">logout</button>
+		<button type="submit">Click here to logout</button>
 	</noscript>
 </form>
