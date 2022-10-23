@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
-	import { useAuth } from '$lib/auth';
-	export const load = useAuth();
+	import { withAuth } from '$lib/auth';
+	export const load = withAuth();
 </script>
 
 <slot />
