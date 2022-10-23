@@ -41,7 +41,6 @@
 		},
 
 		"sync": {
-			"dependsOn": ["clean"],
 			"outputs": [".svelte-kit/types"]
 		}
 	}
