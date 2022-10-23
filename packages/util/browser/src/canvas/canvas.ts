@@ -49,15 +49,19 @@ export function createEngine(canvas: HTMLCanvasElement): Engine {
 		mouseY = 0;
 
 	function setup(setupFn: (context: ISetupContext) => void) {
-		const listenerToMethodMap = {
+		const pointerEventListenerToMethodMap = {
 			click: 'onClick',
 			mousemove: 'onMouseMove'
+		};
+
+		const keyEventListenerToMethodMap = {
+			keydown: 'onKeyDown'
 		};
 
 		const listeners: Record<string, ((x: number, y: number) => unknown)[]> = {};
 		const context: Partial<ISetupContext> = {};
 
-		for (const type of Object.keys(listenerToMethodMap)) {
+		for (const type of Object.keys(pointerEventListenerToMethodMap)) {
 			canvas.addEventListener(type, (event: MouseEvent) => {
 				const { x, y } = canvas.getBoundingClientRect();
 				mouseX = event.clientX - x;
@@ -68,11 +72,31 @@ export function createEngine(canvas: HTMLCanvasElement): Engine {
 				}
 
 				for (const listener of listeners[type]) {
-					listener(mouseX, mouseY);
+					listener(mouseX, mouseY, event);
 				}
 			});
 
-			context[listenerToMethodMap[type]] = (listener) => {
+			context[pointerEventListenerToMethodMap[type]] = (listener) => {
+				if (!listeners[type]) {
+					listeners[type] = [];
+				}
+
+				listeners[type].push(listener);
+			};
+		}
+
+		for (const type of Object.keys(keyEventListenerToMethodMap)) {
+			canvas.addEventListener(type, (event: KeyboardEvent) => {
+				if (!listeners[type]) {
+					return;
+				}
+
+				for (const listener of listeners[type]) {
+					listener(event.key, event);
+				}
+			});
+
+			context[keyEventListenerToMethodMap[type]] = (listener) => {
 				if (!listeners[type]) {
 					listeners[type] = [];
 				}
