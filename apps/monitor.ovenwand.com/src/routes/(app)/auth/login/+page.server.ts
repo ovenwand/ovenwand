@@ -21,7 +21,7 @@ export interface FaunaError {
 }
 
 export const actions = {
-	async default({ cookies, request }: RequestEvent) {
+	async default({ cookies, locals, request }: RequestEvent) {
 		const body = await request.formData();
 
 		const { data, errors } = await gql<{ login: ILoginData }, FaunaError[]>(
@@ -72,6 +72,6 @@ export const actions = {
 			}
 		);
 
-		throw redirect(303, '/');
+		throw redirect(303, locals.referrer.toString());
 	}
 };

@@ -1,12 +1,10 @@
-import { redirect } from '@sveltejs/kit';
-
-type LoadEvent = import('./$types').LoadEvent;
+import { redirect, type LoadEvent } from '@sveltejs/kit';
 
 export async function load({ parent }: LoadEvent) {
-	const { session } = await parent();
+	const { referrer, session } = await parent();
 
 	if (session.id) {
-		throw redirect(307, '/');
+		throw redirect(307, referrer);
 	}
 
 	return {};
