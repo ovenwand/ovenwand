@@ -1,3 +1,24 @@
+type User {
+	email: String! @unique(index: "userByEmail")
+	role: String!
+}
+
+input RegisterInput {
+	email: String!
+	role: String!
+	password: String!
+}
+
+input LoginInput {
+	email: String!
+	password: String!
+}
+
+type LoginResult @embedded {
+	instance: User!
+	secret: String!
+}
+
 type Task {
 	title: String!
 	description: String
@@ -25,4 +46,10 @@ type Query {
 	findTasksByLabel(labelID: ID!): [Task!] @resolver(name: "findTasksByLabel")
 
 	labels: [Label!]
+}
+
+type Mutation {
+	register(data: RegisterInput): User! @resolver(name: "register")
+	login(data: LoginInput): LoginResult! @resolver(name: "login")
+	logout(all: Boolean): Boolean! @resolver(name: "logout")
 }

@@ -1,3 +1,5 @@
+export * from './Login';
+export * from './Logout';
 export * from './FindAllTasks';
 export * from './FindTaskById';
 export * from './FindCurrentTask';
