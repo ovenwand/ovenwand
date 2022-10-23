@@ -6,6 +6,7 @@ declare namespace App {
 	interface Locals {
 		id?: string;
 		token: string;
+		referrer: URL;
 	}
 
 	// interface Platform {}

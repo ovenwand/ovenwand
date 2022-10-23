@@ -1,13 +1,9 @@
-import { readSessionToken } from '@ovenwand/auth/node';
-import { PUBLIC_FAUNA_ANONYMOUS_KEY } from '$env/static/public';
-
-export async function load({ cookies }: import('./$types').LayoutServerLoadEvent) {
-	const session = readSessionToken(cookies.get('session_id')) ?? {
-		id: null,
-		token: PUBLIC_FAUNA_ANONYMOUS_KEY
-	};
-
+export async function load({ locals }: import('./$types').LayoutServerLoadEvent) {
 	return {
-		session
+		session: {
+			id: locals.id,
+			token: locals.token
+		},
+		referrer: locals.referrer.toString()
 	};
 }

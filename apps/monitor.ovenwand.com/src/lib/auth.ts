@@ -1,18 +1,18 @@
-import { redirect } from '@sveltejs/kit';
+import { redirect, type Load, type LoadEvent } from '@sveltejs/kit';
+import { useAuth } from '@ovenwand/auth';
 
-type LayoutLoad = import('./$types').LayoutLoad;
-type LoadEvent = import('./$types').LoadEvent;
+export function withAuth(forbiddenRoutes?: string[], resolve?: Load): Load {
+	const authorize = useAuth(forbiddenRoutes);
 
-export function useAuth(forbiddenRoutes?: string[], resolve?: LayoutLoad): LayoutLoad {
-	function forbidden(pathname: string) {
-		return forbiddenRoutes ? forbiddenRoutes.find((f) => pathname.startsWith(f)) : true;
-	}
-
-	return async ({ url, parent }: LoadEvent): Promise<unknown> => {
+	return async (event: LoadEvent) => {
+		const { parent, url } = event;
 		const { session } = await parent();
+		const { isAuthorized, redirectPath } = authorize(url, session);
 
-		if (!session.id && forbidden(url.pathname)) {
-			throw redirect(307, '/auth/login');
+		if (!isAuthorized) {
+			const redirectUrl = new URL(redirectPath, url.origin);
+			redirectUrl.searchParams.set('referer', url.toString());
+			throw redirect(307, redirectUrl.toString());
 		}
 
 		return resolve ? resolve(event) : {};

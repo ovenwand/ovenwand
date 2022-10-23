@@ -1,2 +1,2 @@
-import { useAuth } from '$lib/auth';
-export const load = useAuth(['/auth/register']);
+import { withAuth } from '$lib/auth';
+export const load = withAuth(['/auth/register']);
