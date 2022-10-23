@@ -34,7 +34,49 @@ input LabelTasksRelation {
     disconnect: [ID]
 }
 
+input LoginInput {
+    email: String!
+    password: String!
+}
+
+type LoginResult {
+    instance: User!
+    secret: String!
+}
+
+# 'LoginResult' input values
+input LoginResultInput {
+    instance: ID!
+    secret: String!
+}
+
+# Allow manipulating the relationship between the types 'LoginResult' and 'User' using the field 'LoginResult.instance'.
+input LoginResultInstanceRelation {
+    # Create a document of type 'User' and associate it with the current document.
+    create: UserInput
+
+    # Connect a document of type 'User' with the current document using its ID.
+    connect: ID
+}
+
 type Mutation {
+    # Update an existing document in the collection of 'User'
+    updateUser(
+        # The 'User' document's ID
+        id: ID!
+
+        # 'User' input values
+        data: UserInput!
+    ): User
+    register(data: RegisterInput): User!
+
+    # Create a new document in the collection of 'User'
+    createUser(
+        # 'User' input values
+        data: UserInput!
+    ): User!
+    logout(all: Boolean): Boolean!
+
     # Update an existing document in the collection of 'Task'
     updateTask(
         # The 'Task' document's ID
@@ -74,6 +116,12 @@ type Mutation {
         id: ID!
     ): Label
 
+    # Delete an existing document in the collection of 'User'
+    deleteUser(
+        # The 'User' document's ID
+        id: ID!
+    ): User
+
     # Create a new document in the collection of 'Task'
     createTask(
         # 'Task' input values
@@ -85,6 +133,16 @@ type Mutation {
         # The 'Task' document's ID
         id: ID!
     ): Task
+
+    # Partially updates an existing document in the collection of 'User'. It only modifies the values that are specified in the arguments. During execution, it verifies that required fields are not set to 'null'.
+    partialUpdateUser(
+        # The 'User' document's ID
+        id: ID!
+
+        # 'User' input values
+        data: PartialUpdateUserInput!
+    ): User
+    login(data: LoginInput): LoginResult!
 
     # Update an existing document in the collection of 'Label'
     updateLabel(
@@ -103,6 +161,12 @@ input PartialUpdateLabelInput {
     tasks: LabelTasksRelation
 }
 
+# 'LoginResult' input values
+input PartialUpdateLoginResultInput {
+    instance: ID
+    secret: String
+}
+
 # 'Task' input values
 input PartialUpdateTaskInput {
     title: String
@@ -116,6 +180,18 @@ input PartialUpdateTaskInput {
     labels: TaskLabelsRelation
 }
 
+# 'User' input values
+input PartialUpdateUserInput {
+    email: String
+    role: String
+}
+
+input RegisterInput {
+    email: String!
+    role: String!
+    password: String!
+}
+
 # 'Task' input values
 input TaskInput {
     title: String!
@@ -123,9 +199,9 @@ input TaskInput {
     size: Int!
     priority: Int!
     businessValue: Int!
-    dueDate: Time!
+    dueDate: Time
     schedule: String!
-    done: Boolean
+    done: Boolean!
     labels: TaskLabelsRelation
 }
 
@@ -139,6 +215,12 @@ input TaskLabelsRelation {
 
     # Disconnect the given documents of type 'Label' from the current document using their IDs.
     disconnect: [ID]
+}
+
+# 'User' input values
+input UserInput {
+    email: String!
+    role: String!
 }
 
 type Label {
@@ -177,6 +259,12 @@ type Query {
         # The 'Label' document's ID
         id: ID!
     ): Label
+
+    # Find a document from the collection of 'User' by its id.
+    findUserByID(
+        # The 'User' document's ID
+        id: ID!
+    ): User
 
     # Find a document from the collection of 'Task' by its id.
     findTaskByID(
@@ -218,8 +306,8 @@ type Task {
         _cursor: String
     ): LabelPage!
     schedule: String!
-    dueDate: Time!
-    done: Boolean
+    dueDate: Time
+    done: Boolean!
     title: String!
 
     # The document's timestamp.
@@ -239,6 +327,16 @@ type TaskPage {
 }
 
 scalar Time
+
+type User {
+    # The document's ID.
+    _id: ID!
+
+    # The document's timestamp.
+    _ts: Long!
+    email: String!
+    role: String!
+}
 
 # The `Long` scalar type represents non-fractional signed whole numeric values. Long can represent values between -(2^63) and 2^63 - 1.
 scalar Long
