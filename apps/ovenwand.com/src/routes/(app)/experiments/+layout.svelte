@@ -26,6 +26,10 @@
 			href: '/experiments/canvas/marching-squares'
 		},
 		{
+			title: 'Dots and boxes',
+			href: '/experiments/canvas/dots-and-boxes'
+		},
+		{
 			title: 'React',
 			href: '/experiments/react'
 		},
