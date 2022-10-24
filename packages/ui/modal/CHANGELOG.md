@@ -1,5 +1,13 @@
 # @ovenwand/ui.modal
 
+## 0.2.14
+
+### Patch Changes
+
+- @ovenwand/ui.grid@0.0.13
+- @ovenwand/ui.overlay@0.0.11
+- @ovenwand/ui.sheet@0.0.11
+
 ## 0.2.13
 
 ### Patch Changes

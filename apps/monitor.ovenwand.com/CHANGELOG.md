@@ -1,5 +1,26 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.5.7
+
+### Patch Changes
+
+- 9722a5c: Add dynamic redirecting to login page using referer header or param
+- 8cb6167: rename "auth" routes to "account"
+- 2dc5d73: Add user session and referer url to locals
+- 67b9051: Fix broken dependencies
+- 1468502: Pass token to importSchema migration
+- Updated dependencies [f1758bd]
+- Updated dependencies [8cbfbd4]
+- Updated dependencies [c7a4c3a]
+- Updated dependencies [f9e89ce]
+- Updated dependencies [53a6a7c]
+- Updated dependencies [7673a1e]
+  - @ovenwand/auth@0.0.1
+  - @ovenwand/services.faunadb@0.2.2
+  - @ovenwand/app@0.1.19
+  - @ovenwand/util@0.0.18
+  - @ovenwand/ui@0.0.18
+
 ## 0.5.6
 
 ### Patch Changes

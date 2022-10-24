@@ -1,5 +1,11 @@
 # @ovenwand/util.browser
 
+## 0.0.13
+
+### Patch Changes
+
+- ac95c11: Add keyboard event listeners to canvas engine
+
 ## 0.0.12
 
 ### Patch Changes

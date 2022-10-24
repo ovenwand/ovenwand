@@ -1,5 +1,11 @@
 # @ovenwand/ovenwand.com
 
+## 0.13.6
+
+### Patch Changes
+
+- 784fd54: Add dots and boxes game to experiments
+
 ## 0.13.5
 
 ### Patch Changes
