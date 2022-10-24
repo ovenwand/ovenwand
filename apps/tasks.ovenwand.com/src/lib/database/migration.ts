@@ -33,7 +33,7 @@ export async function migrate(mode: FaunaImportMode, token: string) {
 		add(migrateRole(definition, token));
 	}
 
-	add(importSchema(schemaPath));
+	add(importSchema(schemaPath, token, mode));
 
 	return settle();
 }
