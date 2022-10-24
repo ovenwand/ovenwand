@@ -1,5 +1,4 @@
 <script lang="ts">
-  import '../../app.css';
   import { Layout } from '@ovenwand/app';
   import { Notifications } from '@ovenwand/ui';
   import { Footer } from '$lib/components';
