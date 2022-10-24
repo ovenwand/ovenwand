@@ -1,6 +1,8 @@
 export function useAuth(forbiddenRoutes?: string[]) {
 	function forbidden(pathname: string) {
-		return forbiddenRoutes ? forbiddenRoutes.find((f) => pathname.startsWith(f)) : true;
+		return forbiddenRoutes
+			? forbiddenRoutes.find((forbiddenRoute) => pathname === forbiddenRoute)
+			: true;
 	}
 
 	function authorize(url, session) {
