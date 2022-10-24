@@ -1,5 +1,30 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.4.2
+
+### Patch Changes
+
+- 6f275ab: Add login/logout account routes
+- 096a28a: Protect routes with auth
+- f94ae8c: Add auth queries, resolvers and roles
+- 67b9051: Fix broken dependencies
+- a2daf83: Add user session and referrer url to locals
+- 1468502: Pass token to importSchema migration
+- 5b03032: Remove old index route
+- 83dd7c3: add error logging to system migrations endpoint
+- 4523a69: move app css to root layout
+- Updated dependencies [f1758bd]
+- Updated dependencies [8cbfbd4]
+- Updated dependencies [c7a4c3a]
+- Updated dependencies [f9e89ce]
+- Updated dependencies [53a6a7c]
+- Updated dependencies [7673a1e]
+  - @ovenwand/auth@0.0.1
+  - @ovenwand/services.faunadb@0.2.2
+  - @ovenwand/app@0.1.19
+  - @ovenwand/util@0.0.18
+  - @ovenwand/ui@0.0.18
+
 ## 0.4.1
 
 ### Patch Changes

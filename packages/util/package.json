@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/util",
-	"version": "0.0.17",
+	"version": "0.0.18",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@ovenwand/config": "workspace:0.1.6",
-		"@ovenwand/util.browser": "workspace:0.0.12",
+		"@ovenwand/util.browser": "workspace:0.0.13",
 		"@ovenwand/util.date": "workspace:0.0.3",
 		"@ovenwand/util.fp": "workspace:0.1.6",
 		"@ovenwand/util.math": "workspace:0.0.8",

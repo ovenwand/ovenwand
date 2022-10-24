@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui.modal",
-	"version": "0.2.13",
+	"version": "0.2.14",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -13,9 +13,9 @@
 		"svelte": "^3.49.0"
 	},
 	"dependencies": {
-		"@ovenwand/ui.grid": "workspace:0.0.12",
-		"@ovenwand/ui.overlay": "workspace:0.0.10",
-		"@ovenwand/ui.sheet": "workspace:0.0.10",
+		"@ovenwand/ui.grid": "workspace:0.0.13",
+		"@ovenwand/ui.overlay": "workspace:0.0.11",
+		"@ovenwand/ui.sheet": "workspace:0.0.11",
 		"@ovenwand/util.svelte": "workspace:0.2.12"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",

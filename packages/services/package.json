@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/services",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -12,7 +12,7 @@
 		"@ovenwand/config": "workspace:0.1.6"
 	},
 	"dependencies": {
-		"@ovenwand/services.faunadb": "workspace:0.2.1",
+		"@ovenwand/services.faunadb": "workspace:0.2.2",
 		"@ovenwand/services.monitor": "workspace:0.2.3",
 		"@ovenwand/services.pusher": "workspace:0.0.0",
 		"@ovenwand/services.sentry": "workspace:0.0.1"

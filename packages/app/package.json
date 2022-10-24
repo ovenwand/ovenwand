@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/app",
-	"version": "0.1.18",
+	"version": "0.1.19",
 	"private": true,
 	"description": "",
 	"type": "module",
@@ -13,10 +13,10 @@
 		"tailwindcss": "^3.0.24"
 	},
 	"dependencies": {
-		"@ovenwand/brand": "workspace:0.0.9",
+		"@ovenwand/brand": "workspace:0.0.10",
 		"@ovenwand/services.monitor": "workspace:0.2.3",
-		"@ovenwand/ui": "workspace:0.0.17",
-		"@ovenwand/util.browser": "workspace:0.0.12"
+		"@ovenwand/ui": "workspace:0.0.18",
+		"@ovenwand/util.browser": "workspace:0.0.13"
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:0.1.6",

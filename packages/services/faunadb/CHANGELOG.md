@@ -1,5 +1,12 @@
 # @ovenwand/services.faunadb
 
+## 0.2.2
+
+### Patch Changes
+
+- c7a4c3a: Add role migation util
+- f9e89ce: allow passing token to importSchema migration util
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui.overlay",
-	"version": "0.0.10",
+	"version": "0.0.11",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -13,7 +13,7 @@
 		"svelte": "^3.49.0"
 	},
 	"dependencies": {
-		"@ovenwand/util.browser": "workspace:0.0.12"
+		"@ovenwand/util.browser": "workspace:0.0.13"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"

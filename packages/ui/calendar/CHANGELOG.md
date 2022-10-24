@@ -1,5 +1,12 @@
 # @ovenwand/ui.calendar
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies [ac95c11]
+  - @ovenwand/util.browser@0.0.13
+
 ## 0.0.3
 
 ### Patch Changes
