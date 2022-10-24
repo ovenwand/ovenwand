@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  export let enhance;
+  export let action = null;
 
   let form;
 
@@ -10,7 +10,7 @@
   });
 </script>
 
-<form bind:this={form} method="POST" use:enhance>
+<form bind:this={form} {action} method="POST">
   <noscript>
     <button type="submit">Click here to logout</button>
   </noscript>
