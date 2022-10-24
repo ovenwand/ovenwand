@@ -17,10 +17,9 @@
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
-	"devDependencies": {
-		"@originjs/vite-plugin-commonjs": "^1.0.3",
+	"dependencies": {
 		"@ovenwand/app": "workspace:^0.1.17",
-		"@ovenwand/config": "workspace:0.1.6",
+		"@ovenwand/auth": "workspace:^0.0.0",
 		"@ovenwand/env": "workspace:0.0.2",
 		"@ovenwand/gql": "workspace:^0.0.3",
 		"@ovenwand/services.faunadb": "workspace:0.2.1",
@@ -28,7 +27,11 @@
 		"@ovenwand/ui": "workspace:0.0.17",
 		"@ovenwand/util": "workspace:0.0.17",
 		"@ovenwand/util.date": "workspace:0.0.3",
-		"@ovenwand/util.math": "workspace:0.0.8",
+		"@ovenwand/util.math": "workspace:0.0.8"
+	},
+	"devDependencies": {
+		"@originjs/vite-plugin-commonjs": "^1.0.3",
+		"@ovenwand/config": "workspace:0.1.6",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"autoprefixer": "^10.4.8",
@@ -40,8 +43,5 @@
 		"tslib": "^2.4.0",
 		"typescript": "next",
 		"vite": "^3.1.0-beta.1"
-	},
-	"dependencies": {
-		"@ovenwand/auth": "workspace:^0.0.0"
 	}
 }
