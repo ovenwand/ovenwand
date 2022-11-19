@@ -27,6 +27,6 @@
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
 		"svelte": "^3.49.0",
-		"typescript": "next"
+		"typescript": "^4.9.1-beta"
 	}
 }

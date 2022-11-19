@@ -10,7 +10,7 @@
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:*",
-		"typescript": "next"
+		"typescript": "^4.9.1-beta"
 	},
 	"dependencies": {
 		"pusher": "5.1.1-beta",
