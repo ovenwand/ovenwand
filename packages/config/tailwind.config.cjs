@@ -1,7 +1,7 @@
 module.exports = {
 	content: [
-		'./src/**/*.{html,js,svelte,ts}',
-		'./node_modules/**/@ovenwand/**/src/**/*.{html,js,svelte,ts}'
+		'./src/**/*.{html,js,ts,svelte,vue,jsx,tsx}',
+		'./node_modules/**/@ovenwand/**/src/**/*.{html,js,ts,svelte,vue,jsx,tsx}'
 	],
 
 	theme: {
