@@ -2,6 +2,7 @@ packages:
   # all packages in subdirs of apps/ and packages/
   - 'apps/**'
   - 'packages/**'
+  - 'toolchain/**'
   # exclude packages github actions
   - '!.github/**'
   # exclude packages in generated paths
