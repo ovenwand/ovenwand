@@ -1,6 +1,15 @@
 {
   "name": "@ovenwand/toolchain",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
-  "private": true
+  "private": true,
+  "bin": {
+    "oven": "./bin/cli.js",
+    "wand": "./bin/cli.js",
+    "start": "./bin/cli.js",
+    "kit": "./bin/cli.js"
+  },
+  "dependencies": {
+    "@ovenwand/toolchain.cli": "workspace:^0.0.0"
+  }
 }
