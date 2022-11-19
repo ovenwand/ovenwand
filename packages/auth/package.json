@@ -10,7 +10,7 @@
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:0.1.6",
-		"typescript": "next"
+		"typescript": "^4.9.1-beta"
 	},
 	"dependencies": {
 		"@ovenwand/ui.button": "workspace:^0.3.10",
