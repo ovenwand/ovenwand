@@ -1,0 +1,25 @@
+{
+  "name": "@ovenwand/ui.docs",
+  "version": "0.0.18",
+  "private": true,
+  "description": "",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "docs": "start docs dev -p 6007",
+    "docs:build": "start docs build",
+    "docs:preview": "pnpm dlx http-server -a toolchain.docs.ovenwand.wtf -p 6007 ./storybook-static"
+  },
+  "devDependencies": {
+    "@ovenwand/config": "workspace:0.1.6",
+    "@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.0",
+    "@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.0",
+    "globby": "^13.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "svelte": "^3.49.0",
+    "typescript": "^4.9.1-beta"
+  },
+  "author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
+  "license": "WTFPL"
+}
