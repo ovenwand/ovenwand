@@ -1,18 +1,14 @@
 {
 	"name": "@ovenwand/monitor.ovenwand.com",
 	"version": "0.5.7",
+	"type": "module",
 	"private": true,
 	"scripts": {
 		"clean": "pnpm --silent dlx rimraf .svelte-kit .vercel",
 		"sync": "svelte-kit sync",
-		"dev": "vite",
-		"build": "vite build",
-		"package": "svelte-kit package",
-		"preview": "vite preview",
-		"dev:env": "kit env run vite",
-		"build:env": "kit env run vite build",
-		"package:env": "kit env run svelte-kit package",
-		"preview:env": "kit env run vite preview",
+		"dev": "start dev",
+		"build": "start build",
+		"preview": "start preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
@@ -29,6 +25,10 @@
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:0.1.6",
+		"@ovenwand/toolchain.plugins.doppler": "workspace:^0.0.0",
+		"@ovenwand/toolchain.plugins.vite": "workspace:^0.0.0",
+		"@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.0",
+		"@ovenwand/toolchain.presets.sveltekit": "workspace:^0.0.0",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@types/cookie": "^0.5.1",
@@ -39,8 +39,7 @@
 		"svelte-check": "^2.8.1",
 		"svelte-preprocess": "^4.10.7",
 		"tslib": "^2.4.0",
-		"typescript": "next",
-		"vite": "^3.1.0-beta.1"
-	},
-	"type": "module"
+		"typescript": "^4.9.1-beta",
+		"vite": "^3.2.2"
+	}
 }
