@@ -1,0 +1,19 @@
+{
+  "name": "@ovenwand/toolchain.presets.react",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "devDependencies": {
+    "@ovenwand/config": "workspace:^0.1.6",
+    "@ovenwand/toolchain.core": "workspace:^0.0.0",
+    "@types/node": "^18.11.9"
+  },
+  "peerDependencies": {
+    "@ovenwand/toolchain.core": "workspace:^0.0.0"
+  },
+  "dependencies": {
+    "@ovenwand/toolchain.plugins.vite": "workspace:^0.0.0"
+  }
+}
