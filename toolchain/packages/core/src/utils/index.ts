@@ -1,5 +1,6 @@
 export * from './detect-package-manager.js';
 export * from './find-dependencies.js';
+export * from './find-executable.js';
 export * from './find-package-json.js';
 export * from './find-workspace.js';
 export * from './import-dependencies.js';
