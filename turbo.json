@@ -20,6 +20,20 @@
 			"outputs": []
 		},
 
+		"docs": {
+			"cache": false
+		},
+
+		"docs:build": {
+			"dependsOn": ["^build"],
+			"outputs": ["storybook-static"]
+		},
+
+		"docs:preview": {
+			"dependsOn": ["docs:build"],
+			"outputs": []
+		},
+
 		"clean": {
 			"outputs": []
 		},
