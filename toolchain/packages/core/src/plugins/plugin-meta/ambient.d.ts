@@ -1,4 +1,6 @@
 declare namespace Toolchain {
+	import { ToolchainPackageManager } from '../../utils';
+
 	interface MetaLocation {
 		path: string;
 		manifest: any;
@@ -6,6 +8,7 @@ declare namespace Toolchain {
 
 	interface Meta {
 		cwd: string;
+		packageManager: ToolchainPackageManager;
 		package: null | MetaLocation;
 		workspace: null | MetaLocation;
 	}
