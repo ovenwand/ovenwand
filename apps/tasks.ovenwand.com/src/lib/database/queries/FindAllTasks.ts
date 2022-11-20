@@ -1,6 +1,6 @@
 import { gql, type DocumentNode } from '@ovenwand/gql';
-import TaskFields from './fields/Task.gql?raw';
-import LabelFields from './fields/Label.gql?raw';
+import TaskFields from './fields/Task.fields.gql?raw';
+import LabelFields from './fields/Label.fields.gql?raw';
 
 export const FindAllTasks: DocumentNode = gql`
 	query FindAllTasksAndLabels {

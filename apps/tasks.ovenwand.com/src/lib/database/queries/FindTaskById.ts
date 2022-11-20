@@ -1,5 +1,5 @@
 import { gql } from '@ovenwand/gql';
-import TaskFields from './fields/Task.gql?raw';
+import TaskFields from './fields/Task.fields.gql?raw';
 
 export const FindTaskById = gql`
 	query FindTaskByID($id: ID!) {

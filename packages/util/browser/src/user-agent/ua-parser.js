@@ -12,6 +12,8 @@
 // Constants
 /////////////
 
+/* eslint-disable no-useless-escape */
+
 var LIBVERSION = '0.7.31',
 	EMPTY = '',
 	UNKNOWN = '?',
@@ -1119,3 +1121,5 @@ UAParser.DEVICE = enumerize([
 UAParser.ENGINE = UAParser.OS = enumerize([NAME, VERSION]);
 
 export const parse = UAParser;
+
+/* eslint-enable no-useless-escape */
