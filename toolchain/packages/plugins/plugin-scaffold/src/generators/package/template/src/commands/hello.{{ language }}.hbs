@@ -1,0 +1,9 @@
+import { Command } from '@ovenwand/toolchain.cli';
+
+export function createExampleCommand() {
+  const command = new Command('build');
+
+	command.action(() => console.log(`Hello world!`));
+
+	return command;
+}

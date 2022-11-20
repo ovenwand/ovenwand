@@ -1,0 +1,17 @@
+{
+  "name": "{{ namespace }}/toolchain.presets.{{ name }}",
+  "version": "{{ version }}",
+  "private": {{ private }},
+  "type": "{{ type }}",
+  "main": "./{{ src }}/index.{{ language }}",
+  "exports": {
+    ".": "./{{ src }}/index.{{ language }}"
+  },
+  "dependencies": {
+    "@ovenwand/toolchain.core": "workspace:^0.0.0"
+  },
+  "devDependencies": {
+    "@ovenwand/config": "workspace:^0.1.6"{{#equals language 'ts'}},
+    "typescript": "^4.9.1-beta"{{/equals}}
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@ovenwand/toolchain.plugins.scaffold",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@ovenwand/toolchain.cli": "workspace:^0.0.0",
+    "@ovenwand/toolchain.core": "workspace:^0.0.0",
+    "plop": "^3.1.1"
+  },
+  "devDependencies": {
+    "@ovenwand/config": "workspace:^0.1.6",
+    "@types/node": "^18.11.9"
+  }
+}
