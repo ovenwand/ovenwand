@@ -1,6 +1,10 @@
-import { createCommand, exec } from '../utils';
+import { createCommand, doppler } from '../utils';
 
-export const setup = createCommand(async () => {
-	await exec('doppler', ['login']);
-	await exec('doppler', ['setup']);
+export const setup = createCommand(async (...commandArgs) => {
+	const context = commandArgs.pop();
+	const { paths } = context;
+
+	await doppler(['login'], {
+		paths,
+	});
 });

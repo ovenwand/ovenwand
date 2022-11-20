@@ -8,7 +8,7 @@ export async function turbo(args, options, execOptions = {}) {
 
 	return exec(
 		'turbo',
-		[command, arg, ...getTurboArgs(options), '--', ...getCommandArgs(options, args)],
+		[command, arg, ...getTurboArgs(options), ...getCommandArgs(options, args)],
 		{
 			// Make sure turbo commands are always executed from the workspace root
 			// (unless overwritten by `execOptions`), since it requires the presence
@@ -34,9 +34,11 @@ function getTurboArgs({ filter, force }) {
 }
 
 function getCommandArgs(_options, commandArgs) {
-	const args = [];
+	const args = [...commandArgs];
 
-	args.push(...commandArgs);
+	if (args.length) {
+		args.unshift('--');
+	}
 
 	return args;
 }

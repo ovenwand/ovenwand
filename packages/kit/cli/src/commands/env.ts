@@ -1,4 +1,3 @@
-import { resolve } from 'node:path';
 import { Command } from 'commander';
 import { createCommand, doppler } from '../utils';
 
@@ -32,7 +31,6 @@ const createEnvCommand = (action) =>
 		const { paths } = context;
 
 		const params = {
-			config: resolve(paths.kit, 'config', '.doppler.yaml'),
 			args,
 			options,
 			paths

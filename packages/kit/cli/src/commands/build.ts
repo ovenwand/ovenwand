@@ -12,7 +12,7 @@ export const build = createCommand(async (app, options, { command, paths }) => {
 		command.args.shift();
 	}
 
-	await turbo(['run', arg, '--', ...command.args], {
+	await turbo(['run', arg, ...command.args], {
 		filter: app ? `@ovenwand/${app}` : false,
 		force: options.force,
 		paths

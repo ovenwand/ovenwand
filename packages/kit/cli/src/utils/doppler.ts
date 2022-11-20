@@ -1,20 +1,22 @@
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import { exec } from './exec.js';
 
-export async function doppler(args, options, execOptions) {
+export async function doppler(args, options, execOptions?) {
 	const { env, paths, project } = options;
 
 	const command = args[0];
 
-	if (command !== 'run' && !project) {
+	const requiresProject = ['get', 'set', 'run'].includes(command);
+
+	if (requiresProject && !project) {
 		throw new Error(`Doppler: project is required, found '${project}'.`);
 	}
 
 	const params = {
 		config: resolve(paths.kit, 'config', '.doppler.yaml'),
-		scope: resolve(paths.workspace, 'apps', project),
-		project: command !== 'run' ? project.replace(/\./g, '-') : undefined,
-		env: command !== 'run' ? env : undefined
+		scope: project ? resolve(paths.workspace, 'apps', project) : undefined,
+		project: requiresProject ? project.replace(/\./g, '-') : undefined,
+		env: requiresProject ? env : undefined
 	};
 
 	const result = await exec(
