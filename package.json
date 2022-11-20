@@ -1,18 +1,17 @@
 {
 	"name": "@ovenwand/project",
 	"description": "Monolithic project containing all ovenwand related packages/projects",
-	"main": "index.js",
 	"type": "module",
 	"scripts": {
 		"clean": "pnpm --silent dlx rimraf **/node_modules",
 		"prepare": "kit install",
 		"setup": "kit setup",
-		"dev": "kit dev",
-		"build": "kit build",
-		"preview": "kit preview",
+		"dev": "start dev",
+		"build": "start build",
+		"preview": "start preview",
 		"test": "run() { pnpm test:unit $1; pnpm test:e2e \"$@\"; }; run",
-		"test:unit": "run() { cypress --config-file .kit/config/cypress.json $1-ct ${@:2}; }; run",
-		"test:e2e": "run() { exit_code=$?; cypress --config-file .kit/config/cypress.json $1 ${@:2} || exit $exit_code; }; run",
+		"test:unit": "run() { cypress $1-ct --config-file .kit/config/cypress.json ${@:2}; }; run",
+		"test:e2e": "run() { exit_code=$?; cypress $1 --config-file .kit/config/cypress.json ${@:2} || exit $exit_code; }; run",
 		"lint": "kit lint",
 		"format": "kit lint --format",
 		"check": "run() { pnpm --filter @ovenwand/$1 check ${@:2}; }; run",
@@ -22,15 +21,20 @@
 		"@cypress/vite-dev-server": "^2.2.3",
 		"@ovenwand/kit.cli": "workspace:*",
 		"@ovenwand/kit.scaffold": "workspace:*",
+		"@ovenwand/toolchain": "workspace:^0.0.1",
+		"@ovenwand/toolchain.plugins.config": "workspace:*",
+		"@ovenwand/toolchain.plugins.lint": "workspace:*",
+		"@ovenwand/toolchain.plugins.scaffold": "workspace:*",
+		"@ovenwand/toolchain.presets.monorepo": "workspace:*",
 		"@sveltejs/vite-plugin-svelte": "^1.0.1",
 		"cypress": "^9.7.0",
 		"svelte": "^3.49.0",
-		"typescript": "next",
-		"vite": "^3.0.9"
+		"typescript": "^4.9.1-beta",
+		"vite": "^3.2.2"
 	},
 	"lint-staged": {
-		"*.{js,ts,svelte,vue,svelte,css,md,json}": "kit lint --format --prettier",
-		"*.{js,ts,svelte,vue,jsx,tsx}": "kit lint --format --eslint"
+		"*.{js,ts,svelte,vue,svelte,css,md,json}": "start lint --disable-eslint",
+		"*.{js,ts,svelte,vue,jsx,tsx}": "start lint --disable-prettier"
 	},
 	"author": "Ovenwand (info@ovenwand.com)",
 	"license": "WTFPL",

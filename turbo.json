@@ -1,12 +1,16 @@
 {
 	"$schema": "https://turborepo.org/schema.json",
 	"pipeline": {
-		"build": {
-			"dependsOn": ["sync", "^build"],
-			"outputs": [".svelte-kit", ".vercel", "public"]
+		"sync": {
+			"outputs": [".svelte-kit/types"]
 		},
 
-		"build:env": {
+		"dev": {
+			"dependsOn": ["sync"],
+			"cache": false
+		},
+
+		"build": {
 			"dependsOn": ["sync", "^build"],
 			"outputs": [".svelte-kit", ".vercel", "public"]
 		},
@@ -16,21 +20,6 @@
 			"outputs": []
 		},
 
-		"preview:env": {
-			"dependsOn": ["build:env"],
-			"outputs": []
-		},
-
-		"dev": {
-			"dependsOn": ["sync"],
-			"cache": false
-		},
-
-		"dev:env": {
-			"dependsOn": ["sync"],
-			"cache": false
-		},
-
 		"clean": {
 			"outputs": []
 		},
@@ -38,10 +27,6 @@
 		"//#clean": {
 			"dependsOn": [],
 			"outputs": []
-		},
-
-		"sync": {
-			"outputs": [".svelte-kit/types"]
 		}
 	}
 }
