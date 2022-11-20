@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
-	import { type Breakpoint, createColumnStyle } from './util';
+	import { type Breakpoint, createColumnStyle } from '../util';
 
 	let className: string | null = null;
 	export { className as class };
