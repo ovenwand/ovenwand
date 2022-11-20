@@ -1,6 +1,6 @@
 import { cwd } from 'node:process';
 import { dirname, resolve } from 'node:path';
-import { findPackageJson, readPackageJson, findWorkspace } from '../../utils/index.js';
+import { findPackageJson, readPackageJson, findWorkspace, detectPackageManager } from '../../utils/index.js';
 
 export async function createMeta(context: Toolchain.Context): Promise<Toolchain.Meta> {
 	const workspacePath = await findWorkspace();
@@ -12,6 +12,8 @@ export async function createMeta(context: Toolchain.Context): Promise<Toolchain.
 
 	return {
 		cwd: context.cwd,
+
+		packageManager: await detectPackageManager(),
 
 		workspace: workspacePath && {
 			path: workspacePath,
