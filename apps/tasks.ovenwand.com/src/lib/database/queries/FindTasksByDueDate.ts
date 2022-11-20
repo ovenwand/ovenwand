@@ -1,5 +1,5 @@
 import { gql, type DocumentNode } from '@ovenwand/gql';
-import TaskFields from './fields/Task.gql?raw';
+import TaskFields from './fields/Task.fields.gql?raw';
 
 export const FindTasksByDueDate: DocumentNode = gql`
 	query FindTasksByDueDate($fromDate: Time!, $toDate: Time!) {
