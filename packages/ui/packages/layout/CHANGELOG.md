@@ -1,5 +1,14 @@
 # @ovenwand/ui.layout
 
+## 0.2.14
+
+### Patch Changes
+
+- Updated dependencies [be569a9]
+- Updated dependencies [1b121fd]
+  - @ovenwand/config@0.1.7
+  - @ovenwand/util.browser@0.0.13
+
 ## 0.2.13
 
 ### Patch Changes

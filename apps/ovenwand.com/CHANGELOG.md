@@ -1,5 +1,23 @@
 # @ovenwand/ovenwand.com
 
+## 0.13.7
+
+### Patch Changes
+
+- a8a35fd: Remove redundant tailwind config
+- Updated dependencies [be569a9]
+- Updated dependencies [1b121fd]
+  - @ovenwand/config@0.1.7
+  - @ovenwand/app@0.1.20
+  - @ovenwand/brand@0.0.10
+  - @ovenwand/env@0.0.2
+  - @ovenwand/services.monitor@0.2.3
+  - @ovenwand/services.sentry@0.0.1
+  - @ovenwand/ui@0.0.19
+  - @ovenwand/util@0.0.19
+  - @ovenwand/util.date@0.0.3
+  - @ovenwand/util.math@0.0.8
+
 ## 0.13.6
 
 ### Patch Changes
