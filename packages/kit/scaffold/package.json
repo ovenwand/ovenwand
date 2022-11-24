@@ -9,7 +9,7 @@
 		"./plopfile.ts": "./src/plopfile.ts"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.6"
+		"@ovenwand/config": "workspace:0.1.7"
 	},
 	"dependencies": {
 		"plop": "^3.1.1"

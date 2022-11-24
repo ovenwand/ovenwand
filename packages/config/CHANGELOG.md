@@ -1,5 +1,12 @@
 # @ovenwand/config
 
+## 0.1.7
+
+### Patch Changes
+
+- be569a9: Add vue and jsx files to tailwind config
+- 1b121fd: Remove the need of creating a tailwind.config.cjs in packages by importing it into the postcss config
+
 ## 0.1.6
 
 ### Patch Changes

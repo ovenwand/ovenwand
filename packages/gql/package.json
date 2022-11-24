@@ -8,7 +8,7 @@
 		".": "./src/index.ts"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.6",
+		"@ovenwand/config": "workspace:0.1.7",
 		"typescript": "^4.9.3"
 	},
 	"dependencies": {
