@@ -1,5 +1,11 @@
 # @ovenwand/config
 
+## 0.1.8
+
+### Patch Changes
+
+- 816e66e: Add missing postcss dependencies: autoprefixer, postcss, tailwindcss
+
 ## 0.1.7
 
 ### Patch Changes

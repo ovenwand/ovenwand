@@ -14,7 +14,7 @@
 		"@ovenwand/util.fp": "workspace:0.1.6"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.7"
+		"@ovenwand/config": "workspace:0.1.8"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"

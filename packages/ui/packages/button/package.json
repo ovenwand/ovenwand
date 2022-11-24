@@ -12,7 +12,7 @@
 		"@ovenwand/util.browser": "workspace:0.0.13"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.7",
+		"@ovenwand/config": "workspace:0.1.8",
 		"@ovenwand/test.cypress": "workspace:0.0.3",
 		"svelte": "^3.53.1"
 	},
