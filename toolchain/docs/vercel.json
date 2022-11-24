@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "sveltekit",
+  "buildCommand": "pnpm -w build --filter toolchain.docs",
+  "devCommand": "pnpm -w dev --filter toolchain.docs",
+  "ignoreCommand": "pnpm dlx turbo-ignore"
+}
