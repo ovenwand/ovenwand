@@ -1,17 +1,21 @@
 export default {
-	refs: async () => {
+	refs: async (config, { configType }) => {
+		const isDevelopment = configType === 'DEVELOPMENT';
+
 		// TODO dynamically find storybook instances and determine title and url
-		const refs = {
+		return {
 			toolchain: {
 				title: 'Toolchain',
-				url: 'http://toolchain.docs.ovenwand.wtf:6007',
+				url: isDevelopment
+					? 'http://toolchain.docs.ovenwand.wtf:6007'
+					: 'https://toolchain.docs.ovenwand.com',
 			},
 			'user-interface': {
 				title: 'User Interface',
-				url: 'http://ui.docs.ovenwand.wtf:6008',
+				url: isDevelopment
+					? 'http://ui.docs.ovenwand.wtf:6008'
+					: 'https://ui.docs.ovenwand.com',
 			},
 		};
-
-		return refs;
 	},
 }
