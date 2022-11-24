@@ -6,9 +6,9 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "docs": "start docs dev -p 6007",
-    "docs:build": "start docs build",
-    "docs:preview": "pnpm dlx http-server -a toolchain.docs.ovenwand.wtf -p 6007 ./storybook-static"
+    "dev": "start docs dev -p 6007",
+    "build": "start docs build",
+    "preview": "pnpm dlx http-server -a toolchain.docs.ovenwand.wtf -p 6007 ./storybook-static"
   },
   "devDependencies": {
     "@ovenwand/config": "workspace:0.1.6",
