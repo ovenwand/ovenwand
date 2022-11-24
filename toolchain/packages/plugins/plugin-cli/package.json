@@ -6,12 +6,12 @@
     ".": "./src/index.ts"
   },
   "dependencies": {
-    "commander": "^9.4.0"
+    "commander": "^9.4.1"
   },
   "devDependencies": {
+    "@ovenwand/config": "workspace:^0.1.6",
     "@ovenwand/toolchain.cli": "workspace:^0.0.0",
     "@ovenwand/toolchain.core": "workspace:^0.0.0",
-    "@ovenwand/config": "workspace:^0.1.6",
     "@types/node": "^18.11.9"
   },
   "peerDependencies": {

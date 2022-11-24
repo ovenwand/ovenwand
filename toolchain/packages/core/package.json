@@ -7,7 +7,7 @@
     "./ambient": "./types/index.d.ts"
   },
   "dependencies": {
-    "@pnpm/find-workspace-dir": "^4.0.2"
+    "@pnpm/find-workspace-dir": "^4.0.3"
   },
   "devDependencies": {
     "@ovenwand/config": "workspace:^0.1.6",

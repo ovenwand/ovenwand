@@ -9,11 +9,11 @@
 		"./node": "./src/node.ts"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:*",
-		"typescript": "^4.9.1-beta"
+		"@ovenwand/config": "workspace:0.1.6",
+		"typescript": "^4.9.3"
 	},
 	"dependencies": {
 		"pusher": "5.1.1-beta",
-		"pusher-js": "^7.4.0"
+		"pusher-js": "^7.5.0"
 	}
 }
