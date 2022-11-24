@@ -40,5 +40,10 @@
 		"*.{js,ts,svelte,vue,jsx,tsx}": "start lint --disable-prettier"
 	},
 	"author": "Ovenwand (info@ovenwand.com)",
-	"license": "WTFPL"
+	"license": "WTFPL",
+	"pnpm": {
+		"overrides": {
+			"@sveltejs/kit": "1.0.0-next.550"
+		}
+	}
 }

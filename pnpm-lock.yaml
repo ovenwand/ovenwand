@@ -1,5 +1,8 @@
 lockfileVersion: 5.4
 
+overrides:
+  '@sveltejs/kit': 1.0.0-next.550
+
 importers:
 
   .:
@@ -68,7 +71,7 @@ importers:
       '@ovenwand/ui': workspace:0.0.19
       '@ovenwand/util': workspace:0.0.19
       '@ovenwand/util.date': workspace:0.0.3
-      '@sveltejs/kit': next
+      '@sveltejs/kit': 1.0.0-next.550
       '@types/cookie': ^0.5.1
       '@types/d3-scale': ^4.0.2
       '@types/jsonwebtoken': ^8.5.9
@@ -94,7 +97,7 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@ovenwand/toolchain.presets.ssl': link:../../toolchain/packages/presets/preset-ssl
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
-      '@sveltejs/kit': 1.0.0-next.560_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.550_svelte@3.53.1
       '@types/cookie': 0.5.1
       '@types/d3-scale': 4.0.2
       '@types/jsonwebtoken': 8.5.9
@@ -123,7 +126,7 @@ importers:
       '@ovenwand/util.date': workspace:0.0.3
       '@ovenwand/util.math': workspace:0.0.8
       '@storyblok/svelte': ^2.3.7
-      '@sveltejs/kit': next
+      '@sveltejs/kit': 1.0.0-next.550
       '@types/react': ^18.0.25
       '@types/react-dom': ^18.0.9
       axios: ^0.27.2
@@ -160,7 +163,7 @@ importers:
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
       '@ovenwand/toolchain.presets.vue': link:../../toolchain/packages/presets/preset-vue
       '@storyblok/svelte': 2.3.7_axios@0.27.2
-      '@sveltejs/kit': 1.0.0-next.560_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.550_svelte@3.53.1
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
       svelte: 3.53.1
@@ -185,7 +188,7 @@ importers:
       '@ovenwand/util': workspace:0.0.19
       '@ovenwand/util.date': workspace:0.0.3
       '@ovenwand/util.math': workspace:0.0.8
-      '@sveltejs/kit': next
+      '@sveltejs/kit': 1.0.0-next.550
       encoding: ^0.1.13
       svelte: ^3.53.1
       svelte-check: ^2.9.2
@@ -208,7 +211,7 @@ importers:
       '@ovenwand/toolchain.plugins.vite': link:../../toolchain/packages/plugins/plugin-vite
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
-      '@sveltejs/kit': 1.0.0-next.560_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.550_svelte@3.53.1
       encoding: 0.1.13
       svelte: 3.53.1
       svelte-check: 2.9.2_svelte@3.53.1
@@ -1033,7 +1036,7 @@ importers:
       '@ovenwand/config': workspace:^0.1.6
       '@ovenwand/toolchain.core': workspace:^0.0.0
       '@ovenwand/toolchain.plugins.vite': workspace:^0.0.0
-      '@sveltejs/kit': ^1.0.0-next.524
+      '@sveltejs/kit': 1.0.0-next.550
       '@types/node': ^18.11.9
       svelte: ^3.53.1
       vite: ^3.2.4
@@ -1042,7 +1045,7 @@ importers:
     devDependencies:
       '@ovenwand/config': link:../../../../packages/config
       '@ovenwand/toolchain.core': link:../../core
-      '@sveltejs/kit': 1.0.0-next.524_svelte@3.53.1+vite@3.2.4
+      '@sveltejs/kit': 1.0.0-next.550_svelte@3.53.1+vite@3.2.4
       '@types/node': 18.11.9
       svelte: 3.53.1
       vite: 3.2.4_@types+node@18.11.9
@@ -4668,36 +4671,8 @@ packages:
       - supports-color
     dev: false
 
-  /@sveltejs/kit/1.0.0-next.524_svelte@3.53.1+vite@3.2.4:
-    resolution: {integrity: sha512-o1UgsRzZzbBs5LBldlDfdHbp3QY1bh8/UkS8SjCow4fMWaJTihFdN42+C2rdZvVlqqCx3UlaN9uNLibkEE9UUg==}
-    engines: {node: '>=16.14'}
-    hasBin: true
-    requiresBuild: true
-    peerDependencies:
-      svelte: ^3.44.0
-      vite: ^3.1.0
-    dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.3.1_svelte@3.53.1+vite@3.2.4
-      '@types/cookie': 0.5.1
-      cookie: 0.5.0
-      devalue: 4.2.0
-      kleur: 4.1.5
-      magic-string: 0.26.7
-      mime: 3.0.0
-      sade: 1.8.1
-      set-cookie-parser: 2.5.1
-      sirv: 2.0.2
-      svelte: 3.53.1
-      tiny-glob: 0.2.9
-      undici: 5.12.0
-      vite: 3.2.4
-    transitivePeerDependencies:
-      - diff-match-patch
-      - supports-color
-    dev: true
-
-  /@sveltejs/kit/1.0.0-next.560_svelte@3.53.1:
-    resolution: {integrity: sha512-ldZJyd+jfQWVkOkRHq25cXMffhL5MgB1Uzhhw1ngF8ezB38P/g4T+5ohP8wuk2lxPJIjbY3S6BeXN5mod9XOhA==}
+  /@sveltejs/kit/1.0.0-next.550_svelte@3.53.1:
+    resolution: {integrity: sha512-kXRfYD4lWq9SxM76MWSlt95BrpjGM8wniPBEK9KsseVeNZ9sKvc2Ql8uFMuD4tOLKM2iRxmZJTT9rT1Em0OBjw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -4718,6 +4693,34 @@ packages:
       svelte: 3.53.1
       tiny-glob: 0.2.9
       undici: 5.12.0
+    transitivePeerDependencies:
+      - diff-match-patch
+      - supports-color
+    dev: true
+
+  /@sveltejs/kit/1.0.0-next.550_svelte@3.53.1+vite@3.2.4:
+    resolution: {integrity: sha512-kXRfYD4lWq9SxM76MWSlt95BrpjGM8wniPBEK9KsseVeNZ9sKvc2Ql8uFMuD4tOLKM2iRxmZJTT9rT1Em0OBjw==}
+    engines: {node: '>=16.14'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      svelte: ^3.44.0
+      vite: ^3.2.0
+    dependencies:
+      '@sveltejs/vite-plugin-svelte': 1.3.1_svelte@3.53.1+vite@3.2.4
+      '@types/cookie': 0.5.1
+      cookie: 0.5.0
+      devalue: 4.2.0
+      kleur: 4.1.5
+      magic-string: 0.26.7
+      mime: 3.0.0
+      sade: 1.8.1
+      set-cookie-parser: 2.5.1
+      sirv: 2.0.2
+      svelte: 3.53.1
+      tiny-glob: 0.2.9
+      undici: 5.12.0
+      vite: 3.2.4_@types+node@18.11.9
     transitivePeerDependencies:
       - diff-match-patch
       - supports-color
@@ -5273,7 +5276,7 @@ packages:
     peerDependencies:
       vite: ^3.0.0-beta.0
     dependencies:
-      vite: 3.2.4
+      vite: 3.2.4_@types+node@18.11.9
     dev: false
 
   /@vitejs/plugin-react/2.2.0_vite@3.2.4:
@@ -5301,7 +5304,7 @@ packages:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 3.2.4
+      vite: 3.2.4_@types+node@18.11.9
       vue: 3.2.45
     dev: false
 
@@ -13353,6 +13356,7 @@ packages:
       rollup: 2.79.1
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
 
   /vite/3.2.4_@types+node@18.11.9:
     resolution: {integrity: sha512-Z2X6SRAffOUYTa+sLy3NQ7nlHFU100xwanq1WDwqaiFiCe+25zdxP1TfCS5ojPV2oDDcXudHIoPnI1Z/66B7Yw==}
@@ -13386,7 +13390,6 @@ packages:
       rollup: 2.79.1
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /vitefu/0.2.2:
     resolution: {integrity: sha512-8CKEIWPm4B4DUDN+h+hVJa9pyNi7rzc5MYmbxhs1wcMakueGFNWB5/DL30USm9qU3xUPnL4/rrLEAwwFiD1tag==}
