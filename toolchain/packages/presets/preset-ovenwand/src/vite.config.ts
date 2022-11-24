@@ -9,7 +9,8 @@ export default defineConfig({
 
 	envPrefix: [
 		'VITE_',
-		'PUBLIC',
+		'PUBLIC_',
+		'VERCEL_',
 	],
 
 	server: {
