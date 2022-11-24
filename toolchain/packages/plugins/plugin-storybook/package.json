@@ -8,6 +8,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./preset": "./src/preset/index.ts",
+    "./preset-bundle": "./src/preset/bundle.ts",
     "./preset-svelte": "./src/preset/svelte.ts",
     "./preset-composition": "./src/preset/composition.ts",
     "./testing-library": "./src/testing-library.ts"
