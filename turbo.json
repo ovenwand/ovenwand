@@ -2,7 +2,9 @@
 	"$schema": "https://turborepo.org/schema.json",
 	"pipeline": {
 		"sync": {
-			"outputs": [".svelte-kit/types"]
+			"outputs": [
+				".svelte-kit/types/**"
+			]
 		},
 
 		"dev": {
@@ -12,25 +14,16 @@
 
 		"build": {
 			"dependsOn": ["sync", "^build"],
-			"outputs": [".svelte-kit", ".vercel", "public"]
+			"outputs": [
+				".svelte-kit/**",
+				".vercel/**",
+				"public/**",
+				"storybook-static/**"
+			]
 		},
 
 		"preview": {
 			"dependsOn": ["build"],
-			"outputs": []
-		},
-
-		"docs": {
-			"cache": false
-		},
-
-		"docs:build": {
-			"dependsOn": ["^build"],
-			"outputs": ["storybook-static"]
-		},
-
-		"docs:preview": {
-			"dependsOn": ["docs:build"],
 			"outputs": []
 		},
 
