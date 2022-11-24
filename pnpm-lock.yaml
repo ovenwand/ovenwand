@@ -37,7 +37,7 @@ importers:
       '@ovenwand/config': workspace:^0.1.6
       '@ovenwand/toolchain.cli': workspace:^0.0.0
       '@ovenwand/toolchain.core': workspace:^0.0.0
-      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.0
+      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.1
       '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.0
       '@types/react': ^18.0.25
       autoprefixer: ^10.4.13
@@ -501,7 +501,7 @@ importers:
   packages/ui:
     specifiers:
       '@ovenwand/config': workspace:0.1.7
-      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.0
+      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.1
       '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.0
       '@ovenwand/ui.button': workspace:0.3.10
       '@ovenwand/ui.calendar': workspace:0.0.4
@@ -546,7 +546,7 @@ importers:
   packages/ui/docs:
     specifiers:
       '@ovenwand/config': workspace:0.1.7
-      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.0
+      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.1
       '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.0
       globby: ^13.1.2
       react: ^18.2.0
@@ -789,7 +789,7 @@ importers:
   toolchain/docs:
     specifiers:
       '@ovenwand/config': workspace:0.1.7
-      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.0
+      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.1
       '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.0
       globby: ^13.1.2
       react: ^18.2.0
@@ -1015,7 +1015,7 @@ importers:
       '@ovenwand/config': workspace:^0.1.6
       '@ovenwand/toolchain.cli': workspace:^0.0.0
       '@ovenwand/toolchain.core': workspace:^0.0.0
-      '@ovenwand/toolchain.plugins.cli': workspace:^0.0.0
+      '@ovenwand/toolchain.plugins.cli': workspace:^0.0.1
       '@ovenwand/toolchain.plugins.turbo': workspace:^0.0.0
       '@types/node': ^18.11.9
     dependencies:
