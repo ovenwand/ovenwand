@@ -1,6 +1,6 @@
 {
   "name": "@ovenwand/docs.ovenwand.com",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
     "@ovenwand/config": "workspace:^0.1.6",
     "@ovenwand/toolchain.cli": "workspace:^0.0.0",
     "@ovenwand/toolchain.core": "workspace:^0.0.0",
-    "@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.0",
+    "@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.1",
     "@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.0",
     "@types/react": "^18.0.25",
     "autoprefixer": "^10.4.13",

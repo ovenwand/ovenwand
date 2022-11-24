@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@ovenwand/config": "workspace:0.1.7",
-    "@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.0",
+    "@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.1",
     "@types/react": "^18.0.25",
     "globby": "^13.1.2",
     "react": "^18.2.0",
