@@ -1,4 +1,9 @@
 {
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"framework": "sveltekit",
+	"buildCommand": "pnpm -w build --filter monitor.ovenwand.com",
+	"devCommand": "pnpm -w dev --filter monitor.ovenwand.com",
+	"ignoreCommand": "pnpm dlx turbo-ignore",
 	"headers": [
 		{
 			"source": "/track",
