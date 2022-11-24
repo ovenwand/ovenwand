@@ -216,6 +216,10 @@ module.exports.runVersion = async function runVersion({
 		await exec('pnpm', ['exec', 'changeset', 'version'], {
 			cwd
 		});
+
+		await exec('pnpm', ['install'], {
+			cwd
+		});
 	}
 
 	let searchQuery = `repo:${repo}+state:open+head:${versionBranch}+base:${branch}`;
