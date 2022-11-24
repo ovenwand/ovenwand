@@ -26,13 +26,16 @@ export default definePlugin(() => {
 					const isDevArg = arg === 'dev';
 					const hasHostParam = command.args.includes('-h') || command.args.includes('--host');
 
-					const devArgs = ['--no-open'];
 					const hostArgs = !env.DOCS_HOST ? [] : ['-h', env.DOCS_HOST];
+
+					const devArgs = [
+						'--no-open',
+						...(!hasHostParam ? hostArgs : []),
+					];
 
 					const args = [
 						arg,
 						...(isDevArg ? devArgs : []),
-						...(!hasHostParam ? hostArgs : []),
 						...command.args.slice(1)
 					].filter(Boolean);
 
