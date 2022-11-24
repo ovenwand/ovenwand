@@ -20,9 +20,9 @@
   "author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
   "license": "WTFPL",
   "dependencies": {
-    "@esbuild-kit/esm-loader": "^2.4.2",
+    "@esbuild-kit/esm-loader": "^2.5.1",
     "@ovenwand/toolchain.core": "workspace:^0.0.0",
-    "commander": "^9.4.0",
+    "commander": "^9.4.1",
     "inquirer": "^9.1.4",
     "ora": "^6.1.2",
     "picocolors": "^1.0.0"

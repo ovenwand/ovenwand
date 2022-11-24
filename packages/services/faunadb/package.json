@@ -12,7 +12,7 @@
 		"@ovenwand/config": "workspace:0.1.6"
 	},
 	"dependencies": {
-		"faunadb": "^4.6.0"
+		"faunadb": "^4.7.1"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"
