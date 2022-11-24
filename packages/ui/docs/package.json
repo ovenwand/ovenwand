@@ -14,7 +14,6 @@
     "@ovenwand/config": "workspace:0.1.7",
     "@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.1",
     "@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.0",
-    "globby": "^13.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "svelte": "^3.53.1",
