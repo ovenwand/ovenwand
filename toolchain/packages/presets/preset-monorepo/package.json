@@ -1,12 +1,12 @@
 {
   "name": "@ovenwand/toolchain.presets.monorepo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
   "dependencies": {
-    "@ovenwand/toolchain.plugins.cli": "workspace:^0.0.0",
+    "@ovenwand/toolchain.plugins.cli": "workspace:^0.0.1",
     "@ovenwand/toolchain.plugins.turbo": "workspace:^0.0.0"
   },
   "devDependencies": {
