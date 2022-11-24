@@ -1,7 +1,9 @@
 import { Command, exec, exit } from '@ovenwand/toolchain.cli';
 
 export function createRunCommand(context) {
-	const { cwd, env, packageManager } = context;
+	const { env } = context;
+	const { cwd, packageManager } = context.meta;
+
 	const command = new Command('run');
 
 	command
