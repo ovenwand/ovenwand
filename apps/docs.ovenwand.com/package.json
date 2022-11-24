@@ -1,6 +1,6 @@
 {
   "name": "@ovenwand/docs.ovenwand.com",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "private": true,
   "scripts": {
@@ -9,9 +9,9 @@
     "preview": "pnpm dlx http-server -a docs.ovenwand.wtf -p 6006 ./storybook-static"
   },
   "devDependencies": {
-    "@ovenwand/config": "workspace:^0.1.6",
-    "@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.1",
-    "@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.0",
+    "@ovenwand/config": "workspace:^0.1.8",
+    "@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.2",
+    "@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.1",
     "@types/react": "^18.0.25",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

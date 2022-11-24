@@ -1,6 +1,6 @@
 {
   "name": "@ovenwand/toolchain.plugins.vite",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "bin": {
     "vite": "./node_modules/vite/bin/vite.js"
@@ -9,7 +9,7 @@
     ".": "./src/index.ts"
   },
   "devDependencies": {
-    "@ovenwand/config": "workspace:^0.1.6",
+    "@ovenwand/config": "workspace:^0.1.8",
     "@ovenwand/toolchain.cli": "workspace:^0.0.0",
     "@ovenwand/toolchain.core": "workspace:^0.0.0",
     "@types/node": "^18.11.9",

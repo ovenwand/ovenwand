@@ -1,5 +1,19 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.5.9
+
+### Patch Changes
+
+- 6898c5a: Remove unused "envPrefix" from vite config
+  - @ovenwand/ui@0.0.20
+  - @ovenwand/app@0.1.21
+  - @ovenwand/auth@0.0.1
+  - @ovenwand/env@0.0.2
+  - @ovenwand/services.faunadb@0.2.2
+  - @ovenwand/services.monitor@0.2.3
+  - @ovenwand/util@0.0.20
+  - @ovenwand/util.date@0.0.3
+
 ## 0.5.8
 
 ### Patch Changes
