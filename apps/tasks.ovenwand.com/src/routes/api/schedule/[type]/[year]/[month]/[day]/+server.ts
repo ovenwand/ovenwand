@@ -4,7 +4,7 @@ import { FindTasksByDueDate } from '$lib/database/queries';
 import { query } from '$lib/database';
 import { mapDataToTask } from '$lib/store/tasks/utils';
 
-export async function GET({ params, url }: import('./$types').RequestEvent) {
+export async function GET({ params }: import('./$types').RequestEvent) {
 	const { day, month, year } = params;
 	const date = new Date(`${year}-${month}-${day}`);
 	const fromDate = setToFirstOfMonth(date).toISOString();
