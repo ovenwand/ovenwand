@@ -22,9 +22,9 @@ export function createToolchain() {
 		const corePlugins = [
 			await import('./plugins/plugin-meta/index.js'),
 			await import('./plugins/plugin-cache/index.js'),
-			await import('./plugins/plugin-magic/index.js'),
 			await import('./plugins/plugin-hooks/index.js'),
 			await import('./plugins/plugin-env/index.js'),
+			await import('./plugins/plugin-magic/index.js'),
 			await import('./plugins/plugin-lifecycle/index.js'),
 		];
 
@@ -33,9 +33,6 @@ export function createToolchain() {
 		for (const plugin of corePlugins) {
 			await registerPlugin(plugin, context);
 		}
-
-		// Make sure they are sorted by priority before starting
-		context.plugins.sort((a, b) => a.priority - b.priority);
 
 		return done(context as ToolchainCoreContext);
 	});

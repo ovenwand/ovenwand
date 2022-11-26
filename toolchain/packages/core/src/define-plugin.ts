@@ -6,11 +6,13 @@ export interface ToolchainPluginModule {
 	default: DefineToolchainPlugin;
 	name: string;
 	priority?: number;
+	enforce?: 'pre' | 'post';
 }
 
 export type ToolchainPlugin = ToolchainPluginDefinition & {
 	name: string;
 	priority: number;
+	enforce: 'pre' | 'post' | undefined;
 };
 
 export const PRIORITY = Object.freeze({

@@ -1,12 +1,10 @@
 /// <reference path="../../plugin-cli/src/ambient.d.ts" />
 
-import { definePlugin, PRIORITY } from '@ovenwand/toolchain.core';
+import { definePlugin } from '@ovenwand/toolchain.core';
 import { createRunCommand } from './commands/run.js';
 import { createCli } from './create-cli.js';
 
 export const name = 'cli';
-
-export const priority = PRIORITY.SYSTEM;
 
 export default definePlugin((context) => {
 	context.cli = createCli();

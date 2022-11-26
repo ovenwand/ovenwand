@@ -1,3 +1,4 @@
+export * from './by-priority.js';
 export * from './detect-package-manager.js';
 export * from './find-dependencies.js';
 export * from './find-executable.js';

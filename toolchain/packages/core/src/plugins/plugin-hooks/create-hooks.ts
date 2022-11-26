@@ -1,6 +1,9 @@
+import { byPriority } from '../../utils/index.js';
+
 export interface ToolchainHook<Name extends keyof Toolchain.Hooks = keyof Toolchain.Hooks> {
 	name: Name;
 	priority: number;
+	enforce?: 'pre' | 'post';
 	handle<T extends Toolchain.Hooks[Name]>(hook: T, context: Toolchain.Context): ReturnType<T>;
 	hooks: Toolchain.Hooks[Name][];
 }
@@ -55,9 +58,7 @@ export function createHooks(): ToolchainHooksApi {
 
 	return {
 		get hooks() {
-			return Array.from(hooksByName.values()).sort(
-				(a, b) => a.priority - b.priority
-			);
+			return Array.from(hooksByName.values()).sort(byPriority);
 		},
 		create,
 		add,

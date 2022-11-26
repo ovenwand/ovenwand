@@ -4,6 +4,8 @@ export const name = 'config';
 
 export const priority = PRIORITY.CORE;
 
+export const enforce = 'post';
+
 export default definePlugin((context) => {
 	context.config = {};
 

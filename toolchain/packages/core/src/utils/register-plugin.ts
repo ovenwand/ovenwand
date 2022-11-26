@@ -7,6 +7,7 @@ export async function registerPlugin(module: ToolchainPluginModule, context: Par
 
 	Object.defineProperty(plugin, 'name', { value: module.name });
 	Object.defineProperty(plugin, 'priority', { value: module.priority ?? PRIORITY.DEFAULT });
+	Object.defineProperty(plugin, 'enforce', { value: module.enforce });
 
 	plugins.push(plugin);
 
