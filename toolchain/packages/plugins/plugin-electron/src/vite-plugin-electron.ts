@@ -42,7 +42,7 @@ export function electron(options: VitePluginElectronOptions = {}) {
 
 		server.httpServer.listen = (port, host, callback) => listen(port, host, (...args) => {
 			const url = new URL(`${config.server.https ? 'https' : 'http'}://${host}:${port}`);
-			callback(...args);
+			callback?.(...args);
 			serve(url.toString());
 		});
 	}
