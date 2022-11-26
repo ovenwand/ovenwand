@@ -15,32 +15,45 @@ const LOCK_FILE = {
 export interface ToolchainPackageManager {
 	name: string;
 	bin: string;
+	lockFile: string;
 }
 
 export async function detectPackageManager(): Promise<ToolchainPackageManager> {
 	const workspace = await findWorkspace();
-	const packageManager: Partial<ToolchainPackageManager> = {};
+
+	const npm: ToolchainPackageManager = {
+		name: NPM,
+		bin: NPM,
+		lockFile: resolve(workspace, LOCK_FILE[NPM]),
+	};
+
+	const yarn: ToolchainPackageManager = {
+		name: YARN,
+		bin: YARN,
+		lockFile: resolve(workspace, LOCK_FILE[YARN]),
+	};
+
+	const pnpm: ToolchainPackageManager = {
+		name: PNPM,
+		bin: PNPM,
+		lockFile: resolve(workspace, LOCK_FILE[PNPM]),
+	};
 
 	const [isNpm, isYarn, isPnpm] = await Promise.all([
-		await pathExists(resolve(workspace, LOCK_FILE[NPM])),
-		await pathExists(resolve(workspace, LOCK_FILE[YARN])),
-		await pathExists(resolve(workspace, LOCK_FILE[PNPM])),
+		await pathExists(npm.lockFile),
+		await pathExists(yarn.lockFile),
+		await pathExists(pnpm.lockFile),
 	]);
 
 	if (isNpm) {
-		packageManager.name = NPM;
-		packageManager.bin = NPM;
+		return npm;
 	}
 
 	if (isYarn) {
-		packageManager.name = YARN;
-		packageManager.bin = YARN;
+		return yarn;
 	}
 
 	if (isPnpm) {
-		packageManager.name = PNPM;
-		packageManager.bin = PNPM;
+		return pnpm;
 	}
-
-	return packageManager as ToolchainPackageManager;
 }
