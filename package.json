@@ -43,7 +43,7 @@
 	"license": "WTFPL",
 	"pnpm": {
 		"overrides": {
-			"@sveltejs/kit": "1.0.0-next.550"
+			"undici": "5.11.0"
 		}
 	}
 }

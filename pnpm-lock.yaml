@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 overrides:
-  '@sveltejs/kit': 1.0.0-next.550
+  undici: 5.11.0
 
 importers:
 
@@ -71,7 +71,7 @@ importers:
       '@ovenwand/ui': workspace:0.0.21
       '@ovenwand/util': workspace:0.0.21
       '@ovenwand/util.date': workspace:0.0.3
-      '@sveltejs/kit': 1.0.0-next.550
+      '@sveltejs/kit': next
       '@types/cookie': ^0.5.1
       '@types/d3-scale': ^4.0.2
       '@types/jsonwebtoken': ^8.5.9
@@ -97,7 +97,7 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@ovenwand/toolchain.presets.ssl': link:../../toolchain/packages/presets/preset-ssl
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
-      '@sveltejs/kit': 1.0.0-next.550_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.562_svelte@3.53.1
       '@types/cookie': 0.5.1
       '@types/d3-scale': 4.0.2
       '@types/jsonwebtoken': 8.5.9
@@ -126,7 +126,7 @@ importers:
       '@ovenwand/util.date': workspace:0.0.3
       '@ovenwand/util.math': workspace:0.0.8
       '@storyblok/svelte': ^2.3.7
-      '@sveltejs/kit': 1.0.0-next.550
+      '@sveltejs/kit': next
       '@types/react': ^18.0.25
       '@types/react-dom': ^18.0.9
       axios: ^0.27.2
@@ -163,7 +163,7 @@ importers:
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
       '@ovenwand/toolchain.presets.vue': link:../../toolchain/packages/presets/preset-vue
       '@storyblok/svelte': 2.3.7_axios@0.27.2
-      '@sveltejs/kit': 1.0.0-next.550_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.562_svelte@3.53.1
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
       svelte: 3.53.1
@@ -190,7 +190,7 @@ importers:
       '@ovenwand/util': workspace:0.0.21
       '@ovenwand/util.date': workspace:0.0.3
       '@ovenwand/util.math': workspace:0.0.8
-      '@sveltejs/kit': 1.0.0-next.550
+      '@sveltejs/kit': next
       encoding: ^0.1.13
       svelte: ^3.53.1
       svelte-check: ^2.9.2
@@ -215,7 +215,7 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@ovenwand/toolchain.presets.ssl': link:../../toolchain/packages/presets/preset-ssl
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
-      '@sveltejs/kit': 1.0.0-next.550_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.562_svelte@3.53.1
       encoding: 0.1.13
       svelte: 3.53.1
       svelte-check: 2.9.2_svelte@3.53.1
@@ -276,7 +276,7 @@ importers:
 
   packages/config:
     specifiers:
-      '@sveltejs/adapter-vercel': 1.0.0-next.79
+      '@sveltejs/adapter-vercel': next
       '@tsconfig/svelte': ^3.0.0
       autoprefixer: ^10.4.13
       postcss: ^8.4.19
@@ -284,7 +284,7 @@ importers:
       svelte-preprocess: ^4.10.7
       tailwindcss: ^3.2.4
     dependencies:
-      '@sveltejs/adapter-vercel': 1.0.0-next.79
+      '@sveltejs/adapter-vercel': 1.0.0-next.84
       '@tsconfig/svelte': 3.0.0
       autoprefixer: 10.4.13_postcss@8.4.19
       postcss: 8.4.19
@@ -1055,7 +1055,7 @@ importers:
       '@ovenwand/config': workspace:^0.1.9
       '@ovenwand/toolchain.core': workspace:^0.0.0
       '@ovenwand/toolchain.plugins.vite': workspace:^0.0.2
-      '@sveltejs/kit': 1.0.0-next.550
+      '@sveltejs/kit': next
       '@types/node': ^18.11.9
       svelte: ^3.53.1
       vite: ^3.2.4
@@ -1064,7 +1064,7 @@ importers:
     devDependencies:
       '@ovenwand/config': link:../../../../packages/config
       '@ovenwand/toolchain.core': link:../../core
-      '@sveltejs/kit': 1.0.0-next.550_svelte@3.53.1+vite@3.2.4
+      '@sveltejs/kit': 1.0.0-next.562_svelte@3.53.1+vite@3.2.4
       '@types/node': 18.11.9
       svelte: 3.53.1
       vite: 3.2.4_@types+node@18.11.9
@@ -4703,8 +4703,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@sveltejs/adapter-vercel/1.0.0-next.79:
-    resolution: {integrity: sha512-Mitw34vS+wR/qxZm6qOUltf910N8gcekYZHaEVxO6HaE/9LyEZ/O03e9rRKwo4LAWrHXOkHMdUxvv1VcS9BqmQ==}
+  /@sveltejs/adapter-vercel/1.0.0-next.84:
+    resolution: {integrity: sha512-1HoUDSG6EDydRfvrgwlNSlGjCw3vUtSk55ipm6OUVujg2oRve9Ge2+kK2w8ojkZiMuTpWu+plbQMr8yuktoeJQ==}
     dependencies:
       '@vercel/nft': 0.22.1
       esbuild: 0.15.15
@@ -4713,8 +4713,8 @@ packages:
       - supports-color
     dev: false
 
-  /@sveltejs/kit/1.0.0-next.550_svelte@3.53.1:
-    resolution: {integrity: sha512-kXRfYD4lWq9SxM76MWSlt95BrpjGM8wniPBEK9KsseVeNZ9sKvc2Ql8uFMuD4tOLKM2iRxmZJTT9rT1Em0OBjw==}
+  /@sveltejs/kit/1.0.0-next.562_svelte@3.53.1:
+    resolution: {integrity: sha512-VgJzjtfjVLW/4A/vDtURc10PrS3bb/N62LHzqLZcUNb5+eN4a0k5cayC7Hz2tmtvrb2Qsg+piEAogvqjKBxrOg==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -4734,14 +4734,14 @@ packages:
       sirv: 2.0.2
       svelte: 3.53.1
       tiny-glob: 0.2.9
-      undici: 5.12.0
+      undici: 5.11.0
     transitivePeerDependencies:
       - diff-match-patch
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.550_svelte@3.53.1+vite@3.2.4:
-    resolution: {integrity: sha512-kXRfYD4lWq9SxM76MWSlt95BrpjGM8wniPBEK9KsseVeNZ9sKvc2Ql8uFMuD4tOLKM2iRxmZJTT9rT1Em0OBjw==}
+  /@sveltejs/kit/1.0.0-next.562_svelte@3.53.1+vite@3.2.4:
+    resolution: {integrity: sha512-VgJzjtfjVLW/4A/vDtURc10PrS3bb/N62LHzqLZcUNb5+eN4a0k5cayC7Hz2tmtvrb2Qsg+piEAogvqjKBxrOg==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -4761,7 +4761,7 @@ packages:
       sirv: 2.0.2
       svelte: 3.53.1
       tiny-glob: 0.2.9
-      undici: 5.12.0
+      undici: 5.11.0
       vite: 3.2.4_@types+node@18.11.9
     transitivePeerDependencies:
       - diff-match-patch
@@ -8707,7 +8707,7 @@ packages:
     resolution: {integrity: sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==}
     engines: {node: '>= 8'}
     dependencies:
-      minipass: 3.3.4
+      minipass: 3.3.6
     dev: false
 
   /fs.realpath/1.0.0:
@@ -10701,8 +10701,8 @@ packages:
   /minimist/1.2.7:
     resolution: {integrity: sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==}
 
-  /minipass/3.3.4:
-    resolution: {integrity: sha512-I9WPbWHCGu8W+6k1ZiGpPu0GkoKBeorkfKNuAFBNS1HNFJvke82sxvI5bzcCNpWPorkOO5QQ+zomzzwRxejXiw==}
+  /minipass/3.3.6:
+    resolution: {integrity: sha512-DxiNidxSEK+tHG6zOIklvNOwm3hvCrbUrdtzY74U6HKTJxvIDfOUL5W5P2Ghd3DTkhhKPYGqeNUIh5qcM4YBfw==}
     engines: {node: '>=8'}
     dependencies:
       yallist: 4.0.0
@@ -10712,7 +10712,7 @@ packages:
     resolution: {integrity: sha512-bAxsR8BVfj60DWXHE3u30oHzfl4G7khkSuPW+qvpd7jFRHm7dLxOjUk1EHACJ/hxLY8phGJ0YhYHZo7jil7Qdg==}
     engines: {node: '>= 8'}
     dependencies:
-      minipass: 3.3.4
+      minipass: 3.3.6
       yallist: 4.0.0
     dev: false
 
@@ -13026,7 +13026,7 @@ packages:
     dependencies:
       chownr: 2.0.0
       fs-minipass: 2.1.0
-      minipass: 3.3.4
+      minipass: 3.3.6
       minizlib: 2.1.2
       mkdirp: 1.0.4
       yallist: 4.0.0
@@ -13426,8 +13426,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /undici/5.12.0:
-    resolution: {integrity: sha512-zMLamCG62PGjd9HHMpo05bSLvvwWOZgGeiWlN/vlqu3+lRo3elxktVGEyLMX+IO7c2eflLjcW74AlkhEZm15mg==}
+  /undici/5.11.0:
+    resolution: {integrity: sha512-oWjWJHzFet0Ow4YZBkyiJwiK5vWqEYoH7BINzJAJOLedZ++JpAlCbUktW2GQ2DS2FpKmxD/JMtWUUWl1BtghGw==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0
