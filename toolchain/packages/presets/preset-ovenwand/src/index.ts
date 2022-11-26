@@ -1,13 +1,13 @@
 import { definePreset } from '@ovenwand/toolchain.core';
 
-export const name = 'preset:ovenwand';
+export const name = 'ovenwand';
 
 export default definePreset(() => ({
-	environment(env) {
-		env.VERSION ??= env.npm_package_version;
+	environment(env, { meta }) {
+		env.VERSION ??= meta.package?.manifest.version;
 		env.DOMAIN ??= `ovenwand.${env.NODE_ENV === 'production' ? 'com' : 'wtf'}`;
 
-		const [_namespace, packageName] = env.npm_package_name.split('/');
+		const [_namespace, packageName] = meta.package?.manifest.name.split('/');
 		const subdomain = packageName.replace(/\.ovenwand\.com$/, '').replace(/\.docs$/, ''); // TODO remove domains from package names
 
 		env.HOST ??= packageName === 'ovenwand.com' ? env.DOMAIN : `${subdomain}.${env.DOMAIN}`;
