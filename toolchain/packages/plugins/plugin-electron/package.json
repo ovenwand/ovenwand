@@ -1,0 +1,21 @@
+{
+  "name": "@ovenwand/toolchain.plugins.electron",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "bin": {
+    "electron": "./node_modules/electron/cli.js"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.1-beta"
+  },
+  "dependencies": {
+    "@ovenwand/toolchain.cli": "workspace:^0.0.0",
+    "@ovenwand/toolchain.core": "workspace:^0.0.0",
+    "electron": "^21.3.1"
+  }
+}
