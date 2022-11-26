@@ -27,8 +27,10 @@
 	"devDependencies": {
 		"@ovenwand/config": "workspace:0.1.8",
 		"@ovenwand/toolchain.plugins.doppler": "workspace:^0.0.0",
+		"@ovenwand/toolchain.plugins.electron": "workspace:^0.0.0",
 		"@ovenwand/toolchain.plugins.vite": "workspace:^0.0.1",
 		"@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.1",
+		"@ovenwand/toolchain.presets.ssl": "workspace:^0.0.1",
 		"@ovenwand/toolchain.presets.sveltekit": "workspace:^0.0.1",
 		"@sveltejs/kit": "next",
 		"encoding": "^0.1.13",
