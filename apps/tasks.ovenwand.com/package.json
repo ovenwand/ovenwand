@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/tasks.ovenwand.com",
-	"version": "0.4.4",
+	"version": "0.4.5",
 	"type": "module",
 	"private": true,
 	"scripts": {
@@ -13,25 +13,25 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"dependencies": {
-		"@ovenwand/app": "workspace:^0.1.21",
+		"@ovenwand/app": "workspace:^0.1.22",
 		"@ovenwand/auth": "workspace:^0.0.1",
 		"@ovenwand/env": "workspace:0.0.2",
 		"@ovenwand/gql": "workspace:^0.0.3",
 		"@ovenwand/services.faunadb": "workspace:0.2.2",
 		"@ovenwand/services.pusher": "workspace:^0.0.0",
-		"@ovenwand/ui": "workspace:0.0.20",
-		"@ovenwand/util": "workspace:0.0.20",
+		"@ovenwand/ui": "workspace:0.0.21",
+		"@ovenwand/util": "workspace:0.0.21",
 		"@ovenwand/util.date": "workspace:0.0.3",
 		"@ovenwand/util.math": "workspace:0.0.8"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.8",
+		"@ovenwand/config": "workspace:0.1.9",
 		"@ovenwand/toolchain.plugins.doppler": "workspace:^0.0.0",
 		"@ovenwand/toolchain.plugins.electron": "workspace:^0.0.0",
-		"@ovenwand/toolchain.plugins.vite": "workspace:^0.0.1",
-		"@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.1",
-		"@ovenwand/toolchain.presets.ssl": "workspace:^0.0.1",
-		"@ovenwand/toolchain.presets.sveltekit": "workspace:^0.0.1",
+		"@ovenwand/toolchain.plugins.vite": "workspace:^0.0.2",
+		"@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.2",
+		"@ovenwand/toolchain.presets.ssl": "workspace:^0.0.2",
+		"@ovenwand/toolchain.presets.sveltekit": "workspace:^0.0.2",
 		"@sveltejs/kit": "next",
 		"encoding": "^0.1.13",
 		"svelte": "^3.53.1",

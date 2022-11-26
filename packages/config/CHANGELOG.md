@@ -1,5 +1,11 @@
 # @ovenwand/config
 
+## 0.1.9
+
+### Patch Changes
+
+- 66b1d09: Improve tailwind config content load times
+
 ## 0.1.8
 
 ### Patch Changes
