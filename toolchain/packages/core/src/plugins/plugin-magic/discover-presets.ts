@@ -1,4 +1,4 @@
-import { findDependenciesFromContext, importDependencies } from '../../utils/index.js';
+import { findDependenciesFromContext } from '../../utils/index.js';
 
 export async function discoverPresets(context) {
 	const dependencies = await findDependenciesFromContext(context, (name) =>
@@ -6,5 +6,5 @@ export async function discoverPresets(context) {
 		name.includes('toolchain-preset-')
 	);
 
-	return importDependencies(dependencies);
+	return dependencies;
 }

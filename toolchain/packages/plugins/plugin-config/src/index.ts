@@ -18,5 +18,14 @@ export default definePlugin((context) => {
 		}
 	});
 
-	return {};
+	return {
+		configure(config, { env, plugins }) {
+			// Create a default configuration for all plugins
+			for (const { name } of plugins) {
+				const envName = name.replace(':', '_').toUpperCase();
+				config[name] ??= {};
+				config[name].enabled ??= env[`TOOLCHAIN_${envName}`] !== '0';
+			}
+		},
+	};
 });

@@ -19,6 +19,8 @@ export async function importDependencies(dependencies: Dependency[], debug?: (..
 		module.manifest = dependency.manifest;
 
 		modules.push(module);
+
+		debug?.(` - ${dependency.name}`);
 	}
 
 	return modules.sort(byPriority);

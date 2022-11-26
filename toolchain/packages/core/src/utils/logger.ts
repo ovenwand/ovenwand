@@ -1,29 +1,26 @@
 import { env, stdout } from 'node:process';
 import { cursorTo, clearScreenDown } from 'node:readline';
+import createDebug from 'debug';
 
 export interface ToolchainLoggerApi {
 	log(...args): void;
 	info(...args): void;
 	warn(...args): void;
 	error(...args): void;
-	debug(...args): void;
+	debug(name?: string): (...args: unknown[]) => void;
 	clear(): void;
 	clearScreen(): void;
 }
 
-export function createLogger(context: Partial<Toolchain.Context>): ToolchainLoggerApi {
+export function createLogger(): ToolchainLoggerApi {
 	const log = (...args) => console.log(...args);
 	const info = (...args) => console.info(...args);
 	const warn = (...args) => console.warn(...args);
 	const error = (...args) => console.error(...args);
 	const clear = () => console.clear();
 
-	const debug = (...args) => {
-		if ((context?.env?.DEBUG ?? env.DEBUG) !== '1') { // Not really nice
-			return;
-		}
-
-		return log(...args);
+	const debug = (name: string = 'toolchain') => {
+		return createDebug(name);
 	};
 
 	function clearScreen() {

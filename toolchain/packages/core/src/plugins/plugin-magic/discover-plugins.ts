@@ -1,4 +1,4 @@
-import { findDependencies, findDependenciesFromContext, importDependencies } from '../../utils/index.js';
+import { findDependencies, findDependenciesFromContext } from '../../utils/index.js';
 
 export async function discoverPlugins(context, presets = []) {
 	const dependencies = await findDependenciesFromContext(context, (name) =>
@@ -17,5 +17,5 @@ export async function discoverPlugins(context, presets = []) {
 		}
 	}
 
-	return importDependencies(dependencies);
+	return dependencies;
 }
