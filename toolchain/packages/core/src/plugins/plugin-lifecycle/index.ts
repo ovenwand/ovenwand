@@ -10,15 +10,17 @@ export default definePlugin((context) => {
 	hooks.create('prepare', { priority: -10 });
 	hooks.create('resolve', { priority: 0 });
 
-	return async ({ logger }) => {
-		logger.debug('plugin-lifecycle:', 'Calling hooks:');
+	return async ({ logger }: Toolchain.Context) => {
+		const debug = logger.debug('toolchain:plugin-lifecycle');
+
+		debug('Calling hooks:');
 
 		for (const hook of hooks.hooks) {
-			logger.debug('plugin-lifecycle:', ` - ${hook.name} (priority: ${hook.priority})`);
-
 			await Promise.all(
 				hooks.call(hook.name, context)
 			);
+
+			debug(` - ${hook.name} (priority: ${hook.priority})`);
 		}
 	};
 });

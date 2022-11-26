@@ -8,7 +8,7 @@ export function createBuildCommand({ config, meta }: Toolchain.Context) {
 		const  { build } = await import('vite');
 
 		await build(
-			resolveConfig(config.vite)
+			await resolveConfig(config.vite)
 		);
 	});
 

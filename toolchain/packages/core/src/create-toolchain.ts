@@ -7,15 +7,18 @@ interface ToolchainCoreContext extends Partial<Toolchain.Context> {
 }
 
 export function createToolchain() {
+	const logger = createLogger();
+	const debug = logger.debug('toolchain');
+
 	const created = new Promise<ToolchainCoreContext>(async (done) => {
 		const context: Partial<ToolchainCoreContext> = {};
 
+		context.logger = logger;
 		context.plugins = [];
 
-		const logger = context.logger = createLogger(context);
+		debug('Importing core plugins...');
 
-		logger.debug('toolchain: Importing core plugins...');
-
+		// The order of this array decides the order in which the core plugins are registered and loaded
 		const corePlugins = [
 			await import('./plugins/plugin-meta/index.js'),
 			await import('./plugins/plugin-cache/index.js'),
@@ -25,14 +28,11 @@ export function createToolchain() {
 			await import('./plugins/plugin-lifecycle/index.js'),
 		];
 
-		logger.debug('toolchain: Registering core plugins:');
+		debug(`Found: ${corePlugins.map((plugin) => plugin.name).join(', ')}`);
 
 		for (const plugin of corePlugins) {
-			logger.debug('toolchain:', `  - ${plugin.name}`);
 			await registerPlugin(plugin, context);
 		}
-
-		logger.debug('toolchain: Storting core plugins...');
 
 		// Make sure they are sorted by priority before starting
 		context.plugins.sort((a, b) => a.priority - b.priority);
@@ -42,14 +42,13 @@ export function createToolchain() {
 
 	async function start() {
 		const context = await created;
-		const { logger } = context;
 		const corePlugins = [...context.plugins];
 
-		logger.debug('toolchain:', 'Loading core plugins...');
+		debug('Loading core plugins...');
 
 		for (const plugin of corePlugins) {
 			if (typeof plugin === 'function') {
-				logger.debug('toolchain:', `Loading "${plugin.name}"`);
+				debug(`Loading "${plugin.name}"`);
 				await plugin(context as Toolchain.Context);
 			}
 		}

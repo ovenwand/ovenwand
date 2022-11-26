@@ -1,6 +1,6 @@
-import { mergeConfig } from 'vite';
+export async function resolveConfig({ configs }) {
+	const { mergeConfig } = await import('vite');
 
-export function resolveConfig({ configs }) {
 	return configs.reduce((mergedConfig, viteConfig) => {
 		if (viteConfig) {
 			return mergeConfig(mergedConfig, viteConfig);

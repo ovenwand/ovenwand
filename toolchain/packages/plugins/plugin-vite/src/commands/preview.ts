@@ -11,10 +11,10 @@ export function createPreviewCommand({ config, logger }: Toolchain.Context) {
 		const startupBegin = performance.now();
 
 		const server = await preview(
-			resolveConfig(config.vite)
+			await resolveConfig(config.vite)
 		);
 
-		printServerBanner(server, Math.ceil(performance.now() - startupBegin));
+		await printServerBanner(server, Math.ceil(performance.now() - startupBegin));
 	});
 
 	return command;

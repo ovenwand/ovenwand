@@ -11,12 +11,12 @@ export function createDevCommand({ config }) {
 		const startupBegin = performance.now();
 
 		const server = await createServer(
-			resolveConfig(config.vite)
+			await resolveConfig(config.vite)
 		);
 
 		await server.listen();
 
-		printServerBanner(server, Math.ceil(performance.now() - startupBegin));
+		await printServerBanner(server, Math.ceil(performance.now() - startupBegin));
 	});
 
 	return command;

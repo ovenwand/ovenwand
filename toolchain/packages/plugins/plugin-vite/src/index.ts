@@ -1,8 +1,5 @@
 import { definePlugin } from '@ovenwand/toolchain.core';
 import { Command } from '@ovenwand/toolchain.cli';
-import { createDevCommand, createBuildCommand, createOptimizeCommand, createPreviewCommand } from './commands/index.js';
-
-export { defineConfig } from 'vite';
 
 export const name = 'vite';
 
@@ -21,6 +18,8 @@ export default definePlugin((context) => {
 			if (!config.vite.enabled) {
 				return;
 			}
+
+			const { createDevCommand, createBuildCommand, createOptimizeCommand, createPreviewCommand } = await import('./commands/index.js');
 
 			const devCommand = createDevCommand(context);
 			const buildCommand = createBuildCommand(context);

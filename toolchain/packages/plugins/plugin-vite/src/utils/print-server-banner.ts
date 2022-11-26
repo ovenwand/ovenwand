@@ -1,7 +1,7 @@
 import { colors } from '@ovenwand/toolchain.cli';
-import { version as viteVersion } from 'vite';
 
-export function printServerBanner(server, startupTime) {
+export async function printServerBanner(server, startupTime) {
+	const { version: viteVersion } = await import('vite');
 	const { info } = server.config.logger;
 
 	const brand = colors.bold('VITE');
