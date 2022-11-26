@@ -4,8 +4,10 @@ export const name = 'ssl';
 
 export default definePreset({
 	async configure(config) {
-		const { default: viteConfig } = await import('./vite.config.js');
-		config.vite.configs.push(viteConfig);
+		if (config.vite?.enabled) {
+			const { default: viteConfig } = await import('./vite.config.js');
+			config.vite.configs.push(viteConfig);
+		}
 		return config;
 	},
 });
