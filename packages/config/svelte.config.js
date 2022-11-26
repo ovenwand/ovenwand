@@ -1,4 +1,5 @@
-import adapter from '@sveltejs/adapter-vercel';
+import { env } from 'node:process';
+import vercel from '@sveltejs/adapter-vercel';
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -10,7 +11,10 @@ const config = {
 	}),
 
 	kit: {
-		adapter: adapter({ edge: process.env.EDGE === '1' })
+		adapter: vercel({
+			edge: env.EDGE === '1',
+			split: env.SPLIT === '1',
+		})
 	}
 };
 
