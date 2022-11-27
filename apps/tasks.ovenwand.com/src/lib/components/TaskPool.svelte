@@ -17,6 +17,10 @@
 </script>
 
 <Pool class="flex flex-col {poolClassName}" {title} on:dragenter on:dragleave on:drop>
+	<svelte:fragment slot="header">
+		<slot task={null} name="header" />
+	</svelte:fragment>
+
 	<div class="flex-grow overflow-auto">
 		<Loader {loading}>
 			{#each tasks as task}

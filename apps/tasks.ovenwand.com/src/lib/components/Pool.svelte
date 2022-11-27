@@ -22,6 +22,10 @@
 	on:drop={() => (highlight = false)}
 >
 	<Panel class={className} {highlight} {title}>
+		<svelte:fragment slot="header">
+			<slot name="header" />
+		</svelte:fragment>
+
 		<slot />
 
 		<svelte:fragment slot="footer">
