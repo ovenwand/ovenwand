@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/monitor.ovenwand.com",
-	"version": "0.5.10",
+	"version": "0.5.11",
 	"type": "module",
 	"private": true,
 	"scripts": {
@@ -13,18 +13,18 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"dependencies": {
-		"@ovenwand/app": "workspace:0.1.22",
+		"@ovenwand/app": "workspace:0.1.23",
 		"@ovenwand/auth": "workspace:^0.0.1",
 		"@ovenwand/env": "workspace:0.0.2",
 		"@ovenwand/services.faunadb": "workspace:0.2.2",
 		"@ovenwand/services.monitor": "workspace:0.2.3",
-		"@ovenwand/ui": "workspace:0.0.21",
-		"@ovenwand/util": "workspace:0.0.21",
+		"@ovenwand/ui": "workspace:0.0.22",
+		"@ovenwand/util": "workspace:0.0.22",
 		"@ovenwand/util.date": "workspace:0.0.3",
 		"d3-scale": "^4.0.2"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.9",
+		"@ovenwand/config": "workspace:0.1.10",
 		"@ovenwand/toolchain.plugins.doppler": "workspace:^0.0.0",
 		"@ovenwand/toolchain.plugins.vite": "workspace:^0.0.2",
 		"@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.2",
