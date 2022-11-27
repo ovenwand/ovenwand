@@ -1,11 +1,13 @@
+import { get } from 'svelte/store';
+import { useTasks } from '$lib/store';
+
 export async function load({ fetch, params }: import('./$types').LayoutLoadEvent) {
 	const { day, month, year, type, task } = params;
+	const { byDate: getTasksByDate } = useTasks();
 
-	const response = await fetch(`/api/schedule/${type}/${year}/${month}/${day}`, {
-		headers: { 'content-type': 'application/json' }
-	});
+	const { tasksByDate, request } = getTasksByDate(type, year, month, day, { shouldFetch: true, fetch });
 
-	const { data: tasks } = await response.json();
+	await request;
 
 	return {
 		year,
@@ -13,6 +15,6 @@ export async function load({ fetch, params }: import('./$types').LayoutLoadEvent
 		day,
 		type,
 		task,
-		tasks
+		tasks: get(tasksByDate),
 	};
 }

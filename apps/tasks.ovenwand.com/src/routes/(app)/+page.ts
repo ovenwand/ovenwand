@@ -1,10 +1,13 @@
+import { get } from 'svelte/store';
+import { useTasks } from '../../lib/store';
+
 export async function load({ fetch }: import('./$types').PageLoadEvent) {
-	const currentTaskResponse = await fetch('/api/focus/current', {
-		headers: { 'content-type': 'application/json' }
-	});
-	const currentTask = await currentTaskResponse.json();
+	const { current: getCurrentTask } = useTasks();
+	const { currentTask, request } = getCurrentTask({ shouldFetch: true, fetch });
+
+	await request;
 
 	return {
-		tasks: [currentTask.data]
+		tasks: [get(currentTask)]
 	};
 }

@@ -194,7 +194,7 @@ export function getTasks(shouldFetch?: boolean) {
 	};
 }
 
-export function getCurrentTask(shouldFetch?: boolean) {
+export function getCurrentTask({ shouldFetch, fetch }: { shouldFetch?: boolean, fetch: any }) {
 	const cache = derived([tasks], ([$tasks]) => $tasks.find((task) => task.schedule === 'current'));
 	const loading = writable(true);
 	const currentTask = derived([loading, cache], ([$loading, $cache]) => {
@@ -227,6 +227,46 @@ export function getCurrentTask(shouldFetch?: boolean) {
 	return {
 		loading: { subscribe: loading.subscribe },
 		currentTask: { subscribe: currentTask.subscribe },
+		request,
+		cache
+	};
+}
+
+export function getTasksByDate(type: string, year: string, month: string, day: string, { shouldFetch, fetch }: { shouldFetch?: boolean, fetch: any }) {
+	const cache = { subscribe: tasks.subscribe };
+	const loading = writable(true);
+	const tasksByDate = derived([loading, cache], ([$loading, $cache]) => {
+		if ($loading && !$cache) {
+			return [createTask(), createTask(), createTask()];
+		}
+
+		return $cache;
+	});
+
+	shouldFetch = isBoolean(shouldFetch) ? shouldFetch : browser;
+
+	let response: Response;
+
+	const request =
+		browser || shouldFetch
+			? fetch(`/api/schedule/${type}/${year}/${month}/${day}`)
+				.then((res) => (response = res))
+				.then((res) => res.json())
+				.then((data) => data.data)
+				.then(($tasks) => {
+					loading.set(false);
+
+					for (const task of $tasks) {
+						update(addOrUpdateTask(task));
+					}
+
+					return response;
+				})
+			: new Promise(noop);
+
+	return {
+		loading: { subscribe: loading.subscribe },
+		tasksByDate: { subscribe: tasksByDate.subscribe },
 		request,
 		cache
 	};

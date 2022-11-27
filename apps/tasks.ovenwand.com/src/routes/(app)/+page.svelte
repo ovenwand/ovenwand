@@ -7,7 +7,7 @@
 
 	const { all: getAllTasks, current: getCurrentTask } = useTasks(data.tasks);
 	const { tasks, loading, cache } = getAllTasks();
-	const { currentTask } = getCurrentTask(false);
+	const { currentTask } = getCurrentTask({ fetch });
 
 	$: todaysTasks = $tasks;
 </script>

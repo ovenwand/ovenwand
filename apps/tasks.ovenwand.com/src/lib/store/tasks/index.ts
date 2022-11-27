@@ -4,7 +4,7 @@ import { createStorage } from '@ovenwand/util';
 import { createTask, copyTask } from './utils';
 import { type ITask, tasks } from './state';
 import { addOrUpdateTask, addTask, removeTask, updateTask } from './mutations';
-import { saveTask, moveTask, deleteTask, getTask, getTasks, getCurrentTask } from './actions';
+import { saveTask, moveTask, deleteTask, getTask, getTasks, getCurrentTask, getTasksByDate } from './actions';
 
 const storage = createStorage<ITask[]>('tasks', []);
 
@@ -35,6 +35,7 @@ export interface ITasksStore {
 	get: typeof getTask;
 	all: typeof getTasks;
 	current: typeof getCurrentTask;
+	byDate: typeof getTasksByDate;
 }
 
 export interface ITasksStoreOptions {
@@ -74,6 +75,7 @@ export function useTasks(
 		delete: deleteTask,
 		get: getTask,
 		all: getTasks,
-		current: getCurrentTask
+		current: getCurrentTask,
+		byDate: getTasksByDate
 	};
 }
