@@ -246,7 +246,7 @@ importers:
       jsonwebtoken: ^8.5.1
       typescript: ^4.9.3
     dependencies:
-      '@ovenwand/ui.button': link:../ui/packages/button
+      '@ovenwand/ui.button': link:../ui/packages/atoms/button
       jsonwebtoken: 8.5.1
     devDependencies:
       '@ovenwand/config': link:../config
@@ -478,7 +478,6 @@ importers:
       '@ovenwand/ui.calendar': workspace:0.0.4
       '@ovenwand/ui.grid': workspace:0.0.13
       '@ovenwand/ui.icon': workspace:0.0.2
-      '@ovenwand/ui.layout': workspace:0.2.16
       '@ovenwand/ui.loader': workspace:0.0.2
       '@ovenwand/ui.modal': workspace:0.2.14
       '@ovenwand/ui.notification': workspace:0.0.14
@@ -493,17 +492,16 @@ importers:
       typescript: ^4.9.3
     dependencies:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
-      '@ovenwand/ui.button': link:packages/button
-      '@ovenwand/ui.calendar': link:packages/calendar
-      '@ovenwand/ui.grid': link:packages/grid
-      '@ovenwand/ui.icon': link:packages/icon
-      '@ovenwand/ui.layout': link:packages/layout
-      '@ovenwand/ui.loader': link:packages/loader
-      '@ovenwand/ui.modal': link:packages/modal
-      '@ovenwand/ui.notification': link:packages/notification
-      '@ovenwand/ui.overlay': link:packages/overlay
-      '@ovenwand/ui.sheet': link:packages/sheet
-      '@ovenwand/ui.sidebar': link:packages/sidebar
+      '@ovenwand/ui.button': link:packages/atoms/button
+      '@ovenwand/ui.calendar': link:packages/organisms/calendar
+      '@ovenwand/ui.grid': link:packages/atoms/grid
+      '@ovenwand/ui.icon': link:packages/atoms/icon
+      '@ovenwand/ui.loader': link:packages/atoms/loader
+      '@ovenwand/ui.modal': link:packages/molecules/modal
+      '@ovenwand/ui.notification': link:packages/molecules/notification
+      '@ovenwand/ui.overlay': link:packages/atoms/overlay
+      '@ovenwand/ui.sheet': link:packages/atoms/sheet
+      '@ovenwand/ui.sidebar': link:packages/atoms/sidebar
     devDependencies:
       '@ovenwand/config': link:../config
       '@ovenwand/toolchain.plugins.storybook': link:../../toolchain/packages/plugins/plugin-storybook
@@ -532,73 +530,88 @@ importers:
       svelte: 3.53.1
       typescript: 4.9.3
 
-  packages/ui/packages/button:
+  packages/ui/packages/atoms/button:
     specifiers:
       '@ovenwand/config': workspace:0.1.9
       '@ovenwand/test.cypress': workspace:0.0.3
       '@ovenwand/util.browser': workspace:0.0.13
       svelte: ^3.53.1
     dependencies:
-      '@ovenwand/util.browser': link:../../../util/browser
+      '@ovenwand/util.browser': link:../../../../util/browser
     devDependencies:
-      '@ovenwand/config': link:../../../config
-      '@ovenwand/test.cypress': link:../../../test/cypress
+      '@ovenwand/config': link:../../../../config
+      '@ovenwand/test.cypress': link:../../../../test/cypress
       svelte: 3.53.1
 
-  packages/ui/packages/calendar:
-    specifiers:
-      '@ovenwand/config': workspace:0.1.9
-      '@ovenwand/util.browser': workspace:^0.0.13
-      '@ovenwand/util.date': workspace:0.0.3
-      typescript: ^4.9.3
-    dependencies:
-      '@ovenwand/util.browser': link:../../../util/browser
-      '@ovenwand/util.date': link:../../../util/date
-    devDependencies:
-      '@ovenwand/config': link:../../../config
-      typescript: 4.9.3
-
-  packages/ui/packages/grid:
+  packages/ui/packages/atoms/grid:
     specifiers:
       '@ovenwand/config': workspace:0.1.9
       '@ovenwand/util.browser': workspace:0.0.13
       '@ovenwand/util.fp': workspace:0.1.6
       svelte: ^3.53.1
     dependencies:
-      '@ovenwand/util.browser': link:../../../util/browser
-      '@ovenwand/util.fp': link:../../../util/fp
+      '@ovenwand/util.browser': link:../../../../util/browser
+      '@ovenwand/util.fp': link:../../../../util/fp
     devDependencies:
-      '@ovenwand/config': link:../../../config
+      '@ovenwand/config': link:../../../../config
       svelte: 3.53.1
 
-  packages/ui/packages/icon:
+  packages/ui/packages/atoms/icon:
     specifiers:
       '@ovenwand/config': workspace:0.1.9
       svelte: ^3.53.1
     devDependencies:
-      '@ovenwand/config': link:../../../config
+      '@ovenwand/config': link:../../../../config
       svelte: 3.53.1
 
-  packages/ui/packages/layout:
+  packages/ui/packages/atoms/loader:
+    specifiers:
+      '@ovenwand/config': workspace:0.1.9
+      svelte: ^3.53.1
+    devDependencies:
+      '@ovenwand/config': link:../../../../config
+      svelte: 3.53.1
+
+  packages/ui/packages/atoms/overlay:
     specifiers:
       '@ovenwand/config': workspace:0.1.9
       '@ovenwand/util.browser': workspace:0.0.13
       svelte: ^3.53.1
     dependencies:
-      '@ovenwand/config': link:../../../config
-      '@ovenwand/util.browser': link:../../../util/browser
+      '@ovenwand/util.browser': link:../../../../util/browser
     devDependencies:
+      '@ovenwand/config': link:../../../../config
       svelte: 3.53.1
 
-  packages/ui/packages/loader:
+  packages/ui/packages/atoms/sheet:
     specifiers:
       '@ovenwand/config': workspace:0.1.9
+      '@ovenwand/util.browser': workspace:0.0.13
       svelte: ^3.53.1
+    dependencies:
+      '@ovenwand/util.browser': link:../../../../util/browser
     devDependencies:
-      '@ovenwand/config': link:../../../config
+      '@ovenwand/config': link:../../../../config
       svelte: 3.53.1
 
-  packages/ui/packages/modal:
+  packages/ui/packages/atoms/sidebar:
+    specifiers:
+      '@ovenwand/config': workspace:0.1.9
+      '@ovenwand/test.cypress': workspace:0.0.3
+      '@ovenwand/test.svelte': workspace:0.0.3
+      '@ovenwand/util.browser': workspace:0.0.13
+      '@ovenwand/util.svelte': workspace:0.2.12
+      svelte: ^3.53.1
+    dependencies:
+      '@ovenwand/config': link:../../../../config
+      '@ovenwand/util.browser': link:../../../../util/browser
+      '@ovenwand/util.svelte': link:../../../../util/svelte
+    devDependencies:
+      '@ovenwand/test.cypress': link:../../../../test/cypress
+      '@ovenwand/test.svelte': link:../../../../test/svelte
+      svelte: 3.53.1
+
+  packages/ui/packages/molecules/modal:
     specifiers:
       '@ovenwand/config': workspace:0.1.9
       '@ovenwand/ui.grid': workspace:0.0.13
@@ -607,15 +620,15 @@ importers:
       '@ovenwand/util.svelte': workspace:0.2.12
       svelte: ^3.53.1
     dependencies:
-      '@ovenwand/ui.grid': link:../grid
-      '@ovenwand/ui.overlay': link:../overlay
-      '@ovenwand/ui.sheet': link:../sheet
-      '@ovenwand/util.svelte': link:../../../util/svelte
+      '@ovenwand/ui.grid': link:../../atoms/grid
+      '@ovenwand/ui.overlay': link:../../atoms/overlay
+      '@ovenwand/ui.sheet': link:../../atoms/sheet
+      '@ovenwand/util.svelte': link:../../../../util/svelte
     devDependencies:
-      '@ovenwand/config': link:../../../config
+      '@ovenwand/config': link:../../../../config
       svelte: 3.53.1
 
-  packages/ui/packages/notification:
+  packages/ui/packages/molecules/notification:
     specifiers:
       '@ovenwand/config': workspace:0.1.9
       '@ovenwand/ui.icon': workspace:0.0.2
@@ -625,53 +638,27 @@ importers:
       '@ovenwand/util.string': workspace:0.0.2
       svelte: ^3.53.1
     dependencies:
-      '@ovenwand/ui.icon': link:../icon
-      '@ovenwand/ui.sheet': link:../sheet
-      '@ovenwand/util.browser': link:../../../util/browser
-      '@ovenwand/util.fp': link:../../../util/fp
-      '@ovenwand/util.string': link:../../../util/string
+      '@ovenwand/ui.icon': link:../../atoms/icon
+      '@ovenwand/ui.sheet': link:../../atoms/sheet
+      '@ovenwand/util.browser': link:../../../../util/browser
+      '@ovenwand/util.fp': link:../../../../util/fp
+      '@ovenwand/util.string': link:../../../../util/string
     devDependencies:
-      '@ovenwand/config': link:../../../config
+      '@ovenwand/config': link:../../../../config
       svelte: 3.53.1
 
-  packages/ui/packages/overlay:
+  packages/ui/packages/organisms/calendar:
     specifiers:
       '@ovenwand/config': workspace:0.1.9
-      '@ovenwand/util.browser': workspace:0.0.13
-      svelte: ^3.53.1
+      '@ovenwand/util.browser': workspace:^0.0.13
+      '@ovenwand/util.date': workspace:0.0.3
+      typescript: ^4.9.3
     dependencies:
-      '@ovenwand/util.browser': link:../../../util/browser
+      '@ovenwand/util.browser': link:../../../../util/browser
+      '@ovenwand/util.date': link:../../../../util/date
     devDependencies:
-      '@ovenwand/config': link:../../../config
-      svelte: 3.53.1
-
-  packages/ui/packages/sheet:
-    specifiers:
-      '@ovenwand/config': workspace:0.1.9
-      '@ovenwand/util.browser': workspace:0.0.13
-      svelte: ^3.53.1
-    dependencies:
-      '@ovenwand/util.browser': link:../../../util/browser
-    devDependencies:
-      '@ovenwand/config': link:../../../config
-      svelte: 3.53.1
-
-  packages/ui/packages/sidebar:
-    specifiers:
-      '@ovenwand/config': workspace:0.1.9
-      '@ovenwand/test.cypress': workspace:0.0.3
-      '@ovenwand/test.svelte': workspace:0.0.3
-      '@ovenwand/util.browser': workspace:0.0.13
-      '@ovenwand/util.svelte': workspace:0.2.12
-      svelte: ^3.53.1
-    dependencies:
-      '@ovenwand/config': link:../../../config
-      '@ovenwand/util.browser': link:../../../util/browser
-      '@ovenwand/util.svelte': link:../../../util/svelte
-    devDependencies:
-      '@ovenwand/test.cypress': link:../../../test/cypress
-      '@ovenwand/test.svelte': link:../../../test/svelte
-      svelte: 3.53.1
+      '@ovenwand/config': link:../../../../config
+      typescript: 4.9.3
 
   packages/util:
     specifiers:
