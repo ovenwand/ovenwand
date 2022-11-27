@@ -1,5 +1,11 @@
 # @ovenwand/config
 
+## 0.1.10
+
+### Patch Changes
+
+- 6185fac: Add support for server routes splitting to svelte config
+
 ## 0.1.9
 
 ### Patch Changes

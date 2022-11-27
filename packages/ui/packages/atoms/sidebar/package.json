@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui.sidebar",
-	"version": "0.1.15",
+	"version": "0.1.16",
 	"private": true,
 	"description": "",
 	"type": "module",
@@ -13,7 +13,7 @@
 		"typescript": "^4.9.1-beta"
 	},
 	"dependencies": {
-		"@ovenwand/config": "workspace:0.1.9",
+		"@ovenwand/config": "workspace:0.1.10",
 		"@ovenwand/util.browser": "workspace:0.0.13",
 		"@ovenwand/util.svelte": "workspace:0.2.12"
 	},
