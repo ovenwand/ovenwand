@@ -7,7 +7,7 @@
     "./ambient": "./types/index.d.ts"
   },
   "dependencies": {
-    "@pnpm/find-workspace-dir": "^4.0.3",
+    "@pnpm/find-workspace-dir": "^5.0.0",
     "debug": "^4.3.4"
   },
   "devDependencies": {
