@@ -23,7 +23,7 @@
 		"@ovenwand/util": "workspace:0.0.22",
 		"@ovenwand/util.date": "workspace:0.0.3",
 		"@ovenwand/util.math": "workspace:0.0.8",
-		"axios": "^0.27.2",
+		"axios": "^1.0.0",
 		"highlight.js": "^11.7.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",

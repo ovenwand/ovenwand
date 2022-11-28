@@ -129,7 +129,7 @@ importers:
       '@sveltejs/kit': next
       '@types/react': ^18.0.25
       '@types/react-dom': ^18.0.9
-      axios: ^0.27.2
+      axios: ^1.0.0
       highlight.js: ^11.7.0
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -149,7 +149,7 @@ importers:
       '@ovenwand/util': link:../../packages/util
       '@ovenwand/util.date': link:../../packages/util/date
       '@ovenwand/util.math': link:../../packages/util/math
-      axios: 0.27.2
+      axios: 1.2.0
       highlight.js: 11.7.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -162,7 +162,7 @@ importers:
       '@ovenwand/toolchain.presets.ssl': link:../../toolchain/packages/presets/preset-ssl
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
       '@ovenwand/toolchain.presets.vue': link:../../toolchain/packages/presets/preset-vue
-      '@storyblok/svelte': 2.3.7_axios@0.27.2
+      '@storyblok/svelte': 2.3.7_axios@1.2.0
       '@sveltejs/kit': 1.0.0-next.563_svelte@3.53.1
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
@@ -3293,18 +3293,18 @@ packages:
     engines: {node: '>=14.16'}
     dev: false
 
-  /@storyblok/js/1.8.6_axios@0.27.2:
+  /@storyblok/js/1.8.6_axios@1.2.0:
     resolution: {integrity: sha512-MpDhwfs+TBrnfQqr9z+z7SCLnvX6/jZKCasexEvVt0Qp+MvWD7IsQtBu6WnKboTjaR4VLFb69YTk+xUG/Roqgw==}
     dependencies:
-      storyblok-js-client: 4.5.8_axios@0.27.2
+      storyblok-js-client: 4.5.8_axios@1.2.0
     transitivePeerDependencies:
       - axios
     dev: true
 
-  /@storyblok/svelte/2.3.7_axios@0.27.2:
+  /@storyblok/svelte/2.3.7_axios@1.2.0:
     resolution: {integrity: sha512-S6fOqeF2iSK6740O6BoMlY+BrAqoKvNd20i7dLG5hnxX2SMTEoEksBt6deJAP0xnfOia5aEGzT4I6u4ZdXs6dA==}
     dependencies:
-      '@storyblok/js': 1.8.6_axios@0.27.2
+      '@storyblok/js': 1.8.6_axios@1.2.0
     transitivePeerDependencies:
       - axios
     dev: true
@@ -5851,11 +5851,12 @@ packages:
     resolution: {integrity: sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==}
     dev: true
 
-  /axios/0.27.2:
-    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
+  /axios/1.2.0:
+    resolution: {integrity: sha512-zT7wZyNYu3N5Bu0wuZ6QccIf93Qk1eV8LOewxgjOZFd2DenOs98cJ7+Y6703d0wkaXGY6/nZd4EweJaHz9uzQw==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
+      proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
 
@@ -11635,7 +11636,6 @@ packages:
 
   /proxy-from-env/1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
-    dev: false
 
   /pseudomap/1.0.2:
     resolution: {integrity: sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==}
@@ -12674,12 +12674,12 @@ packages:
   /store2/2.14.2:
     resolution: {integrity: sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==}
 
-  /storyblok-js-client/4.5.8_axios@0.27.2:
+  /storyblok-js-client/4.5.8_axios@1.2.0:
     resolution: {integrity: sha512-0Wp7Kn4RdKaKRgMmNDu8c6OC81x1mgeri4ziKDY9BsUZEIGLTNw8KFIWlHYACgMnJQn/6qZaV9kGo8IY4hv6GA==}
     peerDependencies:
       axios: ^0.27.2
     dependencies:
-      axios: 0.27.2
+      axios: 1.2.0
     dev: true
 
   /storybook/7.0.0-alpha.52_lb6du3saekb5anf2gjv3wxj3oq:
