@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button, Column, Grid } from '@ovenwand/ui';
-  import { ApplicationState, Task, TaskPool } from '$lib/components';
+  import { ApplicationState, Footer, Task, TaskPool } from '$lib/components';
   import { type ITask, useTasks } from "$lib/store";
 
   const { all: getAllTasks } = useTasks();
@@ -20,6 +20,14 @@
 </script>
 
 <ApplicationState busy={$loading} />
+
+<Footer
+  links={[
+    { label: '<', anchor: { href: '/' } },
+		{ label: 'Schedule', anchor: { href: '/schedule' } },
+		{ label: 'Explore', anchor: { href: '/explorer' } },
+  ]}
+/>
 
 <Grid relative class="min-h-full">
   <Column columns={{ md: 4 }}>

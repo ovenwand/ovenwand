@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Button, Column, Grid } from '@ovenwand/ui';
+	import { Column, Grid } from '@ovenwand/ui';
 	import { useTasks } from '$lib/store';
-	import { ApplicationState, Panel ,Task } from '$lib/components';
+	import { ApplicationState, Footer, Panel ,Task } from '$lib/components';
 
 	export let data: import('./$types').LoadData;
 
@@ -14,7 +14,15 @@
 
 <ApplicationState busy={$loading} />
 
-<Grid relative class="min-h-full auto-rows-[50%_50%_100%] md:auto-rows-fr">
+<Footer
+	links={[
+		{ label: 'Focus', anchor: { href: '/focus' } },
+		{ label: 'Schedule', anchor: { href: '/schedule' } },
+		{ label: 'Explore', anchor: { href: '/explorer' } },
+	]}
+/>
+
+<Grid relative class="min-h-full auto-rows-fr">
 	<Column columns={{ md: 6 }}>
 		<Panel title="Welcome">
 			Daily info?<br/>
@@ -25,19 +33,6 @@
 	</Column>
 
 	<Column columns={{ md: 6 }}>
-		<Panel title="Focus">
-			<svelte:fragment slot="header">
-				<Button>
-					Refresh
-				</Button>
-			</svelte:fragment>
-
-			<h3>{$currentTask.title}</h3>
-			<p>{$currentTask.description}</p>
-		</Panel>
-	</Column>
-
-	<Column>
 		<Panel title="Daily focus">
 			{#each todaysTasks as task}
 				<Task
