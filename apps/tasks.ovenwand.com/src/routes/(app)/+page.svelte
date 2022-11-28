@@ -40,7 +40,12 @@
 	<Column>
 		<Panel title="Daily focus">
 			{#each todaysTasks as task}
-				<Task placeholder={$loading && !$cache.length} interactive={false} {...task} />
+				<Task
+					placeholder={$loading && !$cache.length}
+					interactive={false}
+					href={`/explorer/${task._id}`}
+					{...task}
+				/>
 			{/each}
 		</Panel>
 	</Column>
