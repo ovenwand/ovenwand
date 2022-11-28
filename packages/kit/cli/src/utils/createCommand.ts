@@ -1,8 +1,8 @@
 import { relative, resolve } from 'node:path';
-import findWorkspaceDir from '@pnpm/find-workspace-dir';
+import { findWorkspaceDir } from '@pnpm/find-workspace-dir';
 
 export async function createCommand(command) {
-	const workspace = await findWorkspaceDir.default(process.cwd());
+	const workspace = await findWorkspaceDir(process.cwd());
 
 	const paths = {
 		cwd: resolve(),
