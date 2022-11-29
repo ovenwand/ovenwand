@@ -1,5 +1,12 @@
 # @ovenwand/monitor.ovenwand.com
 
+## 0.5.12
+
+### Patch Changes
+
+- @ovenwand/ui@0.0.23
+- @ovenwand/app@0.1.24
+
 ## 0.5.11
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @ovenwand/docs.ovenwand.com
 
+## 0.0.3
+
+### Patch Changes
+
+- f8c93a4: Add doppler toolchain plugin
+
 ## 0.0.2
 
 ### Patch Changes

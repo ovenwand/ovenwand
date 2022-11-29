@@ -1,5 +1,12 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.4.7
+
+### Patch Changes
+
+- @ovenwand/ui@0.0.23
+- @ovenwand/app@0.1.24
+
 ## 0.4.6
 
 ### Patch Changes

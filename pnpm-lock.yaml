@@ -40,9 +40,9 @@ importers:
   apps/docs.ovenwand.com:
     specifiers:
       '@ovenwand/config': workspace:^0.1.9
-      '@ovenwand/toolchain.plugins.doppler': workspace:^0.0.0
-      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.2
+      '@ovenwand/toolchain.plugins.doppler': workspace:^0.0.1
+      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.3
       '@types/react': ^18.0.25
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -61,18 +61,18 @@ importers:
 
   apps/monitor.ovenwand.com:
     specifiers:
-      '@ovenwand/app': workspace:0.1.23
+      '@ovenwand/app': workspace:0.1.24
       '@ovenwand/auth': workspace:^0.0.1
       '@ovenwand/config': workspace:0.1.10
       '@ovenwand/env': workspace:0.0.2
       '@ovenwand/services.faunadb': workspace:0.2.2
       '@ovenwand/services.monitor': workspace:0.2.3
-      '@ovenwand/toolchain.plugins.doppler': workspace:^0.0.0
-      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.ssl': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.sveltekit': workspace:^0.0.2
-      '@ovenwand/ui': workspace:0.0.22
+      '@ovenwand/toolchain.plugins.doppler': workspace:^0.0.1
+      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.ssl': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.sveltekit': workspace:^0.0.3
+      '@ovenwand/ui': workspace:0.0.23
       '@ovenwand/util': workspace:0.0.22
       '@ovenwand/util.date': workspace:0.0.3
       '@sveltejs/kit': next
@@ -101,7 +101,7 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@ovenwand/toolchain.presets.ssl': link:../../toolchain/packages/presets/preset-ssl
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
-      '@sveltejs/kit': 1.0.0-next.563_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1
       '@types/cookie': 0.5.1
       '@types/d3-scale': 4.0.2
       '@types/jsonwebtoken': 8.5.9
@@ -112,20 +112,20 @@ importers:
 
   apps/ovenwand.com:
     specifiers:
-      '@ovenwand/app': workspace:0.1.23
+      '@ovenwand/app': workspace:0.1.24
       '@ovenwand/brand': workspace:0.0.10
       '@ovenwand/config': workspace:0.1.10
       '@ovenwand/env': workspace:0.0.2
       '@ovenwand/services.monitor': workspace:0.2.3
       '@ovenwand/services.sentry': workspace:0.0.1
-      '@ovenwand/toolchain.plugins.doppler': workspace:^0.0.0
-      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.react': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.ssl': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.sveltekit': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.vue': workspace:^0.0.2
-      '@ovenwand/ui': workspace:0.0.22
+      '@ovenwand/toolchain.plugins.doppler': workspace:^0.0.1
+      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.react': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.ssl': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.sveltekit': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.vue': workspace:^0.0.3
+      '@ovenwand/ui': workspace:0.0.23
       '@ovenwand/util': workspace:0.0.22
       '@ovenwand/util.date': workspace:0.0.3
       '@ovenwand/util.math': workspace:0.0.8
@@ -167,7 +167,7 @@ importers:
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
       '@ovenwand/toolchain.presets.vue': link:../../toolchain/packages/presets/preset-vue
       '@storyblok/svelte': 2.3.7_axios@1.2.0
-      '@sveltejs/kit': 1.0.0-next.563_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
       svelte: 3.53.1
@@ -177,20 +177,20 @@ importers:
 
   apps/tasks.ovenwand.com:
     specifiers:
-      '@ovenwand/app': workspace:^0.1.23
+      '@ovenwand/app': workspace:^0.1.24
       '@ovenwand/auth': workspace:^0.0.1
       '@ovenwand/config': workspace:0.1.10
       '@ovenwand/env': workspace:0.0.2
       '@ovenwand/gql': workspace:^0.0.3
       '@ovenwand/services.faunadb': workspace:0.2.2
       '@ovenwand/services.pusher': workspace:^0.0.0
-      '@ovenwand/toolchain.plugins.doppler': workspace:^0.0.0
-      '@ovenwand/toolchain.plugins.electron': workspace:^0.0.0
-      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.ssl': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.sveltekit': workspace:^0.0.2
-      '@ovenwand/ui': workspace:0.0.22
+      '@ovenwand/toolchain.plugins.doppler': workspace:^0.0.1
+      '@ovenwand/toolchain.plugins.electron': workspace:^0.0.1
+      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.ssl': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.sveltekit': workspace:^0.0.3
+      '@ovenwand/ui': workspace:0.0.23
       '@ovenwand/util': workspace:0.0.22
       '@ovenwand/util.date': workspace:0.0.3
       '@ovenwand/util.math': workspace:0.0.8
@@ -219,7 +219,7 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@ovenwand/toolchain.presets.ssl': link:../../toolchain/packages/presets/preset-ssl
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
-      '@sveltejs/kit': 1.0.0-next.563_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1
       encoding: 0.1.13
       svelte: 3.53.1
       svelte-check: 2.9.2_svelte@3.53.1
@@ -231,7 +231,7 @@ importers:
       '@ovenwand/brand': workspace:0.0.10
       '@ovenwand/config': workspace:0.1.10
       '@ovenwand/services.monitor': workspace:0.2.3
-      '@ovenwand/ui': workspace:0.0.22
+      '@ovenwand/ui': workspace:0.0.23
       '@ovenwand/util.browser': workspace:0.0.13
       svelte: ^3.53.1
     dependencies:
@@ -476,8 +476,8 @@ importers:
   packages/ui:
     specifiers:
       '@ovenwand/config': workspace:0.1.10
-      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.2
+      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.3
       '@ovenwand/ui.button': workspace:0.3.10
       '@ovenwand/ui.calendar': workspace:0.0.4
       '@ovenwand/ui.grid': workspace:0.0.13
@@ -519,8 +519,8 @@ importers:
   packages/ui/docs:
     specifiers:
       '@ovenwand/config': workspace:0.1.10
-      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.2
+      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.3
       react: ^18.2.0
       react-dom: ^18.2.0
       svelte: ^3.53.1
@@ -749,8 +749,8 @@ importers:
   toolchain/docs:
     specifiers:
       '@ovenwand/config': workspace:0.1.10
-      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.2
-      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.2
+      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.3
+      '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.3
       react: ^18.2.0
       react-dom: ^18.2.0
       svelte: ^3.53.1
@@ -768,7 +768,7 @@ importers:
     specifiers:
       '@esbuild-kit/esm-loader': ^2.5.1
       '@ovenwand/config': workspace:^0.1.6
-      '@ovenwand/toolchain.core': workspace:^0.0.0
+      '@ovenwand/toolchain.core': workspace:^0.0.1
       '@types/node': ^18.11.9
       commander: ^9.4.1
       inquirer: ^9.1.4
@@ -801,8 +801,8 @@ importers:
   toolchain/packages/plugins/plugin-cli:
     specifiers:
       '@ovenwand/config': workspace:^0.1.6
-      '@ovenwand/toolchain.cli': workspace:^0.0.0
-      '@ovenwand/toolchain.core': workspace:^0.0.0
+      '@ovenwand/toolchain.cli': workspace:^0.0.1
+      '@ovenwand/toolchain.core': workspace:^0.0.1
       '@types/node': ^18.11.9
       commander: ^9.4.1
     dependencies:
@@ -816,7 +816,7 @@ importers:
   toolchain/packages/plugins/plugin-config:
     specifiers:
       '@ovenwand/config': workspace:^0.1.6
-      '@ovenwand/toolchain.core': workspace:^0.0.0
+      '@ovenwand/toolchain.core': workspace:^0.0.1
       '@types/node': ^18.11.9
     devDependencies:
       '@ovenwand/config': link:../../../../packages/config
@@ -826,8 +826,8 @@ importers:
   toolchain/packages/plugins/plugin-doppler:
     specifiers:
       '@ovenwand/config': workspace:^0.1.6
-      '@ovenwand/toolchain.cli': workspace:^0.0.0
-      '@ovenwand/toolchain.core': workspace:^0.0.0
+      '@ovenwand/toolchain.cli': workspace:^0.0.1
+      '@ovenwand/toolchain.core': workspace:^0.0.1
       '@types/node': ^18.11.9
     devDependencies:
       '@ovenwand/config': link:../../../../packages/config
@@ -837,8 +837,8 @@ importers:
 
   toolchain/packages/plugins/plugin-electron:
     specifiers:
-      '@ovenwand/toolchain.cli': workspace:^0.0.0
-      '@ovenwand/toolchain.core': workspace:^0.0.0
+      '@ovenwand/toolchain.cli': workspace:^0.0.1
+      '@ovenwand/toolchain.core': workspace:^0.0.1
       electron: ^21.3.1
       typescript: ^4.9.1-beta
     dependencies:
@@ -851,8 +851,8 @@ importers:
   toolchain/packages/plugins/plugin-lint:
     specifiers:
       '@ovenwand/config': workspace:^0.1.6
-      '@ovenwand/toolchain.cli': workspace:^0.0.0
-      '@ovenwand/toolchain.core': workspace:^0.0.0
+      '@ovenwand/toolchain.cli': workspace:^0.0.1
+      '@ovenwand/toolchain.core': workspace:^0.0.1
       '@types/node': ^18.11.9
       '@typescript-eslint/eslint-plugin': ^5.44.0
       '@typescript-eslint/parser': ^5.44.0
@@ -886,8 +886,8 @@ importers:
   toolchain/packages/plugins/plugin-scaffold:
     specifiers:
       '@ovenwand/config': workspace:^0.1.6
-      '@ovenwand/toolchain.cli': workspace:^0.0.0
-      '@ovenwand/toolchain.core': workspace:^0.0.0
+      '@ovenwand/toolchain.cli': workspace:^0.0.1
+      '@ovenwand/toolchain.core': workspace:^0.0.1
       '@types/node': ^18.11.9
       plop: ^3.1.1
     dependencies:
@@ -903,8 +903,8 @@ importers:
       '@babel/core': ^7.20.2
       '@mdx-js/react': ^2.1.5
       '@ovenwand/config': workspace:^0.1.8
-      '@ovenwand/toolchain.cli': workspace:^0.0.0
-      '@ovenwand/toolchain.core': workspace:^0.0.0
+      '@ovenwand/toolchain.cli': workspace:^0.0.1
+      '@ovenwand/toolchain.core': workspace:^0.0.1
       '@storybook/addon-actions': ^7.0.0-alpha.52
       '@storybook/addon-backgrounds': ^7.0.0-alpha.52
       '@storybook/addon-docs': ^7.0.0-alpha.52
@@ -958,8 +958,8 @@ importers:
   toolchain/packages/plugins/plugin-turbo:
     specifiers:
       '@ovenwand/config': workspace:^0.1.6
-      '@ovenwand/toolchain.cli': workspace:^0.0.0
-      '@ovenwand/toolchain.core': workspace:^0.0.0
+      '@ovenwand/toolchain.cli': workspace:^0.0.1
+      '@ovenwand/toolchain.core': workspace:^0.0.1
       '@types/node': ^18.11.9
       turbo: ^1.6.3
     devDependencies:
@@ -972,8 +972,8 @@ importers:
   toolchain/packages/plugins/plugin-vite:
     specifiers:
       '@ovenwand/config': workspace:^0.1.9
-      '@ovenwand/toolchain.cli': workspace:^0.0.0
-      '@ovenwand/toolchain.core': workspace:^0.0.0
+      '@ovenwand/toolchain.cli': workspace:^0.0.1
+      '@ovenwand/toolchain.core': workspace:^0.0.1
       '@types/node': ^18.11.9
       vite: ^3.2.4
     devDependencies:
@@ -986,10 +986,10 @@ importers:
   toolchain/packages/presets/preset-monorepo:
     specifiers:
       '@ovenwand/config': workspace:^0.1.6
-      '@ovenwand/toolchain.cli': workspace:^0.0.0
-      '@ovenwand/toolchain.core': workspace:^0.0.0
-      '@ovenwand/toolchain.plugins.cli': workspace:^0.0.1
-      '@ovenwand/toolchain.plugins.turbo': workspace:^0.0.0
+      '@ovenwand/toolchain.cli': workspace:^0.0.1
+      '@ovenwand/toolchain.core': workspace:^0.0.1
+      '@ovenwand/toolchain.plugins.cli': workspace:^0.0.2
+      '@ovenwand/toolchain.plugins.turbo': workspace:^0.0.1
       '@types/node': ^18.11.9
     dependencies:
       '@ovenwand/toolchain.plugins.cli': link:../../plugins/plugin-cli
@@ -1003,7 +1003,7 @@ importers:
   toolchain/packages/presets/preset-ovenwand:
     specifiers:
       '@ovenwand/config': workspace:^0.1.9
-      '@ovenwand/toolchain.core': workspace:^0.0.0
+      '@ovenwand/toolchain.core': workspace:^0.0.1
       typescript: ^4.9.3
     dependencies:
       '@ovenwand/toolchain.core': link:../../core
@@ -1014,8 +1014,8 @@ importers:
   toolchain/packages/presets/preset-react:
     specifiers:
       '@ovenwand/config': workspace:^0.1.9
-      '@ovenwand/toolchain.core': workspace:^0.0.0
-      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.2
+      '@ovenwand/toolchain.core': workspace:^0.0.1
+      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.3
       '@types/node': ^18.11.9
     dependencies:
       '@ovenwand/toolchain.plugins.vite': link:../../plugins/plugin-vite
@@ -1027,8 +1027,8 @@ importers:
   toolchain/packages/presets/preset-ssl:
     specifiers:
       '@ovenwand/config': workspace:^0.1.9
-      '@ovenwand/toolchain.core': workspace:^0.0.0
-      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.2
+      '@ovenwand/toolchain.core': workspace:^0.0.1
+      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.3
       '@types/node': ^18.11.9
       '@vitejs/plugin-basic-ssl': ^0.1.2
       vite: ^3.2.4
@@ -1044,8 +1044,8 @@ importers:
   toolchain/packages/presets/preset-sveltekit:
     specifiers:
       '@ovenwand/config': workspace:^0.1.9
-      '@ovenwand/toolchain.core': workspace:^0.0.0
-      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.2
+      '@ovenwand/toolchain.core': workspace:^0.0.1
+      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.3
       '@sveltejs/kit': next
       '@types/node': ^18.11.9
       svelte: ^3.53.1
@@ -1055,7 +1055,7 @@ importers:
     devDependencies:
       '@ovenwand/config': link:../../../../packages/config
       '@ovenwand/toolchain.core': link:../../core
-      '@sveltejs/kit': 1.0.0-next.563_svelte@3.53.1+vite@3.2.4
+      '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1+vite@3.2.4
       '@types/node': 18.11.9
       svelte: 3.53.1
       vite: 3.2.4_@types+node@18.11.9
@@ -1063,8 +1063,8 @@ importers:
   toolchain/packages/presets/preset-vue:
     specifiers:
       '@ovenwand/config': workspace:^0.1.9
-      '@ovenwand/toolchain.core': workspace:^0.0.0
-      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.2
+      '@ovenwand/toolchain.core': workspace:^0.0.1
+      '@ovenwand/toolchain.plugins.vite': workspace:^0.0.3
       '@types/node': ^18.11.9
       '@vitejs/plugin-vue': ^3.2.0
       vite: ^3.2.4
@@ -4704,8 +4704,8 @@ packages:
       - supports-color
     dev: false
 
-  /@sveltejs/kit/1.0.0-next.563_svelte@3.53.1:
-    resolution: {integrity: sha512-RvQSE6dOuH4vE2hM5K/DezJlm9RjC5EMQK8X46mBXIggp8unaDH+YJyF+KRvAZE5sV93Hk5xaq0WZa8jtU42Jw==}
+  /@sveltejs/kit/1.0.0-next.567_svelte@3.53.1:
+    resolution: {integrity: sha512-4Q74HPLZb9Rr60n7EJANXH2Ng3d7wwrz67TuXxVfYuxARigWO9YzjcLHxG2IVMwRZIeT+LlwOKkg9vYYdBiezQ==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -4731,8 +4731,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.563_svelte@3.53.1+vite@3.2.4:
-    resolution: {integrity: sha512-RvQSE6dOuH4vE2hM5K/DezJlm9RjC5EMQK8X46mBXIggp8unaDH+YJyF+KRvAZE5sV93Hk5xaq0WZa8jtU42Jw==}
+  /@sveltejs/kit/1.0.0-next.567_svelte@3.53.1+vite@3.2.4:
+    resolution: {integrity: sha512-4Q74HPLZb9Rr60n7EJANXH2Ng3d7wwrz67TuXxVfYuxARigWO9YzjcLHxG2IVMwRZIeT+LlwOKkg9vYYdBiezQ==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -6589,7 +6589,7 @@ packages:
     dev: false
 
   /concat-map/0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
+    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
   /concat-stream/1.6.2:
     resolution: {integrity: sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw==}

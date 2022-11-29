@@ -1,6 +1,6 @@
 {
   "name": "@ovenwand/toolchain.presets.ovenwand",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "type": "module",
   "main": "./src/index.ts",
@@ -8,7 +8,7 @@
     ".": "./src/index.ts"
   },
   "dependencies": {
-    "@ovenwand/toolchain.core": "workspace:^0.0.0"
+    "@ovenwand/toolchain.core": "workspace:^0.0.1"
   },
   "devDependencies": {
     "@ovenwand/config": "workspace:^0.1.9",

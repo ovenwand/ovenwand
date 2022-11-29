@@ -1,22 +1,22 @@
 {
   "name": "@ovenwand/toolchain.presets.ssl",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
   "devDependencies": {
     "@ovenwand/config": "workspace:^0.1.9",
-    "@ovenwand/toolchain.core": "workspace:^0.0.0",
+    "@ovenwand/toolchain.core": "workspace:^0.0.1",
     "@types/node": "^18.11.9",
     "vite": "^3.2.4"
   },
   "peerDependencies": {
-    "@ovenwand/toolchain.core": "workspace:^0.0.0",
+    "@ovenwand/toolchain.core": "workspace:^0.0.1",
     "vite": "^3.2.2"
   },
   "dependencies": {
-    "@ovenwand/toolchain.plugins.vite": "workspace:^0.0.2",
+    "@ovenwand/toolchain.plugins.vite": "workspace:^0.0.3",
     "@vitejs/plugin-basic-ssl": "^0.1.2"
   }
 }

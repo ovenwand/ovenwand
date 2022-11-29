@@ -1,5 +1,12 @@
 # @ovenwand/ui
 
+## 0.0.23
+
+### Patch Changes
+
+- Updated dependencies [580c416]
+  - @ovenwand/toolchain.presets.ovenwand@0.0.3
+
 ## 0.0.22
 
 ### Patch Changes

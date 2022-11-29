@@ -1,6 +1,6 @@
 {
   "name": "@ovenwand/toolchain.plugins.electron",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "main": "./src/index.ts",
@@ -14,8 +14,8 @@
     "typescript": "^4.9.1-beta"
   },
   "dependencies": {
-    "@ovenwand/toolchain.cli": "workspace:^0.0.0",
-    "@ovenwand/toolchain.core": "workspace:^0.0.0",
+    "@ovenwand/toolchain.cli": "workspace:^0.0.1",
+    "@ovenwand/toolchain.core": "workspace:^0.0.1",
     "electron": "^21.3.1"
   }
 }
