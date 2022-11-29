@@ -5,13 +5,19 @@ export const name = 'ovenwand';
 export default definePreset(() => ({
 	environment(env, { meta }) {
 		env.VERSION ??= meta.package?.manifest.version;
-		env.DOMAIN ??= `ovenwand.${env.NODE_ENV === 'production' ? 'com' : 'wtf'}`;
 
-		const [_namespace, packageName] = meta.package?.manifest.name.split('/');
-		const subdomain = packageName.replace(/\.ovenwand\.com$/, '').replace(/\.docs$/, ''); // TODO remove domains from package names
+		if (env.NODE_ENV === 'development') {
+			env.DOMAIN ??= 'ovenwand.wtf';
 
-		env.HOST ??= packageName === 'ovenwand.com' ? env.DOMAIN : `${subdomain}.${env.DOMAIN}`;
-		env.DOCS_HOST ??= packageName === 'docs.ovenwand.com' ? `docs.${env.DOMAIN}` : `${subdomain}.docs.${env.DOMAIN}`;
+			const packageName = meta.package?.manifest.name.split('/')[1];
+			const subdomain = packageName.replace(/\.ovenwand\.com$/, '').replace(/\.docs$/, ''); // TODO remove domains from package names
+
+			env.HOST ??= packageName === 'ovenwand.com' ? env.DOMAIN : `${subdomain}.${env.DOMAIN}`;
+			env.DOCS_HOST ??=
+				packageName === 'docs.ovenwand.com'
+					? `docs.${env.DOMAIN}`
+					: `${subdomain}.docs.${env.DOMAIN}`;
+		}
 
 		return env;
 	},
@@ -21,5 +27,5 @@ export default definePreset(() => ({
 			config.vite.configs.push(viteConfig);
 		}
 		return config;
-	},
+	}
 }));
