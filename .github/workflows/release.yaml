@@ -46,7 +46,7 @@ jobs:
         with:
           commit: 'ci: release'
           title: 'Release'
-          version: 'pnpm exec changeset version && pnpm install --no-frozen-lockfile && git add .'
-          publish: 'pnpm exec kit release tag'
+          version: 'pnpm ci:version'
+          publish: 'pnpm ci:publish'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

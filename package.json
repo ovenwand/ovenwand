@@ -18,7 +18,9 @@
 		"lint": "kit lint",
 		"format": "kit lint --format",
 		"check": "run() { pnpm --filter @ovenwand/$1 check ${@:2}; }; run",
-		"ci:test": "pnpm test:unit run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b"
+		"ci:test": "pnpm test:unit run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b",
+		"ci:version": "pnpm changeset version && pnpm install --no-frozen-lockfile",
+		"ci:publish": "pnpm kit release tag"
 	},
 	"devDependencies": {
 		"@cypress/vite-dev-server": "^2.2.3",
@@ -26,7 +28,7 @@
 		"@ovenwand/kit.scaffold": "workspace:*",
 		"@ovenwand/toolchain": "workspace:*",
 		"@ovenwand/toolchain.plugins.config": "workspace:*",
-		"@ovenwand/toolchain.plugins.doppler": "workspace:^0.0.0",
+		"@ovenwand/toolchain.plugins.doppler": "workspace:*",
 		"@ovenwand/toolchain.plugins.lint": "workspace:*",
 		"@ovenwand/toolchain.plugins.scaffold": "workspace:*",
 		"@ovenwand/toolchain.presets.monorepo": "workspace:*",
