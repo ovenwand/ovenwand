@@ -9,20 +9,20 @@ export function createLintCommand(context) {
 	command.option('--disable-prettier', 'Disable prettier');
 	command.option('--disable-eslint', 'Disable eslint');
 
-	command.action(async (options) => {
+	command.action(async (options, command) => {
 		const promises = [];
 
 		if (!options.disableEslint && eslintConfig.enabled) {
-			const eslintArgs = getEslintArgs(eslintConfig);
-			promises.push(exec('eslint', eslintArgs, { stdio: 'inherit', cwd, env }));
+			const eslintArgs = getEslintArgs(eslintConfig, command);
+			promises.push(exec('eslint', [...eslintArgs], { stdio: 'inherit', cwd, env }));
 		}
 
 		if (!options.disablePrettier && prettierConfig.enabled) {
-			const prettierArgs = getPrettierArgs(prettierConfig);
+			const prettierArgs = getPrettierArgs(prettierConfig, command);
 			promises.push(exec('prettier', [...prettierArgs, '--check'], { stdio: 'inherit', cwd, env }));
 		}
 
-		const results = await Promise.all(promises)
+		const results = await Promise.all(promises);
 
 		for (const result of results) {
 			if (result.code !== 0) {

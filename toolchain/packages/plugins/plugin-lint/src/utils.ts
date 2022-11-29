@@ -1,4 +1,4 @@
-export function getEslintArgs(config) {
+export function getEslintArgs(config, command) {
 	const args = [];
 
 	if (config.config) {
@@ -9,14 +9,16 @@ export function getEslintArgs(config) {
 		args.push('--ignore-path', config.ignorePath);
 	}
 
-	if (config.pattern) {
+	if (command.args.length) {
+		args.push(...command.args);
+	} else if (config.pattern) {
 		args.push(config.pattern);
 	}
 
 	return args;
 }
 
-export function getPrettierArgs(config) {
+export function getPrettierArgs(config, command) {
 	const args = [];
 
 	if (config.config) {
@@ -27,7 +29,9 @@ export function getPrettierArgs(config) {
 		args.push('--ignore-path', config.ignorePath);
 	}
 
-	if (config.pattern) {
+	if (command.args.length) {
+		args.push(...command.args);
+	} else if (config.pattern) {
 		args.push(config.pattern);
 	}
 
