@@ -40,6 +40,7 @@ importers:
   apps/docs.ovenwand.com:
     specifiers:
       '@ovenwand/config': workspace:^0.1.9
+      '@ovenwand/toolchain.plugins.doppler': workspace:^0.0.0
       '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.2
       '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.2
       '@types/react': ^18.0.25
@@ -49,6 +50,7 @@ importers:
       typescript: ^4.9.3
     devDependencies:
       '@ovenwand/config': link:../../packages/config
+      '@ovenwand/toolchain.plugins.doppler': link:../../toolchain/packages/plugins/plugin-doppler
       '@ovenwand/toolchain.plugins.storybook': link:../../toolchain/packages/plugins/plugin-storybook
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@types/react': 18.0.25
