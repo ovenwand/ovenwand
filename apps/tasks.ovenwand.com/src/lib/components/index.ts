@@ -1,4 +1,5 @@
 export { default as ApplicationState } from './ApplicationState.svelte';
+export { default as Editable } from './Editable.svelte';
 export { default as Panel } from './Panel.svelte';
 export { default as Pool } from './Pool.svelte';
 export { default as Task } from './Task.svelte';
