@@ -1,20 +1,20 @@
 {
   "name": "@ovenwand/toolchain.plugins.turbo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
   "devDependencies": {
     "@ovenwand/config": "workspace:^0.1.6",
-    "@ovenwand/toolchain.cli": "workspace:^0.0.0",
-    "@ovenwand/toolchain.core": "workspace:^0.0.0",
+    "@ovenwand/toolchain.cli": "workspace:^0.0.1",
+    "@ovenwand/toolchain.core": "workspace:^0.0.1",
     "@types/node": "^18.11.9",
     "turbo": "^1.6.3"
   },
   "peerDependencies": {
-    "@ovenwand/toolchain.cli": "workspace:^0.0.0",
-    "@ovenwand/toolchain.core": "workspace:^0.0.0",
+    "@ovenwand/toolchain.cli": "workspace:^0.0.1",
+    "@ovenwand/toolchain.core": "workspace:^0.0.1",
     "turbo": "^1.4.3"
   }
 }

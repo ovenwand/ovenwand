@@ -1,6 +1,6 @@
 {
   "name": "@ovenwand/toolchain.cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "type": "module",
   "bin": {
@@ -21,7 +21,7 @@
   "license": "WTFPL",
   "dependencies": {
     "@esbuild-kit/esm-loader": "^2.5.1",
-    "@ovenwand/toolchain.core": "workspace:^0.0.0",
+    "@ovenwand/toolchain.core": "workspace:^0.0.1",
     "commander": "^9.4.1",
     "inquirer": "^9.1.4",
     "ora": "^6.1.2",

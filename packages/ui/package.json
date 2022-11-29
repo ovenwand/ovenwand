@@ -1,6 +1,6 @@
 {
   "name": "@ovenwand/ui",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "private": true,
   "description": "",
   "main": "src/index.ts",
@@ -11,7 +11,7 @@
     "docs:preview": "pnpm dlx http-server -a ui.docs.ovenwand.wtf -p 6008 ./storybook-static"
   },
   "dependencies": {
-    "@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.2",
+    "@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.3",
     "@ovenwand/ui.button": "workspace:0.3.10",
     "@ovenwand/ui.calendar": "workspace:0.0.4",
     "@ovenwand/ui.grid": "workspace:0.0.13",
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@ovenwand/config": "workspace:0.1.10",
-    "@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.2",
+    "@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.3",
     "@types/react": "^18.0.25",
     "globby": "^13.1.2",
     "react": "^18.2.0",
