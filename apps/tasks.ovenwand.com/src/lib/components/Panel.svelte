@@ -30,8 +30,8 @@
     <div class="flex items-center justify-center p-2">
       {#if title}
         <h2 class="text-lg font-bold leading-10 px-2">{title}</h2>
+        <div class="flex-grow"></div>
       {/if}
-      <div class="flex-grow"></div>
 
       <slot name="header"/>
     </div>

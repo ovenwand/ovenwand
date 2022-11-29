@@ -6,4 +6,4 @@ export * from './FindCurrentTask';
 export * from './FindTasksByDueDate';
 export * from './CreateTask';
 export * from './DeleteTask';
-export * from './UpdateTask';
+export * from './PartialUpdateTask';
