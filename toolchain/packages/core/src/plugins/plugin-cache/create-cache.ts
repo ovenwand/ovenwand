@@ -13,7 +13,11 @@ function parseCacheName(name: string): string[] {
 	return name.split(':');
 }
 
-function getCacheFilePath(name: string, workspaceCache, localCache): string {
+function getCacheFilePath(
+	name: string,
+	workspaceCache: string | null | undefined,
+	localCache: string | null | undefined
+): string {
 	const [location, cacheName] = parseCacheName(name);
 	const targetCache = location === 'workspace' ? workspaceCache : localCache;
 
@@ -25,7 +29,7 @@ function getCacheFilePath(name: string, workspaceCache, localCache): string {
 }
 
 async function readCache(filePath, options?) {
-	if (filePath == null || !await pathExists(filePath)) {
+	if (filePath == null || !(await pathExists(filePath))) {
 		return null;
 	}
 
@@ -39,7 +43,7 @@ async function writeCache(filePath, data, options?) {
 
 	const fileDir = dirname(filePath);
 
-	if (!await pathExists(fileDir)) {
+	if (!(await pathExists(fileDir))) {
 		await mkdir(fileDir, { recursive: true });
 	}
 
@@ -47,7 +51,7 @@ async function writeCache(filePath, data, options?) {
 }
 
 async function deleteCache(filePath) {
-	if (filePath == null || !await pathExists(filePath)) {
+	if (filePath == null || !(await pathExists(filePath))) {
 		return null;
 	}
 
@@ -59,11 +63,7 @@ export function createCache(context: Toolchain.Context): ToolchainCacheApi {
 	const inMemory = new Map();
 
 	async function write(name: string, data: unknown): Promise<void> {
-		const cacheFilePath = getCacheFilePath(
-			name,
-			meta.workspace.cache,
-			meta.package.cache,
-		);
+		const cacheFilePath = getCacheFilePath(name, meta.workspace?.cache, meta.package?.cache);
 
 		inMemory.set(name, data);
 
@@ -75,11 +75,7 @@ export function createCache(context: Toolchain.Context): ToolchainCacheApi {
 			return inMemory.get(name);
 		}
 
-		const cacheFilePath = getCacheFilePath(
-			name,
-			meta.workspace.cache,
-			meta.package.cache,
-		);
+		const cacheFilePath = getCacheFilePath(name, meta.workspace?.cache, meta.package?.cache);
 
 		return readCache(cacheFilePath, options);
 	}
@@ -89,11 +85,7 @@ export function createCache(context: Toolchain.Context): ToolchainCacheApi {
 			return true;
 		}
 
-		const cacheFilePath = getCacheFilePath(
-			name,
-			meta.workspace.cache,
-			meta.package.cache
-		);
+		const cacheFilePath = getCacheFilePath(name, meta.workspace?.cache, meta.package?.cache);
 
 		return pathExists(cacheFilePath);
 	}
@@ -101,11 +93,7 @@ export function createCache(context: Toolchain.Context): ToolchainCacheApi {
 	function invalidate(name: string) {
 		inMemory.delete(name);
 
-		const cacheFilePath = getCacheFilePath(
-			name,
-			meta.workspace.cache,
-			meta.package.cache,
-		);
+		const cacheFilePath = getCacheFilePath(name, meta.workspace?.cache, meta.package?.cache);
 
 		return deleteCache(cacheFilePath);
 	}
