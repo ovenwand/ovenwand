@@ -17,21 +17,21 @@ export default definePlugin((context) => {
 	return {
 		async configure(config, { env }) {
 			config.lint = {
-				enabled: !['false', '0'].includes(env.OVEN_LINT),
+				enabled: !['false', '0'].includes(env.TOOLCHAIN_LINT),
 
 				eslint: {
-					enabled: !['false', '0'].includes(env.OVEN_LINT_ESLINT),
+					enabled: !['false', '0'].includes(env.TOOLCHAIN_LINT_ESLINT),
 					config: eslintConfig,
 					pattern: '.',
-					ignorePath: eslintIgnore,
+					ignorePath: eslintIgnore
 				},
 
 				prettier: {
-					enabled: !['false', '0'].includes(env.OVEN_LINT_PRETTIER),
+					enabled: !['false', '0'].includes(env.TOOLCHAIN_LINT_PRETTIER),
 					config: prettierConfig,
 					pattern: '.',
-					ignorePath: prettierIgnore,
-				},
+					ignorePath: prettierIgnore
+				}
 			};
 			return config;
 		},
@@ -41,13 +41,9 @@ export default definePlugin((context) => {
 				return;
 			}
 
-			cli.commands.add(
-				createLintCommand(context),
-			);
+			cli.commands.add(createLintCommand(context));
 
-			cli.commands.add(
-				createFormatCommand(context),
-			);
-		},
+			cli.commands.add(createFormatCommand(context));
+		}
 	};
 });
