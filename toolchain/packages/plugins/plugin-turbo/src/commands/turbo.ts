@@ -1,5 +1,5 @@
-import { resolve } from 'node:path';
 import { Command, exec, exit } from '@ovenwand/toolchain.cli';
+import { createTurboIgnoreCommand } from './ignore.js';
 
 export function getTurboArgs(action, options, command, context) {
 	const { config, env, meta } = context;
@@ -28,23 +28,6 @@ export function getTurboArgs(action, options, command, context) {
 	}
 
 	return args;
-}
-
-export function createTurboIgnoreCommand(context) {
-	const { packageManager } = context.meta;
-
-	const command = new Command('ignore');
-
-	command.argument('path', 'Path to package to run turbo-ignore against');
-
-	command.action(async (path) => {
-		const args = ['--silent', 'dlx', 'turbo-ignore'];
-		const cwd = resolve(path);
-		const result = await exec(packageManager.bin, args, { cwd });
-		exit(result.code);
-	});
-
-	return command;
 }
 
 export function createTurboCommand(context) {
