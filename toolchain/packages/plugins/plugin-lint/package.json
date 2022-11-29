@@ -1,6 +1,6 @@
 {
   "name": "@ovenwand/toolchain.plugins.lint",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "bin": {
     "eslint": "./node_modules/eslint/bin/eslint.js",
