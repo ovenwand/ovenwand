@@ -1,3 +1,4 @@
+import { resolve } from 'node:path';
 import { Command, exec, exit } from '@ovenwand/toolchain.cli';
 
 export function getTurboArgs(action, options, command, context) {
@@ -29,15 +30,31 @@ export function getTurboArgs(action, options, command, context) {
 	return args;
 }
 
+export function createTurboIgnoreCommand(context) {
+	const { packageManager } = context.meta;
+
+	const command = new Command('ignore');
+
+	command.argument('path', 'Path to package to run turbo-ignore against');
+
+	command.action(async (path) => {
+		const args = ['--silent', 'dlx', 'turbo-ignore'];
+		const cwd = resolve(path);
+		const result = await exec(packageManager.bin, args, { cwd });
+		exit(result.code);
+	});
+
+	return command;
+}
+
 export function createTurboCommand(context) {
 	const { env, meta } = context;
 
 	const command = new Command('turbo');
 
-	command
-		.allowUnknownOption()
-		.helpOption(false)
-		.argument('[action]', 'Turbo command')
+	command.addCommand(createTurboIgnoreCommand(context));
+
+	command.allowUnknownOption().helpOption(false).argument('[action]', 'Turbo command');
 
 	command.action(async (action, options, command) => {
 		const args = getTurboArgs(action, options, command, context);
