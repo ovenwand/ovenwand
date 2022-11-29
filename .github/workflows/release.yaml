@@ -43,7 +43,7 @@ jobs:
           cd .github/actions/release && pnpm install --prod
 
       - name: Create, update or release pull request
-        uses: ./.github/actions/release
+        uses: changesets/action@v1
         with:
           commit: 'ci: release'
           title: 'Release'
