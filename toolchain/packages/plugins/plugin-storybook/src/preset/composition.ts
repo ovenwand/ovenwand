@@ -1,21 +1,14 @@
-export default {
-	refs: async (config, { configType }) => {
-		const isDevelopment = configType === 'DEVELOPMENT';
+import { env } from 'node:process';
 
-		// TODO dynamically find storybook instances and determine title and url
-		return {
-			toolchain: {
-				title: 'Toolchain',
-				url: isDevelopment
-					? 'http://toolchain.docs.ovenwand.wtf:6007'
-					: 'https://toolchain.docs.ovenwand.dev',
-			},
-			'user-interface': {
-				title: 'User Interface',
-				url: isDevelopment
-					? 'http://ui.docs.ovenwand.wtf:6008'
-					: 'https://ui.docs.ovenwand.dev',
-			},
-		};
+export default {
+	refs: async () => {
+		// TODO dynamically find storybook instances and determine title and url, instead of using env variables
+		// we could automatically detect instances based on the filesystem for example
+		return env.TOOLCHAIN_STORYBOOK_INSTANCES.split('\n').reduce((storybooks, entry) => {
+			const [name, url] = entry.split(',');
+			const key = name.toLowerCase().replace(' ', '-');
+			storybooks[key] = { name, url };
+			return storybooks;
+		}, {});
 	},
 }
