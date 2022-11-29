@@ -40,13 +40,13 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm install --frozen-lockfile
-          cd .github/actions/release && pnpm install --prod
 
       - name: Create, update or release pull request
         uses: changesets/action@v1
         with:
           commit: 'ci: release'
           title: 'Release'
+          version: 'pnpm exec changeset version && pnpm install --no-frozen-lockfile && git add .'
           publish: 'pnpm exec kit release tag'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
