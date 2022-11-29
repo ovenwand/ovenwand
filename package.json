@@ -26,6 +26,7 @@
 		"@ovenwand/kit.scaffold": "workspace:*",
 		"@ovenwand/toolchain": "workspace:*",
 		"@ovenwand/toolchain.plugins.config": "workspace:*",
+		"@ovenwand/toolchain.plugins.doppler": "workspace:^0.0.0",
 		"@ovenwand/toolchain.plugins.lint": "workspace:*",
 		"@ovenwand/toolchain.plugins.scaffold": "workspace:*",
 		"@ovenwand/toolchain.presets.monorepo": "workspace:*",

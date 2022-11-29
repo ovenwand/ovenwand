@@ -12,6 +12,7 @@ importers:
       '@ovenwand/kit.scaffold': workspace:*
       '@ovenwand/toolchain': workspace:*
       '@ovenwand/toolchain.plugins.config': workspace:*
+      '@ovenwand/toolchain.plugins.doppler': workspace:^0.0.0
       '@ovenwand/toolchain.plugins.lint': workspace:*
       '@ovenwand/toolchain.plugins.scaffold': workspace:*
       '@ovenwand/toolchain.presets.monorepo': workspace:*
@@ -26,6 +27,7 @@ importers:
       '@ovenwand/kit.scaffold': link:packages/kit/scaffold
       '@ovenwand/toolchain': link:toolchain
       '@ovenwand/toolchain.plugins.config': link:toolchain/packages/plugins/plugin-config
+      '@ovenwand/toolchain.plugins.doppler': link:toolchain/packages/plugins/plugin-doppler
       '@ovenwand/toolchain.plugins.lint': link:toolchain/packages/plugins/plugin-lint
       '@ovenwand/toolchain.plugins.scaffold': link:toolchain/packages/plugins/plugin-scaffold
       '@ovenwand/toolchain.presets.monorepo': link:toolchain/packages/presets/preset-monorepo
