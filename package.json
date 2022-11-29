@@ -36,8 +36,8 @@
 		"vite": "^3.2.4"
 	},
 	"lint-staged": {
-		"*.{js,ts,svelte,vue,svelte,css,md,json}": "start lint --disable-eslint",
-		"*.{js,ts,svelte,vue,jsx,tsx}": "start lint --disable-prettier"
+		"*.{js,ts,svelte,vue,svelte,css,md,json}": "start format --disable-eslint",
+		"*.{js,ts,svelte,vue,jsx,tsx}": "start format --disable-prettier"
 	},
 	"author": "Ovenwand (info@ovenwand.com)",
 	"license": "WTFPL",
