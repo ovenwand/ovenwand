@@ -6,7 +6,7 @@ export default definePreset(() => ({
 	environment(env, { meta }) {
 		env.VERSION ??= meta.package?.manifest.version;
 
-		if (env.NODE_ENV === 'development') {
+		if (!['true', '1'].includes(env.CI)) {
 			env.DOMAIN ??= 'ovenwand.wtf';
 
 			const packageName = meta.package?.manifest.name.split('/')[1];
