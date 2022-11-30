@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url';
 import { Command, exec, exit } from '@ovenwand/toolchain.cli';
 import { getEslintArgs, getPrettierArgs } from '../utils.js';
 
@@ -10,6 +11,7 @@ export function createFormatCommand(context) {
 	command.option('--disable-eslint', 'Disable eslint');
 
 	command.action(async (options, command) => {
+		const pluginPath = fileURLToPath(new URL('../..', import.meta.url));
 		const promises = [];
 
 		if (!options.disableEslint && eslintConfig.enabled) {
@@ -19,7 +21,13 @@ export function createFormatCommand(context) {
 
 		if (!options.disablePrettier && prettierConfig.enabled) {
 			const prettierArgs = getPrettierArgs(prettierConfig, command);
-			promises.push(exec('prettier', [...prettierArgs, '--write'], { stdio: 'inherit', cwd, env }));
+			promises.push(
+				exec('prettier', [...prettierArgs, `--plugin-search-dir=${pluginPath}`, '--write'], {
+					stdio: 'inherit',
+					cwd,
+					env
+				})
+			);
 		}
 
 		const results = await Promise.all(promises);
