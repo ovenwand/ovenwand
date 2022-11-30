@@ -19,12 +19,6 @@ module.exports = {
 		...eslintSvelteConfig.plugins
 	],
 
-	ignorePatterns: [
-		...eslintReactConfig.ignorePatterns,
-		...eslintVueConfig.ignorePatterns,
-		...eslintSvelteConfig.ignorePatterns
-	],
-
 	overrides: [
 		// ...eslintReactConfig.overrides,
 		// ...eslintVueConfig.overrides,
