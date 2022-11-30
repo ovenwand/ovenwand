@@ -1,3 +1,5 @@
+<svelte:options accessors />
+
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
 
@@ -7,6 +9,7 @@
 	export let type = 'button';
 	export let size: 'default' | 'large' = 'default';
 	export let full = false;
+	export let element: HTMLButtonElement | HTMLAnchorElement;
 
 	$: isDefaultSize = size === 'default';
 	$: isLargeSize = size === 'large';
@@ -26,11 +29,18 @@
 </script>
 
 {#if href}
-	<a class={buttonClassName} {href} data-sveltekit-prefetch on:click {...$$restProps}>
+	<a
+		bind:this={element}
+		class={buttonClassName}
+		{href}
+		data-sveltekit-prefetch
+		on:click
+		{...$$restProps}
+	>
 		<slot />
 	</a>
 {:else}
-	<button class={buttonClassName} {type} on:click {...$$restProps}>
+	<button bind:this={element} class={buttonClassName} {type} on:click {...$$restProps}>
 		<slot />
 	</button>
 {/if}
