@@ -1,8 +1,5 @@
 lockfileVersion: 5.4
 
-overrides:
-  undici: 5.11.0
-
 importers:
 
   .:
@@ -101,7 +98,7 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@ovenwand/toolchain.presets.ssl': link:../../toolchain/packages/presets/preset-ssl
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
-      '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.572_svelte@3.53.1
       '@types/cookie': 0.5.1
       '@types/d3-scale': 4.0.2
       '@types/jsonwebtoken': 8.5.9
@@ -167,7 +164,7 @@ importers:
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
       '@ovenwand/toolchain.presets.vue': link:../../toolchain/packages/presets/preset-vue
       '@storyblok/svelte': 2.3.7_axios@1.2.0
-      '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.572_svelte@3.53.1
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
       svelte: 3.53.1
@@ -219,7 +216,7 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@ovenwand/toolchain.presets.ssl': link:../../toolchain/packages/presets/preset-ssl
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
-      '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.572_svelte@3.53.1
       encoding: 0.1.13
       svelte: 3.53.1
       svelte-check: 2.9.2_svelte@3.53.1
@@ -1067,7 +1064,7 @@ importers:
     devDependencies:
       '@ovenwand/config': link:../../../../packages/config
       '@ovenwand/toolchain.core': link:../../core
-      '@sveltejs/kit': 1.0.0-next.567_svelte@3.53.1+vite@3.2.4
+      '@sveltejs/kit': 1.0.0-next.572_svelte@3.53.1+vite@3.2.4
       '@types/node': 18.11.9
       svelte: 3.53.1
       vite: 3.2.4_@types+node@18.11.9
@@ -3433,7 +3430,7 @@ packages:
       '@storybook/components': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/csf-plugin': 7.0.0-alpha.52
       '@storybook/csf-tools': 7.0.0-alpha.52
-      '@storybook/mdx2-csf': 0.1.0-next.6
+      '@storybook/mdx2-csf': 0.1.0-next.7
       '@storybook/node-logger': 7.0.0-alpha.52
       '@storybook/postinstall': 7.0.0-alpha.52
       '@storybook/preview-web': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
@@ -3870,7 +3867,7 @@ packages:
       '@storybook/client-api': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/client-logger': 7.0.0-alpha.52
       '@storybook/core-common': 7.0.0-alpha.52_lb6du3saekb5anf2gjv3wxj3oq
-      '@storybook/mdx2-csf': 0.1.0-next.6
+      '@storybook/mdx2-csf': 0.1.0-next.7
       '@storybook/node-logger': 7.0.0-alpha.52
       '@storybook/preview-web': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/source-loader': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
@@ -4385,8 +4382,8 @@ packages:
     resolution: {integrity: sha512-QulSDpZKXk6Jxy50tQWHmSx3Y+ytVARYH53lvoKlnoGZWP3KirC44sIMwgb9kg2XI9u9JhcG7kVqVFOnd50M0Q==}
     dev: false
 
-  /@storybook/mdx2-csf/0.1.0-next.6:
-    resolution: {integrity: sha512-FDBPTDHG9BcI27Zp5kwkqjsv2A3s8aUahtKeHOsmTicOBS8uWqUZ3jmL7vg6N7SpiUUBAft9/vTQfttNLeHO7w==}
+  /@storybook/mdx2-csf/0.1.0-next.7:
+    resolution: {integrity: sha512-ahwV2A4aS/D79WWum8fmrFhhbC28/f4XlEKtNG1s0EkCVwCSU17bthEBRY5/Y3IBR5jfeN/oApizNQMLh7mqAA==}
     dependencies:
       loader-utils: 2.0.4
     dev: true
@@ -4716,8 +4713,8 @@ packages:
       - supports-color
     dev: false
 
-  /@sveltejs/kit/1.0.0-next.567_svelte@3.53.1:
-    resolution: {integrity: sha512-4Q74HPLZb9Rr60n7EJANXH2Ng3d7wwrz67TuXxVfYuxARigWO9YzjcLHxG2IVMwRZIeT+LlwOKkg9vYYdBiezQ==}
+  /@sveltejs/kit/1.0.0-next.572_svelte@3.53.1:
+    resolution: {integrity: sha512-PiKEr55L/uJyMKvDPdyoa5MlAYQwdgs8HLMbr28YcCBmhw/v6V7gutKOKdqeXc3YwKEFVS3z7TvW6c7eDokJdQ==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -4730,21 +4727,21 @@ packages:
       cookie: 0.5.0
       devalue: 4.2.0
       kleur: 4.1.5
-      magic-string: 0.26.7
+      magic-string: 0.27.0
       mime: 3.0.0
       sade: 1.8.1
       set-cookie-parser: 2.5.1
       sirv: 2.0.2
       svelte: 3.53.1
       tiny-glob: 0.2.9
-      undici: 5.11.0
+      undici: 5.13.0
     transitivePeerDependencies:
       - diff-match-patch
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.567_svelte@3.53.1+vite@3.2.4:
-    resolution: {integrity: sha512-4Q74HPLZb9Rr60n7EJANXH2Ng3d7wwrz67TuXxVfYuxARigWO9YzjcLHxG2IVMwRZIeT+LlwOKkg9vYYdBiezQ==}
+  /@sveltejs/kit/1.0.0-next.572_svelte@3.53.1+vite@3.2.4:
+    resolution: {integrity: sha512-PiKEr55L/uJyMKvDPdyoa5MlAYQwdgs8HLMbr28YcCBmhw/v6V7gutKOKdqeXc3YwKEFVS3z7TvW6c7eDokJdQ==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -4757,14 +4754,14 @@ packages:
       cookie: 0.5.0
       devalue: 4.2.0
       kleur: 4.1.5
-      magic-string: 0.26.7
+      magic-string: 0.27.0
       mime: 3.0.0
       sade: 1.8.1
       set-cookie-parser: 2.5.1
       sirv: 2.0.2
       svelte: 3.53.1
       tiny-glob: 0.2.9
-      undici: 5.11.0
+      undici: 5.13.0
       vite: 3.2.4_@types+node@18.11.9
     transitivePeerDependencies:
       - diff-match-patch
@@ -10457,6 +10454,13 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
+  /magic-string/0.27.0:
+    resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.14
+    dev: true
+
   /make-dir/2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
     engines: {node: '>=6'}
@@ -13460,8 +13464,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /undici/5.11.0:
-    resolution: {integrity: sha512-oWjWJHzFet0Ow4YZBkyiJwiK5vWqEYoH7BINzJAJOLedZ++JpAlCbUktW2GQ2DS2FpKmxD/JMtWUUWl1BtghGw==}
+  /undici/5.13.0:
+    resolution: {integrity: sha512-UDZKtwb2k7KRsK4SdXWG7ErXiL7yTGgLWvk2AXO1JMjgjh404nFo6tWSCM2xMpJwMPx3J8i/vfqEh1zOqvj82Q==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0

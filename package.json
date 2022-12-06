@@ -43,10 +43,5 @@
 		"*.{js,ts,svelte,vue,jsx,tsx}": "start format --disable-prettier"
 	},
 	"author": "Ovenwand (info@ovenwand.com)",
-	"license": "WTFPL",
-	"pnpm": {
-		"overrides": {
-			"undici": "5.11.0"
-		}
-	}
+	"license": "WTFPL"
 }
