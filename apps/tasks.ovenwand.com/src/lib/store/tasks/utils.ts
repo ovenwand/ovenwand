@@ -1,4 +1,4 @@
-import type { ITask, ITaskData } from './state';
+import type { ITask } from './state';
 
 export function createTask(task: Partial<ITask> = {}): ITask {
 	return {
@@ -31,11 +31,4 @@ export function findTaskById($tasks: ITask[], id: unknown): ITask {
 	}
 
 	return $task;
-}
-
-export function mapDataToTask(data: ITaskData): ITask {
-	return {
-		...data,
-		labels: data.labels.data.map((label) => label._id)
-	};
 }

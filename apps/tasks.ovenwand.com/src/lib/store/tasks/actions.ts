@@ -194,8 +194,8 @@ export function getTasks(shouldFetch?: boolean) {
 	};
 }
 
-export function getCurrentTask({ shouldFetch, fetch }: { shouldFetch?: boolean, fetch: any }) {
-	const cache = derived([tasks], ([$tasks]) => $tasks.find((task) => task.schedule === 'current'));
+export function getCurrentTask({ shouldFetch, fetch }: { shouldFetch?: boolean; fetch: any }) {
+	const cache = derived([tasks], ([$tasks]) => $tasks.find((task) => !task.done));
 	const loading = writable(true);
 	const currentTask = derived([loading, cache], ([$loading, $cache]) => {
 		if ($loading && !$cache) {
@@ -218,7 +218,9 @@ export function getCurrentTask({ shouldFetch, fetch }: { shouldFetch?: boolean, 
 					.then(($task) => {
 						loading.set(false);
 
-						update(addOrUpdateTask($task));
+						if ($task) {
+							update(addOrUpdateTask($task));
+						}
 
 						return response;
 					})
@@ -232,7 +234,13 @@ export function getCurrentTask({ shouldFetch, fetch }: { shouldFetch?: boolean, 
 	};
 }
 
-export function getTasksByDate(type: string, year: string, month: string, day: string, { shouldFetch, fetch }: { shouldFetch?: boolean, fetch: any }) {
+export function getTasksByDate(
+	type: string,
+	year: string,
+	month: string,
+	day: string,
+	{ shouldFetch, fetch }: { shouldFetch?: boolean; fetch: any }
+) {
 	const cache = { subscribe: tasks.subscribe };
 	const loading = writable(true);
 	const tasksByDate = derived([loading, cache], ([$loading, $cache]) => {
@@ -250,18 +258,18 @@ export function getTasksByDate(type: string, year: string, month: string, day: s
 	const request =
 		browser || shouldFetch
 			? fetch(`/api/schedule/${type}/${year}/${month}/${day}`)
-				.then((res) => (response = res))
-				.then((res) => res.json())
-				.then((data) => data.data)
-				.then(($tasks) => {
-					loading.set(false);
+					.then((res) => (response = res))
+					.then((res) => res.json())
+					.then((data) => data.data)
+					.then(($tasks) => {
+						loading.set(false);
 
-					for (const task of $tasks) {
-						update(addOrUpdateTask(task));
-					}
+						for (const task of $tasks) {
+							update(addOrUpdateTask(task));
+						}
 
-					return response;
-				})
+						return response;
+					})
 			: new Promise(noop);
 
 	return {

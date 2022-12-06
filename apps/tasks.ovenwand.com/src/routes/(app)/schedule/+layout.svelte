@@ -4,9 +4,9 @@
 
 <Footer
 	links={[
-		{ label: '<', anchor: { href: '/' } },
+		{ label: '<', columns: 2, anchor: { href: '/' } },
 		{ label: 'Schedule', anchor: { href: '/schedule' } },
-		{ label: 'Explore', anchor: { href: '/explorer' } },
+		{ label: 'Explore', anchor: { href: '/explorer' } }
 	]}
 />
 

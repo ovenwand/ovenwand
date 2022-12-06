@@ -1,7 +1,6 @@
 import { json, type RequestEvent } from '@sveltejs/kit';
 import { query, mutate } from '$lib/database';
-import { CreateTask, DeleteTask, UpdateTask, FindAllTasks } from '$lib/database/queries';
-import { mapDataToTask } from '$lib/store/tasks/utils';
+import { CreateTask, DeleteTask, PartialUpdateTask, FindAllTasks } from '$lib/database/queries';
 import { useTasksChannel } from '$lib/utils/socket/node';
 
 export async function GET() {
@@ -12,7 +11,7 @@ export async function GET() {
 	return json({
 		errors,
 		data: {
-			tasks: data?.tasks?.data.map(mapDataToTask),
+			tasks: data?.tasks?.data,
 			labels: data?.labels?.data
 		}
 	});
@@ -63,7 +62,7 @@ export async function PATCH({ request }: RequestEvent) {
 	};
 
 	const { errors = null, data = null } = await mutate({
-		mutation: UpdateTask,
+		mutation: PartialUpdateTask,
 		variables: task
 	});
 

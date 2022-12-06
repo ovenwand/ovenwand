@@ -2,7 +2,6 @@ import { json } from '@sveltejs/kit';
 import { setToFirstOfMonth, setToLastOfMonth } from '@ovenwand/util.date';
 import { FindTasksByDueDate } from '$lib/database/queries';
 import { query } from '$lib/database';
-import { mapDataToTask } from '$lib/store/tasks/utils';
 
 export async function GET({ params }: import('./$types').RequestEvent) {
 	const { day, month, year } = params;
@@ -21,6 +20,6 @@ export async function GET({ params }: import('./$types').RequestEvent) {
 
 	return json({
 		errors,
-		data: data?.findTasksByDueDate?.map(mapDataToTask)
+		data: data?.findTasksByDueDate
 	});
 }

@@ -7,9 +7,19 @@ export const findCurrentTask = {
 			[],
 			q.Let(
 				{
-					index: q.Index('tasks_by_schedule'),
-					value: 'current',
-					currentTasks: q.Match(q.Var('index'), q.Var('value'))
+					doneFromTask: ['data', 'done'],
+					scheduleFromTask: ['data', 'schedule'],
+					tasks: q.Match(q.Index('tasks')),
+					currentTasks: q.Filter(
+						q.Map(q.Var('tasks'), q.Lambda(['task'], q.Get(q.Var('task')))),
+						q.Lambda(
+							['task'],
+							q.And(
+								q.Equals(q.Select(q.Var('doneFromTask'), q.Get(q.Var('task'))), false),
+								q.Equals(q.Select(q.Var('scheduleFromTask'), q.Get(q.Var('task'))), 'unscheduled')
+							)
+						)
+					)
 				},
 				q.Get(q.Var('currentTasks'))
 			)
