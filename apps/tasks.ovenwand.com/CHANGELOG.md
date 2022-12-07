@@ -1,5 +1,30 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.4.8
+
+### Patch Changes
+
+- f7e4777: Add anchor to today's tasks
+- 10512a1: Make task title and description editable in explorer
+- e8daa2e: Add wrapper around svelte content
+- 1cc47be: Refactor dashboard, footer and routes
+
+      - Separate focus and dashboard
+      - Make footer links dynamic
+
+- 10512a1: Add Editable component
+- 5695e81: prevent 500 errors when no current task is found
+  - @ovenwand/app@0.1.25
+  - @ovenwand/auth@0.0.2
+  - @ovenwand/env@0.0.2
+  - @ovenwand/gql@0.0.3
+  - @ovenwand/services.faunadb@0.2.2
+  - @ovenwand/services.pusher@0.0.0
+  - @ovenwand/ui@0.0.24
+  - @ovenwand/util@0.0.23
+  - @ovenwand/util.date@0.0.3
+  - @ovenwand/util.math@0.0.8
+
 ## 0.4.7
 
 ### Patch Changes

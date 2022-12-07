@@ -1,5 +1,15 @@
 # @ovenwand/ui.modal
 
+## 0.2.15
+
+### Patch Changes
+
+- Updated dependencies [3bc0308]
+  - @ovenwand/ui.grid@0.0.14
+  - @ovenwand/ui.overlay@0.0.11
+  - @ovenwand/ui.sheet@0.0.11
+  - @ovenwand/util.svelte@0.2.12
+
 ## 0.2.14
 
 ### Patch Changes

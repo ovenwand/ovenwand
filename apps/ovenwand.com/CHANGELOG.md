@@ -1,5 +1,21 @@
 # @ovenwand/ovenwand.com
 
+## 0.13.12
+
+### Patch Changes
+
+- Updated dependencies [5859b0c]
+  - @ovenwand/config@0.1.11
+  - @ovenwand/app@0.1.25
+  - @ovenwand/brand@0.0.10
+  - @ovenwand/env@0.0.2
+  - @ovenwand/services.monitor@0.2.3
+  - @ovenwand/services.sentry@0.0.1
+  - @ovenwand/ui@0.0.24
+  - @ovenwand/util@0.0.23
+  - @ovenwand/util.date@0.0.3
+  - @ovenwand/util.math@0.0.8
+
 ## 0.13.11
 
 ### Patch Changes

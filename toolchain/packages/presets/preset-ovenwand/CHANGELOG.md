@@ -1,5 +1,11 @@
 # @ovenwand/toolchain.presets.ovenwand
 
+## 0.0.4
+
+### Patch Changes
+
+- fa30e25: Use CI instead of NODE_ENV to determine development evironment
+
 ## 0.0.3
 
 ### Patch Changes

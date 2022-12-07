@@ -1,5 +1,12 @@
 # @ovenwand/toolchain.presets.monorepo
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies [7bc5cc4]
+  - @ovenwand/toolchain.plugins.turbo@0.0.2
+
 ## 0.0.2
 
 ### Patch Changes
