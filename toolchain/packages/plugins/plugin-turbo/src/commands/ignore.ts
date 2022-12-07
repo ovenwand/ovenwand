@@ -4,12 +4,12 @@ import { getBranchName } from '../utils/get-branch-name.js';
 import { getCommitMessage } from '../utils/get-commit-message.js';
 
 export function createTurboIgnoreCommand(context) {
-	const { env } = context;
+	const { env, meta } = context;
 	const { packageManager } = context.meta;
 
 	const command = new Command('ignore');
 
-	command.argument('path', 'Path to package to run turbo-ignore against');
+	command.argument('[path]', 'Path to package to run turbo-ignore against', meta.cwd);
 
 	command.action(async (path) => {
 		const branchName = await getBranchName();
