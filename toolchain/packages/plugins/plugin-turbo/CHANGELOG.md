@@ -1,5 +1,11 @@
 # @ovenwand/toolchain.plugins.turbo
 
+## 0.0.2
+
+### Patch Changes
+
+- 7bc5cc4: Make path param optional for ignore command
+
 ## 0.0.1
 
 ### Patch Changes

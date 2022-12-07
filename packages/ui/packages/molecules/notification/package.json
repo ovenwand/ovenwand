@@ -16,7 +16,7 @@
 		"@ovenwand/util.string": "workspace:0.0.2"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.10",
+		"@ovenwand/config": "workspace:0.1.11",
 		"svelte": "^3.53.1"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",

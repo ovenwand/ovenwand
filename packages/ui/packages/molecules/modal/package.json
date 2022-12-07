@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui.modal",
-	"version": "0.2.14",
+	"version": "0.2.15",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -9,11 +9,11 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.10",
+		"@ovenwand/config": "workspace:0.1.11",
 		"svelte": "^3.53.1"
 	},
 	"dependencies": {
-		"@ovenwand/ui.grid": "workspace:0.0.13",
+		"@ovenwand/ui.grid": "workspace:0.0.14",
 		"@ovenwand/ui.overlay": "workspace:0.0.11",
 		"@ovenwand/ui.sheet": "workspace:0.0.11",
 		"@ovenwand/util.svelte": "workspace:0.2.12"

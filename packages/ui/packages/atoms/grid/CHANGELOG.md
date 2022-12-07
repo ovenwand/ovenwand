@@ -1,5 +1,13 @@
 # @ovenwand/ui.grid
 
+## 0.0.14
+
+### Patch Changes
+
+- 3bc0308: Fix nested relative grid not inheriting their column count from the parent grid
+  - @ovenwand/util.browser@0.0.13
+  - @ovenwand/util.fp@0.1.6
+
 ## 0.0.13
 
 ### Patch Changes

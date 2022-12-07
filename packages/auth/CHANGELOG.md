@@ -1,5 +1,12 @@
 # @ovenwand/auth
 
+## 0.0.2
+
+### Patch Changes
+
+- Updated dependencies [1d6aa6d]
+  - @ovenwand/ui.button@0.4.0
+
 ## 0.0.1
 
 ### Patch Changes

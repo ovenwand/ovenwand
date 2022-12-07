@@ -1,5 +1,12 @@
 # @ovenwand/toolchain.plugins.lint
 
+## 0.0.3
+
+### Patch Changes
+
+- 4bcba40: Remove ignore patterns from combined eslint config
+- 49dba8d: Resolve prettier plugins from plugin dir instead of cwd
+
 ## 0.0.2
 
 ### Patch Changes

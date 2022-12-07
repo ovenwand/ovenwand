@@ -1,5 +1,11 @@
 # @ovenwand/config
 
+## 0.1.11
+
+### Patch Changes
+
+- 5859b0c: add files in .storybook to default tailwind config
+
 ## 0.1.10
 
 ### Patch Changes

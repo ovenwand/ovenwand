@@ -1,5 +1,15 @@
 # @ovenwand/ui.button
 
+## 0.4.0
+
+### Minor Changes
+
+- 1d6aa6d: Expose button element to component consumers
+
+### Patch Changes
+
+- @ovenwand/util.browser@0.0.13
+
 ## 0.3.10
 
 ### Patch Changes
