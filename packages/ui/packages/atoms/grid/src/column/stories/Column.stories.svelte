@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
-	import Column from './Column.svelte';
-	import Grid from './Grid.svelte';
+	import Grid from '../../grid/Grid.svelte';
+	import Column from '../Column.svelte';
 
 	const argTypes = {
 		columns: {
