@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Apply a default theme */
+html {
+	@apply bg-slate-100 dark:bg-black text-slate-700 dark:text-slate-300;
+}
+
+/* Remove default padding from story root */
+.sb-show-main.sb-main-centered #storybook-root {
+	@apply p-0;
+}
