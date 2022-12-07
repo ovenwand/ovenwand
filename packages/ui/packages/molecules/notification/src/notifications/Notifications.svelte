@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util.browser';
 	import { Column, Grid } from '@ovenwand/ui.grid';
-	import Notification from './Notification.svelte';
-	import { useNotifications } from './store';
+	import Notification from '../notification/Notification.svelte';
+	import { useNotifications } from '../store';
 
 	export let top = false;
 	export let bottom = !top;
@@ -11,7 +11,7 @@
 
 	const { notifications } = useNotifications();
 
-	const notificationsClassName = createClassName({
+	$: notificationsClassName = createClassName({
 		'top-0': top,
 		'right-0': right,
 		'bottom-0': bottom,

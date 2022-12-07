@@ -1,24 +1,30 @@
 {
-  "name": "@ovenwand/ui.docs",
-  "version": "0.0.19",
-  "private": true,
-  "description": "",
-  "main": "src/index.ts",
-  "type": "module",
-  "scripts": {
-    "dev": "start docs dev -p 6008",
-    "build": "start docs build",
-    "preview": "pnpm dlx http-server -a toolchain.docs.ovenwand.wtf -p 6008 ./storybook-static"
-  },
-  "devDependencies": {
-    "@ovenwand/config": "workspace:0.1.10",
-    "@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.3",
-    "@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "svelte": "^3.53.1",
-    "typescript": "^4.9.3"
-  },
-  "author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
-  "license": "WTFPL"
+	"name": "@ovenwand/ui.docs",
+	"version": "0.0.19",
+	"private": true,
+	"description": "",
+	"main": "src/index.ts",
+	"type": "module",
+	"scripts": {
+		"dev": "start docs dev -p 6008",
+		"build": "start docs build",
+		"preview": "pnpm dlx http-server -a toolchain.docs.ovenwand.wtf -p 6008 ./storybook-static"
+	},
+	"devDependencies": {
+		"@ovenwand/config": "workspace:0.1.10",
+		"@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.3",
+		"@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.3",
+		"@ovenwand/ui.button": "workspace:^0.3.10",
+		"@ovenwand/ui.calendar": "workspace:^0.0.4",
+		"@ovenwand/ui.grid": "workspace:^0.0.13",
+		"@ovenwand/ui.modal": "workspace:^0.2.14",
+		"@ovenwand/ui.notification": "workspace:^0.0.14",
+		"@ovenwand/ui.sheet": "workspace:^0.0.11",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"svelte": "^3.53.1",
+		"typescript": "^4.9.3"
+	},
+	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
+	"license": "WTFPL"
 }
