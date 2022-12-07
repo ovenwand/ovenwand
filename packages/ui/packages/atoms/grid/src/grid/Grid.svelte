@@ -32,7 +32,7 @@
 </div>
 
 <style lang="postcss">
-	.grid {
+	:root {
 		--ow-grid: 100vw;
 		--ow-gap: 0rem;
 		--ow-gap-outside: 0rem;
@@ -52,6 +52,10 @@
 		/*grid-auto-rows: min-content;*/
 		padding: var(--ow-gap-outside);
 		width: var(--ow-grid);
+	}
+
+	.grid :global(.grid:not(.grid--relative)) {
+		--ow-columns: 12;
 	}
 
 	.grid :global(.grid.grid--relative) {
