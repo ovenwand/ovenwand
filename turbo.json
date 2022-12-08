@@ -2,7 +2,7 @@
 	"$schema": "https://turborepo.org/schema.json",
 	"pipeline": {
 		"sync": {
-			"outputs": [".svelte-kit/types/**", ".svelte-kit/tsconfig.json"]
+			"outputs": [".svelte-kit/types/**", ".svelte-kit/ambient.d.ts", ".svelte-kit/tsconfig.json"]
 		},
 
 		"dev": {
