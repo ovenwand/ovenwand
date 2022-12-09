@@ -17,6 +17,6 @@
   },
   "dependencies": {
     "@ovenwand/toolchain.plugins.vite": "workspace:^0.0.3",
-    "@vitejs/plugin-basic-ssl": "^0.1.2"
+    "@vitejs/plugin-basic-ssl": "^1.0.0"
   }
 }
