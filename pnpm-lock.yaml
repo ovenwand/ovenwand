@@ -98,7 +98,7 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@ovenwand/toolchain.presets.ssl': link:../../toolchain/packages/presets/preset-ssl
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
-      '@sveltejs/kit': 1.0.0-next.572_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.577_svelte@3.53.1
       '@types/cookie': 0.5.1
       '@types/d3-scale': 4.0.2
       '@types/jsonwebtoken': 8.5.9
@@ -164,7 +164,7 @@ importers:
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
       '@ovenwand/toolchain.presets.vue': link:../../toolchain/packages/presets/preset-vue
       '@storyblok/svelte': 2.3.7_axios@1.2.0
-      '@sveltejs/kit': 1.0.0-next.572_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.577_svelte@3.53.1
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
       svelte: 3.53.1
@@ -216,7 +216,7 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@ovenwand/toolchain.presets.ssl': link:../../toolchain/packages/presets/preset-ssl
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
-      '@sveltejs/kit': 1.0.0-next.572_svelte@3.53.1
+      '@sveltejs/kit': 1.0.0-next.577_svelte@3.53.1
       encoding: 0.1.13
       svelte: 3.53.1
       svelte-check: 2.9.2_svelte@3.53.1
@@ -1064,7 +1064,7 @@ importers:
     devDependencies:
       '@ovenwand/config': link:../../../../packages/config
       '@ovenwand/toolchain.core': link:../../core
-      '@sveltejs/kit': 1.0.0-next.572_svelte@3.53.1+vite@3.2.4
+      '@sveltejs/kit': 1.0.0-next.577_svelte@3.53.1+vite@3.2.4
       '@types/node': 18.11.9
       svelte: 3.53.1
       vite: 3.2.4_@types+node@18.11.9
@@ -1075,12 +1075,12 @@ importers:
       '@ovenwand/toolchain.core': workspace:^0.0.1
       '@ovenwand/toolchain.plugins.vite': workspace:^0.0.3
       '@types/node': ^18.11.9
-      '@vitejs/plugin-vue': ^3.2.0
+      '@vitejs/plugin-vue': ^4.0.0
       vite: ^3.2.4
       vue: ^3.2.45
     dependencies:
       '@ovenwand/toolchain.plugins.vite': link:../../plugins/plugin-vite
-      '@vitejs/plugin-vue': 3.2.0_vite@3.2.4+vue@3.2.45
+      '@vitejs/plugin-vue': 4.0.0_vite@3.2.4+vue@3.2.45
     devDependencies:
       '@ovenwand/config': link:../../../../packages/config
       '@ovenwand/toolchain.core': link:../../core
@@ -3430,7 +3430,7 @@ packages:
       '@storybook/components': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/csf-plugin': 7.0.0-alpha.52
       '@storybook/csf-tools': 7.0.0-alpha.52
-      '@storybook/mdx2-csf': 0.1.0-next.7
+      '@storybook/mdx2-csf': 0.1.0-next.8
       '@storybook/node-logger': 7.0.0-alpha.52
       '@storybook/postinstall': 7.0.0-alpha.52
       '@storybook/preview-web': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
@@ -3534,7 +3534,7 @@ packages:
       '@storybook/addons': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/client-logger': 7.0.0-alpha.52
       '@storybook/core-events': 7.0.0-alpha.52
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/router': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/types': 7.0.0-alpha.52
       global: 4.4.0
@@ -3754,7 +3754,7 @@ packages:
       '@storybook/channels': 7.0.0-alpha.52
       '@storybook/client-logger': 7.0.0-alpha.52
       '@storybook/core-events': 7.0.0-alpha.52
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/router': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/theming': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/types': 7.0.0-alpha.52
@@ -3781,7 +3781,7 @@ packages:
       '@storybook/channels': 7.0.0-alpha.52
       '@storybook/client-logger': 7.0.0-alpha.52
       '@storybook/core-events': 7.0.0-alpha.52
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/router': 7.0.0-alpha.52_wcqkhtmu7mswc6yz4uyexck3ty
       '@storybook/theming': 7.0.0-alpha.52_wcqkhtmu7mswc6yz4uyexck3ty
       '@storybook/types': 7.0.0-alpha.52
@@ -3811,7 +3811,7 @@ packages:
       '@storybook/client-logger': 7.0.0-alpha.52
       '@storybook/components': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/core-events': 7.0.0-alpha.52
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/docs-tools': 7.0.0-alpha.52_lb6du3saekb5anf2gjv3wxj3oq
       '@storybook/preview-web': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/store': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
@@ -3867,7 +3867,7 @@ packages:
       '@storybook/client-api': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/client-logger': 7.0.0-alpha.52
       '@storybook/core-common': 7.0.0-alpha.52_lb6du3saekb5anf2gjv3wxj3oq
-      '@storybook/mdx2-csf': 0.1.0-next.7
+      '@storybook/mdx2-csf': 0.1.0-next.8
       '@storybook/node-logger': 7.0.0-alpha.52
       '@storybook/preview-web': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/source-loader': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
@@ -3979,7 +3979,7 @@ packages:
     dependencies:
       '@storybook/addons': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/client-logger': 7.0.0-alpha.52
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/store': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/types': 7.0.0-alpha.52
       '@types/qs': 6.9.7
@@ -4002,7 +4002,7 @@ packages:
     dependencies:
       '@storybook/addons': 7.0.0-alpha.52_wcqkhtmu7mswc6yz4uyexck3ty
       '@storybook/client-logger': 7.0.0-alpha.52
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/store': 7.0.0-alpha.52_wcqkhtmu7mswc6yz4uyexck3ty
       '@storybook/types': 7.0.0-alpha.52
       '@types/qs': 6.9.7
@@ -4034,7 +4034,7 @@ packages:
     resolution: {integrity: sha512-JSBLfR8vNlj3vh0kCMNWcB+XVvw0uHSDT94CSXHqwv8tQCk0LJWHdp4aSb5zOrwiSA7N1uvh8sHD+2KXreAp3g==}
     dependencies:
       '@babel/types': 7.20.2
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/csf-tools': 7.0.0-alpha.52
       '@storybook/node-logger': 7.0.0-alpha.52
       '@storybook/types': 7.0.0-alpha.52
@@ -4057,7 +4057,7 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@storybook/client-logger': 7.0.0-alpha.52
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/theming': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/types': 7.0.0-alpha.52
       memoizerific: 1.11.3
@@ -4083,7 +4083,7 @@ packages:
       '@storybook/client-api': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/client-logger': 7.0.0-alpha.52
       '@storybook/core-events': 7.0.0-alpha.52
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/preview-web': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/store': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/types': 7.0.0-alpha.52
@@ -4111,7 +4111,7 @@ packages:
       '@storybook/client-api': 7.0.0-alpha.52_wcqkhtmu7mswc6yz4uyexck3ty
       '@storybook/client-logger': 7.0.0-alpha.52
       '@storybook/core-events': 7.0.0-alpha.52
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/preview-web': 7.0.0-alpha.52_wcqkhtmu7mswc6yz4uyexck3ty
       '@storybook/store': 7.0.0-alpha.52_wcqkhtmu7mswc6yz4uyexck3ty
       '@storybook/types': 7.0.0-alpha.52
@@ -4235,7 +4235,7 @@ packages:
       '@storybook/core-client': 7.0.0-alpha.52_lb6du3saekb5anf2gjv3wxj3oq
       '@storybook/core-common': 7.0.0-alpha.52_lb6du3saekb5anf2gjv3wxj3oq
       '@storybook/core-events': 7.0.0-alpha.52
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/csf-tools': 7.0.0-alpha.52
       '@storybook/docs-mdx': 0.0.1-next.4
       '@storybook/node-logger': 7.0.0-alpha.52
@@ -4294,7 +4294,7 @@ packages:
     resolution: {integrity: sha512-PeV5XXA41YE6zTnQznuGcx/DIuA0LkTBFRXBslo1NdsnfWWsdx2acgu9Osf7jcqIzxNFzE8Yjbxc+wRsCQqa9Q==}
     dependencies:
       '@babel/types': 7.20.2
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/types': 7.0.0-alpha.52
       fs-extra: 9.1.0
       ts-dedent: 2.2.0
@@ -4307,8 +4307,8 @@ packages:
       lodash: 4.17.21
     dev: true
 
-  /@storybook/csf/0.0.2-next.7:
-    resolution: {integrity: sha512-OPBZ7WWFjkg6KSpdt+HA9N0WEJqr7wwZaMONNnjo/MxDXZgWNwGDouPBjk7CNuIh2aoDgTo6MfCMg6SOK0/IMQ==}
+  /@storybook/csf/0.0.2-next.8:
+    resolution: {integrity: sha512-3T6rflW7D9q1iXOR+bidwoNbd9rVUTyjYH/sqsnYjbXhb/aOXsQzGKwNeq9QqZIFVpKfg5BoOF5i7DCMtoGknQ==}
     dependencies:
       expect-type: 0.14.2
       lodash: 4.17.21
@@ -4382,8 +4382,8 @@ packages:
     resolution: {integrity: sha512-QulSDpZKXk6Jxy50tQWHmSx3Y+ytVARYH53lvoKlnoGZWP3KirC44sIMwgb9kg2XI9u9JhcG7kVqVFOnd50M0Q==}
     dev: false
 
-  /@storybook/mdx2-csf/0.1.0-next.7:
-    resolution: {integrity: sha512-ahwV2A4aS/D79WWum8fmrFhhbC28/f4XlEKtNG1s0EkCVwCSU17bthEBRY5/Y3IBR5jfeN/oApizNQMLh7mqAA==}
+  /@storybook/mdx2-csf/0.1.0-next.8:
+    resolution: {integrity: sha512-fl8BxHzkypAaFYjBkbYfiDUy/3bzPaSXsDTCuPTBIVu8CwkVntpFrjSujZH/pgJig8/9P4VdUJw0H+beMXpktg==}
     dependencies:
       loader-utils: 2.0.4
     dev: true
@@ -4498,7 +4498,7 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/types': 7.0.0-alpha.52
       estraverse: 5.3.0
       lodash: 4.17.21
@@ -4518,7 +4518,7 @@ packages:
       '@storybook/addons': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/client-logger': 7.0.0-alpha.52
       '@storybook/core-events': 7.0.0-alpha.52
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/types': 7.0.0-alpha.52
       dequal: 2.0.3
       global: 4.4.0
@@ -4542,7 +4542,7 @@ packages:
       '@storybook/addons': 7.0.0-alpha.52_wcqkhtmu7mswc6yz4uyexck3ty
       '@storybook/client-logger': 7.0.0-alpha.52
       '@storybook/core-events': 7.0.0-alpha.52
-      '@storybook/csf': 0.0.2-next.7
+      '@storybook/csf': 0.0.2-next.8
       '@storybook/types': 7.0.0-alpha.52
       dequal: 2.0.3
       global: 4.4.0
@@ -4713,8 +4713,8 @@ packages:
       - supports-color
     dev: false
 
-  /@sveltejs/kit/1.0.0-next.572_svelte@3.53.1:
-    resolution: {integrity: sha512-PiKEr55L/uJyMKvDPdyoa5MlAYQwdgs8HLMbr28YcCBmhw/v6V7gutKOKdqeXc3YwKEFVS3z7TvW6c7eDokJdQ==}
+  /@sveltejs/kit/1.0.0-next.577_svelte@3.53.1:
+    resolution: {integrity: sha512-hQuSGiF87pNNdmIMDwOr8+nMOe/tgtOne4VBpCFb4k0YrFh/5qC/pgWvWXFWeJBRi9/UzmEjGH9gJeJkgtMLmw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -4734,14 +4734,14 @@ packages:
       sirv: 2.0.2
       svelte: 3.53.1
       tiny-glob: 0.2.9
-      undici: 5.13.0
+      undici: 5.14.0
     transitivePeerDependencies:
       - diff-match-patch
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.572_svelte@3.53.1+vite@3.2.4:
-    resolution: {integrity: sha512-PiKEr55L/uJyMKvDPdyoa5MlAYQwdgs8HLMbr28YcCBmhw/v6V7gutKOKdqeXc3YwKEFVS3z7TvW6c7eDokJdQ==}
+  /@sveltejs/kit/1.0.0-next.577_svelte@3.53.1+vite@3.2.4:
+    resolution: {integrity: sha512-hQuSGiF87pNNdmIMDwOr8+nMOe/tgtOne4VBpCFb4k0YrFh/5qC/pgWvWXFWeJBRi9/UzmEjGH9gJeJkgtMLmw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -4761,7 +4761,7 @@ packages:
       sirv: 2.0.2
       svelte: 3.53.1
       tiny-glob: 0.2.9
-      undici: 5.13.0
+      undici: 5.14.0
       vite: 3.2.4_@types+node@18.11.9
     transitivePeerDependencies:
       - diff-match-patch
@@ -5361,11 +5361,11 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue/3.2.0_vite@3.2.4+vue@3.2.45:
-    resolution: {integrity: sha512-E0tnaL4fr+qkdCNxJ+Xd0yM31UwMkQje76fsDVBBUCoGOUPexu2VDUYHL8P4CwV+zMvWw6nlRw19OnRKmYAJpw==}
+  /@vitejs/plugin-vue/4.0.0_vite@3.2.4+vue@3.2.45:
+    resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
-      vite: ^3.0.0
+      vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
       vite: 3.2.4_@types+node@18.11.9
@@ -13464,8 +13464,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /undici/5.13.0:
-    resolution: {integrity: sha512-UDZKtwb2k7KRsK4SdXWG7ErXiL7yTGgLWvk2AXO1JMjgjh404nFo6tWSCM2xMpJwMPx3J8i/vfqEh1zOqvj82Q==}
+  /undici/5.14.0:
+    resolution: {integrity: sha512-yJlHYw6yXPPsuOH0x2Ib1Km61vu4hLiRRQoafs+WUgX1vO64vgnxiCEN9dpIrhZyHFsai3F0AEj4P9zy19enEQ==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0

@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "@ovenwand/toolchain.plugins.vite": "workspace:^0.0.3",
-    "@vitejs/plugin-vue": "^3.2.0"
+    "@vitejs/plugin-vue": "^4.0.0"
   }
 }
