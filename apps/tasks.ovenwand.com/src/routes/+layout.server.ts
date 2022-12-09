@@ -1,9 +1,8 @@
+import { getSession } from '$lib/session';
+
 export async function load({ locals }: import('./$types').LayoutServerLoadEvent) {
 	return {
-		session: {
-			id: locals.id,
-			token: locals.token
-		},
+		session: getSession(),
 		referrer: locals.referrer.toString()
 	};
 }
