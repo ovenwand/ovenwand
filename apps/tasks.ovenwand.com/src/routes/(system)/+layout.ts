@@ -1,2 +1,2 @@
-import { withAuth } from '../../lib/auth';
+import { withAuth } from '$lib/auth';
 export const load = withAuth();

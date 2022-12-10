@@ -6,7 +6,7 @@
 	export let _id: string;
 	export let title: string;
 	export let description: string;
-	export let done: boolean;
+	export let status: 'open' | 'closed';
 
 	export let href: string | null = null;
 	export let placeholder = false;
@@ -21,10 +21,10 @@
 	$: taskTagName = href ? 'a' : 'div';
 
 	$: taskClassName = createClassName({
-		'line-through': done,
+		'line-through': status === 'closed',
 		'bg-gray-200 dark:bg-gray-800': highlight,
 		'cursor-grab': interactive && !isMouseDown,
-		'cursor-grabbing': interactive && isMouseDown,
+		'cursor-grabbing': interactive && isMouseDown
 	});
 
 	$: titleClassName = createClassName({
@@ -35,9 +35,11 @@
 		'w-60 bg-white leading-none my-1': placeholder
 	});
 
+	$: closed = status === 'closed';
+
 	function onInput(event: Event) {
 		const target = event.target as HTMLInputElement;
-		dispatch('update', { done: target.checked });
+		dispatch('update', { status: target.checked ? 'closed' : 'open' });
 	}
 </script>
 
@@ -47,15 +49,15 @@
 	class="contents"
 	{href}
 	use:draggable={{ disabled: !interactive }}
-	on:mousedown={() => isMouseDown = true}
-	on:mouseup={() => isMouseDown = false}
+	on:mousedown={() => (isMouseDown = true)}
+	on:mouseup={() => (isMouseDown = false)}
 	on:dragstart
 	on:dragend
 	on:click
 >
 	<Sheet class="flex mb-2 {taskClassName}" background={!highlight} padding rounded shadow>
 		<div class="flex pr-4 items-center justify-center">
-			<input id="task-input-{_id}" type="checkbox" bind:checked={done} on:input={onInput} />
+			<input id="task-input-{_id}" type="checkbox" bind:checked={closed} on:input={onInput} />
 		</div>
 		<div class="flex flex-col flex-auto items-start">
 			<label for="task-input-{_id}" class={titleClassName}>{title}</label>
