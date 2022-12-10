@@ -1,1 +1,1 @@
-export * from './schedule';
+export * from './get-schedule-url';

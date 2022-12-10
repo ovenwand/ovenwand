@@ -1,18 +1,13 @@
 import { invalid, redirect, type RequestEvent } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
-import { mutate } from '$lib/database';
-import { Logout } from '$lib/database/queries';
+import { useUsers } from '$lib/database';
 
 const isProduction = env.VERCEL_ENV === 'production';
 
 export const actions = {
 	async default({ cookies }: RequestEvent) {
-		const { errors = null } = await mutate({
-			mutation: Logout,
-			variables: {
-				all: false
-			}
-		});
+		const users = useUsers();
+		const { errors } = await users.mutate.logout();
 
 		if (errors) {
 			return invalid(400, { errors });

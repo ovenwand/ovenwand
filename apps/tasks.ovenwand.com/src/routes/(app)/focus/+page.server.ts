@@ -1,22 +1,13 @@
-import { mutate } from '$lib/database';
-import { PartialUpdateTask } from '$lib/database/queries';
+import { useTasks } from '$lib/database';
 
 export const actions: import('./$types').Actions = {
 	async markDone({ request }) {
+		const tasks = useTasks();
 		const body = await request.formData();
 		const id = body.get('id');
 
-		const { errors, data } = await mutate({
-			mutation: PartialUpdateTask,
-			variables: {
-				id,
-				data: {
-					schedule: 'unscheduled',
-					done: true
-				}
-			}
-		});
+		const { error, data } = await tasks.mutate.update(id, { status: 'closed' });
 
-		return { success: !!errors, errors, data };
+		return { success: !!error, errors: [error], data };
 	}
 };

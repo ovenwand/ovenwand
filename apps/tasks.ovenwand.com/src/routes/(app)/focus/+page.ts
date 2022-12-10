@@ -1,13 +1,13 @@
-import { get } from 'svelte/store';
-import { useTasks } from '$lib/store';
+import { useTasks } from '$lib/database';
 
-export async function load({ fetch }: import('./$types').PageLoadEvent) {
-	const { current: getCurrentTask } = useTasks();
-	const { currentTask, request } = getCurrentTask({ shouldFetch: true, fetch });
+export async function load({ parent }: import('./$types').PageLoadEvent) {
+	await parent();
 
-	await request;
+	const tasks = useTasks();
+	const { error, data } = await tasks.query.current();
 
 	return {
-		tasks: [get(currentTask)]
+		errors: [error],
+		tasks: [data.currentTask].filter(Boolean)
 	};
 }

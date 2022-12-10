@@ -1,24 +1,26 @@
-import { mutate } from '$lib/database';
-import { PartialUpdateTask } from '$lib/database/queries';
+import { useTasks } from '$lib/database';
+import { redirect } from '@sveltejs/kit';
 
 export const actions: import('./$types').Actions = {
 	async saveTask({ params, request }) {
-		const body = Array.from(await request.formData()).reduce<Record<string, FormDataEntryValue>>(
-			(input, [key, value]) => {
-				input[key] = value;
-				return input;
-			},
-			{}
-		);
+		const tasks = useTasks();
+		const formData = Object.fromEntries(await request.formData());
 
-		const { errors, data } = await mutate({
-			mutation: PartialUpdateTask,
-			variables: {
-				id: params.id,
-				data: { ...body }
-			}
+		const { error, data } = await tasks.mutate.update(params.id, formData);
+
+		return { success: !!error, errors: [error], data };
+	},
+	async deleteTask({ params }) {
+		const tasks = useTasks();
+
+		const { error, data } = await tasks.mutate.delete({
+			_id: params.id
 		});
 
-		return { success: !!errors, errors, data };
+		if (data?.deleteTask) {
+			throw redirect(307, '/explorer');
+		}
+
+		return { success: !!error, errors: [error], data };
 	}
 };

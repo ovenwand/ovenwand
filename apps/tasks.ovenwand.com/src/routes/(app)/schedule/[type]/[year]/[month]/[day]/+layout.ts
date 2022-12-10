@@ -1,20 +1,26 @@
-import { get } from 'svelte/store';
-import { useTasks } from '$lib/store';
+import { setToFirstOfMonth, setToLastOfMonth } from '@ovenwand/util.date';
+import { useTasks } from '$lib/database';
 
-export async function load({ fetch, params }: import('./$types').LayoutLoadEvent) {
+export async function load({ parent, params }: import('./$types').LayoutLoadEvent) {
+	await parent();
+
 	const { day, month, year, type, task } = params;
-	const { byDate: getTasksByDate } = useTasks();
+	const date = new Date(`${year}-${month}-${day}`);
 
-	const { tasksByDate, request } = getTasksByDate(type, year, month, day, { shouldFetch: true, fetch });
+	const tasks = useTasks();
 
-	await request;
+	const { error, data } = await tasks.query.byDueDate(
+		setToFirstOfMonth(date).toISOString(),
+		setToLastOfMonth(date).toISOString()
+	);
 
 	return {
+		errors: [error],
 		year,
 		month,
 		day,
 		type,
 		task,
-		tasks: get(tasksByDate),
+		tasks: data?.tasksByDueDate
 	};
 }

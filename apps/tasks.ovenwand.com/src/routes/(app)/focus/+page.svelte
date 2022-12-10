@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { Button, Column, Grid } from '@ovenwand/ui';
-	import { useTasks } from '$lib/store';
+	import { useTasks } from '$lib/database';
 	import { Footer, Panel } from '$lib/components';
 
 	export let data: import('./$types').LoadData;
 
-	const { current: getCurrentTask } = useTasks(data.tasks);
-	const { currentTask } = getCurrentTask({ fetch });
+	$: tasks = useTasks(data?.tasks);
+	$: currentTask = tasks.current;
 </script>
 
 <Footer links={[{ label: '<', columns: 2, anchor: { href: '/' } }]} />

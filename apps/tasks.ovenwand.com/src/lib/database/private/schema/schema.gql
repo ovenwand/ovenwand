@@ -1,0 +1,41 @@
+type User {
+	email: String! @unique(index: "userByEmail")
+	role: String!
+}
+
+input RegisterInput {
+	email: String!
+	role: String!
+	password: String!
+}
+
+input LoginInput {
+	email: String!
+	password: String!
+}
+
+type LoginResult @embedded {
+	instance: User!
+	secret: String!
+}
+
+type Task {
+	title: String!
+	description: String
+	dueDate: Time
+	order: Int
+	status: String
+}
+
+type Query {
+	tasks: [Task!]
+	tasksByStatus(status: String!): [Task!]
+	tasksByDueDate(fromDate: Time!, toDate: Time!): [Task!] @resolver(name: "tasksByDueDate")
+	currentTask: Task @resolver(name: "currentTask")
+}
+
+type Mutation {
+	register(data: RegisterInput): User! @resolver(name: "register")
+	login(data: LoginInput): LoginResult! @resolver(name: "login")
+	logout(all: Boolean): Boolean! @resolver(name: "logout")
+}

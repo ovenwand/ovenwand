@@ -1,0 +1,220 @@
+directive @embedded on OBJECT
+
+directive @collection(name: String!) on OBJECT
+
+directive @index(name: String!) on FIELD_DEFINITION
+
+directive @resolver(
+    name: String
+    paginated: Boolean! = false
+) on FIELD_DEFINITION
+
+directive @relation(name: String) on FIELD_DEFINITION
+
+directive @unique(index: String) on FIELD_DEFINITION
+
+scalar Date
+
+input LoginInput {
+    email: String!
+    password: String!
+}
+
+type LoginResult {
+    instance: User!
+    secret: String!
+}
+
+# 'LoginResult' input values
+input LoginResultInput {
+    instance: ID!
+    secret: String!
+}
+
+# Allow manipulating the relationship between the types 'LoginResult' and 'User' using the field 'LoginResult.instance'.
+input LoginResultInstanceRelation {
+    # Create a document of type 'User' and associate it with the current document.
+    create: UserInput
+
+    # Connect a document of type 'User' with the current document using its ID.
+    connect: ID
+}
+
+type Mutation {
+    # Update an existing document in the collection of 'User'
+    updateUser(
+        # The 'User' document's ID
+        id: ID!
+
+        # 'User' input values
+        data: UserInput!
+    ): User
+    register(data: RegisterInput): User!
+
+    # Create a new document in the collection of 'User'
+    createUser(
+        # 'User' input values
+        data: UserInput!
+    ): User!
+    logout(all: Boolean): Boolean!
+
+    # Update an existing document in the collection of 'Task'
+    updateTask(
+        # The 'Task' document's ID
+        id: ID!
+
+        # 'Task' input values
+        data: TaskInput!
+    ): Task
+
+    # Partially updates an existing document in the collection of 'Task'. It only modifies the values that are specified in the arguments. During execution, it verifies that required fields are not set to 'null'.
+    partialUpdateTask(
+        # The 'Task' document's ID
+        id: ID!
+
+        # 'Task' input values
+        data: PartialUpdateTaskInput!
+    ): Task
+
+    # Delete an existing document in the collection of 'User'
+    deleteUser(
+        # The 'User' document's ID
+        id: ID!
+    ): User
+
+    # Create a new document in the collection of 'Task'
+    createTask(
+        # 'Task' input values
+        data: TaskInput!
+    ): Task!
+
+    # Delete an existing document in the collection of 'Task'
+    deleteTask(
+        # The 'Task' document's ID
+        id: ID!
+    ): Task
+
+    # Partially updates an existing document in the collection of 'User'. It only modifies the values that are specified in the arguments. During execution, it verifies that required fields are not set to 'null'.
+    partialUpdateUser(
+        # The 'User' document's ID
+        id: ID!
+
+        # 'User' input values
+        data: PartialUpdateUserInput!
+    ): User
+    login(data: LoginInput): LoginResult!
+}
+
+# 'LoginResult' input values
+input PartialUpdateLoginResultInput {
+    instance: ID
+    secret: String
+}
+
+# 'Task' input values
+input PartialUpdateTaskInput {
+    title: String
+    description: String
+    dueDate: Time
+    order: Int
+    status: String
+}
+
+# 'User' input values
+input PartialUpdateUserInput {
+    email: String
+    role: String
+}
+
+input RegisterInput {
+    email: String!
+    role: String!
+    password: String!
+}
+
+# 'Task' input values
+input TaskInput {
+    title: String!
+    description: String
+    dueDate: Time
+    order: Int
+    status: String
+}
+
+# 'User' input values
+input UserInput {
+    email: String!
+    role: String!
+}
+
+type Query {
+    # Find a document from the collection of 'User' by its id.
+    findUserByID(
+        # The 'User' document's ID
+        id: ID!
+    ): User
+
+    # Find a document from the collection of 'Task' by its id.
+    findTaskByID(
+        # The 'Task' document's ID
+        id: ID!
+    ): Task
+    tasks(
+        # The number of items to return per page.
+        _size: Int
+
+        # The pagination cursor.
+        _cursor: String
+    ): TaskPage!
+    currentTask(
+        # The number of items to return per page.
+        _size: Int
+
+        # The pagination cursor.
+        _cursor: String
+        status: String!
+    ): TaskPage!
+    tasksByDueDate(fromDate: Time!, toDate: Time!): [Task!]
+    currentTask: Task
+}
+
+type Task {
+    description: String
+
+    # The document's ID.
+    _id: ID!
+    order: Int
+    status: String
+    dueDate: Time
+    title: String!
+
+    # The document's timestamp.
+    _ts: Long!
+}
+
+# The pagination object for elements of type 'Task'.
+type TaskPage {
+    # The elements of type 'Task' in this page.
+    data: [Task]!
+
+    # A cursor for elements coming after the current page.
+    after: String
+
+    # A cursor for elements coming before the current page.
+    before: String
+}
+
+scalar Time
+
+type User {
+    # The document's ID.
+    _id: ID!
+
+    # The document's timestamp.
+    _ts: Long!
+    email: String!
+    role: String!
+}
+
+# The `Long` scalar type represents non-fractional signed whole numeric values. Long can represent values between -(2^63) and 2^63 - 1.
+scalar Long

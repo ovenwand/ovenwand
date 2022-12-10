@@ -1,6 +1,6 @@
 import { differenceInDays } from '@ovenwand/util.date';
 import { max } from '@ovenwand/util.math';
-import type { ITask } from '$lib/store';
+import type { ITask } from './database';
 
 /**
  * Applies the Eisenhower matrix to a task

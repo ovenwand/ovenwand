@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { Button, Column, Grid, Modal } from '@ovenwand/ui';
+	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-	import { type ITask, useLabels, useTasks } from '../store';
+	import { createTask } from '$lib/database/public/models/tasks/store/utils';
+	import { useTasks, type ITask } from '$lib/database';
 
-	export let task: ITask = null;
+	export let task: ITask | null = null;
 	export let back = null;
 	export let active = !!back;
 
-	const { labels } = useLabels();
-	const { create: createTask, save: saveTask, delete: deleteTask } = useTasks();
+	const tasks = useTasks($page.data.session);
 
 	function goBack() {
 		if (back) {
@@ -25,7 +26,11 @@
 
 	function onSubmit() {
 		goBack();
-		saveTask(task);
+		if (task?._id) {
+			tasks.mutate.update(task._id, task);
+		} else {
+			tasks.mutate.create(task);
+		}
 	}
 
 	function onReset() {
@@ -34,7 +39,7 @@
 
 	function onDelete() {
 		goBack();
-		deleteTask(task);
+		tasks.mutate.delete(task);
 	}
 </script>
 
@@ -44,7 +49,7 @@
 	<form on:submit|preventDefault={onSubmit} on:reset|preventDefault={onReset}>
 		<Grid relative>
 			<Column class="flex">
-				<div class="flex-grow"/>
+				<div class="flex-grow" />
 				<Button href={back} title="close">Close</Button>
 			</Column>
 
@@ -71,23 +76,6 @@
 					placeholder="description"
 				/>
 			</Column>
-
-<!--			<Column>-->
-<!--				<label for="task-labels" class="block">Lane</label>-->
-<!--				<select-->
-<!--					class="w-full text-gray-900"-->
-<!--					id="task-labels"-->
-<!--					name="task.labels"-->
-<!--					bind:value={task.labels}-->
-<!--					multiple-->
-<!--				>-->
-<!--					{#each $labels as label (label._id)}-->
-<!--						<option value={label._id} selected={task.labels.includes(label._id)}>-->
-<!--							{label.name}-->
-<!--						</option>-->
-<!--					{/each}-->
-<!--				</select>-->
-<!--			</Column>-->
 
 			<Column>
 				<Button on:click={onDelete}>Delete</Button>

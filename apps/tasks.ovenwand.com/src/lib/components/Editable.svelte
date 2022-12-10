@@ -41,7 +41,11 @@
 		inputElement?.focus();
 	}
 
-	function reset() {
+	function reset(event?: FocusEvent) {
+		if (event && [saveButton.element, cancelButton.element].includes(event?.relatedTarget)) {
+			return;
+		}
+
 		editable = false;
 		inputValue = value;
 	}
@@ -61,6 +65,7 @@
 			method="POST"
 			{action}
 			use:enhance={() => {
+				editable = false;
 				value = inputValue;
 			}}
 		>

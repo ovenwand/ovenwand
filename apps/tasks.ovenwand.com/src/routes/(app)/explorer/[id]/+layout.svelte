@@ -21,7 +21,9 @@
 
 		<Button href={`/explorer/${task._id}/edit`}>Edit</Button>
 
-		<Button href={`/explorer/${task._id}/delete`}>Delete</Button>
+		<form method="POST" action="?/deleteTask">
+			<Button type="submit">Delete</Button>
+		</form>
 	</svelte:fragment>
 
 	<slot />

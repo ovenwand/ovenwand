@@ -1,13 +1,13 @@
 import { invalid, redirect, type RequestEvent } from '@sveltejs/kit';
 import { createSessionToken } from '@ovenwand/auth/node';
 import { env } from '$env/dynamic/private';
-import { mutate } from '$lib/database';
-import { Login } from '$lib/database/queries';
+import { useUsers } from '$lib/database';
 
 const isProduction = env.VERCEL_ENV === 'production';
 
 export const actions = {
 	async default({ cookies, locals, request }: RequestEvent) {
+		const users = useUsers();
 		const body = await request.formData();
 
 		const credentials = {
@@ -15,22 +15,12 @@ export const actions = {
 			password: body.get('password')
 		};
 
-		const { data, errors = null } = await mutate({
-			mutation: Login,
-			variables: { data: credentials }
-		});
+		const { errors, data } = await users.mutate.login(credentials);
 
 		if (errors) {
-			return invalid(
-				401,
-				errors.reduce(
-					(errors, error) => {
-						errors.form += error.message;
-						return errors;
-					},
-					{ form: '' }
-				)
-			);
+			return invalid(400, {
+				errors: errors.map((error) => error.message)
+			});
 		}
 
 		const { instance: user, secret: token } = data.login;

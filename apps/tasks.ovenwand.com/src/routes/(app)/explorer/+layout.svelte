@@ -1,17 +1,18 @@
 <script lang="ts">
 	import { Button, Column, Grid } from '@ovenwand/ui';
 	import { ApplicationState, Footer, Task, TaskPool } from '$lib/components';
-	import { type ITask, useTasks } from '$lib/store';
+	import { useTasks, useQuery } from '$lib/database';
 
-	const { all: getAllTasks } = useTasks();
-	const { tasks, loading, cache } = getAllTasks();
+	const tasks = useTasks();
+
+	const { loading } = useQuery(() => tasks.query.all());
 
 	let query = '';
 
 	$: filteredTasks = $tasks.filter(byContent(query));
 
 	function byContent(query) {
-		return ({ title, description }: ITask) =>
+		return ({ title, description }) =>
 			JSON.stringify({ title, description }).toLowerCase().includes(query.toLowerCase());
 	}
 </script>
@@ -30,10 +31,10 @@
 	<Column columns={{ md: 4 }}>
 		<TaskPool class="h-full" title="Explore" tasks={filteredTasks} let:task>
 			<svelte:fragment slot="header">
-				<Button>Create...</Button>
+				<Button href="/explorer/create">Create...</Button>
 			</svelte:fragment>
 
-			<Task placeholder={$loading && !$cache.length} href={`/explorer/${task._id}`} {...task} />
+			<Task href={`/explorer/${task._id}`} {...task} />
 
 			<svelte:fragment slot="footer">
 				<label class="flex">

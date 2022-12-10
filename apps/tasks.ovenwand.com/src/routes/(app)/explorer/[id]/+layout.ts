@@ -1,13 +1,14 @@
-import { get } from 'svelte/store';
-import { useTasks } from '$lib/store';
+import { useTasks } from '$lib/database';
 
-export async function load({ params, fetch }: import('./$types').LayoutLoadEvent) {
-	const { get: getTaskById } = useTasks();
-	const { task, request } = getTaskById(params.id, { shouldFetch: true, fetch });
+export async function load({ params, parent }: import('./$types').LayoutLoadEvent) {
+	await parent();
 
-	await request;
+	const tasks = useTasks();
+
+	const { error, data } = await tasks.query.byId(params.id);
 
 	return {
-		task: get(task)
+		errors: [error],
+		task: data.findTaskByID
 	};
 }
