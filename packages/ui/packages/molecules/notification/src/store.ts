@@ -90,16 +90,17 @@ export type NotificationType = 'info' | 'success' | 'warn' | 'error' | 'loading'
 type Notification = { message: string } & Typed & Identifiable;
 
 export type NotificationState = { notifications: Readable<Notification[]> };
-export type NotificationActions = { close: typeof removeNotification } & Record<
-	NotificationType,
-	Notifier
->;
+export type NotificationActions = {
+	notify: typeof notify;
+	close: typeof removeNotification;
+} & Record<NotificationType, Notifier>;
 export type NotificationStore = NotificationState & NotificationActions;
 
 export function useNotifications(): NotificationStore {
 	return {
 		notifications: { subscribe },
 		close: removeNotification,
+		notify,
 		loading: createNotifier('loading'),
 		info: createNotifier('info'),
 		success: createNotifier('success'),
