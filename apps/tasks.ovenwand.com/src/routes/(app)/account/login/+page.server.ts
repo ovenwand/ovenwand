@@ -1,4 +1,4 @@
-import { invalid, redirect, type RequestEvent } from '@sveltejs/kit';
+import { fail, redirect, type RequestEvent } from '@sveltejs/kit';
 import { createSessionToken } from '@ovenwand/auth/node';
 import { env } from '$env/dynamic/private';
 import { useUsers } from '$lib/database';
@@ -18,7 +18,7 @@ export const actions = {
 		const { errors, data } = await users.mutate.login(credentials);
 
 		if (errors) {
-			return invalid(400, {
+			return fail(400, {
 				errors: errors.map((error) => error.message)
 			});
 		}

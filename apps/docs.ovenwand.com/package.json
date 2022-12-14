@@ -1,22 +1,22 @@
 {
-  "name": "@ovenwand/docs.ovenwand.com",
-  "version": "0.0.3",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "dev": "start docs dev -p 6006",
-    "build": "start docs build",
-    "preview": "pnpm dlx http-server -a docs.ovenwand.wtf -p 6006 ./storybook-static"
-  },
-  "devDependencies": {
-    "@ovenwand/config": "workspace:^0.1.11",
-    "@ovenwand/toolchain.plugins.doppler": "workspace:^0.0.1",
-    "@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.3",
-    "@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.4",
-    "@types/react": "^18.0.25",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "svelte": "^3.53.1",
-    "typescript": "^4.9.3"
-  }
+	"name": "@ovenwand/docs.ovenwand.com",
+	"version": "0.0.3",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "start docs dev -p 6006",
+		"build": "start docs build",
+		"preview": "pnpm dlx http-server -a docs.ovenwand.wtf -p 6006 ./storybook-static"
+	},
+	"devDependencies": {
+		"@ovenwand/config": "workspace:^0.1.11",
+		"@ovenwand/toolchain.plugins.doppler": "workspace:^0.0.1",
+		"@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.3",
+		"@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.4",
+		"@types/react": "^18.0.25",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"svelte": "^3.55.0",
+		"typescript": "^4.9.3"
+	}
 }

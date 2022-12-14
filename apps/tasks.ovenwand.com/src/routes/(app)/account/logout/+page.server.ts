@@ -1,4 +1,4 @@
-import { invalid, redirect, type RequestEvent } from '@sveltejs/kit';
+import { fail, redirect, type RequestEvent } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 import { useUsers } from '$lib/database';
 
@@ -10,7 +10,7 @@ export const actions = {
 		const { errors } = await users.mutate.logout();
 
 		if (errors) {
-			return invalid(400, { errors });
+			return fail(400, { errors });
 		}
 
 		cookies.delete('session_id', {

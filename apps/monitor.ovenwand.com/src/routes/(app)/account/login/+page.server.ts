@@ -1,4 +1,4 @@
-import { invalid, redirect, type RequestEvent } from '@sveltejs/kit';
+import { fail, redirect, type RequestEvent } from '@sveltejs/kit';
 import type { Identifiable } from '@ovenwand/services.faunadb';
 import { createSessionToken } from '@ovenwand/auth/node';
 import { env } from '$env/dynamic/private';
@@ -43,7 +43,7 @@ export const actions = {
 		);
 
 		if (errors) {
-			return invalid(
+			return fail(
 				401,
 				errors.reduce(
 					(errors, error) => {

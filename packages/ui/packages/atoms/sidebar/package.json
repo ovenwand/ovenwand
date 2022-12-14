@@ -20,7 +20,7 @@
 	"devDependencies": {
 		"@ovenwand/test.cypress": "workspace:0.0.3",
 		"@ovenwand/test.svelte": "workspace:0.0.3",
-		"svelte": "^3.53.1"
+		"svelte": "^3.55.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com>",
 	"license": "WTFPL"

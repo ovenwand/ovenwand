@@ -1,5 +1,5 @@
 import { migrate } from '$lib/database/private';
-import { invalid } from '@sveltejs/kit';
+import { fail } from '@sveltejs/kit';
 
 export const actions: import('./$types').Actions = {
 	async migrate({ locals, request }) {
@@ -15,7 +15,7 @@ export const actions: import('./$types').Actions = {
 		} catch (e) {
 			console.error(e);
 
-			return invalid(500, {
+			return fail(500, {
 				error: {
 					message: 'Migrations failed',
 					stack: e.stack
