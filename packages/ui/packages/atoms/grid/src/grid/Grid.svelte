@@ -3,6 +3,7 @@
 	import { createClassName, createStyle } from '@ovenwand/util.browser';
 	import { noop } from '@ovenwand/util.fp';
 
+	export let tag = 'div';
 	let className: string | null = null;
 	export { className as class };
 	export let style: Record<string, unknown> | null = null;
@@ -27,9 +28,9 @@
 	$: [action, payload] = use;
 </script>
 
-<div class="grid {gridClassName}" style={gridStyle} use:action={payload}>
+<svelte:element this={tag} class="grid {gridClassName}" style={gridStyle} use:action={payload}>
 	<slot />
-</div>
+</svelte:element>
 
 <style lang="postcss">
 	:root {
