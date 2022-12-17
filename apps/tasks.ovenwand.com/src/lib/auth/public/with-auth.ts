@@ -1,15 +1,12 @@
 import { redirect, type Load, type LoadEvent } from '@sveltejs/kit';
 import { useAuth } from '@ovenwand/auth';
-import { setSession } from './session';
 
-export function withAuth(forbiddenRoutes?: string[], resolve?: Load): Load {
+export function withAuth<T extends Load>(forbiddenRoutes?: string[], resolve?: T): Load {
 	const authorize = useAuth(forbiddenRoutes);
 
 	return async (event: LoadEvent) => {
 		const { parent, url } = event;
 		const { session } = await parent();
-
-		setSession(session);
 
 		const { isAuthorized, redirectPath } = authorize(url, session);
 

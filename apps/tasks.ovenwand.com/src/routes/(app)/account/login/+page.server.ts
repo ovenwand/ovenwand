@@ -15,11 +15,11 @@ export const actions = {
 			password: body.get('password')
 		};
 
-		const { errors, data } = await users.mutate.login(credentials);
+		const { error, data } = await users.mutate.login(credentials);
 
-		if (errors) {
+		if (error) {
 			return fail(400, {
-				errors: errors.map((error) => error.message)
+				errors: [error.message]
 			});
 		}
 

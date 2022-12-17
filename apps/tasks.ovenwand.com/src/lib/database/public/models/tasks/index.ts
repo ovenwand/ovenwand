@@ -1,31 +1,56 @@
-import { derived } from 'svelte/store';
+import { browser } from '$app/environment';
 import { mutate, query } from '../../query';
 import { AllTasks, CurrentTask, TaskById, TasksByDueDate, TasksByStatus } from './queries';
 import { CreateTask, DeleteTask, PartialUpdateTask } from './mutations';
 import type { ITask } from './model';
-import { tasks, addOrUpdateTask, removeTask } from './store';
+import { tasks, addTask, addOrUpdateTask, removeTask, updateTask, getters } from './store';
 
 export * from './model';
 
-export function useTasks(data: ITask[] = []) {
-	for (const task of data) {
-		tasks.update(addOrUpdateTask(task));
+function triggerSocketFromServer(event: string, data: unknown) {
+	if (browser) {
+		return;
 	}
+
+	return import('$lib/socket/private').then(({ useTasksChannel }) => {
+		useTasksChannel().trigger(event, data);
+	});
+}
+
+function listenToSocketFromClient() {
+	if (!browser) {
+		return;
+	}
+
+	return import('$lib/socket').then(({ useTasksChannel }) => {
+		const channel = useTasksChannel();
+		channel.on('add', (data) => tasks.update(addTask(data)));
+		channel.on('update', (data) => tasks.update(updateTask(data)));
+		channel.on('delete', (data) => tasks.update(removeTask(data)));
+	});
+}
+
+export function useTasks(data?: ITask | ITask[]) {
+	if (data) {
+		data = Array.isArray(data) ? data : [data];
+
+		for (const task of data) {
+			tasks.update(addOrUpdateTask(task));
+		}
+	}
+
+	listenToSocketFromClient();
 
 	const store = {
 		subscribe: tasks.subscribe,
 
-		open: derived(tasks, ($tasks) => $tasks.filter((task) => task.status === 'open')),
-
-		current: derived(tasks, ($tasks) => $tasks.filter((task) => task.status === 'open')[0]),
-
-		today: derived(tasks, ($tasks) => $tasks),
+		...getters,
 
 		query: {
 			async all() {
 				const result = await query(AllTasks);
 
-				if (result.data?.tasks) {
+				if (result?.data?.tasks) {
 					tasks.set(result.data.tasks.data);
 				}
 
@@ -37,7 +62,7 @@ export function useTasks(data: ITask[] = []) {
 					variables: { status: 'open' }
 				});
 
-				if (result.data?.tasksByStatus) {
+				if (result?.data?.tasksByStatus) {
 					for (const task of result.data.tasksByStatus) {
 						tasks.update(addOrUpdateTask(task));
 					}
@@ -49,7 +74,7 @@ export function useTasks(data: ITask[] = []) {
 			async current() {
 				const result = await query(CurrentTask);
 
-				if (result.data?.currentTask) {
+				if (result?.data?.currentTask) {
 					tasks.update(addOrUpdateTask(result.data.currentTask));
 				}
 
@@ -76,7 +101,7 @@ export function useTasks(data: ITask[] = []) {
 					}
 				});
 
-				if (result.data?.tasksByDueDate) {
+				if (result?.data?.tasksByDueDate) {
 					for (const task of result.data.tasksByDueDate) {
 						tasks.update(addOrUpdateTask(task));
 					}
@@ -94,7 +119,8 @@ export function useTasks(data: ITask[] = []) {
 					}
 				});
 
-				if (data) {
+				if (!result.error) {
+					triggerSocketFromServer('add', result.data.createTask);
 					tasks.update(addOrUpdateTask(result.data.createTask));
 				}
 
@@ -106,7 +132,8 @@ export function useTasks(data: ITask[] = []) {
 					variables: { id, data: task }
 				});
 
-				if (result.data?.partialUpdateTask) {
+				if (!result.error) {
+					triggerSocketFromServer('update', result.data.partialUpdateTask);
 					tasks.update(addOrUpdateTask(result.data.partialUpdateTask));
 				}
 
@@ -119,7 +146,8 @@ export function useTasks(data: ITask[] = []) {
 				});
 
 				if (!result.error) {
-					tasks.update(removeTask(task));
+					triggerSocketFromServer('delete', result.data.deleteTask);
+					tasks.update(removeTask(result.data.deleteTask));
 				}
 
 				return result;

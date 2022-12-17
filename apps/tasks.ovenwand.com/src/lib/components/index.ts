@@ -3,5 +3,6 @@ export { default as Editable } from './Editable.svelte';
 export { default as Task } from './Task.svelte';
 export { default as TaskModal } from './TaskModal.svelte';
 export { default as TaskPool } from './TaskPool.svelte';
+export * from './forms/index.js';
 export * from './footer/index.js';
 export * from './panel/index.js';

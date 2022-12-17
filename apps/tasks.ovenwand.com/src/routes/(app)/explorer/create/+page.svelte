@@ -3,7 +3,7 @@
 	import { Panel } from '$lib/components';
 </script>
 
-<Panel>
+<Panel class="min-h-full">
 	<form method="POST" action="?/createTask">
 		<div>
 			<label>

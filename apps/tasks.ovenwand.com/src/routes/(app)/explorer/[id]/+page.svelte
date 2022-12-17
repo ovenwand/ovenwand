@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Editable } from '$lib/components';
 
-	export let data: import('./$types').PageLoadData;
+	export let data: import('./$types').PageData;
 
 	$: task = data.task;
 </script>

@@ -1,20 +1,7 @@
 import type { Handle } from '@sveltejs/kit';
 import { sequence } from '@sveltejs/kit/hooks';
-import { withSession } from '@ovenwand/auth/node';
 import { PUBLIC_FAUNA_ANONYMOUS_KEY } from '$env/static/public';
-import { setSession } from '$lib/auth';
-import { withReferrer } from '$lib/referrer';
+import { Auth } from '$lib/auth/private';
+import { Referrer } from '$lib/referrer';
 
-export const handle: Handle = sequence(
-	async ({ event, resolve }) => resolve(withReferrer(event)),
-	async ({ event, resolve }) =>
-		resolve(
-			withSession(event, {
-				anonymous: PUBLIC_FAUNA_ANONYMOUS_KEY
-			})
-		),
-	({ event, resolve }) => {
-		setSession({ id: event.locals.id, token: event.locals.token });
-		return resolve(event);
-	}
-);
+export const handle: Handle = sequence(Referrer(), Auth({ anonymous: PUBLIC_FAUNA_ANONYMOUS_KEY }));

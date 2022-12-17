@@ -1,41 +1,38 @@
 <script lang="ts">
-	import { Button, Column, Grid } from '@ovenwand/ui';
+	import { Column, Grid } from '@ovenwand/ui';
 	import { useTasks } from '$lib/database';
-	import { Footer, Panel } from '$lib/components';
+	import { key, panelTransitions, receive, send } from '$lib/transitions/main-panel';
+	import { Panel, FinishTaskButton, SkipTaskButton } from '$lib/components';
 
 	export let data: import('./$types').LoadData;
 
-	$: tasks = useTasks(data?.tasks);
+	$: tasks = useTasks(data?.currentTask);
 	$: currentTask = tasks.current;
 </script>
 
-<Footer links={[{ label: '<', columns: 2, anchor: { href: '/' } }]} />
-
-<Grid relative class="min-h-full">
-	<Column>
+<Grid relative class="min-h-full peer peer-[.peer]:absolute peer-[.peer]:top-0">
+	<Column class="flex items-center justify-center">
 		{#if $currentTask}
-			<Panel title={$currentTask.title}>
-				<svelte:fragment slot="header">
-					{#if !$currentTask.done}
-						<form method="POST" action="?/markSkipped">
-							<input type="hidden" name="id" value={$currentTask._id} />
-							<Button type="submit">Skip</Button>
-						</form>
-					{/if}
-					{#if !$currentTask.done}
-						<form method="POST" action="?/markDone">
-							<input type="hidden" name="id" value={$currentTask._id} />
-							<Button type="submit">Done</Button>
-						</form>
-					{/if}
-				</svelte:fragment>
+			<div class="flex flex-auto min-h-full" in:receive={{ key }} out:send={{ key }}>
+				<Panel
+					class="flex-auto min-w-full"
+					title={$currentTask.title}
+					transitions={panelTransitions}
+				>
+					<svelte:fragment slot="header">
+						{#if !$currentTask.done}
+							<SkipTaskButton id={$currentTask._id} />
+							<FinishTaskButton id={$currentTask._id} />
+						{/if}
+					</svelte:fragment>
 
-				<h3>Description</h3>
-				<p>{$currentTask.description}</p>
+					<h3>Description</h3>
+					<p>{$currentTask.description}</p>
 
-				<h3>Notes</h3>
-				<pre><code>{JSON.stringify($currentTask, null, '  ')}</code></pre>
-			</Panel>
+					<h3>Notes</h3>
+					<pre><code>{JSON.stringify($currentTask, null, '  ')}</code></pre>
+				</Panel>
+			</div>
 		{:else}
 			No current task found :)
 		{/if}

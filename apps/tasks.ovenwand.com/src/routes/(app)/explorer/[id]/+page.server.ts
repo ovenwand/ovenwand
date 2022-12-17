@@ -1,5 +1,5 @@
-import { useTasks } from '$lib/database';
 import { redirect } from '@sveltejs/kit';
+import { useTasks } from '$lib/database';
 
 export const actions: import('./$types').Actions = {
 	async saveTask({ params, request }) {
@@ -17,7 +17,7 @@ export const actions: import('./$types').Actions = {
 			_id: params.id
 		});
 
-		if (data?.deleteTask) {
+		if (!error) {
 			throw redirect(307, '/explorer');
 		}
 

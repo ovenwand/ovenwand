@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { droppable } from '@ovenwand/util';
-	import Panel from "./Panel.svelte";
+	import Panel from './panel/Panel.svelte';
 
 	let className = '';
 	export { className as class };

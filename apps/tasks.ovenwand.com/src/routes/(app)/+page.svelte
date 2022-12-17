@@ -23,7 +23,7 @@
 
 <Grid relative class="min-h-full auto-rows-fr">
 	<Column columns={{ md: 6 }}>
-		<Panel title="Welcome">
+		<Panel class="min-h-full" title="Welcome">
 			Daily info?<br />
 			- Work or life day?<br />
 			- Travel schedule?<br />
@@ -32,7 +32,7 @@
 	</Column>
 
 	<Column columns={{ md: 6 }}>
-		<Panel title="Daily focus">
+		<Panel class="min-h-full" title="Daily focus">
 			{#each todaysTasks as task}
 				<Task interactive={false} href={`/explorer/${task._id}`} {...task} />
 			{/each}

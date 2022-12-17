@@ -1,4 +1,4 @@
-import type { RequestEvent } from '@sveltejs/kit';
+import type { Handle, RequestEvent } from '@sveltejs/kit';
 
 export interface WithReferrerOptions {
 	header?: string;
@@ -7,27 +7,27 @@ export interface WithReferrerOptions {
 
 export function withReferrer(event: RequestEvent, options: WithReferrerOptions = {}) {
 	const { header = 'referer', path = '/' } = options;
-
-	const { locals, url } = event;
-	const { headers } = event.request;
+	const { locals, request, url } = event;
 	const referrerParam = url.searchParams.get(header);
-	const referrerHeader = headers.get(header);
+	const referrerHeader = request.headers.get(header);
 
-	let referrer;
+	let referrer: URL;
 
 	if (referrerParam) {
 		referrer = new URL(referrerParam);
 	} else if (referrerHeader) {
 		referrer = new URL(referrerHeader);
+	} else {
+		referrer = new URL(path, url.origin);
 	}
 
 	if (referrer?.origin === url.origin) {
 		locals.referrer = referrer;
 	}
 
-	if (!locals.referrer) {
-		locals.referrer = new URL(path, url.origin);
-	}
-
 	return event;
+}
+
+export function Referrer(options: WithReferrerOptions = {}): Handle {
+	return ({ event, resolve }) => resolve(withReferrer(event, options));
 }

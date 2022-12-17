@@ -1,4 +1,5 @@
 import { useTasks } from '$lib/database';
+import { redirect } from '@sveltejs/kit';
 
 export const actions: import('./$types').Actions = {
 	async markDone({ request }) {
@@ -8,6 +9,10 @@ export const actions: import('./$types').Actions = {
 
 		const { error, data } = await tasks.mutate.update(id, { status: 'closed' });
 
-		return { success: !!error, errors: [error], data };
+		if (!error) {
+			throw redirect(307, '/focus/done');
+		}
+
+		return { errors: [error], data };
 	}
 };

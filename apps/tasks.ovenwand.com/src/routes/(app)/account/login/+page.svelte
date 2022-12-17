@@ -10,8 +10,10 @@
 		<Panel title="Login">
 			<Login>
 				<svelte:fragment slot="errors">
-					{#if form?.form}
-						<p>{form.form}</p>
+					{#if form?.errors}
+						{#each form.errors as error}
+							<p>{error.message ?? error}</p>
+						{/each}
 					{/if}
 				</svelte:fragment>
 			</Login>

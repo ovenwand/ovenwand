@@ -7,10 +7,10 @@ const isProduction = env.VERCEL_ENV === 'production';
 export const actions = {
 	async default({ cookies }: RequestEvent) {
 		const users = useUsers();
-		const { errors } = await users.mutate.logout();
+		const { error } = await users.mutate.logout();
 
-		if (errors) {
-			return fail(400, { errors });
+		if (error) {
+			return fail(400, { errors: [error.message] });
 		}
 
 		cookies.delete('session_id', {

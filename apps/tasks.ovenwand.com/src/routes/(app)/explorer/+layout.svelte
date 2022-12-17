@@ -29,7 +29,7 @@
 
 <Grid relative class="min-h-full">
 	<Column columns={{ md: 4 }}>
-		<TaskPool class="h-full" title="Explore" tasks={filteredTasks} let:task>
+		<TaskPool class="h-full" title="Explore" tasks={filteredTasks} loading={$loading} let:task>
 			<svelte:fragment slot="header">
 				<Button href="/explorer/create">Create...</Button>
 			</svelte:fragment>

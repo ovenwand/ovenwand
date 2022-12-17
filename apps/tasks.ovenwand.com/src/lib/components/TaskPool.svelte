@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { createClassName } from '@ovenwand/util';
 	import { Loader } from '@ovenwand/ui';
-	import type { ITask } from '../store';
-	import Pool from './Pool.svelte';
+	import type { ITask } from '$lib/database';
+	import { Panel } from './panel';
 
 	let className: string | null = null;
 	export { className as class };
@@ -16,7 +16,7 @@
 	});
 </script>
 
-<Pool class="flex flex-col {poolClassName}" {title} on:dragenter on:dragleave on:drop>
+<Panel class="flex flex-col {poolClassName}" {title}>
 	<svelte:fragment slot="header">
 		<slot task={null} name="header" />
 	</svelte:fragment>
@@ -40,4 +40,4 @@
 			</div>
 		{/if}
 	</svelte:fragment>
-</Pool>
+</Panel>
