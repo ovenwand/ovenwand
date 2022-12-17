@@ -4,10 +4,10 @@
 
 	const { links } = footer;
 
-	$: columns = 12 / $links.length
+	$: columns = 12 / $links.length;
 </script>
 
-<Grid class="bg-gray-300 dark:bg-gray-900 drop-shadow" gap={false} gapOutside={false}>
+<Grid tag="footer" class="bg-gray-300 dark:bg-gray-900 drop-shadow" gap={false} gapOutside={false}>
 	{#each $links as link}
 		<Column columns={link.columns ?? columns}>
 			<Button full size="large" {...link.anchor}>
