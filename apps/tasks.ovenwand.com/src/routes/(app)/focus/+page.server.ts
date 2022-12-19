@@ -1,9 +1,8 @@
-import { useTasks } from '$lib/database';
+import { tasks } from '$lib/models';
 import { redirect } from '@sveltejs/kit';
 
 export const actions: import('./$types').Actions = {
 	async markDone({ request }) {
-		const tasks = useTasks();
 		const body = await request.formData();
 		const id = body.get('id');
 

@@ -1,15 +1,12 @@
 <script lang="ts">
 	import { Button, Column, Grid, Modal } from '@ovenwand/ui';
-	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-	import { createTask } from '$lib/database/public/models/tasks/store/utils';
-	import { useTasks, type ITask } from '$lib/database';
+	import { createTask } from '$lib/models/tasks/public/store/utils';
+	import { tasks, type ITask } from '$lib/models';
 
 	export let task: ITask | null = null;
 	export let back = null;
 	export let active = !!back;
-
-	const tasks = useTasks($page.data.session);
 
 	function goBack() {
 		if (back) {

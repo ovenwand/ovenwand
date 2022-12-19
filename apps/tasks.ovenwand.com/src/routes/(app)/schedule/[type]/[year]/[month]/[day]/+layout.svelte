@@ -2,7 +2,7 @@
 	import { isSameDay, addMonths, startOfMonth, subMonths } from '@ovenwand/util.date';
 	import { Calendar, Column, Grid, Sheet } from '@ovenwand/ui';
 	import { page } from '$app/stores';
-	import { useTasks } from '$lib/database';
+	import { tasks } from '$lib/models';
 	import { getScheduleURL } from '$lib/utils';
 
 	export let data: import('./$types').LoadData;
@@ -12,7 +12,7 @@
 	$: selectedDate = new Date(`${year}-${month}-${day}`);
 	$: previousMonth = startOfMonth(subMonths(selectedDate, 1));
 	$: nextMonth = startOfMonth(addMonths(selectedDate, 1));
-	$: tasks = useTasks(data.tasks);
+	$: tasks.load(data?.tasks);
 </script>
 
 <Grid relative class="min-h-full">

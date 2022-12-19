@@ -1,12 +1,11 @@
 import { fail, redirect, type RequestEvent } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
-import { useUsers } from '$lib/database';
+import { users } from '$lib/models';
 
 const isProduction = env.VERCEL_ENV === 'production';
 
 export const actions = {
 	async default({ cookies }: RequestEvent) {
-		const users = useUsers();
 		const { error } = await users.mutate.logout();
 
 		if (error) {

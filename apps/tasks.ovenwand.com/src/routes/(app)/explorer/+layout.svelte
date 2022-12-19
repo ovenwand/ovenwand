@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { Button, Column, Grid } from '@ovenwand/ui';
 	import { ApplicationState, Footer, Task, TaskPool } from '$lib/components';
-	import { useTasks, useQuery } from '$lib/database';
-
-	const tasks = useTasks();
+	import { useQuery } from '$lib/database';
+	import { tasks } from '$lib/models';
 
 	const { loading } = useQuery(() => tasks.query.all());
 

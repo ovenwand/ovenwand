@@ -1,10 +1,7 @@
 import { redirect } from '@sveltejs/kit';
-import { useTasks } from '$lib/database';
+import { tasks } from '$lib/models';
 
-export async function load({ parent }: import('./$types').PageLoadEvent) {
-	await parent();
-
-	const tasks = useTasks();
+export async function load() {
 	const { error, data } = await tasks.query.current();
 
 	if (error?.message === 'Permission denied') {

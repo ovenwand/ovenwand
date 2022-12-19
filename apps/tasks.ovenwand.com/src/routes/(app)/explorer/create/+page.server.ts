@@ -1,10 +1,8 @@
 import { redirect } from '@sveltejs/kit';
-import { useTasks } from '$lib/database';
+import { tasks } from '$lib/models';
 
 export const actions: import('./$types').Actions = {
 	async createTask({ request }) {
-		const tasks = useTasks();
-
 		const body = Array.from<[string, FormDataEntryValue]>(await request.formData()).reduce<
 			Record<string, FormDataEntryValue>
 		>((input, [key, value]) => {

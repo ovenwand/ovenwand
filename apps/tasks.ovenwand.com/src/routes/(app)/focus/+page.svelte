@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { Column, Grid } from '@ovenwand/ui';
-	import { useTasks } from '$lib/database';
+	import { tasks } from '$lib/models';
 	import { key, panelTransitions, receive, send } from '$lib/transitions/main-panel';
 	import { Panel, FinishTaskButton, SkipTaskButton } from '$lib/components';
 
 	export let data: import('./$types').LoadData;
 
-	$: tasks = useTasks(data?.currentTask);
+	$: tasks.load(data?.currentTask);
 	$: currentTask = tasks.current;
 </script>
 

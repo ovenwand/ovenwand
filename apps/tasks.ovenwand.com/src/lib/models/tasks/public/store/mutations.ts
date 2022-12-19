@@ -1,5 +1,5 @@
 import { createTask, copyTask } from './utils';
-import type { ITask } from './state';
+import type { ITask } from '../model';
 
 export type TaskMutation = ($tasks: ITask[]) => ITask[];
 
@@ -21,6 +21,10 @@ export function addOrUpdateTask(task: Partial<ITask>): TaskMutation {
 		task._id && $tasks.find((t) => t._id === task._id)
 			? updateTask(task)($tasks)
 			: addTask(task)($tasks);
+}
+
+export function addOrUpdateTasks(tasks: Partial<ITask>[]): TaskMutation {
+	return ($tasks: ITask[]) => tasks.reduce(($tasks, task) => addOrUpdateTask(task)($tasks), $tasks);
 }
 
 export function removeTask(task: Pick<ITask, '_id'> & Partial<ITask>): TaskMutation {
