@@ -2,6 +2,7 @@
 	import { Column, Grid } from '@ovenwand/ui';
 	import { useQuery } from '$lib/database';
 	import { tasks } from '$lib/models';
+	import { route } from '$lib/route';
 	import { ApplicationState, Footer, Panel, Task } from '$lib/components';
 
 	const { loading } = useQuery(() => tasks.query.all());
@@ -13,9 +14,9 @@
 
 <Footer
 	links={[
-		{ label: 'Focus', anchor: { href: '/focus' } },
-		{ label: 'Schedule', anchor: { href: '/schedule' } },
-		{ label: 'Explore', anchor: { href: '/explorer' } }
+		{ label: 'Focus', anchor: { href: route('/focus') } },
+		{ label: 'Schedule', anchor: { href: route('/schedule') } },
+		{ label: 'Explore', anchor: { href: route('/explorer') } }
 	]}
 />
 
@@ -34,7 +35,7 @@
 	<Column columns={{ md: 6 }}>
 		<Panel class="min-h-full" title="Daily focus">
 			{#each $todaysTasks as task}
-				<Task interactive={false} href={`/explorer/${task._id}`} {...task} />
+				<Task interactive={false} href={route(`/explorer/[id]`, { id: task._id })} {...task} />
 			{/each}
 		</Panel>
 	</Column>

@@ -28,10 +28,7 @@
 			>
 				{#each $tasks as task}
 					{#if isSameDay(date, new Date(task.dueDate))}
-						<a
-							class="block{taskId === task._id ? ' font-bold' : ''}"
-							href="{getScheduleURL(type, selectedDate)}/{task._id}"
-						>
+						<a class="block{taskId === task._id ? ' font-bold' : ''}" href="./{task._id}">
 							{task.title}
 						</a>
 					{/if}

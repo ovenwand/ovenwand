@@ -1,4 +1,5 @@
 import { redirect } from '@sveltejs/kit';
+import { route } from '$lib/route';
 import { tasks } from '$lib/models';
 
 export const actions: import('./$types').Actions = {
@@ -15,7 +16,7 @@ export const actions: import('./$types').Actions = {
 		});
 
 		if (!error) {
-			throw redirect(307, '/explorer');
+			throw redirect(307, route('/explorer'));
 		}
 
 		return { success: !!error, errors: [error], data };

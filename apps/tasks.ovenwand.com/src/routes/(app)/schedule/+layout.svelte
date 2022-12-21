@@ -1,12 +1,13 @@
 <script lang="ts">
+	import { route } from '$lib/route';
 	import { Footer } from '$lib/components';
 </script>
 
 <Footer
 	links={[
-		{ label: '<', columns: 2, anchor: { href: '/' } },
-		{ label: 'Schedule', anchor: { href: '/schedule' } },
-		{ label: 'Explore', anchor: { href: '/explorer' } }
+		{ label: '<', columns: 2, anchor: { href: route('/') } },
+		{ label: 'Schedule', anchor: { href: route('/schedule') } },
+		{ label: 'Explore', anchor: { href: route('/explorer') } }
 	]}
 />
 

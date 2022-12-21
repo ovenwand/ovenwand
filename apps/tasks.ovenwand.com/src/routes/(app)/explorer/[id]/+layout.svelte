@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Button } from '@ovenwand/ui';
+	import { route } from '$lib/route';
 	import { DeleteTaskButton, Editable, Panel } from '$lib/components';
 
 	export let data: import('./$types').PageLoadData;
@@ -19,7 +20,7 @@
 
 		<div class="flex-grow" />
 
-		<Button href={`/explorer/${task._id}/edit`}>Edit</Button>
+		<Button href={route('/explorer/[id]/edit', { id: task._id })}>Edit</Button>
 
 		<DeleteTaskButton />
 	</svelte:fragment>

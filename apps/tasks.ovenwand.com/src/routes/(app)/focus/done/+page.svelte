@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Button, Column, Grid } from '@ovenwand/ui';
 	import { key, panelTransitions, receive, send } from '$lib/transitions/main-panel';
+	import { route } from '$lib/route';
 	import { Panel } from '$lib/components';
 </script>
 
@@ -15,7 +16,7 @@
 				You finished
 
 				<svelte:fragment slot="footer">
-					<Button class="ml-auto" href="/focus">Continue with next task</Button>
+					<Button class="ml-auto" href={route('/focus')}>Continue with next task</Button>
 				</svelte:fragment>
 			</Panel>
 		</div>

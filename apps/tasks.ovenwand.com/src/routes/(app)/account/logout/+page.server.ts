@@ -1,5 +1,6 @@
 import { fail, redirect, type RequestEvent } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
+import { route } from '$lib/route';
 import { users } from '$lib/models';
 
 const isProduction = env.VERCEL_ENV === 'production';
@@ -18,6 +19,6 @@ export const actions = {
 			secure: isProduction
 		});
 
-		throw redirect(303, '/');
+		throw redirect(303, route('/'));
 	}
 };

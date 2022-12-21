@@ -3,6 +3,7 @@
 	import { ApplicationState, Footer, Task, TaskPool } from '$lib/components';
 	import { useQuery } from '$lib/database';
 	import { tasks } from '$lib/models';
+	import { route } from '$lib/route';
 
 	const { loading } = useQuery(() => tasks.query.all());
 
@@ -20,9 +21,9 @@
 
 <Footer
 	links={[
-		{ label: '<', columns: 2, anchor: { href: '/' } },
-		{ label: 'Schedule', anchor: { href: '/schedule' } },
-		{ label: 'Explore', anchor: { href: '/explorer' } }
+		{ label: '<', columns: 2, anchor: { href: route('/') } },
+		{ label: 'Schedule', anchor: { href: route('/schedule') } },
+		{ label: 'Explore', anchor: { href: route('/explorer') } }
 	]}
 />
 
@@ -30,10 +31,10 @@
 	<Column columns={{ md: 4 }}>
 		<TaskPool class="h-full" title="Explore" tasks={filteredTasks} loading={$loading} let:task>
 			<svelte:fragment slot="header">
-				<Button href="/explorer/create">Create...</Button>
+				<Button href={route('/explorer/create')}>Create...</Button>
 			</svelte:fragment>
 
-			<Task href={`/explorer/${task._id}`} {...task} />
+			<Task href={route(`/explorer/[id]`, { id: task._id })} {...task} />
 
 			<svelte:fragment slot="footer">
 				<label class="flex">

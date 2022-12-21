@@ -1,4 +1,5 @@
 import type { Handle, RequestEvent } from '@sveltejs/kit';
+import { route } from '$lib/route';
 
 export interface WithReferrerOptions {
 	header?: string;
@@ -6,7 +7,7 @@ export interface WithReferrerOptions {
 }
 
 export function withReferrer(event: RequestEvent, options: WithReferrerOptions = {}) {
-	const { header = 'referer', path = '/' } = options;
+	const { header = 'referer', path = route('/') } = options;
 	const { locals, request, url } = event;
 	const referrerParam = url.searchParams.get(header);
 	const referrerHeader = request.headers.get(header);
