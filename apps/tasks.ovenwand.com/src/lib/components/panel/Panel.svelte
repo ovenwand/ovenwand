@@ -10,6 +10,7 @@
 
 	export let title = '';
 	export let highlight = false;
+	export let padding = true;
 
 	export let header = Boolean($$slots.header || title);
 	export let footer = Boolean($$slots.footer);
@@ -23,15 +24,16 @@
 
 	$: headerClassName = createClassName({
 		flex: true,
-		'p-2': header
+		'p-2': header && padding
 	});
 
 	$: contentClassName = createClassName({
-		'flex-grow': true
+		'flex-grow': true,
+		'px-4 py-2': padding
 	});
 
 	$: footerClassName = createClassName({
-		'p-2': footer
+		'p-2': footer && padding
 	});
 
 	$: ({
