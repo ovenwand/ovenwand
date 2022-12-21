@@ -35,7 +35,7 @@
 	<Column columns={{ md: 6 }}>
 		<Panel class="min-h-full" title="Daily focus">
 			{#each $todaysTasks as task}
-				<Task interactive={false} href={route(`/explorer/[id]`, { id: task._id })} {...task} />
+				<Task interactive={false} href={route(`/explorer/[id]`, { id: task._id })} {task} />
 			{/each}
 		</Panel>
 	</Column>

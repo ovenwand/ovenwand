@@ -34,7 +34,7 @@
 				<Button href={route('/explorer/create')}>Create...</Button>
 			</svelte:fragment>
 
-			<Task href={route(`/explorer/[id]`, { id: task._id })} {...task} />
+			<Task href={route(`/explorer/[id]`, { id: task._id })} {task} />
 
 			<svelte:fragment slot="footer">
 				<label class="flex">

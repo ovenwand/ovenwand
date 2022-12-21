@@ -2,12 +2,9 @@
 	import { createEventDispatcher } from 'svelte';
 	import { createClassName, draggable } from '@ovenwand/util';
 	import { Sheet } from '@ovenwand/ui';
+	import type { ITask } from '$lib/models';
 
-	export let _id: string;
-	export let title: string;
-	export let description: string;
-	export let status: 'open' | 'closed';
-
+	export let task: ITask;
 	export let href: string | null = null;
 	export let placeholder = false;
 	export let interactive = true;
@@ -15,8 +12,16 @@
 
 	const dispatch = createEventDispatcher();
 
+	let _id: string;
+	let title: string;
+	let description: string;
+	let order: number;
+	let status: 'open' | 'closed';
+
 	let isMouseDown = false;
 	let taskClassName: string;
+
+	$: ({ _id, title, description, order, status } = task);
 
 	$: taskTagName = href ? 'a' : 'div';
 
@@ -45,7 +50,7 @@
 
 <svelte:element
 	this={taskTagName}
-	id="task-{_id}"
+	id="task-{_id.slice(-5)}"
 	class="contents"
 	{href}
 	use:draggable={{ disabled: !interactive }}
