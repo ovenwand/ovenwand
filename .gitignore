@@ -2,6 +2,7 @@ node_modules/
 
 .idea/
 *.iml
+.fleet/*
 
 .DS_Store
 ._*
