@@ -1,6 +1,6 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
-	"framework": "sveltekit",
+	"framework": "sveltekit-1",
 	"buildCommand": "pnpm -w build --filter docs.ovenwand.com",
 	"devCommand": "pnpm -w dev --filter docs.ovenwand.com",
 	"ignoreCommand": "[[ $VERCEL_GIT_COMMIT_REF != renovate/* ]] && pnpm dlx turbo-ignore"
