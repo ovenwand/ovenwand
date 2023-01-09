@@ -1,5 +1,13 @@
 # @ovenwand/util.svelte
 
+## 0.2.13
+
+### Patch Changes
+
+- 90b3661: Update to SvelteKit 1.0.0
+  - @ovenwand/env@0.0.2
+  - @ovenwand/util.math@0.0.8
+
 ## 0.2.12
 
 ### Patch Changes

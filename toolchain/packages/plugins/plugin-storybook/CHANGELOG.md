@@ -1,5 +1,11 @@
 # @ovenwand/toolchain.plugins.storybook
 
+## 0.0.4
+
+### Patch Changes
+
+- 90b3661: Update to SvelteKit 1.0.0
+
 ## 0.0.3
 
 ### Patch Changes

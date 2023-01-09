@@ -1,5 +1,17 @@
 # @ovenwand/ui.modal
 
+## 0.2.16
+
+### Patch Changes
+
+- 90b3661: Update to SvelteKit 1.0.0
+- Updated dependencies [90b3661]
+- Updated dependencies [a6e4434]
+  - @ovenwand/ui.grid@0.0.15
+  - @ovenwand/ui.overlay@0.0.12
+  - @ovenwand/ui.sheet@0.0.12
+  - @ovenwand/util.svelte@0.2.13
+
 ## 0.2.15
 
 ### Patch Changes

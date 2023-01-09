@@ -1,12 +1,12 @@
 {
 	"name": "@ovenwand/toolchain.presets.sveltekit",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"type": "module",
 	"exports": {
 		".": "./src/index.ts"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:^0.1.9",
+		"@ovenwand/config": "workspace:^0.1.12",
 		"@ovenwand/toolchain.core": "workspace:^0.0.1",
 		"@sveltejs/kit": "^1.0.0",
 		"@types/node": "^18.11.9",
@@ -20,6 +20,6 @@
 		"vite": "^3.2.2"
 	},
 	"dependencies": {
-		"@ovenwand/toolchain.plugins.vite": "workspace:^0.0.3"
+		"@ovenwand/toolchain.plugins.vite": "workspace:^0.0.4"
 	}
 }

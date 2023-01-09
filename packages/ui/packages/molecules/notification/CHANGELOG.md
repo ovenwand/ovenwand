@@ -1,5 +1,18 @@
 # @ovenwand/ui.notification
 
+## 0.0.15
+
+### Patch Changes
+
+- 90b3661: Update to SvelteKit 1.0.0
+- 4618bc6: Expose generic notify function
+- Updated dependencies [90b3661]
+  - @ovenwand/ui.icon@0.0.3
+  - @ovenwand/ui.sheet@0.0.12
+  - @ovenwand/util.browser@0.0.13
+  - @ovenwand/util.fp@0.1.6
+  - @ovenwand/util.string@0.0.2
+
 ## 0.0.14
 
 ### Patch Changes

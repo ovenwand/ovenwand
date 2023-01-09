@@ -1,5 +1,15 @@
 # @ovenwand/ui.sidebar
 
+## 0.1.18
+
+### Patch Changes
+
+- 90b3661: Update to SvelteKit 1.0.0
+- Updated dependencies [90b3661]
+  - @ovenwand/config@0.1.12
+  - @ovenwand/util.svelte@0.2.13
+  - @ovenwand/util.browser@0.0.13
+
 ## 0.1.17
 
 ### Patch Changes

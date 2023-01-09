@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/brand.logo",
-	"version": "0.0.10",
+	"version": "0.0.11",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -12,7 +12,7 @@
 		"@ovenwand/util.browser": "workspace:0.0.13"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.11",
+		"@ovenwand/config": "workspace:0.1.12",
 		"svelte": "^3.55.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",

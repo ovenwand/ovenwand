@@ -1,5 +1,13 @@
 # @ovenwand/ui.calendar
 
+## 0.0.5
+
+### Patch Changes
+
+- 4a30f77: add title attribute to calendar cells
+  - @ovenwand/util.browser@0.0.13
+  - @ovenwand/util.date@0.0.3
+
 ## 0.0.4
 
 ### Patch Changes

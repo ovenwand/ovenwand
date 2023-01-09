@@ -1,5 +1,14 @@
 # @ovenwand/ui.grid
 
+## 0.0.15
+
+### Patch Changes
+
+- 90b3661: Update to SvelteKit 1.0.0
+- a6e4434: Make grid root element dynamic
+  - @ovenwand/util.browser@0.0.13
+  - @ovenwand/util.fp@0.1.6
+
 ## 0.0.14
 
 ### Patch Changes

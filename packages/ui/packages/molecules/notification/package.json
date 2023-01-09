@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui.notification",
-	"version": "0.0.14",
+	"version": "0.0.15",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -9,14 +9,14 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@ovenwand/ui.icon": "workspace:0.0.2",
-		"@ovenwand/ui.sheet": "workspace:0.0.11",
+		"@ovenwand/ui.icon": "workspace:0.0.3",
+		"@ovenwand/ui.sheet": "workspace:0.0.12",
 		"@ovenwand/util.browser": "workspace:0.0.13",
 		"@ovenwand/util.fp": "workspace:0.1.6",
 		"@ovenwand/util.string": "workspace:0.0.2"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.11",
+		"@ovenwand/config": "workspace:0.1.12",
 		"svelte": "^3.55.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
