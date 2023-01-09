@@ -12,3 +12,7 @@ export function setSession(session: App.Session) {
 export function getSession(): App.Session {
 	return _session;
 }
+
+export function getSessionID(): App.Session['id'] {
+	return _session.id;
+}

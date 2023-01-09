@@ -25,6 +25,7 @@ type Task {
 	dueDate: Time
 	order: Int
 	status: String
+	owner: User!
 }
 
 type Query {

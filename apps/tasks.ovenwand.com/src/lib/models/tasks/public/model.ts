@@ -1,4 +1,5 @@
 import type { Identifiable } from '@ovenwand/services.faunadb';
+import type { IUser } from '../../users';
 
 export interface ITask extends Identifiable {
 	title: string;
@@ -6,5 +7,6 @@ export interface ITask extends Identifiable {
 	dueDate: string;
 	order: number;
 	status: 'open' | 'closed';
+	owner: IUser;
 	[key: string]: unknown;
 }

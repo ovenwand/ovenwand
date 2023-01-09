@@ -1,6 +1,7 @@
-import { mutate, query, type ITask } from '$lib/database';
+import { mutate, query } from '$lib/database';
 import { AllTasks, CurrentTask, TaskById, TasksByDueDate, TasksByStatus } from './queries';
 import { CreateTask, DeleteTask, PartialUpdateTask } from './mutations';
+import type { ITask } from './model';
 
 export const tasks = {
 	query: {
@@ -36,16 +37,24 @@ export const tasks = {
 
 	mutate: {
 		async create(task: Partial<ITask>) {
+			const data = { ...task };
+
+			if (task.owner) {
+				data.owner = { connect: task.owner._id };
+			}
+
 			return await mutate(CreateTask, {
-				variables: {
-					data: task
-				}
+				variables: { data }
 			});
 		},
 
 		async update(id: string, task: Partial<Omit<ITask, '_id'>>) {
+			const data = { ...task };
+
+			delete data.owner;
+
 			return await mutate(PartialUpdateTask, {
-				variables: { id, data: task }
+				variables: { id, data }
 			});
 		},
 

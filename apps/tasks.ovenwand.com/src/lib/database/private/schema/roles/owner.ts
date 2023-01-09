@@ -63,7 +63,38 @@ export const owner = {
 		 */
 		{
 			resource: q.Collection('Task'),
-			actions: { read: true, create: true, delete: true, write: true }
+			actions: {
+				read: q.Query(
+					q.Lambda(
+						['ref'],
+						q.Equals(q.CurrentIdentity(), q.Select(['data', 'owner'], q.Get(q.Var('ref'))))
+					)
+				),
+				create: q.Query(
+					q.Lambda(
+						['data'],
+						q.Equals(q.CurrentIdentity(), q.Select(['data', 'owner'], q.Var('data')))
+					)
+				),
+				delete: q.Query(
+					q.Lambda(
+						['ref'],
+						q.Equals(q.CurrentIdentity(), q.Select(['data', 'owner'], q.Get(q.Var('ref'))))
+					)
+				),
+				write: q.Query(
+					q.Lambda(
+						['oldData', 'newData'],
+						q.And(
+							q.Equals(q.CurrentIdentity(), q.Select(['data', 'owner'], q.Var('oldData'))),
+							q.Equals(
+								q.Select(['data', 'owner'], q.Var('oldData')),
+								q.Select(['data', 'owner'], q.Var('newData'))
+							)
+						)
+					)
+				)
+			}
 		},
 		{
 			resource: q.Index('tasks'),

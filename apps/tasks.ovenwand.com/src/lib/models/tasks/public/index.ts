@@ -1,6 +1,7 @@
 import type { ITask } from './model';
 import { tasks as db } from './database';
 import { tasks as state, getters, addOrUpdateTask, addOrUpdateTasks, removeTask } from './store';
+import { getSessionID } from '../../../auth';
 
 export * from './model';
 
@@ -77,7 +78,10 @@ export const tasks = {
 
 	mutate: {
 		async create(task: Partial<ITask>) {
-			const result = await db.mutate.create(task);
+			const result = await db.mutate.create({
+				...task,
+				owner: { connect: getSessionID() } // TODO this should really be set in the fauna UDF using `CurrentIdentity()`
+			});
 
 			if (!result.error) {
 				state.update(addOrUpdateTask(task));

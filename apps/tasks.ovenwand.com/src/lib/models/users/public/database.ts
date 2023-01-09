@@ -1,5 +1,5 @@
 import { mutate } from '$lib/database';
-import { Login, Logout } from './queries';
+import { Login, Logout } from './mutations';
 
 export const users = {
 	mutate: {

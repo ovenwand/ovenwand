@@ -4,3 +4,4 @@ description
 dueDate
 order
 status
+owner { _id }
