@@ -1,5 +1,11 @@
 # @ovenwand/config
 
+## 0.1.12
+
+### Patch Changes
+
+- 90b3661: Update to SvelteKit 1.0.0
+
 ## 0.1.11
 
 ### Patch Changes

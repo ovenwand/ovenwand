@@ -1,5 +1,16 @@
 # @ovenwand/app
 
+## 0.1.26
+
+### Patch Changes
+
+- 90b3661: Update to SvelteKit 1.0.0
+- Updated dependencies [90b3661]
+  - @ovenwand/brand@0.0.11
+  - @ovenwand/ui@0.0.25
+  - @ovenwand/services.monitor@0.2.3
+  - @ovenwand/util.browser@0.0.13
+
 ## 0.1.25
 
 ### Patch Changes

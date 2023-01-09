@@ -1,5 +1,13 @@
 # @ovenwand/brand
 
+## 0.0.11
+
+### Patch Changes
+
+- 90b3661: Update to SvelteKit 1.0.0
+- Updated dependencies [90b3661]
+  - @ovenwand/brand.logo@0.0.11
+
 ## 0.0.10
 
 ### Patch Changes

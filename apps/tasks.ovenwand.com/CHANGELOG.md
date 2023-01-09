@@ -1,5 +1,37 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.4.9
+
+### Patch Changes
+
+- 90b3661: Update to SvelteKit 1.0.0
+- e9496fa: Restrict task access to owners
+- 7e32ff2: replace footer root `div` element with `footer` element
+- 38cb25e: Make session object available anywhere
+- b9d4916: Major refactor
+
+  - rewrite database and store
+  - divide database into private and public api
+  - progressively enhance forms
+  - remove server routes
+  - add layout to system routes
+
+- 59fae2c: Divide $lib/auth into public and private
+
+  - Move $lib/session to $lib/auth
+
+- Updated dependencies [90b3661]
+  - @ovenwand/app@0.1.26
+  - @ovenwand/ui@0.0.25
+  - @ovenwand/auth@0.0.2
+  - @ovenwand/env@0.0.2
+  - @ovenwand/gql@0.0.3
+  - @ovenwand/services.faunadb@0.2.2
+  - @ovenwand/services.pusher@0.0.0
+  - @ovenwand/util@0.0.24
+  - @ovenwand/util.date@0.0.3
+  - @ovenwand/util.math@0.0.8
+
 ## 0.4.8
 
 ### Patch Changes

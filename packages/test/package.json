@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/test",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -9,7 +9,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@ovenwand/test.svelte": "workspace:0.0.3"
+		"@ovenwand/test.svelte": "workspace:0.0.4"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",
 	"license": "WTFPL"

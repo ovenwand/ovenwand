@@ -1,5 +1,11 @@
 # @ovenwand/ui.docs
 
+## 0.0.21
+
+### Patch Changes
+
+- 90b3661: Update to SvelteKit 1.0.0
+
 ## 0.0.20
 
 ### Patch Changes

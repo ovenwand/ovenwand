@@ -1,5 +1,25 @@
 # @ovenwand/ui
 
+## 0.0.25
+
+### Patch Changes
+
+- 90b3661: Update to SvelteKit 1.0.0
+- Updated dependencies [4a30f77]
+- Updated dependencies [90b3661]
+- Updated dependencies [4618bc6]
+- Updated dependencies [a6e4434]
+  - @ovenwand/ui.calendar@0.0.5
+  - @ovenwand/ui.button@0.4.1
+  - @ovenwand/ui.grid@0.0.15
+  - @ovenwand/ui.icon@0.0.3
+  - @ovenwand/ui.loader@0.0.3
+  - @ovenwand/ui.overlay@0.0.12
+  - @ovenwand/ui.sheet@0.0.12
+  - @ovenwand/ui.sidebar@0.1.18
+  - @ovenwand/ui.modal@0.2.16
+  - @ovenwand/ui.notification@0.0.15
+
 ## 0.0.24
 
 ### Patch Changes

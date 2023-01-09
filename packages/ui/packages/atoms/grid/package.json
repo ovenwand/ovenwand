@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui.grid",
-	"version": "0.0.14",
+	"version": "0.0.15",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -16,7 +16,7 @@
 		"@ovenwand/util.fp": "workspace:0.1.6"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.11",
+		"@ovenwand/config": "workspace:0.1.12",
 		"svelte": "^3.55.0"
 	},
 	"author": "Ovenwand <info@ovenwand.com> (https://ovenwand.com/)",

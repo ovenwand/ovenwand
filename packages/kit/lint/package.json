@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/kit.lint",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"private": true,
 	"type": "module",
 	"main": "./src/index.ts",
@@ -16,7 +16,7 @@
 		"./commitlint.config.cjs": "./src/commitlint.config.cjs"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.11",
+		"@ovenwand/config": "workspace:0.1.12",
 		"@typescript-eslint/eslint-plugin": "^5.44.0",
 		"@typescript-eslint/parser": "^5.44.0",
 		"eslint": "^8.28.0",

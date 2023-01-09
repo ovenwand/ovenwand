@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/toolchain.docs",
-	"version": "0.0.19",
+	"version": "0.0.20",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -11,8 +11,8 @@
 		"preview": "pnpm dlx http-server -a toolchain.docs.ovenwand.wtf -p 6007 ./storybook-static"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.11",
-		"@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.3",
+		"@ovenwand/config": "workspace:0.1.12",
+		"@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.4",
 		"@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.4",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",

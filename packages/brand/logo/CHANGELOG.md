@@ -1,5 +1,12 @@
 # @ovenwand/brand.logo
 
+## 0.0.11
+
+### Patch Changes
+
+- 90b3661: Update to SvelteKit 1.0.0
+  - @ovenwand/util.browser@0.0.13
+
 ## 0.0.10
 
 ### Patch Changes
