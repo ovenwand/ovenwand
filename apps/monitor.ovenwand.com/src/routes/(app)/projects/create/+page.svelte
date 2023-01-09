@@ -4,7 +4,7 @@
 
 <Grid>
 	<Column>
-		<form action="post">
+		<form method="POST">
 			<input type="text" name="name" />
 			<Button type="submit">Create project</Button>
 		</form>
