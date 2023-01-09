@@ -3,5 +3,5 @@
 	"framework": "sveltekit-1",
 	"buildCommand": "pnpm -w build --filter toolchain.docs",
 	"devCommand": "pnpm -w dev --filter toolchain.docs",
-	"ignoreCommand": "[[ $VERCEL_GIT_COMMIT_REF != renovate/* ]] && pnpm dlx turbo-ignore"
+	"ignoreCommand": "[[ $VERCEL_GIT_COMMIT_REF == renovate/* ]] || pnpm dlx turbo-ignore"
 }
