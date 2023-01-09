@@ -8,7 +8,7 @@ export const actions: import('./$types').Actions = {
 
 		const { error, data } = await tasks.mutate.update(params.id, formData);
 
-		return { success: !!error, errors: [error], data };
+		return { success: !!error, errors: [error?.message], data };
 	},
 	async deleteTask({ params }) {
 		const { error, data } = await tasks.mutate.delete({
@@ -19,6 +19,6 @@ export const actions: import('./$types').Actions = {
 			throw redirect(307, route('/explorer'));
 		}
 
-		return { success: !!error, errors: [error], data };
+		return { success: !!error, errors: [error?.message], data };
 	}
 };
