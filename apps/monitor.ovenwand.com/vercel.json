@@ -3,7 +3,7 @@
 	"framework": "sveltekit",
 	"buildCommand": "pnpm -w build --filter monitor.ovenwand.com",
 	"devCommand": "pnpm -w dev --filter monitor.ovenwand.com",
-	"ignoreCommand": "pnpm dlx turbo-ignore",
+	"ignoreCommand": "[[ $VERCEL_GIT_COMMIT_REF != renovate/* ]] && pnpm dlx turbo-ignore",
 	"headers": [
 		{
 			"source": "/track",
