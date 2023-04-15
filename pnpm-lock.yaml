@@ -15,7 +15,7 @@ importers:
       '@ovenwand/toolchain.presets.monorepo': workspace:*
       '@sveltejs/vite-plugin-svelte': ^2.0.2
       cypress: ^9.7.0
-      svelte: ^3.55.0
+      svelte: ^3.58.0
       typescript: ^4.9.3
       vite: ^4.0.1
     devDependencies:
@@ -28,9 +28,9 @@ importers:
       '@ovenwand/toolchain.plugins.lint': link:toolchain/packages/plugins/plugin-lint
       '@ovenwand/toolchain.plugins.scaffold': link:toolchain/packages/plugins/plugin-scaffold
       '@ovenwand/toolchain.presets.monorepo': link:toolchain/packages/presets/preset-monorepo
-      '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.0+vite@4.0.1
+      '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.58.0+vite@4.0.1
       cypress: 9.7.0
-      svelte: 3.55.0
+      svelte: 3.58.0
       typescript: 4.9.3
       vite: 4.0.1
 
@@ -43,7 +43,7 @@ importers:
       '@types/react': ^18.0.25
       react: ^18.2.0
       react-dom: ^18.2.0
-      svelte: ^3.55.0
+      svelte: ^3.58.0
       typescript: ^4.9.3
     devDependencies:
       '@ovenwand/config': link:../../packages/config
@@ -53,7 +53,7 @@ importers:
       '@types/react': 18.0.25
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      svelte: 3.55.0
+      svelte: 3.58.0
       typescript: 4.9.3
 
   apps/monitor.ovenwand.com:
@@ -77,7 +77,7 @@ importers:
       '@types/d3-scale': ^4.0.2
       '@types/jsonwebtoken': ^8.5.9
       d3-scale: ^4.0.2
-      svelte: ^3.55.0
+      svelte: ^3.58.0
       svelte-check: ^2.9.2
       tslib: ^2.4.1
       typescript: ^4.9.3
@@ -98,12 +98,12 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@ovenwand/toolchain.presets.ssl': link:../../toolchain/packages/presets/preset-ssl
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
-      '@sveltejs/kit': 1.15.5_svelte@3.55.0
+      '@sveltejs/kit': 1.15.5_svelte@3.58.0
       '@types/cookie': 0.5.1
       '@types/d3-scale': 4.0.2
       '@types/jsonwebtoken': 8.5.9
-      svelte: 3.55.0
-      svelte-check: 2.9.2_svelte@3.55.0
+      svelte: 3.58.0
+      svelte-check: 2.9.2_svelte@3.58.0
       tslib: 2.4.1
       typescript: 4.9.3
 
@@ -134,7 +134,7 @@ importers:
       highlight.js: ^11.7.0
       react: ^18.2.0
       react-dom: ^18.2.0
-      svelte: ^3.55.0
+      svelte: ^3.58.0
       svelte-check: ^2.9.2
       tslib: ^2.4.1
       typescript: ^4.9.3
@@ -164,11 +164,11 @@ importers:
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
       '@ovenwand/toolchain.presets.vue': link:../../toolchain/packages/presets/preset-vue
       '@storyblok/svelte': 2.3.7_axios@1.2.0
-      '@sveltejs/kit': 1.15.5_svelte@3.55.0
+      '@sveltejs/kit': 1.15.5_svelte@3.58.0
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
-      svelte: 3.55.0
-      svelte-check: 2.9.2_svelte@3.55.0
+      svelte: 3.58.0
+      svelte-check: 2.9.2_svelte@3.58.0
       tslib: 2.4.1
       typescript: 4.9.3
 
@@ -193,7 +193,7 @@ importers:
       '@ovenwand/util.math': workspace:0.0.8
       '@sveltejs/kit': ^1.15.5
       encoding: ^0.1.13
-      svelte: ^3.55.0
+      svelte: ^3.58.0
       svelte-check: ^2.9.2
       tslib: ^2.4.1
       typescript: ^4.9.3
@@ -216,10 +216,10 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@ovenwand/toolchain.presets.ssl': link:../../toolchain/packages/presets/preset-ssl
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
-      '@sveltejs/kit': 1.15.5_svelte@3.55.0
+      '@sveltejs/kit': 1.15.5_svelte@3.58.0
       encoding: 0.1.13
-      svelte: 3.55.0
-      svelte-check: 2.9.2_svelte@3.55.0
+      svelte: 3.58.0
+      svelte-check: 2.9.2_svelte@3.58.0
       tslib: 2.4.1
       typescript: 4.9.3
 
@@ -230,7 +230,7 @@ importers:
       '@ovenwand/services.monitor': workspace:0.2.3
       '@ovenwand/ui': workspace:0.0.25
       '@ovenwand/util.browser': workspace:0.0.13
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     dependencies:
       '@ovenwand/brand': link:../brand
       '@ovenwand/services.monitor': link:../services/monitor
@@ -238,7 +238,7 @@ importers:
       '@ovenwand/util.browser': link:../util/browser
     devDependencies:
       '@ovenwand/config': link:../config
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   packages/auth:
     specifiers:
@@ -257,23 +257,23 @@ importers:
     specifiers:
       '@ovenwand/brand.logo': workspace:0.0.11
       '@ovenwand/config': workspace:0.1.12
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     dependencies:
       '@ovenwand/brand.logo': link:logo
     devDependencies:
       '@ovenwand/config': link:../config
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   packages/brand/logo:
     specifiers:
       '@ovenwand/config': workspace:0.1.12
       '@ovenwand/util.browser': workspace:0.0.13
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     dependencies:
       '@ovenwand/util.browser': link:../../util/browser
     devDependencies:
       '@ovenwand/config': link:../../config
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   packages/config:
     specifiers:
@@ -281,7 +281,7 @@ importers:
       '@tsconfig/svelte': ^3.0.0
       autoprefixer: ^10.4.13
       postcss: ^8.4.19
-      svelte: ^3.55.0
+      svelte: ^3.58.0
       svelte-preprocess: ^4.10.7
       tailwindcss: ^3.2.4
     dependencies:
@@ -289,8 +289,8 @@ importers:
       '@tsconfig/svelte': 3.0.0
       autoprefixer: 10.4.13_postcss@8.4.19
       postcss: 8.4.19
-      svelte: 3.55.0
-      svelte-preprocess: 4.10.7_a5d4egqoyjzf5fayh5mbdzvtp4
+      svelte: 3.58.0
+      svelte-preprocess: 4.10.7_u2vehfuom4t35krfxur6e4wkum
       tailwindcss: 3.2.4_postcss@8.4.19
 
   packages/env:
@@ -350,7 +350,7 @@ importers:
       eslint-plugin-vue: ^9.8.0
       prettier: ^2.8.0
       prettier-plugin-svelte: ^2.8.1
-      svelte: ^3.55.0
+      svelte: ^3.58.0
       typescript: ^4.9.3
     devDependencies:
       '@ovenwand/config': link:../../config
@@ -359,11 +359,11 @@ importers:
       eslint: 8.28.0
       eslint-config-prettier: 8.5.0_eslint@8.28.0
       eslint-plugin-react: 7.31.11_eslint@8.28.0
-      eslint-plugin-svelte3: 4.0.0_azuxbbyyvvwupfdtiuanqji4pe
+      eslint-plugin-svelte3: 4.0.0_foxkyd7vkndwkk6j6kg2axohte
       eslint-plugin-vue: 9.8.0_eslint@8.28.0
       prettier: 2.8.0
-      prettier-plugin-svelte: 2.8.1_nxhwyzrlb2jiv2xtis3ad534qu
-      svelte: 3.55.0
+      prettier-plugin-svelte: 2.8.1_uh5bh26ljxs23uctbnwfuxtady
+      svelte: 3.58.0
       typescript: 4.9.3
 
   packages/kit/scaffold:
@@ -446,12 +446,12 @@ importers:
       '@testing-library/svelte': ^3.2.2
       chai: ^4.3.7
       mocha: ^9.2.2
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     dependencies:
-      svelte: 3.55.0
+      svelte: 3.58.0
     devDependencies:
       '@ovenwand/config': link:../../config
-      '@testing-library/svelte': 3.2.2_svelte@3.55.0
+      '@testing-library/svelte': 3.2.2_svelte@3.58.0
       chai: 4.3.7
       mocha: 9.2.2
 
@@ -461,12 +461,12 @@ importers:
       '@testing-library/svelte': ^3.2.2
       chai: ^4.3.7
       mocha: ^9.2.2
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     dependencies:
-      svelte: 3.55.0
+      svelte: 3.58.0
     devDependencies:
       '@ovenwand/config': link:../../config
-      '@testing-library/svelte': 3.2.2_svelte@3.55.0
+      '@testing-library/svelte': 3.2.2_svelte@3.58.0
       chai: 4.3.7
       mocha: 9.2.2
 
@@ -489,7 +489,7 @@ importers:
       globby: ^13.1.2
       react: ^18.2.0
       react-dom: ^18.2.0
-      svelte: ^3.55.0
+      svelte: ^3.58.0
       typescript: ^4.9.3
     dependencies:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
@@ -510,7 +510,7 @@ importers:
       globby: 13.1.2
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      svelte: 3.55.0
+      svelte: 3.58.0
       typescript: 4.9.3
 
   packages/ui/docs:
@@ -526,7 +526,7 @@ importers:
       '@ovenwand/ui.sheet': workspace:^0.0.12
       react: ^18.2.0
       react-dom: ^18.2.0
-      svelte: ^3.55.0
+      svelte: ^3.58.0
       typescript: ^4.9.3
     devDependencies:
       '@ovenwand/config': link:../../config
@@ -540,7 +540,7 @@ importers:
       '@ovenwand/ui.sheet': link:../packages/atoms/sheet
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      svelte: 3.55.0
+      svelte: 3.58.0
       typescript: 4.9.3
 
   packages/ui/packages/atoms/button:
@@ -548,64 +548,64 @@ importers:
       '@ovenwand/config': workspace:0.1.12
       '@ovenwand/test.cypress': workspace:0.0.4
       '@ovenwand/util.browser': workspace:0.0.13
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     dependencies:
       '@ovenwand/util.browser': link:../../../../util/browser
     devDependencies:
       '@ovenwand/config': link:../../../../config
       '@ovenwand/test.cypress': link:../../../../test/cypress
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   packages/ui/packages/atoms/grid:
     specifiers:
       '@ovenwand/config': workspace:0.1.12
       '@ovenwand/util.browser': workspace:0.0.13
       '@ovenwand/util.fp': workspace:0.1.6
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     dependencies:
       '@ovenwand/util.browser': link:../../../../util/browser
       '@ovenwand/util.fp': link:../../../../util/fp
     devDependencies:
       '@ovenwand/config': link:../../../../config
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   packages/ui/packages/atoms/icon:
     specifiers:
       '@ovenwand/config': workspace:0.1.12
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     devDependencies:
       '@ovenwand/config': link:../../../../config
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   packages/ui/packages/atoms/loader:
     specifiers:
       '@ovenwand/config': workspace:0.1.12
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     devDependencies:
       '@ovenwand/config': link:../../../../config
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   packages/ui/packages/atoms/overlay:
     specifiers:
       '@ovenwand/config': workspace:0.1.12
       '@ovenwand/util.browser': workspace:0.0.13
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     dependencies:
       '@ovenwand/util.browser': link:../../../../util/browser
     devDependencies:
       '@ovenwand/config': link:../../../../config
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   packages/ui/packages/atoms/sheet:
     specifiers:
       '@ovenwand/config': workspace:0.1.12
       '@ovenwand/util.browser': workspace:0.0.13
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     dependencies:
       '@ovenwand/util.browser': link:../../../../util/browser
     devDependencies:
       '@ovenwand/config': link:../../../../config
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   packages/ui/packages/atoms/sidebar:
     specifiers:
@@ -614,7 +614,7 @@ importers:
       '@ovenwand/test.svelte': workspace:0.0.4
       '@ovenwand/util.browser': workspace:0.0.13
       '@ovenwand/util.svelte': workspace:0.2.13
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     dependencies:
       '@ovenwand/config': link:../../../../config
       '@ovenwand/util.browser': link:../../../../util/browser
@@ -622,7 +622,7 @@ importers:
     devDependencies:
       '@ovenwand/test.cypress': link:../../../../test/cypress
       '@ovenwand/test.svelte': link:../../../../test/svelte
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   packages/ui/packages/molecules/modal:
     specifiers:
@@ -631,7 +631,7 @@ importers:
       '@ovenwand/ui.overlay': workspace:0.0.12
       '@ovenwand/ui.sheet': workspace:0.0.12
       '@ovenwand/util.svelte': workspace:0.2.13
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     dependencies:
       '@ovenwand/ui.grid': link:../../atoms/grid
       '@ovenwand/ui.overlay': link:../../atoms/overlay
@@ -639,7 +639,7 @@ importers:
       '@ovenwand/util.svelte': link:../../../../util/svelte
     devDependencies:
       '@ovenwand/config': link:../../../../config
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   packages/ui/packages/molecules/notification:
     specifiers:
@@ -649,7 +649,7 @@ importers:
       '@ovenwand/util.browser': workspace:0.0.13
       '@ovenwand/util.fp': workspace:0.1.6
       '@ovenwand/util.string': workspace:0.0.2
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     dependencies:
       '@ovenwand/ui.icon': link:../../atoms/icon
       '@ovenwand/ui.sheet': link:../../atoms/sheet
@@ -658,7 +658,7 @@ importers:
       '@ovenwand/util.string': link:../../../../util/string
     devDependencies:
       '@ovenwand/config': link:../../../../config
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   packages/ui/packages/organisms/calendar:
     specifiers:
@@ -740,14 +740,14 @@ importers:
       '@ovenwand/env': workspace:0.0.2
       '@ovenwand/util.math': workspace:0.0.8
       chai: ^4.3.7
-      svelte: ^3.55.0
+      svelte: ^3.58.0
     dependencies:
       '@ovenwand/env': link:../../env
       '@ovenwand/util.math': link:../math
       chai: 4.3.7
     devDependencies:
       '@ovenwand/config': link:../../config
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   toolchain:
     specifiers:
@@ -762,7 +762,7 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.4
       react: ^18.2.0
       react-dom: ^18.2.0
-      svelte: ^3.55.0
+      svelte: ^3.58.0
       typescript: ^4.9.3
     devDependencies:
       '@ovenwand/config': link:../../packages/config
@@ -770,7 +770,7 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': link:../packages/presets/preset-ovenwand
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      svelte: 3.55.0
+      svelte: 3.58.0
       typescript: 4.9.3
 
   toolchain/packages/cli:
@@ -872,7 +872,7 @@ importers:
       eslint-plugin-vue: ^9.8.0
       prettier: ^2.8.0
       prettier-plugin-svelte: ^2.8.1
-      svelte: ^3.55.0
+      svelte: ^3.58.0
       typescript: ^4.9.3
     dependencies:
       '@typescript-eslint/eslint-plugin': 5.44.0_fnsv2sbzcckq65bwfk7a5xwslu
@@ -880,16 +880,16 @@ importers:
       eslint: 8.28.0
       eslint-config-prettier: 8.5.0_eslint@8.28.0
       eslint-plugin-react: 7.31.11_eslint@8.28.0
-      eslint-plugin-svelte3: 4.0.0_azuxbbyyvvwupfdtiuanqji4pe
+      eslint-plugin-svelte3: 4.0.0_foxkyd7vkndwkk6j6kg2axohte
       eslint-plugin-vue: 9.8.0_eslint@8.28.0
       prettier: 2.8.0
-      prettier-plugin-svelte: 2.8.1_nxhwyzrlb2jiv2xtis3ad534qu
+      prettier-plugin-svelte: 2.8.1_uh5bh26ljxs23uctbnwfuxtady
     devDependencies:
       '@ovenwand/config': link:../../../../packages/config
       '@ovenwand/toolchain.cli': link:../../cli
       '@ovenwand/toolchain.core': link:../../core
       '@types/node': 18.11.9
-      svelte: 3.55.0
+      svelte: 3.58.0
       typescript: 4.9.3
 
   toolchain/packages/plugins/plugin-scaffold:
@@ -933,7 +933,7 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       storybook: ^7.0.0-alpha.52
-      svelte: ^3.55.0
+      svelte: ^3.58.0
       typescript: ^4.9.3
     dependencies:
       globby: 13.1.2
@@ -953,7 +953,7 @@ importers:
       '@storybook/addon-links': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-measure': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-outline': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
-      '@storybook/svelte': 7.0.0-alpha.52_npijz3v4otsp6ubmwvrcmsfvwa
+      '@storybook/svelte': 7.0.0-alpha.52_2okzgzap76dtvfzosiacxqir7i
       '@storybook/svelte-vite': 7.0.0-alpha.52_rw5jfarpede2fqu5qmdjbfnirm
       '@storybook/testing-library': 0.0.14-next.0_biqbaboplfbrettd7655fr4n2y
       '@storybook/theming': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
@@ -961,7 +961,7 @@ importers:
       '@types/react': 18.0.25
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      svelte: 3.55.0
+      svelte: 3.58.0
       typescript: 4.9.3
 
   toolchain/packages/plugins/plugin-turbo:
@@ -1057,16 +1057,16 @@ importers:
       '@ovenwand/toolchain.plugins.vite': workspace:^0.0.4
       '@sveltejs/kit': ^1.15.5
       '@types/node': ^18.11.9
-      svelte: ^3.55.0
+      svelte: ^3.58.0
       vite: ^4.0.1
     dependencies:
       '@ovenwand/toolchain.plugins.vite': link:../../plugins/plugin-vite
     devDependencies:
       '@ovenwand/config': link:../../../../packages/config
       '@ovenwand/toolchain.core': link:../../core
-      '@sveltejs/kit': 1.15.5_svelte@3.55.0+vite@4.0.1
+      '@sveltejs/kit': 1.15.5_svelte@3.58.0+vite@4.0.1
       '@types/node': 18.11.9
-      svelte: 3.55.0
+      svelte: 3.58.0
       vite: 4.0.1_@types+node@18.11.9
 
   toolchain/packages/presets/preset-vue:
@@ -3773,7 +3773,7 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/addon-svelte-csf/2.0.10_r3zeywqq6peayo5cbe3cmrcy5i:
+  /@storybook/addon-svelte-csf/2.0.10_yazp3mdmd66lgoux7bywxrf6ly:
     resolution: {integrity: sha512-0cmUBRuzyHUGOrgz/2eQNyRmWB262jFGyN1W7ZO1p7zUOJbtlNFK9LAuHzlsvcY0k6mzTXDSJuKl8e99jNQ6LA==}
     peerDependencies:
       '@storybook/svelte': '>=6.4.20'
@@ -3783,8 +3783,8 @@ packages:
       svelte-loader:
         optional: true
     dependencies:
-      '@storybook/svelte': 7.0.0-alpha.52_npijz3v4otsp6ubmwvrcmsfvwa
-      svelte: 3.55.0
+      '@storybook/svelte': 7.0.0-alpha.52_2okzgzap76dtvfzosiacxqir7i
+      svelte: 3.58.0
       ts-dedent: 2.2.0
     dev: true
 
@@ -4739,7 +4739,7 @@ packages:
       '@storybook/addon-svelte-csf':
         optional: true
     dependencies:
-      '@storybook/addon-svelte-csf': 2.0.10_r3zeywqq6peayo5cbe3cmrcy5i
+      '@storybook/addon-svelte-csf': 2.0.10_yazp3mdmd66lgoux7bywxrf6ly
       '@storybook/addons': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/builder-vite': 7.0.0-alpha.52_jbds6ahjczw3oeplypoe2zjsqa
       '@storybook/channel-postmessage': 7.0.0-alpha.52
@@ -4747,10 +4747,10 @@ packages:
       '@storybook/client-api': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
       '@storybook/node-logger': 7.0.0-alpha.52
       '@storybook/preview-web': 7.0.0-alpha.52_biqbaboplfbrettd7655fr4n2y
-      '@storybook/svelte': 7.0.0-alpha.52_npijz3v4otsp6ubmwvrcmsfvwa
-      '@sveltejs/vite-plugin-svelte': 1.3.1_svelte@3.55.0+vite@3.2.4
+      '@storybook/svelte': 7.0.0-alpha.52_2okzgzap76dtvfzosiacxqir7i
+      '@sveltejs/vite-plugin-svelte': 1.3.1_svelte@3.58.0+vite@3.2.4
       magic-string: 0.26.7
-      svelte: 3.55.0
+      svelte: 3.58.0
       sveltedoc-parser: 4.2.1
       vite: 3.2.4_@types+node@18.11.9
     transitivePeerDependencies:
@@ -4769,7 +4769,7 @@ packages:
       - typescript
     dev: true
 
-  /@storybook/svelte/7.0.0-alpha.52_npijz3v4otsp6ubmwvrcmsfvwa:
+  /@storybook/svelte/7.0.0-alpha.52_2okzgzap76dtvfzosiacxqir7i:
     resolution: {integrity: sha512-7Nk4AitQnKqITJB/FO0H29R7AIRDmw1T78GEc2l+d3IDCTL/kcuK442OmR2W2Satky/jzedS993NEVQ37trYIg==}
     engines: {node: '>=10.13.0'}
     peerDependencies:
@@ -4786,7 +4786,7 @@ packages:
       global: 4.4.0
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
-      svelte: 3.55.0
+      svelte: 3.58.0
       sveltedoc-parser: 4.2.1
       type-fest: 2.19.0
     transitivePeerDependencies:
@@ -4889,7 +4889,7 @@ packages:
       - supports-color
     dev: false
 
-  /@sveltejs/kit/1.15.5_svelte@3.55.0:
+  /@sveltejs/kit/1.15.5_svelte@3.58.0:
     resolution: {integrity: sha512-NyNtgIJBNo3AXMkl0iN10VrKgQS6VM6E+rcqZnZMn12dOo7SwFflj1du0ZgXNCZ1tx6VuEpSz9+FpPjswr4gEg==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
@@ -4898,7 +4898,7 @@ packages:
       svelte: ^3.54.0
       vite: ^4.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.0
+      '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.58.0
       '@types/cookie': 0.5.1
       cookie: 0.5.0
       devalue: 4.3.0
@@ -4909,14 +4909,14 @@ packages:
       sade: 1.8.1
       set-cookie-parser: 2.5.1
       sirv: 2.0.2
-      svelte: 3.55.0
+      svelte: 3.58.0
       tiny-glob: 0.2.9
       undici: 5.20.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.15.5_svelte@3.55.0+vite@4.0.1:
+  /@sveltejs/kit/1.15.5_svelte@3.58.0+vite@4.0.1:
     resolution: {integrity: sha512-NyNtgIJBNo3AXMkl0iN10VrKgQS6VM6E+rcqZnZMn12dOo7SwFflj1du0ZgXNCZ1tx6VuEpSz9+FpPjswr4gEg==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
@@ -4925,7 +4925,7 @@ packages:
       svelte: ^3.54.0
       vite: ^4.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.0+vite@4.0.1
+      '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.58.0+vite@4.0.1
       '@types/cookie': 0.5.1
       cookie: 0.5.0
       devalue: 4.3.0
@@ -4936,7 +4936,7 @@ packages:
       sade: 1.8.1
       set-cookie-parser: 2.5.1
       sirv: 2.0.2
-      svelte: 3.55.0
+      svelte: 3.58.0
       tiny-glob: 0.2.9
       undici: 5.20.0
       vite: 4.0.1_@types+node@18.11.9
@@ -4944,7 +4944,7 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.3.1_svelte@3.55.0+vite@3.2.4:
+  /@sveltejs/vite-plugin-svelte/1.3.1_svelte@3.58.0+vite@3.2.4:
     resolution: {integrity: sha512-2Uu2sDdIR+XQWF7QWOVSF2jR9EU6Ciw1yWfYnfLYj8HIgnNxkh/8g22Fw2pBUI8QNyW/KxtqJUWBI+8ypamSrQ==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -4959,15 +4959,15 @@ packages:
       deepmerge: 4.2.2
       kleur: 4.1.5
       magic-string: 0.26.7
-      svelte: 3.55.0
-      svelte-hmr: 0.15.1_svelte@3.55.0
+      svelte: 3.58.0
+      svelte-hmr: 0.15.1_svelte@3.58.0
       vite: 3.2.4_@types+node@18.11.9
       vitefu: 0.2.3_vite@3.2.4
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/2.0.2_svelte@3.55.0:
+  /@sveltejs/vite-plugin-svelte/2.0.2_svelte@3.58.0:
     resolution: {integrity: sha512-xCEan0/NNpQuL0l5aS42FjwQ6wwskdxC3pW1OeFtEKNZwRg7Evro9lac9HesGP6TdFsTv2xMes5ASQVKbCacxg==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -4978,14 +4978,14 @@ packages:
       deepmerge: 4.2.2
       kleur: 4.1.5
       magic-string: 0.27.0
-      svelte: 3.55.0
-      svelte-hmr: 0.15.1_svelte@3.55.0
+      svelte: 3.58.0
+      svelte-hmr: 0.15.1_svelte@3.58.0
       vitefu: 0.2.3
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/2.0.2_svelte@3.55.0+vite@4.0.1:
+  /@sveltejs/vite-plugin-svelte/2.0.2_svelte@3.58.0+vite@4.0.1:
     resolution: {integrity: sha512-xCEan0/NNpQuL0l5aS42FjwQ6wwskdxC3pW1OeFtEKNZwRg7Evro9lac9HesGP6TdFsTv2xMes5ASQVKbCacxg==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -4996,8 +4996,8 @@ packages:
       deepmerge: 4.2.2
       kleur: 4.1.5
       magic-string: 0.27.0
-      svelte: 3.55.0
-      svelte-hmr: 0.15.1_svelte@3.55.0
+      svelte: 3.58.0
+      svelte-hmr: 0.15.1_svelte@3.58.0
       vite: 4.0.1
       vitefu: 0.2.3_vite@4.0.1
     transitivePeerDependencies:
@@ -5032,14 +5032,14 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@testing-library/svelte/3.2.2_svelte@3.55.0:
+  /@testing-library/svelte/3.2.2_svelte@3.58.0:
     resolution: {integrity: sha512-IKwZgqbekC3LpoRhSwhd0JswRGxKdAGkf39UiDXTywK61YyLXbCYoR831e/UUC6EeNW4hiHPY+2WuovxOgI5sw==}
     engines: {node: '>= 10'}
     peerDependencies:
       svelte: 3.x
     dependencies:
       '@testing-library/dom': 8.19.0
-      svelte: 3.55.0
+      svelte: 3.58.0
     dev: true
 
   /@testing-library/user-event/13.5.0_aaq3sbffpfe3jnxzm2zngsddei:
@@ -8151,14 +8151,14 @@ packages:
       semver: 6.3.0
       string.prototype.matchall: 4.0.8
 
-  /eslint-plugin-svelte3/4.0.0_azuxbbyyvvwupfdtiuanqji4pe:
+  /eslint-plugin-svelte3/4.0.0_foxkyd7vkndwkk6j6kg2axohte:
     resolution: {integrity: sha512-OIx9lgaNzD02+MDFNLw0GEUbuovNcglg+wnd/UY0fbZmlQSz7GlQiQ1f+yX0XvC07XPcDOnFcichqI3xCwp71g==}
     peerDependencies:
       eslint: '>=8.0.0'
       svelte: ^3.2.0
     dependencies:
       eslint: 8.28.0
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   /eslint-plugin-vue/9.8.0_eslint@8.28.0:
     resolution: {integrity: sha512-E/AXwcTzunyzM83C2QqDHxepMzvI2y6x+mmeYHbVDQlKFqmKYvRrhaVixEeeG27uI44p9oKDFiyCRw4XxgtfHA==}
@@ -11797,14 +11797,14 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /prettier-plugin-svelte/2.8.1_nxhwyzrlb2jiv2xtis3ad534qu:
+  /prettier-plugin-svelte/2.8.1_uh5bh26ljxs23uctbnwfuxtady:
     resolution: {integrity: sha512-KA3K1J3/wKDnCxW7ZDRA/QL2Q67N7Xs3gOERqJ5X1qFjq1DdnN3K1R29scSKwh+kA8FF67pXbYytUpvN/i3iQw==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0
     dependencies:
       prettier: 2.8.0
-      svelte: 3.55.0
+      svelte: 3.58.0
 
   /prettier/2.8.0:
     resolution: {integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==}
@@ -13086,7 +13086,7 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /svelte-check/2.9.2_svelte@3.55.0:
+  /svelte-check/2.9.2_svelte@3.58.0:
     resolution: {integrity: sha512-DRi8HhnCiqiGR2YF9ervPGvtoYrheE09cXieCTEqeTPOTJzfoa54Py8rovIBv4bH4n5HgZYIyTQ3DDLHQLl2uQ==}
     hasBin: true
     peerDependencies:
@@ -13098,8 +13098,8 @@ packages:
       import-fresh: 3.3.0
       picocolors: 1.0.0
       sade: 1.8.1
-      svelte: 3.55.0
-      svelte-preprocess: 4.10.7_ozwewin3tvouwvcwd5wmlkxtki
+      svelte: 3.58.0
+      svelte-preprocess: 4.10.7_y7iwgetynnth46soc672ypdk3u
       typescript: 4.9.3
     transitivePeerDependencies:
       - '@babel/core'
@@ -13114,16 +13114,16 @@ packages:
       - sugarss
     dev: true
 
-  /svelte-hmr/0.15.1_svelte@3.55.0:
+  /svelte-hmr/0.15.1_svelte@3.58.0:
     resolution: {integrity: sha512-BiKB4RZ8YSwRKCNVdNxK/GfY+r4Kjgp9jCLEy0DuqAKfmQtpL38cQK3afdpjw4sqSs4PLi3jIPJIFp259NkZtA==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
     peerDependencies:
       svelte: '>=3.19.0'
     dependencies:
-      svelte: 3.55.0
+      svelte: 3.58.0
     dev: true
 
-  /svelte-preprocess/4.10.7_a5d4egqoyjzf5fayh5mbdzvtp4:
+  /svelte-preprocess/4.10.7_u2vehfuom4t35krfxur6e4wkum:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -13171,10 +13171,10 @@ packages:
       postcss: 8.4.19
       sorcery: 0.10.0
       strip-indent: 3.0.0
-      svelte: 3.55.0
+      svelte: 3.58.0
     dev: false
 
-  /svelte-preprocess/4.10.7_ozwewin3tvouwvcwd5wmlkxtki:
+  /svelte-preprocess/4.10.7_y7iwgetynnth46soc672ypdk3u:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -13221,12 +13221,12 @@ packages:
       magic-string: 0.25.9
       sorcery: 0.10.0
       strip-indent: 3.0.0
-      svelte: 3.55.0
+      svelte: 3.58.0
       typescript: 4.9.3
     dev: true
 
-  /svelte/3.55.0:
-    resolution: {integrity: sha512-uGu2FVMlOuey4JoKHKrpZFkoYyj0VLjJdz47zX5+gVK5odxHM40RVhar9/iK2YFRVxvfg9FkhfVlR0sjeIrOiA==}
+  /svelte/3.58.0:
+    resolution: {integrity: sha512-brIBNNB76mXFmU/Kerm4wFnkskBbluBDCjx/8TcpYRb298Yh2dztS2kQ6bhtjMcvUhd5ynClfwpz5h2gnzdQ1A==}
     engines: {node: '>= 8'}
 
   /sveltedoc-parser/4.2.1:
