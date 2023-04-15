@@ -19,19 +19,9 @@
 		"@ovenwand/config": "workspace:^0.1.12",
 		"@ovenwand/toolchain.cli": "workspace:^0.0.1",
 		"@ovenwand/toolchain.core": "workspace:^0.0.1",
-		"@storybook/addon-actions": "^7.0.0-alpha.52",
-		"@storybook/addon-backgrounds": "^7.0.0-alpha.52",
-		"@storybook/addon-docs": "^7.0.0-alpha.52",
-		"@storybook/addon-essentials": "^7.0.0-alpha.52",
-		"@storybook/addon-highlight": "^7.0.0-alpha.52",
-		"@storybook/addon-interactions": "^7.0.0-alpha.52",
-		"@storybook/addon-links": "^7.0.0-alpha.52",
-		"@storybook/addon-measure": "^7.0.0-alpha.52",
-		"@storybook/addon-outline": "^7.0.0-alpha.52",
-		"@storybook/svelte": "^7.0.0-alpha.52",
-		"@storybook/svelte-vite": "^7.0.0-alpha.52",
-		"@storybook/testing-library": "^0.0.14-next.0",
-		"@storybook/theming": "^7.0.0-alpha.52",
+		"@storybook/addon-essentials": "^7.0.5",
+		"@storybook/addon-svelte-csf": "^3.0.1",
+		"@storybook/sveltekit": "^7.0.5",
 		"@types/node": "^18.11.9",
 		"@types/react": "^18.0.25",
 		"react": "^18.2.0",
@@ -47,6 +37,6 @@
 	},
 	"dependencies": {
 		"globby": "^13.1.2",
-		"storybook": "^7.0.0-alpha.52"
+		"storybook": "^7.0.5"
 	}
 }
