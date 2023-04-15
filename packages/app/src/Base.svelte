@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Readable } from 'svelte/store';
 	import { useMonitor } from '@ovenwand/services.monitor';
-	import { useFeatures } from "./features";
+	import { useFeatures } from './features';
 
 	const isFeatureEnabled = useFeatures();
 
@@ -18,13 +18,15 @@
 		APP_VERSION: import.meta.env.APP_VERSION,
 		PUBLIC_MONITOR_PROJECT: import.meta.env.PUBLIC_MONITOR_PROJECT,
 		PUBLIC_MONITOR_URL: import.meta.env.PUBLIC_MONITOR_URL,
-		VERCEL_GIT_COMMIT_SHA: import.meta.env.VERCEL_GIT_COMMIT_SHA,
+		VERCEL_GIT_COMMIT_SHA: import.meta.env.VERCEL_GIT_COMMIT_SHA
 	};
 
+	const hasRequiredEnv = Boolean(env.PUBLIC_MONITOR_PROJECT && env.PUBLIC_MONITOR_URL);
+
 	const { trackPageView } = useMonitor({
-		enabled: isFeatureEnabled('services.monitor'),
+		enabled: isFeatureEnabled('services.monitor') && hasRequiredEnv,
 		project: env.PUBLIC_MONITOR_PROJECT,
-		url: env.PUBLIC_MONITOR_URL,
+		url: env.PUBLIC_MONITOR_URL
 	});
 
 	$: if (browser) {
