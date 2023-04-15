@@ -1,3 +1,4 @@
+import { dirname } from 'node:path';
 import { Command, exec, exit } from '@ovenwand/toolchain.cli';
 import { createInstallCommand } from './install.js';
 
@@ -8,10 +9,7 @@ export function createEnvCommand(context) {
 
 	envCommand.addCommand(createInstallCommand(context));
 
-	envCommand
-		.allowUnknownOption()
-		.helpOption(false)
-		.argument('[action]', 'Doppler action');
+	envCommand.allowUnknownOption().helpOption(false).argument('[action]', 'Doppler action');
 
 	envCommand.action(async (action, options, command) => {
 		const args = [...command.args];
@@ -24,14 +22,14 @@ export function createEnvCommand(context) {
 		const includeConfigArgs = isRunCommand || isSecretsCommand || isEnvironmentsCommand;
 
 		if (dopplerConfig.configFile) {
-			dopplerArgs.unshift('--configuration', dopplerConfig.configFile);
+			dopplerArgs.unshift('--config-dir', dirname(dopplerConfig.configFile));
 		}
 
 		if (dopplerConfig.scope.project && includeConfigArgs) {
 			args.push('--project', dopplerConfig.scope.project);
 		}
 
-		if (dopplerConfig.scope.config &&  includeConfigArgs) {
+		if (dopplerConfig.scope.config && includeConfigArgs) {
 			args.push('--config', dopplerConfig.scope.config);
 		}
 

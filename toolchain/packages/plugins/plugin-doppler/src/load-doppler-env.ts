@@ -10,6 +10,9 @@ export async function loadDopplerEnv(context, debug) {
 
 	let workspaceEnv, localEnv;
 
+	// TODO this is temporary, either remove caching all together or find way to cache properly
+	cache.invalidate(localCacheFile);
+
 	if (workspaceManifest) {
 		if (!(await cache.has(workspaceCacheFile))) {
 			debug(`Generating environment cache for ${workspaceManifest.name}`);
