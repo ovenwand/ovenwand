@@ -11,7 +11,7 @@
 		".": "./src/index.ts"
 	},
 	"devDependencies": {
-		"typescript": "^4.9.1-beta"
+		"typescript": "^4.9.5"
 	},
 	"dependencies": {
 		"@ovenwand/toolchain.cli": "workspace:^0.0.1",
