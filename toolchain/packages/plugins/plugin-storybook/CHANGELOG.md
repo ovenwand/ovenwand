@@ -1,5 +1,11 @@
 # @ovenwand/toolchain.plugins.storybook
 
+## 0.0.5
+
+### Patch Changes
+
+- c80fc0c: Update storybook
+
 ## 0.0.4
 
 ### Patch Changes
