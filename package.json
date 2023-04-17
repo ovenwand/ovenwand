@@ -11,8 +11,9 @@
 		"lint": "start lint",
 		"format": "start format",
 		"check": "run() { pnpm --filter @ovenwand/$1 check ${@:2}; }; run",
-		"test": "run() { cypress $1-ct --config-file .kit/config/cypress.json ${@:2}; }; run",
-		"ci:test": "pnpm test run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b",
+		"test": "cypress open-ct --config-file .kit/config/cypress.json",
+		"test:run": "cypress run-ct --config-file .kit/config/cypress.json",
+		"ci:test": "pnpm test:run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b",
 		"ci:version": "pnpm changeset version && pnpm install --no-frozen-lockfile",
 		"ci:publish": "pnpm changeset tag"
 	},
