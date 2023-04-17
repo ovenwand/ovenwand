@@ -9,7 +9,7 @@
 		"@ovenwand/config": "workspace:^0.1.12",
 		"@ovenwand/toolchain.core": "workspace:^0.0.1",
 		"@types/node": "^18.11.9",
-		"vite": "^4.0.1"
+		"vite": "^4.2.1"
 	},
 	"peerDependencies": {
 		"@ovenwand/toolchain.core": "workspace:^0.0.1",
