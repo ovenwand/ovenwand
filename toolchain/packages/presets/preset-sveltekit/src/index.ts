@@ -9,5 +9,5 @@ export default definePreset({
 			config.vite.configs.push(viteConfig);
 		}
 		return config;
-	},
+	}
 });

@@ -28,20 +28,15 @@ export default definePlugin(() => {
 
 					const hostArgs = !env.DOCS_HOST ? [] : ['-h', env.DOCS_HOST];
 
-					const devArgs = [
-						'--no-open',
-						...(!hasHostParam ? hostArgs : []),
-					];
+					const devArgs = ['--no-open', ...(!hasHostParam ? hostArgs : [])];
 
-					const args = [
-						arg,
-						...(isDevArg ? devArgs : []),
-						...command.args.slice(1)
-					].filter(Boolean);
+					const args = [arg, ...(isDevArg ? devArgs : []), ...command.args.slice(1)].filter(
+						Boolean
+					);
 
 					const result = await exec('storybook', args, { cwd, env });
 					exit(result.code);
 				});
-		},
+		}
 	};
 });

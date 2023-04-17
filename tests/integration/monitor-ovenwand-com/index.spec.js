@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 /**
  * This is a basic Playwright script to get you started!
  * To learn more about Browser checks and Playwright visit: https://www.checklyhq.com/docs/browser-checks
@@ -28,3 +30,5 @@ async function run() {
 }
 
 run();
+
+/* eslint-enable @typescript-eslint/no-var-requires */

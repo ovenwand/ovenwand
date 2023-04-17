@@ -1,9 +1,7 @@
 import { cwd } from 'node:process';
-import { dirname, relative, resolve } from 'node:path';
+import { relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { findWorkspace } from '@ovenwand/toolchain.core';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const workspace = findWorkspace();
 
@@ -25,9 +23,13 @@ export default {
 				name: 'location',
 				message: 'Where will the new plugin be located?',
 				filter: async (input) => resolve(input),
-				default: async (options) => relative(cwd(), resolve(await workspace, `toolchain/packages/plugins/plugin-${options.name}`)),
+				default: async (options) =>
+					relative(
+						cwd(),
+						resolve(await workspace, `toolchain/packages/plugins/plugin-${options.name}`)
+					),
 				validate: required('Package location is required')
-			},
+			}
 		],
 		actions: [
 			{

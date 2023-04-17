@@ -6,7 +6,7 @@ contextBridge.exposeInMainWorld('versions', {
 	node: () => versions.node,
 	chrome: () => versions.chrome,
 	electron: () => versions.electron,
-	ping: () => ipcRenderer.invoke('ping'),
+	ping: () => ipcRenderer.invoke('ping')
 	// we can also expose variables, not just functions
 });
 
@@ -14,7 +14,7 @@ contextBridge.exposeInMainWorld('versions', {
 	try {
 		await access(env.ELECTRON_PRELOAD_FILE);
 		require(env.ELECTRON_PRELOAD_FILE);
-	} catch(e) {
+	} catch (e) {
 		if (e.code !== 'ENOENT') {
 			throw e;
 		}

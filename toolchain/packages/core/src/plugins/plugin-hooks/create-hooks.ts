@@ -24,10 +24,16 @@ export interface ToolchainHooksApi<Name extends keyof Toolchain.Hooks = keyof To
 export function createHooks(): ToolchainHooksApi {
 	const hooksByName = new Map<keyof Toolchain.Hooks, ToolchainHook>();
 
-	function create<Name extends keyof Toolchain.Hooks>(name: Name, options: Pick<ToolchainHook<Name>, 'priority' | 'handle'>): void {
+	function create<Name extends keyof Toolchain.Hooks>(
+		name: Name,
+		options: Pick<ToolchainHook<Name>, 'priority' | 'handle'>
+	): void {
 		const {
 			priority = 0,
-			handle = (hook: (context: Toolchain.Context) => Toolchain.Context, context: Toolchain.Context) => hook(context)
+			handle = (
+				hook: (context: Toolchain.Context) => Toolchain.Context,
+				context: Toolchain.Context
+			) => hook(context)
 		} = options;
 		hooksByName.set(name, { name, priority, handle, hooks: [] });
 	}
@@ -44,7 +50,10 @@ export function createHooks(): ToolchainHooksApi {
 		return hooksByName.has(name);
 	}
 
-	function call<T extends keyof Toolchain.Hooks>(name: T, context: Toolchain.Context): ReturnType<Toolchain.Hooks[T]>[] {
+	function call<T extends keyof Toolchain.Hooks>(
+		name: T,
+		context: Toolchain.Context
+	): ReturnType<Toolchain.Hooks[T]>[] {
 		const { handle, hooks } = hooksByName.get(name);
 
 		const result: ReturnType<Toolchain.Hooks[T]>[] = [];
@@ -63,6 +72,6 @@ export function createHooks(): ToolchainHooksApi {
 		create,
 		add,
 		has,
-		call,
+		call
 	};
 }

@@ -16,9 +16,7 @@ export default definePlugin((context) => {
 		debug('Calling hooks:');
 
 		for (const hook of hooks.hooks) {
-			await Promise.all(
-				hooks.call(hook.name, context)
-			);
+			await Promise.all(hooks.call(hook.name, context));
 
 			debug(` - ${hook.name} (priority: ${hook.priority})`);
 		}

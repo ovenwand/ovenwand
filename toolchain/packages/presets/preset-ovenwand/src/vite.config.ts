@@ -4,16 +4,12 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 	// TODO remove in favor of environment variable
 	define: {
-		'import.meta.env.APP_VERSION': JSON.stringify(env.VERSION),
+		'import.meta.env.APP_VERSION': JSON.stringify(env.VERSION)
 	},
 
-	envPrefix: [
-		'VITE_',
-		'PUBLIC_',
-		'VERCEL_',
-	],
+	envPrefix: ['VITE_', 'PUBLIC_', 'VERCEL_'],
 
 	server: {
-		host: env.HOST,
-	},
+		host: env.HOST
+	}
 });

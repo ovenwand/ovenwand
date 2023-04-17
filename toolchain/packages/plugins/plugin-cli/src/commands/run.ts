@@ -6,10 +6,7 @@ export function createRunCommand(context) {
 
 	const command = new Command('run');
 
-	command
-		.allowUnknownOption()
-		.helpOption(false)
-		.argument('[script]', 'script to run');
+	command.allowUnknownOption().helpOption(false).argument('[script]', 'script to run');
 
 	command.action(async (script, options, command) => {
 		const result = await exec(packageManager.bin, command.args, { cwd, env });

@@ -5,9 +5,8 @@ declare namespace Toolchain {
 		cache: ToolchainCacheApi;
 	}
 
-	interface Hooks {
-
-	}
+	/* eslint-disable-next-line @typescript-eslint/no-empty-interface */
+	interface Hooks {}
 
 	interface MetaLocation {
 		cache: string;

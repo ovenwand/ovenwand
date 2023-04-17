@@ -11,7 +11,5 @@ const { loadElectronEntry } = require('./utils.cjs');
 
 	await api.setup();
 
-	await api.loadApp(
-		api.createWindow()
-	);
+	await api.loadApp(api.createWindow());
 })();

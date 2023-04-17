@@ -8,7 +8,7 @@ export default definePlugin((context) => {
 		async configure(config: Toolchain.Config) {
 			config.vite = {
 				enabled: true,
-				configs: [],
+				configs: []
 			};
 
 			return config;
@@ -19,26 +19,25 @@ export default definePlugin((context) => {
 				return;
 			}
 
-			const { createDevCommand, createBuildCommand, createOptimizeCommand, createPreviewCommand } = await import('./commands/index.js');
+			const { createDevCommand, createBuildCommand, createPreviewCommand } = await import(
+				'./commands/index.js'
+			);
 
 			const devCommand = createDevCommand(context);
 			const buildCommand = createBuildCommand(context);
-			const optimizeCommand = createOptimizeCommand(context);
 			const previewCommand = createPreviewCommand(context);
 
 			const viteCommand = new Command('vite')
 				.addCommand(devCommand)
 				.addCommand(buildCommand)
-				.addCommand(optimizeCommand)
 				.addCommand(previewCommand);
 
 			if (meta.package) {
-				cli.commands.add(viteCommand)
+				cli.commands.add(viteCommand);
 				cli.commands.add(devCommand);
 				cli.commands.add(buildCommand);
-				cli.commands.add(optimizeCommand);
 				cli.commands.add(previewCommand);
 			}
-		},
-	}
+		}
+	};
 });

@@ -10,5 +10,5 @@ export default {
 			storybooks[key] = { name, url };
 			return storybooks;
 		}, {});
-	},
-}
+	}
+};

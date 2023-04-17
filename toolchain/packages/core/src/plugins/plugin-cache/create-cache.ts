@@ -3,7 +3,9 @@ import { dirname, resolve } from 'node:path';
 import { pathExists } from '../../utils/path-exists.js';
 
 export interface ToolchainCacheApi {
+	/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 	read(name: string, options?: any): Promise<Buffer>;
+	/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 	write(name: string, data: any): Promise<void>;
 	has(name: string): Promise<boolean>;
 	invalidate(name: string): Promise<void>;
@@ -70,6 +72,7 @@ export function createCache(context: Toolchain.Context): ToolchainCacheApi {
 		return writeCache(cacheFilePath, data);
 	}
 
+	/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 	async function read(name: string, options?: any): Promise<Buffer> {
 		if (inMemory.has(name)) {
 			return inMemory.get(name);

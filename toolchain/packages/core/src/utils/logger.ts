@@ -1,4 +1,4 @@
-import { env, stdout } from 'node:process';
+import { stdout } from 'node:process';
 import { cursorTo, clearScreenDown } from 'node:readline';
 import createDebug from 'debug';
 
@@ -19,7 +19,7 @@ export function createLogger(): ToolchainLoggerApi {
 	const error = (...args) => console.error(...args);
 	const clear = () => console.clear();
 
-	const debug = (name: string = 'toolchain') => {
+	const debug = (name = 'toolchain') => {
 		return createDebug(name);
 	};
 
@@ -38,6 +38,6 @@ export function createLogger(): ToolchainLoggerApi {
 		error,
 		debug,
 		clear,
-		clearScreen,
+		clearScreen
 	};
 }

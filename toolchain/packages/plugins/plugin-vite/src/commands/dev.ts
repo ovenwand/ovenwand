@@ -7,12 +7,10 @@ export function createDevCommand({ config }) {
 	const command = new Command('dev');
 
 	command.action(async () => {
-		const  { createServer } = await import('vite');
+		const { createServer } = await import('vite');
 		const startupBegin = performance.now();
 
-		const server = await createServer(
-			await resolveConfig(config.vite)
-		);
+		const server = await createServer(await resolveConfig(config.vite));
 
 		await server.listen();
 

@@ -5,7 +5,6 @@ declare namespace Toolchain {
 		hooks: ToolchainHooksApi;
 	}
 
-	interface Hooks {
-
-	}
+	/* eslint-disable-next-line @typescript-eslint/no-empty-interface */
+	interface Hooks {}
 }

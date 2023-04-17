@@ -1,7 +1,6 @@
 declare namespace Toolchain {
-	interface Config {
-
-	}
+	/* eslint-disable-next-line @typescript-eslint/no-empty-interface */
+	interface Config {}
 
 	interface Context {
 		config: Config;

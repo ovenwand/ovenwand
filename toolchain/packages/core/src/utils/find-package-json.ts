@@ -8,7 +8,7 @@ export async function findPackageJson(path, root = '/'): Promise<string | null> 
 
 	const packageJsonPath = resolve(path, 'package.json');
 
-	if (!await pathExists(packageJsonPath)) {
+	if (!(await pathExists(packageJsonPath))) {
 		return findPackageJson(resolve(path, '..'), root);
 	}
 

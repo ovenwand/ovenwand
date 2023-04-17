@@ -5,7 +5,7 @@ import { DEFAULT_TURBO_JSON } from './default-turbo-json';
 export async function ensureTurboJson(turboJsonFile, defaultTurboJson = DEFAULT_TURBO_JSON) {
 	try {
 		await access(turboJsonFile);
-	} catch(e) {
+	} catch (e) {
 		if (e.code !== 'ENOENT') {
 			throw new Error(e);
 		}

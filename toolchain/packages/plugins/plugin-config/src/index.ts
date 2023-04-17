@@ -26,6 +26,6 @@ export default definePlugin((context) => {
 				config[name] ??= {};
 				config[name].enabled ??= env[`TOOLCHAIN_${envName}`] !== '0';
 			}
-		},
+		}
 	};
 });

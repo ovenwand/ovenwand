@@ -3,7 +3,7 @@
 	import { StoryblokComponent } from '@storyblok/svelte';
 	import { useStories, type IBlog, type Story } from '$lib/content';
 
-	export let data: { stories:  Story<IBlog>[] };
+	export let data: { stories: Story<IBlog>[] };
 
 	const { stories = writable([]) } = useStories(data.stories, {
 		resolveRelations: ['blog.author']

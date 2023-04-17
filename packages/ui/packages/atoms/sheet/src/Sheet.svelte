@@ -17,7 +17,7 @@
 		'overflow-hidden': rounded,
 		'bg-gray-100 dark:bg-gray-800': background,
 		rounded,
-		'drop-shadow-md': shadow,
+		'drop-shadow-md': shadow
 	});
 </script>
 
