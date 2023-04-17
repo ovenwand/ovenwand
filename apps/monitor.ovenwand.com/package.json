@@ -33,7 +33,7 @@
 		"@sveltejs/kit": "^1.15.5",
 		"@types/cookie": "^0.5.1",
 		"@types/d3-scale": "^4.0.2",
-		"@types/jsonwebtoken": "^8.5.9",
+		"@types/jsonwebtoken": "^9.0.1",
 		"svelte": "^3.58.0",
 		"svelte-check": "^2.9.2",
 		"tslib": "^2.4.1",
