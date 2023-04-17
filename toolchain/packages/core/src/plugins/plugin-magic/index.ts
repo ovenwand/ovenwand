@@ -40,7 +40,6 @@ export default definePlugin((context) => {
 
 		for (const plugin of context.plugins) {
 			if (typeof plugin === 'function' && !corePlugins.includes(plugin)) {
-
 				debug(`Loading "${plugin.type}:${plugin.name}"`);
 				await plugin(context);
 			}

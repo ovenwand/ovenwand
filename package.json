@@ -11,14 +11,10 @@
 		"lint": "start lint",
 		"format": "start format",
 		"check": "run() { pnpm --filter @ovenwand/$1 check ${@:2}; }; run",
-		"test": "cypress open-ct --config-file .kit/config/cypress.json",
-		"test:run": "cypress run-ct --config-file .kit/config/cypress.json",
-		"ci:test": "pnpm test:run -- --parallel --record --key e53958d1-1aed-486c-b4c0-c97cdd7b342b",
 		"ci:version": "pnpm changeset version && pnpm install --no-frozen-lockfile",
 		"ci:publish": "pnpm changeset tag"
 	},
 	"devDependencies": {
-		"@cypress/vite-dev-server": "^2.2.3",
 		"@ovenwand/kit.cli": "workspace:*",
 		"@ovenwand/kit.scaffold": "workspace:*",
 		"@ovenwand/toolchain": "workspace:*",
@@ -26,12 +22,7 @@
 		"@ovenwand/toolchain.plugins.doppler": "workspace:*",
 		"@ovenwand/toolchain.plugins.lint": "workspace:*",
 		"@ovenwand/toolchain.plugins.scaffold": "workspace:*",
-		"@ovenwand/toolchain.presets.monorepo": "workspace:*",
-		"@sveltejs/vite-plugin-svelte": "^2.0.2",
-		"cypress": "^9.7.0",
-		"svelte": "^3.58.0",
-		"typescript": "^4.9.3",
-		"vite": "^4.2.1"
+		"@ovenwand/toolchain.presets.monorepo": "workspace:*"
 	},
 	"lint-staged": {
 		"*.{js,ts,svelte,vue,svelte,css,md,json}": "start format --disable-eslint",

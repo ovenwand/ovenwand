@@ -19,9 +19,9 @@ export default definePlugin((context) => {
 					plugins: [
 						electron({
 							entry: mainElectronEntry,
-							env: context.env,
-						}),
-					],
+							env: context.env
+						})
+					]
 				});
 			}
 
@@ -29,9 +29,7 @@ export default definePlugin((context) => {
 		},
 
 		async resolve({ cli }) {
-			cli.commands.add(
-				createElectronCommand(context)
-			);
+			cli.commands.add(createElectronCommand(context));
 		}
 	};
 });

@@ -8,6 +8,6 @@ export function createCommands(program) {
 		add(command, options?) {
 			program.addCommand(command, options);
 			commands.set(command.name(), command);
-		},
+		}
 	};
 }

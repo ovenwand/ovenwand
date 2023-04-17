@@ -16,6 +16,6 @@ export function createCli(): ToolchainCliApi {
 	return {
 		commands: createCommands(program),
 		program,
-		argv,
+		argv
 	};
 }

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import {
 	type ApolloCache,
 	ApolloError,
@@ -70,3 +72,5 @@ export async function mutate<
 		throw e;
 	}
 }
+
+/* eslint-enable @typescript-eslint/no-explicit-any */

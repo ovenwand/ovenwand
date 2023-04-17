@@ -5,6 +5,6 @@ export const setup = createCommand(async (...commandArgs) => {
 	const { paths } = context;
 
 	await doppler(['login'], {
-		paths,
+		paths
 	});
 });

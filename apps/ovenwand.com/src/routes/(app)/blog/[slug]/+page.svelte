@@ -5,7 +5,7 @@
 	export let data;
 
 	const { story } = useStory(data.story, {
-		resolveRelations: ['blog.author'],
+		resolveRelations: ['blog.author']
 	});
 </script>
 

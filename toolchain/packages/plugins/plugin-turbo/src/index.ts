@@ -16,7 +16,7 @@ export default definePlugin((context) => {
 
 			config.turbo = {
 				enabled: true,
-				config: await readTurboJson(turboJsonFile),
+				config: await readTurboJson(turboJsonFile)
 			};
 
 			return config;
@@ -27,10 +27,7 @@ export default definePlugin((context) => {
 				return;
 			}
 
-			cli.commands.add(
-				createTurboCommand(context),
-				{ isDefault: true }
-			);
-		},
+			cli.commands.add(createTurboCommand(context), { isDefault: true });
+		}
 	};
 });

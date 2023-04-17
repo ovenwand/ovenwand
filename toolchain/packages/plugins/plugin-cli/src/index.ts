@@ -1,4 +1,8 @@
+/* eslint-disable @typescript-eslint/triple-slash-reference */
+
 /// <reference path="../../plugin-cli/src/ambient.d.ts" />
+
+/* eslint-enable @typescript-eslint/triple-slash-reference */
 
 import { definePlugin } from '@ovenwand/toolchain.core';
 import { createRunCommand } from './commands/run.js';
@@ -22,10 +26,7 @@ export default definePlugin((context) => {
 				return;
 			}
 
-			cli.commands.add(
-				createRunCommand(context),
-				{ isDefault: true }
-			);
+			cli.commands.add(createRunCommand(context), { isDefault: true });
 		},
 
 		async run({ cli, config }) {

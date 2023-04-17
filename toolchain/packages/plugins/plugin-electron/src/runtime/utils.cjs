@@ -20,14 +20,15 @@ module.exports.loadElectronEntry = async function loadElectronEntry(entry) {
 
 			await app.whenReady();
 		},
-		createWindow: () => new BrowserWindow({
-			width: 800,
-			height: 600,
-			webPreferences: {
-				sandbox: false,
-				preload: resolve(__dirname, 'preload.cjs'),
-			},
-		}),
+		createWindow: () =>
+			new BrowserWindow({
+				width: 800,
+				height: 600,
+				webPreferences: {
+					sandbox: false,
+					preload: resolve(__dirname, 'preload.cjs')
+				}
+			}),
 		async loadApp(targetWindow) {
 			try {
 				await targetWindow.loadURL(env.ELECTRON_APP_URL);
@@ -42,7 +43,7 @@ module.exports.loadElectronEntry = async function loadElectronEntry(entry) {
 					throw e;
 				}
 			}
-		},
+		}
 	};
 
 	try {
@@ -51,11 +52,11 @@ module.exports.loadElectronEntry = async function loadElectronEntry(entry) {
 		api.setup = setup ?? api.setup;
 		api.createWindow = createWindow ?? api.createWindow;
 		api.loadApp = loadApp ?? api.loadApp;
-	} catch(e) {
+	} catch (e) {
 		if (e.code !== 'ENOENT') {
 			throw e;
 		}
 	}
 
 	return api;
-}
+};

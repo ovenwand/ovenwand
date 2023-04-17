@@ -13,5 +13,5 @@ export const footer = {
 
 	setLinks(links: Link[]) {
 		linkStore.set(links);
-	},
+	}
 };

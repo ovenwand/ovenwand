@@ -22,7 +22,7 @@ export default {
 				default: (options) => `./toolchain/packages/presets/preset-${options.name}`,
 				filter: (input) => resolve(input),
 				validate: required('Package location is required')
-			},
+			}
 		],
 		actions: [
 			{

@@ -3,18 +3,22 @@
 	import { Footer, Header, Layout } from '@ovenwand/app';
 	import { Column, Grid } from '@ovenwand/ui';
 	import { page } from '$app/stores';
-	import { ApplicationSidebar, Navigation } from '$lib/components';
+	import { /*ApplicationSidebar, */ Navigation } from '$lib/components';
 </script>
 
 <Layout header footer>
 	<svelte:fragment slot="before-content">
 		<Header>
-			<Navigation/>
+			<Navigation />
 		</Header>
 	</svelte:fragment>
 
 	<Grid class="min-h-full">
-		<Column class="flex flex-col items-center justify-center min-h-full" columns={{ md: 8 }} offset={{ md: 2 }}>
+		<Column
+			class="flex flex-col items-center justify-center min-h-full"
+			columns={{ md: 8 }}
+			offset={{ md: 2 }}
+		>
 			<h1>{$page.status}</h1>
 			<h3>{$page.error.message}</h3>
 		</Column>
@@ -25,6 +29,6 @@
 	</svelte:fragment>
 
 	<svelte:fragment slot="outside">
-<!--		<ApplicationSidebar />-->
+		<!--		<ApplicationSidebar />-->
 	</svelte:fragment>
 </Layout>

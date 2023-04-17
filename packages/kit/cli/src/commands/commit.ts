@@ -15,7 +15,7 @@ export async function commit() {
 	return program;
 }
 
-const createCommit = (program) =>
+const createCommit = () =>
 	createCommand(async (...commandArgs) => {
 		const context = commandArgs.pop();
 		const options = commandArgs.pop();

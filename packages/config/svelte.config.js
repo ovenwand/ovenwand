@@ -13,7 +13,7 @@ const config = {
 	kit: {
 		adapter: vercel({
 			edge: env.EDGE === '1',
-			split: env.SPLIT === '1',
+			split: env.SPLIT === '1'
 		})
 	}
 };

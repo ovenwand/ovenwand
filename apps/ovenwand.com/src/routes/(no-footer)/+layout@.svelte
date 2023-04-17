@@ -7,7 +7,7 @@
 <Layout header>
 	<svelte:fragment slot="before-content">
 		<Header>
-			<Navigation/>
+			<Navigation />
 		</Header>
 	</svelte:fragment>
 

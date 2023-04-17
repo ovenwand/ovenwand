@@ -3,6 +3,7 @@ declare namespace Toolchain {
 
 	interface MetaLocation {
 		path: string;
+		/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
 		manifest: any;
 	}
 
@@ -17,7 +18,6 @@ declare namespace Toolchain {
 		meta: Meta;
 	}
 
-	interface Hooks {
-
-	}
+	/* eslint-disable-next-line @typescript-eslint/no-empty-interface */
+	interface Hooks {}
 }

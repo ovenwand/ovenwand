@@ -11,5 +11,5 @@ export default defineConfig({
 
 	ssr: {
 		noExternal: ['@ovenwand/**'] // TODO hopefully remove one day?
-	},
+	}
 });

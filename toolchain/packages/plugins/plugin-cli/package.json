@@ -1,21 +1,21 @@
 {
-  "name": "@ovenwand/toolchain.plugins.cli",
-  "version": "0.0.2",
-  "type": "module",
-  "exports": {
-    ".": "./src/index.ts"
-  },
-  "dependencies": {
-    "commander": "^9.4.1"
-  },
-  "devDependencies": {
-    "@ovenwand/config": "workspace:^0.1.6",
-    "@ovenwand/toolchain.cli": "workspace:^0.0.1",
-    "@ovenwand/toolchain.core": "workspace:^0.0.1",
-    "@types/node": "^18.11.9"
-  },
-  "peerDependencies": {
-    "@ovenwand/toolchain.cli": "workspace:^0.0.1",
-    "@ovenwand/toolchain.core": "workspace:^0.0.1"
-  }
+	"name": "@ovenwand/toolchain.plugins.cli",
+	"version": "0.0.2",
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"dependencies": {
+		"commander": "^9.4.1"
+	},
+	"devDependencies": {
+		"@ovenwand/config": "workspace:^0.1.6",
+		"@ovenwand/toolchain.cli": "workspace:^0.0.1",
+		"@ovenwand/toolchain.core": "workspace:^0.0.1",
+		"@types/node": "^18.11.9"
+	},
+	"peerDependencies": {
+		"@ovenwand/toolchain.cli": "workspace:^0.0.1",
+		"@ovenwand/toolchain.core": "workspace:^0.0.1"
+	}
 }

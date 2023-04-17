@@ -11,7 +11,11 @@
 </script>
 
 {#if active}
-	<Overlay class="flex items-center justify-center" {back} on:click={back || (() => active = false)}>
+	<Overlay
+		class="flex items-center justify-center"
+		{back}
+		on:click={back || (() => (active = false))}
+	>
 		<Grid class="pointer-events-none" gapOutside={$xs}>
 			<Column
 				class="pointer-events-auto"

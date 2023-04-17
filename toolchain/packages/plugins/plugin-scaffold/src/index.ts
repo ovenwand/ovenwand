@@ -15,9 +15,7 @@ export default definePlugin((context) => {
 				return;
 			}
 
-			cli.commands.add(
-				createScaffoldCommand(context)
-			);
-		},
+			cli.commands.add(createScaffoldCommand(context));
+		}
 	};
 });

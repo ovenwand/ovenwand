@@ -10,6 +10,7 @@ export function createToolchain() {
 	const logger = createLogger();
 	const debug = logger.debug('toolchain');
 
+	/* eslint-disable-next-line no-async-promise-executor */
 	const created = new Promise<ToolchainCoreContext>(async (done) => {
 		const context: Partial<ToolchainCoreContext> = {};
 
@@ -25,7 +26,7 @@ export function createToolchain() {
 			await import('./plugins/plugin-hooks/index.js'),
 			await import('./plugins/plugin-env/index.js'),
 			await import('./plugins/plugin-magic/index.js'),
-			await import('./plugins/plugin-lifecycle/index.js'),
+			await import('./plugins/plugin-lifecycle/index.js')
 		];
 
 		debug(`Found: ${corePlugins.map((plugin) => plugin.name).join(', ')}`);

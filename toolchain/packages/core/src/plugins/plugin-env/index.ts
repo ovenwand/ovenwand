@@ -14,13 +14,13 @@ export default definePlugin((context: Toolchain.Context) => {
 		handle: async (hook) => {
 			context.env = await hook(context.env, context);
 			return context.env;
-		},
+		}
 	});
 
 	return {
 		async configure(config) {
 			config.env = {};
 			return config;
-		},
+		}
 	};
 });

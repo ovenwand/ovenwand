@@ -4,7 +4,7 @@ export async function pathExists(path) {
 	try {
 		await access(path);
 		return true;
-	} catch(e) {
+	} catch (e) {
 		if (e.code !== 'ENOENT') {
 			throw new Error(e);
 		}

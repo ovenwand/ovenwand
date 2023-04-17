@@ -1,6 +1,6 @@
 import { env } from 'node:process';
 import { resolve } from 'node:path';
-import { exec/*, exit*/ } from '@ovenwand/toolchain.cli';
+import { exec /*, exit*/ } from '@ovenwand/toolchain.cli';
 
 export interface VitePluginElectronOptions {
 	entry?: string;
@@ -26,8 +26,8 @@ export function electron(options: VitePluginElectronOptions = {}) {
 					...options.env,
 					ELECTRON_APP_URL: url, // TODO support https
 					ELECTRON_ENTRY_FILE: resolve('./src/electron.cjs'), // TODO support dynamic entry point
-					ELECTRON_PRELOAD_FILE: resolve('./src/preload.cjs'), // TODO support dynamic entry point
-				},
+					ELECTRON_PRELOAD_FILE: resolve('./src/preload.cjs') // TODO support dynamic entry point
+				}
 			});
 		}
 
@@ -40,11 +40,12 @@ export function electron(options: VitePluginElectronOptions = {}) {
 	function configureElectronDevServer(server) {
 		const listen = server.httpServer.listen.bind(server.httpServer);
 
-		server.httpServer.listen = (port, host, callback) => listen(port, host, (...args) => {
-			const url = new URL(`${config.server.https ? 'https' : 'http'}://${host}:${port}`);
-			callback?.(...args);
-			serve(url.toString());
-		});
+		server.httpServer.listen = (port, host, callback) =>
+			listen(port, host, (...args) => {
+				const url = new URL(`${config.server.https ? 'https' : 'http'}://${host}:${port}`);
+				callback?.(...args);
+				serve(url.toString());
+			});
 	}
 
 	return {
@@ -66,6 +67,6 @@ export function electron(options: VitePluginElectronOptions = {}) {
 
 		closeBundle() {
 			electronProcess?.child.kill();
-		},
+		}
 	};
 }

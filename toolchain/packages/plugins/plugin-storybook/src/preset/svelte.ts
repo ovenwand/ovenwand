@@ -1,5 +1,3 @@
 export default {
-	addons: [
-		"@storybook/addon-svelte-csf"
-	]
-}
+	addons: ['@storybook/addon-svelte-csf']
+};
