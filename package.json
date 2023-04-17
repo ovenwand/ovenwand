@@ -18,7 +18,7 @@
 		"ci:publish": "pnpm changeset tag"
 	},
 	"devDependencies": {
-		"@cypress/vite-dev-server": "^2.2.3",
+		"@cypress/vite-dev-server": "^5.0.0",
 		"@ovenwand/kit.cli": "workspace:*",
 		"@ovenwand/kit.scaffold": "workspace:*",
 		"@ovenwand/toolchain": "workspace:*",
