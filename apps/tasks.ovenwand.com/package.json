@@ -13,7 +13,7 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"dependencies": {
-		"@ovenwand/app": "workspace:^0.1.26",
+		"@ovenwand/app": "workspace:^0.1.27",
 		"@ovenwand/auth": "workspace:^0.0.2",
 		"@ovenwand/env": "workspace:0.0.2",
 		"@ovenwand/gql": "workspace:^0.0.3",
@@ -26,7 +26,7 @@
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:0.1.12",
-		"@ovenwand/toolchain.plugins.doppler": "workspace:^0.0.1",
+		"@ovenwand/toolchain.plugins.doppler": "workspace:^0.0.2",
 		"@ovenwand/toolchain.plugins.electron": "workspace:^0.0.1",
 		"@ovenwand/toolchain.plugins.vite": "workspace:^0.0.4",
 		"@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.4",

@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ui.docs",
-	"version": "0.0.21",
+	"version": "0.0.22",
 	"private": true,
 	"description": "",
 	"main": "src/index.ts",
@@ -12,7 +12,7 @@
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:0.1.12",
-		"@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.4",
+		"@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.5",
 		"@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.4",
 		"@ovenwand/ui.button": "workspace:^0.4.1",
 		"@ovenwand/ui.calendar": "workspace:^0.0.5",

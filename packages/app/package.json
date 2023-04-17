@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/app",
-	"version": "0.1.26",
+	"version": "0.1.27",
 	"private": true,
 	"description": "",
 	"type": "module",

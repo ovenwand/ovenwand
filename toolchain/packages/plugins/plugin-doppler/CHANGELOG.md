@@ -1,5 +1,11 @@
 # @ovenwand/toolchain.plugins.doppler
 
+## 0.0.2
+
+### Patch Changes
+
+- f04bd1d: update doppler and prevent crashes when improperly configured
+
 ## 0.0.1
 
 ### Patch Changes

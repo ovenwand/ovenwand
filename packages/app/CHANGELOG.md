@@ -1,5 +1,12 @@
 # @ovenwand/app
 
+## 0.1.27
+
+### Patch Changes
+
+- cf527b2: Disable monitoring when no project and url are provided
+  - @ovenwand/ui@0.0.25
+
 ## 0.1.26
 
 ### Patch Changes

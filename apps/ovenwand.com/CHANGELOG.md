@@ -1,5 +1,13 @@
 # @ovenwand/ovenwand.com
 
+## 0.13.14
+
+### Patch Changes
+
+- Updated dependencies [cf527b2]
+  - @ovenwand/app@0.1.27
+  - @ovenwand/ui@0.0.25
+
 ## 0.13.13
 
 ### Patch Changes
