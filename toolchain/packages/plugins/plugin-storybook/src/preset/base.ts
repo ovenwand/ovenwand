@@ -11,5 +11,5 @@ export default {
 		}))
 	],
 
-	addons: ['@storybook/addon-essentials']
+	addons: ['@storybook/addon-essentials', '@storybook/addon-a11y']
 };
