@@ -6,7 +6,12 @@ export const parameters = {
 	controls: {
 		matchers: {
 			color: /(background|color)$/i,
-			date: /Date$/
+			date: /Date$/i
+		}
+	},
+	options: {
+		storySort: {
+			order: ['Atoms', 'Molecules', 'Organisms']
 		}
 	}
 };
