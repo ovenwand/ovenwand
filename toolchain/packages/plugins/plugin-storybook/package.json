@@ -20,6 +20,7 @@
 		"@ovenwand/toolchain.cli": "workspace:^0.0.1",
 		"@ovenwand/toolchain.core": "workspace:^0.0.1",
 		"@storybook/addon-a11y": "^7.0.6",
+		"@storybook/addon-docs": "^7.0.6",
 		"@storybook/addon-essentials": "^7.0.5",
 		"@storybook/addon-storysource": "^7.0.6",
 		"@storybook/addon-svelte-csf": "^3.0.1",

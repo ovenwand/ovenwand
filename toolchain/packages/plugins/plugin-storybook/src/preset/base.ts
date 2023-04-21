@@ -9,5 +9,10 @@ export default {
 		}))
 	],
 
-	addons: ['@storybook/addon-essentials', '@storybook/addon-a11y', '@storybook/addon-storysource']
+	addons: [
+		'@storybook/addon-essentials',
+		'@storybook/addon-a11y',
+		'@storybook/addon-storysource',
+		'@storybook/addon-docs'
+	]
 };
