@@ -12,9 +12,11 @@
 </script>
 
 <div class="fixed bg-gray-900/80 inset-0 {overlayClassName}" transition:fade>
-	<a class="fixed inset-0" href={back} title="Go back" on:click>
-		<span class="hidden">Go back</span>
-	</a>
+	{#if back}
+		<a class="fixed inset-0" href={back} title="Go back" on:click>
+			<span class="hidden">Go back</span>
+		</a>
+	{/if}
 
 	<slot />
 </div>
