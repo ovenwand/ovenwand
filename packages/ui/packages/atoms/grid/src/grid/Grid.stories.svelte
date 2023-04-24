@@ -5,7 +5,7 @@
 </script>
 
 <Meta
-	title="Atoms/Grid/Grid2"
+	title="Atoms/Grid/Grid"
 	component={Grid}
 	parameters={{
 		layout: 'fullscreen',
