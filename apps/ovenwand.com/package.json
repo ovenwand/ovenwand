@@ -37,7 +37,7 @@
 		"@ovenwand/toolchain.presets.ssl": "workspace:^0.0.4",
 		"@ovenwand/toolchain.presets.sveltekit": "workspace:^0.0.4",
 		"@ovenwand/toolchain.presets.vue": "workspace:^0.0.4",
-		"@storyblok/svelte": "^2.3.7",
+		"@storyblok/svelte": "^3.0.0",
 		"@sveltejs/kit": "^1.15.8",
 		"@types/react": "^18.0.25",
 		"@types/react-dom": "^18.0.9",
