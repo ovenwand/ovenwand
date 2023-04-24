@@ -32,7 +32,7 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       svelte: ^3.58.0
-      typescript: ^4.9.5
+      typescript: ^5.0.4
     devDependencies:
       '@ovenwand/config': link:../../packages/config
       '@ovenwand/toolchain.plugins.doppler': link:../../toolchain/packages/plugins/plugin-doppler
@@ -42,7 +42,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       svelte: 3.58.0
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   apps/monitor.ovenwand.com:
     specifiers:
@@ -68,7 +68,7 @@ importers:
       svelte: ^3.58.0
       svelte-check: ^3.2.0
       tslib: ^2.4.1
-      typescript: ^4.9.5
+      typescript: ^5.0.4
       vite: ^4.2.1
     dependencies:
       '@ovenwand/app': link:../../packages/app
@@ -94,7 +94,7 @@ importers:
       svelte: 3.58.0
       svelte-check: 3.2.0_svelte@3.58.0
       tslib: 2.4.1
-      typescript: 4.9.5
+      typescript: 5.0.4
       vite: 4.2.1
 
   apps/ovenwand.com:
@@ -127,7 +127,7 @@ importers:
       svelte: ^3.58.0
       svelte-check: ^3.2.0
       tslib: ^2.4.1
-      typescript: ^4.9.5
+      typescript: ^5.0.4
       vite: ^4.2.1
       vue: ^3.2.45
     dependencies:
@@ -161,7 +161,7 @@ importers:
       svelte: 3.58.0
       svelte-check: 3.2.0_svelte@3.58.0
       tslib: 2.4.1
-      typescript: 4.9.5
+      typescript: 5.0.4
       vite: 4.2.1
 
   apps/tasks.ovenwand.com:
@@ -188,7 +188,7 @@ importers:
       svelte: ^3.58.0
       svelte-check: ^3.2.0
       tslib: ^2.4.1
-      typescript: ^4.9.5
+      typescript: ^5.0.4
       vite: ^4.2.1
     dependencies:
       '@ovenwand/app': link:../../packages/app
@@ -214,7 +214,7 @@ importers:
       svelte: 3.58.0
       svelte-check: 3.2.0_svelte@3.58.0
       tslib: 2.4.1
-      typescript: 4.9.5
+      typescript: 5.0.4
       vite: 4.2.1
 
   packages/app:
@@ -239,13 +239,13 @@ importers:
       '@ovenwand/config': workspace:0.1.12
       '@ovenwand/ui.button': workspace:^0.4.1
       jsonwebtoken: ^9.0.0
-      typescript: ^4.9.5
+      typescript: ^5.0.4
     dependencies:
       '@ovenwand/ui.button': link:../ui/packages/atoms/button
       jsonwebtoken: 9.0.0
     devDependencies:
       '@ovenwand/config': link:../config
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   packages/brand:
     specifiers:
@@ -272,7 +272,7 @@ importers:
   packages/config:
     specifiers:
       '@sveltejs/adapter-vercel': ^2.4.2
-      '@tsconfig/svelte': ^3.0.0
+      '@tsconfig/svelte': ^4.0.1
       autoprefixer: ^10.4.13
       postcss: ^8.4.19
       svelte: ^3.58.0
@@ -280,7 +280,7 @@ importers:
       tailwindcss: ^3.2.4
     dependencies:
       '@sveltejs/adapter-vercel': 2.4.2
-      '@tsconfig/svelte': 3.0.0
+      '@tsconfig/svelte': 4.0.1
       autoprefixer: 10.4.13_postcss@8.4.19
       postcss: 8.4.19
       svelte: 3.58.0
@@ -298,13 +298,13 @@ importers:
       '@apollo/client': ^3.7.1
       '@ovenwand/config': workspace:0.1.12
       graphql: ^16.6.0
-      typescript: ^4.9.5
+      typescript: ^5.0.4
     dependencies:
       '@apollo/client': 3.7.1_graphql@16.6.0
       graphql: 16.6.0
     devDependencies:
       '@ovenwand/config': link:../config
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   packages/kit/cli:
     specifiers:
@@ -345,11 +345,11 @@ importers:
       prettier: ^2.8.0
       prettier-plugin-svelte: ^2.8.1
       svelte: ^3.58.0
-      typescript: ^4.9.5
+      typescript: ^5.0.4
     devDependencies:
       '@ovenwand/config': link:../../config
-      '@typescript-eslint/eslint-plugin': 5.44.0_4kbswhbwl5syvdj4jodacfm2ou
-      '@typescript-eslint/parser': 5.44.0_pku7h6lsbnh7tcsfjudlqd5qce
+      '@typescript-eslint/eslint-plugin': 5.44.0_uncsdyc4eduykjjbgu77ycnxqq
+      '@typescript-eslint/parser': 5.44.0_dewl7jrzrufmm6i6j6pp2pqhja
       eslint: 8.28.0
       eslint-config-prettier: 8.5.0_eslint@8.28.0
       eslint-plugin-react: 7.31.11_eslint@8.28.0
@@ -358,7 +358,7 @@ importers:
       prettier: 2.8.0
       prettier-plugin-svelte: 2.8.1_uh5bh26ljxs23uctbnwfuxtady
       svelte: 3.58.0
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   packages/kit/scaffold:
     specifiers:
@@ -407,26 +407,26 @@ importers:
       '@ovenwand/config': workspace:0.1.12
       pusher: 5.1.2
       pusher-js: ^7.6.0
-      typescript: ^4.9.5
+      typescript: ^5.0.4
     dependencies:
       pusher: 5.1.2
       pusher-js: 7.6.0
     devDependencies:
       '@ovenwand/config': link:../../config
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   packages/services/sentry:
     specifiers:
       '@ovenwand/config': workspace:0.1.12
       '@sentry/node': ^7.21.1
       '@sentry/tracing': ^7.21.1
-      typescript: ^4.9.5
+      typescript: ^5.0.4
     dependencies:
       '@sentry/node': 7.21.1
       '@sentry/tracing': 7.21.1
     devDependencies:
       '@ovenwand/config': link:../../config
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   packages/test:
     specifiers:
@@ -484,7 +484,7 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       svelte: ^3.58.0
-      typescript: ^4.9.5
+      typescript: ^5.0.4
     dependencies:
       '@ovenwand/toolchain.presets.ovenwand': link:../../toolchain/packages/presets/preset-ovenwand
       '@ovenwand/ui.button': link:packages/atoms/button
@@ -505,7 +505,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       svelte: 3.58.0
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   packages/ui/docs:
     specifiers:
@@ -521,7 +521,7 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       svelte: ^3.58.0
-      typescript: ^4.9.5
+      typescript: ^5.0.4
     devDependencies:
       '@ovenwand/config': link:../../config
       '@ovenwand/toolchain.plugins.storybook': link:../../../toolchain/packages/plugins/plugin-storybook
@@ -535,7 +535,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       svelte: 3.58.0
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   packages/ui/packages/atoms/button:
     specifiers:
@@ -659,13 +659,13 @@ importers:
       '@ovenwand/config': workspace:0.1.12
       '@ovenwand/util.browser': workspace:^0.0.13
       '@ovenwand/util.date': workspace:0.0.3
-      typescript: ^4.9.5
+      typescript: ^5.0.4
     dependencies:
       '@ovenwand/util.browser': link:../../../../util/browser
       '@ovenwand/util.date': link:../../../../util/date
     devDependencies:
       '@ovenwand/config': link:../../../../config
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   packages/util:
     specifiers:
@@ -757,7 +757,7 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       svelte: ^3.58.0
-      typescript: ^4.9.5
+      typescript: ^5.0.4
     devDependencies:
       '@ovenwand/config': link:../../packages/config
       '@ovenwand/toolchain.plugins.storybook': link:../packages/plugins/plugin-storybook
@@ -765,7 +765,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       svelte: 3.58.0
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   toolchain/packages/cli:
     specifiers:
@@ -843,13 +843,13 @@ importers:
       '@ovenwand/toolchain.cli': workspace:^0.0.1
       '@ovenwand/toolchain.core': workspace:^0.0.1
       electron: ^21.3.1
-      typescript: ^4.9.5
+      typescript: ^5.0.4
     dependencies:
       '@ovenwand/toolchain.cli': link:../../cli
       '@ovenwand/toolchain.core': link:../../core
       electron: 21.3.1
     devDependencies:
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   toolchain/packages/plugins/plugin-lint:
     specifiers:
@@ -867,10 +867,10 @@ importers:
       prettier: ^2.8.0
       prettier-plugin-svelte: ^2.8.1
       svelte: ^3.58.0
-      typescript: ^4.9.5
+      typescript: ^5.0.4
     dependencies:
-      '@typescript-eslint/eslint-plugin': 5.44.0_4kbswhbwl5syvdj4jodacfm2ou
-      '@typescript-eslint/parser': 5.44.0_pku7h6lsbnh7tcsfjudlqd5qce
+      '@typescript-eslint/eslint-plugin': 5.44.0_uncsdyc4eduykjjbgu77ycnxqq
+      '@typescript-eslint/parser': 5.44.0_dewl7jrzrufmm6i6j6pp2pqhja
       eslint: 8.28.0
       eslint-config-prettier: 8.5.0_eslint@8.28.0
       eslint-plugin-react: 7.31.11_eslint@8.28.0
@@ -884,7 +884,7 @@ importers:
       '@ovenwand/toolchain.core': link:../../core
       '@types/node': 18.11.9
       svelte: 3.58.0
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   toolchain/packages/plugins/plugin-scaffold:
     specifiers:
@@ -921,7 +921,7 @@ importers:
       react-dom: ^18.2.0
       storybook: ^7.0.5
       svelte: ^3.58.0
-      typescript: ^4.9.5
+      typescript: ^5.0.4
     dependencies:
       globby: 13.1.2
       storybook: 7.0.5
@@ -936,13 +936,13 @@ importers:
       '@storybook/addon-essentials': 7.0.5_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-storysource': 7.0.6_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-svelte-csf': 3.0.1_svelte@3.58.0
-      '@storybook/sveltekit': 7.0.5_l35afhaf4xzhw5bm3midq6hkvu
+      '@storybook/sveltekit': 7.0.5_spkziy5z5xxfamkhnnmuh4dzoy
       '@types/node': 18.11.9
       '@types/react': 18.0.25
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       svelte: 3.58.0
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   toolchain/packages/plugins/plugin-turbo:
     specifiers:
@@ -993,13 +993,13 @@ importers:
     specifiers:
       '@ovenwand/config': workspace:^0.1.11
       '@ovenwand/toolchain.core': workspace:^0.0.1
-      typescript: ^4.9.5
+      typescript: ^5.0.4
       vite: ^4.2.1
     dependencies:
       '@ovenwand/toolchain.core': link:../../core
     devDependencies:
       '@ovenwand/config': link:../../../../packages/config
-      typescript: 4.9.5
+      typescript: 5.0.4
       vite: 4.2.1
 
   toolchain/packages/presets/preset-react:
@@ -5414,7 +5414,7 @@ packages:
       - supports-color
     dev: false
 
-  /@storybook/builder-vite/7.0.5_typescript@4.9.5:
+  /@storybook/builder-vite/7.0.5_typescript@5.0.4:
     resolution: {integrity: sha512-jQUpqmTiCZpVCLTVuMu3bSv1Iw4TJJhKYyrsozlfSbAzdM1S8IDEVhpKo+XoUrYLrGURSP8918zaOrl7ht8pvw==}
     peerDependencies:
       '@preact/preset-vite': '*'
@@ -5449,7 +5449,7 @@ packages:
       remark-external-links: 8.0.0
       remark-slug: 6.1.0
       rollup: 3.7.4
-      typescript: 4.9.5
+      typescript: 5.0.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6000,7 +6000,7 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: true
 
-  /@storybook/svelte-vite/7.0.5_ygqkwb4gg3aean7xjfdauovyqq:
+  /@storybook/svelte-vite/7.0.5_tvrvbu6r5w7oyqiu4bvze3slou:
     resolution: {integrity: sha512-EhFvsvTS77Ox/Vjp5hDggBnR9QV6GrMjpUuT/WYSZ5TJZSFfS8RmBKlLGXlIIiU3MV5dSEc6gSVcvltiX+nFxA==}
     engines: {node: ^14.18 || >=16}
     peerDependencies:
@@ -6008,7 +6008,7 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
       vite: ^3.0.0 || ^4.0.0
     dependencies:
-      '@storybook/builder-vite': 7.0.5_typescript@4.9.5
+      '@storybook/builder-vite': 7.0.5_typescript@5.0.4
       '@storybook/node-logger': 7.0.5
       '@storybook/svelte': 7.0.5_svelte@3.58.0
       '@sveltejs/vite-plugin-svelte': 2.1.0_svelte@3.58.0
@@ -6045,15 +6045,15 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/sveltekit/7.0.5_l35afhaf4xzhw5bm3midq6hkvu:
+  /@storybook/sveltekit/7.0.5_spkziy5z5xxfamkhnnmuh4dzoy:
     resolution: {integrity: sha512-apIbV/YFI6gHjJEU3ubH73qUx+KvAhCqhQts3t0sljTXhHWCqjDbciwavaMWPl8Q3gwFy/jdOKF07VZnJ5En1A==}
     engines: {node: ^14.18 || >=16}
     peerDependencies:
       vite: ^4.0.0
     dependencies:
-      '@storybook/builder-vite': 7.0.5_typescript@4.9.5
+      '@storybook/builder-vite': 7.0.5_typescript@5.0.4
       '@storybook/svelte': 7.0.5_svelte@3.58.0
-      '@storybook/svelte-vite': 7.0.5_ygqkwb4gg3aean7xjfdauovyqq
+      '@storybook/svelte-vite': 7.0.5_tvrvbu6r5w7oyqiu4bvze3slou
     transitivePeerDependencies:
       - '@preact/preset-vite'
       - react
@@ -6250,8 +6250,8 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: false
 
-  /@tsconfig/svelte/3.0.0:
-    resolution: {integrity: sha512-pYrtLtOwku/7r1i9AMONsJMVYAtk3hzOfiGNekhtq5tYBGA7unMve8RvUclKLMT3PrihvJqUmzsRGh0RP84hKg==}
+  /@tsconfig/svelte/4.0.1:
+    resolution: {integrity: sha512-B+XlGpmuAQzJqDoBATNCvEPqQg0HkO7S8pM14QDI5NsmtymzRexQ1N+nX2H6RTtFbuFgaZD4I8AAi8voGg0GLg==}
     dev: false
 
   /@types/aria-query/4.2.2:
@@ -6565,7 +6565,7 @@ packages:
     dev: false
     optional: true
 
-  /@typescript-eslint/eslint-plugin/5.44.0_4kbswhbwl5syvdj4jodacfm2ou:
+  /@typescript-eslint/eslint-plugin/5.44.0_uncsdyc4eduykjjbgu77ycnxqq:
     resolution: {integrity: sha512-j5ULd7FmmekcyWeArx+i8x7sdRHzAtXTkmDPthE4amxZOWKFK7bomoJ4r7PJ8K7PoMzD16U8MmuZFAonr1ERvw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -6576,22 +6576,22 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.44.0_pku7h6lsbnh7tcsfjudlqd5qce
+      '@typescript-eslint/parser': 5.44.0_dewl7jrzrufmm6i6j6pp2pqhja
       '@typescript-eslint/scope-manager': 5.44.0
-      '@typescript-eslint/type-utils': 5.44.0_pku7h6lsbnh7tcsfjudlqd5qce
-      '@typescript-eslint/utils': 5.44.0_pku7h6lsbnh7tcsfjudlqd5qce
+      '@typescript-eslint/type-utils': 5.44.0_dewl7jrzrufmm6i6j6pp2pqhja
+      '@typescript-eslint/utils': 5.44.0_dewl7jrzrufmm6i6j6pp2pqhja
       debug: 4.3.4
       eslint: 8.28.0
       ignore: 5.2.0
       natural-compare-lite: 1.4.0
       regexpp: 3.2.0
       semver: 7.3.8
-      tsutils: 3.21.0_typescript@4.9.5
-      typescript: 4.9.5
+      tsutils: 3.21.0_typescript@5.0.4
+      typescript: 5.0.4
     transitivePeerDependencies:
       - supports-color
 
-  /@typescript-eslint/parser/5.44.0_pku7h6lsbnh7tcsfjudlqd5qce:
+  /@typescript-eslint/parser/5.44.0_dewl7jrzrufmm6i6j6pp2pqhja:
     resolution: {integrity: sha512-H7LCqbZnKqkkgQHaKLGC6KUjt3pjJDx8ETDqmwncyb6PuoigYajyAwBGz08VU/l86dZWZgI4zm5k2VaKqayYyA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -6603,10 +6603,10 @@ packages:
     dependencies:
       '@typescript-eslint/scope-manager': 5.44.0
       '@typescript-eslint/types': 5.44.0
-      '@typescript-eslint/typescript-estree': 5.44.0_typescript@4.9.5
+      '@typescript-eslint/typescript-estree': 5.44.0_typescript@5.0.4
       debug: 4.3.4
       eslint: 8.28.0
-      typescript: 4.9.5
+      typescript: 5.0.4
     transitivePeerDependencies:
       - supports-color
 
@@ -6617,7 +6617,7 @@ packages:
       '@typescript-eslint/types': 5.44.0
       '@typescript-eslint/visitor-keys': 5.44.0
 
-  /@typescript-eslint/type-utils/5.44.0_pku7h6lsbnh7tcsfjudlqd5qce:
+  /@typescript-eslint/type-utils/5.44.0_dewl7jrzrufmm6i6j6pp2pqhja:
     resolution: {integrity: sha512-A1u0Yo5wZxkXPQ7/noGkRhV4J9opcymcr31XQtOzcc5nO/IHN2E2TPMECKWYpM3e6olWEM63fq/BaL1wEYnt/w==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -6627,12 +6627,12 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/typescript-estree': 5.44.0_typescript@4.9.5
-      '@typescript-eslint/utils': 5.44.0_pku7h6lsbnh7tcsfjudlqd5qce
+      '@typescript-eslint/typescript-estree': 5.44.0_typescript@5.0.4
+      '@typescript-eslint/utils': 5.44.0_dewl7jrzrufmm6i6j6pp2pqhja
       debug: 4.3.4
       eslint: 8.28.0
-      tsutils: 3.21.0_typescript@4.9.5
-      typescript: 4.9.5
+      tsutils: 3.21.0_typescript@5.0.4
+      typescript: 5.0.4
     transitivePeerDependencies:
       - supports-color
 
@@ -6640,7 +6640,7 @@ packages:
     resolution: {integrity: sha512-Tp+zDnHmGk4qKR1l+Y1rBvpjpm5tGXX339eAlRBDg+kgZkz9Bw+pqi4dyseOZMsGuSH69fYfPJCBKBrbPCxYFQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@typescript-eslint/typescript-estree/5.44.0_typescript@4.9.5:
+  /@typescript-eslint/typescript-estree/5.44.0_typescript@5.0.4:
     resolution: {integrity: sha512-M6Jr+RM7M5zeRj2maSfsZK2660HKAJawv4Ud0xT+yauyvgrsHu276VtXlKDFnEmhG+nVEd0fYZNXGoAgxwDWJw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -6655,12 +6655,12 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.3.8
-      tsutils: 3.21.0_typescript@4.9.5
-      typescript: 4.9.5
+      tsutils: 3.21.0_typescript@5.0.4
+      typescript: 5.0.4
     transitivePeerDependencies:
       - supports-color
 
-  /@typescript-eslint/utils/5.44.0_pku7h6lsbnh7tcsfjudlqd5qce:
+  /@typescript-eslint/utils/5.44.0_dewl7jrzrufmm6i6j6pp2pqhja:
     resolution: {integrity: sha512-fMzA8LLQ189gaBjS0MZszw5HBdZgVwxVFShCO3QN+ws3GlPkcy9YuS3U4wkT6su0w+Byjq3mS3uamy9HE4Yfjw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -6670,7 +6670,7 @@ packages:
       '@types/semver': 7.3.13
       '@typescript-eslint/scope-manager': 5.44.0
       '@typescript-eslint/types': 5.44.0
-      '@typescript-eslint/typescript-estree': 5.44.0_typescript@4.9.5
+      '@typescript-eslint/typescript-estree': 5.44.0_typescript@5.0.4
       eslint: 8.28.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0_eslint@8.28.0
@@ -13790,14 +13790,14 @@ packages:
   /tslib/2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
 
-  /tsutils/3.21.0_typescript@4.9.5:
+  /tsutils/3.21.0_typescript@5.0.4:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
     engines: {node: '>= 6'}
     peerDependencies:
       typescript: '>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta'
     dependencies:
       tslib: 1.14.1
-      typescript: 4.9.5
+      typescript: 5.0.4
 
   /tty-table/4.1.6:
     resolution: {integrity: sha512-kRj5CBzOrakV4VRRY5kUWbNYvo/FpOsz65DzI5op9P+cHov3+IqPbo1JE1ZnQGkHdZgNFDsrEjrfqqy/Ply9fw==}
@@ -13949,12 +13949,12 @@ packages:
     resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
+    dev: false
 
   /typescript/5.0.4:
     resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==}
     engines: {node: '>=12.20'}
     hasBin: true
-    dev: true
 
   /uglify-js/3.17.4:
     resolution: {integrity: sha512-T9q82TJI9e/C1TAxYvfb16xO120tMVFZrGA3f9/P4424DNu6ypK103y0GPFVa17yotwSyZW5iYXgjYHkGrJW/g==}
