@@ -11,8 +11,8 @@
 		"preview": "pnpm dlx http-server -a toolchain.docs.ovenwand.wtf -p 6008 ./storybook-static"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.12",
-		"@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.5",
+		"@ovenwand/config": "workspace:0.1.13",
+		"@ovenwand/toolchain.plugins.storybook": "workspace:^0.0.6",
 		"@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.4",
 		"@ovenwand/ui.button": "workspace:^0.4.1",
 		"@ovenwand/ui.calendar": "workspace:^0.0.5",

@@ -9,7 +9,7 @@
 		"./node": "./src/node.ts"
 	},
 	"devDependencies": {
-		"@ovenwand/config": "workspace:0.1.12",
+		"@ovenwand/config": "workspace:0.1.13",
 		"typescript": "^5.0.4"
 	},
 	"dependencies": {

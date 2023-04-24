@@ -1,5 +1,11 @@
 # @ovenwand/config
 
+## 0.1.13
+
+### Patch Changes
+
+- e5cf871: Update @sveltejs/adapter-vercel to ^2.0.0
+
 ## 0.1.12
 
 ### Patch Changes

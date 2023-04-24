@@ -1,5 +1,22 @@
 # @ovenwand/ovenwand.com
 
+## 0.13.15
+
+### Patch Changes
+
+- e5cf871: Update @sveltejs/adapter-vercel to ^2.0.0
+- Updated dependencies [e5cf871]
+  - @ovenwand/config@0.1.13
+  - @ovenwand/ui@0.0.26
+  - @ovenwand/app@0.1.28
+  - @ovenwand/brand@0.0.11
+  - @ovenwand/env@0.0.2
+  - @ovenwand/services.monitor@0.2.3
+  - @ovenwand/services.sentry@0.0.1
+  - @ovenwand/util@0.0.25
+  - @ovenwand/util.date@0.0.3
+  - @ovenwand/util.math@0.0.8
+
 ## 0.13.14
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ovenwand/app
 
+## 0.1.28
+
+### Patch Changes
+
+- @ovenwand/ui@0.0.26
+- @ovenwand/brand@0.0.11
+- @ovenwand/services.monitor@0.2.3
+- @ovenwand/util.browser@0.0.13
+
 ## 0.1.27
 
 ### Patch Changes
