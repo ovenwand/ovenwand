@@ -17,7 +17,7 @@
 		"@ovenwand/toolchain.core": "workspace:^0.0.1",
 		"@sveltejs/kit": "^1.0.0",
 		"svelte": "^3.52.0",
-		"vite": "^3.2.2"
+		"vite": "^4.2.1"
 	},
 	"dependencies": {
 		"@ovenwand/toolchain.plugins.vite": "workspace:^0.0.4"
