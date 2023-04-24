@@ -116,11 +116,10 @@ importers:
       '@ovenwand/util': workspace:0.0.24
       '@ovenwand/util.date': workspace:0.0.3
       '@ovenwand/util.math': workspace:0.0.8
-      '@storyblok/svelte': ^2.3.7
+      '@storyblok/svelte': ^3.0.0
       '@sveltejs/kit': ^1.15.8
       '@types/react': ^18.0.25
       '@types/react-dom': ^18.0.9
-      axios: ^1.0.0
       highlight.js: ^11.7.0
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -141,7 +140,6 @@ importers:
       '@ovenwand/util': link:../../packages/util
       '@ovenwand/util.date': link:../../packages/util/date
       '@ovenwand/util.math': link:../../packages/util/math
-      axios: 1.2.0
       highlight.js: 11.7.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -154,7 +152,7 @@ importers:
       '@ovenwand/toolchain.presets.ssl': link:../../toolchain/packages/presets/preset-ssl
       '@ovenwand/toolchain.presets.sveltekit': link:../../toolchain/packages/presets/preset-sveltekit
       '@ovenwand/toolchain.presets.vue': link:../../toolchain/packages/presets/preset-vue
-      '@storyblok/svelte': 2.3.7_axios@1.2.0
+      '@storyblok/svelte': 3.0.0
       '@sveltejs/kit': 1.15.8_svelte@3.58.0+vite@4.2.1
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
@@ -4949,20 +4947,17 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /@storyblok/js/1.8.6_axios@1.2.0:
-    resolution: {integrity: sha512-MpDhwfs+TBrnfQqr9z+z7SCLnvX6/jZKCasexEvVt0Qp+MvWD7IsQtBu6WnKboTjaR4VLFb69YTk+xUG/Roqgw==}
+  /@storyblok/js/2.1.3:
+    resolution: {integrity: sha512-lUnCygXMmw3VJQldM5JyEFwraKz2OYN+rt1FvvlWn/55DQfbB/DIgnoQ1mpRw4tJoBqGPRgEQJGOH8e/Q1Vm7Q==}
     dependencies:
-      storyblok-js-client: 4.5.8_axios@1.2.0
-    transitivePeerDependencies:
-      - axios
+      storyblok-js-client: 5.10.2
     dev: true
 
-  /@storyblok/svelte/2.3.7_axios@1.2.0:
-    resolution: {integrity: sha512-S6fOqeF2iSK6740O6BoMlY+BrAqoKvNd20i7dLG5hnxX2SMTEoEksBt6deJAP0xnfOia5aEGzT4I6u4ZdXs6dA==}
+  /@storyblok/svelte/3.0.0:
+    resolution: {integrity: sha512-U0G/1UOv7nH3dOb1cQy1llE6vmM566SfUxbYUt/fb6Z3Im1zGsgZrgvzPMuRRL2NczkT8UKxl7eZXddcIhfoiQ==}
     dependencies:
-      '@storyblok/js': 1.8.6_axios@1.2.0
-    transitivePeerDependencies:
-      - axios
+      '@storyblok/js': 2.1.3
+      svelte: 3.58.0
     dev: true
 
   /@storybook/addon-a11y/7.0.6_biqbaboplfbrettd7655fr4n2y:
@@ -7163,6 +7158,7 @@ packages:
 
   /asynckit/0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
+    dev: false
 
   /autoprefixer/10.4.13_postcss@8.4.19:
     resolution: {integrity: sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==}
@@ -7188,15 +7184,6 @@ packages:
     resolution: {integrity: sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==}
     engines: {node: '>=4'}
     dev: true
-
-  /axios/1.2.0:
-    resolution: {integrity: sha512-zT7wZyNYu3N5Bu0wuZ6QccIf93Qk1eV8LOewxgjOZFd2DenOs98cJ7+Y6703d0wkaXGY6/nZd4EweJaHz9uzQw==}
-    dependencies:
-      follow-redirects: 1.15.2
-      form-data: 4.0.0
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - debug
 
   /babel-core/7.0.0-bridge.0_@babel+core@7.21.4:
     resolution: {integrity: sha512-poPX9mZH/5CSanm50Q+1toVci6pv5KSRv/5TWCwtzQS5XEwn40BcCrgIeMFWP9CKKIniKXNxoIOnOq4VVlGXhg==}
@@ -7790,6 +7777,7 @@ packages:
     engines: {node: '>= 0.8'}
     dependencies:
       delayed-stream: 1.0.0
+    dev: false
 
   /comma-separated-tokens/1.0.8:
     resolution: {integrity: sha512-GHuDRO12Sypu2cV70d1dkA2EUmXHgntrzbpvOB+Qy+49ypNfGgFQIC2fhhXbnyrJRynDCAARsT7Ou0M6hirpfw==}
@@ -8239,6 +8227,7 @@ packages:
   /delayed-stream/1.0.0:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
+    dev: false
 
   /delegates/1.0.0:
     resolution: {integrity: sha512-bd2L678uiWATM6m5Z1VzNCErI3jiGzt6HGY8OVICs40JQq/HALfbyNJmp0UDakEY4pMMaN0Ly5om/B1VI/+xfQ==}
@@ -9537,15 +9526,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /follow-redirects/1.15.2:
-    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
     dependencies:
@@ -9571,14 +9551,6 @@ packages:
       combined-stream: 1.0.8
       mime-types: 2.1.35
     dev: false
-
-  /form-data/4.0.0:
-    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
-    engines: {node: '>= 6'}
-    dependencies:
-      asynckit: 0.4.0
-      combined-stream: 1.0.8
-      mime-types: 2.1.35
 
   /format/0.2.2:
     resolution: {integrity: sha512-wzsgA6WOq+09wrU1tsJ09udeR/YZRaeArL9e1wPbFg3GG2yDnC2ldKpxs4xunpFF9DgqCqOIra3bc1HWrJ37Ww==}
@@ -12319,6 +12291,7 @@ packages:
 
   /proxy-from-env/1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+    dev: false
 
   /pseudomap/1.0.2:
     resolution: {integrity: sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==}
@@ -13235,12 +13208,8 @@ packages:
     resolution: {integrity: sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==}
     dev: true
 
-  /storyblok-js-client/4.5.8_axios@1.2.0:
-    resolution: {integrity: sha512-0Wp7Kn4RdKaKRgMmNDu8c6OC81x1mgeri4ziKDY9BsUZEIGLTNw8KFIWlHYACgMnJQn/6qZaV9kGo8IY4hv6GA==}
-    peerDependencies:
-      axios: ^0.27.2
-    dependencies:
-      axios: 1.2.0
+  /storyblok-js-client/5.10.2:
+    resolution: {integrity: sha512-Im/xN9PApDvZbONPYv3SpzjfIfXK63uPf6/eYJPvdIWnzCiWY5hlc2UYkoCR4YoaQBBOEBP1UUcGr5QjesOULg==}
     dev: true
 
   /storybook/7.0.5:
