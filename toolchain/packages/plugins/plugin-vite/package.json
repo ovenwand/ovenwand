@@ -18,6 +18,6 @@
 	"peerDependencies": {
 		"@ovenwand/toolchain.cli": "workspace:^0.0.1",
 		"@ovenwand/toolchain.core": "workspace:^0.0.1",
-		"vite": "^3.2.2"
+		"vite": "^3.2.2 || ^4.0.0"
 	}
 }
