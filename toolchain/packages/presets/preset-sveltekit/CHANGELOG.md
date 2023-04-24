@@ -1,5 +1,11 @@
 # @ovenwand/toolchain.presets.sveltekit
 
+## 0.0.5
+
+### Patch Changes
+
+- e5cf871: Update @sveltejs/adapter-vercel to ^2.0.0
+
 ## 0.0.4
 
 ### Patch Changes

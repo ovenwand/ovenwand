@@ -1,5 +1,21 @@
 # @ovenwand/tasks.ovenwand.com
 
+## 0.4.10
+
+### Patch Changes
+
+- e5cf871: Update @sveltejs/adapter-vercel to ^2.0.0
+  - @ovenwand/ui@0.0.26
+  - @ovenwand/app@0.1.28
+  - @ovenwand/auth@0.0.2
+  - @ovenwand/env@0.0.2
+  - @ovenwand/gql@0.0.3
+  - @ovenwand/services.faunadb@0.2.2
+  - @ovenwand/services.pusher@0.0.0
+  - @ovenwand/util@0.0.25
+  - @ovenwand/util.date@0.0.3
+  - @ovenwand/util.math@0.0.8
+
 ## 0.4.9
 
 ### Patch Changes

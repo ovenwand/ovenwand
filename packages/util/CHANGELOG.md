@@ -1,5 +1,18 @@
 # @ovenwand/util
 
+## 0.0.25
+
+### Patch Changes
+
+- Updated dependencies [e5cf871]
+  - @ovenwand/config@0.1.13
+  - @ovenwand/util.browser@0.0.13
+  - @ovenwand/util.date@0.0.3
+  - @ovenwand/util.fp@0.1.6
+  - @ovenwand/util.math@0.0.8
+  - @ovenwand/util.string@0.0.2
+  - @ovenwand/util.svelte@0.2.13
+
 ## 0.0.24
 
 ### Patch Changes

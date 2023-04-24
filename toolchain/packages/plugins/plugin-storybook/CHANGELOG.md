@@ -1,5 +1,14 @@
 # @ovenwand/toolchain.plugins.storybook
 
+## 0.0.6
+
+### Patch Changes
+
+- 5aaefd7: - Enable and implement addon-svelte-csf in ui.docs
+  - Install addon-docs
+  - Install addon-a11y
+  - Install addon-storysource
+
 ## 0.0.5
 
 ### Patch Changes

@@ -24,9 +24,9 @@ importers:
 
   apps/docs.ovenwand.com:
     specifiers:
-      '@ovenwand/config': workspace:^0.1.12
+      '@ovenwand/config': workspace:^0.1.13
       '@ovenwand/toolchain.plugins.doppler': workspace:^0.0.2
-      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.5
+      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.6
       '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.4
       '@types/react': ^18.0.25
       react: ^18.2.0
@@ -46,9 +46,9 @@ importers:
 
   apps/monitor.ovenwand.com:
     specifiers:
-      '@ovenwand/app': workspace:0.1.27
+      '@ovenwand/app': workspace:0.1.28
       '@ovenwand/auth': workspace:^0.0.2
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/env': workspace:0.0.2
       '@ovenwand/services.faunadb': workspace:0.2.2
       '@ovenwand/services.monitor': workspace:0.2.3
@@ -56,9 +56,9 @@ importers:
       '@ovenwand/toolchain.plugins.vite': workspace:^0.0.4
       '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.4
       '@ovenwand/toolchain.presets.ssl': workspace:^0.0.4
-      '@ovenwand/toolchain.presets.sveltekit': workspace:^0.0.4
-      '@ovenwand/ui': workspace:0.0.25
-      '@ovenwand/util': workspace:0.0.24
+      '@ovenwand/toolchain.presets.sveltekit': workspace:^0.0.5
+      '@ovenwand/ui': workspace:0.0.26
+      '@ovenwand/util': workspace:0.0.25
       '@ovenwand/util.date': workspace:0.0.3
       '@sveltejs/kit': ^1.15.8
       '@types/cookie': ^0.5.1
@@ -99,9 +99,9 @@ importers:
 
   apps/ovenwand.com:
     specifiers:
-      '@ovenwand/app': workspace:0.1.27
+      '@ovenwand/app': workspace:0.1.28
       '@ovenwand/brand': workspace:0.0.11
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/env': workspace:0.0.2
       '@ovenwand/services.monitor': workspace:0.2.3
       '@ovenwand/services.sentry': workspace:0.0.1
@@ -110,10 +110,10 @@ importers:
       '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.4
       '@ovenwand/toolchain.presets.react': workspace:^0.0.4
       '@ovenwand/toolchain.presets.ssl': workspace:^0.0.4
-      '@ovenwand/toolchain.presets.sveltekit': workspace:^0.0.4
+      '@ovenwand/toolchain.presets.sveltekit': workspace:^0.0.5
       '@ovenwand/toolchain.presets.vue': workspace:^0.0.4
-      '@ovenwand/ui': workspace:0.0.25
-      '@ovenwand/util': workspace:0.0.24
+      '@ovenwand/ui': workspace:0.0.26
+      '@ovenwand/util': workspace:0.0.25
       '@ovenwand/util.date': workspace:0.0.3
       '@ovenwand/util.math': workspace:0.0.8
       '@storyblok/svelte': ^3.0.0
@@ -164,9 +164,9 @@ importers:
 
   apps/tasks.ovenwand.com:
     specifiers:
-      '@ovenwand/app': workspace:^0.1.27
+      '@ovenwand/app': workspace:^0.1.28
       '@ovenwand/auth': workspace:^0.0.2
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/env': workspace:0.0.2
       '@ovenwand/gql': workspace:^0.0.3
       '@ovenwand/services.faunadb': workspace:0.2.2
@@ -176,9 +176,9 @@ importers:
       '@ovenwand/toolchain.plugins.vite': workspace:^0.0.4
       '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.4
       '@ovenwand/toolchain.presets.ssl': workspace:^0.0.4
-      '@ovenwand/toolchain.presets.sveltekit': workspace:^0.0.4
-      '@ovenwand/ui': workspace:0.0.25
-      '@ovenwand/util': workspace:0.0.24
+      '@ovenwand/toolchain.presets.sveltekit': workspace:^0.0.5
+      '@ovenwand/ui': workspace:0.0.26
+      '@ovenwand/util': workspace:0.0.25
       '@ovenwand/util.date': workspace:0.0.3
       '@ovenwand/util.math': workspace:0.0.8
       '@sveltejs/kit': ^1.15.8
@@ -218,9 +218,9 @@ importers:
   packages/app:
     specifiers:
       '@ovenwand/brand': workspace:0.0.11
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/services.monitor': workspace:0.2.3
-      '@ovenwand/ui': workspace:0.0.25
+      '@ovenwand/ui': workspace:0.0.26
       '@ovenwand/util.browser': workspace:0.0.13
       svelte: ^3.58.0
     dependencies:
@@ -234,7 +234,7 @@ importers:
 
   packages/auth:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/ui.button': workspace:^0.4.1
       jsonwebtoken: ^9.0.0
       typescript: ^5.0.4
@@ -248,7 +248,7 @@ importers:
   packages/brand:
     specifiers:
       '@ovenwand/brand.logo': workspace:0.0.11
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       svelte: ^3.58.0
     dependencies:
       '@ovenwand/brand.logo': link:logo
@@ -258,7 +258,7 @@ importers:
 
   packages/brand/logo:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/util.browser': workspace:0.0.13
       svelte: ^3.58.0
     dependencies:
@@ -287,14 +287,14 @@ importers:
 
   packages/env:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
     devDependencies:
       '@ovenwand/config': link:../config
 
   packages/gql:
     specifiers:
       '@apollo/client': ^3.7.1
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       graphql: ^16.6.0
       typescript: ^5.0.4
     dependencies:
@@ -310,7 +310,7 @@ importers:
       '@commitlint/cli': ^17.3.0
       '@commitlint/config-conventional': ^17.3.0
       '@esbuild-kit/esm-loader': ^2.5.1
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/kit.lint': workspace:0.0.3
       '@ovenwand/kit.scaffold': workspace:0.1.2
       '@pnpm/find-workspace-dir': ^6.0.0
@@ -332,7 +332,7 @@ importers:
 
   packages/kit/lint:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@typescript-eslint/eslint-plugin': ^5.44.0
       '@typescript-eslint/parser': ^5.44.0
       eslint: ^8.28.0
@@ -360,7 +360,7 @@ importers:
 
   packages/kit/scaffold:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       plop: ^3.1.1
     dependencies:
       plop: 3.1.1
@@ -369,7 +369,7 @@ importers:
 
   packages/services:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/services.faunadb': workspace:0.2.2
       '@ovenwand/services.monitor': workspace:0.2.3
       '@ovenwand/services.pusher': workspace:0.0.0
@@ -384,7 +384,7 @@ importers:
 
   packages/services/faunadb:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       faunadb: ^4.7.1
     dependencies:
       faunadb: 4.7.1
@@ -393,7 +393,7 @@ importers:
 
   packages/services/monitor:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/util.fp': workspace:0.1.6
     dependencies:
       '@ovenwand/util.fp': link:../../util/fp
@@ -402,7 +402,7 @@ importers:
 
   packages/services/pusher:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       pusher: 5.1.2
       pusher-js: ^7.6.0
       typescript: ^5.0.4
@@ -415,7 +415,7 @@ importers:
 
   packages/services/sentry:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@sentry/node': ^7.21.1
       '@sentry/tracing': ^7.21.1
       typescript: ^5.0.4
@@ -434,7 +434,7 @@ importers:
 
   packages/test/cypress:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@testing-library/svelte': ^3.2.2
       chai: ^4.3.7
       mocha: ^9.2.2
@@ -449,7 +449,7 @@ importers:
 
   packages/test/svelte:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@testing-library/svelte': ^3.2.2
       chai: ^4.3.7
       mocha: ^9.2.2
@@ -464,8 +464,8 @@ importers:
 
   packages/ui:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
-      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.5
+      '@ovenwand/config': workspace:0.1.13
+      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.6
       '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.4
       '@ovenwand/ui.button': workspace:0.4.1
       '@ovenwand/ui.calendar': workspace:0.0.5
@@ -476,7 +476,7 @@ importers:
       '@ovenwand/ui.notification': workspace:0.0.15
       '@ovenwand/ui.overlay': workspace:0.0.12
       '@ovenwand/ui.sheet': workspace:0.0.12
-      '@ovenwand/ui.sidebar': workspace:0.1.18
+      '@ovenwand/ui.sidebar': workspace:0.1.19
       '@types/react': ^18.0.25
       globby: ^13.1.2
       react: ^18.2.0
@@ -507,8 +507,8 @@ importers:
 
   packages/ui/docs:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
-      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.5
+      '@ovenwand/config': workspace:0.1.13
+      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.6
       '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.4
       '@ovenwand/ui.button': workspace:^0.4.1
       '@ovenwand/ui.calendar': workspace:^0.0.5
@@ -537,7 +537,7 @@ importers:
 
   packages/ui/packages/atoms/button:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/test.cypress': workspace:0.0.4
       '@ovenwand/util.browser': workspace:0.0.13
       svelte: ^3.58.0
@@ -550,7 +550,7 @@ importers:
 
   packages/ui/packages/atoms/grid:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/util.browser': workspace:0.0.13
       '@ovenwand/util.fp': workspace:0.1.6
       svelte: ^3.58.0
@@ -563,7 +563,7 @@ importers:
 
   packages/ui/packages/atoms/icon:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       svelte: ^3.58.0
     devDependencies:
       '@ovenwand/config': link:../../../../config
@@ -571,7 +571,7 @@ importers:
 
   packages/ui/packages/atoms/loader:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       svelte: ^3.58.0
     devDependencies:
       '@ovenwand/config': link:../../../../config
@@ -579,7 +579,7 @@ importers:
 
   packages/ui/packages/atoms/overlay:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/util.browser': workspace:0.0.13
       svelte: ^3.58.0
     dependencies:
@@ -590,7 +590,7 @@ importers:
 
   packages/ui/packages/atoms/sheet:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/util.browser': workspace:0.0.13
       svelte: ^3.58.0
     dependencies:
@@ -601,7 +601,7 @@ importers:
 
   packages/ui/packages/atoms/sidebar:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/test.cypress': workspace:0.0.4
       '@ovenwand/test.svelte': workspace:0.0.4
       '@ovenwand/util.browser': workspace:0.0.13
@@ -618,7 +618,7 @@ importers:
 
   packages/ui/packages/molecules/modal:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/ui.grid': workspace:0.0.15
       '@ovenwand/ui.overlay': workspace:0.0.12
       '@ovenwand/ui.sheet': workspace:0.0.12
@@ -635,7 +635,7 @@ importers:
 
   packages/ui/packages/molecules/notification:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/ui.icon': workspace:0.0.3
       '@ovenwand/ui.sheet': workspace:0.0.12
       '@ovenwand/util.browser': workspace:0.0.13
@@ -654,7 +654,7 @@ importers:
 
   packages/ui/packages/organisms/calendar:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/util.browser': workspace:^0.0.13
       '@ovenwand/util.date': workspace:0.0.3
       typescript: ^5.0.4
@@ -667,7 +667,7 @@ importers:
 
   packages/util:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/util.browser': workspace:0.0.13
       '@ovenwand/util.date': workspace:0.0.3
       '@ovenwand/util.fp': workspace:0.1.6
@@ -685,7 +685,7 @@ importers:
 
   packages/util/browser:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/util.fp': workspace:0.1.6
       '@ovenwand/util.math': workspace:0.0.8
       '@types/ua-parser-js': ^0.7.36
@@ -698,7 +698,7 @@ importers:
 
   packages/util/date:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       date-fns: ^2.29.3
     dependencies:
       date-fns: 2.29.3
@@ -707,13 +707,13 @@ importers:
 
   packages/util/fp:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
     devDependencies:
       '@ovenwand/config': link:../../config
 
   packages/util/math:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/util.fp': workspace:0.1.6
     dependencies:
       '@ovenwand/util.fp': link:../fp
@@ -722,13 +722,13 @@ importers:
 
   packages/util/string:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
     devDependencies:
       '@ovenwand/config': link:../../config
 
   packages/util/svelte:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
+      '@ovenwand/config': workspace:0.1.13
       '@ovenwand/env': workspace:0.0.2
       '@ovenwand/util.math': workspace:0.0.8
       chai: ^4.3.7
@@ -749,8 +749,8 @@ importers:
 
   toolchain/docs:
     specifiers:
-      '@ovenwand/config': workspace:0.1.12
-      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.5
+      '@ovenwand/config': workspace:0.1.13
+      '@ovenwand/toolchain.plugins.storybook': workspace:^0.0.6
       '@ovenwand/toolchain.presets.ovenwand': workspace:^0.0.4
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -903,7 +903,7 @@ importers:
     specifiers:
       '@babel/core': ^7.20.2
       '@mdx-js/react': ^2.1.5
-      '@ovenwand/config': workspace:^0.1.12
+      '@ovenwand/config': workspace:^0.1.13
       '@ovenwand/toolchain.cli': workspace:^0.0.1
       '@ovenwand/toolchain.core': workspace:^0.0.1
       '@storybook/addon-a11y': ^7.0.6
@@ -1034,7 +1034,7 @@ importers:
 
   toolchain/packages/presets/preset-sveltekit:
     specifiers:
-      '@ovenwand/config': workspace:^0.1.12
+      '@ovenwand/config': workspace:^0.1.13
       '@ovenwand/toolchain.core': workspace:^0.0.1
       '@ovenwand/toolchain.plugins.vite': workspace:^0.0.4
       '@sveltejs/kit': ^1.15.8
