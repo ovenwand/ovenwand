@@ -30,7 +30,7 @@
 		"@ovenwand/toolchain.presets.ovenwand": "workspace:^0.0.4",
 		"@ovenwand/toolchain.presets.ssl": "workspace:^0.0.4",
 		"@ovenwand/toolchain.presets.sveltekit": "workspace:^0.0.4",
-		"@sveltejs/kit": "^1.15.5",
+		"@sveltejs/kit": "^1.15.8",
 		"@types/cookie": "^0.5.1",
 		"@types/d3-scale": "^4.0.2",
 		"@types/jsonwebtoken": "^9.0.1",
