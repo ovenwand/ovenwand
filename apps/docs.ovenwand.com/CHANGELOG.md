@@ -1,5 +1,11 @@
 # @ovenwand/docs.ovenwand.com
 
+## 0.0.6
+
+### Patch Changes
+
+- 1e02ec6: Fix skipping renovate bot commits in vercel ignore command
+
 ## 0.0.5
 
 ### Patch Changes

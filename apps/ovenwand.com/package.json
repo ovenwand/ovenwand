@@ -1,6 +1,6 @@
 {
 	"name": "@ovenwand/ovenwand.com",
-	"version": "0.13.15",
+	"version": "0.13.16",
 	"type": "module",
 	"private": true,
 	"scripts": {
