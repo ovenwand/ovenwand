@@ -8,9 +8,6 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"peerDependencies": {
-		"typescript": "^4.9.1-beta"
-	},
 	"dependencies": {
 		"@ovenwand/util.fp": "workspace:0.1.6",
 		"@ovenwand/util.math": "workspace:0.0.8"
