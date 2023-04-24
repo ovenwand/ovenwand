@@ -315,7 +315,7 @@ importers:
       '@ovenwand/config': workspace:0.1.12
       '@ovenwand/kit.lint': workspace:0.0.3
       '@ovenwand/kit.scaffold': workspace:0.1.2
-      '@pnpm/find-workspace-dir': ^5.0.0
+      '@pnpm/find-workspace-dir': ^6.0.0
       commander: ^9.4.1
       lint-staged: ^13.0.0
       turbo: ^1.6.3
@@ -327,7 +327,7 @@ importers:
       '@ovenwand/config': link:../../config
       '@ovenwand/kit.lint': link:../lint
       '@ovenwand/kit.scaffold': link:../scaffold
-      '@pnpm/find-workspace-dir': 5.0.0
+      '@pnpm/find-workspace-dir': 6.0.0
       commander: 9.4.1
       lint-staged: 13.0.4
       turbo: 1.6.3
@@ -791,11 +791,11 @@ importers:
   toolchain/packages/core:
     specifiers:
       '@ovenwand/config': workspace:^0.1.6
-      '@pnpm/find-workspace-dir': ^5.0.0
+      '@pnpm/find-workspace-dir': ^6.0.0
       '@types/node': ^18.11.9
       debug: ^4.3.4
     dependencies:
-      '@pnpm/find-workspace-dir': 5.0.0
+      '@pnpm/find-workspace-dir': 6.0.0
       debug: 4.3.4
     devDependencies:
       '@ovenwand/config': link:../../../packages/config
@@ -4861,23 +4861,23 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
-  /@pnpm/constants/6.1.0:
-    resolution: {integrity: sha512-L6AiU3OXv9kjKGTJN9j8n1TeJGDcLX9atQlZvAkthlvbXjvKc5SKNWESc/eXhr5nEfuMWhQhiKHDJCpYejmeCQ==}
-    engines: {node: '>=14.19'}
+  /@pnpm/constants/7.0.0:
+    resolution: {integrity: sha512-YA2EO2+uKrDWhtEhsbLdArJwQBr1n5VpCJzz+cLLQ98gbSKCOHAR8qwbn1wChcZitTVAr0HVyxO146nL/wujXg==}
+    engines: {node: '>=16.14'}
     dev: false
 
-  /@pnpm/error/4.0.0:
-    resolution: {integrity: sha512-NI4DFCMF6xb1SA0bZiiV5KrMCaJM2QmPJFC6p78FXujn7FpiRSWhT9r032wpuQumsl7DEmN4s3wl/P8TA+bL8w==}
-    engines: {node: '>=14.6'}
+  /@pnpm/error/5.0.0:
+    resolution: {integrity: sha512-8Bezq6YSSorPyaiQIr3lWF7hTIuatBTPWVCO7rbgJAGw4pq6t3DmLoN2K3EznVHMBIaqEBmkfB1lkKvXaJIVbw==}
+    engines: {node: '>=16.14'}
     dependencies:
-      '@pnpm/constants': 6.1.0
+      '@pnpm/constants': 7.0.0
     dev: false
 
-  /@pnpm/find-workspace-dir/5.0.0:
-    resolution: {integrity: sha512-x/OERjU3BjUyxrHSl5Zuqqo6PmtbPo4Xi8ypD98wQ/OcUJ1ZCQ276vP2n4E89N5Mb70N2J+4J1dnmPW+OnpEQg==}
-    engines: {node: '>=14.6'}
+  /@pnpm/find-workspace-dir/6.0.0:
+    resolution: {integrity: sha512-sqZqkRsax18iFRlrgM7zw6ORtfIO8aPxubtpWBbZTqXQiPF+7isAq8lHuKHvK6kvPPXCBWGfuWf4FpWTWaL26Q==}
+    engines: {node: '>=16.14'}
     dependencies:
-      '@pnpm/error': 4.0.0
+      '@pnpm/error': 5.0.0
       find-up: 5.0.0
     dev: false
 
