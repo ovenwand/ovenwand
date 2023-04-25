@@ -1,6 +1,0 @@
-{
-	"extends": "@ovenwand/config/tsconfig",
-	"compilerOptions": {
-		"types": ["chai", "mocha"]
-	}
-}
