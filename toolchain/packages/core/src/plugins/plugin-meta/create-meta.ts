@@ -13,8 +13,6 @@ export async function createMeta(context: Toolchain.Context): Promise<Toolchain.
 	const workspacePackagePath = resolve(workspacePath, 'package.json');
 	const localPackagePath = await findPackageJson(cwd, workspacePath);
 
-	context.cwd ??= cwd; // TODO remove
-
 	return {
 		cwd,
 

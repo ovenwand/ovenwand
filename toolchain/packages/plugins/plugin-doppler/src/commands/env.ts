@@ -3,7 +3,8 @@ import { Command, exec, exit } from '@ovenwand/toolchain.cli';
 import { createInstallCommand } from './install.js';
 
 export function createEnvCommand(context) {
-	const { config, cwd, env } = context;
+	const { config, env } = context;
+	const { cwd } = context.meta;
 	const dopplerConfig = config.doppler;
 	const envCommand = new Command('env');
 

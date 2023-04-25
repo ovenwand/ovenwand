@@ -41,7 +41,7 @@ export function createTurboCommand(context) {
 
 	command.action(async (action, options, command) => {
 		const args = getTurboArgs(action, options, command, context);
-		const cwd = meta.package ? meta.workspace.path : context.cwd;
+		const cwd = meta.package ? meta.workspace.path : meta.cwd;
 		const result = await exec('turbo', args, { cwd, env });
 		exit(result.code);
 	});

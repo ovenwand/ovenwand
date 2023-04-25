@@ -3,7 +3,8 @@ import { Command, exec, exit } from '@ovenwand/toolchain.cli';
 import { getEslintArgs, getPrettierArgs } from '../utils.js';
 
 export function createFormatCommand(context) {
-	const { cwd, env } = context;
+	const { env } = context;
+	const { cwd } = context.meta;
 	const { eslint: eslintConfig, prettier: prettierConfig } = context.config.lint;
 	const command = new Command('format');
 

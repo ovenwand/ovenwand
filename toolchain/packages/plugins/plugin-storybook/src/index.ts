@@ -11,7 +11,7 @@ export default definePlugin(() => {
 			return config;
 		},
 
-		async resolve({ cli, config, cwd, env }) {
+		async resolve({ cli, config, env, meta }) {
 			if (!config.storybook.enabled) {
 				return;
 			}
@@ -34,7 +34,7 @@ export default definePlugin(() => {
 						Boolean
 					);
 
-					const result = await exec('storybook', args, { cwd, env });
+					const result = await exec('storybook', args, { cwd: meta.cwd, env });
 					exit(result.code);
 				});
 		}
