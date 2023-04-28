@@ -288,8 +288,10 @@ importers:
   packages/env:
     specifiers:
       '@ovenwand/config': workspace:0.1.13
+      typescript: ^5.0.4
     devDependencies:
       '@ovenwand/config': link:../config
+      typescript: 5.0.4
 
   packages/gql:
     specifiers:
