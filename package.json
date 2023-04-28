@@ -10,7 +10,7 @@
 		"preview": "start preview",
 		"lint": "start lint",
 		"format": "start format",
-		"check": "run() { pnpm --filter @ovenwand/$1 check ${@:2}; }; run",
+		"check": "start check",
 		"ci:version": "pnpm changeset version && pnpm install --no-frozen-lockfile",
 		"ci:publish": "pnpm changeset tag"
 	},
