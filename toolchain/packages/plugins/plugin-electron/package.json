@@ -16,6 +16,6 @@
 	"dependencies": {
 		"@ovenwand/toolchain.cli": "workspace:^0.0.1",
 		"@ovenwand/toolchain.core": "workspace:^0.0.1",
-		"electron": "^24.1.2"
+		"electron": "^25.0.0"
 	}
 }
