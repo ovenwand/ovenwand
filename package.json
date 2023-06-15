@@ -3,12 +3,19 @@
   "author": "Ovenwand <info@ovenwand.com>",
   "license": "WTFPL",
   "scripts": {
-    "check": "pnpm check:format",
+    "check": "pnpm check:js && pnpm check:format",
     "check:format": "prettier --check .",
-    "fix": "pnpm fix:format",
-    "fix:format": "prettier --write ."
+    "check:js": "eslint .",
+    "fix": "pnpm fix:js && pnpm fix:format",
+    "fix:format": "prettier --write .",
+    "fix:js": "eslint --fix ."
   },
   "devDependencies": {
-    "prettier": "^2.8.8"
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.3"
   }
 }
