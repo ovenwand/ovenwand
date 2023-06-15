@@ -1,5 +1,14 @@
 {
   "name": "@ovenwand/codebase",
   "author": "Ovenwand <info@ovenwand.com>",
-  "license": "WTFPL"
+  "license": "WTFPL",
+  "scripts": {
+    "check": "pnpm check:format",
+    "check:format": "prettier --check .",
+    "fix": "pnpm fix:format",
+    "fix:format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
 }
