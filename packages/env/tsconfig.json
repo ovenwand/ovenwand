@@ -1,8 +1,0 @@
-{
-	"extends": "@ovenwand/config/tsconfig",
-	"compilerOptions": {
-		"noEmit": true
-	},
-	"include": ["./src/**/*"],
-	"exclude": ["./node_modules/**/*"]
-}
