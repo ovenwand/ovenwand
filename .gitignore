@@ -1,0 +1,9 @@
+# NPM
+node_modules/
+
+# Mac OS
+.DS_Store
+
+# IntelliJ
+.idea/
+*.iml
