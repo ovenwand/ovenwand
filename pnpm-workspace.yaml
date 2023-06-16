@@ -1,0 +1,3 @@
+packages:
+  # all project dirs
+  - "framework/**"
