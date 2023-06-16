@@ -1,0 +1,214 @@
+@layer components {
+  .ow-button {
+    @apply relative;
+    @apply flex items-center justify-between;
+    @apply text-base text-left align-top leading-none;
+    @apply py-4 pr-16 pl-4;
+    @apply rtl:py-4 rtl:pr-4 rtl:pl-16;
+
+    /**
+        * Variants
+        */
+    &--primary {
+      @apply text-black bg-primary-400;
+      @apply dark:text-white dark:bg-primary-600;
+
+      @media (hover: hover) {
+        &:hover {
+          @apply bg-primary-300;
+          @apply dark:bg-primary-500;
+        }
+      }
+
+      &:focus {
+        @apply outline outline-2 outline-offset-2 outline-primary-400 z-[1];
+        @apply dark:outline-white;
+      }
+
+      &:active {
+        @apply bg-primary-200;
+        @apply dark:bg-primary-400;
+      }
+
+      &[disabled] {
+        @apply bg-gray-200 text-gray-300;
+        @apply dark:bg-gray-500 dark:text-gray-600;
+      }
+    }
+
+    &--secondary {
+      @apply text-white bg-zinc-800;
+
+      @media (hover: hover) {
+        &:hover {
+          @apply bg-zinc-700;
+        }
+      }
+
+      &:focus {
+        @apply outline outline-2 outline-offset-2 outline-zinc-800 z-[1];
+        @apply dark:outline-white;
+      }
+
+      &:active {
+        @apply bg-zinc-600;
+      }
+
+      &[disabled] {
+        @apply bg-gray-200 text-gray-300;
+        @apply dark:bg-gray-500 dark:text-gray-600;
+      }
+    }
+
+    &--ghost {
+      @apply text-black;
+      @apply dark:text-white;
+      @apply bg-transparent;
+
+      @media (hover: hover) {
+        &:hover {
+          @apply bg-primary-300;
+          @apply dark:bg-primary-500;
+        }
+      }
+
+      &:focus {
+        @apply bg-primary-400;
+        @apply dark:bg-primary-600;
+        @apply outline outline-2 outline-offset-2 outline-primary-800 z-[1];
+        @apply dark:outline-white;
+      }
+
+      &:active {
+        @apply bg-primary-200;
+        @apply dark:bg-primary-400;
+      }
+
+      &[disabled] {
+        @apply bg-transparent text-gray-300;
+        @apply dark:text-gray-500;
+      }
+    }
+
+    &--danger {
+      @apply text-black bg-danger-400;
+      @apply dark:text-white dark:bg-danger-700;
+
+      @media (hover: hover) {
+        &:hover {
+          @apply bg-danger-300;
+          @apply dark:bg-danger-500;
+        }
+      }
+
+      &:focus {
+        @apply outline outline-2 outline-offset-2 outline-danger-800 z-[1];
+        @apply dark:outline-white;
+      }
+
+      &:active {
+        @apply bg-danger-200;
+        @apply dark:bg-danger-400;
+      }
+
+      &[disabled] {
+        @apply bg-gray-200 text-gray-300;
+        @apply dark:bg-gray-500 dark:text-gray-600;
+      }
+    }
+
+    /**
+        * Sizes
+        */
+    &--sm {
+      @apply py-1.5 pr-16 pl-4;
+      @apply rtl:py-1.5 rtl:pr-4 rtl:pl-16;
+    }
+
+    &--md {
+      @apply py-2.5 pr-16 pl-4;
+      @apply rtl:py-2.5 rtl:pr-4 rtl:pl-16;
+    }
+
+    &--lg {
+      @apply py-4 pr-16 pl-4;
+      @apply rtl:py-4 rtl:pr-4 rtl:pl-16;
+    }
+
+    &--xl {
+      min-height: theme("spacing.20");
+
+      @apply lg:text-lg; /* because it matches prose? */
+      @apply items-baseline;
+    }
+
+    &--2xl {
+      min-height: theme("spacing.24");
+
+      @apply lg:text-lg; /* because it matches prose? */
+      @apply items-baseline;
+    }
+
+    /**
+        * Status & icon
+        */
+    .ow-loading,
+    .ow-svg {
+      @apply absolute right-4;
+      @apply rtl:left-4 rtl:right-auto;
+    }
+
+    .ow-svg {
+      @apply w-[1em];
+    }
+
+    &--error .ow-svg {
+      @apply text-[#da1e28];
+    }
+
+    &--success .ow-svg {
+      @apply text-[#24a148];
+    }
+
+    /**
+        * Icon only
+        */
+    &--icon-only {
+      @apply items-center justify-center;
+      @apply p-4;
+
+      .ow-loading,
+      .ow-svg {
+        @apply relative left-auto right-auto;
+      }
+
+      &--sm {
+        @apply py-1.5 px-4;
+      }
+
+      &--md {
+        @apply py-2.5 px-4;
+      }
+
+      &--lg {
+        @apply p-4;
+      }
+
+      &--xl {
+        @apply p-4;
+
+        .ow-svg {
+          @apply w-[1.25em];
+        }
+      }
+
+      &--2xl {
+        @apply p-4;
+
+        .ow-svg {
+          @apply w-[1.5em];
+        }
+      }
+    }
+  }
+}

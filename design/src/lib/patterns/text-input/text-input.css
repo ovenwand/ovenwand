@@ -1,0 +1,73 @@
+@layer components {
+  .ow-text-input {
+    @apply text-gray-600 dark:text-gray-300;
+
+    &__label,
+    &__helper,
+    &__error {
+      @apply text-xs;
+    }
+
+    &__label {
+      @apply mb-2;
+    }
+
+    &__field input {
+      @apply px-4;
+      @apply w-full;
+      @apply text-sm;
+      @apply bg-gray-200 text-gray-900;
+      @apply dark:bg-zinc-700 dark:text-gray-100;
+    }
+
+    &__helper,
+    &__error {
+      @apply mt-1;
+    }
+
+    &__error {
+      @apply text-danger-400;
+    }
+
+    /**
+        * States
+        */
+    &__field input:focus {
+      @apply outline outline-2 outline-info;
+    }
+
+    &--disabled {
+      @apply text-gray-200;
+    }
+
+    &--disabled &__field input {
+      @apply bg-gray-100 text-gray-500;
+      @apply dark:bg-gray-500 dark:text-gray-700;
+    }
+
+    &--invalid &__field input {
+      @apply outline outline-2 outline-danger-400;
+    }
+
+    &--invalid &__helper {
+      @apply text-danger-400;
+    }
+
+    /**
+        * Sizes
+        */
+    &--small &__field input {
+      @apply h-8;
+    }
+
+    &--medium &__field input {
+      @apply h-10;
+      @apply px-4;
+    }
+
+    &--large &__field input {
+      @apply h-12;
+      @apply px-4;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@layer components {
+  .ow-prose {
+    @apply prose lg:prose-xl;
+    @apply first:prose-p:mt-0 last:prose-p:mb-0;
+    @apply dark:prose-invert;
+  }
+}
