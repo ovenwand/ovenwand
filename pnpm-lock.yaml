@@ -314,7 +314,7 @@ importers:
       '@ovenwand/kit.lint': workspace:0.0.3
       '@ovenwand/kit.scaffold': workspace:0.1.2
       '@pnpm/find-workspace-dir': ^6.0.0
-      commander: ^10.0.1
+      commander: ^11.0.0
       lint-staged: ^13.0.0
       turbo: ^1.6.3
     dependencies:
@@ -326,7 +326,7 @@ importers:
       '@ovenwand/kit.lint': link:../lint
       '@ovenwand/kit.scaffold': link:../scaffold
       '@pnpm/find-workspace-dir': 6.0.0
-      commander: 10.0.1
+      commander: 11.0.0
       lint-staged: 13.0.4
       turbo: 1.6.3
 
@@ -771,14 +771,14 @@ importers:
       '@ovenwand/config': workspace:^0.1.6
       '@ovenwand/toolchain.core': workspace:^0.0.1
       '@types/node': ^18.11.9
-      commander: ^10.0.1
+      commander: ^11.0.0
       inquirer: ^9.1.4
       ora: ^6.1.2
       picocolors: ^1.0.0
     dependencies:
       '@esbuild-kit/esm-loader': 2.5.1
       '@ovenwand/toolchain.core': link:../core
-      commander: 10.0.1
+      commander: 11.0.0
       inquirer: 9.1.4
       ora: 6.1.2
       picocolors: 1.0.0
@@ -805,9 +805,9 @@ importers:
       '@ovenwand/toolchain.cli': workspace:^0.0.1
       '@ovenwand/toolchain.core': workspace:^0.0.1
       '@types/node': ^18.11.9
-      commander: ^10.0.1
+      commander: ^11.0.0
     dependencies:
-      commander: 10.0.1
+      commander: 11.0.0
     devDependencies:
       '@ovenwand/config': link:../../../../packages/config
       '@ovenwand/toolchain.cli': link:../../cli
@@ -7803,9 +7803,9 @@ packages:
     resolution: {integrity: sha512-GHuDRO12Sypu2cV70d1dkA2EUmXHgntrzbpvOB+Qy+49ypNfGgFQIC2fhhXbnyrJRynDCAARsT7Ou0M6hirpfw==}
     dev: true
 
-  /commander/10.0.1:
-    resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
-    engines: {node: '>=14'}
+  /commander/11.0.0:
+    resolution: {integrity: sha512-9HMlXtt/BNoYr8ooyjjNRdIilOTkVJXB+GhxMTtOKwk0R4j4lS4NpjuqmRxroBfnfTSHQIHQB7wryHhXarNjmQ==}
+    engines: {node: '>=16'}
     dev: false
 
   /commander/6.2.1:

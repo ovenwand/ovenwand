@@ -6,7 +6,7 @@
 		".": "./src/index.ts"
 	},
 	"dependencies": {
-		"commander": "^10.0.1"
+		"commander": "^11.0.0"
 	},
 	"devDependencies": {
 		"@ovenwand/config": "workspace:^0.1.6",
