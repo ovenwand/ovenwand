@@ -1,0 +1,7 @@
+name: Check formatting
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: pnpm check:format

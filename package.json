@@ -6,6 +6,7 @@
     "check": "pnpm check:js && pnpm check:css && pnpm check:format",
     "check:format": "prettier --check .",
     "check:js": "eslint .",
+    "check:types": "pnpm -r check:types",
     "check:css": "stylelint '**/*.css'",
     "fix": "pnpm fix:js && pnpm fix:css && pnpm fix:format",
     "fix:format": "prettier --write .",

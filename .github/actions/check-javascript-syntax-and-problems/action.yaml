@@ -1,0 +1,7 @@
+name: Check JavaScript syntax and problems
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: pnpm check:js
