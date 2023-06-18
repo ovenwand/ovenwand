@@ -3,24 +3,14 @@
   "author": "Ovenwand <info@ovenwand.com>",
   "license": "WTFPL",
   "scripts": {
-    "check": "pnpm check:js && pnpm check:css && pnpm check:format",
-    "check:format": "prettier --check .",
-    "check:js": "eslint .",
-    "check:types": "pnpm -r check:types",
-    "check:css": "stylelint '**/*.css'",
-    "fix": "pnpm fix:js && pnpm fix:css && pnpm fix:format",
-    "fix:format": "prettier --write .",
-    "fix:js": "eslint --fix .",
-    "fix:css": "stylelint --fix '**/*.css'"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.59.11",
-    "@typescript-eslint/parser": "^5.59.11",
-    "eslint": "^8.42.0",
-    "eslint-config-prettier": "^8.8.0",
-    "prettier": "^2.8.8",
-    "stylelint": "^15.7.0",
-    "stylelint-config-standard": "^33.0.0",
-    "typescript": "^5.1.3"
+    "check": "pnpm --filter quality-assurance check",
+    "check:format": "pnpm --filter quality-assurance check:format",
+    "check:js": "pnpm --filter quality-assurance check:js",
+    "check:types": "pnpm --filter quality-assurance check:types",
+    "check:css": "pnpm --filter quality-assurance check:css",
+    "fix": "pnpm --filter quality-assurance fix",
+    "fix:format": "pnpm --filter quality-assurance fix:format",
+    "fix:js": "pnpm --filter quality-assurance fix:js",
+    "fix:css": "pnpm --filter quality-assurance fix:css"
   }
 }

@@ -3,6 +3,7 @@ packages:
   - "design/**"
   - "framework/**"
   - "products/**"
+  - "quality-assurance/**"
   # exclude packages github actions
   - "!.github/**"
   # exclude packages in generated paths
