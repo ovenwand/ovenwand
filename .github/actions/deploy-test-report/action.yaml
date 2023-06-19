@@ -1,0 +1,37 @@
+name: "Deploy test results"
+
+inputs:
+  path:
+    description: "Path to the test results"
+    required: false
+    default: "quality-assurance/apps/reports"
+
+runs:
+  using: "composite"
+  steps:
+    - uses: ./.github/actions/install-vercel-cli
+
+    - uses: ./.github/actions/download-test-report
+      with:
+        path: ${{ inputs.path }}/.vercel/output/static
+
+    - shell: bash
+      run: |
+        echo '{ "version": 3 }' > ${{ inputs.path }}/.vercel/output/config.json
+
+    - uses: ./.github/actions/pull-vercel-environment-information
+      env:
+        VERCEL_ORG_ID: ${{ env.VERCEL_ORG_ID }}
+        VERCEL_PROJECT_ID: ${{ env.VERCEL_PROJECT_ID }}
+        VERCEL_TOKEN: ${{ env.VERCEL_TOKEN }}
+      with:
+        path: ${{ inputs.path }}
+        environment: preview
+
+    - uses: ./.github/actions/deploy-to-vercel
+      env:
+        VERCEL_ORG_ID: ${{ env.VERCEL_ORG_ID }}
+        VERCEL_PROJECT_ID: ${{ env.VERCEL_PROJECT_ID }}
+        VERCEL_TOKEN: ${{ env.VERCEL_TOKEN }}
+      with:
+        path: ${{ inputs.path }}

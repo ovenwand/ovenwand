@@ -1,0 +1,14 @@
+name: "Deploy to vercel"
+
+inputs:
+  path:
+    description: "The path to deploy"
+    type: string
+    required: false
+    default: ""
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: vercel --cwd ${{ inputs.path }} deploy --prebuilt  --token=${{ env.VERCEL_TOKEN }}

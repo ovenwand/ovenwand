@@ -1,16 +1,21 @@
 name: Test
 
+run-name: "Test (${{ github.event.deployment.environment }})"
+
 on:
   deployment_status:
-  # pull_request:
-  #   branches: [master]
-  #   types: [opened, synchronize, reopened]
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
   quality-gate-test-end-to-end:
     name: "Quality gate: Test end-to-end"
-    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
+    if: github.event_name == 'deployment_status' && github.event.deployment.environment == 'Preview – ovenwand-com' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.35.0-jammy
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -25,3 +30,28 @@ jobs:
         uses: ./.github/actions/test-end-to-end
         with:
           base_url: ${{ github.event.deployment_status.target_url }}
+
+  deploy-end-to-end-test-report:
+    name: "Deploy: End-to-end test report"
+    if: ${{ success() || failure() }}
+    needs: [quality-gate-test-end-to-end]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup PNPM
+        uses: ./.github/actions/setup-pnpm
+
+      - shell: bash
+        run: cd quality-assurance/apps/reports
+
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Deploy test report
+        uses: ./.github/actions/deploy-test-report
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_QUALITY_ASSURANCE_REPORTS }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
