@@ -1,0 +1,27 @@
+name: Test
+
+on:
+  deployment_status:
+  # pull_request:
+  #   branches: [master]
+  #   types: [opened, synchronize, reopened]
+
+jobs:
+  quality-gate-test-end-to-end:
+    name: "Quality gate: Test end-to-end"
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup PNPM
+        uses: ./.github/actions/setup-pnpm
+
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      - name: Test end-to-end
+        uses: ./.github/actions/test-end-to-end
+        with:
+          base_url: ${{ github.event.deployment_status.target_url }}
