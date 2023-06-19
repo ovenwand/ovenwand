@@ -5,10 +5,6 @@ run-name: "Test (${{ github.event.deployment.environment }})"
 on:
   deployment_status:
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   quality-gate-test-end-to-end:
     name: "Quality gate: Test end-to-end"
@@ -20,19 +16,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup PNPM
-        uses: ./.github/actions/setup-pnpm
-
-      - name: Install dependencies
-        uses: ./.github/actions/install-dependencies
+      - name: Setup environment
+        uses: ./.github/actions/common/environment/setup
 
       - name: Test end-to-end
-        uses: ./.github/actions/test-end-to-end
+        uses: ./.github/actions/jobs/test/test-end-to-end
         with:
           base_url: ${{ github.event.deployment_status.target_url }}
 
-  deploy-end-to-end-test-report:
-    name: "Deploy: End-to-end test report"
+  publish-test-reports:
+    name: "Publish: Test report"
     if: ${{ success() || failure() }}
     needs: [quality-gate-test-end-to-end]
     runs-on: ubuntu-latest
@@ -40,17 +33,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup PNPM
-        uses: ./.github/actions/setup-pnpm
-
-      - shell: bash
-        run: cd quality-assurance/apps/reports
-
-      - name: Install dependencies
-        uses: ./.github/actions/install-dependencies
+      - name: Setup environment
+        uses: ./.github/actions/common/environment/setup
 
       - name: Deploy test report
-        uses: ./.github/actions/deploy-test-report
+        uses: ./.github/actions/jobs/test/deploy-test-report
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_QUALITY_ASSURANCE_REPORTS }}

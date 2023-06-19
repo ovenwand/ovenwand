@@ -1,0 +1,10 @@
+name: Setup environment
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup PNPM
+      uses: ./.github/actions/common/environment/setup-pnpm
+
+    - name: Install dependencies
+      uses: ./.github/actions/common/environment/install-dependencies

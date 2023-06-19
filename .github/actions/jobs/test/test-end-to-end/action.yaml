@@ -19,5 +19,9 @@ runs:
       env:
         BASE_URL: ${{ inputs.base_url }}
 
-    - uses: ./.github/actions/publish-test-report
+    - uses: actions/upload-artifact@v3
       if: always()
+      with:
+        name: quality-assurance-playwright-report
+        path: quality-assurance/playwright-report
+        retention-days: ${{ inputs.retention_days }}

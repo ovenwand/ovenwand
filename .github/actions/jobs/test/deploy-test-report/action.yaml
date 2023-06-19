@@ -9,17 +9,18 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: ./.github/actions/install-vercel-cli
+    - uses: ./.github/actions/common/vercel/install-vercel-cli
 
-    - uses: ./.github/actions/download-test-report
+    - uses: actions/download-artifact@v3
       with:
+        name: quality-assurance-playwright-report
         path: ${{ inputs.path }}/.vercel/output/static
 
     - shell: bash
       run: |
         echo '{ "version": 3 }' > ${{ inputs.path }}/.vercel/output/config.json
 
-    - uses: ./.github/actions/pull-vercel-environment-information
+    - uses: ./.github/actions/common/vercel/pull-vercel-environment-information
       env:
         VERCEL_ORG_ID: ${{ env.VERCEL_ORG_ID }}
         VERCEL_PROJECT_ID: ${{ env.VERCEL_PROJECT_ID }}
@@ -28,7 +29,7 @@ runs:
         path: ${{ inputs.path }}
         environment: preview
 
-    - uses: ./.github/actions/deploy-to-vercel
+    - uses: ./.github/actions/common/vercel/deploy-to-vercel
       env:
         VERCEL_ORG_ID: ${{ env.VERCEL_ORG_ID }}
         VERCEL_PROJECT_ID: ${{ env.VERCEL_PROJECT_ID }}
