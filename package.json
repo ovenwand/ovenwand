@@ -11,6 +11,8 @@
     "fix": "pnpm --filter quality-assurance fix",
     "fix:format": "pnpm --filter quality-assurance fix:format",
     "fix:js": "pnpm --filter quality-assurance fix:js",
-    "fix:css": "pnpm --filter quality-assurance fix:css"
+    "fix:css": "pnpm --filter quality-assurance fix:css",
+    "test:e2e": "pnpm --filter quality-assurance test:e2e",
+    "report:e2e": "pnpm --filter quality-assurance report:e2e"
   }
 }
