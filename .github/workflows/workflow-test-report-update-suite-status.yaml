@@ -1,0 +1,51 @@
+name: "Test report: update suite status"
+
+on:
+  workflow_run:
+    workflows: [Test end-to-end]
+    types:
+      # - requested
+      - in_progress
+      - completed
+
+jobs:
+  update-suite-status:
+    name: "Update suite status"
+    if: ${{ github.event.workflow_run.pull_requests && (github.event.workflow_run.conclusion == null || github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup environment
+        uses: ./.github/actions/common/environment/setup
+        with:
+          install_command: cd .github/actions/common/test-report && pnpm -w install --frozen-lockfile
+
+      - name: Set status to pending
+        if: ${{ github.event.workflow_run.status == 'requested' }}
+        uses: ./.github/actions/common/test-report/comment-report
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          test_suite: "end-to-end"
+          test_status: "pending"
+
+      - name: Set status to in progress
+        if: ${{ github.event.workflow_run.status == 'in_progress' }}
+        uses: ./.github/actions/common/test-report/comment-report
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          test_suite: "end-to-end"
+          test_status: "running"
+
+      - name: Set status to job result
+        if: ${{ github.event.workflow_run.status == 'completed' }}
+        uses: ./.github/actions/common/test-report/comment-report
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          test_suite: "end-to-end"
+          test_status: ${{ github.event.workflow_run.conclusion }}
+      #     test_report_url: ${{ steps.deploy-test-report.outputs.test_report_url }}

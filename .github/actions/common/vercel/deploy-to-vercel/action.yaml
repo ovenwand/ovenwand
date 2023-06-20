@@ -7,8 +7,14 @@ inputs:
     required: false
     default: ""
 
+outputs:
+  vercel_deployment_url:
+    description: "The deployment url"
+    value: ${{ steps.deploy-to-vercel.outputs.vercel_deployment_url }}
+
 runs:
   using: "composite"
   steps:
-    - shell: bash
-      run: vercel --cwd ${{ inputs.path }} deploy --prebuilt  --token=${{ env.VERCEL_TOKEN }}
+    - id: deploy-to-vercel
+      shell: bash
+      run: echo "vercel_deployment_url=$(vercel --cwd ${{ inputs.path }} deploy --prebuilt  --token=${{ env.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
