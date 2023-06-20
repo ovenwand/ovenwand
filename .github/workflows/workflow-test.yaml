@@ -8,35 +8,31 @@ on:
 jobs:
   quality-gate-test-end-to-end:
     name: "Quality gate: Test end-to-end"
-    if: github.event_name == 'deployment_status' && github.event.deployment.environment == 'Preview – ovenwand-com' && github.event.deployment_status.state == 'success'
+    if: github.event.deployment.environment == 'Preview – ovenwand-com' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.35.0-jammy
+      options: --user 1001
+    outputs:
+      test_result: ${{ steps.test-end-to-end.outcome }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Setup environment
         uses: ./.github/actions/common/environment/setup
 
-      - name: Test end-to-end
+      - id: test-end-to-end
+        name: Run tests
         uses: ./.github/actions/jobs/test/test-end-to-end
         with:
           base_url: ${{ github.event.deployment_status.target_url }}
 
-  publish-test-reports:
-    name: "Publish: Test report"
-    if: ${{ success() || failure() }}
-    needs: [quality-gate-test-end-to-end]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup environment
-        uses: ./.github/actions/common/environment/setup
-
-      - name: Deploy test report
+      - id: deploy-test-report
+        name: Deploy test report
+        if: ${{ success() || failure() }}
         uses: ./.github/actions/jobs/test/deploy-test-report
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
