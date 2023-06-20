@@ -6,15 +6,31 @@ inputs:
     required: false
     default: "quality-assurance/apps/reports"
 
+outputs:
+  test_report_url:
+    description: "URL to the test report"
+    value: ${{ steps.deploy-to-vercel.outputs.vercel_deployment_url }}
+
 runs:
   using: "composite"
   steps:
     - uses: ./.github/actions/common/vercel/install-vercel-cli
 
-    - uses: actions/download-artifact@v3
+    # - uses: actions/download-artifact@v3
+    #   with:
+    #     name: quality-assurance-playwright-report
+    #     path: ${{ inputs.path }}/.vercel/output/static/end-to-end
+
+    - name: Download artifact
+      uses: dawidd6/action-download-artifact@v2
       with:
+        run_id: ${{ github.event.workflow_run.id }}
         name: quality-assurance-playwright-report
-        path: ${{ inputs.path }}/.vercel/output/static
+        path: ${{ inputs.path }}/.vercel/output/static/end-to-end
+        # Optional, GitHub token, a Personal Access Token with `public_repo` scope if needed
+        # Required, if the artifact is from a different repo
+        # Required, if the repo is private a Personal Access Token with `repo` scope is needed or GitHub token in a job where the permissions `action` scope set to `read`
+        # github_token: ${{env.GITHUB_TOKEN}}
 
     - shell: bash
       run: |
@@ -29,7 +45,8 @@ runs:
         path: ${{ inputs.path }}
         environment: preview
 
-    - uses: ./.github/actions/common/vercel/deploy-to-vercel
+    - id: deploy-to-vercel
+      uses: ./.github/actions/common/vercel/deploy-to-vercel
       env:
         VERCEL_ORG_ID: ${{ env.VERCEL_ORG_ID }}
         VERCEL_PROJECT_ID: ${{ env.VERCEL_PROJECT_ID }}

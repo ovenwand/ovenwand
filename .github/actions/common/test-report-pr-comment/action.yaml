@@ -1,0 +1,30 @@
+name: "Comment test report"
+
+inputs:
+  test_suite:
+    description: "Name of the test suite"
+    type: string
+    required: true
+  test_status:
+    description: "Status of the test"
+    type: string
+    required: true
+  test_report_url:
+    description: "URL to the test report"
+    type: string
+    required: false
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: |
+        cd .github/actions/common/test-report-comment
+        pnpm -w install
+        cd -
+
+    - uses: ./.github/actions/common/test-report-comment
+      with:
+        test_suite: ${{ inputs.test_suite }}
+        test_status: ${{ inputs.test_status }}
+        test_report_url: ${{ inputs.test_report_url }}
