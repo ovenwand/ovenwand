@@ -1,0 +1,16 @@
+name: "Comment report"
+
+inputs:
+  test_suite:
+    description: "Name of the test suite"
+    type: string
+  test_status:
+    description: "Status of the test"
+    type: string
+  test_report_url:
+    description: "URL to the test report"
+    type: string
+
+runs:
+  using: "node16"
+  main: "main.js"

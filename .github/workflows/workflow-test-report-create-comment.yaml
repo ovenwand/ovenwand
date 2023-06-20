@@ -1,0 +1,22 @@
+name: "Test report: Create comment"
+
+on:
+  pull_request:
+    branches: [master]
+    types: [opened]
+
+jobs:
+  create-test-report-comment:
+    name: "Create test report comment"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup environment
+        uses: ./.github/actions/common/environment/setup
+        with:
+          install_command: cd .github/actions/common/test-report && pnpm -w install --frozen-lockfile
+
+      - name: Create test report comment
+        uses: ./.github/actions/common/test-report/comment-report

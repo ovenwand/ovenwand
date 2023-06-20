@@ -6,5 +6,6 @@ packages:
   - "quality-assurance/**"
   # exclude packages github actions
   - "!.github/**"
+  # - ".github/**"
   # exclude packages in generated paths
   - "!**/.vercel/**"
