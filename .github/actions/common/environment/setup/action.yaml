@@ -1,5 +1,15 @@
 name: Setup environment
 
+inputs:
+  install:
+    description: "Whether to install dependencies"
+    type: boolean
+    default: "true"
+  install_command:
+    description: "Command to install dependencies"
+    type: string
+    default: "pnpm install --frozen-lockfile"
+
 runs:
   using: "composite"
   steps:
@@ -7,4 +17,7 @@ runs:
       uses: ./.github/actions/common/environment/setup-pnpm
 
     - name: Install dependencies
+      if: ${{ inputs.install == 'true' }}
       uses: ./.github/actions/common/environment/install-dependencies
+      with:
+        install_command: ${{ inputs.install_command }}
