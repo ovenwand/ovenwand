@@ -4,5 +4,6 @@
   "installCommand": "",
   "buildCommand": "",
   "devCommand": "",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "trailingSlash": true
 }

@@ -1,7 +1,13 @@
 name: Install dependencies
 
+inputs:
+  install_command:
+    description: "Command to install dependencies"
+    type: string
+    default: "pnpm install --frozen-lockfile"
+
 runs:
   using: "composite"
   steps:
     - shell: bash
-      run: pnpm install --frozen-lockfile
+      run: ${{ inputs.install_command }}
