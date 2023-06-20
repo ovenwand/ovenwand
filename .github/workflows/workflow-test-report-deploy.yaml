@@ -1,0 +1,38 @@
+name: "Test report: Deploy"
+
+on:
+  workflow_run:
+    workflows: [Test end-to-end]
+    types: [completed]
+
+jobs:
+  deploy-test-report:
+    name: "Deploy test report"
+    if: ${{ github.event.workflow_run.pull_requests && (github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup environment
+        uses: ./.github/actions/common/environment/setup
+        with:
+          install_command: cd .github/actions/common/test-report && pnpm -w install --frozen-lockfile
+
+      - id: deploy-test-report
+        name: Deploy test report
+        if: ${{ success() || failure() }}
+        uses: ./.github/actions/jobs/test/deploy-test-report
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_QUALITY_ASSURANCE_REPORTS }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: "Update comment: Set test report URL"
+        uses: ./.github/actions/common/test-report/pr-comment
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          test_suite: "end-to-end"
+          # test_status: ${{ github.event.workflow_run.conclusion }}
+          test_report_url: ${{ steps.deploy-test-report.outputs.test_report_url }}
