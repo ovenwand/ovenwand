@@ -13,7 +13,7 @@
 		"typescript": "^5.0.4"
 	},
 	"dependencies": {
-		"pusher": "5.1.2",
+		"pusher": "5.1.3",
 		"pusher-js": "^7.6.0"
 	}
 }
