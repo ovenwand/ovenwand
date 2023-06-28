@@ -270,7 +270,7 @@ importers:
   packages/config:
     specifiers:
       '@sveltejs/adapter-vercel': ^2.4.2
-      '@tsconfig/svelte': ^4.0.1
+      '@tsconfig/svelte': ^5.0.0
       autoprefixer: ^10.4.13
       postcss: ^8.4.19
       svelte: ^3.58.0
@@ -278,7 +278,7 @@ importers:
       tailwindcss: ^3.2.4
     dependencies:
       '@sveltejs/adapter-vercel': 2.4.2
-      '@tsconfig/svelte': 4.0.1
+      '@tsconfig/svelte': 5.0.0
       autoprefixer: 10.4.13_postcss@8.4.19
       postcss: 8.4.19
       svelte: 3.58.0
@@ -6244,8 +6244,8 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: false
 
-  /@tsconfig/svelte/4.0.1:
-    resolution: {integrity: sha512-B+XlGpmuAQzJqDoBATNCvEPqQg0HkO7S8pM14QDI5NsmtymzRexQ1N+nX2H6RTtFbuFgaZD4I8AAi8voGg0GLg==}
+  /@tsconfig/svelte/5.0.0:
+    resolution: {integrity: sha512-iu5BqFjU0+OcLTNQp7fHe6Bf6zdNeJ9IZjLZMqWLuGzVFm/xx+lm//Tf6koPyRmxo55/Snm6RRQ990n89cRKFw==}
     dev: false
 
   /@types/aria-query/4.2.2:
