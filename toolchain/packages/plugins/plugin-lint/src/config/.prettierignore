@@ -1,7 +1,0 @@
-**/*.hbs
-pnpm-lock.yaml
-.svelte-kit/
-.vercel/
-dist/
-storybook-static/
-*.fields.gql

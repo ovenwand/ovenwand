@@ -1,4 +1,0 @@
-**/*.hbs
-pnpm-lock.yaml
-.svelte-kit/
-.vercel_build_output/
