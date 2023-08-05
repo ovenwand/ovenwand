@@ -1,0 +1,59 @@
+name: Review
+
+on:
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  quality-gate-check-javascript-syntax-and-problems:
+    name: "Quality gate: Check JavaScript syntax and problems"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup environment
+        uses: ./.github/actions/common/environment/setup
+
+      - name: Check JavaScript syntax and problems
+        uses: ./.github/actions/jobs/review/check-javascript-syntax-and-problems
+
+  quality-gate-check-css-syntax-and-problems:
+    name: "Quality gate: Check CSS syntax and problems"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup environment
+        uses: ./.github/actions/common/environment/setup
+
+      - name: Check CSS syntax and problems
+        uses: ./.github/actions/jobs/review/check-css-syntax-and-problems
+
+  quality-gate-check-formatting:
+    name: "Quality gate: Check formatting"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup environment
+        uses: ./.github/actions/common/environment/setup
+
+      - name: Check formatting
+        uses: ./.github/actions/jobs/review/check-formatting
+
+  quality-gate-check-type-safety:
+    name: "Quality gate: Check type safety"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup environment
+        uses: ./.github/actions/common/environment/setup
+
+      - name: Check type safety
+        uses: ./.github/actions/jobs/review/check-type-safety

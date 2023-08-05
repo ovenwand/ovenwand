@@ -1,0 +1,22 @@
+name: Test end-to-end
+
+inputs:
+  base_url:
+    description: "The base URL to use for the tests"
+    type: string
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: pnpm test:e2e
+      env:
+        BASE_URL: ${{ inputs.base_url }}
+
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: quality-assurance-playwright-report
+        path: quality-assurance/playwright-report
+        retention-days: 1

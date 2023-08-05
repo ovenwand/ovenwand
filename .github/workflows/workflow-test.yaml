@@ -1,0 +1,156 @@
+name: Test
+
+run-name: "Test (${{ github.event.deployment.environment }})"
+
+on:
+  deployment_status:
+  check_run:
+    types: [requested_action]
+
+jobs:
+  quality-gate-test-end-to-end:
+    name: "Quality gate: Test end-to-end"
+    if: |
+      (github.event_name == 'check_run' && github.event.action == 'request_action' && (
+        github.event.check_run.name == 'Quality gate: Test end-to-end'
+      )) ||
+      (github.event_name == 'deployment_status' && (
+        github.event.deployment.environment == 'Preview – ovenwand-com' &&
+        github.event.deployment_status.state == 'success'
+      ))
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.35.0-jammy
+      options: --user 1001
+    env:
+      REQUESTED_ACTION: ${{ github.event_name == 'check_run' && github.event.action == 'request_action' }}
+    outputs:
+      test_result: ${{ steps.test-end-to-end.outcome }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup environment
+        if: ${{ env.REQUESTED_ACTION == 'false' }}
+        uses: ./.github/actions/common/environment/setup
+
+      - id: test-end-to-end
+        name: Run tests
+        if: ${{ env.REQUESTED_ACTION == 'false' }}
+        uses: ./.github/actions/jobs/test/test-end-to-end
+        with:
+          base_url: ${{ github.event.deployment_status.target_url }}
+
+      - id: get-check-id
+        name: Get check id
+        if: ${{ env.REQUESTED_ACTION == 'false' && failure() }}
+        uses: octokit/request-action@v2.x
+        with:
+          route: GET /repos/{owner}/{repo}/commits/{ref}/check-runs
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          ref: ${{ github.event.deployment.ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Print checks
+        if: ${{ env.REQUESTED_ACTION == 'false' && failure() }}
+        run: |
+          echo "${{ steps.get-check-id.outputs.data }}"
+
+      - name: Request review
+        if: ${{ env.REQUESTED_ACTION == 'false' && failure() }}
+        uses: octokit/request-action@v2.x
+        with:
+          route: PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          check_run_id: ${{ github.run_id }}
+          conclusion: "action_required"
+          actions: |
+            - label: "Approve"
+              description: "Approve the test results"
+              identifier: "approve"
+            - label: "Reject"
+              description: "Reject the test results"
+              identifier: "reject"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: Request review
+      #   if: ${{ env.REQUESTED_ACTION == 'false' && failure() }}
+      #   uses: octokit/graphql-action@v2.x
+      #   with:
+      #     query: |
+      #       mutation requestReview(
+      #         $checkRunId: ID!
+      #         $repositoryId: ID!
+      #         $conclusion: CheckConclusionState!
+      #         $actions: [CheckRunAction!]
+      #       ) {
+      #         updateCheckRun(
+      #           input: {
+      #             checkRunId: $checkRunId
+      #             repositoryId: $repositoryId
+      #             conclusion: $conclusion
+      #             actions: $actions
+      #           }
+      #         ) {
+      #           checkRun {
+      #             id
+      #           }
+      #         }
+      #       }
+      #     variables: |
+      #       checkRunId: '${{ github.run_id }}'
+      #       repositoryId: '${{ github.event.repository.id }}'
+      #       conclusion: 'ACTION_REQUIRED'
+      #       actions:
+      #         - label: 'Approve'
+      #           description: 'Approve the test results'
+      #           identifier: 'approve'
+      #         - label: 'Reject'
+      #           description: 'Reject the test results'
+      #           identifier: 'reject'
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: deploy-test-report
+        name: Deploy test report
+        if: ${{ env.REQUESTED_ACTION == 'false' &&  (success() || failure()) }}
+        uses: ./.github/actions/jobs/test/deploy-test-report
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_QUALITY_ASSURANCE_REPORTS }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Set verdict
+        if: ${{ env.REQUESTED_ACTION == 'true' }}
+        uses: octokit/graphql-action@v2.x
+        with:
+          query: |
+            mutation setTestVerdict(
+              $checkRunId: ID!
+              $repositoryId: ID!
+              $conclusion: CheckConclusionState!
+            ) {
+              updateCheckRun(
+                input: {
+                  checkRunId: $checkRunId
+                  repositoryId: $repositoryId
+                  conclusion: $conclusion
+                }
+              ) {
+                checkRun {
+                  id
+                }
+              }
+            }
+          variables: |
+            checkRunId: ${{ github.event.check_run.id }}
+            repositoryId: ${{ github.event.repository.id }}
+            conclusion: ${{ github.event.requested_action.identifier == 'approve' && 'neutral' || 'failure' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

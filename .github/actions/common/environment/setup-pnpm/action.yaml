@@ -1,0 +1,29 @@
+name: Setup PNPM
+
+inputs:
+  enable_cache:
+    description: "Enable caching of PNPM store"
+    type: boolean
+    required: false
+    default: "true"
+
+runs:
+  using: "composite"
+  steps:
+    - uses: pnpm/action-setup@v2
+      with:
+        version: 8
+        run_install: false
+
+    - if: ${{ inputs.enable_cache == 'true' }}
+      shell: bash
+      run: echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_ENV
+
+    - if: ${{ inputs.enable_cache == 'true' }}
+      uses: actions/cache@v3
+      with:
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        path: |
+          ${{ env.pnpm_cache_dir }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-

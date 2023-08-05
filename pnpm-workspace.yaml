@@ -1,9 +1,11 @@
 packages:
-  # all packages in subdirs of apps/ and packages/
-  - 'apps/**'
-  - 'packages/**'
-  - 'toolchain/**'
+  # all project dirs
+  - "design/**"
+  - "framework/**"
+  - "products/**"
+  - "quality-assurance/**"
   # exclude packages github actions
-  - '!.github/**'
+  - "!.github/**"
+  # - ".github/**"
   # exclude packages in generated paths
-  - '!**/.vercel/**'
+  - "!**/.vercel/**"

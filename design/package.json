@@ -1,0 +1,85 @@
+{
+  "name": "@ovenwand/design",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "exports": {
+    "./tokens/colors.js": {
+      "types": "./src/tokens/colors.js",
+      "default": "./src/tokens/colors.js"
+    },
+    "./tokens/icons/*.svg": {
+      "default": [
+        "./src/tokens/icons/status/checkmark--filled/*.svg",
+        "./src/tokens/icons/status/error--filled/*.svg",
+        "./src/tokens/icons/status/*.svg",
+        "./src/tokens/icons/navigation/add/*.svg",
+        "./src/tokens/icons/navigation/arrow-down/*.svg",
+        "./src/tokens/icons/navigation/arrow-down-left/*.svg",
+        "./src/tokens/icons/navigation/arrow-down-right/*.svg",
+        "./src/tokens/icons/navigation/arrow-left/*.svg",
+        "./src/tokens/icons/navigation/arrow-right/*.svg",
+        "./src/tokens/icons/navigation/arrow-up/*.svg",
+        "./src/tokens/icons/navigation/arrow-up-left/*.svg",
+        "./src/tokens/icons/navigation/arrow-up-right/*.svg",
+        "./src/tokens/icons/navigation/subtract/*.svg",
+        "./src/tokens/icons/navigation/*.svg",
+        "./src/tokens/icons/*.svg"
+      ]
+    },
+    "./tokens/icons/*.svelte": {
+      "default": [
+        "./src/tokens/icons/status/checkmark--filled/*.svelte",
+        "./src/tokens/icons/status/error--filled/*.svelte",
+        "./src/tokens/icons/status/*.svelte",
+        "./src/tokens/icons/navigation/add/*.svelte",
+        "./src/tokens/icons/navigation/arrow-down/*.svelte",
+        "./src/tokens/icons/navigation/arrow-down-left/*.svelte",
+        "./src/tokens/icons/navigation/arrow-down-right/*.svelte",
+        "./src/tokens/icons/navigation/arrow-left/*.svelte",
+        "./src/tokens/icons/navigation/arrow-right/*.svelte",
+        "./src/tokens/icons/navigation/arrow-up/*.svelte",
+        "./src/tokens/icons/navigation/arrow-up-left/*.svelte",
+        "./src/tokens/icons/navigation/arrow-up-right/*.svelte",
+        "./src/tokens/icons/navigation/subtract/*.svelte",
+        "./src/tokens/icons/navigation/*.svelte",
+        "./src/tokens/icons/*.svelte"
+      ]
+    },
+    "./patterns/*.css": {
+      "default": "./src/exports/patterns/*.css"
+    },
+    "./patterns.svelte": {
+      "types": "./src/exports/patterns/index.js",
+      "default": "./src/exports/patterns/index.js"
+    },
+    "./patterns/*.svelte": {
+      "types": "./src/exports/patterns/*.js",
+      "default": "./src/exports/patterns/*.js"
+    },
+    "./tailwind.css": {
+      "default": "./src/exports/tailwind.css"
+    },
+    "./tailwind.config.js": {
+      "types": "./src/exports/tailwind.config.js",
+      "default": "./src/exports/tailwind.config.js"
+    }
+  },
+  "scripts": {
+    "dev": "pnpm --filter design.docs dev",
+    "build": "pnpm --filter design.docs build",
+    "preview": "pnpm --filter design.docs preview",
+    "check:types": "svelte-check --tsconfig ./jsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ovenwand <info@ovenwand.com>",
+  "license": "WTFPL",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "tailwindcss": "^3.3.2"
+  },
+  "devDependencies": {
+    "svelte-check": "^3.4.3",
+    "vite": "^4.3.9"
+  }
+}

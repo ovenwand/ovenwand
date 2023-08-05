@@ -1,0 +1,3 @@
+---
+icon: "carbon:color-palette"
+---

@@ -1,0 +1,9 @@
+@import url("../patterns/prose/prose.css");
+@import url("../patterns/button/button.css");
+@import url("../patterns/loading/loading.css");
+@import url("../patterns/sheet/sheet.css");
+@import url("../patterns/text-input/text-input.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

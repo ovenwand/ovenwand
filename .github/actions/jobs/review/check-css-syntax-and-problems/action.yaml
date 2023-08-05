@@ -1,0 +1,7 @@
+name: Check CSS syntax and problems
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: pnpm check:css

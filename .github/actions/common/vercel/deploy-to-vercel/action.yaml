@@ -1,0 +1,50 @@
+name: "Deploy to vercel"
+
+inputs:
+  path:
+    description: "The path to deploy"
+    type: string
+    required: false
+    default: ""
+  # meta-github-commit-org:
+  #   description: "The github commit org"
+  #   type: string
+  #   required: false
+  #   default: ""
+  # meta-github-commit-repo:
+  #   description: "The github commit repo"
+  #   type: string
+  #   required: false
+  #   default: ""
+
+outputs:
+  vercel_deployment_url:
+    description: "The deployment url"
+    value: ${{ steps.deploy-to-vercel.outputs.vercel_deployment_url }}
+
+runs:
+  using: "composite"
+  steps:
+    - id: get-deployment-source-branch
+      shell: bash
+      run: |
+        # git branch -a --contains ${{ github.event.deployment.ref }}
+        source_branches="$(git branch -a --contains ${{ github.event.deployment.ref }})"
+        result=$(echo "$source_branches" | head -n2 | tail -n1 | sed 's/^[ \t]*//') 
+        # echo "Remote source of deployment: ${result}"
+        # echo "Local git ref of deployment: ${result#remotes/origin/*}"
+        echo "GITHUB_HEAD_REF=${result#remotes/origin/*}" >> "$GITHUB_ENV"
+
+    - id: deploy-to-vercel
+      shell: bash
+      run: |
+        echo "\
+          vercel_deployment_url=$(\
+            vercel --cwd ${{ inputs.path }} deploy \
+              --prebuilt  \
+              --token=${{ env.VERCEL_TOKEN }} \
+              --meta githubOrg=${{ github.repository_owner }}\
+              --meta githubRepo=$(echo '${{ github.repository }}' | sed 's/${{ github.repository_owner }}\///')\
+              --meta githubCommitRef=${{ env.GITHUB_HEAD_REF }}\
+          )\
+        " >> $GITHUB_OUTPUT

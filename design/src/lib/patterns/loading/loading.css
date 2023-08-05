@@ -1,0 +1,94 @@
+@layer components {
+  .ow-loading {
+    --ow-loading-transition-duration: 1s;
+
+    animation: rotate var(--ow-loading-transition-duration) linear infinite;
+
+    @apply fill-transparent;
+
+    &__background,
+    &__stroke {
+      stroke-dasharray: 276.4608 276.4608;
+      stroke-linecap: butt;
+    }
+
+    &__background {
+      @apply stroke-gray-200;
+    }
+
+    &__stroke {
+      animation: loading-stroke calc(var(--ow-loading-transition-duration) * 2)
+        linear infinite;
+
+      @apply stroke-primary-400;
+    }
+
+    &--flexible {
+      @apply w-full;
+    }
+
+    &--flexible &__background,
+    &--flexible &__stroke {
+      @apply stroke-[10];
+    }
+
+    &--inline {
+      --ow-loading-transition-duration: 0.8s;
+
+      @apply w-4;
+    }
+
+    &--inline &__background,
+    &--inline &__stroke {
+      @apply stroke-[14];
+    }
+
+    &--small {
+      --ow-loading-transition-duration: 0.8s;
+
+      @apply w-8;
+    }
+
+    &--small &__background,
+    &--small &__stroke {
+      @apply stroke-[14];
+    }
+
+    &--large {
+      @apply w-64;
+    }
+
+    &--large &__background,
+    &--large &__stroke {
+      @apply stroke-[10];
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+
+  @keyframes loading-stroke {
+    0% {
+      stroke-dashoffset: 5;
+    }
+
+    45% {
+      stroke-dashoffset: 215;
+    }
+
+    75% {
+      stroke-dashoffset: 215;
+    }
+
+    100% {
+      stroke-dashoffset: 5;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@layer components {
+  .ow-sheet {
+    &--light {
+      @apply bg-gray-200;
+      @apply dark:bg-gray-600;
+    }
+
+    &--dark {
+      @apply bg-gray-300;
+      @apply dark:bg-gray-800;
+    }
+
+    &--primary {
+      @apply bg-primary-600;
+      @apply dark:bg-primary-800;
+    }
+
+    &--secondary {
+      @apply bg-secondary-600;
+      @apply dark:bg-secondary-800;
+    }
+
+    &--solid {
+      @apply bg-opacity-100;
+    }
+
+    &--glass {
+      @apply backdrop-blur-lg;
+    }
+
+    &--glass&--primary {
+      @apply bg-primary-600 bg-opacity-75;
+      @apply dark:bg-primary-800 dark:bg-opacity-80;
+
+      background-image: radial-gradient(
+          at 2% 4%,
+          hsl(199deg 89% 62% / 50%) 0,
+          transparent 50%
+        ),
+        radial-gradient(
+          at 100% 100%,
+          hsl(197deg 76% 52% / 50%) 0,
+          transparent 50%
+        ),
+        radial-gradient(
+          at 3% 97%,
+          hsl(195deg 100% 37% / 50%) 0,
+          transparent 50%
+        ),
+        radial-gradient(
+          at 87% 17%,
+          hsl(199deg 100% 30% / 50%) 0,
+          transparent 50%
+        ),
+        radial-gradient(
+          at 61% 60%,
+          hsl(203deg 100% 23% / 50%) 0,
+          transparent 50%
+        ),
+        radial-gradient(
+          at 25% 41%,
+          hsl(210deg 100% 16% / 50%) 0,
+          transparent 50%
+        );
+    }
+
+    &--transparent {
+      @apply bg-transparent;
+    }
+  }
+}

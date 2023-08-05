@@ -1,0 +1,7 @@
+name: Install Vercel CLI
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: pnpm install -g vercel@latest

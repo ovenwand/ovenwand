@@ -1,0 +1,38 @@
+{
+  "name": "@ovenwand/ovenwand.service",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/exports/index.js"
+    },
+    "./utils/*.js": {
+      "default": "./src/exports/utils/*.js"
+    },
+    "./islands/*.svelte": {
+      "default": "./src/exports/islands/*.js"
+    }
+  },
+  "scripts": {
+    "check:types": "svelte-check --tsconfig jsconfig.json",
+    "build": "",
+    "docs:dev": "pnpm --filter design.docs dev",
+    "docs:build": "pnpm --filter design.docs build",
+    "docs:preview": "pnpm --filter design.docs preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ovenwand <info@ovenwand.com>",
+  "license": "WTFPL",
+  "dependencies": {
+    "@ovenwand/design": "workspace:^0.0.1"
+  },
+  "devDependencies": {
+    "svelte": "^3.59.1",
+    "svelte-check": "^3.4.3",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "svelte": "^3.59.1"
+  }
+}

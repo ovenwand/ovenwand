@@ -1,16 +1,9 @@
+# NPM
 node_modules/
 
+# Mac OS
+.DS_Store
+
+# IntelliJ
 .idea/
 *.iml
-.fleet/*
-
-.DS_Store
-._*
-
-.eslintcache
-
-.vercel
-
-.turbo
-
-storybook-static/
