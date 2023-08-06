@@ -1,0 +1,39 @@
+{
+  "name": "@ow/config",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "A collection of configuration files",
+  "exports": {
+    "./eslint.config.js": "./src/lib/eslint.config.js",
+    "./.eslintignore": "./src/lib/.eslintignore",
+    "./.prettierrc.json": "./src/lib/.prettierrc.json",
+    "./.prettierrc.js": "./src/lib/.prettierrc.js",
+    "./.prettierignore": "./src/lib/.prettierignore",
+    "./.stylelintrc.json": "./src/lib/.stylelintrc.json",
+    "./.stylelintignore": "./src/lib/.stylelintignore",
+    "./tsconfig.json": "./src/lib/tsconfig.json"
+  },
+  "scripts": {
+    "check:all": "turbo run check:js check:format",
+    "check:js": "eslint .",
+    "check:format": "prettier --check .",
+    "check:types": "tsc --noEmit",
+    "fix:all": "turbo run fix:js fix:format",
+    "fix:format": "prettier --write ."
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
+    "globals": "^13.20.0",
+    "prettier": "^3.0.1",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard": "^34.0.0",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/eslint-config-prettier": "^6.11.0",
+    "@types/eslint__js": "^8.42.0"
+  }
+}

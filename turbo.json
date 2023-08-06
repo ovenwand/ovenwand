@@ -1,3 +1,14 @@
 {
-  "$schema": "https://turbo.build/schema.json"
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "check:all": {},
+    "check:js": {},
+    "check:css": {},
+    "check:format": {},
+    "check:types": {},
+    "fix:all": {},
+    "fix:js": {},
+    "fix:css": {},
+    "fix:format": {}
+  }
 }

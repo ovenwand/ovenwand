@@ -1,0 +1,18 @@
+# Svelte Kit
+.svelte-kit/
+
+# Turborepo
+.turbo/
+
+# Node
+node_modules/
+
+# IntelliJ
+.idea/
+*.iml
+
+# VSCode
+.vscode/
+
+# Mac OS
+.DS_Store

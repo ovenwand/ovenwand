@@ -1,5 +1,6 @@
 {
   "name": "ovenwand",
+  "type": "module",
   "license": "WTFPL",
   "author": {
     "name": "Ovenwand",
@@ -9,7 +10,19 @@
     "node": ">=18.0.0",
     "pnpm": ">=8"
   },
+  "scripts": {
+    "check:all": "turbo --log-order=grouped check:js check:css check:format check:types",
+    "check:js": "turbo check:js",
+    "check:css": "turbo check:css",
+    "check:format": "turbo check:format",
+    "check:types": "turbo check:types",
+    "fix:all": "turbo --concurrency=1 fix:js fix:css fix:format",
+    "fix:js": "turbo fix:js",
+    "fix:css": "turbo fix:css",
+    "fix:format": "turbo fix:format"
+  },
   "devDependencies": {
+    "@ow/config": "workspace:^",
     "turbo": "^1.10.12"
   }
 }

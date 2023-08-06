@@ -1,0 +1,15 @@
+{
+  "name": "@ow/tools",
+  "type": "module",
+  "version": "0.0.1",
+  "bin": {
+    "eslint": "./node_modules/.bin/eslint",
+    "prettier": "./node_modules/.bin/prettier",
+    "stylelint": "./node_modules/.bin/stylelint"
+  },
+  "dependencies": {
+    "eslint": "^8.46.0",
+    "prettier": "^3.0.1",
+    "stylelint": "^15.10.2"
+  }
+}
