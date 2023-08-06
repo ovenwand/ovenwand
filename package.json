@@ -1,0 +1,12 @@
+{
+  "name": "ovenwand",
+  "license": "WTFPL",
+  "author": {
+    "name": "Ovenwand",
+    "email": "info@ovenwand.com"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8"
+  }
+}
