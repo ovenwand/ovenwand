@@ -1,0 +1,26 @@
+{
+  "name": "@ow/design.css",
+  "type": "module",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./dist/exports/index.css"
+  },
+  "scripts": {
+    "check:js": "eslint .",
+    "check:css": "stylelint './src/**/*.css'",
+    "check:format": "prettier --check .",
+    "check:types": "tsc --noEmit",
+    "fix:js": "eslint . --fix",
+    "fix:css": "stylelint --fix './src/**/*.css'",
+    "fix:format": "prettier --write ."
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "@ow/config": "workspace:^",
+    "@ow/tools": "workspace:^",
+    "typescript": "^5.1.6"
+  }
+}
