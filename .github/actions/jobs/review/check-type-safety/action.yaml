@@ -1,0 +1,7 @@
+name: Check type safety
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: pnpm check:types
