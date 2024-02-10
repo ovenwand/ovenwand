@@ -20,7 +20,7 @@
     "@typescript-eslint/parser": "^6.2.1",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^9.0.0",
-    "globals": "^13.20.0",
+    "globals": "^14.0.0",
     "postcss-import": "^15.1.0",
     "prettier": "^3.0.1",
     "stylelint": "^15.10.2",

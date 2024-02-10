@@ -30,8 +30,8 @@ importers:
         specifier: ^9.0.0
         version: 9.0.0(eslint@8.46.0)
       globals:
-        specifier: ^13.20.0
-        version: 13.20.0
+        specifier: ^14.0.0
+        version: 14.0.0
       postcss-import:
         specifier: ^15.1.0
         version: 15.1.0(postcss@8.4.27)
@@ -973,6 +973,11 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       type-fest: 0.20.2
+    dev: false
+
+  /globals@14.0.0:
+    resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
+    engines: {node: '>=18'}
     dev: false
 
   /globby@11.1.0:
