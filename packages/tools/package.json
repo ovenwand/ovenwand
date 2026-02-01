@@ -8,7 +8,7 @@
     "stylelint": "./node_modules/.bin/stylelint"
   },
   "dependencies": {
-    "eslint": "^8.46.0",
+    "eslint": "^9.0.0",
     "prettier": "^3.0.1",
     "stylelint": "^15.10.2"
   }
