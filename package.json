@@ -23,6 +23,6 @@
   },
   "devDependencies": {
     "@ow/config": "workspace:^",
-    "turbo": "^1.10.12"
+    "turbo": "^2.0.0"
   }
 }
